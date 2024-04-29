@@ -424,7 +424,7 @@ export const LandingPrimaryTextCtaSection = ({
           'flex flex-col gap-8 relative',
           textPosition === 'center'
             ? 'narrow-container'
-            : 'wide-container grid lg:grid-cols-2 items-center',
+            : 'wide-container',
           textPosition === 'center' ? 'items-center' : 'items-start',
           innerClassName,
         )}

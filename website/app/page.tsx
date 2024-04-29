@@ -32,7 +32,7 @@ import {
 export default function Home() {
   return (
     <div className="flex flex-col w-full items-center fancy-overlay">
-      <LandingSocialProofBand invert={false} className="hidden md:flex">
+      {/* <LandingSocialProofBand invert={false} className="hidden md:flex">
         <LandingSocialProofBandItem>
           Fast, reliable, and secure
         </LandingSocialProofBandItem>
@@ -44,7 +44,7 @@ export default function Home() {
         <LandingSocialProofBandItem graphic="rating">
           99% customer satisfaction
         </LandingSocialProofBandItem>
-      </LandingSocialProofBand>
+      </LandingSocialProofBand> */}
 
       <Header className="mb-0 lg:mb-0" />
 
@@ -53,7 +53,7 @@ export default function Home() {
         description="Page UI is a set of landing page components & templates that you can copy & paste into you codebase. Made for React & built on top of Shadcn UI."
         textPosition="left"
         withBackground
-        leadingComponent={<LandingProductHuntAward />}
+        // leadingComponent={<LandingProductHuntAward />}
       >
         <Button size="xl" asChild>
           <a href="/signup">Get Started</a>
@@ -64,10 +64,10 @@ export default function Home() {
         </Button>
 
         <LandingDiscount
-          discountValueText="30% off"
-          discountDescriptionText="for the first 10 customers (2 left)"
+          discountValueText="Free & open source"
+          animated={false}
         />
-
+{/*
         <LandingSocialProof
           className="w-full mt-12"
           showRating
@@ -87,7 +87,7 @@ export default function Home() {
               name: 'Alice Doe',
             },
           ]}
-        />
+        /> */}
       </LandingPrimaryTextCtaSection>
 
       <LandingProductFeature
