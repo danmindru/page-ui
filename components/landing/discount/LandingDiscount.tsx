@@ -14,7 +14,7 @@ export const LandingDiscount = ({
 }: {
   className?: string;
   discountValueText: string;
-  discountDescriptionText: string;
+  discountDescriptionText?: string;
   animated?: boolean;
 }) => {
   return (
