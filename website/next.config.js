@@ -111,6 +111,8 @@ module.exports = () => {
         use: ['@svgr/webpack'],
       });
 
+      config.resolve.symlinks = false;
+
       return config;
     },
   });

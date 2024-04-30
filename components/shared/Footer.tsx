@@ -14,7 +14,6 @@ import { siteConfig } from '@/data/config/site.settings';
 import Link from './Link';
 import ActiveLink from '@/components/shared/ActiveLink';
 import { TwitterXIcon } from '@/components/icons/XIcon';
-import { FooterSupportButton } from '@/components/shared/FooterSupportButton';
 import { Button } from '@/components/shared/ui/button';
 import { footerLinks } from '@/data/config/footerLinks';
 import { TiktokIcon } from '@/components/icons/TiktokIcon';
@@ -94,14 +93,6 @@ export default function Footer({ className }: { className?: string }) {
                     {column.links.map((link, index) => {
                       if (!link.href) {
                         return null;
-                      }
-
-                      if (link.href === '#support') {
-                        return (
-                          <li key={index}>
-                            <FooterSupportButton />
-                          </li>
-                        );
                       }
 
                       return (
