@@ -11,6 +11,7 @@ import ActiveLink from '@/components/shared/ActiveLink';
 import { TOC } from '@/components/blog/Toc';
 import { ScrollRestoration } from '@/lib/ScrollRestoration';
 import Header from '@/components/shared/Header';
+import { TooltipProvider } from '@/components/shared/ui/tooltip';
 
 const postDateTemplate: Intl.DateTimeFormatOptions = {
   weekday: 'long',
@@ -39,6 +40,7 @@ export default function PostHubLayout({
   const { date, lastmod, title, tags, toc } = content;
 
   return (
+    <TooltipProvider>
     <div className="w-full flex flex-col items-center">
       <Header />
 
@@ -186,6 +188,6 @@ export default function PostHubLayout({
         <ScrollRestoration elementId="navigation" />
         <ScrollTop />
       </div>
-    </div>
+    </div></TooltipProvider>
   );
 }

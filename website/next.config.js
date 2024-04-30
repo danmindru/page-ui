@@ -59,6 +59,23 @@ const securityHeaders = [
 module.exports = () => {
   const plugins = [withContentlayer, withBundleAnalyzer];
   return plugins.reduce((acc, next) => next(acc), {
+    async redirects() {
+      return [
+        {
+          source: '/demo/landing-page-component-examples',
+          destination:
+            'https://shipixen.com/demo/landing-page-component-examples',
+          permanent: true,
+        },
+
+        {
+          source: '/demo/landing-page-templates',
+          destination: 'https://shipixen.com/demo/landing-page-templates',
+          permanent: true,
+        },
+      ];
+    },
+
     reactStrictMode: true,
     pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
     eslint: {

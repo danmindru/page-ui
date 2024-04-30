@@ -86,6 +86,7 @@ export const Blog = defineDocumentType(() => ({
   filePathPattern: `${BLOG_URL}**/*.mdx`,
   contentType: 'mdx',
   fields: {
+    showThemeSelector: { type: 'boolean' },
     title: { type: 'string', required: true },
     date: { type: 'date', required: true },
     tags: { type: 'list', of: { type: 'string' }, default: [] },
