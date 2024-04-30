@@ -1,10 +1,6 @@
 import { TestimonialItem } from '@/components/home/twitter';
-import { cn } from '@/lib/utils';
-import Image from 'next/image';
 
-{
-  /* TODO dan not implemented */
-}
+/* TODO dan not implemented */
 export const LandingTestimonialPortal = ({
   className,
   containerClassName,

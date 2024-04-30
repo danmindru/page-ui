@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import Image from 'next/image';
+import Image from '@/components/shared/Image';
 import { GlowBg } from '@/components/shared/ui/glow-bg';
 import { VideoPlayer } from '@/components/shared/VideoPlayer';
 
@@ -422,9 +422,7 @@ export const LandingPrimaryTextCtaSection = ({
       <div
         className={clsx(
           'flex flex-col gap-8 relative',
-          textPosition === 'center'
-            ? 'narrow-container'
-            : 'wide-container grid lg:grid-cols-2 items-center',
+          textPosition === 'center' ? 'narrow-container' : 'wide-container',
           textPosition === 'center' ? 'items-center' : 'items-start',
           innerClassName,
         )}
