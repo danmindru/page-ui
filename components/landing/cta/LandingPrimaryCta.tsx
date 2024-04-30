@@ -431,6 +431,9 @@ export const LandingPrimaryTextCtaSection = ({
           className={clsx(
             textPosition === 'center' ? 'items-center' : 'items-start',
           )}
+          childrenClassName={clsx(
+            textPosition === 'center' ? 'flex-col items-center' : '',
+          )}
           title={title}
           titleComponent={titleComponent}
           description={description}

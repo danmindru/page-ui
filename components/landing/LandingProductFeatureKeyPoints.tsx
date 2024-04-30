@@ -6,10 +6,6 @@ export interface KeyPoint {
   description: string;
 }
 
-/**
- * A component meant to be used in the description of LandingProductFeature as bullet points.
- * Descriptions can be enhanced with bullet points to highlight key features. This component is used to display those bullet points.
- */
 export const LandingProductFeatureKeyPoints = ({
   className,
   keyPoints,
@@ -22,7 +18,7 @@ export const LandingProductFeatureKeyPoints = ({
   return (
     <dl
       className={clsx(
-        'max-w-xl space-y-8 text-base leading-7 text-gray-600 dark:text-gray-500 lg:max-w-md',
+        'mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-600 dark:text-gray-500 lg:max-w-md',
         className,
       )}
     >
