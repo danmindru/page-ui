@@ -49,7 +49,8 @@ export default function Home() {
       <Header className="mb-0 lg:mb-0" />
 
       <LandingPrimaryTextCtaSection
-        title="Landing page components that look good and convert well"
+        title={<>
+        Landing page components that <span className='fancy-text-blue'>look great & convert</span></>}
         description="Page UI is a set of landing page components & templates that you can copy & paste into you codebase. Made for React & built on top of Shadcn UI."
         textPosition="left"
         withBackground
