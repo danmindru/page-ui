@@ -49,8 +49,12 @@ export default function Home() {
       <Header className="mb-0 lg:mb-0" />
 
       <LandingPrimaryTextCtaSection
-        title={<>
-        Landing page components that <span className='fancy-text-blue'>look great & convert</span></>}
+        titleComponent={
+          <h1 className="text-4xl lg:text-5xl lg:leading-14 font-semibold md:max-w-2xl">
+            Landing page components that{' '}
+            <span className="fancy-text-blue">look great & convert</span>
+          </h1>
+        }
         description="Page UI is a set of landing page components & templates that you can copy & paste into you codebase. Made for React & built on top of Shadcn UI."
         textPosition="left"
         withBackground
@@ -61,14 +65,17 @@ export default function Home() {
         </Button>
 
         <Button size="xl" asChild variant="outlinePrimary">
-          <a href="/read-more">Read more</a>
+          <a href="https://github.com/danmindru/page-ui">
+            <GithubIcon className="w-4 h-4 text-black dark:text-white mr-2" />
+            Read more
+          </a>
         </Button>
 
         <LandingDiscount
           discountValueText="Free & open source"
           animated={false}
         />
-{/*
+        {/*
         <LandingSocialProof
           className="w-full mt-12"
           showRating
