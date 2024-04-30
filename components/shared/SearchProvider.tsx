@@ -31,7 +31,7 @@ export const SearchProvider = ({ children }) => {
               section: 'Blog',
               subtitle: `${
                 post.date ? `${formatDate(post.date, 'en-US')} · ` : ''
-              }${post.tags.join(', ')}`,
+              }`,
               perform: () => router.push(makeRootPath(post.path)),
             })),
 
