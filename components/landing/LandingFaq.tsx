@@ -3,7 +3,7 @@ import { GlowBg } from '@/components/shared/ui/glow-bg';
 
 export interface FaqItem {
   question: string;
-  answer: string | React.ReactNode;
+  answer: string;
 }
 
 /**
