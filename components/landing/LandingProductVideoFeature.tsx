@@ -24,6 +24,7 @@ export const LandingProductVideoFeature = ({
   videoMaxWidth = 'none',
   autoPlay,
   controls = false,
+  loop = false,
   zoomOnHover = false,
   minHeight = 350,
   withBackground = false,
@@ -45,6 +46,7 @@ export const LandingProductVideoFeature = ({
   videoMaxWidth?: string;
   autoPlay?: boolean;
   controls?: boolean;
+  loop?: boolean;
   zoomOnHover?: boolean;
   minHeight?: number;
   withBackground?: boolean;
@@ -127,6 +129,7 @@ export const LandingProductVideoFeature = ({
                   controls={controls}
                   maxWidth={videoMaxWidth}
                   variant={variant}
+                  loop={loop}
                 />
               </section>
             ) : null}
@@ -143,6 +146,7 @@ export const LandingProductVideoFeature = ({
                 controls={controls}
                 maxWidth={videoMaxWidth}
                 variant={variant}
+                loop={loop}
               />
             ) : null}
           </>
