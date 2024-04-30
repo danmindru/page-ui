@@ -95,6 +95,22 @@ export default function Footer({ className }: { className?: string }) {
                         return null;
                       }
 
+                      if (link.href.endsWith('shipixen.com')) {
+                        return (
+                          <li key={index}>
+                            <ActiveLink
+                              href={link.href}
+                              className={'nav-link'}
+                              activeClassName={'nav-link-active'}
+                            >
+                              <span className="bg-clip-text bg-gradient-to-r text-transparent from-primary-400 to-secondary-300">
+                                {link.title}
+                              </span>
+                            </ActiveLink>
+                          </li>
+                        );
+                      }
+
                       return (
                         <li key={index}>
                           <ActiveLink
@@ -207,13 +223,11 @@ export default function Footer({ className }: { className?: string }) {
             )}
           </div>
           <div className="w-full text-center lg:flex lg:justify-center p-4 mb-2 space-x-2 text-sm text-gray-500 dark:text-gray-400">
-            <span>{siteConfig.author}</span>
-            <span>{` • `}</span>
             <span>{`© ${new Date().getFullYear()}`}</span>
             <span>{` • `}</span>
             <Link href="/">{siteConfig.businessName}</Link>
             <span>{` • `}</span>
-            <Link href="https://shipixen.com">Shipixen</Link>
+            <Link href="https://shipixen.com">Built with Shipixen 🔁</Link>
           </div>
         </div>
       </div>

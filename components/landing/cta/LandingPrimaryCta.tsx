@@ -247,6 +247,7 @@ export const LandingPrimaryVideoCtaSection = ({
   videoShadow = 'hard',
   autoPlay = false,
   controls = false,
+  loop = false,
   minHeight = 350,
   withBackground = false,
   withBackgroundGlow = false,
@@ -270,6 +271,7 @@ export const LandingPrimaryVideoCtaSection = ({
   videoShadow?: 'none' | 'soft' | 'hard';
   autoPlay?: boolean;
   controls?: boolean;
+  loop?: boolean;
   minHeight?: number;
   withBackground?: boolean;
   withBackgroundGlow?: boolean;
@@ -339,6 +341,7 @@ export const LandingPrimaryVideoCtaSection = ({
                     videoShadow === 'soft' && 'shadow-md',
                     videoShadow === 'hard' && 'hard-shadow',
                   )}
+                  loop={loop}
                   poster={videoPoster}
                   src={videoSrc}
                   autoPlay={autoPlay}
@@ -356,6 +359,7 @@ export const LandingPrimaryVideoCtaSection = ({
                   videoShadow === 'soft' && 'shadow-md',
                   videoShadow === 'hard' && 'hard-shadow',
                 )}
+                loop={loop}
                 poster={videoPoster}
                 src={videoSrc}
                 autoPlay={autoPlay}

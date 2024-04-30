@@ -1,6 +1,9 @@
 import { Button } from '@/components/shared/ui/button';
 import Header from '@/components/shared/Header';
-import { LandingPrimaryTextCtaSection } from '@/components/landing/cta/LandingPrimaryCta';
+import {
+  LandingPrimaryTextCtaSection,
+  LandingPrimaryVideoCtaSection,
+} from '@/components/landing/cta/LandingPrimaryCta';
 import { LandingProductHuntAward } from '@/components/landing/social-proof/LandingProductHuntAward';
 import { LandingSocialProof } from '@/components/landing/social-proof/LandingSocialProof';
 import { LandingDiscount } from '@/components/landing/discount/LandingDiscount';
@@ -17,17 +20,27 @@ import { LandingSocialProofBand } from '@/components/landing/social-proof/Landin
 import { LandingSocialProofBandItem } from '@/components/landing/social-proof/LandingSocialProofBandItem';
 
 import {
+  BookOpenCheckIcon,
   ChromeIcon,
+  ClipboardIcon,
   FigmaIcon,
   FramerIcon,
   GithubIcon,
+  HeartHandshakeIcon,
   LayersIcon,
+  LayoutPanelLeftIcon,
+  LibraryIcon,
   LightbulbIcon,
   LineChartIcon,
+  MoonIcon,
+  PaintbrushIcon,
   SparklesIcon,
   ThumbsUpIcon,
+  VenetianMaskIcon,
   ZapIcon,
 } from 'lucide-react';
+import { LandingProductVideoFeature } from '@/components/landing/LandingProductVideoFeature';
+import Image from '@/components/shared/Image';
 
 export default function Home() {
   return (
@@ -45,27 +58,34 @@ export default function Home() {
           99% customer satisfaction
         </LandingSocialProofBandItem>
       </LandingSocialProofBand> */}
-
       <Header className="mb-0 lg:mb-0" />
-
-      <LandingPrimaryTextCtaSection
+      <LandingPrimaryVideoCtaSection
         titleComponent={
           <h1 className="text-4xl lg:text-5xl lg:leading-14 font-semibold md:max-w-2xl">
             Landing page components that{' '}
-            <span className="fancy-text-blue">look great & convert</span>
+            <span className="fancy-text-purple dark:fancy-text-blue">
+              look great & convert
+            </span>
           </h1>
         }
         description="Page UI is a set of landing page components & templates that you can copy & paste into you codebase. Made for React & built on top of Shadcn UI."
         textPosition="left"
         withBackground
+        videoSrc="https://cache.shipixen.com/page-ui%2F1-launch-templates.mp4"
+        autoPlay
+        loop
         // leadingComponent={<LandingProductHuntAward />}
       >
         <Button size="xl" asChild>
-          <a href="/signup">Get Started</a>
+          <a href="/docs/installation">Get Started</a>
         </Button>
 
         <Button size="xl" asChild variant="outlinePrimary">
-          <a href="https://github.com/danmindru/page-ui">
+          <a
+            href="https://github.com/danmindru/page-ui"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <GithubIcon className="w-4 h-4 text-black dark:text-white mr-2" />
             Read more
           </a>
@@ -96,97 +116,153 @@ export default function Home() {
             },
           ]}
         /> */}
-      </LandingPrimaryTextCtaSection>
+      </LandingPrimaryVideoCtaSection>
 
-      <LandingProductFeature
-        title="Craft with Ease"
-        descriptionComponent={
-          <>
-            <LandingProductFeatureKeyPoints
-              keyPoints={[
-                {
-                  title: 'Easy Copy & Paste',
-                  description:
-                    'Simply pick your preferred components and paste them into your React codebase. No complex instructions!',
-                },
-                {
-                  title: 'Ready-to-Use Templates',
-                  description:
-                    'Access a variety of professionally designed templates, ready to enhance your landing page experience.',
-                },
-                {
-                  title: 'React-Compatible',
-                  description:
-                    'All Page UI components are made for React, making integration into your projects a breeze.',
-                },
-              ]}
-            />
-
-            <Button asChild>
-              <a href="/signup">Get Started</a>
-            </Button>
-
-            <p className="text-sm">
-              7 day free trial, no credit card required.
-            </p>
-          </>
+      <LandingProductVideoFeature
+        titleComponent={
+          <h2 className="text-4xl font-semibold">
+            Building & designing landing pages is hard
+          </h2>
         }
-        imageSrc="/static/images/backdrop-19.webp"
-        imageAlt="Screenshot of the product"
-        imagePosition="left"
-        imagePerspective="none"
-      />
+        descriptionComponent={
+          <p className="mt-4 md:text-xl">
+            Page UI is{' '}
+            <span className="font-display md:text-xl italic">
+              landing pages on easy mode
+            </span>
+            .<br className="hidden sm:inline-block" />{' '}
+            <span className="fancy-text-purple">Copy any section</span> of a
+            template and own it forever
+            <br className="hidden sm:inline-block" /> in your codebase.
+          </p>
+        }
+        textPosition="center"
+        videoPosition="center"
+        videoSrc="https://cache.shipixen.com/page-ui%2F2-full-bricks-teaser.mp4"
+        autoPlay
+        loop
+        // leadingComponent={<LandingProductHuntAward />}
+      >
+        <Button size="xl" asChild variant={'secondary'}>
+          <a href="https://shipixen.com/demo/landing-page-templates/template/emerald-ai">
+            <VenetianMaskIcon className="w-4 h-4 text-black dark:text-white mr-2" />
+            Steal this template
+          </a>
+        </Button>
 
-      <LandingProductFeature
-        title="Design Freedom"
+        <p className="opacity-70 text-sm mt-2">
+          Try out 🥷 thief mode and copy any section with a click!
+        </p>
+      </LandingProductVideoFeature>
+
+      <div className="w-full relative flex items-center justify-end overflow-hidden bg-primary-100/20 dark:bg-primary-900/10">
+        <LandingProductFeature
+          className="z-10"
+          descriptionComponent={
+            <div className="md:bg-white/80 dark:md:bg-black/80 md:backdrop-blur-xl md:rounded-md md:shadow-md md:p-6 xl:p-8 max-w-lg">
+              <h2 className="text-4xl font-semibold">Inspired by the best</h2>
+              <p>
+                We've analyzed 10s of landing pages that convert and distilled
+                them into a set of components that you can use in your projects.
+              </p>
+              <LandingProductFeatureKeyPoints
+                keyPoints={[
+                  {
+                    title: 'Social proof',
+                    description:
+                      'Increase trust with testimonials, reviews, and ratings.',
+                  },
+                  {
+                    title: 'Feature highlights',
+                    description:
+                      'Show off your product with beautiful feature sections.',
+                  },
+                  {
+                    title: 'Dark mode & themes',
+                    description:
+                      'Never ship too late & choose from tons of themes to match your brand.',
+                  },
+                ]}
+              />
+
+              <Button asChild className="mt-6">
+                <a href="/docs/installation">Get Started</a>
+              </Button>
+
+              <p className="text-sm mt-4">
+                Compatible with React, Next.js, and more.
+              </p>
+            </div>
+          }
+        />
+
+        <Image
+          src="/static/images/template-collection.webp"
+          alt="Page UI template collection examples"
+          width={2000}
+          height={2000}
+          className="hidden md:flex absolute w-screen max-w-[800px]"
+        />
+      </div>
+
+      <LandingProductVideoFeature
+        title="Learn by example"
         descriptionComponent={
           <>
             <p>
-              Our set of components and templates opens a world of design
-              possibilities. No restrictions, no limits, just creative freedom.
-              Spanning a range of styles and functionalities, our plug-and-play
-              components let you do more and design better - all without the
-              stress.
+              Page UI documentation has houndreds of examples that you can copy
+              and modify.
+              <br />
+              Start from a blank slate to create, start by example to innovate.
             </p>
 
             <LandingProductFeatureKeyPoints
               keyPoints={[
                 {
-                  title: 'Based on Shadcn UI',
+                  title: 'World-class docs',
                   description:
-                    'Page UI is built on top of the trusted Shadcn UI, offering robust, scalable, and reliable components.',
+                    'Explore in-depth docs, props and code samples for each component.',
                 },
                 {
-                  title: 'Hassle-Free Customization',
+                  title: 'Themes at your fingertips',
                   description:
-                    'Easily tailor the look and feel of your landing pages to match your brand, no design experience required.',
+                    'Switch between themes straight 👀 in the docs. You got that right.',
                 },
                 {
-                  title: 'Superior Load Times',
+                  title: 'Templates for days',
                   description:
-                    'Our components prioritize speed and user experience. Expect faster load times and more satisfied visitors.',
+                    'We are constantly adding new templates and components to the library.',
                 },
               ]}
             />
 
-            <Button asChild variant="outlinePrimary">
-              <a href="/read-more">Read more</a>
-            </Button>
+            <div className="flex gap-3 mt-6">
+              <Button asChild>
+                <a href="https://shipixen.com/demo/landing-page-component-examples">
+                  Examples
+                </a>
+              </Button>
 
-            <p className="text-sm">Get started with our free tier.</p>
+              <Button asChild variant="outlinePrimary">
+                <a href="https://shipixen.com/demo/landing-page-templates">
+                  Templates
+                </a>
+              </Button>
+            </div>
+
+            <p className="text-sm mt-4">
+              All templates and components are free to use and open source.
+            </p>
           </>
         }
-        imageSrc="/static/images/backdrop-20.webp"
-        imageAlt="Screenshot of the product"
-        imagePosition="right"
-        imagePerspective="none"
+        videoSrc="https://cache.shipixen.com/page-ui%2F3-theme-docs.mp4"
         withBackground
         withBackgroundGlow
         variant="secondary"
         backgroundGlowVariant="secondary"
       />
 
-      <LandingProductFeature
+      {/* <LandingProductFeature
         title="Technical Excellence"
         descriptionComponent={
           <>
@@ -209,9 +285,9 @@ export default function Home() {
         imagePosition="left"
         imagePerspective="none"
         variant="secondary"
-      />
+      /> */}
 
-      <LandingBandSection
+      {/* <LandingBandSection
         title="4.9/5 stars"
         description="Our customers love our product."
         supportingComponent={
@@ -234,9 +310,9 @@ export default function Home() {
             ]}
           />
         }
-      />
+      /> */}
 
-      <LandingProductFeature
+      {/* <LandingProductFeature
         title="Page Master"
         descriptionComponent={
           <>
@@ -252,13 +328,15 @@ export default function Home() {
         imageAlt="Screenshot of the product"
         imagePosition="center"
         textPosition="center"
-      />
+      /> */}
 
       <LandingSaleCtaSection
-        title="Join the Revolution"
-        description="The clock is ticking and it is high time to step into the future with Page UI. Redefine your development process, enhance your productivity, and watch as the magic unfolds. Make the smart decision, make the Page UI decision."
-        ctaHref={'#'}
-        ctaLabel={'Pre-order now'}
+        title="Ship that landing page today"
+        description="Get started with Page UI and transform your landing pages into high-converting, visually stunning websites with ease."
+        ctaHref={'/docs/installation'}
+        ctaLabel={'Get Started'}
+        secondaryCtaHref="https://github.com/danmindru/page-ui"
+        secondaryCtaLabel="Github"
         withBackgroundGlow
       />
 
@@ -311,20 +389,26 @@ export default function Home() {
       </LandingTestimonialReadMoreWrapper>
 
       <LandingFeatureList
-        title="Discover Landing Page Success with Page UI"
-        description="Experience a new way of building landing pages that aren’t just visually appealing, but are also high performing when it comes to conversion rate. Explore Page UI!"
+        title="Page UI is a new way to build landing pages"
+        description="What's old is new again. Page UI is a fresh approach to creating landing pages inspired by Shadcn UI. Have complete control over your components by copying and pasting them into your codebase. No packages, no dependencies, no fuss. Just beautiful, high-converting landing pages."
         featureItems={[
           {
             title: 'Easy Copy & Paste',
             description:
-              'Simply pick your preferred components and paste them into your React codebase. No complex instructions!',
-            icon: <LayersIcon />,
+              'Simply pick your preferred components and paste them into your React codebase. That’s it!',
+            icon: <ClipboardIcon />,
           },
           {
-            title: 'Ready-to-Use Templates',
+            title: 'Free Templates',
             description:
-              'Access a variety of professionally designed templates, ready to enhance your landing page experience.',
-            icon: <LineChartIcon />,
+              'Access a variety of professionally designed templates, inspired by the best in the industry.',
+            icon: <LayoutPanelLeftIcon />,
+          },
+          {
+            title: 'Thief Mode 🥷',
+            description:
+              'Turn on Thief Mode to copy any section of a template with a single click. Steal like an artist!',
+            icon: <VenetianMaskIcon />,
           },
           {
             title: 'React-Compatible',
@@ -335,38 +419,32 @@ export default function Home() {
           {
             title: 'Based on Shadcn UI',
             description:
-              'Page UI is built on top of the trusted Shadcn UI, offering robust, scalable, and reliable components.',
-            icon: <LightbulbIcon />,
+              'Page UI is built on top of Shadcn UI & TailwindCSS. Take your favorite UI library to the next level.',
+            icon: <BookOpenCheckIcon />,
           },
           {
-            title: 'Hassle-Free Customization',
+            title: 'Themeable',
             description:
-              'Easily tailor the look and feel of your landing pages to match your brand, no design experience required.',
-            icon: <ZapIcon />,
+              'All components are themeable, allowing you to match your brand’s look and feel with ease.',
+            icon: <PaintbrushIcon />,
           },
           {
-            title: 'Superior Load Times',
+            title: 'Dark mode',
             description:
-              'Our components prioritize speed and user experience. Expect faster load times and more satisfied visitors.',
-            icon: <ThumbsUpIcon />,
+              'Dark mode is built in and ready to use. No more "I shipped too late", you\'ll ship just in time.',
+            icon: <MoonIcon />,
           },
           {
-            title: 'SEO-Friendly',
+            title: 'World-Class Docs',
             description:
-              'Want to climb up search rankings? All our components are SEO-optimized, giving your pages the edge.',
-            icon: <ChromeIcon />,
+              'Explore in-depth docs, props and code samples for each component. Or change themes straight in the docs.',
+            icon: <LibraryIcon />,
           },
           {
-            title: 'Technical Support',
+            title: 'Free and Open Source',
             description:
-              "Receive prompt, professional support whenever you need it. We're here to ensure seamless integration.",
-            icon: <FigmaIcon />,
-          },
-          {
-            title: 'Regular Updates',
-            description:
-              'Stay ahead of industry advancements with free, regular updates to our component sets and templates.',
-            icon: <FramerIcon />,
+              "All templates and components are free to use and open source. We're in this together.",
+            icon: <HeartHandshakeIcon />,
           },
         ]}
       />
@@ -378,7 +456,7 @@ export default function Home() {
           {
             question: "What makes Page UI's landing page components unique?",
             answer:
-              'Our landing page components are meticulously crafted for React, ensuring seamless integration with your existing codebase. Furthermore, all our components are built on the cutting-edge Shadcn UI, which promises unbeatable performance and usability.',
+              'Our landing page components are meticulously crafted for React, and based on products that have proven to convert. They are designed to be easy to use, highly customizable, and visually appealing, making them the perfect choice for developers looking to create high-converting landing pages.',
           },
           {
             question: 'Do I need specific coding skills to use Page UI?',
@@ -388,7 +466,24 @@ export default function Home() {
           {
             question: 'Can I customize Page UI templates to match my brand?',
             answer:
-              'Absolutely. Page UI components and templates are designed to be fully customizable. This allows you to effortlessly establish a consistent look and feel across your landing pages that aligns with your brand identity.',
+              'Absolutely. Page UI components and templates are designed to be fully customizable. This allows you to effortlessly establish a consistent look and feel across your landing pages that aligns with your brand identity. Check out our documentation to see available customization options.',
+          },
+          {
+            question: 'Are Page UI components responsive?',
+            answer:
+              '100 percent. Page UI components are built with responsiveness in mind. They are designed to look great and function seamlessly across all devices and screen sizes, ensuring that your landing pages are accessible to all users.',
+          },
+          {
+            question: 'Is this really free?',
+            answer: (
+              <>
+                Yes, Page UI is free and open source. Any component and template
+                is free to use and modify for commercial purposes. We also offer
+                an app called <a href="https://shipixen.com">Shipixen</a> that
+                sets everything up for you, can generate your initial copy with
+                AI and help you with themes.
+              </>
+            ),
           },
         ]}
         withBackground

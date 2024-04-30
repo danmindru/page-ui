@@ -34,16 +34,33 @@ const Header = ({ className }: { className?: string }) => {
         </Link>
       </div>
       <div className="flex items-center leading-5 gap-4 sm:gap-6">
-        {headerNavLinks.map((link) => (
-          <ActiveLink
-            key={link.title}
-            href={link.href}
-            className="nav-link hidden sm:block"
-            activeClassName="nav-link-active"
-          >
-            <span>{link.title}</span>
-          </ActiveLink>
-        ))}
+        {headerNavLinks.map((link) => {
+          if (link.href.includes('shipixen.com')) {
+            return (
+              <ActiveLink
+                key={link.title}
+                href={link.href}
+                className="nav-link hidden sm:block"
+                activeClassName="nav-link-active"
+              >
+                <span className="bg-clip-text bg-gradient-to-r text-transparent from-primary-400 to-secondary-300">
+                  {link.title}
+                </span>
+              </ActiveLink>
+            );
+          }
+
+          return (
+            <ActiveLink
+              key={link.title}
+              href={link.href}
+              className="nav-link hidden sm:block"
+              activeClassName="nav-link-active"
+            >
+              <span>{link.title}</span>
+            </ActiveLink>
+          );
+        })}
         <SearchButton />
         <ThemeSwitch />
         <MobileNav />

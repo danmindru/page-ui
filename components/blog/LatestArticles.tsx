@@ -23,7 +23,7 @@ export default function LatestArticles({
     <>
       <div className="flex flex-col gap-4">
         <h2 className="text-3xl font-semibold leading-tight md:leading-tight max-w-xs sm:max-w-none md:text-4xl">
-          Latest pages
+          From the docs
         </h2>
 
         <ul className="flex flex-col gap-4">
@@ -94,9 +94,9 @@ export default function LatestArticles({
           <Link
             href={siteConfig.allArticlesPath}
             className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
-            aria-label="See all pages"
+            aria-label="See more"
           >
-            See all pages &rarr;
+            See more &rarr;
           </Link>
         </div>
       )}
