@@ -9,7 +9,7 @@ import { GiftIcon } from 'lucide-react';
 export const LandingDiscount = ({
   className,
   discountValueText = '$200 off',
-  discountDescriptionText = 'for the first 50 customers (5 left)',
+  discountDescriptionText = '',
   animated = true,
 }: {
   className?: string;
