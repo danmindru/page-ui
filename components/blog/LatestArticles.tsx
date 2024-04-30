@@ -23,11 +23,11 @@ export default function LatestArticles({
     <>
       <div className="flex flex-col gap-4">
         <h2 className="text-3xl font-semibold leading-tight md:leading-tight max-w-xs sm:max-w-none md:text-4xl">
-          Latest articles
+          Latest pages
         </h2>
 
         <ul className="flex flex-col gap-4">
-          {!posts.length && 'No articles found.'}
+          {!posts.length && 'No pages found.'}
           {posts.slice(0, numberOfPosts).map((post) => {
             const { path, slug, date, title, summary, tags, images } = post;
             const firstImage = images?.[0];
@@ -94,9 +94,9 @@ export default function LatestArticles({
           <Link
             href={siteConfig.allArticlesPath}
             className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
-            aria-label="See all articles"
+            aria-label="See all pages"
           >
-            See all articles &rarr;
+            See all pages &rarr;
           </Link>
         </div>
       )}

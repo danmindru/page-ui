@@ -1,7 +1,7 @@
 import { allCoreContent, sortPosts } from '@shipixen/pliny/utils/contentlayer';
 import { allBlogs } from 'shipixen-contentlayer/generated';
 import { genPageMetadata } from 'app/seo';
-import { POSTS_PER_PAGE } from '@/app/all-articles/settings';
+import { POSTS_PER_PAGE } from '@/app/docs/settings';
 import ListLayout from '@/layouts/ListLayoutWithTags';
 import Header from '@/components/shared/Header';
 
@@ -26,7 +26,7 @@ export default function BlogPage() {
         posts={posts}
         initialDisplayPosts={initialDisplayPosts}
         pagination={pagination}
-        title="All Articles"
+        title="Documentation & guides"
       />
     </div>
   );

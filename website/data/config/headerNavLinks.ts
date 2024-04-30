@@ -3,5 +3,6 @@ export const headerNavLinks: Array<{
   title: string;
 }> = [
   { href: '/', title: 'Home' },
-  { href: '/all-articles', title: 'Articles' },
+  { href: '/docs', title: 'Docs' },
+  { href: 'https://github.com/danmindru/page-ui', title: 'GitHub' },
 ];
