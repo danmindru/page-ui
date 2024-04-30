@@ -1,0 +1,200 @@
+---
+title: 'Landing Page Key Point'
+date: '2024-04-04'
+lastmod: '2024-04-09'
+tags:
+  - 'guide'
+  - 'components'
+  - 'documentation'
+  - 'landing-page'
+  - 'ui-library'
+  - 'react'
+  - 'nextjs'
+  - 'tailwind-css'
+  - 'shadcn-ui'
+
+summary: 'A component meant to be used in the landing page. This component displays bullet points (key features) in the description of LandingProductFeature.'
+layout: PostHub
+
+showThemeSelector: true
+---
+
+Use this to display a bullet point in the description of a [Product Feature](/boilerplate-documentation/landing-page-components/product-feature). This component can clarify the key features of the product or service, especially when the description is long and detailed.
+
+<ComponentExample
+  previewComponent={
+    <div className="p-6">
+      <LandingProductFeatureKeyPoints
+        keyPoints={[
+          {
+            title: 'Intelligent Assistance',
+            description:
+              'Receive personalized recommendations and insights tailored to your workflow.',
+          },
+          {
+            title: 'Seamless Collaboration',
+            description:
+              'Easily collaborate with team members and clients in real-time.',
+          },
+          {
+            title: 'Advanced Customization',
+            description:
+              'Tailor your app to fit your unique requirements with extensive customization.',
+          },
+        ]}
+      />
+    </div>
+  }
+>
+
+```jsx
+import { LandingProductFeatureKeyPoints } from '@/components/landing/LandingProductFeatureKeyPoints';
+
+<LandingProductFeatureKeyPoints
+  keyPoints={[
+    {
+      title: 'Intelligent Assistance',
+      description:
+        'Receive personalized recommendations and insights tailored to your workflow.',
+    },
+    {
+      title: 'Seamless Collaboration',
+      description:
+        'Easily collaborate with team members and clients in real-time.',
+    },
+    {
+      title: 'Advanced Customization',
+      description:
+        'Tailor your app to fit your unique requirements with extensive customization.',
+    },
+  ]}
+/>;
+```
+
+</ComponentExample>
+
+## Usage
+
+```jsx
+import { LandingProductFeatureKeyPoints } from '@/components/landing/LandingProductFeatureKeyPoints';
+```
+
+```jsx
+<LandingProductFeatureKeyPoints
+  keyPoints={[
+    {
+      title: 'Intelligent Assistance',
+      description:
+        'Receive personalized recommendations and insights tailored to your workflow.',
+    },
+    {
+      title: 'Seamless Collaboration',
+      description:
+        'Easily collaborate with team members and clients in real-time.',
+    },
+    {
+      title: 'Advanced Customization',
+      description:
+        'Tailor your app to fit your unique requirements with extensive customization.',
+    },
+  ]}
+/>
+```
+
+## Examples
+
+### With Cta Section
+
+<ComponentExample
+  previewComponent={
+    <LandingPrimaryImageCtaSection
+      title="Want more?"
+      descriptionComponent={
+        <LandingProductFeatureKeyPoints
+          keyPoints={[
+            {
+              title: 'Intelligent Assistance',
+              description:
+                'Receive personalized recommendations and insights tailored to your workflow.',
+            },
+            {
+              title: 'Seamless Collaboration',
+              description:
+                'Easily collaborate with team members and clients in real-time.',
+            },
+            {
+              title: 'Advanced Customization',
+              description:
+                'Tailor your app to fit your unique requirements with extensive customization.',
+            },
+          ]}
+        />
+      }
+      imageSrc="/static/images/shipixen/product/1.webp"
+      imageAlt="Sample image"
+    >
+      <Button size="xl" asChild>
+        <a href="#">
+          Buy now
+        </a>
+      </Button>
+    </LandingPrimaryImageCtaSection>
+  }
+>
+
+```jsx
+import { Button } from '@/components/shared/ui/button';
+import { LandingPrimaryImageCtaSection } from '@/components/landing/cta/LandingPrimaryCta';
+import { LandingProductFeatureKeyPoints } from '@/components/landing/LandingProductFeatureKeyPoints';
+
+<LandingPrimaryImageCtaSection
+  title="Want more?"
+  descriptionComponent={
+    <LandingProductFeatureKeyPoints
+      keyPoints={[
+        {
+          title: 'Intelligent Assistance',
+          description:
+            'Receive personalized recommendations and insights tailored to your workflow.',
+        },
+        {
+          title: 'Seamless Collaboration',
+          description:
+            'Easily collaborate with team members and clients in real-time.',
+        },
+        {
+          title: 'Advanced Customization',
+          description:
+            'Tailor your app to fit your unique requirements with extensive customization.',
+        },
+      ]}
+    />
+  }
+  imageSrc="/static/images/shipixen/product/1.webp"
+  imageAlt="Sample image"
+>
+  <Button size="xl" asChild>
+    <a href="#">Buy now</a>
+  </Button>
+</LandingPrimaryImageCtaSection>;
+```
+
+</ComponentExample>
+
+## API Reference
+
+| Prop Name                                                                                                               | Prop Type                   | Required | Default     |
+| ----------------------------------------------------------------------------------------------------------------------- | --------------------------- | -------- | ----------- |
+| **keyPoints** <Tippy>Array of objects each containing a title and description to be displayed as bullet points.</Tippy> | `KeyPoint[]`                | Yes      | -           |
+| **variant** <Tippy>Styling variant for the bullet points, determining the icon and text color.</Tippy>                  | `'primary'` ǀ `'secondary'` | No       | `'primary'` |
+
+```ts
+export interface KeyPoint {
+  title: string;
+  description: string;
+}
+```
+
+## More Examples
+
+For more even more examples, see our <a href="/demo/landing-page-component-examples" className="fancy-link">Landing Page Component Examples</a> page or see complete landing page examples by <a href="/demo/landing-page-templates" className="fancy-link">Exploring Our Landing Page Templates</a>.

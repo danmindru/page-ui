@@ -1,0 +1,306 @@
+---
+title: 'Landing Page Features Grid Component'
+date: '2024-04-04'
+lastmod: '2024-04-09'
+tags:
+  - 'guide'
+  - 'components'
+  - 'documentation'
+  - 'landing-page'
+  - 'ui-library'
+  - 'react'
+  - 'nextjs'
+  - 'tailwind-css'
+  - 'shadcn-ui'
+  - 'shadcn-ui-landing-page'
+
+images:
+  - '/static/images/blog/docs/landing-page-features-grid-component.webp'
+
+summary: 'A component meant to be used in the landing page. It displays a title, description and a grid of LandingProductFeature and/or LandingProductVideoFeature (in any combination, passed as children).'
+layout: PostHub
+
+showThemeSelector: true
+---
+
+This component displays a title, description and a grid of [Product Feature](/boilerplate-documentation/landing-page-components/product-feature) and/or [Product Video Feature](/boilerplate-documentation/landing-page-components/product-video-feature) (in any combination, passed as children).
+
+<ComponentExample
+  previewComponent={
+    <LandingProductFeaturesGrid
+      title="Get the job done in no time"
+      description="You'll save days of work and the only question you'll have is 'What do I do with all this free time?'"
+    >
+      <LandingProductFeature
+        title="The wait is over"
+        description="Give your project the home it deserves."
+        imageSrc="/static/images/shipixen/product/14.webp"
+        imageAlt="Sample image"
+      />
+
+      <LandingProductFeature
+        title="Branding"
+        description="No configuration needed. We take care of it."
+        imageSrc="/static/images/shipixen/product/4.webp"
+        imageAlt="Sample image"
+      />
+
+       <LandingProductFeature
+        title="39+ themes"
+        description="Choose from more than 30+ themes or create your own."
+        imageSrc="/static/images/shipixen/product/2.webp"
+        imageAlt="Sample image"
+      />
+    </LandingProductFeaturesGrid>}>
+
+```jsx
+import { LandingProductFeaturesGrid } from '@/components/landing/LandingProductFeaturesGrid';
+import { LandingProductFeature } from '@/components/landing/LandingProductFeature';
+
+<LandingProductFeaturesGrid
+  title="Get the job done in no time"
+  description="You'll save days of work and the only question you'll have is 'What do I do with all this free time?'"
+>
+  <LandingProductFeature
+    title="The wait is over"
+    description="Give your project the home it deserves."
+    imageSrc="/static/images/shipixen/product/14.webp"
+    imageAlt="Sample image"
+  />
+
+  <LandingProductFeature
+    title="Branding"
+    description="No configuration needed. We take care of it."
+    imageSrc="/static/images/shipixen/product/4.webp"
+    imageAlt="Sample image"
+  />
+
+  <LandingProductFeature
+    title="39+ themes"
+    description="Choose from more than 30+ themes or create your own."
+    imageSrc="/static/images/shipixen/product/2.webp"
+    imageAlt="Sample image"
+  />
+</LandingProductFeaturesGrid>;
+```
+
+</ComponentExample>
+
+## Usage
+
+```jsx
+import { LandingProductFeaturesGrid } from '@/components/landing/LandingProductFeaturesGrid';
+import { LandingProductFeature } from '@/components/landing/LandingProductFeature';
+```
+
+```jsx
+<LandingProductFeaturesGrid
+  title="Get the job done in no time"
+  description="You'll save days of work and the only question you'll have is 'What do I do with all this free time?'"
+>
+  <LandingProductFeature
+    title="The wait is over"
+    description="Give your project the home it deserves. Your users will love you for it."
+    imageSrc="/static/images/shipixen/product/14.webp"
+    imageAlt="Sample image"
+  />
+
+  <LandingProductFeature
+    title="Branding"
+    description="No configuration needed. We take care of everything for you, just press a button."
+    imageSrc="/static/images/shipixen/product/4.webp"
+    imageAlt="Sample image"
+  />
+
+  <LandingProductFeature
+    title="39+ themes"
+    description="Choose from more than 30+ themes or create your own. Upload your logo, set the size and we take care of the rest."
+    imageSrc="/static/images/shipixen/product/2.webp"
+    imageAlt="Sample image"
+  />
+</LandingProductFeaturesGrid>
+```
+
+## Examples
+
+### Usage with video features
+
+<ComponentExample
+  previewComponent={
+    <LandingProductFeaturesGrid
+      title="Get the job done in no time"
+      description="You'll save days of work and the only question you'll have is 'What do I do with all this free time?'"
+    >
+      <LandingProductVideoFeature
+        title="Generate"
+        description="Save time by generating features, sales copy, FAQs and even example testimonials with AI. All beautifully designed."
+        autoPlay={false}
+        videoSrc="https://cache.shipixen.com/features/2-generate-content-with-ai.mp4"
+      />
+
+      <LandingProductVideoFeature
+        title="Design"
+        description="Choose from more than 30+ themes or create your own. Upload your logo, set the size and we take care of the rest."
+        autoPlay={false}
+        videoSrc="https://cache.shipixen.com/features/3-theme-and-logo.mp4"
+      />
+
+       <LandingProductVideoFeature
+        title="Build"
+        description="Use our pricing page builder to create a beautiful pricing page. Choose from different layouts and monthly/yearly pricing options. It's as easy as it looks."
+        autoPlay={false}
+        videoSrc="https://cache.shipixen.com/features/11-pricing-page-builder.mp4"
+      />
+    </LandingProductFeaturesGrid>}>
+
+```jsx
+import { LandingProductFeaturesGrid } from '@/components/landing/LandingProductFeaturesGrid';
+import { LandingProductVideoFeature } from '@/components/landing/LandingProductVideoFeature';
+
+<LandingProductFeaturesGrid
+  title="Get the job done in no time"
+  description="You'll save days of work and the only question you'll have is 'What do I do with all this free time?'"
+>
+  <LandingProductVideoFeature
+    title="Generate"
+    description="Save time by generating features, sales copy, FAQs and even example testimonials with AI. All beautifully designed."
+    autoPlay={false}
+    videoSrc="https://cache.shipixen.com/features/2-generate-content-with-ai.mp4"
+  />
+
+  <LandingProductVideoFeature
+    title="Design"
+    description="Choose from more than 30+ themes or create your own. Upload your logo, set the size and we take care of the rest."
+    autoPlay={false}
+    videoSrc="https://cache.shipixen.com/features/3-theme-and-logo.mp4"
+  />
+
+  <LandingProductVideoFeature
+    title="Build"
+    description="Use our pricing page builder to create a beautiful pricing page. Choose from different layouts and monthly/yearly pricing options. It's as easy as it looks."
+    autoPlay={false}
+    videoSrc="https://cache.shipixen.com/features/11-pricing-page-builder.mp4"
+  />
+</LandingProductFeaturesGrid>;
+```
+
+</ComponentExample>
+
+### Mixing features
+
+<ComponentExample
+  previewComponent={
+    <LandingProductFeaturesGrid
+      title="Get the job done in no time"
+      description="You'll save days of work and the only question you'll have is 'What do I do with all this free time?'"
+    >
+      <LandingProductFeature
+        title="Design"
+        description="No configuration needed. We take care of everything for you, just press a button."
+        imageSrc="/static/images/shipixen/product/4.webp"
+        imageAlt="Sample image"
+      />
+
+      <LandingProductVideoFeature
+        title="Build"
+        description="Use our pricing page builder to create a beautiful pricing page."
+        autoPlay={true}
+        videoSrc="https://cache.shipixen.com/features/11-pricing-page-builder.mp4"
+      />
+    </LandingProductFeaturesGrid>}>
+
+```jsx
+import { LandingProductFeaturesGrid } from '@/components/landing/LandingProductFeaturesGrid';
+import { LandingProductFeature } from '@/components/landing/LandingProductFeature';
+import { LandingProductVideoFeature } from '@/components/landing/LandingProductVideoFeature';
+
+<LandingProductFeaturesGrid
+  title="Get the job done in no time"
+  description="You'll save days of work and the only question you'll have is 'What do I do with all this free time?'"
+>
+  <LandingProductFeature
+    title="Design"
+    description="No configuration needed. We take care of everything for you, just press a button."
+    imageSrc="/static/images/shipixen/product/4.webp"
+    imageAlt="Sample image"
+  />
+
+  <LandingProductVideoFeature
+    title="Build"
+    description="Use our pricing page builder to create a beautiful pricing page. Choose from different layouts and monthly/yearly pricing options. It's as easy as it looks."
+    autoPlay={true}
+    videoSrc="https://cache.shipixen.com/features/11-pricing-page-builder.mp4"
+  />
+</LandingProductFeaturesGrid>;
+```
+
+</ComponentExample>
+
+### Customization
+
+<ComponentExample
+  previewComponent={
+    <LandingProductFeaturesGrid
+      withBackground
+      variant="secondary"
+      title="Get the job done in no time"
+      description="You'll save days of work and the only question you'll have is 'What do I do with all this free time?'"
+    >
+      <LandingProductFeature
+        title="Design"
+        description="No configuration needed. We take care of everything for you, just press a button."
+        imageSrc="/static/images/shipixen/product/4.webp"
+        imageAlt="Sample image"
+      />
+
+      <LandingProductVideoFeature
+        title="Build"
+        description="Use our pricing page builder to create a beautiful pricing page. Choose from different layouts and monthly/yearly pricing options. It's as easy as it looks."
+        autoPlay={true}
+        videoSrc="https://cache.shipixen.com/features/11-pricing-page-builder.mp4"
+      />
+    </LandingProductFeaturesGrid>}>
+
+```jsx
+import { LandingProductFeaturesGrid } from '@/components/landing/LandingProductFeaturesGrid';
+import { LandingProductFeature } from '@/components/landing/LandingProductFeature';
+import { LandingProductVideoFeature } from '@/components/landing/LandingProductVideoFeature';
+
+<LandingProductFeaturesGrid
+  title="Get the job done in no time"
+  description="You'll save days of work and the only question you'll have is 'What do I do with all this free time?'"
+>
+  <LandingProductFeature
+    title="Design"
+    description="No configuration needed. We take care of everything for you, just press a button."
+    imageSrc="/static/images/shipixen/product/4.webp"
+    imageAlt="Sample image"
+  />
+
+  <LandingProductVideoFeature
+    title="Build"
+    description="Use our pricing page builder to create a beautiful pricing page. Choose from different layouts and monthly/yearly pricing options. It's as easy as it looks."
+    autoPlay={true}
+    videoSrc="https://cache.shipixen.com/features/11-pricing-page-builder.mp4"
+  />
+</LandingProductFeaturesGrid>;
+```
+
+</ComponentExample>
+
+## API Reference
+
+| Prop Name                                                                                                                                                              | Prop Type                             | Required | Default       |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------- | -------- | ------------- |
+| **children** <Tippy>React nodes to be rendered within the component, supporting a mix of `LandingProductFeature` and/or `LandingProductVideoFeature` elements.</Tippy> | `React.ReactNode`                     | No       | -             |
+| **title** <Tippy>The title text or a React node to be displayed at the top of the component.</Tippy>                                                                   | `string` ǀ `React.ReactNode`          | No       | -             |
+| **titleComponent** <Tippy>A React node used to render a custom title component.</Tippy>                                                                                | `React.ReactNode`                     | No       | -             |
+| **description** <Tippy>The description text or a React node to be displayed below the title.</Tippy>                                                                   | `string` ǀ `React.ReactNode`          | No       | -             |
+| **descriptionComponent** <Tippy>A React node used to render a custom description component.</Tippy>                                                                    | `React.ReactNode`                     | No       | -             |
+| **withBackground** <Tippy>Determines whether the background styling based on the variant is applied to the component.</Tippy>                                          | `boolean`                             | No       | `true`        |
+| **variant** <Tippy>Defines the color scheme variant for the component, affecting both background and child components.</Tippy>                                         | `'primary'` ǀ `'secondary'`           | No       | `'primary'`   |
+| **containerType** <Tippy>Specifies the width of the container, affecting its max-width on larger screens.</Tippy>                                                      | `'narrow'` ǀ `'wide'` ǀ `'ultrawide'` | No       | `'ultrawide'` |
+
+## More Examples
+
+For more even more examples, see our <a href="/demo/landing-page-component-examples" className="fancy-link">Landing Page Component Examples</a> page or see complete landing page examples by <a href="/demo/landing-page-templates" className="fancy-link">Exploring Our Landing Page Templates</a>.

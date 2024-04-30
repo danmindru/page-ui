@@ -1,0 +1,229 @@
+---
+title: 'Landing Page Sale CTA Component'
+date: '2023-11-19'
+lastmod: '2024-04-09'
+tags:
+  - 'guide'
+  - 'components'
+  - 'documentation'
+  - 'landing-page'
+  - 'ui-library'
+  - 'tailwind-css'
+  - 'react'
+  - 'nextjs'
+  - 'cta'
+  - 'call-to-action'
+  - 'shadcn-ui'
+  - 'shadcn-ui-cta'
+  - 'shadcn-ui-call-to-action'
+  - 'shadcn-ui-landing-page'
+
+images:
+  - '/static/images/blog/docs/landing-page-sale-cta.webp'
+summary: 'A component meant to be used in the landing page. Use this to prompt users to take action, such as signing up for a trial or buying a product.'
+layout: PostHub
+
+showThemeSelector: true
+---
+
+Use this to prompt users to take action, such as signing up for a trial or
+buying a product.
+
+<br />
+This can be used to break up longer pages and increase conversion as users scroll
+down and get past your primary CTA.
+
+<ComponentExample previewComponent={
+  <LandingSaleCtaSection
+    title="Ready to get started?"
+    description={
+      'Pre-order today and get a 50% discount on the final price for the first 3 months. No credit card required.'
+    }
+    ctaHref='https://gum.co/product'
+    ctaLabel='Pre-order for $49'
+  />}>
+
+```jsx
+import { LandingSaleCtaSection } from '@/components/landing/cta/LandingSaleCta';
+
+<LandingSaleCtaSection
+  title="Ready to get started?"
+  description={
+    'Pre-order today and get a 50% discount on the final price for the first 3 months. No credit card required.'
+  }
+  ctaHref="https://gum.co/product"
+  ctaLabel="Pre-order for $49"
+/>;
+```
+
+</ComponentExample>
+
+## Usage
+
+```jsx
+import { LandingSaleCtaSection } from '@/components/landing/cta/LandingSaleCta';
+```
+
+```
+<LandingSaleCtaSection
+  title="Ready to get started?"
+  description={
+    'Pre-order today and get a 50% discount on the final price for the first 3 months. No credit card required.'
+  }
+  ctaHref="https://gum.co/product"
+  ctaLabel="Pre-order for $49"
+/>
+```
+
+## Examples
+
+### Background Customization/Variant
+
+<ComponentExample previewComponent={
+  <LandingSaleCtaSection
+    withBackground
+    variant="secondary"
+    title="Ready to get started?"
+    description='Pre-order today and get a 50% discount on the final price for the first 3 months. No credit card required.'
+    ctaHref='https://gum.co/product'
+    ctaLabel='Pre-order for $49'
+  />}>
+
+```jsx
+import { LandingSaleCtaSection } from '@/components/landing/cta/LandingSaleCta';
+
+<LandingSaleCtaSection
+  withBackground
+  variant="secondary"
+  title="Ready to get started?"
+  description="Pre-order today and get a 50% discount on the final price for the first 3 months. No credit card required."
+  ctaHref="https://gum.co/product"
+  ctaLabel="Pre-order for $49"
+/>;
+```
+
+</ComponentExample>
+
+### Secondary Call to Action
+
+<ComponentExample previewComponent={
+  <LandingSaleCtaSection
+    withBackground
+    title="Ready to get started?"
+    description='Pre-order today and get a 50% discount on the final price for the first 3 months. No credit card required.'
+    ctaHref='https://gum.co/product'
+    ctaLabel='Pre-order for $49'
+    secondaryCtaHref='https://gum.co/learn-more'
+    secondaryCtaLabel='Learn more'
+
+/>}>
+
+```jsx
+import { LandingSaleCtaSection } from '@/components/landing/cta/LandingSaleCta';
+
+<LandingSaleCtaSection
+  withBackground
+  title="Ready to get started?"
+  description={
+    'Pre-order today and get a 50% discount on the final price for the first 3 months. No credit card required.'
+  }
+  ctaHref="https://gum.co/product"
+  ctaLabel="Pre-order for $49"
+/>;
+```
+
+</ComponentExample>
+
+### Custom CTAs
+
+<ComponentExample previewComponent={
+  <LandingSaleCtaSection
+    withBackground
+    title="Ready to get started?"
+    description='Pre-order today and get a 50% discount on the final price for the first 3 months. No credit card required.'
+    variant="secondary"
+>
+    <Button size="xl" variant="secondary" asChild>
+      <a href="#">Buy Now</a>
+    </Button>
+
+    <Button size="xl" variant="outlineSecondary">
+      <a href="#">Learn More</a>
+    </Button>
+
+    <LandingDiscount
+      className="w-full"
+      discountValueText="$350 off"
+      discountDescriptionText="for the first 10 customers (2 left)"
+    />
+
+</LandingSaleCtaSection>}>
+
+```jsx
+import { LandingSaleCtaSection } from '@/components/landing/cta/LandingSaleCta';
+
+<LandingSaleCtaSection
+  withBackground
+  title="Ready to get started?"
+  description={
+    'Pre-order today and get a 50% discount on the final price for the first 3 months. No credit card required.'
+  }
+  ctaHref="https://gum.co/product"
+  ctaLabel="Pre-order for $49"
+/>;
+```
+
+</ComponentExample>
+
+### Background Glow
+
+<ComponentExample previewComponent={
+  <LandingSaleCtaSection
+    withBackgroundGlow
+    variant="secondary"
+    backgroundGlowVariant="secondary"
+    title="Ready to get started?"
+    description='Pre-order today and get a 50% discount on the final price for the first 3 months. No credit card required.'
+    ctaHref='https://gum.co/product'
+    ctaLabel='Pre-order for $49'
+  />}>
+
+```jsx
+import { LandingSaleCtaSection } from '@/components/landing/cta/LandingSaleCta';
+
+<LandingSaleCtaSection
+  withBackgroundGlow
+  variant="secondary"
+  backgroundGlowVariant="secondary"
+  title="Ready to get started?"
+  description="Pre-order today and get a 50% discount on the final price for the first 3 months. No credit card required."
+  ctaHref="https://gum.co/product"
+  ctaLabel="Pre-order for $49"
+/>;
+```
+
+</ComponentExample>
+
+## API Reference
+
+| Prop Name                                                                                                            | Prop Type                    | Required | Default     |
+| -------------------------------------------------------------------------------------------------------------------- | ---------------------------- | -------- | ----------- |
+| **children** <Tippy>React nodes to be rendered within the component.</Tippy>                                         | `React.ReactNode`            | No       | -           |
+| **className**                                                                                                        | `string`                     | No       | -           |
+| **title** <Tippy>A string or React nodes representing the title of the section.</Tippy>                              | `string` ǀ `React.ReactNode` | No       | -           |
+| **titleComponent** <Tippy>A React node representing the title of the section.</Tippy>                                | `React.ReactNode`            | No       | -           |
+| **description** <Tippy>A string or React nodes representing the description of the section.</Tippy>                  | `string` ǀ `React.ReactNode` | No       | -           |
+| **descriptionComponent** <Tippy>A React node representing the description of the section.</Tippy>                    | `React.ReactNode`            | No       | -           |
+| **footerComponent** <Tippy>A React node to be rendered as the footer of the section.</Tippy>                         | `React.ReactNode`            | No       | -           |
+| **ctaHref**                                                                                                          | `string`                     | No       | `'#'`       |
+| **ctaLabel**                                                                                                         | `string`                     | No       | -           |
+| **secondaryCtaHref**                                                                                                 | `string`                     | No       | `'#'`       |
+| **secondaryCtaLabel**                                                                                                | `string`                     | No       | -           |
+| **withBackground** <Tippy>Indicates whether the section should have a background or not.</Tippy>                     | `boolean`                    | No       | `false`     |
+| **withBackgroundGlow** <Tippy>Indicates whether the section should have a glowing background or not.</Tippy>         | `boolean`                    | No       | `false`     |
+| **variant** <Tippy>The variant of the section. Can be `'primary'` or `'secondary'`.</Tippy>                          | `'primary'` ǀ `'secondary'`  | No       | `'primary'` |
+| **backgroundGlowVariant** <Tippy>The variant of the glowing background. Can be `'primary'` or `'secondary'`.</Tippy> | `'primary'` ǀ `'secondary'`  | No       | `'primary'` |
+
+## More Examples
+
+For more even more examples, see our <a href="/demo/landing-page-component-examples" className="fancy-link">Landing Page Component Examples</a> page or see complete landing page examples by <a href="/demo/landing-page-templates" className="fancy-link">Exploring Our Landing Page Templates</a>.

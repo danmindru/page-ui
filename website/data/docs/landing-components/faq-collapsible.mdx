@@ -1,0 +1,268 @@
+---
+title: 'Landing Page FAQ Collapsible Component'
+date: '2024-04-04'
+lastmod: '2024-04-09'
+tags:
+  - 'guide'
+  - 'components'
+  - 'documentation'
+  - 'landing-page'
+  - 'ui-library'
+  - 'react'
+  - 'nextjs'
+  - 'tailwind-css'
+  - 'faq'
+  - 'frequently-asked-questions'
+  - 'shadcn-ui'
+  - 'shadcn-ui-frequently-asked-questions'
+  - 'shadcn-ui-landing-page'
+
+images:
+  - '/static/images/blog/docs/landing-page-faq-collapsible-component.webp'
+
+summary: 'A component meant to be used in the landing page. It displays a collapsible list of frequently asked questions and their answers.'
+layout: PostHub
+
+showThemeSelector: true
+---
+
+This component displays a collapsible list of frequently asked questions and their answers.
+
+<ComponentExample
+  previewComponent={<LandingFaqCollapsibleSection
+    title='FAQ'
+    description="Looking to learn more about our product? Here are some of the most common
+    questions."
+    faqItems={[
+      {
+        question: 'Can I get a refund?',
+        answer:
+          'Yes, you can get a refund within 30 days of your purchase. No questions asked.',
+      },
+      {
+        question: 'What technologies are used?',
+        answer:
+          'We use Next.js, Tailwind CSS, and Vercel for the deployment.',
+      },
+      {
+        question: 'What do I get if I pre-order?',
+        answer:
+          'With the pre-order, you get a 50% discount on the final price and a lifetime license for the generated code.',
+      },
+    ]}
+  />}
+>
+
+```jsx
+import { LandingFaqCollapsibleSection } from '@/components/landing/LandingFaqCollapsible';
+
+const faqItems = [
+  {
+    question: 'Can I get a refund?',
+    answer:
+      'Yes, you can get a refund within 30 days of your purchase. No questions asked.',
+  },
+  {
+    question: 'What technologies are used?',
+    answer:
+      'We use Next.js, Tailwind CSS, and Vercel for the deployment.',
+  },
+  {
+    question: 'What do I get if I pre-order?',
+    answer:
+      'With the pre-order, you get a 50% discount on the final price and a lifetime license for the generated code.',
+  },
+]
+
+<LandingFaqCollapsibleSection
+  title='FAQ'
+  description="Looking to learn more about our product? Here are some of the most common
+  questions."
+  faqItems={faqItems}
+/>
+```
+
+</ComponentExample>
+
+## Usage
+
+```jsx
+import { LandingFaqCollapsibleSection } from '@/components/landing/LandingFaqCollapsible';
+
+const faqItems = [
+  {
+    question: 'Can I get a refund?',
+    answer:
+      'Yes, you can get a refund within 30 days of your purchase. No questions asked.',
+  },
+  {
+    question: 'What technologies are used?',
+    answer: 'We use Next.js, Tailwind CSS, and Vercel for the deployment.',
+  },
+  {
+    question: 'What do I get if I pre-order?',
+    answer:
+      'With the pre-order, you get a 50% discount on the final price and a lifetime license for the generated code.',
+  },
+];
+```
+
+```jsx
+<LandingFaqCollapsibleSection
+  title="FAQ"
+  description="Looking to learn more about our product? Here are some of the most common
+  questions."
+  faqItems={faqItems}
+/>
+```
+
+## Examples
+
+### With Background
+
+<ComponentExample
+  previewComponent={<LandingFaqCollapsibleSection
+    withBackground
+    variant="secondary"
+    title='FAQ'
+    description="Looking to learn more about our product? Here are some of the most common
+    questions."
+    faqItems={[
+      {
+        question: 'Can I get a refund?',
+        answer:
+          'Yes, you can get a refund within 30 days of your purchase. No questions asked.',
+      },
+      {
+        question: 'What technologies are used?',
+        answer:
+          'We use Next.js, Tailwind CSS, and Vercel for the deployment.',
+      },
+      {
+        question: 'What do I get if I pre-order?',
+        answer:
+          'With the pre-order, you get a 50% discount on the final price and a lifetime license for the generated code.',
+      },
+    ]}
+  />}
+>
+
+```jsx
+import { LandingFaqCollapsibleSection } from '@/components/landing/LandingFaqCollapsible';
+
+const faqItems = [
+  {
+    question: 'Can I get a refund?',
+    answer:
+      'Yes, you can get a refund within 30 days of your purchase. No questions asked.',
+  },
+  {
+    question: 'What technologies are used?',
+    answer:
+      'We use Next.js, Tailwind CSS, and Vercel for the deployment.',
+  },
+  {
+    question: 'What do I get if I pre-order?',
+    answer:
+      'With the pre-order, you get a 50% discount on the final price and a lifetime license for the generated code.',
+  },
+]
+
+<LandingFaqCollapsibleSection
+  withBackground
+  variant="secondary"
+  title='FAQ'
+  description="Looking to learn more about our product? Here are some of the most common
+  questions."
+  faqItems={faqItems}
+/>
+```
+
+</ComponentExample>
+
+### With Background Glow
+
+<ComponentExample
+  previewComponent={<LandingFaqCollapsibleSection
+    withBackgroundGlow
+    backgroundGlowVariant="secondary"
+    title='FAQ'
+    description="Looking to learn more about our product? Here are some of the most common
+    questions."
+    faqItems={[
+      {
+        question: 'Can I get a refund?',
+        answer:
+          'Yes, you can get a refund within 30 days of your purchase. No questions asked.',
+      },
+      {
+        question: 'What technologies are used?',
+        answer:
+          'We use Next.js, Tailwind CSS, and Vercel for the deployment.',
+      },
+      {
+        question: 'What do I get if I pre-order?',
+        answer:
+          'With the pre-order, you get a 50% discount on the final price and a lifetime license for the generated code.',
+      },
+    ]}
+  />}
+>
+
+```jsx
+import { LandingFaqCollapsibleSection } from '@/components/landing/LandingFaqCollapsible';
+
+const faqItems = [
+  {
+    question: 'Can I get a refund?',
+    answer:
+      'Yes, you can get a refund within 30 days of your purchase. No questions asked.',
+  },
+  {
+    question: 'What technologies are used?',
+    answer:
+      'We use Next.js, Tailwind CSS, and Vercel for the deployment.',
+  },
+  {
+    question: 'What do I get if I pre-order?',
+    answer:
+      'With the pre-order, you get a 50% discount on the final price and a lifetime license for the generated code.',
+  },
+]
+
+<LandingFaqCollapsibleSection
+  withBackgroundGlow
+  backgroundGlowVariant="secondary"
+  title='FAQ'
+  description="Looking to learn more about our product? Here are some of the most common
+  questions."
+  faqItems={faqItems}
+/>
+```
+
+</ComponentExample>
+
+## API Reference
+
+| Prop Name                                                                                                                      | Prop Type                    | Required | Default     |
+| ------------------------------------------------------------------------------------------------------------------------------ | ---------------------------- | -------- | ----------- |
+| **title** <Tippy>A title to be displayed above the FAQ section.</Tippy>                                                        | `string` ǀ `React.ReactNode` | No       | -           |
+| **titleComponent** <Tippy>A custom component to be used as the title instead of a string.</Tippy>                              | `React.ReactNode`            | No       | -           |
+| **description** <Tippy>A description to be displayed below the title.</Tippy>                                                  | `string` ǀ `React.ReactNode` | No       | -           |
+| **descriptionComponent** <Tippy>A custom component to be used as the description instead of a string.</Tippy>                  | `React.ReactNode`            | No       | -           |
+| **faqItems** <Tippy>An array of FAQ items containing question and answer strings.</Tippy>                                      | `FaqItem[]`                  | Yes      | -           |
+| **withBackground** <Tippy>Determines whether to display a background or not.</Tippy>                                           | `boolean`                    | No       | `false`     |
+| **withBackgroundGlow** <Tippy>Determines whether to display a glowing background effect or not.</Tippy>                        | `boolean`                    | No       | `false`     |
+| **variant** <Tippy>Determines the color variant of the section (primary or secondary).</Tippy>                                 | `'primary'` ǀ `'secondary'`  | No       | `'primary'` |
+| **backgroundGlowVariant** <Tippy>Determines the color variant of the glowing background effect (primary or secondary).</Tippy> | `'primary'` ǀ `'secondary'`  | No       | `'primary'` |
+
+```ts
+export interface FaqItem {
+  question: string;
+  answer: string;
+}
+```
+
+## More Examples
+
+For more even more examples, see our <a href="/demo/landing-page-component-examples" className="fancy-link">Landing Page Component Examples</a> page or see complete landing page examples by <a href="/demo/landing-page-templates" className="fancy-link">Exploring Our Landing Page Templates</a>.

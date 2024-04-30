@@ -1,0 +1,272 @@
+---
+title: 'Landing Page Feature List Component'
+date: '2023-11-19'
+lastmod: '2024-04-09'
+tags:
+  - 'guide'
+  - 'components'
+  - 'documentation'
+  - 'landing-page'
+  - 'ui-library'
+  - 'react'
+  - 'nextjs'
+  - 'tailwind-css'
+  - 'shadcn-ui'
+  - 'shadcn-ui-landing-page'
+
+images: ['/static/images/blog/docs/landing-page-features-list.webp']
+summary: 'This component is used to display a list of features on the landing page. Each feature has a title, description and icon.'
+layout: PostHub
+
+showThemeSelector: true
+---
+
+Use this component to showcase a list of features on the landing page. Each feature has a title, description and icon.
+
+Under the hood, this component uses the [Feature](/boilerplate-documentation/landing-page-components/feature) component.
+
+<ComponentExample
+  previewComponent={<LandingFeatureList
+    className="!mt-0"
+    title={"Nothing quite like it."}
+    description={
+      'Shipixen sets up everything you need to start working on your blog, website or product.'
+    }
+    featureItems={[
+      {
+        title: 'Deploy now',
+        description: 'Deploying to Vercel with a click.',
+        icon: <SparklesIcon />,
+      },
+      {
+        title: 'SEO optimized',
+        description: 'Shipixen is optimized for search engines.',
+        icon: <LineChartIcon />,
+      },
+      {
+        title: 'MDX blog ready',
+        description: 'Shipixen comes with a fully featured MDX blog. ',
+        icon: <LayersIcon />,
+      },
+    ]}
+  />}
+>
+
+```jsx
+import { LandingFeatureList } from '@/components/landing/feature/LandingFeatureList';
+
+<LandingFeatureList
+  title={'Nothing quite like it.'}
+  description={
+    'Shipixen sets up everything you need to start working on your blog, website or product.'
+  }
+  featureItems={[
+    {
+      title: 'Deploy now',
+      description: 'Deploying to Vercel with a click.',
+      icon: <SparklesIcon />,
+    },
+    {
+      title: 'SEO optimized',
+      description: 'Shipixen is optimized for search engines.',
+      icon: <LineChartIcon />,
+    },
+    {
+      title: 'MDX blog ready',
+      description: 'Shipixen comes with a fully featured MDX blog. ',
+      icon: <LayersIcon />,
+    },
+  ]}
+/>;
+```
+
+</ComponentExample>
+
+## Usage
+
+```jsx
+import { LandingFeatureList } from '@/components/landing/LandingFeatureList';
+import { SparklesIcon } from 'lucide-react';
+```
+
+```
+<LandingFeatureList
+  title={"Nothing quite like it."}
+  description={
+    'Shipixen sets up everything you need to start working on your blog, website or product.'
+  }
+  featureItems={[
+    {
+      title: 'Automatic deployment to Vercel',
+      description:
+        'Deploying the generated template to Vercel is as easy as clicking a button. ',
+      icon: <SparklesIcon />,
+    },
+  ]}
+/>
+```
+
+## Examples
+
+### With background
+
+<ComponentExample
+  previewComponent={<LandingFeatureList
+    withBackground
+    variant="secondary"
+    title={"Nothing quite like it."}
+    description={
+      'Shipixen sets up everything you need to start working on your blog, website or product.'
+    }
+    featureItems={[
+      {
+        title: 'Deploy now',
+        description: 'Deploying to Vercel with a click.',
+        icon: <SparklesIcon />,
+      },
+      {
+        title: 'SEO optimized',
+        description: 'Shipixen is optimized for search engines.',
+        icon: <LineChartIcon />,
+      },
+      {
+        title: 'MDX blog ready',
+        description: 'Shipixen comes with a fully featured MDX blog. ',
+        icon: <LayersIcon />,
+      },
+    ]}
+  />}
+>
+
+```jsx
+import { SparklesIcon, LineChartIcon, LayersIcon } from 'lucide-react';
+import { LandingFeatureList } from '@/components/landing/feature/LandingFeatureList';
+
+const featureItems = [
+  {
+    title: 'Deploy now',
+    description: 'Deploying to Vercel with a click.',
+    icon: <SparklesIcon />,
+  },
+  {
+    title: 'SEO optimized',
+    description: 'Shipixen is optimized for search engines.',
+    icon: <LineChartIcon />,
+  },
+  {
+    title: 'MDX blog ready',
+    description: 'Shipixen comes with a fully featured MDX blog. ',
+    icon: <LayersIcon />,
+  },
+]
+
+<LandingFeatureList
+  withBackground
+  variant="secondary"
+  title={"Nothing quite like it."}
+  description={
+    'Shipixen sets up everything you need to start working on your blog, website or product.'
+  }
+  featureItems={featureItems}
+/>
+```
+
+</ComponentExample>
+
+### With Background Glow
+
+<ComponentExample
+  previewComponent={<LandingFeatureList
+    withBackgroundGlow
+    backgroundGlowVariant="primary"
+    title={"Nothing quite like it."}
+    description={
+      'Shipixen sets up everything you need to start working on your blog, website or product.'
+    }
+    featureItems={[
+      {
+        title: 'Automatic deployment to Vercel',
+        description:
+          'Deploying the generated template to Vercel is as easy as clicking a button. ',
+        icon: <SparklesIcon />,
+      },
+      {
+        title: 'Dynamic Social Image',
+        description:
+          'We generate an open graph image that will be visible when you share your site online.',
+        icon: <LineChartIcon />,
+      },
+      {
+        title: 'MDX blog, no server required',
+        description:
+          'Shipixen comes with a fully featured MDX blog. ',
+        icon: <LayersIcon />,
+      },
+    ]}
+  />}
+>
+
+```jsx
+import { SparklesIcon, LineChartIcon, LayersIcon } from 'lucide-react';
+import { LandingFeatureList } from '@/components/landing/feature/LandingFeatureList';
+
+const featureItems = [
+  {
+    title: 'Automatic deployment to Vercel',
+    description:
+      'Deploying the generated template to Vercel is as easy as clicking a button. ',
+    icon: <SparklesIcon />,
+  },
+  {
+    title: 'Dynamic Social Image',
+    description:
+      'We generate an open graph image that will be visible when you share your site online.',
+    icon: <LineChartIcon />,
+  },
+  {
+    title: 'MDX blog, no server required',
+    description:
+      'Shipixen comes with a fully featured MDX blog. ',
+    icon: <LayersIcon />,
+  },
+]
+
+<LandingFeatureList
+  withBackgroundGlow
+  backgroundGlowVariant="primary"
+  variant="secondary"
+  title={"Nothing quite like it."}
+  description={
+    'Shipixen sets up everything you need to start working on your blog, website or product.'
+  }
+  featureItems={featureItems}
+/>
+```
+
+</ComponentExample>
+
+## API Reference
+
+| Prop Name                                                                                                                                     | Prop Type                    | Required | Default     |
+| --------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------- | -------- | ----------- |
+| **title** <Tippy>A title for the feature list section.</Tippy>                                                                                | `string` ǀ `React.ReactNode` | No       | -           |
+| **titleComponent** <Tippy>A custom React component to be used instead of a string for the title.</Tippy>                                      | `React.ReactNode`            | No       | -           |
+| **description** <Tippy>A description for the feature list section.</Tippy>                                                                    | `string` ǀ `React.ReactNode` | No       | -           |
+| **descriptionComponent** <Tippy>A custom React component to be used instead of a string for the description.</Tippy>                          | `React.ReactNode`            | No       | -           |
+| **featureItems** <Tippy>An array of objects representing feature items. Each feature item should have a title, description, and icon.</Tippy> | `FeatureListItem[]`          | Yes      | -           |
+| **withBackground** <Tippy>Determines if the feature list section should have a background.</Tippy>                                            | `boolean`                    | No       | `false`     |
+| **withBackgroundGlow** <Tippy>Determines if the feature list section should have a glowing background effect.</Tippy>                         | `boolean`                    | No       | `false`     |
+| **variant** <Tippy>Determines the variant of the feature list section (primary or secondary).</Tippy>                                         | `'primary'` ǀ `'secondary'`  | No       | `'primary'` |
+| **backgroundGlowVariant** <Tippy>Determines the variant of the glowing background effect (primary or secondary).</Tippy>                      | `'primary'` ǀ `'secondary'`  | No       | `'primary'` |
+
+```ts
+export interface FeatureListItem {
+  title: string;
+  description: string;
+  icon: React.ReactNode;
+}
+```
+
+## More Examples
+
+For more even more examples, see our <a href="/demo/landing-page-component-examples" className="fancy-link">Landing Page Component Examples</a> page or see complete landing page examples by <a href="/demo/landing-page-templates" className="fancy-link">Exploring Our Landing Page Templates</a>.

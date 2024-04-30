@@ -1,0 +1,274 @@
+---
+title: 'Landing Page Social Proof Band Component'
+date: '2024-04-04'
+lastmod: '2024-04-09'
+tags:
+  - 'guide'
+  - 'components'
+  - 'documentation'
+  - 'landing-page'
+  - 'ui-library'
+  - 'react'
+  - 'nextjs'
+  - 'tailwind-css'
+  - 'social-proof'
+  - 'shadcn-ui'
+  - 'shadcn-ui-social-proof'
+  - 'shadcn-ui-landing-page'
+
+images:
+  - '/static/images/blog/docs/landing-page-social-proof-band-component.webp'
+
+summary: 'A component meant to be used in the landing page.  Highlights important features, milestones or testimonials of your product. Use this to highlight key features or social proof. This is usually placed at the top of the page, but you can also use it in between sections or below your primary CTA.'
+layout: PostHub
+
+showThemeSelector: true
+---
+
+Use this to highlight key features or social proof. This is usually placed at the top of the page, but you can also use it in between sections or below your primary CTA.
+
+<ComponentExample
+  previewComponent={
+    <LandingSocialProofBand>
+      <LandingSocialProofBandItem>
+        100% encrypted and secure
+      </LandingSocialProofBandItem>
+
+      <LandingSocialProofBandItem>
+        24/7 customer support
+      </LandingSocialProofBandItem>
+
+      <LandingSocialProofBandItem>
+        99% customer satisfaction
+      </LandingSocialProofBandItem>
+    </LandingSocialProofBand>
+
+}>
+
+```jsx
+import { LandingSocialProofBand } from '@/components/landing/social-proof/LandingSocialProofBand';
+import { LandingSocialProofBandItem } from '@/components/landing/social-proof/LandingSocialProofBandItem';
+
+<LandingSocialProofBand>
+  <LandingSocialProofBandItem>
+    100% encrypted and secure
+  </LandingSocialProofBandItem>
+
+  <LandingSocialProofBandItem>24/7 customer support</LandingSocialProofBandItem>
+
+  <LandingSocialProofBandItem>
+    99% customer satisfaction
+  </LandingSocialProofBandItem>
+</LandingSocialProofBand>;
+```
+
+</ComponentExample>
+
+## Usage
+
+```jsx
+import { LandingSocialProofBand } from '@/components/landing/social-proof/LandingSocialProofBand';
+import { LandingSocialProofBandItem } from '@/components/landing/social-proof/LandingSocialProofBandItem';
+```
+
+```jsx
+<LandingSocialProofBand>
+  <LandingSocialProofBandItem>
+    100% encrypted and secure
+  </LandingSocialProofBandItem>
+
+  <LandingSocialProofBandItem>24/7 customer support</LandingSocialProofBandItem>
+
+  <LandingSocialProofBandItem>
+    99% customer satisfaction
+  </LandingSocialProofBandItem>
+</LandingSocialProofBand>
+```
+
+## Examples
+
+### Inverted
+
+<ComponentExample
+  previewComponent={
+    <LandingSocialProofBand invert={true}>
+      <LandingSocialProofBandItem>
+        100% encrypted and secure
+      </LandingSocialProofBandItem>
+
+      <LandingSocialProofBandItem>
+        24/7 customer support
+      </LandingSocialProofBandItem>
+
+      <LandingSocialProofBandItem>
+        99% customer satisfaction
+      </LandingSocialProofBandItem>
+    </LandingSocialProofBand>
+
+}
+
+>
+
+```jsx
+import { LandingSocialProofBand } from '@/components/landing/social-proof/LandingSocialProofBand';
+import { LandingSocialProofBandItem } from '@/components/landing/social-proof/LandingSocialProofBandItem';
+
+<LandingSocialProofBand invert={true}>
+  <LandingSocialProofBandItem>
+    100% encrypted and secure
+  </LandingSocialProofBandItem>
+
+  <LandingSocialProofBandItem>24/7 customer support</LandingSocialProofBandItem>
+
+  <LandingSocialProofBandItem>
+    99% customer satisfaction
+  </LandingSocialProofBandItem>
+</LandingSocialProofBand>;
+```
+
+</ComponentExample>
+
+### With customized icons
+
+<ComponentExample
+  previewComponent={
+    <LandingSocialProofBand invert={true}>
+      <LandingSocialProofBandItem graphic="magic">
+        AI powered
+      </LandingSocialProofBandItem>
+
+      <LandingSocialProofBandItem graphic="gift">
+        30% off this week
+      </LandingSocialProofBandItem>
+
+      <LandingSocialProofBandItem graphic="rating">
+        Trusted by 1000+ customers
+      </LandingSocialProofBandItem>
+
+      <LandingSocialProofBandItem graphic="trophy">
+        Most popular app in US
+      </LandingSocialProofBandItem>
+    </LandingSocialProofBand>
+
+}
+
+>
+
+```jsx
+import { LandingSocialProofBand } from '@/components/landing/social-proof/LandingSocialProofBand';
+import { LandingSocialProofBandItem } from '@/components/landing/social-proof/LandingSocialProofBandItem';
+
+<LandingSocialProofBand invert={true}>
+  <LandingSocialProofBandItem graphic="magic">
+    AI powered
+  </LandingSocialProofBandItem>
+
+  <LandingSocialProofBandItem graphic="gift">
+    30% off this week
+  </LandingSocialProofBandItem>
+
+  <LandingSocialProofBandItem graphic="rating">
+    Trusted by 1000+ customers
+  </LandingSocialProofBandItem>
+
+  <LandingSocialProofBandItem graphic="trophy">
+    Most popular app in US
+  </LandingSocialProofBandItem>
+</LandingSocialProofBand>;
+```
+
+</ComponentExample>
+
+### With Primary Image CTA
+
+<ComponentExample
+  previewComponent={
+    <>
+      <LandingSocialProofBand>
+        <LandingSocialProofBandItem>
+          100% encrypted and secure
+        </LandingSocialProofBandItem>
+
+        <LandingSocialProofBandItem>24/7 customer support</LandingSocialProofBandItem>
+
+        <LandingSocialProofBandItem>
+          99% customer satisfaction
+        </LandingSocialProofBandItem>
+      </LandingSocialProofBand>
+
+      <LandingPrimaryImageCtaSection
+        title="Landing page in minutes"
+        description="Get 10x more done with Shadcn UI, React & Next.js, and say goodbye to repetitive tasks. You'll never go back."
+        imageSrc="/static/images/shipixen/product/1.webp"
+        imageAlt="Sample image"
+        leadingComponent={<LandingProductHuntAward />}
+        withBackground
+      >
+        <Button size="xl" asChild>
+          <a href="#">
+            Buy now
+          </a>
+        </Button>
+
+        <Button size="xl" variant="outlinePrimary">
+          <a href="#">Read more</a>
+        </Button>
+      </LandingPrimaryImageCtaSection>
+    </>
+
+}
+
+>
+
+```jsx
+import { Button } from '@/components/shared/ui/button';
+import { LandingPrimaryImageCtaSection } from '@/components/landing/cta/LandingPrimaryCta';
+import { LandingDiscount } from '@/components/landing/discount/LandingDiscount';
+import { LandingProductHuntAward } from '@/components/landing/social-proof/LandingProductHuntAward';
+import { LandingSocialProofBand } from '@/components/landing/social-proof/LandingSocialProofBand';
+import { LandingSocialProofBandItem } from '@/components/landing/social-proof/LandingSocialProofBandItem';
+
+<LandingSocialProofBand>
+  <LandingSocialProofBandItem>
+    100% encrypted and secure
+  </LandingSocialProofBandItem>
+
+  <LandingSocialProofBandItem>24/7 customer support</LandingSocialProofBandItem>
+
+  <LandingSocialProofBandItem>
+    99% customer satisfaction
+  </LandingSocialProofBandItem>
+</LandingSocialProofBand>
+
+<LandingPrimaryImageCtaSection
+  title="Landing page in minutes"
+  description="Get 10x more done with Shadcn UI, React & Next.js, and say goodbye to repetitive tasks. You'll never go back."
+  imageSrc="/static/images/shipixen/product/1.webp"
+  imageAlt="Sample image"
+  leadingComponent={<LandingProductHuntAward />}
+  withBackground
+>
+  <Button size="xl" asChild>
+    <a href="#">
+      Buy now
+    </a>
+  </Button>
+
+  <Button size="xl" variant="outlinePrimary">
+    <a href="#">Read more</a>
+  </Button>
+</LandingPrimaryImageCtaSection>
+```
+
+</ComponentExample>
+
+## API Reference
+
+| Prop Name                                                                                                                             | Prop Type                    | Required | Default |
+| ------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------- | -------- | ------- |
+| **children** <Tippy>React nodes to be rendered within the component (below the text on smaller screen, right side on larger).</Tippy> | `React.ReactNode` ǀ `string` | Yes      | -       |
+| **invert** <Tippy>Whether to invert the color scheme of the component.</Tippy>                                                        | `boolean`                    | No       | -       |
+
+## More Examples
+
+For more even more examples, see our <a href="/demo/landing-page-component-examples" className="fancy-link">Landing Page Component Examples</a> page or see complete landing page examples by <a href="/demo/landing-page-templates" className="fancy-link">Exploring Our Landing Page Templates</a>.

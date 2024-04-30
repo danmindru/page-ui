@@ -1,0 +1,109 @@
+---
+title: 'Landing Page Product Hunt Award Component'
+date: '2024-04-04'
+lastmod: '2024-04-05'
+tags:
+  - 'guide'
+  - 'components'
+  - 'documentation'
+  - 'landing-page'
+  - 'ui-library'
+  - 'react'
+  - 'nextjs'
+  - 'tailwind-css'
+  - 'product-hunt'
+  - 'shadcn-ui'
+  - 'shadcn-ui-landing-page'
+
+images:
+  - '/static/images/blog/docs/landing-page-product-hunt-award-component.webp'
+
+summary: 'A component meant to be used in the landing page. Use this to show a Product Hunt award, if applicable, to increase trust.'
+layout: PostHub
+
+showThemeSelector: true
+---
+
+Use this component to show a Product Hunt award, if applicable, to increase trust.
+
+<ComponentExample
+  previewComponent={
+    <div className="p-6">
+      <LandingProductHuntAward place={3} />
+    </div>
+  }
+>
+```jsx
+import { LandingProductHuntAward } from '@/components/landing/social-proof/LandingProductHuntAward';
+
+<LandingProductHuntAward place={3} />
+```
+</ComponentExample>
+
+## Usage
+
+```jsx
+import { LandingProductHuntAward } from '@/components/landing/social-proof/LandingProductHuntAward';
+```
+
+```jsx
+<LandingProductHuntAward place={3} />
+```
+
+## Examples
+
+### Customization
+
+The award can either be grayscale or colored and it comes in two sizes: small and default.
+
+<ComponentExample
+  previewComponent={
+    <div className="p-6">
+      <LandingProductHuntAward size="small" grayscale={false} />
+    </div>
+  }
+>
+```jsx
+import { LandingProductHuntAward } from '@/components/landing/social-proof/LandingProductHuntAward';
+
+<LandingProductHuntAward size="small" grayscale={false} />
+```
+</ComponentExample>
+
+### With custom text
+
+<ComponentExample
+  previewComponent={
+    <div className="p-6">
+      <LandingProductHuntAward
+        title="#1 Product of the week"
+        subtitle="Marketing"
+      />
+    </div>
+  }
+>
+```jsx
+import { LandingProductHuntAward } from '@/components/landing/social-proof/LandingProductHuntAward';
+
+<LandingProductHuntAward
+  title="#1 Product of the week"
+  subtitle="Marketing"
+/>
+```
+</ComponentExample>
+
+## API Reference
+
+| Prop Name                                                                                                               | Prop Type               | Required | Default                |
+| ----------------------------------------------------------------------------------------------------------------------- | ----------------------- | -------- | ---------------------- |
+| **place** <Tippy>The place or rank to display.</Tippy>                                                                  | `number` ǀ `string`     | Yes      | -                      |
+| **title** <Tippy>The title text displayed above the place/rank.</Tippy>                                                 | `string`                | No       | `'Product of the Day'` |
+| **size** <Tippy>Defines the size of the component, affecting its height and the size of text.</Tippy>                   | `'default'` ǀ `'small'` | No       | `'default'`            |
+| **grayscale** <Tippy>Whether the component should be displayed in grayscale colors.</Tippy>                             | `boolean`               | No       | `true`                 |
+| **textContainerClassName** <Tippy>Additional class names for styling the container of the title and place text.</Tippy> | `string`                | No       | -                      |
+| **titleClassName** <Tippy>Additional class names for styling the title text.</Tippy>                                    | `string`                | No       | -                      |
+| **placeClassName** <Tippy>Additional class names for styling the place/rank text.</Tippy>                               | `string`                | No       | -                      |
+
+## More Examples
+
+For more even more examples, see our <a href="/demo/landing-page-component-examples" className="fancy-link">Landing Page Component Examples</a> page or see complete landing page examples by <a href="/demo/landing-page-templates" className="fancy-link">Exploring Our Landing Page Templates</a>.
