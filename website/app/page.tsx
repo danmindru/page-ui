@@ -459,6 +459,7 @@ export default function Home() {
             icon: <HeartHandshakeIcon />,
           },
         ]}
+        withBackground
       />
 
       <LandingFaqCollapsibleSection
@@ -498,12 +499,13 @@ export default function Home() {
             ),
           },
         ]}
-        withBackground
       />
 
-      <section className="wide-container mt-12">
-        <LatestArticles />
-      </section>
+      <div className="w-full flex flex-col items-center bg-primary-100/20 dark:bg-primary-900/10">
+        <section className="wide-container mt-12">
+          <LatestArticles />
+        </section>
+      </div>
     </div>
   );
 }
