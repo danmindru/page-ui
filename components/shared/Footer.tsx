@@ -98,7 +98,12 @@ export default function Footer({ className }: { className?: string }) {
                       if (link.href.endsWith('shipixen.com')) {
                         return (
                           <li key={index}>
-                            <a href={link.href} className={'nav-link'}>
+                            <a
+                              href={link.href}
+                              className={'nav-link'}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
                               <span className="bg-clip-text bg-gradient-to-r text-transparent from-primary-400 to-secondary-300">
                                 {link.title}
                               </span>

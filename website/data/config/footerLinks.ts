@@ -9,7 +9,7 @@ export const footerLinks: Array<{
     columnName: 'Get started',
     links: [
       { href: '/', title: 'Home' },
-      { href: '/docs', title: 'Docs' },
+      { href: '/docs/introduction', title: 'Docs' },
       { href: 'https://github.com/danmindru/page-ui', title: 'GitHub' },
     ],
   },

@@ -24,17 +24,6 @@ export const SearchProvider = ({ children }) => {
         searchDocumentsPath: 'search.json',
         onSearchDocumentsLoad(json) {
           return [
-            ...json.map((post: CoreContent<Blog>) => ({
-              id: post.path,
-              name: post.title,
-              keywords: post?.summary || '',
-              section: 'Blog',
-              subtitle: `${
-                post.date ? `${formatDate(post.date, 'en-US')} · ` : ''
-              }`,
-              perform: () => router.push(makeRootPath(post.path)),
-            })),
-
             ...searchLinks.map((link) => {
               return {
                 id: link.id,
@@ -44,6 +33,17 @@ export const SearchProvider = ({ children }) => {
                 perform: () => router.push(link.href),
               };
             }),
+
+            ...json.map((post: CoreContent<Blog>) => ({
+              id: post.path,
+              name: post.title,
+              keywords: post?.summary || '',
+              section: 'Pages',
+              subtitle: `${
+                post.date ? `${formatDate(post.date, 'en-US')}` : ''
+              }`,
+              perform: () => router.push(makeRootPath(post.path)),
+            })),
           ];
         },
       }}

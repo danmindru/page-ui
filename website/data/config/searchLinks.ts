@@ -7,17 +7,38 @@ export const searchLinks: Array<{
   href: string;
 }> = [
   {
-    id: '',
+    id: 'home',
     name: 'Home',
     keywords: '',
     section: 'Navigation',
     href: '/',
   },
   {
-    id: 'docs',
-    name: 'Docs',
+    id: 'github',
+    name: 'Github',
     keywords: '',
     section: 'Navigation',
-    href: '/docs',
+    href: 'https://github.com/danmindru/page-ui',
+  },
+  {
+    id: 'introduction',
+    name: 'Introduction',
+    keywords: '',
+    section: 'Docs',
+    href: '/docs/introduction',
+  },
+  {
+    id: 'installation',
+    name: 'Installation',
+    keywords: '',
+    section: 'Docs',
+    href: '/docs/installation',
+  },
+  {
+    id: 'components',
+    name: 'Components',
+    keywords: '',
+    section: 'Docs',
+    href: '/docs/landing-page-components',
   },
 ];

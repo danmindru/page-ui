@@ -41,6 +41,8 @@ const Header = ({ className }: { className?: string }) => {
                 key={link.title}
                 href={link.href}
                 className="nav-link hidden sm:block"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <span className="bg-clip-text bg-gradient-to-r text-transparent from-primary-400 to-secondary-300">
                   {link.title}
