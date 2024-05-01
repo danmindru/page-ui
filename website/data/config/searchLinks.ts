@@ -41,4 +41,25 @@ export const searchLinks: Array<{
     section: 'Docs',
     href: '/docs/landing-page-components',
   },
+  {
+    id: 'templates',
+    name: 'Templates',
+    keywords: '',
+    section: 'Examples',
+    href: 'https://shipixen.com/demo/landing-page-templates',
+  },
+  {
+    id: 'emerald-template',
+    name: 'Template Example',
+    keywords: '',
+    section: 'Examples',
+    href: 'https://shipixen.com/demo/landing-page-templates/template/emerald-ai',
+  },
+  {
+    id: 'usage-examples',
+    name: 'Usage Examples',
+    keywords: '',
+    section: 'Examples',
+    href: 'https://shipixen.com/demo/landing-page-component-examples',
+  },
 ];

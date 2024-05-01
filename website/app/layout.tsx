@@ -3,6 +3,9 @@ import Footer from '@/components/shared/Footer';
 import { siteConfig } from '@/data/config/site.settings';
 import { ThemeProviders } from './theme-providers';
 import { Metadata } from 'next';
+import { PHProvider } from '@/app/providers';
+import PostHogPageView from '@/app/posthog-page-view';
+import { Suspense } from 'react';
 
 import { colors, colorsRgb } from '@/data/config/colors.js';
 
@@ -137,11 +140,17 @@ export default function RootLayout({
           <AnalyticsWrapper />
 
           <div className="w-full flex flex-col justify-between items-center font-sans">
-            <SearchProvider>
-              <main className="w-full flex flex-col items-center mb-auto">
-                {children}
-              </main>
-            </SearchProvider>
+            <PHProvider>
+              <SearchProvider>
+                <main className="w-full flex flex-col items-center mb-auto">
+                  {children}
+                </main>
+              </SearchProvider>
+
+              <Suspense>
+                <PostHogPageView />
+              </Suspense>
+            </PHProvider>
           </div>
 
           <Footer />

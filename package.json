@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "posthog-js": "^1.130.1"
+  }
+}
