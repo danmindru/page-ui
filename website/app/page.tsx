@@ -41,6 +41,7 @@ import {
 } from 'lucide-react';
 import { LandingProductVideoFeature } from '@/components/landing/LandingProductVideoFeature';
 import Image from '@/components/shared/Image';
+import { CtaButton } from '@/components/shared/ui/cta-button';
 
 export default function Home() {
   return (
@@ -59,6 +60,7 @@ export default function Home() {
         </LandingSocialProofBandItem>
       </LandingSocialProofBand> */}
       <Header className="mb-0 lg:mb-0" />
+
       <LandingPrimaryVideoCtaSection
         titleComponent={
           <h1 className="text-4xl lg:text-5xl lg:leading-14 font-semibold md:max-w-2xl">
@@ -76,9 +78,9 @@ export default function Home() {
         loop
         // leadingComponent={<LandingProductHuntAward />}
       >
-        <Button size="xl" asChild>
+        <CtaButton size="xl" asChild>
           <a href="/docs/installation">Get Started</a>
-        </Button>
+        </CtaButton>
 
         <Button size="xl" asChild variant="outlinePrimary">
           <a
@@ -342,8 +344,18 @@ export default function Home() {
 
       <LandingTestimonialReadMoreWrapper size="md">
         <LandingTestimonialGrid
-          title="From Code to Conversion: Real Stories from Real Users"
-          description="These are the voices of the folks who have incorporated Page UI into their workflow, transforming the way they code and captivating their audience. But don't take our word for it. Read about their experiences straight from their keyboards."
+          titleComponent={
+            <>
+              <p className="text-xs text-semibold bg-primary-500 text-white py-2 px-4 rounded-md">
+                Coming soon / this section is a placeholder 🚧
+              </p>
+
+              <h2 className="text-4xl font-semibold">
+                From Code to Conversion: Real Stories from Real Users
+              </h2>
+            </>
+          }
+          description="These are the voices of the folks who have incorporated Page UI into their workflow. But don't take our word for it. Read about their experiences straight from their keyboards."
           testimonialItems={[
             {
               name: 'Aaron P.',

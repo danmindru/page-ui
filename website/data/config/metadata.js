@@ -1,9 +1,9 @@
 const domain = 'pageui.shipixen.com';
 
 const metadata = {
-  title: 'Landing page components that look good and convert well',
+  title: 'Landing page components & templates that you can copy & paste',
   description:
-    'Page UI is a set of landing page components & templates that you can copy & paste into you codebase. Made for React & built on top of Shadcn UI.',
+    'Page UI is a set of landing page components & templates that you can copy & paste into you React/Next.js codebase. Built on top of Shadcn UI and TailwindCSS.',
   domain: 'pageui.shipixen.com',
   logoTitle: 'Page UI',
   businessName: 'Page UI',

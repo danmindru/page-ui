@@ -123,26 +123,26 @@
   }
 
   .toc-link {
-  @apply text-sm;
-}
+    @apply text-sm;
+  }
 
-.toc-active-link {
-  @apply text-sm text-primary-500 dark:text-primary-400;
-}
+  .toc-active-link {
+    @apply text-sm text-primary-500 dark:text-primary-400;
+  }
 
-.toc-list,
-.toc-list ul,
-ul.toc-list {
-  @apply flex flex-col gap-2;
-}
+  .toc-list,
+  .toc-list ul,
+  ul.toc-list {
+    @apply flex flex-col gap-2;
+  }
 
-.toc-separator {
-  @apply border-b border-gray-300 dark:border-neutral-600;
-}
+  .toc-separator {
+    @apply border-b border-gray-300 dark:border-neutral-600;
+  }
 
-.toc-title {
-  @apply mt-6 text-sm font-semibold text-black dark:text-white;
-}
+  .toc-title {
+    @apply mt-6 text-sm font-semibold text-black dark:text-white;
+  }
 
   /**
    * Fancy heading gradients
@@ -264,6 +264,10 @@ ul.toc-list {
 
   .fancy-link:hover {
     background-size: 100% 100%;
+  }
+
+  .fancy-link--no-underline {
+    text-decoration: none;
   }
 
   .dark .fancy-link {

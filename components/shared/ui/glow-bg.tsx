@@ -9,9 +9,13 @@ export const GlowBg = ({
   variant?: 'primary' | 'secondary';
 }) => {
   const stopColor =
-    variant === 'primary' ? colors.primary.lighter : colors.secondary.lighter;
+    variant === 'primary'
+      ? 'var(--primary-lighter-hex)'
+      : 'var(--secondary-lighter-hex)';
   const stopColorTwo =
-    variant === 'primary' ? colors.primary.darker : colors.secondary.darker;
+    variant === 'primary'
+      ? 'var(--primary-dark-hex)'
+      : 'var(--secondary-dark-hex)';
 
   return (
     <svg

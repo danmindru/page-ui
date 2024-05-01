@@ -37,16 +37,15 @@ const Header = ({ className }: { className?: string }) => {
         {headerNavLinks.map((link) => {
           if (link.href.includes('shipixen.com')) {
             return (
-              <ActiveLink
+              <a
                 key={link.title}
                 href={link.href}
                 className="nav-link hidden sm:block"
-                activeClassName="nav-link-active"
               >
                 <span className="bg-clip-text bg-gradient-to-r text-transparent from-primary-400 to-secondary-300">
                   {link.title}
                 </span>
-              </ActiveLink>
+              </a>
             );
           }
 

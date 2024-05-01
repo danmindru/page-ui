@@ -98,15 +98,11 @@ export default function Footer({ className }: { className?: string }) {
                       if (link.href.endsWith('shipixen.com')) {
                         return (
                           <li key={index}>
-                            <ActiveLink
-                              href={link.href}
-                              className={'nav-link'}
-                              activeClassName={'nav-link-active'}
-                            >
+                            <a href={link.href} className={'nav-link'}>
                               <span className="bg-clip-text bg-gradient-to-r text-transparent from-primary-400 to-secondary-300">
                                 {link.title}
                               </span>
-                            </ActiveLink>
+                            </a>
                           </li>
                         );
                       }

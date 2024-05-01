@@ -2,6 +2,30 @@
 const { fontFamily } = require('tailwindcss/defaultTheme');
 const { colors: customColors } = require('./data/config/colors');
 
+/**
+ * A utility function to attach tailwind opacity to rgb color variables.
+ * This is required so utility classes for opacity are applied correctly to custom color variables.
+ *
+ * @example
+ * --color-red: 255, 0, 0;
+ * withRgbOpacity("--color-red")
+ *
+ * @param { string } variableName css variable (as rgb) to attach opacity to.
+ * @param { boolean } [important] adds !important to the value in case it's important.
+ */
+const withRgbOpacity = (variableName, important) => {
+  return (vars) => {
+    const { opacityValue } = vars;
+    let result;
+    result = `rgba(var(${variableName}))`;
+    if (opacityValue !== undefined) {
+      result = `rgba(var(${variableName}), ${opacityValue})`;
+    }
+    if (important) result += '!important';
+    return result;
+  };
+};
+
 /** @type {import("tailwindcss").Config } */
 module.exports = {
   content: [
@@ -28,26 +52,26 @@ module.exports = {
       },
       colors: {
         primary: {
-          100: customColors.primary.lighter,
-          200: customColors.primary.lighter,
-          300: customColors.primary.light,
-          400: customColors.primary.light,
-          500: customColors.primary.main,
-          600: customColors.primary.main,
-          700: customColors.primary.dark,
-          800: customColors.primary.dark,
-          900: customColors.primary.darker,
+          100: withRgbOpacity('--primary-lighter'),
+          200: withRgbOpacity('--primary-lighter'),
+          300: withRgbOpacity('--primary-light'),
+          400: withRgbOpacity('--primary-light'),
+          500: withRgbOpacity('--primary-main'),
+          600: withRgbOpacity('--primary-main'),
+          700: withRgbOpacity('--primary-dark'),
+          800: withRgbOpacity('--primary-dark'),
+          900: withRgbOpacity('--primary-darker'),
         },
         secondary: {
-          100: customColors.secondary.lighter,
-          200: customColors.secondary.lighter,
-          300: customColors.secondary.light,
-          400: customColors.secondary.light,
-          500: customColors.secondary.main,
-          600: customColors.secondary.main,
-          700: customColors.secondary.dark,
-          800: customColors.secondary.dark,
-          900: customColors.secondary.darker,
+          100: withRgbOpacity('--secondary-lighter'),
+          200: withRgbOpacity('--secondary-lighter'),
+          300: withRgbOpacity('--secondary-light'),
+          400: withRgbOpacity('--secondary-light'),
+          500: withRgbOpacity('--secondary-main'),
+          600: withRgbOpacity('--secondary-main'),
+          700: withRgbOpacity('--secondary-dark'),
+          800: withRgbOpacity('--secondary-dark'),
+          900: withRgbOpacity('--secondary-darker'),
         },
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',

@@ -4,29 +4,32 @@ import { cva, type VariantProps } from 'class-variance-authority';
 
 import { cn } from '@/lib/utils';
 
-const ctaButtonVariants = cva('transition-all ease-in relative z-10 p-6', {
-  variants: {
-    variant: {
-      default:
-        'bg-neutral-800/95 dark:bg-neutral-900/90 text-white hover:bg-black dark:hover:bg-black hover:text-white rounded-md',
+const ctaButtonVariants = cva(
+  'inline-flex items-center transition-all ease-in relative z-10',
+  {
+    variants: {
+      variant: {
+        default:
+          'bg-violet-950/90 dark:bg-black/90 text-white hover:bg-black dark:hover:bg-black hover:text-white rounded-md',
+      },
+      size: {
+        default: 'h-10 px-4 py-2',
+        sm: 'h-9 rounded-md px-3',
+        lg: 'h-11 rounded-md px-8',
+        xl: 'h-12 rounded-md px-10 text-md',
+        icon: 'h-10 w-10',
+      },
+      backdropVariant: {
+        default: '',
+        muted: '',
+      },
     },
-    size: {
-      default: 'h-10 px-4 py-2',
-      sm: 'h-9 rounded-md px-3',
-      lg: 'h-11 rounded-md px-8',
-      xl: 'h-12 rounded-md px-10 text-md',
-      icon: 'h-10 w-10',
-    },
-    backdropVariant: {
-      default: '',
-      muted: '',
+    defaultVariants: {
+      variant: 'default',
+      size: 'default',
     },
   },
-  defaultVariants: {
-    variant: 'default',
-    size: 'default',
-  },
-});
+);
 
 const ctaButtonBackdropVariants = cva('absolute z-0 pointer-events-none', {
   variants: {

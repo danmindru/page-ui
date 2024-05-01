@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.1",
+    "@monaco-editor/react": "^4.6.0",
     "@radix-ui/react-accordion": "^1.1.2",
     "@radix-ui/react-alert-dialog": "^1.0.5",
     "@radix-ui/react-aspect-ratio": "^1.0.3",
@@ -48,6 +49,7 @@
     "@types/react-dom": "^18.2.14",
     "@vercel/analytics": "^1.1.1",
     "@vercel/og": "^0.5.20",
+    "chroma-js": "^2.4.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "cmdk": "^0.2.0",
@@ -59,6 +61,7 @@
     "image-size": "^1.0.0",
     "lucide-react": "^0.279.0",
     "mime-types": "^2.1.35",
+    "monaco-editor": "^0.45.0",
     "next": "14.2.2",
     "next-themes": "^0.2.1",
     "react": "18.2.0",
@@ -82,7 +85,8 @@
     "tailwindcss": "^3.3.3",
     "tailwindcss-animate": "^1.0.7",
     "vaul": "^0.8.0",
-    "zod": "^3.22.2"
+    "zod": "^3.22.2",
+    "zustand": "^4.5.2"
   },
   "devDependencies": {
     "@next/bundle-analyzer": "14.2.2",
