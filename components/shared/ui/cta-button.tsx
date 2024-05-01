@@ -10,7 +10,7 @@ const ctaButtonVariants = cva(
     variants: {
       variant: {
         default:
-          'bg-violet-950/90 dark:bg-black/90 text-white hover:bg-black dark:hover:bg-black hover:text-white rounded-md',
+          'bg-violet-950/90 dark:bg-black/90 text-white hover:bg-black dark:hover:bg-gray-900/90 hover:text-white rounded-md',
       },
       size: {
         default: 'h-10 px-4 py-2',

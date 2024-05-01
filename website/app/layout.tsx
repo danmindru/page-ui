@@ -4,7 +4,7 @@ import { siteConfig } from '@/data/config/site.settings';
 import { ThemeProviders } from './theme-providers';
 import { Metadata } from 'next';
 
-import { colors } from '@/data/config/colors.js';
+import { colors, colorsRgb } from '@/data/config/colors.js';
 
 import '@/css/globals.css';
 import { SearchProvider } from '@/components/shared/SearchProvider';
@@ -27,8 +27,10 @@ const style: string[] = [];
 
 Object.keys(globalColors).map((variant) => {
   return Object.keys(globalColors[variant]).map((color) => {
-    const value = globalColors[variant][color];
-    style.push(`--${variant}-${color}: ${value}`);
+    const value = colors[variant][color];
+    const rgbValue = colorsRgb[variant][color];
+    style.push(`--${variant}-${color}-hex: ${value}`);
+    style.push(`--${variant}-${color}: ${rgbValue}`);
   });
 });
 
