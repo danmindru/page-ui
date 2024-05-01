@@ -1,0 +1,156 @@
+---
+title: 'Landing Page Testimonial Inline Item Component'
+date: '2024-04-09'
+lastmod: '2024-04-09'
+tags:
+  - 'guide'
+  - 'components'
+  - 'documentation'
+  - 'landing-page'
+  - 'ui-library'
+  - 'react'
+  - 'nextjs'
+  - 'tailwind-css'
+  - 'testimonial'
+  - 'shadcn-ui'
+  - 'shadcn-ui-testimonial'
+  - 'shadcn-ui-landing-page'
+
+images:
+  - '/static/images/blog/docs/landing-page-testimonial-inline-component.webp'
+
+summary: 'A component meant to be used in the landing page. It displays a single testimonial inline. Use this to highlight short customer testimonials or reviews. are meant as short validation and are usually support for a primary or secondary Call to action. Can be used with Testimonial Inline.'
+layout: PostHub
+
+showThemeSelector: true
+---
+
+Use this component to display a single testimonial inline. Use this to highlight short customer testimonials or reviews. are meant as short validation and are usually support for a primary or secondary Call to action.
+
+Can be used with [Testimonial Inline](/boilerplate-documentation/landing-page-components/testimonial-inline).
+
+<ComponentExample
+  previewComponent={
+    <div className="p-6">
+      <LandingTestimonialInlineItem
+        imageSrc="https://picsum.photos/id/65/100/100"
+        name="Jane Doe"
+        text="Best app ever"
+      />
+    </div>
+}>
+
+```jsx
+import { LandingTestimonialInlineItem } from '@/components/landing/testimonial/LandingTestimonialInlineItem';
+
+<LandingTestimonialInlineItem
+  imageSrc="https://picsum.photos/id/65/100/100"
+  name="Jane Doe"
+  text="Best app ever"
+/>;
+```
+
+</ComponentExample>
+
+## Usage
+
+```jsx
+import { LandingTestimonialInlineItem } from '@/components/landing/testimonial/LandingTestimonialInlineItem';
+```
+
+```jsx
+<LandingTestimonialInlineItem
+  imageSrc="https://picsum.photos/id/65/100/100"
+  name="Jane Doe"
+  text="Best app ever"
+/>
+```
+
+## Examples
+
+### With Testimonial Inline Wrapper
+
+<ComponentExample
+  previewComponent={
+    <LandingTestimonialInline
+      withBackground
+      variant="secondary"
+    >
+      <LandingTestimonialInlineItem
+        imageSrc="https://picsum.photos/id/64/100/100"
+        name="John Doe"
+        text="I love this app"
+      />
+
+      <LandingTestimonialInlineItem
+        imageSrc="https://picsum.photos/id/65/100/100"
+        name="Jane Doe"
+        text="Best app on the market"
+      />
+
+      <LandingTestimonialInlineItem
+        imageSrc="https://picsum.photos/id/669/100/100"
+        name="Alice Doe"
+        text="Never seen anything like it"
+        suffix="CEO of Instagram"
+      />
+
+      <LandingTestimonialInlineItem
+        imageSrc="https://picsum.photos/id/829/100/100"
+        name="Guido Ross"
+        text="Nothing comes close to it"
+        suffix="DevOps at Meta"
+      />
+    </LandingTestimonialInline>
+
+}
+
+>
+
+```jsx
+import { LandingTestimonialInline } from '@/components/landing/testimonial/LandingTestimonialInline';
+import { LandingTestimonialInlineItem } from '@/components/landing/testimonial/LandingTestimonialInlineItem';
+
+<LandingTestimonialInline withBackground variant="secondary">
+  <LandingTestimonialInlineItem
+    imageSrc="https://picsum.photos/id/64/100/100"
+    name="John Doe"
+    text="I love this app"
+  />
+
+  <LandingTestimonialInlineItem
+    imageSrc="https://picsum.photos/id/65/100/100"
+    name="Jane Doe"
+    text="Best app on the market"
+  />
+
+  <LandingTestimonialInlineItem
+    imageSrc="https://picsum.photos/id/669/100/100"
+    name="Alice Doe"
+    text="Never seen anything like it"
+    suffix="CEO of Instagram"
+  />
+
+  <LandingTestimonialInlineItem
+    imageSrc="https://picsum.photos/id/829/100/100"
+    name="Guido Ross"
+    text="Nothing comes close to it"
+    suffix="DevOps at Meta"
+  />
+</LandingTestimonialInline>;
+```
+
+</ComponentExample>
+
+## API Reference
+
+| Prop Name                                                             | Prop Type | Required | Default |
+| --------------------------------------------------------------------- | --------- | -------- | ------- |
+| **imageSrc** <Tippy>Image source URL for the avatar.</Tippy>          | `string`  | Yes      | -       |
+| **text** <Tippy>Text content of the testimonial.</Tippy>              | `string`  | Yes      | -       |
+| **name** <Tippy>Name of the person providing the testimonial.</Tippy> | `string`  | Yes      | -       |
+| **suffix** <Tippy>Optional suffix to append to the name.</Tippy>      | `string`  | No       | -       |
+
+## More Examples
+
+For more even more examples, see our <a href="/demo/landing-page-component-examples" className="fancy-link">Landing Page Component Examples</a> page or see complete landing page examples by <a href="/demo/landing-page-templates" className="fancy-link">Exploring Our Landing Page Templates</a>.

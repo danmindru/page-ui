@@ -1,0 +1,1100 @@
+---
+title: 'Landing Page Primary Image Call to Action (CTA) Component'
+date: '2024-04-04'
+lastmod: '2024-04-06'
+tags:
+  - 'guide'
+  - 'components'
+  - 'documentation'
+  - 'landing-page'
+  - 'ui-library'
+  - 'react'
+  - 'nextjs'
+  - 'tailwind-css'
+  - 'cta'
+  - 'call-to-action'
+  - 'shadcn-ui'
+  - 'shadcn-ui-cta'
+  - 'shadcn-ui-call-to-action'
+  - 'shadcn-ui-landing-page'
+
+images:
+  - '/static/images/blog/docs/landing-page-primary-image-cta-component.webp'
+
+summary: 'A component meant to be used in the landing page. A section that shows a title, description and an image. Optionally, it can have actions (children), leading components and a background glow.'
+layout: PostHub
+
+showThemeSelector: true
+---
+
+Use this component on landing page as the primary Call to Action section. A section that shows a title & description. Optionally, it can have actions (children), leading components and a background glow.
+
+This is the most important section of your landing page. Use it to grab
+the attention of your visitors and encourage them to take action.
+
+<ComponentExample
+  previewComponent={
+    <LandingPrimaryImageCtaSection
+      title="Landing page in minutes"
+      description="Get 10x more done with Shadcn UI, React & Next.js, and say goodbye to repetitive tasks. You'll never go back."
+      imageSrc="/static/images/shipixen/product/1.webp"
+      imageAlt="Sample image"
+    >
+      <Button size="xl" asChild>
+        <a href="#">
+          Buy now
+        </a>
+      </Button>
+    </LandingPrimaryImageCtaSection>
+}
+>
+
+```jsx
+import { Button } from '@/components/shared/ui/button';
+import { LandingPrimaryImageCtaSection } from '@/components/landing/cta/LandingPrimaryCta';
+
+<LandingPrimaryImageCtaSection
+  title="Landing page in minutes"
+  description="Get 10x more done with Shadcn UI, React & Next.js, and say goodbye to repetitive tasks. You'll never go back."
+  imageSrc="/static/images/shipixen/product/1.webp"
+  imageAlt="Sample image"
+>
+  <Button size="xl" asChild>
+    <a href="#">Buy now</a>
+  </Button>
+</LandingPrimaryImageCtaSection>;
+```
+
+</ComponentExample>
+
+## Usage
+
+```jsx
+import { Button } from '@/components/shared/ui/button';
+import { LandingPrimaryImageCtaSection } from '@/components/landing/cta/LandingPrimaryCta';
+```
+
+```jsx
+<LandingPrimaryImageCtaSection
+  title="Landing page in minutes"
+  description="Get 10x more done with Shadcn UI, React & Next.js, and say goodbye to repetitive tasks. You'll never go back."
+  imageSrc="/static/images/shipixen/product/1.webp"
+  imageAlt="Sample image"
+>
+  <Button size="xl" asChild>
+    <a href="#">Buy now</a>
+  </Button>
+</LandingPrimaryImageCtaSection>
+```
+
+## Examples
+
+### Image Perspective
+
+<ComponentExample
+  previewComponent={
+    <LandingPrimaryImageCtaSection
+      title="Landing page in minutes"
+      description="Get 10x more done with Shadcn UI, React & Next.js, and say goodbye to repetitive tasks. You'll never go back."
+      imageSrc="/static/images/shipixen/product/1.webp"
+      imageAlt="Sample image"
+      imagePerspective="paper"
+    >
+      <Button size="xl" asChild>
+        <a href="#">
+          Buy now
+        </a>
+      </Button>
+
+      <Button size="xl" variant="outlinePrimary">
+        <a href="#">
+          Read more
+        </a>
+      </Button>
+    </LandingPrimaryImageCtaSection>
+
+}
+
+>
+
+```jsx
+import { Button } from '@/components/shared/ui/button';
+import { LandingPrimaryImageCtaSection } from '@/components/landing/cta/LandingPrimaryCta';
+
+<LandingPrimaryImageCtaSection
+  title="Landing page in minutes"
+  description="Get 10x more done with Shadcn UI, React & Next.js, and say goodbye to repetitive tasks. You'll never go back."
+  imageSrc="/static/images/shipixen/product/1.webp"
+  imageAlt="Sample image"
+  imagePerspective="paper"
+>
+  <Button size="xl" asChild>
+    <a href="#">Buy now</a>
+  </Button>
+
+  <Button size="xl" variant="outlinePrimary">
+    <a href="#">Read more</a>
+  </Button>
+</LandingPrimaryImageCtaSection>;
+```
+
+</ComponentExample>
+
+### Image Position
+
+<ComponentExample
+  previewComponent={
+    <LandingPrimaryImageCtaSection
+      title="Landing page in minutes"
+      description="Get 10x more done with Shadcn UI, React & Next.js, and say goodbye to repetitive tasks. You'll never go back."
+      imageSrc="/static/images/shipixen/product/1.webp"
+      imageAlt="Sample image"
+      imagePosition="center"
+      textPosition="center"
+    >
+      <Button size="xl" asChild>
+        <a href="#">
+          Buy now
+        </a>
+      </Button>
+
+      <Button size="xl" variant="outlinePrimary">
+        <a href="#">
+          Read more
+        </a>
+      </Button>
+    </LandingPrimaryImageCtaSection>
+
+}
+
+>
+
+```jsx
+import { Button } from '@/components/shared/ui/button';
+import { LandingPrimaryImageCtaSection } from '@/components/landing/cta/LandingPrimaryCta';
+
+<LandingPrimaryImageCtaSection
+  title="Landing page in minutes"
+  description="Get 10x more done with Shadcn UI, React & Next.js, and say goodbye to repetitive tasks. You'll never go back."
+  imageSrc="/static/images/shipixen/product/1.webp"
+  imageAlt="Sample image"
+  imagePosition="center"
+  textPosition="center"
+>
+  <Button size="xl" asChild>
+    <a href="#">Buy now</a>
+  </Button>
+
+  <Button size="xl" variant="outlinePrimary">
+    <a href="#">Read more</a>
+  </Button>
+</LandingPrimaryImageCtaSection>;
+```
+
+</ComponentExample>
+
+### With Social Proof
+
+<ComponentExample
+  previewComponent={
+    <LandingPrimaryImageCtaSection
+      title="Landing page in minutes"
+      description="Get 10x more done with Shadcn UI, React & Next.js, and say goodbye to repetitive tasks. You'll never go back."
+      imageSrc="/static/images/shipixen/product/1.webp"
+      imageAlt="Sample image"
+      imagePosition="center"
+      textPosition="center"
+    >
+      <Button size="xl" asChild>
+        <a href="#">
+          Buy now
+        </a>
+      </Button>
+
+      <Button size="xl" variant="outlinePrimary">
+        <a href="#">Read more</a>
+      </Button>
+
+      <LandingSocialProof
+        className="mt-6 w-full flex justify-center"
+        showRating
+        numberOfUsers={99}
+        avatarItems={[
+          {
+            imageSrc: '/static/images/people/1.webp',
+            name: 'John Doe',
+          },
+          {
+            imageSrc: '/static/images/people/2.webp',
+            name: 'Jane Doe',
+          },
+          {
+            imageSrc: '/static/images/people/3.webp',
+            name: 'Alice Doe',
+          },
+        ]}
+      />
+    </LandingPrimaryImageCtaSection>
+
+}
+
+>
+
+```jsx
+import { Button } from '@/components/shared/ui/button';
+import { LandingPrimaryImageCtaSection } from '@/components/landing/cta/LandingPrimaryCta';
+import { LandingSocialProof } from '@/components/landing/social-proof/LandingSocialProof';
+
+<LandingPrimaryImageCtaSection
+  title="Landing page in minutes"
+  description="Get 10x more done with Shadcn UI, React & Next.js, and say goodbye to repetitive tasks. You'll never go back."
+  imageSrc="/static/images/shipixen/product/1.webp"
+  imageAlt="Sample image"
+  imagePosition="center"
+  textPosition="center"
+>
+  <Button size="xl" asChild>
+    <a href="#">Buy now</a>
+  </Button>
+
+  <Button size="xl" variant="outlinePrimary">
+    <a href="#">Read more</a>
+  </Button>
+
+  <LandingSocialProof
+    className="mt-6 w-full flex justify-center"
+    showRating
+    numberOfUsers={99}
+    avatarItems={[
+      {
+        imageSrc: '/static/images/people/1.webp',
+        name: 'John Doe',
+      },
+      {
+        imageSrc: '/static/images/people/2.webp',
+        name: 'Jane Doe',
+      },
+      {
+        imageSrc: '/static/images/people/3.webp',
+        name: 'Alice Doe',
+      },
+    ]}
+  />
+</LandingPrimaryImageCtaSection>;
+```
+
+</ComponentExample>
+
+### With Discount/Offer
+
+<ComponentExample
+  previewComponent={
+    <LandingPrimaryImageCtaSection
+      title="Landing page in minutes"
+      description="Get 10x more done with Shadcn UI, React & Next.js, and say goodbye to repetitive tasks. You'll never go back."
+      imageSrc="/static/images/shipixen/product/1.webp"
+      imageAlt="Sample image"
+      imagePosition="center"
+      textPosition="center"
+    >
+      <Button size="xl" asChild>
+        <a href="#">
+          Buy now
+        </a>
+      </Button>
+
+      <Button size="xl" variant="outlinePrimary">
+        <a href="#">Read more</a>
+      </Button>
+
+      <LandingDiscount
+        className="w-full flex justify-center"
+        discountValueText="$350 off"
+        discountDescriptionText="for the first 10 customers (2 left)"
+      />
+    </LandingPrimaryImageCtaSection>
+
+}
+
+>
+
+```jsx
+import { Button } from '@/components/shared/ui/button';
+import { LandingPrimaryImageCtaSection } from '@/components/landing/cta/LandingPrimaryCta';
+import { LandingDiscount } from '@/components/landing/discount/LandingDiscount';
+
+<LandingPrimaryImageCtaSection
+  title="Landing page in minutes"
+  description="Get 10x more done with Shadcn UI, React & Next.js, and say goodbye to repetitive tasks. You'll never go back."
+  imageSrc="/static/images/shipixen/product/1.webp"
+  imageAlt="Sample image"
+  imagePosition="center"
+  textPosition="center"
+>
+  <Button size="xl" asChild>
+    <a href="#">Buy now</a>
+  </Button>
+
+  <Button size="xl" variant="outlinePrimary">
+    <a href="#">Read more</a>
+  </Button>
+
+  <LandingDiscount
+    className="w-full flex justify-center"
+    discountValueText="$350 off"
+    discountDescriptionText="for the first 10 customers (2 left)"
+  />
+</LandingPrimaryImageCtaSection>;
+```
+
+</ComponentExample>
+
+### With Discount and Left Alignment
+
+<ComponentExample
+  previewComponent={
+    <LandingPrimaryImageCtaSection
+      title="Landing page in minutes"
+      description="Get 10x more done with Shadcn UI, React & Next.js, and say goodbye to repetitive tasks. You'll never go back."
+      imageSrc="/static/images/shipixen/product/1.webp"
+      imageAlt="Sample image"
+    >
+      <Button size="xl" asChild>
+        <a href="#">
+          Buy now
+        </a>
+      </Button>
+
+      <Button size="xl" variant="outlinePrimary">
+        <a href="#">Read more</a>
+      </Button>
+
+      <LandingDiscount
+        className="w-full"
+        discountValueText="$350 off"
+        discountDescriptionText="for the first 10 customers (2 left)"
+      />
+    </LandingPrimaryImageCtaSection>
+
+}
+
+>
+
+```jsx
+import { Button } from '@/components/shared/ui/button';
+import { LandingPrimaryImageCtaSection } from '@/components/landing/cta/LandingPrimaryCta';
+import { LandingDiscount } from '@/components/landing/discount/LandingDiscount';
+
+<LandingPrimaryImageCtaSection
+  title="Landing page in minutes"
+  description="Get 10x more done with Shadcn UI, React & Next.js, and say goodbye to repetitive tasks. You'll never go back."
+  imageSrc="/static/images/shipixen/product/1.webp"
+  imageAlt="Sample image"
+>
+  <Button size="xl" asChild>
+    <a href="#">Buy now</a>
+  </Button>
+
+  <Button size="xl" variant="outlinePrimary">
+    <a href="#">Read more</a>
+  </Button>
+
+  <LandingDiscount
+    className="w-full"
+    discountValueText="$350 off"
+    discountDescriptionText="for the first 10 customers (2 left)"
+  />
+</LandingPrimaryImageCtaSection>;
+```
+
+</ComponentExample>
+
+### With Bullet Points
+
+<ComponentExample
+  previewComponent={
+    <LandingPrimaryImageCtaSection
+      title="Landing page in minutes"
+      descriptionComponent={
+        <LandingProductFeatureKeyPoints
+          keyPoints={[
+            {
+              title: 'Intelligent Assistance',
+              description:
+                'Receive personalized recommendations and insights tailored to your workflow.',
+            },
+            {
+              title: 'Seamless Collaboration',
+              description:
+                'Easily collaborate with team members and clients in real-time.',
+            },
+            {
+              title: 'Advanced Customization',
+              description:
+                'Tailor your app to fit your unique requirements with extensive customization options.',
+            },
+          ]}
+        />
+      }
+      textPosition="left"
+      imageSrc="/static/images/shipixen/product/1.webp"
+      imageAlt="Sample image"
+    >
+      <Button size="xl" asChild>
+        <a href="#">
+          Buy now
+        </a>
+      </Button>
+
+      <Button size="xl" variant="outlinePrimary">
+        <a href="#">Read more</a>
+      </Button>
+
+      <LandingDiscount
+        className="w-full"
+        discountValueText="$350 off"
+        discountDescriptionText="for the first 10 customers (2 left)"
+      />
+    </LandingPrimaryImageCtaSection>
+
+}
+
+>
+
+```jsx
+import { Button } from '@/components/shared/ui/button';
+import { LandingPrimaryImageCtaSection } from '@/components/landing/cta/LandingPrimaryCta';
+import { LandingDiscount } from '@/components/landing/discount/LandingDiscount';
+import { LandingProductFeatureKeyPoints } from '@/components/landing/LandingProductFeatureKeyPoints';
+
+<LandingPrimaryImageCtaSection
+  title="Landing page in minutes"
+  descriptionComponent={
+    <LandingProductFeatureKeyPoints
+      keyPoints={[
+        {
+          title: 'Intelligent Assistance',
+          description:
+            'Receive personalized recommendations and insights tailored to your workflow.',
+        },
+        {
+          title: 'Seamless Collaboration',
+          description:
+            'Easily collaborate with team members and clients in real-time.',
+        },
+        {
+          title: 'Advanced Customization',
+          description:
+            'Tailor your app to fit your unique requirements with extensive customization options.',
+        },
+      ]}
+    />
+  }
+  textPosition="left"
+  imageSrc="/static/images/shipixen/product/1.webp"
+  imageAlt="Sample image"
+>
+  <Button size="xl" asChild>
+    <a href="#">Buy now</a>
+  </Button>
+
+  <Button size="xl" variant="outlinePrimary">
+    <a href="#">Read more</a>
+  </Button>
+
+  <LandingDiscount
+    className="w-full"
+    discountValueText="$350 off"
+    discountDescriptionText="for the first 10 customers (2 left)"
+  />
+</LandingPrimaryImageCtaSection>;
+```
+
+</ComponentExample>
+
+### With Product Hunt Award
+
+<ComponentExample
+  previewComponent={
+    <LandingPrimaryImageCtaSection
+      title="Landing page in minutes"
+      description="Get 10x more done with Shadcn UI, React & Next.js, and say goodbye to repetitive tasks. You'll never go back."
+      imageSrc="/static/images/shipixen/product/1.webp"
+      imageAlt="Sample image"
+      leadingComponent={<LandingProductHuntAward />}
+    >
+      <Button size="xl" asChild>
+        <a href="#">
+          Buy now
+        </a>
+      </Button>
+
+      <Button size="xl" variant="outlinePrimary">
+        <a href="#">Read more</a>
+      </Button>
+
+      <LandingDiscount
+        className="w-full"
+        discountValueText="$350 off"
+        discountDescriptionText="for the first 10 customers (2 left)"
+      />
+    </LandingPrimaryImageCtaSection>
+
+}
+
+>
+
+```jsx
+import { Button } from '@/components/shared/ui/button';
+import { LandingPrimaryImageCtaSection } from '@/components/landing/cta/LandingPrimaryCta';
+import { LandingDiscount } from '@/components/landing/discount/LandingDiscount';
+import { LandingProductHuntAward } from '@/components/landing/social-proof/LandingProductHuntAward';
+
+<LandingPrimaryImageCtaSection
+  title="Landing page in minutes"
+  description="Get 10x more done with Shadcn UI, React & Next.js, and say goodbye to repetitive tasks. You'll never go back."
+  imageSrc="/static/images/shipixen/product/1.webp"
+  imageAlt="Sample image"
+  leadingComponent={<LandingProductHuntAward />}
+>
+  <Button size="xl" asChild>
+    <a href="#">Buy now</a>
+  </Button>
+
+  <Button size="xl" variant="outlinePrimary">
+    <a href="#">Read more</a>
+  </Button>
+
+  <LandingDiscount
+    className="w-full"
+    discountValueText="$350 off"
+    discountDescriptionText="for the first 10 customers (2 left)"
+  />
+</LandingPrimaryImageCtaSection>;
+```
+
+</ComponentExample>
+
+### With Social Proof Band
+
+<ComponentExample
+  previewComponent={
+    <>
+      <LandingSocialProofBand>
+        <LandingSocialProofBandItem>
+          100% encrypted and secure
+        </LandingSocialProofBandItem>
+
+        <LandingSocialProofBandItem>24/7 customer support</LandingSocialProofBandItem>
+
+        <LandingSocialProofBandItem>
+          99% customer satisfaction
+        </LandingSocialProofBandItem>
+      </LandingSocialProofBand>
+      <LandingPrimaryImageCtaSection
+        title="Landing page in minutes"
+        description="Get 10x more done with Shadcn UI, React & Next.js, and say goodbye to repetitive tasks. You'll never go back."
+        imageSrc="/static/images/shipixen/product/1.webp"
+        imageAlt="Sample image"
+        leadingComponent={<LandingProductHuntAward />}
+      >
+        <Button size="xl" asChild>
+          <a href="#">
+            Buy now
+          </a>
+        </Button>
+
+        <Button size="xl" variant="outlinePrimary">
+          <a href="#">Read more</a>
+        </Button>
+
+        <LandingDiscount
+          className="w-full"
+          discountValueText="$350 off"
+          discountDescriptionText="for the first 10 customers (2 left)"
+        />
+      </LandingPrimaryImageCtaSection>
+    </>
+
+}
+
+>
+
+```jsx
+import { Button } from '@/components/shared/ui/button';
+import { LandingPrimaryImageCtaSection } from '@/components/landing/cta/LandingPrimaryCta';
+import { LandingDiscount } from '@/components/landing/discount/LandingDiscount';
+import { LandingProductHuntAward } from '@/components/landing/social-proof/LandingProductHuntAward';
+import { LandingSocialProofBand } from '@/components/landing/social-proof/LandingSocialProofBand';
+import { LandingSocialProofBandItem } from '@/components/landing/social-proof/LandingSocialProofBandItem';
+
+<LandingSocialProofBand>
+  <LandingSocialProofBandItem>
+    100% encrypted and secure
+  </LandingSocialProofBandItem>
+
+  <LandingSocialProofBandItem>24/7 customer support</LandingSocialProofBandItem>
+
+  <LandingSocialProofBandItem>
+    99% customer satisfaction
+  </LandingSocialProofBandItem>
+</LandingSocialProofBand>
+<LandingPrimaryImageCtaSection
+  title="Landing page in minutes"
+  description="Get 10x more done with Shadcn UI, React & Next.js, and say goodbye to repetitive tasks. You'll never go back."
+  imageSrc="/static/images/shipixen/product/1.webp"
+  imageAlt="Sample image"
+  leadingComponent={<LandingProductHuntAward />}
+>
+  <Button size="xl" asChild>
+    <a href="#">
+      Buy now
+    </a>
+  </Button>
+
+  <Button size="xl" variant="outlinePrimary">
+    <a href="#">Read more</a>
+  </Button>
+
+  <LandingDiscount
+    className="w-full"
+    discountValueText="$350 off"
+    discountDescriptionText="for the first 10 customers (2 left)"
+  />
+</LandingPrimaryImageCtaSection>
+```
+
+</ComponentExample>
+
+### With Background
+
+<ComponentExample
+  previewComponent={
+    <LandingPrimaryImageCtaSection
+      title="Landing page in minutes"
+      description="Get 10x more done with Shadcn UI, React & Next.js, and say goodbye to repetitive tasks. You'll never go back."
+      imageSrc="/static/images/shipixen/product/1.webp"
+      imageAlt="Sample image"
+      withBackground
+      variant="secondary"
+      leadingComponent={<LandingProductHuntAward />}
+    >
+      <Button size="xl" variant="secondary" asChild>
+        <a href="#">
+          Buy now
+        </a>
+      </Button>
+
+      <Button size="xl" variant="outlineSecondary">
+        <a href="#">Read more</a>
+      </Button>
+
+      <LandingDiscount
+        className="w-full"
+        discountValueText="$350 off"
+        discountDescriptionText="for the first 10 customers (2 left)"
+      />
+    </LandingPrimaryImageCtaSection>
+
+}
+
+>
+
+```jsx
+import { Button } from '@/components/shared/ui/button';
+import { LandingPrimaryImageCtaSection } from '@/components/landing/cta/LandingPrimaryCta';
+import { LandingDiscount } from '@/components/landing/discount/LandingDiscount';
+import { LandingProductHuntAward } from '@/components/landing/social-proof/LandingProductHuntAward';
+
+<LandingPrimaryImageCtaSection
+  title="Landing page in minutes"
+  description="Get 10x more done with Shadcn UI, React & Next.js, and say goodbye to repetitive tasks. You'll never go back."
+  imageSrc="/static/images/shipixen/product/1.webp"
+  imageAlt="Sample image"
+  withBackground
+  variant="secondary"
+  leadingComponent={<LandingProductHuntAward />}
+>
+  <Button size="xl" variant="secondary" asChild>
+    <a href="#">Buy now</a>
+  </Button>
+
+  <Button size="xl" variant="outlineSecondary">
+    <a href="#">Read more</a>
+  </Button>
+
+  <LandingDiscount
+    className="w-full"
+    discountValueText="$350 off"
+    discountDescriptionText="for the first 10 customers (2 left)"
+  />
+</LandingPrimaryImageCtaSection>;
+```
+
+</ComponentExample>
+
+### With Background Glow
+
+<ComponentExample
+  previewComponent={
+    <LandingPrimaryImageCtaSection
+      title="Landing page in minutes"
+      description="Get 10x more done with Shadcn UI, React & Next.js, and say goodbye to repetitive tasks. You'll never go back."
+      imageSrc="/static/images/shipixen/product/1.webp"
+      imageAlt="Sample image"
+      withBackground
+      withBackgroundGlow
+      leadingComponent={<LandingProductHuntAward />}
+    >
+      <Button size="xl" asChild>
+        <a href="#">
+          Buy now
+        </a>
+      </Button>
+
+      <Button size="xl" variant="outlinePrimary">
+        <a href="#">Read more</a>
+      </Button>
+
+      <LandingDiscount
+        className="w-full"
+        discountValueText="$350 off"
+        discountDescriptionText="for the first 10 customers (2 left)"
+      />
+    </LandingPrimaryImageCtaSection>
+
+}
+
+>
+
+```jsx
+import { Button } from '@/components/shared/ui/button';
+import { LandingPrimaryImageCtaSection } from '@/components/landing/cta/LandingPrimaryCta';
+import { LandingDiscount } from '@/components/landing/discount/LandingDiscount';
+import { LandingProductHuntAward } from '@/components/landing/social-proof/LandingProductHuntAward';
+
+<LandingPrimaryImageCtaSection
+  title="Landing page in minutes"
+  description="Get 10x more done with Shadcn UI, React & Next.js, and say goodbye to repetitive tasks. You'll never go back."
+  imageSrc="/static/images/shipixen/product/1.webp"
+  imageAlt="Sample image"
+  withBackground
+  withBackgroundGlow
+  leadingComponent={<LandingProductHuntAward />}
+>
+  <Button size="xl" asChild>
+    <a href="#">Buy now</a>
+  </Button>
+
+  <Button size="xl" variant="outlinePrimary">
+    <a href="#">Read more</a>
+  </Button>
+
+  <LandingDiscount
+    className="w-full"
+    discountValueText="$350 off"
+    discountDescriptionText="for the first 10 customers (2 left)"
+  />
+</LandingPrimaryImageCtaSection>;
+```
+
+</ComponentExample>
+
+### Left-aligned Full Example
+
+<ComponentExample
+  previewComponent={
+    <>
+      <LandingSocialProofBand>
+        <LandingSocialProofBandItem>
+          100% encrypted and secure
+        </LandingSocialProofBandItem>
+
+        <LandingSocialProofBandItem>24/7 customer support</LandingSocialProofBandItem>
+
+        <LandingSocialProofBandItem>
+          99% customer satisfaction
+        </LandingSocialProofBandItem>
+      </LandingSocialProofBand>
+
+      <LandingPrimaryImageCtaSection
+        title="Landing page in minutes"
+        description="Get 10x more done with Shadcn UI, React & Next.js, and say goodbye to repetitive tasks. You'll never go back."
+        imageSrc="/static/images/shipixen/product/1.webp"
+        imageAlt="Sample image"
+        withBackground
+        withBackgroundGlow
+        leadingComponent={<LandingProductHuntAward />}
+      >
+        <Button size="xl" asChild>
+          <a href="#">
+            Buy now
+          </a>
+        </Button>
+
+        <Button size="xl" variant="outlinePrimary">
+          <a href="#">Read more</a>
+        </Button>
+
+        <LandingSocialProof
+          className="w-full mt-12"
+          showRating
+          numberOfUsers={99}
+          avatarItems={[
+            {
+              imageSrc: '/static/images/people/1.webp',
+              name: 'John Doe',
+            },
+            {
+              imageSrc: '/static/images/people/2.webp',
+              name: 'Jane Doe',
+            },
+            {
+              imageSrc: '/static/images/people/3.webp',
+              name: 'Alice Doe',
+            },
+          ]}
+        />
+      </LandingPrimaryImageCtaSection>
+    </>
+
+}
+
+>
+
+```jsx
+import { Button } from '@/components/shared/ui/button';
+import { LandingPrimaryImageCtaSection } from '@/components/landing/cta/LandingPrimaryCta';
+import { LandingDiscount } from '@/components/landing/discount/LandingDiscount';
+import { LandingProductHuntAward } from '@/components/landing/social-proof/LandingProductHuntAward';
+import { LandingSocialProof } from '@/components/landing/social-proof/LandingSocialProof';
+import { LandingSocialProofBand } from '@/components/landing/social-proof/LandingSocialProofBand';
+import { LandingSocialProofBandItem } from '@/components/landing/social-proof/LandingSocialProofBandItem';
+
+<LandingSocialProofBand>
+  <LandingSocialProofBandItem>
+    100% encrypted and secure
+  </LandingSocialProofBandItem>
+
+  <LandingSocialProofBandItem>24/7 customer support</LandingSocialProofBandItem>
+
+  <LandingSocialProofBandItem>
+    99% customer satisfaction
+  </LandingSocialProofBandItem>
+</LandingSocialProofBand>
+
+<LandingPrimaryImageCtaSection
+  title="Landing page in minutes"
+  description="Get 10x more done with Shadcn UI, React & Next.js, and say goodbye to repetitive tasks. You'll never go back."
+  imageSrc="/static/images/shipixen/product/1.webp"
+  imageAlt="Sample image"
+  withBackground
+  withBackgroundGlow
+  leadingComponent={<LandingProductHuntAward />}
+>
+  <Button size="xl" asChild>
+    <a href="#">
+      Buy now
+    </a>
+  </Button>
+
+  <Button size="xl" variant="outlinePrimary">
+    <a href="#">Read more</a>
+  </Button>
+
+  <LandingSocialProof
+    className="w-full mt-12"
+    showRating
+    numberOfUsers={99}
+    avatarItems={[
+      {
+        imageSrc: '/static/images/people/1.webp',
+        name: 'John Doe',
+      },
+      {
+        imageSrc: '/static/images/people/2.webp',
+        name: 'Jane Doe',
+      },
+      {
+        imageSrc: '/static/images/people/3.webp',
+        name: 'Alice Doe',
+      },
+    ]}
+  />
+</LandingPrimaryImageCtaSection>
+```
+
+</ComponentExample>
+
+### Centered full example
+
+<ComponentExample
+  previewComponent={
+    <>
+      <LandingSocialProofBand invert>
+        <LandingSocialProofBandItem>
+          100% encrypted and secure
+        </LandingSocialProofBandItem>
+
+        <LandingSocialProofBandItem>24/7 customer support</LandingSocialProofBandItem>
+
+        <LandingSocialProofBandItem>
+          99% customer satisfaction
+        </LandingSocialProofBandItem>
+      </LandingSocialProofBand>
+      <LandingPrimaryImageCtaSection
+        title="Landing page in minutes"
+        description="Get 10x more done with Shadcn UI, React & Next.js, and say goodbye to repetitive tasks. You'll never go back."
+        imageSrc="/static/images/shipixen/product/1.webp"
+        imageAlt="Sample image"
+        imagePosition="center"
+        textPosition="center"
+        withBackground
+        withBackgroundGlow
+        variant="secondary"
+        backgroundGlowVariant="secondary"
+        leadingComponent={<LandingProductHuntAward />}
+      >
+        <Button size="xl" variant="secondary" asChild>
+          <a href="#">
+            Buy now
+          </a>
+        </Button>
+
+        <Button size="xl" variant="outlineSecondary">
+          <a href="#">Read more</a>
+        </Button>
+
+        <LandingDiscount
+          className="w-full flex justify-center"
+          discountValueText="$350 off"
+          discountDescriptionText="for the first 10 customers (2 left)"
+        />
+
+        <LandingSocialProof
+          className="mt-12 w-full flex justify-center"
+          showRating
+          numberOfUsers={99}
+          avatarItems={[
+            {
+              imageSrc: '/static/images/people/1.webp',
+              name: 'John Doe',
+            },
+            {
+              imageSrc: '/static/images/people/2.webp',
+              name: 'Jane Doe',
+            },
+            {
+              imageSrc: '/static/images/people/3.webp',
+              name: 'Alice Doe',
+            },
+          ]}
+        />
+      </LandingPrimaryImageCtaSection>
+    </>
+
+}
+
+>
+
+```jsx
+import { Button } from '@/components/shared/ui/button';
+import { LandingPrimaryImageCtaSection } from '@/components/landing/cta/LandingPrimaryCta';
+import { LandingDiscount } from '@/components/landing/discount/LandingDiscount';
+import { LandingProductHuntAward } from '@/components/landing/social-proof/LandingProductHuntAward';
+import { LandingSocialProof } from '@/components/landing/social-proof/LandingSocialProof';
+import { LandingSocialProofBand } from '@/components/landing/social-proof/LandingSocialProofBand';
+import { LandingSocialProofBandItem } from '@/components/landing/social-proof/LandingSocialProofBandItem';
+
+<LandingSocialProofBand invert>
+  <LandingSocialProofBandItem>
+    100% encrypted and secure
+  </LandingSocialProofBandItem>
+
+  <LandingSocialProofBandItem>24/7 customer support</LandingSocialProofBandItem>
+
+  <LandingSocialProofBandItem>
+    99% customer satisfaction
+  </LandingSocialProofBandItem>
+</LandingSocialProofBand>
+
+<LandingPrimaryImageCtaSection
+  title="Landing page in minutes"
+  description="Get 10x more done with Shadcn UI, React & Next.js, and say goodbye to repetitive tasks. You'll never go back."
+  imageSrc="/static/images/shipixen/product/1.webp"
+  imageAlt="Sample image"
+  imagePosition="center"
+  textPosition="center"
+  withBackground
+  withBackgroundGlow
+  variant="secondary"
+  backgroundGlowVariant="secondary"
+  leadingComponent={<LandingProductHuntAward />}
+>
+  <Button size="xl" variant="secondary" asChild>
+    <a href="#">
+      Buy now
+    </a>
+  </Button>
+
+  <Button size="xl" variant="outlineSecondary">
+    <a href="#">Read more</a>
+  </Button>
+
+  <LandingDiscount
+    className="w-full flex justify-center"
+    discountValueText="$350 off"
+    discountDescriptionText="for the first 10 customers (2 left)"
+  />
+
+  <LandingSocialProof
+    className="mt-12 w-full flex justify-center"
+    showRating
+    numberOfUsers={99}
+    avatarItems={[
+      {
+        imageSrc: '/static/images/people/1.webp',
+        name: 'John Doe',
+      },
+      {
+        imageSrc: '/static/images/people/2.webp',
+        name: 'Jane Doe',
+      },
+      {
+        imageSrc: '/static/images/people/3.webp',
+        name: 'Alice Doe',
+      },
+    ]}
+  />
+</LandingPrimaryImageCtaSection>
+```
+
+</ComponentExample>
+
+## API Reference
+
+| Prop Name                                                                                                                             | Prop Type                                                                | Required | Default     |
+| ------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ | -------- | ----------- |
+| **children** <Tippy>React nodes to be rendered within the component (below the text on smaller screen, right side on larger).</Tippy> | `React.ReactNode` ǀ `string`                                             | Yes      | -           |
+| **title** <Tippy>The title to be displayed in the component.</Tippy>                                                                  | `string` ǀ `React.ReactNode`                                             | Yes      | -           |
+| **description** <Tippy>The description to be displayed in the component.</Tippy>                                                      | `string` ǀ `React.ReactNode`                                             | Yes      | -           |
+| **innerClassName** <Tippy>Additional CSS class to be applied to the inner container of the component.</Tippy>                         | `string`                                                                 | No       | -           |
+| **titleComponent** <Tippy>Custom component for rendering the title.</Tippy>                                                           | `React.ReactNode`                                                        | No       | -           |
+| **descriptionComponent** <Tippy>Custom component for rendering the description.</Tippy>                                               | `React.ReactNode`                                                        | No       | -           |
+| **leadingComponent** <Tippy>Custom component to be rendered before the title and description.</Tippy>                                 | `React.ReactNode`                                                        | No       | -           |
+| **footerComponent** <Tippy>Custom component to be rendered as the footer of the section.</Tippy>                                      | `React.ReactNode`                                                        | No       | -           |
+| **textPosition** <Tippy>The position of text content within the component.</Tippy>                                                    | `'center'` ǀ `'left'`                                                    | No       | `'left'`    |
+| **imageSrc** <Tippy>The source URL for the image to be displayed in the component.</Tippy>                                            | `string`                                                                 | No       | -           |
+| **imageAlt** <Tippy>The alt text for the image.</Tippy>                                                                               | `string`                                                                 | No       | `''`        |
+| **imagePosition** <Tippy>The position of the image within the component.</Tippy>                                                      | `'left'` ǀ `'right'` ǀ `'center'`                                        | No       | `'right'`   |
+| **imagePerspective** <Tippy>The perspective effect applied to the image.</Tippy>                                                      | `'none'` ǀ `'left'` ǀ `'right'` ǀ `'bottom'` ǀ `'bottom-lg'` ǀ `'paper'` | No       | `'none'`    |
+| **imageShadow** <Tippy>The type of shadow applied to the image.</Tippy>                                                               | `'none'` ǀ `'soft'` ǀ `'hard'`                                           | No       | `'hard'`    |
+| **minHeight** <Tippy>The minimum height of the section containing the component.</Tippy>                                              | `number`                                                                 | No       | `350`       |
+| **withBackground** <Tippy>Whether to display a background for the component.</Tippy>                                                  | `boolean`                                                                | No       | `false`     |
+| **withBackgroundGlow** <Tippy>Whether to display a glowing background for the component.</Tippy>                                      | `boolean`                                                                | No       | `false`     |
+| **variant** <Tippy>The variant style for the component.</Tippy>                                                                       | `'primary'` ǀ `'secondary'`                                              | No       | `'primary'` |
+| **backgroundGlowVariant** <Tippy>The variant style for the glowing background.</Tippy>                                                | `'primary'` ǀ `'secondary'`                                              | No       | `'primary'` |
+
+## More Examples
+
+For more even more examples, see our <a href="/demo/landing-page-component-examples" className="fancy-link">Landing Page Component Examples</a> page or see complete landing page examples by <a href="/demo/landing-page-templates" className="fancy-link">Exploring Our Landing Page Templates</a>.

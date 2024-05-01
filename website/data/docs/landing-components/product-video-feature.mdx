@@ -1,0 +1,399 @@
+---
+title: 'Landing Page Video Feature Component'
+date: '2024-04-04'
+lastmod: '2024-04-09'
+tags:
+  - 'guide'
+  - 'components'
+  - 'documentation'
+  - 'landing-page'
+  - 'ui-library'
+  - 'react'
+  - 'nextjs'
+  - 'tailwind-css'
+  - 'shadcn-ui'
+  - 'shadcn-ui-landing-page'
+
+images:
+  - '/static/images/blog/docs/landing-page-video-feature-component.webp'
+
+summary: >
+  A component meant to be used in the landing page. It displays a title, description and video of a product's feature. The video could either be left, right or center (larger). The section can have a background or not.
+layout: PostHub
+showThemeSelector: true
+---
+
+This component is used to display a product video feature in the landing page. The video could either be left, right or center (larger). The section can have a background or not.
+
+It displays a title, description and video of a product's feature.
+
+Use this to highlight a feature or key aspect of your product with a video.
+
+Can be used with multiple features in a [Product Features Grid](/boilerplate-documentation/landing-page-components/product-features-grid).
+
+<ComponentExample previewComponent={
+  <LandingProductVideoFeature
+    title="Sites in minutes"
+    description="Choose from more than 30+ themes or create your own."
+    videoSrc="https://cache.shipixen.com/features/3-theme-and-logo.mp4"
+  />}>
+
+```jsx
+import { LandingProductVideoFeature } from '@/components/landing/LandingProductVideoFeature';
+
+<LandingProductVideoFeature
+  title="Sites in minutes"
+  description="Choose from more than 30+ themes or create your own."
+  videoSrc="https://cache.shipixen.com/features/3-theme-and-logo.mp4"
+/>;
+```
+
+</ComponentExample>
+
+## Usage
+
+```jsx
+import { LandingProductVideoFeature } from '@/components/landing/LandingProductVideoFeature';
+```
+
+```jsx
+<LandingProductVideoFeature
+  title="Sites in minutes"
+  description="Choose from more than 30+ themes or create your own."
+  videoSrc="https://cache.shipixen.com/features/3-theme-and-logo.mp4"
+/>
+```
+
+## Examples
+
+### Video Position
+
+<ComponentExample previewComponent={
+  <LandingProductVideoFeature
+    videoPosition="center"
+    textPosition="center"
+    withBackground
+    variant="primary"
+    title="Sites in minutes"
+    description="Choose from more than 30+ themes or create your own. Upload your logo, set the size and we take care of the rest."
+    autoPlay={false}
+    controls={false}
+    videoSrc="https://cache.shipixen.com/features/3-theme-and-logo.mp4"
+  />}>
+
+```jsx
+import { LandingProductVideoFeature } from '@/components/landing/LandingProductVideoFeature';
+
+<LandingProductVideoFeature
+  textPosition="center"
+  videoPosition="center"
+  withBackground
+  variant="primary"
+  title="Sites in minutes"
+  description="Choose from more than 30+ themes or create your own. Upload your logo, set the size and we take care of the rest."
+  autoPlay={false}
+  controls={false}
+  videoSrc="https://cache.shipixen.com/features/3-theme-and-logo.mp4"
+/>;
+```
+
+</ComponentExample>
+
+### Customization
+
+To better separate sections, you can alternate between primary, secondary
+and no background.<br />
+Here we set <b>variant</b> to <b>secondary</b> and the <b>videoPosition</b> to <b>right</b>.
+
+<ComponentExample previewComponent={
+  <LandingProductVideoFeature
+    videoPosition="right"
+    withBackground
+    variant="secondary"
+    title="Sites in minutes"
+    description="Choose from more than 30+ themes or create your own."
+    autoPlay={false}
+    controls={false}
+    videoSrc="https://cache.shipixen.com/features/3-theme-and-logo.mp4"
+  />}>
+
+```jsx
+import { LandingProductVideoFeature } from '@/components/landing/LandingProductVideoFeature';
+
+<LandingProductVideoFeature
+  videoPosition="right"
+  withBackground
+  variant="secondary"
+  title="Sites in minutes"
+  description="Choose from more than 30+ themes or create your own."
+  autoPlay={false}
+  controls={false}
+  videoSrc="https://cache.shipixen.com/features/3-theme-and-logo.mp4"
+/>;
+```
+
+</ComponentExample>
+
+### With Background Glow
+
+<ComponentExample previewComponent={
+  <LandingProductVideoFeature
+    videoPosition="left"
+    withBackgroundGlow
+    backgroundGlowVariant="primary"
+    title="Easy Branding"
+    description="Choose from more than 30+ themes or create your own. Upload your logo and we take care of the rest."
+    autoPlay={false}
+    controls={false}
+    videoSrc="https://cache.shipixen.com/features/3-theme-and-logo.mp4"
+  />}>
+
+```jsx
+import { LandingProductVideoFeature } from '@/components/landing/LandingProductVideoFeature';
+
+<LandingProductVideoFeature
+  videoPosition="left"
+  withBackgroundGlow
+  backgroundGlowVariant="primary"
+  title="Easy Branding"
+  description="Choose from more than 30+ themes or create your own. Upload your logo and we take care of the rest."
+  autoPlay={false}
+  controls={false}
+  videoSrc="https://cache.shipixen.com/features/3-theme-and-logo.mp4"
+/>;
+```
+
+</ComponentExample>
+
+### With Bullet Points
+
+<ComponentExample previewComponent={
+  <LandingProductVideoFeature
+    withBackgroundGlow
+    backgroundGlowVariant="primary"
+    title="Easy Branding"
+    autoPlay={false}
+    controls={false}
+    videoSrc="https://cache.shipixen.com/features/3-theme-and-logo.mp4"
+    descriptionComponent={
+      <>
+        <LandingProductFeatureKeyPoints
+          keyPoints={[
+            {
+              title: 'Intelligent Assistance',
+              description:
+                'Receive personalized recommendations.',
+            },
+            {
+              title: 'Seamless Collaboration',
+              description:
+                'Easily collaborate with team members.',
+            },
+            {
+              title: 'Advanced Customization',
+              description:
+                'Tailor your app to fit your style.',
+            },
+          ]}
+        />
+      </>
+    }
+
+/>
+
+}
+
+>
+
+```jsx
+import { LandingProductFeature } from '@/components/landing/LandingProductFeature';
+import { LandingProductFeatureKeyPoints } from '@/components/landing/LandingProductFeatureKeyPoints';
+
+<LandingProductVideoFeature
+  withBackgroundGlow
+  backgroundGlowVariant="primary"
+  title="Easy Branding"
+  autoPlay={false}
+  controls={false}
+  videoSrc="https://cache.shipixen.com/features/3-theme-and-logo.mp4"
+  descriptionComponent={
+    <>
+      <LandingProductFeatureKeyPoints
+        keyPoints={[
+          {
+            title: 'Intelligent Assistance',
+            description: 'Receive personalized recommendations.',
+          },
+          {
+            title: 'Seamless Collaboration',
+            description: 'Easily collaborate with team members.',
+          },
+          {
+            title: 'Advanced Customization',
+            description: 'Tailor your app to fit your style.',
+          },
+        ]}
+      />
+    </>
+  }
+/>;
+```
+
+</ComponentExample>
+
+### With Call to Action (CTA)
+
+<ComponentExample previewComponent={
+  <LandingProductVideoFeature
+    withBackgroundGlow
+    backgroundGlowVariant="primary"
+    title="Easy Branding"
+    autoPlay={false}
+    controls={false}
+    videoSrc="https://cache.shipixen.com/features/3-theme-and-logo.mp4"
+    descriptionComponent={
+      <>
+        <p>
+          Receive personalized recommendations and insights tailored to your workflow and easily collaborate with team members.
+        </p>
+
+        <Button className="mt-8" asChild>
+          <a href="#">Try now for free</a>
+        </Button>
+
+        <p className="text-sm opacity-70">
+          7 day free trial, no credit card required.
+        </p>
+      </>
+    }
+
+/>
+
+}
+
+>
+
+```jsx
+import { Button } from '@/components/shared/ui/button';
+import { LandingProductFeature } from '@/components/landing/LandingProductFeature';
+
+<LandingProductVideoFeature
+  withBackgroundGlow
+  backgroundGlowVariant="primary"
+  title="Easy Branding"
+  autoPlay={false}
+  controls={false}
+  videoSrc="https://cache.shipixen.com/features/3-theme-and-logo.mp4"
+  descriptionComponent={
+    <>
+      <p>
+        Receive personalized recommendations and insights tailored to your
+        workflow and easily collaborate with team members and clients in
+        real-time.
+      </p>
+
+      <Button className="mt-8" asChild>
+        <a href="#">Try now for free</a>
+      </Button>
+
+      <p className="text-sm opacity-70">
+        7 day free trial, no credit card required.
+      </p>
+    </>
+  }
+/>;
+```
+
+</ComponentExample>
+
+### With Features Grid
+
+<ComponentExample
+  previewComponent={
+    <LandingProductFeaturesGrid
+      title="Get the job done in no time"
+      description="You'll save days of work and the only question you'll have is 'What do I do with all this free time?'"
+    >
+      <LandingProductVideoFeature
+        title="Generate"
+        description="Save time by generating features, sales copy, FAQs and even example testimonials with AI. All beautifully designed."
+        autoPlay={false}
+        videoSrc="https://cache.shipixen.com/features/2-generate-content-with-ai.mp4"
+      />
+
+      <LandingProductVideoFeature
+        title="Design"
+        description="Choose from more than 30+ themes or create your own. Upload your logo, set the size and we take care of the rest."
+        autoPlay={false}
+        videoSrc="https://cache.shipixen.com/features/3-theme-and-logo.mp4"
+      />
+
+       <LandingProductVideoFeature
+        title="Build"
+        description="Use our pricing page builder to create a beautiful pricing page. Choose from different layouts and monthly/yearly pricing options. It's as easy as it looks."
+        autoPlay={false}
+        videoSrc="https://cache.shipixen.com/features/11-pricing-page-builder.mp4"
+      />
+    </LandingProductFeaturesGrid>}>
+
+```jsx
+import { LandingProductFeaturesGrid } from '@/components/landing/LandingProductFeaturesGrid';
+import { LandingProductVideoFeature } from '@/components/landing/LandingProductVideoFeature';
+
+<LandingProductFeaturesGrid
+  title="Get the job done in no time"
+  description="You'll save days of work and the only question you'll have is 'What do I do with all this free time?'"
+>
+  <LandingProductVideoFeature
+    title="Generate"
+    description="Save time by generating features, sales copy, FAQs and even example testimonials with AI. All beautifully designed."
+    autoPlay={false}
+    videoSrc="https://cache.shipixen.com/features/2-generate-content-with-ai.mp4"
+  />
+
+  <LandingProductVideoFeature
+    title="Design"
+    description="Choose from more than 30+ themes or create your own. Upload your logo, set the size and we take care of the rest."
+    autoPlay={false}
+    videoSrc="https://cache.shipixen.com/features/3-theme-and-logo.mp4"
+  />
+
+  <LandingProductVideoFeature
+    title="Build"
+    description="Use our pricing page builder to create a beautiful pricing page. Choose from different layouts and monthly/yearly pricing options. It's as easy as it looks."
+    autoPlay={false}
+    videoSrc="https://cache.shipixen.com/features/11-pricing-page-builder.mp4"
+  />
+</LandingProductFeaturesGrid>;
+```
+
+</ComponentExample>
+
+## API Reference
+
+| Prop Name                                                                                                                             | Prop Type                         | Required | Default     |
+| ------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------- | -------- | ----------- |
+| **children** <Tippy>React nodes to be rendered within the component (below the text on smaller screen, right side on larger).</Tippy> | `React.ReactNode` ǀ `string`      | No       | -           |
+| **className** <Tippy>Additional CSS classes to apply to the component.</Tippy>                                                        | `string`                          | No       | -           |
+| **innerClassName** <Tippy>Additional CSS classes to apply to the inner container of the component.</Tippy>                            | `string`                          | No       | -           |
+| **title** <Tippy>Title of the section.</Tippy>                                                                                        | `string` ǀ `React.ReactNode`      | No       | -           |
+| **titleComponent** <Tippy>Custom React component for the title.</Tippy>                                                               | `React.ReactNode`                 | No       | -           |
+| **description** <Tippy>Description of the section.</Tippy>                                                                            | `string` ǀ `React.ReactNode`      | No       | -           |
+| **descriptionComponent** <Tippy>Custom React component for the description.</Tippy>                                                   | `React.ReactNode`                 | No       | -           |
+| **textPosition** <Tippy>Position of the text content. Can be `'center'` or `'left'`.</Tippy>                                          | `'center'` ǀ `'left'`             | No       | `'left'`    |
+| **videoSrc** <Tippy>Source URL for the video.</Tippy>                                                                                 | `string`                          | No       | -           |
+| **videoPoster** <Tippy>URL for the poster image of the video.</Tippy>                                                                 | `string`                          | No       | -           |
+| **videoPosition** <Tippy>Position of the video. Can be `'left'`, `'right'`, or `'center'`.</Tippy>                                    | `'left'` ǀ `'right'` ǀ `'center'` | No       | `'right'`   |
+| **videoMaxWidth** <Tippy>Maximum width of the video.</Tippy>                                                                          | `string`                          | No       | `'none'`    |
+| **autoPlay** <Tippy>Specifies whether the video should automatically start playing.</Tippy>                                           | `boolean`                         | No       | -           |
+| **controls** <Tippy>Specifies whether the video player should display controls.</Tippy>                                               | `boolean`                         | No       | `false`     |
+| **zoomOnHover** <Tippy>Specifies whether the video should zoom on hover.</Tippy>                                                      | `boolean`                         | No       | `false`     |
+| **minHeight** <Tippy>Minimum height of the section.</Tippy>                                                                           | `number`                          | No       | `350`       |
+| **withBackground** <Tippy>Specifies whether the section should have a background.</Tippy>                                             | `boolean`                         | No       | `false`     |
+| **withBackgroundGlow** <Tippy>Specifies whether the section should have a glowing background.</Tippy>                                 | `boolean`                         | No       | `false`     |
+| **variant** <Tippy>Variation style of the section. Can be `'primary'` or `'secondary'`.</Tippy>                                       | `'primary'` ǀ `'secondary'`       | No       | `'primary'` |
+| **backgroundGlowVariant** <Tippy>Variation style of the glowing background.</Tippy>                                                   | `'primary'` ǀ `'secondary'`       | No       | -           |
+
+## More Examples
+
+For more even more examples, see our <a href="/demo/landing-page-component-examples" className="fancy-link">Landing Page Component Examples</a> page or see complete landing page examples by <a href="/demo/landing-page-templates" className="fancy-link">Exploring Our Landing Page Templates</a>.

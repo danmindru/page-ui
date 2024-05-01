@@ -1,0 +1,542 @@
+---
+title: 'Landing Page Testimonial Grid Component'
+date: '2023-11-19'
+lastmod: '2024-04-09'
+tags:
+  - 'guide'
+  - 'components'
+  - 'documentation'
+  - 'landing-page'
+  - 'ui-library'
+  - 'react'
+  - 'nextjs'
+  - 'tailwind-css'
+  - 'testimonial'
+  - 'shadcn-ui'
+  - 'shadcn-ui-testimonial'
+  - 'shadcn-ui-landing-page'
+
+images:
+  - '/static/images/blog/docs/landing-page-testimonial-grid.webp'
+summary: 'A component meant to be used in the landing page. Use this to highlight customer testimonials or reviews as a grid. Each testimonial has text, a name, and a picture of the person.'
+layout: PostHub
+
+showThemeSelector: true
+---
+
+Use this component to display a grid of testimonials.<br/>
+This component accepts a title, description and a list of testimonials.
+They will be placed in a column layout on small screens, then a 2-column
+layout and finally a 3-column layout on large screens.<br/>
+Each testimonial can be featured or not. The featured testimonial will stand out with bigger & bolder text.
+
+Testimonials are a great way to show that other people have used your product and are happy with it. Consider adding it high up on your landing page.
+
+<ComponentExample previewComponent={
+  <LandingTestimonialGrid
+    title="Don't take it from us"
+    description="See what other people have to say."
+    testimonialItems={[
+      {
+        name: 'Mathew',
+        text: 'After using this, I cannot imagine going back to the old way of doing things.',
+        handle: '@heymatt_oo',
+        imageSrc: 'https://picsum.photos/100/100.webp?random=2',
+      },
+      {
+        name: 'Joshua',
+        text: 'Perfect for my use case',
+        handle: '@joshua',
+        imageSrc: 'https://picsum.photos/100/100.webp?random=3',
+      },
+      {
+        name: 'Parl Coppa',
+        text: 'This is the best thing since sliced bread. I cannot believe I did not think of it myself.',
+        handle: '@coppalipse',
+        imageSrc: 'https://picsum.photos/100/100.webp?random=1',
+        featured: true, // Feature this testimonial
+      },
+      {
+        name: 'Mandy',
+        text: 'Excellent product!',
+        handle: '@mandy',
+        imageSrc: 'https://picsum.photos/100/100.webp?random=4',
+      },
+      {
+        name: 'Alex',
+        text: 'Can easily recommend!',
+        handle: '@alex',
+        imageSrc: 'https://picsum.photos/100/100.webp?random=5',
+      },
+      {
+        name: 'Sam',
+        text: 'I am very happy with the results.',
+        handle: '@sama',
+        imageSrc: 'https://picsum.photos/100/100.webp?random=6',
+      }
+    ]}
+/>}>
+
+```jsx
+import { LandingTestimonialGrid } from '@/components/landing/testimonial/LandingTestimonialGrid';
+
+const testimonialItems = [
+  {
+    name: 'Mathew',
+    text: 'After using this, I cannot imagine going back to the old way of doing things.',
+    handle: '@heymatt_oo',
+    imageSrc: 'https://picsum.photos/100/100.webp?random=2',
+  },
+  {
+    name: 'Joshua',
+    text: 'Perfect for my use case',
+    handle: '@joshua',
+    imageSrc: 'https://picsum.photos/100/100.webp?random=3',
+  },
+  {
+    name: 'Parl Coppa',
+    text: 'This is the best thing since sliced bread. I cannot believe I did not think of it myself.',
+    handle: '@coppalipse',
+    imageSrc: 'https://picsum.photos/100/100.webp?random=1',
+    featured: true, // Feature this testimonial
+  },
+  {
+    name: 'Mandy',
+    text: 'Excellent product!',
+    handle: '@mandy',
+    imageSrc: 'https://picsum.photos/100/100.webp?random=4',
+  },
+  {
+    name: 'Alex',
+    text: 'Can easily recommend!',
+    handle: '@alex',
+    imageSrc: 'https://picsum.photos/100/100.webp?random=5',
+  },
+  {
+    name: 'Sam',
+    text: 'I am very happy with the results.',
+    handle: '@sama',
+    imageSrc: 'https://picsum.photos/100/100.webp?random=6',
+  },
+];
+
+<LandingTestimonialGrid
+  title="Don't take it from us"
+  description="See what other people have to say."
+  testimonialItems={testimonialItems}
+/>;
+```
+
+</ComponentExample>
+
+## Usage
+
+```jsx
+import { LandingTestimonialGrid } from '@/components/landing/testimonial/LandingTestimonialGrid';
+```
+
+```jsx
+const testimonialItems = [
+  {
+    name: 'Mathew',
+    text: 'After using this, I cannot imagine going back to the old way of doing things.',
+    handle: '@heymatt_oo',
+    imageSrc: 'https://picsum.photos/100/100.webp?random=2',
+  },
+  {
+    name: 'Joshua',
+    text: 'Perfect for my use case',
+    handle: '@joshua',
+    imageSrc: 'https://picsum.photos/100/100.webp?random=3',
+  },
+  {
+    name: 'Parl Coppa',
+    text: 'This is the best thing since sliced bread. I cannot believe I did not think of it myself.',
+    handle: '@coppalipse',
+    imageSrc: 'https://picsum.photos/100/100.webp?random=1',
+    featured: true, // Feature this testimonial
+  },
+  {
+    name: 'Mandy',
+    text: 'Excellent product!',
+    handle: '@mandy',
+    imageSrc: 'https://picsum.photos/100/100.webp?random=4',
+  },
+  {
+    name: 'Alex',
+    text: 'Can easily recommend!',
+    handle: '@alex',
+    imageSrc: 'https://picsum.photos/100/100.webp?random=5',
+  },
+  {
+    name: 'Sam',
+    text: 'I am very happy with the results.',
+    handle: '@sama',
+    imageSrc: 'https://picsum.photos/100/100.webp?random=6',
+  },
+];
+```
+
+```jsx
+<LandingTestimonialGrid
+  title="Don't take it from us"
+  description="See what other people have to say."
+  testimonialItems={testimonialItems}
+/>
+```
+
+## Examples
+
+### Background, links and features
+
+This component supports different background colors.
+
+Here we set <b>variant</b> to <b>secondary</b>.
+Testimonials can also be linked + be featured and you can mix and match to send
+the desired message.
+
+<ComponentExample previewComponent={
+  <LandingTestimonialGrid
+    withBackground
+    variant="secondary"
+    title="Don't take it from us"
+    description="See what other people have to say."
+    testimonialItems={[
+      {
+        name: 'Mathew',
+        text: 'After using this, I cannot imagine going back to the old way of doing things.',
+        handle: '@heymatt_oo',
+        imageSrc: 'https://picsum.photos/100/100.webp?random=2',
+        featured: true, // Feature this testimonial
+      },
+      {
+        name: 'Joshua',
+        text: 'Perfect for my use case',
+        handle: '@joshua',
+        imageSrc: 'https://picsum.photos/100/100.webp?random=3',
+      },
+      {
+        name: 'Parl Coppa',
+        text: 'This is the best thing since sliced bread. I cannot believe I did not think of it myself.',
+        handle: '@coppalipse',
+        imageSrc: 'https://picsum.photos/100/100.webp?random=1',
+      },
+      {
+        name: 'Mandy',
+        text: 'Excellent product!',
+        handle: '@mandy',
+        imageSrc: 'https://picsum.photos/100/100.webp?random=4',
+        featured: true, // Feature this testimonial
+      },
+      {
+        name: 'Alex',
+        text: 'Can easily recommend this product! I am very happy with the results.',
+        handle: '@alex',
+        imageSrc: 'https://picsum.photos/100/100.webp?random=5',
+        featured: true, // Feature this testimonial
+      },
+      {
+        name: 'Sam',
+        text: 'I am very happy with the results.',
+        handle: '@sama',
+        imageSrc: 'https://picsum.photos/100/100.webp?random=6',
+      }
+    ]}
+/>}>
+
+```jsx
+import { LandingTestimonialGrid } from '@/components/landing/testimonial/LandingTestimonialGrid';
+
+const testimonialItems = [
+    {
+      name: 'Mathew',
+      text: 'After using this, I cannot imagine going back to the old way of doing things.',
+      handle: '@heymatt_oo',
+      imageSrc: 'https://picsum.photos/100/100.webp?random=2',
+      featured: true, // Feature this testimonial
+    },
+    {
+      name: 'Joshua',
+      text: 'Perfect for my use case',
+      handle: '@joshua',
+      imageSrc: 'https://picsum.photos/100/100.webp?random=3',
+    },
+    {
+      name: 'Parl Coppa',
+      text: 'This is the best thing since sliced bread. I cannot believe I did not think of it myself.',
+      handle: '@coppalipse',
+      imageSrc: 'https://picsum.photos/100/100.webp?random=1',
+    },
+    {
+      name: 'Mandy',
+      text: 'Excellent product!',
+      handle: '@mandy',
+      imageSrc: 'https://picsum.photos/100/100.webp?random=4',
+      featured: true, // Feature this testimonial
+    },
+    {
+      name: 'Alex',
+      text: 'Can easily recommend this product! I am very happy with the results.',
+      handle: '@alex',
+      imageSrc: 'https://picsum.photos/100/100.webp?random=5',
+      featured: true, // Feature this testimonial
+    },
+    {
+      name: 'Sam',
+      text: 'I am very happy with the results.',
+      handle: '@sama',
+      imageSrc: 'https://picsum.photos/100/100.webp?random=6',
+    },
+  ]
+
+<LandingTestimonialGrid
+  withBackground
+  variant="secondary"
+  title="Don't take it from us"
+  description="See what other people have to say."
+  testimonialItems={testimonialItems}
+/>
+```
+
+</ComponentExample>
+
+### Background Glow
+
+<ComponentExample previewComponent={
+  <LandingTestimonialGrid
+    withBackgroundGlow
+    backgroundGlowVariant="primary"
+    title="Don't take it from us"
+    description="See what other people have to say."
+    testimonialItems={[
+      {
+        name: 'Mathew',
+        text: 'After using this, I cannot imagine going back to the old way of doing things.',
+        handle: '@heymatt_oo',
+        imageSrc: 'https://picsum.photos/100/100.webp?random=2',
+      },
+      {
+        name: 'Joshua',
+        text: 'Perfect for my use case',
+        handle: '@joshua',
+        imageSrc: 'https://picsum.photos/100/100.webp?random=3',
+      },
+      {
+        name: 'Parl Coppa',
+        text: 'This is the best thing since sliced bread. I cannot believe I did not think of it myself.',
+        handle: '@coppalipse',
+        imageSrc: 'https://picsum.photos/100/100.webp?random=1',
+        featured: true, // Feature this testimonial
+      },
+      {
+        name: 'Mandy',
+        text: 'Excellent product!',
+        handle: '@mandy',
+        imageSrc: 'https://picsum.photos/100/100.webp?random=4',
+      },
+      {
+        name: 'Alex',
+        text: 'Can easily recommend!',
+        handle: '@alex',
+        imageSrc: 'https://picsum.photos/100/100.webp?random=5',
+      },
+      {
+        name: 'Sam',
+        text: 'I am very happy with the results.',
+        handle: '@sama',
+        imageSrc: 'https://picsum.photos/100/100.webp?random=6',
+      }
+    ]}
+/>}>
+
+```jsx
+import { LandingTestimonialGrid } from '@/components/landing/testimonial/LandingTestimonialGrid';
+
+const testimonialItems = [
+    {
+      name: 'Mathew',
+      text: 'After using this, I cannot imagine going back to the old way of doing things.',
+      handle: '@heymatt_oo',
+      imageSrc: 'https://picsum.photos/100/100.webp?random=2',
+    },
+    {
+      name: 'Joshua',
+      text: 'Perfect for my use case',
+      handle: '@joshua',
+      imageSrc: 'https://picsum.photos/100/100.webp?random=3',
+    },
+    {
+      name: 'Parl Coppa',
+      text: 'This is the best thing since sliced bread. I cannot believe I did not think of it myself.',
+      handle: '@coppalipse',
+      imageSrc: 'https://picsum.photos/100/100.webp?random=1',
+      featured: true, // Feature this testimonial
+    },
+    {
+      name: 'Mandy',
+      text: 'Excellent product!',
+      handle: '@mandy',
+      imageSrc: 'https://picsum.photos/100/100.webp?random=4',
+    },
+    {
+      name: 'Alex',
+      text: 'Can easily recommend!',
+      handle: '@alex',
+      imageSrc: 'https://picsum.photos/100/100.webp?random=5',
+    },
+    {
+      name: 'Sam',
+      text: 'I am very happy with the results.',
+      handle: '@sama',
+      imageSrc: 'https://picsum.photos/100/100.webp?random=6',
+    },
+  ]
+
+<LandingTestimonialGrid
+  title="Don't take it from us"
+  description="See what other people have to say."
+  testimonialItems={testimonialItems}
+/>
+```
+
+</ComponentExample>
+
+### Read more wrapper
+
+If your testimonials exceed 2 rows, you can add a "Read more" wrapper to
+hide the rest of the content initially. <br />
+This is usually a good idea to keep the page clean and focused.
+
+<ComponentExample previewComponent={
+  <DemoReadMoreWrapper size="md">
+    <LandingTestimonialGrid
+      title="Don't take it from us"
+      description="See what other people have to say."
+      testimonialItems={[
+        {
+          name: 'Mathew',
+          text: 'After using this, I cannot imagine going back to the old way of doing things.',
+          handle: '@heymatt_oo',
+          imageSrc: 'https://picsum.photos/100/100.webp?random=2',
+        },
+        {
+          name: 'Joshua',
+          text: 'Perfect for my use case',
+          handle: '@joshua',
+          imageSrc: 'https://picsum.photos/100/100.webp?random=3',
+        },
+        {
+          name: 'Parl Coppa',
+          text: 'This is the best thing since sliced bread. I cannot believe I did not think of it myself.',
+          handle: '@coppalipse',
+          imageSrc: 'https://picsum.photos/100/100.webp?random=1',
+          featured: true, // Feature this testimonial
+        },
+        {
+          name: 'Mandy',
+          text: 'Excellent product!',
+          handle: '@mandy',
+          imageSrc: 'https://picsum.photos/100/100.webp?random=4',
+        },
+        {
+          name: 'Alex',
+          text: 'Can easily recommend!',
+          handle: '@alex',
+          imageSrc: 'https://picsum.photos/100/100.webp?random=5',
+        },
+        {
+          name: 'Sam',
+          text: 'I am very happy with the results.',
+          handle: '@sama',
+          imageSrc: 'https://picsum.photos/100/100.webp?random=6',
+        }
+      ]}
+    />
+  </DemoReadMoreWrapper>
+}>
+
+```jsx
+import { LandingTestimonialGrid } from '@/components/landing/testimonial/LandingTestimonialGrid';
+import { LandingTestimonialReadMoreWrapper } from '@/components/landing/testimonial/LandingTestimonialReadMoreWrapper';
+
+const testimonialItems = [
+  {
+    name: 'Mathew',
+    text: 'After using this, I cannot imagine going back to the old way of doing things.',
+    handle: '@heymatt_oo',
+    imageSrc: 'https://picsum.photos/100/100.webp?random=2',
+  },
+  {
+    name: 'Joshua',
+    text: 'Perfect for my use case',
+    handle: '@joshua',
+    imageSrc: 'https://picsum.photos/100/100.webp?random=3',
+  },
+  {
+    name: 'Parl Coppa',
+    text: 'This is the best thing since sliced bread. I cannot believe I did not think of it myself.',
+    handle: '@coppalipse',
+    imageSrc: 'https://picsum.photos/100/100.webp?random=1',
+    featured: true, // Feature this testimonial
+  },
+  {
+    name: 'Mandy',
+    text: 'Excellent product!',
+    handle: '@mandy',
+    imageSrc: 'https://picsum.photos/100/100.webp?random=4',
+  },
+  {
+    name: 'Alex',
+    text: 'Can easily recommend!',
+    handle: '@alex',
+    imageSrc: 'https://picsum.photos/100/100.webp?random=5',
+  },
+  {
+    name: 'Sam',
+    text: 'I am very happy with the results.',
+    handle: '@sama',
+    imageSrc: 'https://picsum.photos/100/100.webp?random=6',
+  },
+]
+
+<LandingTestimonialReadMoreWrapper size="md">
+  <LandingTestimonialGrid
+    title="Don't take it from us"
+    description="See what other people have to say."
+    testimonialItems={testimonialItems}
+  />
+</LandingTestimonialReadMoreWrapper>
+```
+
+</ComponentExample>
+
+## API Reference
+
+| Prop Name                                                                                                                                      | Prop Type                    | Required | Default     |
+| ---------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------- | -------- | ----------- |
+| **title** <Tippy>String or React nodes for the title of the testimonial grid.</Tippy>                                                          | `string` ǀ `React.ReactNode` | No       | -           |
+| **description** <Tippy>String or React nodes for the description of the testimonial grid.</Tippy>                                              | `string` ǀ `React.ReactNode` | No       | -           |
+| **testimonialItems** <Tippy>An array of `TestimonialItem` objects representing the testimonials to be displayed.</Tippy>                       | `Array<TestimonialItem>`     | Yes      | -           |
+| **featuredTestimonial** <Tippy>The featured testimonial to be displayed with special styling. It should be a `TestimonialItem` object.</Tippy> | `TestimonialItem`            | No       | -           |
+| **withBackground** <Tippy>A boolean indicating whether to display the testimonial grid with a background.</Tippy>                              | `boolean`                    | No       | -           |
+| **variant** <Tippy>The color variant of the background. It can be either `'primary'` or `'secondary'`.</Tippy>                                 | `'primary'` ǀ `'secondary'`  | No       | `'primary'` |
+| **withBackgroundGlow** <Tippy>A boolean indicating whether to add a glowing effect to the background of the testimonial grid.</Tippy>          | `boolean`                    | No       | `false`     |
+| **backgroundGlowVariant** <Tippy>The color variant of the background glow effect. It can be either `'primary'` or `'secondary'`.</Tippy>       | `'primary'` ǀ `'secondary'`  | No       | `'primary'` |
+
+```ts
+export interface TestimonialItem {
+  className?: string;
+  url?: string;
+  text: string;
+  imageSrc: string;
+  name: string;
+  handle: string;
+  featured?: boolean;
+  verified?: boolean;
+  size?: 'full' | 'half' | 'third'; // NB: Only applies to testimonials in a list, not grid.
+}
+```
+
+## More Examples
+
+For more even more examples, see our <a href="/demo/landing-page-component-examples" className="fancy-link">Landing Page Component Examples</a> page or see complete landing page examples by <a href="/demo/landing-page-templates" className="fancy-link">Exploring Our Landing Page Templates</a>.
