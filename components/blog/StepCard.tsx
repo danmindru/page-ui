@@ -34,12 +34,12 @@ export const StepCard = ({
           variant === 'secondary' ? 'bg-secondary-900' : '',
           variant === 'black' ? 'bg-black' : '',
           variant === 'default' ? 'bg-gray-300/30 dark:bg-slate-950/90' : '',
-          className,
+          className
         )}
       >
         {stepNumber ? (
           <div className="absolute -top-6 z-10 w-full flex justify-center">
-            <p className="text-xs font-semibold uppercase bg-black dark:bg-white text-white dark:text-black py-1 px-2 rounded-md">
+            <p className="py-1 px-2 rounded-md text-xs font-semibold uppercase bg-primary-100/40 text-primary-900 dark:text-white">
               Step {stepNumber}
             </p>
           </div>
@@ -63,7 +63,7 @@ export const StepCard = ({
                 variant === 'primary' ? 'bg-primary-700' : '',
                 variant === 'secondary' ? 'bg-secondary-600' : '',
                 variant === 'black' ? 'bg-gray-700' : '',
-                variant === 'default' ? 'bg-gray-200' : '',
+                variant === 'default' ? 'bg-gray-200' : ''
               )}
             >
               {label}
