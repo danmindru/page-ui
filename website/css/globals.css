@@ -221,8 +221,8 @@
     height: 100%;
     background-image: linear-gradient(
       54deg,
-      var(--primary-light) var(--fancy-y) var(--fancy-y),
-      var(--secondary-light) var(--fancy-x) var(--fancy-x)
+      var(--primary-light-hex) var(--fancy-y) var(--fancy-y),
+      var(--secondary-light-hex) var(--fancy-x) var(--fancy-x)
     );
     animation: roundabout 5s ease-in-out both;
   }
@@ -230,8 +230,8 @@
   .dark .fancy-overlay::after {
     background-image: linear-gradient(
       54deg,
-      var(--primary-dark) var(--fancy-y) var(--fancy-y),
-      var(--secondary-dark) var(--fancy-x) var(--fancy-x)
+      var(--primary-dark-hex) var(--fancy-y) var(--fancy-y),
+      var(--secondary-dark-hex) var(--fancy-x) var(--fancy-x)
     );
   }
 
@@ -248,8 +248,8 @@
   .fancy-link {
     background-image: linear-gradient(
       120deg,
-      var(--primary-light) 0%,
-      var(--primary-darker) 100%
+      var(--primary-light-hex) 0%,
+      var(--primary-darker-hex) 100%
     );
     background-repeat: no-repeat;
     background-size: 100% 0;
@@ -320,7 +320,7 @@
     content: '';
     width: calc(100% + 2px);
     height: calc(100% + 2px);
-    background: var(--primary-darker);
+    background: var(--primary-darker-hex);
     opacity: 0.1;
     position: absolute;
     top: -1px;
@@ -438,11 +438,11 @@ input:-webkit-autofill:focus {
  * Set select colors to primary and respect dark mode
  */
 ::selection {
-  background-color: var(--primary-lighter);
+  background-color: var(--primary-lighter-hex);
   color: black;
 }
 
 .dark ::selection {
-  background-color: var(--primary-darker);
+  background-color: var(--primary-darker-hex);
   color: white;
 }

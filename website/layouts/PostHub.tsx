@@ -118,6 +118,16 @@ export default function PostHubLayout({
               </ActiveLink>
             </li>
 
+             <li>
+              <ActiveLink
+                href="/docs/customize-fonts#main"
+                className="toc-link fancy-link fancy-link--no-underline"
+                activeClassName="toc-active-link"
+              >
+                <span>Customize fonts</span>
+              </ActiveLink>
+            </li>
+
             <li>
               <ActiveLink
                 href="/docs/icon-library#main"
@@ -137,36 +147,6 @@ export default function PostHubLayout({
                 <div>
                   <PageTitle>{title}</PageTitle>
                 </div>
-
-                <dl className="space-y-10">
-                  {lastmod ? (
-                    <div>
-                      <dt className="sr-only">Updated on</dt>
-                      <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
-                        <time dateTime={lastmod}>
-                          <span className="font-light">Last updated</span>{' '}
-                          {new Date(lastmod).toLocaleDateString(
-                            siteConfig.locale,
-                            postDateTemplate,
-                          )}
-                        </time>
-                      </dd>
-                    </div>
-                  ) : (
-                    <div>
-                      <dt className="sr-only">Published on</dt>
-                      <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
-                        <time dateTime={date}>
-                          <span className="font-light">Published</span>{' '}
-                          {new Date(date).toLocaleDateString(
-                            siteConfig.locale,
-                            postDateTemplate,
-                          )}
-                        </time>
-                      </dd>
-                    </div>
-                  )}
-                </dl>
               </div>
             </header>
 
@@ -180,9 +160,39 @@ export default function PostHubLayout({
 
           <footer className="p-6">
             <div className="divide-gray-200 text-sm font-medium leading-5 dark:divide-gray-700 xl:col-start-1 xl:row-start-2 xl:divide-y">
+              <dl className="space-y-10 mb-8">
+                {lastmod ? (
+                  <div>
+                    <dt className="sr-only">Updated on</dt>
+                    <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
+                      <time dateTime={lastmod}>
+                        <span className="font-light">Last updated</span>{' '}
+                        {new Date(lastmod).toLocaleDateString(
+                          siteConfig.locale,
+                          postDateTemplate,
+                        )}
+                      </time>
+                    </dd>
+                  </div>
+                ) : (
+                  <div>
+                    <dt className="sr-only">Published on</dt>
+                    <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
+                      <time dateTime={date}>
+                        <span className="font-light">Published</span>{' '}
+                        {new Date(date).toLocaleDateString(
+                          siteConfig.locale,
+                          postDateTemplate,
+                        )}
+                      </time>
+                    </dd>
+                  </div>
+                )}
+              </dl>
+
               {tags && (
                 <div className="py-4 xl:py-8">
-                  <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
+                  <h2 className="font-sans text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
                     Tags
                   </h2>
                   <div className="flex flex-wrap">
@@ -203,23 +213,24 @@ export default function PostHubLayout({
               )}
               {(next || prev) && (
                 <div className="flex justify-between py-4 xl:block xl:space-y-8 xl:py-8">
-                  {prev && prev.path && (
-                    <div>
-                      <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
-                        Previous Article
-                      </h2>
-                      <div className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">
-                        <Link href={`/${prev.path}`}>{prev.title}</Link>
-                      </div>
-                    </div>
-                  )}
                   {next && next.path && (
                     <div>
-                      <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
-                        Next Article
+                      <h2 className="font-sans text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
+                        Next
                       </h2>
                       <div className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">
                         <Link href={`/${next.path}`}>{next.title}</Link>
+                      </div>
+                    </div>
+                  )}
+
+                  {prev && prev.path && (
+                    <div>
+                      <h2 className="font-sans text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
+                        Previous
+                      </h2>
+                      <div className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">
+                        <Link href={`/${prev.path}`}>{prev.title}</Link>
                       </div>
                     </div>
                   )}
@@ -230,9 +241,9 @@ export default function PostHubLayout({
                 <Link
                   href={siteConfig.allArticlesPath}
                   className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
-                  aria-label="More articles"
+                  aria-label="Read more"
                 >
-                  More articles &rarr;
+                  Read more &rarr;
                 </Link>
               </div>
             </div>

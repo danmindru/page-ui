@@ -22,7 +22,7 @@ export const Protip = ({
       {title ? <p className="m-0 text-lg font-semibold">{title}</p> : null}
 
       {description ? (
-        <p className="flex gap-1 my-2 relative z-10">
+        <p className="flex gap-1 relative z-10 not-prose">
           <SparklesIcon className="absolute opacity-20 -right-4 -top-9 -z-10 flex-shrink-0 inline-block w-8 h-8 rotate-12 text-primary-500 dark:text-primary-400" />
 
           <SparklesIcon className="absolute opacity-20 right-0 -bottom-10 -z-10 flex-shrink-0 inline-block w-14 h-14 rotate-12 text-primary-500 dark:text-primary-400" />

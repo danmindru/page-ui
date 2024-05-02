@@ -1,5 +1,6 @@
 import { Button } from '@/components/shared/ui/button';
 import { Card, CardContent } from '@/components/shared/ui/card';
+import { Inter as FontSans } from 'next/font/google';
 
 import {
   Tabs,
@@ -7,6 +8,11 @@ import {
   TabsList,
   TabsTrigger,
 } from '@/components/shared/ui/tabs';
+import { cn } from '@/lib/utils';
+
+const fontSans = FontSans({
+  subsets: ['latin'],
+});
 
 export const ComponentExample = ({
   className,
@@ -33,7 +39,7 @@ export const ComponentExample = ({
         className="mt-0 w-full border-2 border-gray-200 border-opacity-60 dark:border-gray-900 border-t-none rounded-b-md overflow-hidden"
       >
         <Card className="rounded-none border-none shadow-none w-full">
-          <CardContent className="p-0 not-prose">
+          <CardContent className={cn('p-0 not-prose', fontSans)}>
             {previewComponent}
           </CardContent>
         </Card>

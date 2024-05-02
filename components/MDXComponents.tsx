@@ -40,6 +40,9 @@ import { WrappedVideoPlayer } from '@/components/blog/WrappedVideoPlayer';
 import { ToolsGrid } from '@/components/blog/ToolsGrid';
 import { LandingPageGrid } from '@/components/blog/LandingPageGrid';
 import { Tippy } from '@/components/blog/Tippy';
+import { GuideCard } from '@/components/blog/GuideCard';
+import { StepCard } from '@/components/blog/StepCard';
+import { StepCode } from '@/components/blog/StepCode';
 
 import {
   ChromeIcon,
@@ -64,6 +67,9 @@ export const components: MDXComponents = {
   ToolsGrid,
   LandingPageGrid,
   ComponentExample,
+  GuideCard,
+  StepCard,
+  StepCode,
 
   Button,
   WrappedVideoPlayer,

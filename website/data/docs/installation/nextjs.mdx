@@ -1,0 +1,189 @@
+---
+title: 'Next.js installation guide'
+date: '2024-05-01'
+lastmod: '2024-05-01'
+tags:
+  - 'documentation'
+  - 'guide'
+  - 'getting-started'
+  - 'installation'
+  - 'nextjs'
+  - 'react'
+
+summary: 'Learn how to install Page UI in your Next.js app. Install Tailwind CSS and Shadcn UI to get started.'
+layout: PostHub
+---
+
+<span className="text-xl not-prose">
+  Learn how to install Page UI in your Next.js app.
+</span>
+
+<br />
+
+<StepCard stepNumber={1}>
+## Create a new Next.js app
+Start by creating a new Next.js app. You can use the following command:
+
+```bash
+npx create-next-app@latest my-app --typescript --tailwind --eslint
+```
+
+</StepCard>
+
+<br />
+
+<StepCard stepNumber={2}>
+
+## Install dependencies
+
+Add the required dependencies to your Next.js app:
+
+```bash
+npm install @tailwindcss/forms @tailwindcss/typography tailwindcss-animate class-variance-authority clsx tailwind-merge lucide-react @radix-ui/react-accordion
+```
+
+</StepCard>
+
+<br />
+
+<StepCard stepNumber={3}>
+
+## Configure Tailwind CSS & colors
+
+Create a colors file under `data/config/colors.js` with the following content:
+
+```js
+/* Configure colors at https://shipixen.com/color-theme-explorer-shadcn */
+export const colors = {
+  primary: {
+    lighter: '#a5b4fc',
+    light: '#818cf8',
+    main: '#6366f1',
+    dark: '#4f46e5',
+    darker: '#4338ca',
+  },
+  secondary: {
+    lighter: '#86efac',
+    light: '#4ade80',
+    main: '#22c55e',
+    dark: '#16a34a',
+    darker: '#15803d',
+  },
+};
+```
+
+Update your `tailwind.config.js` file to include the following:
+
+<StepCode>
+
+```diff-js
+import type { Config } from "tailwindcss";
++ import { colors } from "./data/config/colors";
+
+const config: Config = {
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
+
++ theme: {
++   extend: {
++     fontFamily: {
++       sans: ["var(--font-space-default)", ...fontFamily.sans],
++       display: ["var(--font-space-display)", ...fontFamily.sans],
++     },
++
++     colors: {
++       primary: {
++         100: colors.primary.lighter,
++         200: colors.primary.lighter,
++         300: colors.primary.light,
++         400: colors.primary.light,
++         500: colors.primary.main,
++         600: colors.primary.main,
++         700: colors.primary.dark,
++         800: colors.primary.dark,
++         900: colors.primary.darker,
++       },
++       secondary: {
++         100: colors.secondary.lighter,
++         200: colors.secondary.lighter,
++         300: colors.secondary.light,
++         400: colors.secondary.light,
++         500: colors.secondary.main,
++         600: colors.secondary.main,
++         700: colors.secondary.dark,
++         800: colors.secondary.dark,
++         900: colors.secondary.darker,
++       },
++       border: "hsl(var(--border))",
++       input: "hsl(var(--input))",
++       ring: colors.primary.dark,
++       background: "hsl(var(--background))",
++       foreground: "hsl(var(--foreground))",
++       destructive: {
++         DEFAULT: "hsl(var(--destructive))",
++         foreground: "hsl(var(--destructive-foreground))",
++       },
++       muted: {
++         DEFAULT: "hsl(var(--muted))",
++         foreground: "hsl(var(--muted-foreground))",
++       },
++       accent: {
++         DEFAULT: "hsl(var(--accent))",
++         foreground: "hsl(var(--accent-foreground))",
++       },
++       popover: {
++         DEFAULT: "hsl(var(--popover))",
++         foreground: "hsl(var(--popover-foreground))",
++       },
++       card: {
++         DEFAULT: "hsl(var(--card))",
++         foreground: "hsl(var(--card-foreground))",
++       },
++     },
++
++     screens: {
++       "2xl": "1400px",
++     },
+
+      backgroundImage: {
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        "gradient-conic":
+          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      },
+    },
+  },
+  plugins: [],
+};
+
+export default config;
+```
+
+</StepCode>
+
+<br />
+
+You can update colors from any documentation page by clicking on the color palette dropdown or by going to the [Theme Explorer](https://shipixen.com/color-theme-explorer-shadcn).
+
+</StepCard>
+
+<br />
+
+<Protip
+  description={
+    <>
+      Skip the setup and use{' '}
+      <a className="fancy-link" href="https://shipixen.com">
+        Shipixen
+      </a>{' '}
+      to get a codebase with all components set up.
+    </>
+  }
+/>
+
+## Next steps
+
+Start adding components to your Next.js app. <br/>
+Go to the [component documentation](/docs/landing-page-components) and press the **Get code** button, then copy and paste the code into your app.

@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import { Children, ReactElement, ReactNode, cloneElement } from 'react';
 
-type Child = ReactElement<any, any>; // eslint-disable-line @typescript-eslint/no-explicit-any
+type Child = ReactElement<any, any>; // eslint-disable-line
 
 /**
  * A component meant to be used in the landing page.

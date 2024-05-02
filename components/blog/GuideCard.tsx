@@ -33,11 +33,12 @@ export const GuideCard = ({
           ? 'bg-secondary-900 hover:bg-secondary-800'
           : '',
         variant === 'black' ? 'bg-black hover:bg-black/90' : '',
+        className,
       )}
     >
       {cloneElement(icon as React.ReactElement, {
         className: cn(
-          'group-hover:scale-110 duration-500 transition-all absolute opacity-20 right-1 bottom-4 flex-shrink-0 inline-block w-14 h-14 rotate-12',
+          'group-hover:scale-110 duration-500 transition-all absolute opacity-20 right-3 bottom-3 flex-shrink-0 inline-block w-14 h-14 rotate-12',
           variant === 'primary' ? 'text-primary-400' : '',
           variant === 'secondary' ? 'text-secondary-400' : '',
           variant === 'black' ? 'text-gray-100' : '',
