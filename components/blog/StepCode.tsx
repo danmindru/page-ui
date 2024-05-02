@@ -7,7 +7,7 @@ export const useIsOverflowing = ({
   ref,
   callback,
 }: {
-  ref: React.MutableRefObject<any>;
+  ref: React.MutableRefObject<any>; // eslint-disable-line @typescript-eslint/no-explicit-any
   callback?: (isOverflow: boolean) => void;
 }) => {
   const [isOverflow, setIsOverflow] = useState(false);
