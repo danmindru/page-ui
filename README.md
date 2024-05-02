@@ -151,6 +151,8 @@ The time spent browsing through bloated templates, figuring out how to port them
 ## 📝 License
 Licensed under the [MIT license](https://github.com/danmindru/page-ui/blob/main/LICENSE.md)
 
+-----------------
+
 <a href="https://apihustle.com" target="_blank">
   <img height="60px" src="https://user-images.githubusercontent.com/1515742/215217833-c07183d2-f688-4d1c-86ea-329f3b28f81c.svg" alt="Apihustle Logo" />
 </a>
