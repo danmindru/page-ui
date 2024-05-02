@@ -1,5 +1,5 @@
 # Page UI
-## Landing page components & templates that you can copy & paste
+**Landing page components & templates that you can copy 📋 & paste 🍝**<br/>
 [pageui.dev](https://pageui.dev)
 
 ![ogImg](https://github.com/danmindru/page-ui/assets/1515742/f750b862-360e-467d-b00b-f3435fcb1ef9)
@@ -139,3 +139,41 @@ To copy and paste from the available templates, visit [landing page templates](h
 
 ## 💿 Demos
 To see the components in action, visit [landing page component examples](https://shipixen.com/demo/landing-page-component-examples).
+
+## 💪 Motivation
+
+Designing and building landing pages that look good and convert well is hard business.<br/>
+Most UI libraries focus on application UI, so when you set up a starer or boilerplate you end up staring at a blank canvas.<br/>
+The time spent browsing through bloated templates, figuring out how to port them to your app and then customizing them is time you could spend on your product.
+
+> Start from a blank canvas to create, start from Page UI to innovate.
+
+## 📝 License
+Licensed under the [MIT license](https://github.com/danmindru/page-ui/blob/main/LICENSE.md)
+
+<a href="https://apihustle.com" target="_blank">
+  <img height="60px" src="https://user-images.githubusercontent.com/1515742/215217833-c07183d2-f688-4d1c-86ea-329f3b28f81c.svg" alt="Apihustle Logo" />
+</a>
+
+This tool is part of the Apihustle suite - a collection of tools to test, improve and get to know your API inside and out. <br/>
+[apihustle.com](https://apihustle.com) <br/>
+
+|    |    |    |    |
+| :- | :- | :- | :- |
+| <a href="https://clobbr.app" target="_blank"><img height="70px" src="https://user-images.githubusercontent.com/1515742/215217949-0fe7096c-10f1-47ec-bdc7-91d8047ddc70.svg" alt="Clobbr Logo" /></a> | **Clobbr** | Debug multiple cron expressions on a calendar. | [clobbr.app](https://clobbr.app) |
+| <a href="https://crontap.com" target="_blank"><img height="70px" src="https://user-images.githubusercontent.com/1515742/215218037-44233c7d-7e21-4180-8572-6a759a6a118f.svg" alt="Crontap Logo" /></a> | **Crontap** | Schedule API calls using cron syntax. | [crontap.com](https://crontap.com) |
+| <a href="https://tool.crontap.com" target="_blank"><img height="70px" src="https://user-images.githubusercontent.com/1515742/215217997-fedcc496-a868-40bd-81f9-d07dabc0597e.svg" alt="CronTool Logo" /></a> | **CronTool** | Debug multiple cron expressions on a calendar. | [tool.crontap.com](https://tool.crontap.com)  |
+
+-----------------
+
+Save 10s of hours of work by using Shipixen to generate a customized boilerplate with your branding, pages and blog <br/>
+― then deploy it to Vercel with 1 click.
+
+| | |
+| :- | :- |
+| <a href="https://shipixen.com" target="_blank"><img height="60px" src="https://user-images.githubusercontent.com/1515742/281071510-d5c0095d-d336-4857-ad80-d18cf65f4acb.png" alt="Shipixen Logo" /></a> <br/> <b>Shipixen</b> <br/> Create a blog & landing page in minutes with <b>Shipixen</b>. <br/> Get started on <a href="https://shipixen.com">shipixen.com</a>. | <a href="https://shipixen.com" target="_blank"><img width="300px" src="https://user-images.githubusercontent.com/1515742/281077548-57b24773-3c2a-4e89-b088-cc3945d7037b.png" alt="Shipixen Logo" /></a> |
+
+-----------------
+
+![Page UI icon](https://github.com/danmindru/page-ui/assets/1515742/30259ef0-6085-401d-ab24-e9d1f9b5fc05)
+
