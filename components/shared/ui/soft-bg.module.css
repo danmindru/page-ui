@@ -1,0 +1,72 @@
+@keyframes bg-fade-in {
+  0% {
+    opacity: 0.1;
+  }
+  30% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.container {
+  position: absolute;
+  opacity: 0;
+  animation: bg-fade-in 10s ease-out infinite alternate;
+}
+
+.path {
+  animation:
+    path-animation 20s ease-in-out infinite alternate,
+    path-animation-two 30s ease-in-out infinite alternate,
+    path-animation-three 40s ease-in-out infinite alternate;
+}
+
+@media (prefers-reduced-motion) {
+  /* styles to apply if the user's settings are set to reduced motion */
+  .path {
+    animation: none;
+  }
+
+  .container {
+    animation: none;
+    opacity: 1;
+  }
+}
+
+@keyframes path-animation {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(40px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes path-animation-two {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(40px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes path-animation-three {
+  0% {
+    transform: translateZ(0);
+  }
+  50% {
+    transform: translateZ(40px);
+  }
+  100% {
+    transform: translateZ(0);
+  }
+}

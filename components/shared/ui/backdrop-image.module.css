@@ -1,0 +1,37 @@
+.figure {
+  width: 100%;
+  padding: 2rem;
+}
+
+.image {
+  @apply rounded-md;
+  box-shadow: 0 5px 25px -10px rgb(0 0 0 / 25%);
+}
+
+.backdropImage {
+  filter: saturate(0.5);
+}
+
+@media (min-width: theme('screens.md')) {
+  .figure {
+    height: 500px;
+  }
+}
+
+@media (min-width: theme('screens.lg')) {
+  .figure {
+    height: 600px;
+  }
+}
+
+@media (min-width: theme('screens.xl')) {
+  .figure {
+    height: 700px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .backdropImage {
+    filter: unset;
+  }
+}
