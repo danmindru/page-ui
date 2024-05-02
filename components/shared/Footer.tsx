@@ -34,7 +34,7 @@ export default function Footer({ className }: { className?: string }) {
           'flex flex-col gap-4 justify-between items-center w-full md:my-10 p-6',
         )}
       >
-        <div className="w-full flex flex-col md:flex-row justify-between gap-6 mt-12 wide-container">
+        <div className="w-full flex flex-col md:flex-row justify-between gap-6 mt-12 w-full p-6 container-wide">
           <div className="w-full flex flex-col gap-4 md:max-w-xs lg:max-w-sm">
             <Link href="/" aria-label={siteConfig.title}>
               <div className="flex items-center gap-3 justify-start">

@@ -502,7 +502,7 @@ export default function Home() {
       />
 
       <div className="w-full flex flex-col items-center bg-primary-100/20 dark:bg-primary-900/10">
-        <section className="wide-container mt-12">
+        <section className="w-full p-6 container-wide mt-12">
           <LatestArticles />
         </section>
       </div>

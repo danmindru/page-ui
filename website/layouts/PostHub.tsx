@@ -256,7 +256,10 @@ export default function PostHubLayout({
           ) : null}
 
           <h2 className="mt-4 font-semibold text-sm">Jump to section</h2>
-          <TOC toc={toc} className={cn('toc-list wide-container !p-0 mt-4')} />
+          <TOC
+            toc={toc}
+            className={cn('toc-list w-full container-wide p-0 mt-4')}
+          />
         </aside>
 
         <ScrollRestoration elementId="navigation" />

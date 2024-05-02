@@ -19,7 +19,7 @@ export default async function Page() {
       <Header />
 
       <div className="w-full flex flex-col items-center mb-12">
-        <section className="narrow-container">
+        <section className="w-full p-6 container-narrow">
           <h1 className="text-4xl font-semibold leading-tight md:leading-tight max-w-xs sm:max-w-none md:text-6xl fancy-heading">
             Tags
           </h1>

@@ -12,7 +12,7 @@ const Header = ({ className }: { className?: string }) => {
   return (
     <header
       className={cn(
-        'flex items-center justify-between py-10 flex-wrap w-full mb-20 lg:mb-32 pt-6 wide-container',
+        'flex items-center justify-between py-10 flex-wrap w-full mb-20 lg:mb-32 pt-6 w-full p-6 container-wide',
         className,
       )}
     >
