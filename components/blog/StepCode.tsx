@@ -1,7 +1,7 @@
 'use client';
 import { Button } from '@/components/shared/ui/button';
 import { cn } from '@/lib/utils';
-import { useLayoutEffect, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 
 export const useIsOverflowing = ({
   ref,
@@ -46,13 +46,26 @@ export const StepCode = ({
 
   const [showOverflow, setShowOverflow] = useState(false);
 
+  useEffect(() => {
+    const { current } = ref;
+    if (!current) return;
+    const currentPre = current.querySelector('pre');
+    if (!currentPre) return;
+
+    if (showOverflow) {
+      currentPre.style.maxHeight = 'none';
+    } else {
+      currentPre.style.maxHeight = '350px';
+    }
+  }, [showOverflow]);
+
   return (
     <>
       <style>
         {`
           .content pre {
             margin: 1rem 0 0 0;
-            max-height: ${showOverflow ? 'none' : '350px'};
+            max-height: 350px;
           }
         `}
       </style>

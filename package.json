@@ -1,11 +1,9 @@
 {
-  "name": "page-ui",
-  "version": "1.0.0",
+  "name": "@page-ui/wizard",
+  "version": "1.0.10",
   "description": "Landing page components & templates that you can copy & paste",
-  "main": "packages/cli/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "type": "module",
+  "bin": "./packages/cli/index.mjs",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/danmindru/page-ui.git"
@@ -28,5 +26,8 @@
     "commander": "^12.0.0",
     "enquirer": "^2.4.1",
     "ora": "^8.0.1"
+  },
+  "engines": {
+    "node": ">=14.17.0"
   }
 }

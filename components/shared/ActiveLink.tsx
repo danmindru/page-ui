@@ -7,6 +7,7 @@ import React, { useState, useEffect, Children } from 'react';
 interface ActiveLinkProps extends React.ComponentPropsWithoutRef<'a'> {
   activeClassName: string;
   activeChildren?: React.ReactNode;
+  alwaysShowChildren?: boolean;
   children: React.ReactElement;
   as?: string | undefined;
   exact?: boolean;
@@ -16,6 +17,7 @@ const ActiveLink = ({
   children,
   activeClassName,
   activeChildren,
+  alwaysShowChildren = false,
   exact = true,
   ...props
 }: ActiveLinkProps) => {
@@ -72,7 +74,7 @@ const ActiveLink = ({
         })}
       </Link>
 
-      {isActive ? activeChildren : null}
+      {isActive || alwaysShowChildren ? activeChildren : null}
     </>
   );
 };

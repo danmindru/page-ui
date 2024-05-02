@@ -102,10 +102,35 @@ export default function PostHubLayout({
                 activeChildren={
                   <LandingPageComponentsNav className="ml-3 mt-2" />
                 }
+                alwaysShowChildren
                 exact={false}
               >
                 <span>Landing Page Components</span>
               </ActiveLink>
+            </li>
+
+            <li>
+              <a
+                href="https://shipixen.com/demo/landing-page-component-examples"
+                className="toc-link fancy-link fancy-link--no-underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Usage examples{' '}
+                <ExternalLinkIcon className="w-3 h-3 inline-block ml-1" />
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="https://shipixen.com/demo/landing-page-templates"
+                className="toc-link fancy-link fancy-link--no-underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Templates{' '}
+                <ExternalLinkIcon className="w-3 h-3 inline-block ml-1" />
+              </a>
             </li>
 
             {/* <li>
