@@ -177,5 +177,5 @@ Save 10s of hours of work by using Shipixen to generate a customized boilerplate
 
 -----------------
 
-![Page UI icon](https://github.com/danmindru/page-ui/assets/1515742/30259ef0-6085-401d-ab24-e9d1f9b5fc05)
-
+<img height="60px" src="https://github.com/danmindru/page-ui/assets/1515742/30259ef0-6085-401d-ab24-e9d1f9b5fc05" alt="Page UI logo" /> <br/>
+Page UI ❤️ Open Source
