@@ -38,17 +38,19 @@ the attention of your visitors and encourage them to take action.
       title="Landing page in minutes"
       description="Get 10x more done with Shadcn UI, React & Next.js, and say goodbye to repetitive tasks. You'll never go back."
     >
-      <Button size="xl" asChild>
-        <a href="#">
-          Buy now
-        </a>
-      </Button>
+      <div className="flex gap-2">
+        <Button size="xl" asChild>
+          <a href="#">
+            Buy now
+          </a>
+        </Button>
 
-      <Button size="xl" variant="outlinePrimary">
-        <a href="#">
-          Read more
-        </a>
-      </Button>
+        <Button size="xl" variant="outlinePrimary">
+          <a href="#">
+            Read more
+          </a>
+        </Button>
+      </div>
     </LandingPrimaryTextCtaSection>
 
 }
@@ -63,13 +65,15 @@ import { LandingPrimaryTextCtaSection } from '@/components/landing/cta/LandingPr
   title="Landing page in minutes"
   description="Get 10x more done with Shadcn UI, React & Next.js, and say goodbye to repetitive tasks. You'll never go back."
 >
-  <Button size="xl" asChild>
-    <a href="#">Buy now</a>
-  </Button>
+  <div className="flex gap-2">
+    <Button size="xl" asChild>
+      <a href="#">Buy now</a>
+    </Button>
 
-  <Button size="xl" variant="outlinePrimary">
-    <a href="#">Read more</a>
-  </Button>
+    <Button size="xl" variant="outlinePrimary">
+      <a href="#">Read more</a>
+    </Button>
+  </div>
 </LandingPrimaryTextCtaSection>;
 ```
 
@@ -87,13 +91,15 @@ import { LandingPrimaryTextCtaSection } from '@/components/landing/cta/LandingPr
   title="Landing page in minutes"
   description="Get 10x more done with Shadcn UI, React & Next.js, and say goodbye to repetitive tasks. You'll never go back."
 >
-  <Button size="xl" asChild>
-    <a href="#">Buy now</a>
-  </Button>
+  <div className="flex gap-2">
+    <Button size="xl" asChild>
+      <a href="#">Buy now</a>
+    </Button>
 
-  <Button size="xl" variant="outlinePrimary">
-    <a href="#">Read more</a>
-  </Button>
+    <Button size="xl" variant="outlinePrimary">
+      <a href="#">Read more</a>
+    </Button>
+  </div>
 </LandingPrimaryTextCtaSection>
 ```
 
@@ -107,13 +113,15 @@ import { LandingPrimaryTextCtaSection } from '@/components/landing/cta/LandingPr
       title="Landing page in minutes"
       description="Get 10x more done with Shadcn UI, React & Next.js, and say goodbye to repetitive tasks. You'll never go back."
     >
-      <Button size="xl" asChild>
-        <a href="#">Buy now</a>
-      </Button>
+      <div className="flex gap-2">
+        <Button size="xl" asChild>
+          <a href="#">Buy now</a>
+        </Button>
 
-      <Button size="xl" variant="outlinePrimary">
-        <a href="#">Read more</a>
-      </Button>
+        <Button size="xl" variant="outlinePrimary">
+          <a href="#">Read more</a>
+        </Button>
+      </div>
 
       <LandingSocialProof
         className="mt-6 w-full flex justify-center"
@@ -149,13 +157,15 @@ import { LandingSocialProof } from '@/components/landing/social-proof/LandingSoc
   title="Landing page in minutes"
   description="Get 10x more done with Shadcn UI, React & Next.js, and say goodbye to repetitive tasks. You'll never go back."
 >
-  <Button size="xl" asChild>
-    <a href="#">Buy now</a>
-  </Button>
+  <div className="flex gap-2">
+    <Button size="xl" asChild>
+      <a href="#">Buy now</a>
+    </Button>
 
-  <Button size="xl" variant="outlinePrimary">
-    <a href="#">Read more</a>
-  </Button>
+    <Button size="xl" variant="outlinePrimary">
+      <a href="#">Read more</a>
+    </Button>
+  </div>
 
   <LandingSocialProof
     className="mt-6 w-full flex justify-center"
@@ -189,15 +199,15 @@ import { LandingSocialProof } from '@/components/landing/social-proof/LandingSoc
       title="Landing page in minutes"
       description="Get 10x more done with Shadcn UI, React & Next.js, and say goodbye to repetitive tasks. You'll never go back."
     >
-      <Button size="xl" asChild>
-        <a href="#">
-          Buy now
-        </a>
-      </Button>
+      <div className="flex gap-2">
+        <Button size="xl" asChild>
+          <a href="#">Buy now</a>
+        </Button>
 
-      <Button size="xl" variant="outlinePrimary">
-        <a href="#">Read more</a>
-      </Button>
+        <Button size="xl" variant="outlinePrimary">
+          <a href="#">Read more</a>
+        </Button>
+      </div>
 
       <LandingDiscount
         className="w-full flex justify-center"
@@ -219,13 +229,15 @@ import { LandingDiscount } from '@/components/landing/discount/LandingDiscount';
   title="Landing page in minutes"
   description="Get 10x more done with Shadcn UI, React & Next.js, and say goodbye to repetitive tasks. You'll never go back."
 >
-  <Button size="xl" asChild>
-    <a href="#">Buy now</a>
-  </Button>
+  <div className="flex gap-2">
+    <Button size="xl" asChild>
+      <a href="#">Buy now</a>
+    </Button>
 
-  <Button size="xl" variant="outlinePrimary">
-    <a href="#">Read more</a>
-  </Button>
+    <Button size="xl" variant="outlinePrimary">
+      <a href="#">Read more</a>
+    </Button>
+  </div>
 
   <LandingDiscount
     className="w-full flex justify-center"
@@ -761,15 +773,17 @@ import { LandingSocialProofBandItem } from '@/components/landing/social-proof/La
         backgroundGlowVariant="secondary"
         leadingComponent={<LandingProductHuntAward />}
       >
-        <Button size="xl" variant="secondary" asChild>
-          <a href="#">
-            Buy now
-          </a>
-        </Button>
+        <div className="flex gap-2">
+          <Button size="xl" variant="secondary" asChild>
+            <a href="#">
+              Buy now
+            </a>
+          </Button>
 
-        <Button size="xl" variant="outlineSecondary">
-          <a href="#">Read more</a>
-        </Button>
+          <Button size="xl" variant="outlineSecondary">
+            <a href="#">Read more</a>
+          </Button>
+        </div>
 
         <LandingDiscount
           className="w-full flex justify-center"
@@ -833,15 +847,17 @@ import { LandingSocialProofBandItem } from '@/components/landing/social-proof/La
   backgroundGlowVariant="secondary"
   leadingComponent={<LandingProductHuntAward />}
 >
-  <Button size="xl" variant="secondary" asChild>
-    <a href="#">
-      Buy now
-    </a>
-  </Button>
+  <div className="flex gap-2">
+    <Button size="xl" variant="secondary" asChild>
+      <a href="#">
+        Buy now
+      </a>
+    </Button>
 
-  <Button size="xl" variant="outlineSecondary">
-    <a href="#">Read more</a>
-  </Button>
+    <Button size="xl" variant="outlineSecondary">
+      <a href="#">Read more</a>
+    </Button>
+  </div>
 
   <LandingDiscount
     className="w-full flex justify-center"
