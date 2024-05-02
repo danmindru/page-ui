@@ -1,4 +1,4 @@
-# Page UI
+# Page UI 📃
 **Landing page components & templates that you can copy 📋 & paste 🍝**<br/>
 [pageui.dev](https://pageui.dev)
 
@@ -10,7 +10,7 @@ with Tailwind CSS, similar to [Shadcn UI](https://ui.shadcn.com/).
 
 [Read more](https://pageui.dev/docs/introduction).
 
-## Installation (Next.js)
+## 💻 Installation (Next.js)
 
 1️⃣ Start by creating a new Next.js app. You can use the following command:
 
