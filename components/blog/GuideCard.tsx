@@ -11,6 +11,7 @@ export const GuideCard = ({
   iconClassName,
   iconComponent,
   variant = 'primary',
+  teaser = false,
 }: {
   href: string;
   title: string;
@@ -20,6 +21,7 @@ export const GuideCard = ({
   iconClassName?: string;
   iconComponent?: React.ReactNode;
   variant?: 'primary' | 'secondary' | 'black';
+  teaser?: boolean;
 }) => {
   const icon = iconComponent ? iconComponent : <ArrowDownToDotIcon />;
 
@@ -33,7 +35,8 @@ export const GuideCard = ({
           ? 'bg-secondary-900 hover:bg-secondary-800'
           : '',
         variant === 'black' ? 'bg-black hover:bg-black/90' : '',
-        className,
+        teaser ? 'pointer-events-none grayscale' : '',
+        className
       )}
     >
       {cloneElement(icon as React.ReactElement, {
@@ -42,11 +45,18 @@ export const GuideCard = ({
           variant === 'primary' ? 'text-primary-400' : '',
           variant === 'secondary' ? 'text-secondary-400' : '',
           variant === 'black' ? 'text-gray-100' : '',
-          iconClassName,
+          iconClassName
         ),
       })}
 
-      <p className="relative z-10 m-0 text-lg leading-6">{title}</p>
+      <p className="relative z-10 m-0 text-lg leading-6">
+        {title}
+        {teaser ? (
+          <span className="inline-block m-1 text-xs uppercase bg-blue-500 px-2 py-1 rounded-md">
+            Coming soon
+          </span>
+        ) : null}
+      </p>
       <p className="relative z-10 m-0 -mt-4 text-xs opacity-70">
         {description}
       </p>
@@ -59,7 +69,7 @@ export const GuideCard = ({
               'relative z-10 inline-block text-xs shadow-sm px-2 py-1 rounded-md',
               variant === 'primary' ? 'bg-primary-700' : '',
               variant === 'secondary' ? 'bg-secondary-600' : '',
-              variant === 'black' ? 'bg-gray-700' : '',
+              variant === 'black' ? 'bg-gray-700' : ''
             )}
           >
             {label}
