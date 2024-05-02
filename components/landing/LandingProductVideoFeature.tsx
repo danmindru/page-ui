@@ -70,10 +70,10 @@ export const LandingProductVideoFeature = ({
     >
       <div
         className={clsx(
-          'flex flex-col items-center relative',
+          'w-full p-6 flex flex-col items-center relative',
           videoPosition === 'center'
-            ? 'narrow-container'
-            : 'ultrawide-container grid lg:grid-cols-12 gap-8 lg:gap-16',
+            ? 'container-narrow'
+            : 'max-w-full container-ultrawide grid lg:grid-cols-12 gap-8 lg:gap-16',
           textPosition === 'center' ? 'items-center' : 'items-start',
           innerClassName,
         )}

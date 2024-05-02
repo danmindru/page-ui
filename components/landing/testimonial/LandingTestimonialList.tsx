@@ -46,7 +46,7 @@ export const LandingTestimonialListSection = ({
         className,
       )}
     >
-      <div className="wide-container relative flex flex-col items-center">
+      <div className="w-full p-6 max-w-full container-wide relative flex flex-col items-center">
         {title ? (
           <h2 className="text-center text-3xl font-semibold leading-tight md:leading-tight max-w-xs sm:max-w-none md:text-4xl lg:text-5xl">
             {title}
@@ -109,7 +109,7 @@ export const LandingTestimonialListSection = ({
 
       <section
         className={clsx(
-          'wide-container w-full relative grid grid-cols-12 gap-8 items-stretch',
+          'w-full p-6 max-w-full container-wide relative grid grid-cols-12 gap-8 items-stretch',
           containerClassName,
         )}
       >

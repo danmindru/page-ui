@@ -76,10 +76,10 @@ export const LandingProductFeature = ({
     >
       <div
         className={clsx(
-          'flex flex-col items-center relative',
+          'w-full p-6 flex flex-col items-center relative',
           imagePosition === 'center'
-            ? 'narrow-container'
-            : 'wide-container grid lg:grid-cols-2',
+            ? 'container-narrow'
+            : 'max-w-full container-wide grid lg:grid-cols-2',
           innerClassName,
         )}
         style={{

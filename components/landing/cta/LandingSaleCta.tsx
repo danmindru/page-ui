@@ -63,7 +63,7 @@ export const LandingSaleCtaSection = ({
         </div>
       ) : null}
 
-      <div className={clsx(className, 'narrow-container')}>
+      <div className={clsx(className, 'w-full p-6 container-narrow')}>
         {title ? (
           <h2 className="text-3xl font-semibold leading-tight max-w-xs sm:max-w-none md:text-4xl lg:text-5xl fancyHeading">
             {title}

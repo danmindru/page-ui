@@ -137,10 +137,10 @@ export const LandingPrimaryImageCtaSection = ({
     >
       <div
         className={clsx(
-          'flex flex-col gap-8 relative',
+          'w-full p-6 flex flex-col gap-8 relative',
           imagePosition === 'center'
-            ? 'narrow-container'
-            : 'wide-container grid lg:grid-cols-2 items-center',
+            ? 'container-narrow'
+            : 'max-w-full container-wide grid lg:grid-cols-2 items-center',
           textPosition === 'center' ? 'items-center' : 'items-start',
           innerClassName,
         )}
@@ -294,10 +294,10 @@ export const LandingPrimaryVideoCtaSection = ({
     >
       <div
         className={clsx(
-          'flex flex-col gap-8 relative',
+          'w-full p-6 flex flex-col gap-8 relative',
           videoPosition === 'center'
-            ? 'narrow-container'
-            : 'wide-container grid lg:grid-cols-2 items-center',
+            ? 'container-narrow'
+            : 'max-w-full container-wide grid lg:grid-cols-2 items-center',
           textPosition === 'center' ? 'items-center' : 'items-start',
           innerClassName,
         )}
@@ -425,8 +425,10 @@ export const LandingPrimaryTextCtaSection = ({
     >
       <div
         className={clsx(
-          'flex flex-col gap-8 relative',
-          textPosition === 'center' ? 'narrow-container' : 'wide-container',
+          'w-full p-6 flex flex-col gap-8 relative',
+          textPosition === 'center'
+            ? 'container-narrow'
+            : 'max-w-full container-wide',
           textPosition === 'center' ? 'items-center' : 'items-start',
           innerClassName,
         )}
