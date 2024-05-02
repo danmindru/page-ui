@@ -34,6 +34,16 @@ npx create-next-app@latest my-app --typescript --tailwind --eslint
 
 <StepCard stepNumber={2}>
 
+## Run the CLI
+
+```bash
+npx page-ui@latest init
+```
+
+</StepCard>
+
+<StepCard stepNumber={3}>
+
 ## Install dependencies
 
 Add the required dependencies to your Next.js app:
@@ -46,119 +56,14 @@ npm install @tailwindcss/forms @tailwindcss/typography tailwindcss-animate class
 
 <br />
 
-<StepCard stepNumber={3}>
+<StepCard stepNumber={4}>
 
-## Configure Tailwind CSS & colors
-
-Create a colors file under `data/config/colors.js` with the following content:
-
-```js
-/* Configure colors at https://shipixen.com/color-theme-explorer-shadcn */
-export const colors = {
-  primary: {
-    lighter: '#a5b4fc',
-    light: '#818cf8',
-    main: '#6366f1',
-    dark: '#4f46e5',
-    darker: '#4338ca',
-  },
-  secondary: {
-    lighter: '#86efac',
-    light: '#4ade80',
-    main: '#22c55e',
-    dark: '#16a34a',
-    darker: '#15803d',
-  },
-};
-```
-
-Update your `tailwind.config.js` file to include the following:
+## Configure Tailwind CSS
 
 <StepCode>
 
 ```diff-js
-import type { Config } from "tailwindcss";
-+ import { colors } from "./data/config/colors";
-
-const config: Config = {
-  content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
-
-+ theme: {
-+   extend: {
-+     fontFamily: {
-+       sans: ["var(--font-space-default)", ...fontFamily.sans],
-+       display: ["var(--font-space-display)", ...fontFamily.sans],
-+     },
-+
-+     colors: {
-+       primary: {
-+         100: colors.primary.lighter,
-+         200: colors.primary.lighter,
-+         300: colors.primary.light,
-+         400: colors.primary.light,
-+         500: colors.primary.main,
-+         600: colors.primary.main,
-+         700: colors.primary.dark,
-+         800: colors.primary.dark,
-+         900: colors.primary.darker,
-+       },
-+       secondary: {
-+         100: colors.secondary.lighter,
-+         200: colors.secondary.lighter,
-+         300: colors.secondary.light,
-+         400: colors.secondary.light,
-+         500: colors.secondary.main,
-+         600: colors.secondary.main,
-+         700: colors.secondary.dark,
-+         800: colors.secondary.dark,
-+         900: colors.secondary.darker,
-+       },
-+       border: "hsl(var(--border))",
-+       input: "hsl(var(--input))",
-+       ring: colors.primary.dark,
-+       background: "hsl(var(--background))",
-+       foreground: "hsl(var(--foreground))",
-+       destructive: {
-+         DEFAULT: "hsl(var(--destructive))",
-+         foreground: "hsl(var(--destructive-foreground))",
-+       },
-+       muted: {
-+         DEFAULT: "hsl(var(--muted))",
-+         foreground: "hsl(var(--muted-foreground))",
-+       },
-+       accent: {
-+         DEFAULT: "hsl(var(--accent))",
-+         foreground: "hsl(var(--accent-foreground))",
-+       },
-+       popover: {
-+         DEFAULT: "hsl(var(--popover))",
-+         foreground: "hsl(var(--popover-foreground))",
-+       },
-+       card: {
-+         DEFAULT: "hsl(var(--card))",
-+         foreground: "hsl(var(--card-foreground))",
-+       },
-+     },
-+
-+     screens: {
-+       "2xl": "1400px",
-+     },
-
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-      },
-    },
-  },
-  plugins: [],
-};
-
-export default config;
+TODO
 ```
 
 </StepCode>
