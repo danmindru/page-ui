@@ -123,6 +123,30 @@ npm install @tailwindcss/forms @tailwindcss/typography tailwindcss-animate class
   .container-ultrawide {
     @apply xl:max-w-7xl;
   }
+
+  .hard-shadow {
+    box-shadow: var(--hard-shadow);
+  }
+
+  .perspective-right {
+    box-shadow: var(--hard-shadow-left);
+    transform: perspective(400em) rotateY(15deg) rotateX(6deg) skew(8deg, -4deg) translate3d(4%, -2%, 0) scale(.8);
+  }
+
+  .perspective-left {
+    box-shadow: var(--hard-shadow);
+    transform: perspective(400em) rotateY(-15deg) rotateX(6deg) skew(-8deg,4deg) translate3d(-4%,-2%,0) scale(.8);
+  }
+
+  .perspective-bottom {
+    box-shadow: var(--hard-shadow);
+    transform: translateY(-4%) perspective(400em) rotateX(18deg) scale(.9);
+  }
+
+  .perspective-paper {
+    box-shadow: var(--hard-shadow);
+    transform: rotateX(40deg) rotate(40deg) scale(.8);
+  }
 }
 ```
 
