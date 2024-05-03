@@ -70,7 +70,7 @@ export default function Home() {
             </span>
           </h1>
         }
-        description="Page UI is a set of landing page components & templates that you can copy & paste into you codebase. Made for React & built on top of Shadcn UI."
+        description="Page UI is a set of landing page components & templates that you can copy & paste into you codebase. Made for React & built on top of TailwindCSS."
         textPosition="left"
         withBackground
         videoSrc="https://cache.shipixen.com/page-ui%2F1-launch-templates.mp4"
