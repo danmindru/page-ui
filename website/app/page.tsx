@@ -21,27 +21,103 @@ import { LandingSocialProofBandItem } from '@/components/landing/social-proof/La
 
 import {
   BookOpenCheckIcon,
-  ChromeIcon,
   ClipboardIcon,
-  FigmaIcon,
-  FramerIcon,
   GithubIcon,
   HeartHandshakeIcon,
-  LayersIcon,
   LayoutPanelLeftIcon,
   LibraryIcon,
-  LightbulbIcon,
-  LineChartIcon,
   MoonIcon,
   PaintbrushIcon,
   SparklesIcon,
-  ThumbsUpIcon,
   VenetianMaskIcon,
-  ZapIcon,
 } from 'lucide-react';
 import { LandingProductVideoFeature } from '@/components/landing/LandingProductVideoFeature';
 import Image from '@/components/shared/Image';
 import { CtaButton } from '@/components/shared/ui/cta-button';
+
+const testimonialItems = [
+  {
+    name: 'Philipp K.',
+    text: "Is this like TailwindUI components (which cost $300) But it's free And it's optimized for conversion?",
+    handle: '@philkellr',
+    imageSrc: '/static/images/people/phil.webp',
+    url: 'https://www.producthunt.com/posts/page-ui?comment=3462586',
+  },
+  {
+    name: 'Deven B.',
+    text: 'This looks amazing 🤩',
+    handle: '@devenbhooshan',
+    imageSrc: '/static/images/people/deven.webp',
+    url: 'https://www.producthunt.com/posts/page-ui?comment=3462473',
+  },
+  {
+    name: 'Isa T.',
+    text: 'Love the themeable and responsive design plus the dark mode.',
+    handle: '@isacoding',
+    imageSrc: '/static/images/people/isa.webp',
+    url: 'https://x.com/isacoding/status/1786314708191965553',
+  },
+  {
+    name: 'João A.',
+    text: 'This is genius. Easily add those great components to any project!',
+    handle: '@joao_aguiam',
+    imageSrc: '/static/images/people/joao.webp',
+    url: 'https://www.producthunt.com/posts/page-ui?comment=3462497',
+  },
+
+  {
+    name: 'Aman W.',
+    text: "As someone who's dabbled in React, anything that cuts down on design time is a blessing.",
+    handle: '@aman_wen',
+    imageSrc: '/static/images/people/aman.webp',
+    url: 'https://www.producthunt.com/posts/page-ui?comment=3462453',
+    featured: true,
+  },
+
+  {
+    name: 'Matthias N.',
+    text: 'This is everything you need and more. Such a great product',
+    handle: '@mnewme',
+    imageSrc: '/static/images/people/matt.webp',
+    url: 'https://www.producthunt.com/posts/page-ui?comment=3462475',
+  },
+
+  {
+    name: 'Dany',
+    text: 'Sorry guys, all my upcoming apps will look fire now.',
+    handle: '@majorbaguette',
+    imageSrc: '/static/images/people/dany.webp',
+    url: 'https://www.producthunt.com/posts/page-ui?comment=3462564',
+  },
+  {
+    name: 'Dima R.',
+    text: 'This is extremely useful!!!',
+    handle: '@dima_rubanov',
+    imageSrc: '/static/images/people/dima.webp',
+    url: 'https://www.producthunt.com/posts/page-ui?comment=3462477',
+  },
+  {
+    name: 'Michael A.',
+    text: 'This looks amazing, as a Frontend Developer who sometimes struggles with building interfaces due to a lack of proper design, using this it will 10x my flow. Love it!',
+    handle: '@michael_adrian',
+    imageSrc: '/static/images/people/michael.webp',
+    url: 'https://www.producthunt.com/posts/page-ui?comment=3462526',
+  },
+  {
+    name: 'Adarsh G.',
+    text: 'This is amazing [...] Gonna use it always🚀',
+    handle: '@Adarsh____gupta',
+    imageSrc: '/static/images/people/adarsh.webp',
+    url: 'https://x.com/Adarsh____gupta/status/1786275544532914642',
+  },
+  {
+    name: 'SnackStack',
+    text: 'This is such a marketing powerhouse',
+    handle: '@stonedFractals',
+    imageSrc: '/static/images/people/snack.webp',
+    url: 'https://x.com/stonedFractals/status/1786225130034614344',
+  },
+];
 
 export default function Home() {
   return (
@@ -346,55 +422,13 @@ export default function Home() {
         <LandingTestimonialGrid
           titleComponent={
             <>
-              <p className="text-xs text-semibold bg-primary-500 text-white py-2 px-4 rounded-md">
-                Coming soon / this section is a placeholder 🚧
-              </p>
-
               <h2 className="text-4xl font-semibold">
                 From Code to Conversion: Real Stories from Real Users
               </h2>
             </>
           }
           description="These are the voices of the folks who have incorporated Page UI into their workflow. But don't take our word for it. Read about their experiences straight from their keyboards."
-          testimonialItems={[
-            {
-              name: 'Aaron P.',
-              text: "With Page UI, my dev time has been halved, and I've seen a significant uptick in visitor engagement. It's like having a design team in my codebase.",
-              handle: '@aaron_p.',
-              imageSrc: 'https://picsum.photos/id/64/100/100',
-            },
-            {
-              name: 'Bella Q.',
-              text: 'Simplicity is the keyword here. I just copy, paste, and voila! Instant, high-conversion landing pages. New standard in my toolkit.',
-              handle: '@bella_q.',
-              imageSrc: 'https://picsum.photos/id/65/100/100',
-            },
-            {
-              name: 'Carlos R.',
-              text: 'React components made easy. With Page UI, I get beautiful landing pages that load fast and keep visitors around. Great service!',
-              handle: '@carlos_r.',
-              imageSrc: 'https://picsum.photos/id/669/100/100',
-              featured: true,
-            },
-            {
-              name: 'Diana S.',
-              text: "Building on Shadcn UI was a delight, but add Page UI to the mix? Now that's a game changer. Clean code. Pretty pages. Couldn't ask for more.",
-              handle: '@diana_s.',
-              imageSrc: 'https://picsum.photos/id/829/100/100',
-            },
-            {
-              name: 'Edward T.',
-              text: "Page UI boosts my productivity sky high. The solution I've been seeking to improve the look of my landing pages without the extra headache.",
-              handle: '@edward_t.',
-              imageSrc: 'https://picsum.photos/100/100.webp?random=2',
-            },
-            {
-              name: 'Felicia U.',
-              text: "My favorite part? The copious template options. There's always a design that marries well with my project's feel and my users' needs. Page UI rocks!",
-              handle: '@felicia_u.',
-              imageSrc: 'https://picsum.photos/100/100.webp?random=3',
-            },
-          ]}
+          testimonialItems={testimonialItems}
           withBackgroundGlow
           withBackground
         />
