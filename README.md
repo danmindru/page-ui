@@ -38,11 +38,11 @@ npm install @tailwindcss/forms @tailwindcss/typography tailwindcss-animate class
 ```css
 @layer base {
   :root {
-    /* If you use Shadcn UI already, you can skip this block. */
     --hard-shadow: 0px 29px 52px 0px rgba(0, 0, 0, 0.4),
       22px 25px 16px 0px rgba(0, 0, 0, 0.2);
     --hard-shadow-left: 0px 29px 52px 0px rgba(0, 0, 0, 0.4),
       -22px 25px 16px 0px rgba(0, 0, 0, 0.2);
+    /* If you use Shadcn UI already, you should already have these variables defined */
     --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;
     --card: 0 0% 100%;
@@ -110,6 +110,57 @@ npm install @tailwindcss/forms @tailwindcss/typography tailwindcss-animate class
   }
 
   /**
+   * Perspective (used for images etc.)
+   */
+  .perspective-none {
+    transform: none;
+  }
+
+  .perspective-left {
+    box-shadow: var(--hard-shadow);
+    transform: perspective(400em) rotateY(-15deg) rotateX(6deg)
+      skew(-8deg, 4deg) translate3d(-4%, -2%, 0) scale(0.8);
+  }
+
+  .perspective-right {
+    box-shadow: var(--hard-shadow-left);
+    transform: perspective(400em) rotateY(15deg) rotateX(6deg) skew(8deg, -4deg)
+      translate3d(4%, -2%, 0) scale(0.8);
+  }
+
+  .perspective-bottom {
+    box-shadow: var(--hard-shadow);
+    transform: translateY(-4%) perspective(400em) rotateX(18deg) scale(0.9);
+  }
+
+  .perspective-bottom-lg {
+    box-shadow: var(--hard-shadow);
+    transform: perspective(400em) translate3d(0, -6%, 0) rotateX(34deg)
+      scale(0.8);
+  }
+
+  .perspective-paper {
+    box-shadow: var(--hard-shadow);
+    transform: rotateX(40deg) rotate(40deg) scale(0.8);
+  }
+
+  .perspective-paper-left {
+    box-shadow: var(--hard-shadow-left);
+    transform: rotateX(40deg) rotate(-40deg) scale(0.8);
+  }
+
+  /**
+   * Custom shadows
+   */
+  .hard-shadow {
+    box-shadow: var(--hard-shadow);
+  }
+
+  .hard-shadow-left {
+    box-shadow: var(--hard-shadow-left);
+  }
+
+  /**
    * Container utilities
    */
   .container-narrow {
@@ -122,30 +173,6 @@ npm install @tailwindcss/forms @tailwindcss/typography tailwindcss-animate class
 
   .container-ultrawide {
     @apply xl:max-w-7xl;
-  }
-
-  .hard-shadow {
-    box-shadow: var(--hard-shadow);
-  }
-
-  .perspective-right {
-    box-shadow: var(--hard-shadow-left);
-    transform: perspective(400em) rotateY(15deg) rotateX(6deg) skew(8deg, -4deg) translate3d(4%, -2%, 0) scale(.8);
-  }
-
-  .perspective-left {
-    box-shadow: var(--hard-shadow);
-    transform: perspective(400em) rotateY(-15deg) rotateX(6deg) skew(-8deg,4deg) translate3d(-4%,-2%,0) scale(.8);
-  }
-
-  .perspective-bottom {
-    box-shadow: var(--hard-shadow);
-    transform: translateY(-4%) perspective(400em) rotateX(18deg) scale(.9);
-  }
-
-  .perspective-paper {
-    box-shadow: var(--hard-shadow);
-    transform: rotateX(40deg) rotate(40deg) scale(.8);
   }
 }
 ```
