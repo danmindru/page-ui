@@ -11,7 +11,7 @@ import Image from 'next/image';
 const Header = ({ className }: { className?: string }) => {
   return (
     <>
-      <div className="w-full gap-4 flex items-center justify-center bg-purple-950 p-2">
+      {/* <div className="w-full gap-4 flex items-center justify-center bg-purple-950 p-2">
         <a
           href="https://www.producthunt.com/posts/page-ui?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-page&#0045;ui"
           target="_blank"
@@ -27,7 +27,7 @@ const Header = ({ className }: { className?: string }) => {
             className="h-10 w-auto"
           />
         </a>
-      </div>
+      </div> */}
 
       <header
         className={cn(
