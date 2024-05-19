@@ -54,7 +54,7 @@ const Header = ({ className }: { className?: string }) => {
         </div>
         <div className="flex items-center leading-5 gap-4 sm:gap-6">
           {headerNavLinks.map((link) => {
-            if (link.href.includes('shipixen.com')) {
+            if (link.href === 'https://shipixen.com') {
               return (
                 <a
                   key={link.title}
