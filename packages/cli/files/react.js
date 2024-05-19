@@ -2,7 +2,7 @@ import { PLACEHOLDER_PATH } from './consts/placeholder.js';
 
 export const FILES = [
   {
-    from: `${PLACEHOLDER_PATH}/tailwind.config.js`,
+    from: `${PLACEHOLDER_PATH}/tailwind.config.js.template`,
     to: 'tailwind.config.js',
   },
 

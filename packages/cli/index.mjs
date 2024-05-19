@@ -77,6 +77,7 @@ const copyFilesAndDirectories = async ({
         )
       )
     );
+    console.log('\n');
     console.log(
       `- Check docs at ${chalk.bold(
         chalk.white('https://pageui.dev/docs/landing-page-components')
@@ -91,6 +92,8 @@ const copyFilesAndDirectories = async ({
     if (postCopyCommand) {
       postCopyCommand();
     }
+
+    console.log('\n');
   } catch (error) {
     console.log('\n');
     console.error(chalk.red("💥 Couldn't copy files"));
