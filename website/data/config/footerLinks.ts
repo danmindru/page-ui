@@ -14,6 +14,23 @@ export const footerLinks: Array<{
     ],
   },
   {
+    columnName: 'Examples',
+    links: [
+      {
+        href: 'https://shipixen.com/demo/landing-page-templates/template/emerald-ai',
+        title: 'Templates',
+      },
+      {
+        href: 'https://shipixen.com/demo/landing-page-component-examples',
+        title: 'Usage examples',
+      },
+      {
+        href: 'https://pageui.shipixen.com/docs/landing-page-components',
+        title: 'Component docs',
+      },
+    ],
+  },
+  {
     columnName: 'Support',
     links: [
       {

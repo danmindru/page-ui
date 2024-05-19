@@ -217,7 +217,7 @@ export default function Home() {
         textPosition="center"
         videoPosition="center"
         videoSrc="https://cache.shipixen.com/page-ui%2F2-full-bricks-teaser.mp4"
-        autoPlay
+        autoPlay={false}
         loop
         // leadingComponent={<LandingProductHuntAward />}
       >

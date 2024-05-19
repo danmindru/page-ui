@@ -1,0 +1,1 @@
+export const PLACEHOLDER_PATH = '__PLACEHOLDER_PATH__';

@@ -18,7 +18,7 @@ with Tailwind CSS, similar to [Shadcn UI](https://ui.shadcn.com/).
 npx create-next-app@latest my-app --typescript --tailwind --eslint
 ```
 
-2️⃣ Run the CLI
+2️⃣ Run the Page UI CLI
 
 ```bash
 npx @page-ui/wizard@latest init

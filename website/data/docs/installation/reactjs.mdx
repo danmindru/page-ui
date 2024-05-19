@@ -1,22 +1,21 @@
 ---
-title: 'Next.js installation guide'
-date: '2024-05-01'
+title: 'React.js installation guide'
+date: '2024-05-19'
 lastmod: '2024-05-19'
 tags:
   - 'documentation'
   - 'guide'
   - 'getting-started'
   - 'installation'
-  - 'nextjs'
   - 'react'
   - 'tailwindcss'
 
-summary: 'Learn how to install Page UI landing page components in your Next.js app. Install Tailwind CSS and configure the codebase in just a few steps.'
+summary: 'Learn how to install Page UI landing page components in your React.js app bootstrapped with Vite. Install Tailwind CSS to get started, then configure the codebase.'
 layout: PostHub
 ---
 
 <span className="text-xl not-prose">
-  Learn how to install Page UI in your Next.js app.
+  Learn how to install Page UI in your React.js app.
 </span>
 
 <br />
@@ -37,10 +36,10 @@ layout: PostHub
 
 <StepCard stepNumber={1}>
 ## Create a new Next.js app
-Start by creating a new Next.js app. You can use the following command:
+Start by creating a new React app. The current most popular way to do this is by using Vite. You can use the following command:
 
 ```bash
-npx create-next-app@latest my-app --typescript --tailwind --eslint
+npm create vite@latest my-app -- --template react-ts
 ```
 
 </StepCard>
@@ -49,10 +48,10 @@ npx create-next-app@latest my-app --typescript --tailwind --eslint
 
 <StepCard stepNumber={2}>
 
-## Run the Page UI CLI
+## Install dependencies
 
 ```bash
-npx @page-ui/wizard@latest init
+npm install -D tailwindcss postcss autoprefixer @tailwindcss/forms @tailwindcss/typography tailwindcss-animate class-variance-authority clsx tailwind-merge lucide-react @radix-ui/react-accordion
 ```
 
 </StepCard>
@@ -61,12 +60,10 @@ npx @page-ui/wizard@latest init
 
 <StepCard stepNumber={3}>
 
-## Install dependencies
-
-Add the required dependencies to your Next.js app:
+## Setup Tailwind CSS
 
 ```bash
-npm install @tailwindcss/forms @tailwindcss/typography tailwindcss-animate class-variance-authority clsx tailwind-merge lucide-react @radix-ui/react-accordion
+npx tailwindcss init -p
 ```
 
 </StepCard>
@@ -75,16 +72,111 @@ npm install @tailwindcss/forms @tailwindcss/typography tailwindcss-animate class
 
 <StepCard stepNumber={4}>
 
+## Run the Page UI CLI
+
+```bash
+npx @page-ui/wizard@latest init --template react
+```
+
+</StepCard>
+
+<br />
+
+<StepCard stepNumber={5}>
+
+## Configure TypeScript aliases
+
+Add the following code to the tsconfig.json file to resolve paths: <br/>
+
+```diff-json:tsconfig.json
+{
+  "compilerOptions": {
++   "baseUrl": ".",
++   "paths": {
++     "@/*": [
++       "./src/*"
++     ]
++   },
+
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+  },
+  "include": ["src"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}
+
+```
+
+</StepCard>
+
+<br />
+
+<StepCard stepNumber={6}>
+
+## Configure Vite
+
+Add the following code to the `vite.config.ts` so your app can resolve paths without error:<br/>
+
+```bash
+npm i -D @types/node
+```
+
+```diff-ts:vite.config.ts
++import path from "path"
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [react()],
++ resolve: {
++   alias: {
++     "@": path.resolve(__dirname, "./src"),
++   },
++ },
+})
+```
+
+</StepCard>
+
+<br />
+
+<StepCard stepNumber={7}>
+
 ## Configure CSS
 
-Add the below to your `global.css` file.<br/>
+Add the below to your `index.css` file.<br/>
 
 <StepCode>
 
-```css:app/global.css
+```css:app/index.css
+@import url('https://fonts.googleapis.com/css?family=Inter:400,500,600,700,800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @layer base {
   :root {
+    --font-space-default: 'Inter';
+    --font-space-display: 'Inter';
     --hard-shadow: 0px 29px 52px 0px rgba(0, 0, 0, 0.4),
       22px 25px 16px 0px rgba(0, 0, 0, 0.2);
     --hard-shadow-left: 0px 29px 52px 0px rgba(0, 0, 0, 0.4),
@@ -227,67 +319,17 @@ Add the below to your `global.css` file.<br/>
 
 </StepCode>
 
+<br />
+
+**Note**: when you create a new React app with Vite, you'll get some sample styles in the `index.css` file as well as `app.css`. You can remove all of those safely.
+
 </StepCard>
 
 <br />
 
-<StepCard stepNumber={5}>
-
-## Optional: configure fonts
-
-Page UI uses `--font-space-default` and `--font-space-display` to configure fonts for headings and body text. You can change the font pairings in the `layout.tsx` file as shown below. <br />
-Font pairings are available in the [Shipixen App (free download)](https://shipixen.com).
-
-<StepCode>
-
-```diff-ts:app/layout.tsx
-import type { Metadata } from "next";
-- import { Inter } from "next/font/google";
-+ import { Inter, Syne } from 'next/font/google';
-
-import "./globals.css";
-
-- const inter = Inter({ subsets: ["latin"] });
-
-+ const displayFont = Syne({
-+   subsets: ['latin'],
-+   display: 'swap',
-+   variable: '--font-space-display',
-+ });
-
-+ const baseFont = Inter({
-+   subsets: ['latin'],
-+   display: 'swap',
-+   variable: '--font-space-default',
-+ });
-
-export const metadata: Metadata = {
-  title: "Create Next App",
-  description: "Generated by create next app",
-};
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="en">
--     <body className={inter.className}>{children}</body>
-+     <body className={`${baseFont.variable} ${displayFont.variable} scroll-smooth`}>{children}</body>
-    </html>
-  );
-}
-
-```
-
-</StepCode>
-
-</StepCard>
-
 ## Troubleshooting
 
-Something not quite right? Check out the [sample repository](https://github.com/Shipixen/page-ui-nextjs-example) for a full working example.
+Something not quite right? Check out the [sample repository](https://github.com/Shipixen/page-ui-react-vite-example) for a full working example.
 
 ## Theming
 

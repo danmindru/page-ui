@@ -8,57 +8,23 @@ import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
+import NextJsFiles from './files/next.js';
+import ReactFiles from './files/react.js';
+import { getFiles } from './files/getFiles.js';
+
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const componentsPath = path.join(__dirname, '../../components');
 
-const FILES = [
+const AVAILABLE_TEMPLATES = [
   {
-    from: `${componentsPath}/tailwind.config.ts`,
-    to: 'tailwind.config.ts',
+    name: 'nextjs',
   },
-
   {
-    from: `${componentsPath}/data/config/colors.js`,
-    to: 'data/config/colors.js',
-  },
-
-  {
-    from: `${componentsPath}/lib/utils.ts`,
-    to: 'lib/utils.ts',
-  },
-
-  {
-    from: `${componentsPath}/shared/ui/accordion.tsx`,
-    to: 'components/shared/ui/accordion.tsx',
-  },
-
-  {
-    from: `${componentsPath}/shared/ui/button.tsx`,
-    to: 'components/shared/ui/button.tsx',
-  },
-
-  {
-    from: `${componentsPath}/shared/ui/glow-bg.tsx`,
-    to: 'components/shared/ui/glow-bg.tsx',
-  },
-
-  {
-    from: `${componentsPath}/shared/Image.tsx`,
-    to: 'components/shared/Image.tsx',
-  },
-
-  {
-    from: `${componentsPath}/shared/VideoPlayer.tsx`,
-    to: 'components/shared/VideoPlayer.tsx',
+    name: 'react',
   },
 ];
 
-const DIRECTORIES = [
-  {
-    from: `${componentsPath}/landing`,
-    to: 'components/landing',
-  },
-];
+const DEFAULT_TEMPLATE = AVAILABLE_TEMPLATES[0];
 
 const copyFile = async (src, dest) => {
   return fs.copyFile(src, dest);
@@ -83,18 +49,20 @@ const ensureDir = async (filePath) => {
   await fs.mkdir(dirname, { recursive: true });
 };
 
-const copyFilesAndDirectories = async () => {
+const copyFilesAndDirectories = async ({
+  files = [],
+  directories = [],
+  postCopyCommand,
+}) => {
   try {
-    // TODO: Check for src directory
-
     // Copy existing files
-    for (const file of FILES) {
+    for (const file of files) {
       await ensureDir(file.to);
       await copyFile(file.from, path.join(process.cwd(), file.to));
     }
 
     // Copy entire directories
-    for (const directory of DIRECTORIES) {
+    for (const directory of directories) {
       await copyDirectory(
         directory.from,
         path.join(process.cwd(), directory.to)
@@ -119,6 +87,10 @@ const copyFilesAndDirectories = async () => {
         chalk.white('https://shipixen.com/demo/landing-page-templates')
       )}`
     );
+
+    if (postCopyCommand) {
+      postCopyCommand();
+    }
   } catch (error) {
     console.log('\n');
     console.error(chalk.red("💥 Couldn't copy files"));
@@ -132,13 +104,79 @@ program.name('page-ui').version('1.0.0');
 program
   .command('init')
   .description('Setup Page UI: adds required files to your project')
-  .action(async () => {
+  .option(
+    '-t, --template <template>',
+    `Choose a template from: ${AVAILABLE_TEMPLATES.map(
+      (template) => template.name
+    ).join(', ')}. Default: ${DEFAULT_TEMPLATE.name}`,
+    DEFAULT_TEMPLATE.name
+  )
+  .option(
+    '-src, --source <source>',
+    'Source directory. Defaults to root, but you might be using "src".',
+    ''
+  )
+  .action(async (opts) => {
+    const { template, src } = opts;
+
+    if (process.env.DEBUG) {
+      console.log(JSON.stringify(process.argv, null, 2));
+      console.log(JSON.stringify({ template, src }, null, 2));
+    }
+
+    let sourceDirectory = src;
+
+    if (!src) {
+      // TODO: Ask for src directory for Next.js
+      switch (template) {
+        case 'react':
+          sourceDirectory = 'src';
+          break;
+
+        default:
+          sourceDirectory = '';
+      }
+    }
+
+    let files, directories;
+
+    switch (template) {
+      case 'nextjs':
+        files = NextJsFiles.FILES;
+        directories = NextJsFiles.DIRECTORIES;
+        break;
+      case 'react':
+        files = ReactFiles.FILES;
+        directories = ReactFiles.DIRECTORIES;
+        break;
+      default:
+        files = NextJsFiles.FILES;
+        directories = NextJsFiles.DIRECTORIES;
+    }
+
+    files = getFiles({
+      toPathPrefix: sourceDirectory,
+      filelist: files,
+      fromPlaceholderReplacement: componentsPath,
+      toPathIgnore: [
+        'tailwind.config.js',
+        'tailwind.config.ts',
+        'data/config/colors.js',
+      ],
+    });
+
+    directories = getFiles({
+      toPathPrefix: sourceDirectory,
+      filelist: directories,
+      fromPlaceholderReplacement: componentsPath,
+    });
+
     try {
       // Check for existing files and prompt for confirmation.
       const existingFilesAndDirectories = [];
 
       // Check which files exist
-      for (const file of FILES) {
+      for (const file of files) {
         try {
           await fs.access(path.join(process.cwd(), file.to));
           existingFilesAndDirectories.push(file.to);
@@ -146,7 +184,7 @@ program
       }
 
       // Check which directories exist
-      for (const directory of DIRECTORIES) {
+      for (const directory of directories) {
         try {
           await fs.access(path.join(process.cwd(), directory.to));
           existingFilesAndDirectories.push(directory.to);
@@ -157,22 +195,63 @@ program
         const response = await enquirer.prompt({
           type: 'confirm',
           name: 'confirmation',
-          initial: true,
+          initial: 'Y',
+          format: (value) => (value ? 'Y' : 'n'),
           message: `The following files/directories will be overwritten:\n${existingFilesAndDirectories
-            .map((file) => `  - ${chalk.red(file)}`)
-            .join(', \n')}. \n\nDo you want to proceed?`,
+            .map((file) => `  - ${chalk.bold(file)}`)
+            .join(',\n')} \n\nDo you want to proceed?`,
         });
 
         if (response.confirmation) {
           const spinner = ora('Initializing Page UI').start();
-          await copyFilesAndDirectories();
+          await copyFilesAndDirectories({
+            files,
+            directories,
+          });
           spinner.stop();
         } else {
-          console.log('👋 Until next time');
+          const response = await enquirer.prompt({
+            type: 'confirm',
+            name: 'skip',
+            initial: 'Y',
+            format: (value) => (value ? 'Y' : 'n'),
+            message: `Would you like to only copy the missing files/directories only? (This will not overwrite any existing files)`,
+          });
+
+          if (response.skip) {
+            const spinner = ora('Initializing Page UI').start();
+            await copyFilesAndDirectories({
+              files: files.filter(
+                (file) => !existingFilesAndDirectories.includes(file.to)
+              ),
+              directories: directories.filter(
+                (directory) =>
+                  !existingFilesAndDirectories.includes(directory.to)
+              ),
+              postCopyCommand: () => {
+                console.log(
+                  `- ${chalk.italic(
+                    'Some files where skipped'
+                  )}. See how to set them up manually at ${chalk.bold(
+                    chalk.white(
+                      'https://pageui.shipixen.com/docs/installation/manual-reactjs'
+                    )
+                  )}`
+                );
+              },
+            });
+            spinner.stop();
+          } else {
+            console.log('Cancelling...');
+            console.log('👋 Until next time');
+          }
         }
       } else {
         const spinner = ora('Initializing Page UI').start();
-        await copyFilesAndDirectories();
+        await copyFilesAndDirectories({
+          files,
+          directories,
+        });
         spinner.stop();
       }
     } catch (error) {
@@ -181,4 +260,4 @@ program
     }
   });
 
-program.parse();
+program.parse(process.argv);
