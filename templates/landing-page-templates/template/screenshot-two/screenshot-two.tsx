@@ -15,6 +15,8 @@ import Logo from './screenshot-two-logo.svg';
 import DarkLogo from './screenshot-two-logo-dark.svg';
 
 import { useThemeStore } from '@/components/bricks/state/theme-state';
+import { cn } from '@/lib/utils';
+import { useEffect } from 'react';
 
 import { BrickProvider } from '@/components/bricks/brick-provider';
 import { Brick } from '@/components/bricks/brick';
@@ -27,14 +29,15 @@ import FiveSaleCta from '@/app/demo/landing-page-templates/template/screenshot-t
 import SixProductFeature from '@/app/demo/landing-page-templates/template/screenshot-two/bricks/6-product-feature';
 import SevenTestimonials from '@/app/demo/landing-page-templates/template/screenshot-two/bricks/7-testimonials';
 import EightFaq from '@/app/demo/landing-page-templates/template/screenshot-two/bricks/8-faq';
-import { cn } from '@/lib/utils';
 
 const DEMO_NAME = 'screenshot-two';
 
 export const ScreenshotTwo = () => {
   const setThemeByIndex = useThemeStore((state) => state.setThemeByIndex);
 
-  setThemeByIndex(10);
+  useEffect(() => {
+    setThemeByIndex(10);
+  }, []);
 
   return (
     <div className="w-full flex flex-col items-center">

@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import TemplateHeader from '@/app/demo/landing-page-templates/template/template-header';
 
@@ -36,7 +37,9 @@ const DEMO_NAME = 'front-centre';
 export const FrontCentre = () => {
   const setThemeByIndex = useThemeStore((state) => state.setThemeByIndex);
 
-  setThemeByIndex(26);
+  useEffect(() => {
+    setThemeByIndex(26);
+  }, []);
 
   return (
     <div className="w-full flex flex-col items-center">

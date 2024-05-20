@@ -19,6 +19,7 @@ import DarkLogo from './minimum-via-logo-dark.svg';
 
 import { useThemeStore } from '@/components/bricks/state/theme-state';
 import { cn } from '@/lib/utils';
+import { useEffect } from 'react';
 
 import OneTextCta from '@/app/demo/landing-page-templates/template/minimum-via/bricks/1-text-cta';
 import TwoFeaturesGrid from '@/app/demo/landing-page-templates/template/minimum-via/bricks/2-features-grid';
@@ -34,7 +35,9 @@ const DEMO_NAME = 'minimum-via';
 export const MinimumVia = () => {
   const setThemeByIndex = useThemeStore((state) => state.setThemeByIndex);
 
-  setThemeByIndex(32);
+  useEffect(() => {
+    setThemeByIndex(32);
+  }, []);
 
   return (
     <div className={cn('w-full flex flex-col items-center')}>
