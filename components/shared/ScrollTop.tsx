@@ -1,8 +1,9 @@
 'use client';
 
+import { cn } from '@/lib/utils';
 import { useEffect, useState } from 'react';
 
-const ScrollTop = () => {
+const ScrollTop = ({ className }: { className?: string }) => {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
@@ -21,9 +22,12 @@ const ScrollTop = () => {
 
   return (
     <div
-      className={`fixed z-10 bottom-8 right-8 hidden flex-col gap-3 ${
-        show ? 'md:flex' : 'md:hidden'
-      }`}
+      className={cn(
+        `fixed z-10 bottom-8 right-8 hidden flex-col gap-3 ${
+          show ? 'md:flex' : 'md:hidden'
+        }`,
+        className,
+      )}
     >
       <button
         aria-label="Scroll To Top"

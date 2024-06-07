@@ -121,6 +121,7 @@ export default function RootLayout({
           color="#5bbad5"
         />
         <meta name="generator" content="Shipixen" />
+        <meta name="saashub-verification" content="knvpsx0gl2np" />
         <meta name="msapplication-TileColor" content="#000000" />
         <meta
           name="theme-color"

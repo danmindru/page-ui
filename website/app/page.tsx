@@ -150,7 +150,7 @@ export default function Home() {
         textPosition="left"
         withBackground
         videoSrc="https://cache.shipixen.com/page-ui%2F1-launch-templates.mp4"
-        autoPlay
+        autoPlay={true}
         loop
         // leadingComponent={<LandingProductHuntAward />}
       >
@@ -338,6 +338,7 @@ export default function Home() {
         withBackgroundGlow
         variant="secondary"
         backgroundGlowVariant="secondary"
+        autoPlay={false}
       />
 
       {/* <LandingProductFeature
