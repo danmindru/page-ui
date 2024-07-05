@@ -1,3 +1,5 @@
+import { LandingProductFeature } from '@/components/landing/LandingProductFeature';
+import { LandingProductVideoFeature } from '@/components/landing/LandingProductVideoFeature';
 import clsx from 'clsx';
 import { Children, ReactElement, ReactNode, cloneElement } from 'react';
 
@@ -38,7 +40,7 @@ export const LandingProductFeaturesGrid = ({
     }
 
     const reactChild = child as Child;
-    const type = reactChild?.type?.name;
+    const reactChildType = reactChild?.type;
 
     return cloneElement(reactChild, {
       className: '!p-0 rounded-xl'.concat(
@@ -50,10 +52,10 @@ export const LandingProductFeaturesGrid = ({
           ? ' bg-primary-100/20 dark:bg-primary-900/10'
           : ' bg-secondary-100/20 dark:bg-secondary-900/10',
       ),
-      ...(type === 'LandingProductFeature'
+      ...(reactChildType === LandingProductFeature
         ? { imagePosition: 'center', imageShadow: 'none' }
         : {}),
-      ...(type === 'LandingProductVideoFeature'
+      ...(reactChildType === LandingProductVideoFeature
         ? { videoPosition: 'center' }
         : {}),
     });
