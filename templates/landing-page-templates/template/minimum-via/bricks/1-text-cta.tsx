@@ -27,7 +27,7 @@ export default function Component() {
           <br /> Great results.
         </>
       }
-      description="We use plain language, creative concepts, and an obsession with positive brand experiences to connect our clients with their audience in a meaningful, memorable way."
+      description="We use plain language, creative concepts, and an obsession with positive brand experiences to connect our clients with their audience in a memorable way."
       variant="secondary"
     >
       <Button size="xl" variant="secondary" asChild>
