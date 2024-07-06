@@ -15,6 +15,7 @@ import { LandingPageComponentsNav } from '@/components/blog/LandingPageComponent
 import { TooltipProvider } from '@/components/shared/ui/tooltip';
 import { ThemeSelector } from '@/components/bricks/theme/theme-selector';
 import Header from '@/components/shared/Header';
+import { InstallBlurb } from '@/components/blog/InstallBlurb';
 
 const postDateTemplate: Intl.DateTimeFormatOptions = {
   weekday: 'long',
@@ -285,6 +286,8 @@ export default function PostHubLayout({
             toc={toc}
             className={cn('toc-list w-full container-wide p-0 mt-4')}
           />
+
+          <InstallBlurb className="my-6" />
         </aside>
 
         <ScrollRestoration elementId="navigation" />
