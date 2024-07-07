@@ -99,7 +99,7 @@ export default function Page() {
       <Header className="mb-4 lg:mb-12" />
 
       <div className="w-full flex flex-col items-center mb-12">
-        <section className={'narrow-container'}>
+        <section className={'ultrawide-container'}>
           <ToolSelector
             numberOfComponents={totalTemplates}
             title={'Landing Page Templates'}
@@ -120,7 +120,7 @@ export default function Page() {
             in your app.
           </h2>
 
-          <div className="mt-6 flex flex-col gap-6">
+          <div className="mt-6 grid md:grid-cols-3 lg:grid-cols-4 gap-6">
             <TemplateItem
               name="Emerald AI"
               description="A landing page template for an AI-powered product, featuring a video in the main CTA."
