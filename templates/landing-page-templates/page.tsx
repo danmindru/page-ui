@@ -97,7 +97,7 @@ const TemplateItem = ({
 export default function Page() {
   return (
     <div className="flex flex-col w-full items-center justify-between fancy-overlay ultrawide-container !p-0">
-      <section className="flex flex-col p-4 pt-24 lg:pt-0">
+      <section className="flex flex-col p-4 pt-24 lg:pt-6">
         <ToolSelector
           numberOfComponents={totalTemplates}
           title={'Landing Page Templates'}
