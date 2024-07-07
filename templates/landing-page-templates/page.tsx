@@ -96,8 +96,8 @@ const TemplateItem = ({
 
 export default function Page() {
   return (
-    <div className="flex flex-col w-full items-center justify-between fancy-overlay ultrawide-container">
-      <section className="flex flex-col pt-24 lg:pt-0">
+    <div className="flex flex-col w-full items-center justify-between fancy-overlay ultrawide-container !p-0">
+      <section className="flex flex-col p-4 pt-24 lg:pt-0">
         <ToolSelector
           numberOfComponents={totalTemplates}
           title={'Landing Page Templates'}
@@ -108,7 +108,7 @@ export default function Page() {
         />
 
         <div className="mt-6 p-6 lg:px-12 lg:py-16 rounded-md bg-white/60 dark:bg-black/60 relative overflow-hidden">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl md:leading-14 max-w-xl">
+          <h2 className="text-2xl md:text-4xl lg:text-5xl md:leading-14 max-w-xl">
             High-converting,
             <br />
             Responsive templates.
