@@ -51,7 +51,7 @@ const TemplateItem = ({
   return (
     <a
       className={cn(
-        'w-full flex flex-col items-center justify-start bg-white dark:bg-black border border-gray-200 dark:border-gray-800 shadow-sm rounded-lg transition-all overflow-hidden group',
+        'w-full flex flex-col items-center justify-start bg-white/90 dark:bg-indigo-950/90 border border-gray-200 dark:border-gray-800 shadow-sm rounded-lg transition-all duration-700 overflow-hidden group hover:bg-white dark:hover:bg-indigo-950',
         comingSoon
           ? 'pointer-events-none'
           : 'hover:shadow-md hover:bg-gray-50 dark:hover:bg-slate-800',
@@ -65,7 +65,7 @@ const TemplateItem = ({
             alt={name}
             width={300}
             height={300}
-            className="w-full rounded-md group-hover:opacity-90 transition-opacity"
+            className="w-full rounded-md group-hover:opacity-80 transition-opacity duration-700"
           />
         ) : (
           <div className="w-full h-48 bg-gray-200 dark:bg-gray-800 flex items-center justify-center">
@@ -96,7 +96,7 @@ const TemplateItem = ({
 
 export default function Page() {
   return (
-    <div className="flex flex-col w-full items-center justify-between fancy-overlay ultrawide-container !p-0">
+    <div className="flex flex-col w-full items-center justify-between plain-overlay ultrawide-container !p-0">
       <section className="flex flex-col p-4 pt-24 lg:pt-6">
         <ToolSelector
           numberOfComponents={totalTemplates}
@@ -107,8 +107,8 @@ export default function Page() {
           headingClassName="text-left lg:text-left"
         />
 
-        <div className="my-6 lg:my-12 p-6 lg:px-12 lg:py-16 rounded-md bg-white/60 dark:bg-black/60 relative overflow-hidden">
-          <h2 className="text-2xl md:text-4xl lg:text-5xl md:leading-14 max-w-xl">
+        <div className="my-6 lg:my-12 p-6 lg:px-12 lg:py-16 rounded-md bg-white/90 dark:bg-black/60 relative overflow-hidden">
+          <h2 className="text-2xl md:text-4xl lg:text-5xl leading-10 lg:leading-14 max-w-xl font-semibold tracking-tight">
             High-converting,
             <br />
             Responsive templates.
@@ -120,7 +120,7 @@ export default function Page() {
             can easily copy and paste into your own Next.js app.
           </p>
 
-          <div className="hidden xl:block absolute bottom-0 -right-12">
+          <div className="hidden xl:block absolute bottom-0 -right-12 z-20">
             <Image
               src="/static/images/template-collection-light-wide.webp"
               alt="Landing page templates"
@@ -138,7 +138,7 @@ export default function Page() {
             />
           </div>
 
-          <GlowBg className="w-[700px] -bottom-[150px] -right-[100px] opacity-5 md:opacity-90" />
+          <GlowBg className="w-[700px] -bottom-[150px] -right-[100px] opacity-5 md:opacity-30 z-10" />
         </div>
 
         <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
