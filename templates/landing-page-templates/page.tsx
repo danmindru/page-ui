@@ -107,7 +107,7 @@ export default function Page() {
           headingClassName="text-left lg:text-left"
         />
 
-        <div className="mt-6 p-6 lg:px-12 lg:py-16 rounded-md bg-white/60 dark:bg-black/60 relative overflow-hidden">
+        <div className="my-6 lg:my-12 p-6 lg:px-12 lg:py-16 rounded-md bg-white/60 dark:bg-black/60 relative overflow-hidden">
           <h2 className="text-2xl md:text-4xl lg:text-5xl md:leading-14 max-w-xl">
             High-converting,
             <br />
@@ -141,7 +141,7 @@ export default function Page() {
           <GlowBg className="w-[700px] -bottom-[150px] -right-[100px] opacity-5 md:opacity-90" />
         </div>
 
-        <div className="mt-6 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           <TemplateItem
             name="Emerald AI"
             description="A landing page template for an AI-powered product, featuring a video in the main CTA."
