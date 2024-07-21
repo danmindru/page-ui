@@ -19,7 +19,7 @@ const LandingPrimaryCtaContent = ({
   textPosition?: 'center' | 'left';
   title: string | React.ReactNode;
   titleComponent?: React.ReactNode;
-  description: string | React.ReactNode;
+  description?: string | React.ReactNode;
   descriptionComponent?: React.ReactNode;
   leadingComponent?: React.ReactNode;
   children?: React.ReactNode;
@@ -96,7 +96,7 @@ export const LandingPrimaryImageCtaSection = ({
   innerClassName?: string;
   title: string | React.ReactNode;
   titleComponent?: React.ReactNode;
-  description: string | React.ReactNode;
+  description?: string | React.ReactNode;
   descriptionComponent?: React.ReactNode;
   leadingComponent?: React.ReactNode;
   footerComponent?: React.ReactNode;
