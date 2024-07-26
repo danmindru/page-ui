@@ -28,7 +28,7 @@ import { Brick } from '@/components/bricks/brick';
 import TemplateHeader from '@/app/demo/landing-page-templates/template/template-header';
 
 import OneVideoCta from '@/app/demo/landing-page-templates/template/specta/bricks/1-video-cta';
-import LandingPageMarquee from '@/components/landing/LandingMarquee';
+// import LandingPageMarquee from '@/components/landing/LandingMarquee';
 import {
   ChromeIcon,
   FigmaIcon,
@@ -78,7 +78,7 @@ export const Specta = () => {
             <OneVideoCta />
           </Brick>
 
-          <LandingPageMarquee withBackground>
+          {/* <LandingPageMarquee withBackground>
             <ChromeIcon className="w-12 h-12 mx-8" />
             <FigmaIcon className="w-12 h-12 mx-8" />
             <GithubIcon className="w-12 h-12 mx-8" />
@@ -88,7 +88,7 @@ export const Specta = () => {
             <GitlabIcon className="w-12 h-12 mx-8" />
             <InstagramIcon className="w-12 h-12 mx-8" />
             <SlackIcon className="w-12 h-12 mx-8" />
-          </LandingPageMarquee>
+          </LandingPageMarquee> */}
 
           <LandingTestimonialInline>
             <LandingTestimonialInlineItem
