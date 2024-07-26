@@ -49,6 +49,7 @@ module.exports = {
       fontFamily: {
         sans: ['var(--font-space-default)', ...fontFamily.sans],
         display: ['var(--font-space-display)', ...fontFamily.sans],
+        cursive: ['cursive'],
       },
       colors: {
         primary: {
@@ -230,6 +231,14 @@ module.exports = {
             transform: 'rotate(-.5deg)',
           },
         },
+        marquee: {
+          '0%': {
+            transform: 'translateX(0)',
+          },
+          '100%': {
+            transform: 'translateX(-50%)',
+          },
+        },
       },
       animation: {
         tilt: 'tilt 10s linear infinite',
@@ -245,6 +254,7 @@ module.exports = {
         'rotate-left-to-right': 'rotate-left-to-right 3s ease-in-out infinite',
         'fade-in-down-normal-delay':
           'fade-in-down 0.8s ease-in-out 2s forwards',
+        marquee: '30s marquee linear infinite',
       },
     },
   },
