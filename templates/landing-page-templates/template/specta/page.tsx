@@ -1,11 +1,10 @@
 import { Metadata } from 'next';
-import { ScreenshotTwo } from './screenshot-two';
+import { Specta } from './specta';
 
 const socialBanner = '/static/images/templatesOgImg.jpg';
-const title =
-  'Front Centre Landing Page Template | Shipixen, Next.js & Shadcn UI';
+const title = 'Specta Landing Page Template | Shipixen, Next.js & Shadcn UI';
 const description =
-  'A Next.js landing page template for a learning platform, featuring a centered video beneath the fold. Uses text and minimal colors to create a clean look. Using React, TypeScript, Shadcn UI and Tailwind CSS.';
+  'A Next.js landing page template for a simple SaaS, featuring a centered video beneath the fold, testimonials and reviews. Uses sans-serif fonts and rounded, playful looks for a friendly feel. Using React, TypeScript, Shadcn UI and Tailwind CSS.';
 
 export const metadata: Metadata = {
   title: {
@@ -32,7 +31,7 @@ export const metadata: Metadata = {
 export default function Demo() {
   return (
     <div className="flex flex-col w-full">
-      <ScreenshotTwo />
+      <Specta />
     </div>
   );
 }
