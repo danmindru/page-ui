@@ -157,6 +157,8 @@ program
         directories = NextJsFiles.DIRECTORIES;
     }
 
+    // TODO: Should Page UI also install npm dependencies?
+
     files = getFiles({
       toPathPrefix: sourceDirectory,
       filelist: files,
