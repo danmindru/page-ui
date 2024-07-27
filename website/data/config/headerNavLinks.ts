@@ -4,7 +4,7 @@ export const headerNavLinks: Array<{
 }> = [
   { href: '/docs/introduction', title: 'Docs' },
   {
-    href: 'https://shipixen.com/demo/landing-page-templates/template/emerald-ai',
+    href: 'https://shipixen.com/demo/landing-page-templates',
     title: 'Templates',
   },
   {
