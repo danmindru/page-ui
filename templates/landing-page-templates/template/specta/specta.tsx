@@ -14,7 +14,7 @@ const baseFont = Inter({
 const displayFont = Syne({
   subsets: ['latin'],
   display: 'swap',
-  weight: '600',
+  weight: ['600'],
   variable: '--font-space-display',
 });
 
@@ -28,20 +28,14 @@ import { Brick } from '@/components/bricks/brick';
 import TemplateHeader from '@/app/demo/landing-page-templates/template/template-header';
 
 import OneVideoCta from '@/app/demo/landing-page-templates/template/specta/bricks/1-video-cta';
-// import LandingPageMarquee from '@/components/landing/LandingMarquee';
-import {
-  ChromeIcon,
-  FigmaIcon,
-  GithubIcon,
-  FramerIcon,
-  TwitchIcon,
-  TwitterIcon,
-  GitlabIcon,
-  InstagramIcon,
-  SlackIcon,
-} from 'lucide-react';
-import { LandingTestimonialInline } from '@/components/landing/testimonial/LandingTestimonialInline';
-import { LandingTestimonialInlineItem } from '@/components/landing/testimonial/LandingTestimonialInlineItem';
+import TwoMarquee from '@/app/demo/landing-page-templates/template/specta/bricks/2-marquee';
+import ThreeTestimonialInline from '@/app/demo/landing-page-templates/template/specta/bricks/3-testimonial-inline';
+import FourProductFeature from '@/app/demo/landing-page-templates/template/specta/bricks/4-product-feature';
+import FiveShowcase from '@/app/demo/landing-page-templates/template/specta/bricks/5-showcase';
+import SixProductFeature from '@/app/demo/landing-page-templates/template/specta/bricks/6-product-feature';
+import SevenShowcaseMarquee from '@/app/demo/landing-page-templates/template/specta/bricks/7-showcase-marquee';
+import EightTestimonials from '@/app/demo/landing-page-templates/template/specta/bricks/8-testimonials';
+import NineSaleCta from '@/app/demo/landing-page-templates/template/specta/bricks/9-sale-cta';
 
 const DEMO_NAME = 'specta';
 
@@ -49,10 +43,12 @@ export const Specta = () => {
   const setThemeByIndex = useThemeStore((state) => state.setThemeByIndex);
   const { setCurrentTheme } = useThemeSwitch();
 
-  setCurrentTheme('light');
-
   useEffect(() => {
     setThemeByIndex(18);
+
+    setTimeout(() => {
+      setCurrentTheme('dark');
+    }, 30000);
   }, []);
 
   return (
@@ -78,42 +74,37 @@ export const Specta = () => {
             <OneVideoCta />
           </Brick>
 
-          {/* <LandingPageMarquee withBackground>
-            <ChromeIcon className="w-12 h-12 mx-8" />
-            <FigmaIcon className="w-12 h-12 mx-8" />
-            <GithubIcon className="w-12 h-12 mx-8" />
-            <FramerIcon className="w-12 h-12 mx-8" />
-            <TwitchIcon className="w-12 h-12 mx-8" />
-            <TwitterIcon className="w-12 h-12 mx-8" />
-            <GitlabIcon className="w-12 h-12 mx-8" />
-            <InstagramIcon className="w-12 h-12 mx-8" />
-            <SlackIcon className="w-12 h-12 mx-8" />
-          </LandingPageMarquee> */}
+          <Brick demo={DEMO_NAME} brick={'2-marquee'}>
+            <TwoMarquee />
+          </Brick>
 
-          <LandingTestimonialInline>
-            <LandingTestimonialInlineItem
-              name="John Doe"
-              text="I've already seen a tangible impact on engagement and growth"
-              suffix="Marketing at Google"
-            />
+          <Brick demo={DEMO_NAME} brick={'3-testimonial-inline'}>
+            <ThreeTestimonialInline />
+          </Brick>
 
-            <LandingTestimonialInlineItem
-              name="Jane Doe"
-              text="Best app on the market without a doubt"
-            />
+          <Brick demo={DEMO_NAME} brick={'4-product-feature'}>
+            <FourProductFeature />
+          </Brick>
 
-            <LandingTestimonialInlineItem
-              name="Alice Doe"
-              text="I've created twenty videos in two days without any issues"
-              suffix="CEO of Instagram"
-            />
+          <Brick demo={DEMO_NAME} brick={'5-showcase'}>
+            <FiveShowcase />
+          </Brick>
 
-            <LandingTestimonialInlineItem
-              name="Guido Ross"
-              text="I've been able to automate my entire workflow. 6/5 stars"
-              suffix="DevOps at Meta"
-            />
-          </LandingTestimonialInline>
+          <Brick demo={DEMO_NAME} brick={'6-product-feature'}>
+            <SixProductFeature />
+          </Brick>
+
+          <Brick demo={DEMO_NAME} brick={'7-showcase-marquee'}>
+            <SevenShowcaseMarquee />
+          </Brick>
+
+          <Brick demo={DEMO_NAME} brick={'8-testimonials'}>
+            <EightTestimonials />
+          </Brick>
+
+          <Brick demo={DEMO_NAME} brick={'9-sale-cta'}>
+            <NineSaleCta />
+          </Brick>
         </div>
       </BrickProvider>
     </div>

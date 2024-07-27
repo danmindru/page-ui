@@ -46,10 +46,9 @@ export const FrontCentre = () => {
   const setThemeByIndex = useThemeStore((state) => state.setThemeByIndex);
   const { setCurrentTheme } = useThemeSwitch();
 
-  setCurrentTheme('light');
-
   useEffect(() => {
     setThemeByIndex(26);
+    setCurrentTheme('light');
   }, []);
 
   return (

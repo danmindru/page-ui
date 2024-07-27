@@ -44,10 +44,9 @@ export const MinimumVia = () => {
   const setThemeByIndex = useThemeStore((state) => state.setThemeByIndex);
   const { setCurrentTheme } = useThemeSwitch();
 
-  setCurrentTheme('light');
-
   useEffect(() => {
     setThemeByIndex(32);
+    setCurrentTheme('light');
   }, []);
 
   return (

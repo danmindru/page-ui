@@ -39,27 +39,29 @@ const TemplateItem = ({
   imageUrl,
   href,
   tags,
-  comingSoon,
+  isComingSoon,
+  isNew,
 }: {
   name: string;
   description: string;
   imageUrl: string;
   href: string;
   tags: string[];
-  comingSoon?: boolean;
+  isComingSoon?: boolean;
+  isNew?: boolean;
 }) => {
   return (
     <a
       className={cn(
         'w-full flex flex-col items-center justify-start bg-white/90 dark:bg-indigo-950/90 border border-gray-200 dark:border-gray-800 shadow-sm rounded-lg transition-all duration-700 overflow-hidden group hover:bg-white dark:hover:bg-indigo-950',
-        comingSoon
+        isComingSoon
           ? 'pointer-events-none'
           : 'hover:shadow-md hover:bg-gray-50 dark:hover:bg-slate-800',
       )}
-      href={comingSoon ? '#' : href}
+      href={isComingSoon ? '#' : href}
     >
       <div className="w-full relative">
-        {!comingSoon ? (
+        {!isComingSoon ? (
           <Image
             src={imageUrl}
             alt={name}
@@ -74,6 +76,12 @@ const TemplateItem = ({
             </span>
           </div>
         )}
+
+        {isNew ? (
+          <span className="absolute top-0 right-0 bg-fuchsia-500 text-white text-xs font-semibold px-2 py-1 rounded-bl-md">
+            New
+          </span>
+        ) : null}
       </div>
 
       <div className="p-6 w-full h-full flex flex-col gap-2">
@@ -143,10 +151,19 @@ export default function Page() {
 
         <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           <TemplateItem
+            name="Specta"
+            description="A landing page template for a creator platform, featuring a marquee section and a showcase section."
+            imageUrl="/static/images/shipixen/templates/specta.webp"
+            tags={['image', 'creator', 'marquee', 'SaaS', 'video', 'playful']}
+            href="/demo/landing-page-templates/template/specta"
+            isNew
+          />
+
+          <TemplateItem
             name="Emerald AI"
             description="A landing page template for an AI-powered product, featuring a video in the main CTA."
             imageUrl="/static/images/shipixen/templates/emerald-ai.webp"
-            tags={['video', 'AI', 'SaaS', 'feature list']}
+            tags={['video', 'AI', 'SaaS', 'feature list', 'faq', 'classic']}
             href="/demo/landing-page-templates/template/emerald-ai"
           />
 
@@ -154,7 +171,7 @@ export default function Page() {
             name="Minimum Via"
             description="A landing page template for a minimalistic product, or productized agency. Uses text and minimal colors to create a clean look."
             imageUrl="/static/images/shipixen/templates/minimum-via.webp"
-            tags={['text', 'minimal', 'agency', 'SaaS']}
+            tags={['text', 'agency', 'SaaS', 'minimal', 'clean', 'simple']}
             href="/demo/landing-page-templates/template/minimum-via"
           />
 
@@ -170,7 +187,14 @@ export default function Page() {
             name="ScreenshotTwo"
             description="A landing page template for a developer tool, featuring inline testimonials and a two-column layout with screenshots."
             imageUrl="/static/images/shipixen/templates/screenshot-two.webp"
-            tags={['image', 'developer', 'tool', 'SaaS', 'testimonials']}
+            tags={[
+              'image',
+              'developer',
+              'devtool',
+              'tool',
+              'SaaS',
+              'testimonials',
+            ]}
             href="/demo/landing-page-templates/template/screenshot-two"
           />
 
@@ -180,7 +204,7 @@ export default function Page() {
             imageUrl="/static/images/shipixen/templates/portrails.webp"
             tags={['image', 'AI', 'SaaS', 'social proof']}
             href="/demo/landing-page-templates/template/portrails"
-            comingSoon
+            isComingSoon
           />
 
           <TemplateItem
@@ -189,7 +213,7 @@ export default function Page() {
             imageUrl="/static/images/shipixen/templates/honey-dew.webp"
             tags={['pricing', 'SaaS', 'feature list', 'feature grid']}
             href="/demo/landing-page-templates/template/honey-dew"
-            comingSoon
+            isComingSoon
           />
         </div>
 

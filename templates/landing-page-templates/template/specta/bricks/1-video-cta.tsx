@@ -1,6 +1,4 @@
 import { LandingPrimaryVideoCtaSection } from '@/components/landing/cta/LandingPrimaryCta';
-import { LandingDiscount } from '@/components/landing/discount/LandingDiscount';
-import { LandingProductHuntAward } from '@/components/landing/social-proof/LandingProductHuntAward';
 import { LandingSocialProof } from '@/components/landing/social-proof/LandingSocialProof';
 
 import { Button } from '@/components/shared/ui/button';
@@ -49,8 +47,8 @@ export default function Component() {
         <LandingSocialProof
           className="w-full mt-6 justify-center"
           showRating
-          numberOfUsers={12000}
-          suffixText="happy users"
+          numberOfUsers={25000}
+          suffixText="happy editors"
           avatarItems={avatarItems}
           size="large"
           disableAnimation
