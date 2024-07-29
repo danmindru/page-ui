@@ -63,7 +63,7 @@ export const LandingMarquee = ({
         withBackground && variant === 'secondary'
           ? 'bg-secondary-100/20 dark:bg-secondary-900/10'
           : '',
-        className
+        className,
       )}
       ref={containerRef}
     >
@@ -71,7 +71,7 @@ export const LandingMarquee = ({
         className={clsx(
           'flex animate-marquee',
           animationDirection === 'left' ? 'direction-reverse' : '',
-          innerClassName
+          innerClassName,
         )}
         style={{
           width: `${repeat * 100}%`,
