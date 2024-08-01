@@ -40,7 +40,7 @@ layout: PostHub
 Start by creating a new Next.js app. You can use the following command:
 
 ```bash
-npx create-next-app@latest my-app --typescript --tailwind --eslint
+npx create-next-app@latest my-app --typescript --tailwind --eslint # NB: you can replace my-app with your app name
 ```
 
 </StepCard>
@@ -52,6 +52,7 @@ npx create-next-app@latest my-app --typescript --tailwind --eslint
 ## Run the Page UI CLI
 
 ```bash
+cd my-app # NB: if you used a different app name, replace my-app with your app name
 npx @page-ui/wizard@latest init
 ```
 
@@ -82,6 +83,9 @@ Add the below to your `global.css` file.<br/>
 <StepCode>
 
 ```css:app/global.css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @layer base {
   :root {
