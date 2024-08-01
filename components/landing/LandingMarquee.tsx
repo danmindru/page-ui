@@ -51,7 +51,7 @@ export const LandingMarquee = ({
     updateRepeatCount();
     window.addEventListener('resize', updateRepeatCount);
     return () => window.removeEventListener('resize', updateRepeatCount);
-  }, []);
+  }, [animationDurationInSeconds]);
 
   return (
     <div
