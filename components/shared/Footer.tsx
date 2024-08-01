@@ -223,6 +223,35 @@ export default function Footer({ className }: { className?: string }) {
               </a>
             )}
           </div>
+
+          <div className="flex gap-1 px-4 items-center">
+            <a
+              href="https://www.producthunt.com/posts/page-ui-2?embed=true&utm_source=badge-top-post-badge&utm_medium=badge&utm_souce=badge-page&#0045;ui&#0045;2"
+              target="_blank"
+            >
+              <img
+                src="https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=470429&theme=light&period=daily"
+                alt="Page&#0032;UI - High&#0045;converting&#0032;landing&#0032;page&#0032;components&#0032;to&#0032;copy&#0032;and&#0032;paste | Product Hunt"
+                className="w-52 h-auto"
+                width="250"
+                height="54"
+              />
+            </a>
+
+            <a
+              href="https://www.producthunt.com/posts/page-ui-2?embed=true&utm_source=badge-top-post-badge&utm_medium=badge&utm_souce=badge-page&#0045;ui&#0045;2"
+              target="_blank"
+            >
+              <img
+                src="https://api.producthunt.com/widgets/embed-image/v1/top-post-topic-badge.svg?post_id=470429&theme=light&period=weekly&topic_id=267"
+                alt="Page&#0032;UI - High&#0045;converting&#0032;landing&#0032;page&#0032;components&#0032;to&#0032;copy&#0032;and&#0032;paste | Product Hunt"
+                className="w-52 h-auto"
+                width="250"
+                height="54"
+              />
+            </a>
+          </div>
+
           <div className="w-full text-center lg:flex lg:justify-center p-4 mb-2 space-x-2 text-sm text-gray-500 dark:text-gray-400">
             <span>{`© ${new Date().getFullYear()}`}</span>
             <span>{` • `}</span>

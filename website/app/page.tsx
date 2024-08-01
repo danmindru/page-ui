@@ -36,72 +36,72 @@ import Image from '@/components/shared/Image';
 import { CtaButton } from '@/components/shared/ui/cta-button';
 
 const testimonialItems = [
-  {
-    name: 'Philipp K.',
-    text: "Is this like TailwindUI components (which cost $300) But it's free And it's optimized for conversion?",
-    handle: '@philkellr',
-    imageSrc: '/static/images/people/phil.webp',
-    url: 'https://www.producthunt.com/posts/page-ui?comment=3462586',
-  },
-  {
-    name: 'Deven B.',
-    text: 'This looks amazing 🤩',
-    handle: '@devenbhooshan',
-    imageSrc: '/static/images/people/deven.webp',
-    url: 'https://www.producthunt.com/posts/page-ui?comment=3462473',
-  },
+  // {
+  //   name: 'Philipp K.',
+  //   text: "Is this like TailwindUI components (which cost $300) But it's free And it's optimized for conversion?",
+  //   handle: '@philkellr',
+  //   imageSrc: '/static/images/people/phil.webp',
+  //   url: 'https://www.producthunt.com/posts/page-ui?comment=3462586',
+  // },
+  // {
+  //   name: 'Deven B.',
+  //   text: 'This looks amazing 🤩',
+  //   handle: '@devenbhooshan',
+  //   imageSrc: '/static/images/people/deven.webp',
+  //   url: 'https://www.producthunt.com/posts/page-ui?comment=3462473',
+  // },
+  // {
+  //   name: 'João A.',
+  //   text: 'This is genius. Easily add those great components to any project!',
+  //   handle: '@joao_aguiam',
+  //   imageSrc: '/static/images/people/joao.webp',
+  //   url: 'https://www.producthunt.com/posts/page-ui?comment=3462497',
+  // },
+
+  // {
+  //   name: 'Aman W.',
+  //   text: "As someone who's dabbled in React, anything that cuts down on design time is a blessing.",
+  //   handle: '@aman_wen',
+  //   imageSrc: '/static/images/people/aman.webp',
+  //   url: 'https://www.producthunt.com/posts/page-ui?comment=3462453',
+  //   featured: true,
+  // },
+
+  // {
+  //   name: 'Matthias N.',
+  //   text: 'This is everything you need and more. Such a great product',
+  //   handle: '@mnewme',
+  //   imageSrc: '/static/images/people/matt.webp',
+  //   url: 'https://www.producthunt.com/posts/page-ui?comment=3462475',
+  // },
+
+  // {
+  //   name: 'Dany',
+  //   text: 'Sorry guys, all my upcoming apps will look fire now.',
+  //   handle: '@majorbaguette',
+  //   imageSrc: '/static/images/people/dany.webp',
+  //   url: 'https://www.producthunt.com/posts/page-ui?comment=3462564',
+  // },
+  // {
+  //   name: 'Dima R.',
+  //   text: 'This is extremely useful!!!',
+  //   handle: '@dima_rubanov',
+  //   imageSrc: '/static/images/people/dima.webp',
+  //   url: 'https://www.producthunt.com/posts/page-ui?comment=3462477',
+  // },
+  // {
+  //   name: 'Michael A.',
+  //   text: 'This looks amazing, as a Frontend Developer who sometimes struggles with building interfaces due to a lack of proper design, using this it will 10x my flow. Love it!',
+  //   handle: '@michael_adrian',
+  //   imageSrc: '/static/images/people/michael.webp',
+  //   url: 'https://www.producthunt.com/posts/page-ui?comment=3462526',
+  // },
   {
     name: 'Isa T.',
     text: 'Love the themeable and responsive design plus the dark mode.',
     handle: '@isacoding',
     imageSrc: '/static/images/people/isa.webp',
     url: 'https://x.com/isacoding/status/1786314708191965553',
-  },
-  {
-    name: 'João A.',
-    text: 'This is genius. Easily add those great components to any project!',
-    handle: '@joao_aguiam',
-    imageSrc: '/static/images/people/joao.webp',
-    url: 'https://www.producthunt.com/posts/page-ui?comment=3462497',
-  },
-
-  {
-    name: 'Aman W.',
-    text: "As someone who's dabbled in React, anything that cuts down on design time is a blessing.",
-    handle: '@aman_wen',
-    imageSrc: '/static/images/people/aman.webp',
-    url: 'https://www.producthunt.com/posts/page-ui?comment=3462453',
-    featured: true,
-  },
-
-  {
-    name: 'Matthias N.',
-    text: 'This is everything you need and more. Such a great product',
-    handle: '@mnewme',
-    imageSrc: '/static/images/people/matt.webp',
-    url: 'https://www.producthunt.com/posts/page-ui?comment=3462475',
-  },
-
-  {
-    name: 'Dany',
-    text: 'Sorry guys, all my upcoming apps will look fire now.',
-    handle: '@majorbaguette',
-    imageSrc: '/static/images/people/dany.webp',
-    url: 'https://www.producthunt.com/posts/page-ui?comment=3462564',
-  },
-  {
-    name: 'Dima R.',
-    text: 'This is extremely useful!!!',
-    handle: '@dima_rubanov',
-    imageSrc: '/static/images/people/dima.webp',
-    url: 'https://www.producthunt.com/posts/page-ui?comment=3462477',
-  },
-  {
-    name: 'Michael A.',
-    text: 'This looks amazing, as a Frontend Developer who sometimes struggles with building interfaces due to a lack of proper design, using this it will 10x my flow. Love it!',
-    handle: '@michael_adrian',
-    imageSrc: '/static/images/people/michael.webp',
-    url: 'https://www.producthunt.com/posts/page-ui?comment=3462526',
   },
   {
     name: 'Adarsh G.',
@@ -116,6 +116,144 @@ const testimonialItems = [
     handle: '@stonedFractals',
     imageSrc: '/static/images/people/snack.webp',
     url: 'https://x.com/stonedFractals/status/1786225130034614344',
+  },
+
+  {
+    name: 'Manoj R',
+    text: 'I have tried this, simple and easy to customize. It can save a lot of time for Indie makers like me. Keep up the great work Dan!',
+    handle: '@manoj_11',
+    imageSrc: '/static/images/people/1.webp',
+    url: 'https://www.producthunt.com/posts/page-ui-2?comment=3708772',
+  },
+
+  {
+    name: 'Tony Han',
+    text: 'Incredible product! Open source? Steal Mode? These are some super interesting ideas. Bravo for shipping this master piece!',
+    handle: '@tonyhanded',
+    imageSrc: '/static/images/people/2.webp',
+    url: 'https://www.producthunt.com/posts/page-ui-2?comment=3710253',
+  },
+
+  {
+    name: 'David Gutiérrez',
+    text: 'Those are some well-designed tailwindcss templates! Dan has a great eye for design, so I expect this to become an industry standard soon 💪',
+    handle: '@_dgut',
+    imageSrc: '/static/images/people/3.webp',
+    url: 'https://www.producthunt.com/posts/page-ui-2?comment=3708590',
+  },
+
+  {
+    name: 'René N',
+    text: 'Really nice and awesome looking templates! I will need to check this out next time I launch a project 😍',
+    handle: '@rene_nielsen_dk',
+    imageSrc: '/static/images/people/4.webp',
+    url: 'https://www.producthunt.com/posts/page-ui-2?comment=3708708',
+  },
+
+  {
+    name: 'Zulkar Naim',
+    text: "[...] looks amazing and incredibly useful. I'll use it to streamline my workflow and boost productivity. Keep up the fantastic work!",
+    handle: '@zulkarnaim',
+    imageSrc: '/static/images/people/5.webp',
+    url: 'https://www.producthunt.com/posts/page-ui-2?comment=3709121',
+  },
+
+  {
+    name: 'Lera Kuntsevich',
+    text: 'The most beautiful thing I ever saw',
+    handle: '@lera_kuntsevich1',
+    imageSrc: '/static/images/people/15.webp',
+    url: 'https://www.producthunt.com/posts/page-ui-2?comment=3710153',
+    featured: true,
+  },
+
+  {
+    name: 'Bon',
+    text: '[...] an exceptionally unique product. Page UI is beautifully designed and is also free and open-source. #1!',
+    handle: '@bonvisions',
+    imageSrc: '/static/images/people/6.webp',
+    url: 'https://www.producthunt.com/posts/page-ui-2?comment=3709867',
+  },
+
+  {
+    name: 'Maia Buljeta',
+    text: 'This is so awesome! Wow! As a developer, this really makes my day. Thank you for creating this! These templates will make my pages look perfect.',
+    handle: '@maia_buljeta',
+    imageSrc: '/static/images/people/7.webp',
+    url: 'https://www.producthunt.com/posts/page-ui-2?comment=3710345',
+    featured: true,
+  },
+
+  {
+    name: 'Mycolaos',
+    text: 'What can be best than free and complete out-of-the box templates integrated with your favorite framework? Only templates that are made with so much care as PageUI.',
+    handle: '@mycolaos',
+    imageSrc: '/static/images/people/8.webp',
+    url: 'https://www.producthunt.com/posts/page-ui-2?comment=3718910',
+  },
+
+  {
+    name: 'Yeddie',
+    text: 'Love this. This fills a need for specific template components that are missing from the big component libraries. Super excited to add to my project.',
+    handle: '@helloyeddie',
+    imageSrc: '/static/images/people/9.webp',
+    url: 'https://www.producthunt.com/posts/page-ui-2?comment=3710240',
+  },
+
+  {
+    name: 'Muhammad Ali Zulfaqar',
+    text: "Thank you for the amazing idea, now i can make my own landing page with no hassle and in an instant. I will explore and start using it for my own startup. Thank you again, you're great people",
+    handle: '@muhammad_ali_zulfaqar',
+    imageSrc: '/static/images/people/10.webp',
+    url: 'https://www.producthunt.com/posts/page-ui-2?comment=3712529',
+  },
+
+  {
+    name: 'Ricardo Hagar',
+    text: 'Awesome Launch! And thanks for making this open-source, as someone that excels at backend rather than frontend this can be useful for me in the future!',
+    handle: '@ricardohagar',
+    imageSrc: '/static/images/people/11.webp',
+    url: 'https://www.producthunt.com/posts/page-ui-2?comment=3648828',
+  },
+
+  {
+    name: 'Max',
+    text: "That's gonna be really useful for someone like me who is really bad in design:)",
+    handle: '@maxrush',
+    imageSrc: '/static/images/people/13.webp',
+    url: 'https://www.producthunt.com/posts/page-ui-2?comment=3709033',
+  },
+
+  {
+    name: 'Blank',
+    text: 'Wow, this is super cool, Dan! Love the idea of Page UI making it easier for us to create unique landing pages. The integration with Shadcn UI and TailwindCSS sounds like a game-changer! Your work is always so polished and inspiring, it\'s awesome to see you pushing boundaries with fresh concepts like "steal this template." I think making it open source is a brilliant move – it really encourages collaboration! Can\'t wait to see what else you come up with!',
+    handle: '@blankwebdev',
+    imageSrc: '/static/images/people/14.webp',
+    url: 'https://www.producthunt.com/posts/page-ui-2?comment=3708955',
+  },
+
+  {
+    name: 'Justin Kroeger',
+    text: 'I’ve been looking for a shadcn/ui style library for landing pages this is awesome Dan!',
+    handle: '@_justindev',
+    imageSrc: '/static/images/people/16.webp',
+    url: 'https://twitter.com/_justindev/status/1786410977342132531',
+  },
+
+  {
+    name: 'Akash Pandey',
+    text: 'Just checked it out, the dark mode and responsive design are impressive. Looking forward to the upcoming templates',
+    handle: '@heyakash_design',
+    imageSrc: '/static/images/people/17.webp',
+    url: 'https://twitter.com/heyakash_design/status/1786440599878369753',
+  },
+
+  {
+    name: 'Zenda',
+    text: 'Beautiful UI! Free and open source is very great! Thank you for your dedication.',
+    handle: '@zenda1122',
+    imageSrc: '/static/images/people/12.webp',
+    url: 'https://www.producthunt.com/posts/page-ui-2?comment=3708898',
   },
 ];
 
@@ -152,7 +290,32 @@ export default function Home() {
         videoSrc="https://cache.shipixen.com/page-ui%2F1-launch-templates.mp4"
         autoPlay={true}
         loop
-        // leadingComponent={<LandingProductHuntAward />}
+        leadingComponent={
+          <div className="flex flex-wrap gap-6">
+            <a
+              href="https://www.producthunt.com/posts/page-ui-2"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="opacity-70 hover:opacity-100 transition-all"
+            >
+              <LandingProductHuntAward place={1} size="small" />
+            </a>
+
+            <a
+              href="https://www.producthunt.com/posts/page-ui-2"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="opacity-70 hover:opacity-100 transition-all hidden sm:block"
+            >
+              <LandingProductHuntAward
+                place={'Developer Tools'}
+                title="#1 Product of the week"
+                placeClassName="px-3 !text-sm"
+                size="small"
+              />
+            </a>
+          </div>
+        }
       >
         <CtaButton size="xl" asChild>
           <a href="/docs/installation">Get Started</a>
