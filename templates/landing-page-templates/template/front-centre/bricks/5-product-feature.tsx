@@ -13,7 +13,9 @@ export default function Component() {
             subtitle="DevTools"
           />
 
-          <h2 className="text-4xl font-semibold">Interactive Projects</h2>
+          <h2 className="text-4xl font-semibold leading-tight">
+            Interactive Projects
+          </h2>
         </>
       }
       descriptionComponent={

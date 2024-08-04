@@ -27,7 +27,7 @@ export default function Component() {
             Manage
           </p>
 
-          <h2 className="text-4xl font-semibold">
+          <h2 className="text-4xl font-semibold leading-tight">
             All your videos in one place
           </h2>
         </>

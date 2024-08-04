@@ -49,8 +49,8 @@ export const EmeraldAi = () => {
   const { setCurrentTheme } = useThemeSwitch();
 
   useEffect(() => {
-    setThemeByIndex(13);
-    setCurrentTheme('light');
+    setThemeByIndex(14);
+    setCurrentTheme('dark');
   }, []);
 
   return (

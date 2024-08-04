@@ -29,7 +29,7 @@ export default function Component() {
             Create
           </p>
 
-          <h2 className="text-4xl font-semibold">
+          <h2 className="text-4xl font-semibold leading-tight">
             Specta users create 10x as many videos, at half the cost
           </h2>
         </>

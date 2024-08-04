@@ -25,7 +25,7 @@ export default function Component() {
             It takes 1 minute
           </p>
 
-          <h2 className="text-4xl font-semibold">
+          <h2 className="text-4xl font-semibold leading-tight">
             The faster, easier way to create videos
           </h2>
         </>

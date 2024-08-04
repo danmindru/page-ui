@@ -45,10 +45,7 @@ export const Specta = () => {
 
   useEffect(() => {
     setThemeByIndex(18);
-
-    setTimeout(() => {
-      setCurrentTheme('dark');
-    }, 30000);
+    setCurrentTheme('dark');
   }, []);
 
   return (

@@ -12,7 +12,7 @@ export default function Component() {
               Monetize
             </p>
 
-            <h2 className="text-4xl font-semibold">
+            <h2 className="text-4xl font-semibold leading-tight">
               Insert ads and earn money
             </h2>
           </>

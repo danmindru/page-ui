@@ -22,7 +22,9 @@ export default function Component() {
             Import
           </p>
 
-          <h2 className="text-4xl font-semibold">Add footage from anywhere</h2>
+          <h2 className="text-4xl font-semibold leading-tight">
+            Add footage from anywhere
+          </h2>
         </>
       }
       description="All your video assets in one place. Import your existing footage from any device or platform."
