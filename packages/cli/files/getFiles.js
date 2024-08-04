@@ -20,6 +20,7 @@ export const getFiles = ({
     return {
       from: fromPath,
       to: toPath,
+      fallbackPath: file.fallbackPath,
     };
   });
 };

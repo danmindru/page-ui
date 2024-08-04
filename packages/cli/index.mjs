@@ -235,13 +235,23 @@ program
               ),
               postCopyCommand: () => {
                 console.log(
-                  `- ${chalk.italic(
+                  `\n${chalk.italic(
                     'Some files where skipped'
                   )}. See how to set them up manually at ${chalk.bold(
                     chalk.white(
                       'https://pageui.shipixen.com/docs/installation/manual-reactjs'
                     )
-                  )}`
+                  )}
+                  `
+                );
+
+                console.log(
+                  `Or download them from the following links:\n${files
+                    .filter((file) =>
+                      existingFilesAndDirectories.includes(file.to)
+                    )
+                    .map((file) => `- ${chalk.bold(file.fallbackPath)}`)
+                    .join('\n')}`
                 );
               },
             });
