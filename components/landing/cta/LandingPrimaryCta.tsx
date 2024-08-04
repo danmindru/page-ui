@@ -17,7 +17,7 @@ const LandingPrimaryCtaContent = ({
   className?: string;
   childrenClassName?: string;
   textPosition?: 'center' | 'left';
-  title: string | React.ReactNode;
+  title?: string | React.ReactNode;
   titleComponent?: React.ReactNode;
   description?: string | React.ReactNode;
   descriptionComponent?: React.ReactNode;
@@ -37,7 +37,7 @@ const LandingPrimaryCtaContent = ({
       {leadingComponent}
 
       {title ? (
-        <h1 className="text-4xl lg:text-5xl lg:leading-14 font-semibold md:max-w-xl">
+        <h1 className="text-4xl lg:text-5xl leading-tight font-semibold md:max-w-xl">
           {title}
         </h1>
       ) : (
@@ -245,6 +245,7 @@ export const LandingPrimaryVideoCtaSection = ({
   videoPosition = 'right',
   videoMaxWidth = 'none',
   videoShadow = 'hard',
+  muted = true,
   autoPlay = false,
   controls = false,
   loop = false,
@@ -269,6 +270,7 @@ export const LandingPrimaryVideoCtaSection = ({
   videoPosition?: 'left' | 'right' | 'center';
   videoMaxWidth?: string;
   videoShadow?: 'none' | 'soft' | 'hard';
+  muted?: boolean;
   autoPlay?: boolean;
   controls?: boolean;
   loop?: boolean;
@@ -346,6 +348,7 @@ export const LandingPrimaryVideoCtaSection = ({
                   autoPlay={autoPlay}
                   controls={controls}
                   loop={loop}
+                  muted={muted}
                   maxWidth={videoMaxWidth}
                   variant={variant}
                 />
@@ -364,6 +367,7 @@ export const LandingPrimaryVideoCtaSection = ({
                 autoPlay={autoPlay}
                 controls={controls}
                 loop={loop}
+                muted={muted}
                 maxWidth={videoMaxWidth}
                 variant={variant}
               />

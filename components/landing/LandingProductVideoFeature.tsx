@@ -23,6 +23,7 @@ export const LandingProductVideoFeature = ({
   videoPosition = 'right',
   videoMaxWidth = 'none',
   autoPlay,
+  muted = true,
   controls = false,
   loop = false,
   zoomOnHover = false,
@@ -45,6 +46,7 @@ export const LandingProductVideoFeature = ({
   videoPosition?: 'left' | 'right' | 'center';
   videoMaxWidth?: string;
   autoPlay?: boolean;
+  muted?: boolean;
   controls?: boolean;
   loop?: boolean;
   zoomOnHover?: boolean;
@@ -91,7 +93,7 @@ export const LandingProductVideoFeature = ({
           )}
         >
           {title ? (
-            <h2 className="text-4xl font-semibold">{title}</h2>
+            <h2 className="text-4xl font-semibold leading-tight">{title}</h2>
           ) : (
             titleComponent
           )}
@@ -126,6 +128,7 @@ export const LandingProductVideoFeature = ({
                   poster={videoPoster}
                   src={videoSrc}
                   autoPlay={autoPlay}
+                  muted={muted}
                   controls={controls}
                   maxWidth={videoMaxWidth}
                   variant={variant}
@@ -143,6 +146,7 @@ export const LandingProductVideoFeature = ({
                 poster={videoPoster}
                 src={videoSrc}
                 autoPlay={autoPlay}
+                muted={muted}
                 controls={controls}
                 maxWidth={videoMaxWidth}
                 variant={variant}

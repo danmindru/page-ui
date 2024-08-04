@@ -21,8 +21,8 @@ export const LandingTestimonialInlineItem = ({
   suffix?: string;
 }) => {
   return (
-    <div className={clsx('flex flex-col text-center', className)}>
-      <div className="flex gap-2 items-center justify-center">
+    <div className={clsx('flex flex-col lg:text-center', className)}>
+      <div className="flex gap-2 items-center lg:justify-center">
         {imageSrc ? (
           <div className="opacity-90 flex-shrink-0">
             <LandingAvatar
@@ -34,7 +34,7 @@ export const LandingTestimonialInlineItem = ({
           </div>
         ) : null}
 
-        <div className="flex flex-col items-center text-xs truncate">
+        <div className="flex flex-col lg:items-center text-xs truncate">
           <LandingRating rating={5} />
 
           {text ? (
