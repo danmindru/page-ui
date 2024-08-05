@@ -17,7 +17,7 @@ export const LandingShowcaseItem = ({
   return (
     <div
       className={clsx(
-        'flex-shrink-0 flex items-center justify-center p-3 rounded-lg bg-white dark:bg-black border-primary-500/10 border-2 aspect-square',
+        'flex-shrink-0 flex items-center justify-center w-full h-full p-1 rounded-lg bg-white dark:bg-black border-primary-500/10 border-2 aspect-square',
         className,
       )}
     >
