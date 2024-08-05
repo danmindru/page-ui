@@ -35,14 +35,22 @@ import { LandingDiscount } from '@/components/landing/discount/LandingDiscount';
 import { LandingProductHuntAward } from '@/components/landing/social-proof/LandingProductHuntAward';
 import { LandingProductFeatureKeyPoints } from '@/components/landing/LandingProductFeatureKeyPoints';
 import { LandingRating } from '@/components/landing/rating/LandingRating';
+import { LandingMarquee } from '@/components/landing/LandingMarquee';
+import { LandingAvatar } from '@/components/landing/social-proof/LandingAvatar';
+import { LandingShowcase } from '@/components/landing/showcase/LandingShowcase';
+import { LandingShowcaseItem } from '@/components/landing/showcase/LandingShowcaseItem';
 
+import { GuideCard } from '@/components/blog/GuideCard';
+import { StepCard } from '@/components/blog/StepCard';
+import { StepCode } from '@/components/blog/StepCode';
 import { WrappedVideoPlayer } from '@/components/blog/WrappedVideoPlayer';
 import { ToolsGrid } from '@/components/blog/ToolsGrid';
 import { LandingPageGrid } from '@/components/blog/LandingPageGrid';
 import { Tippy } from '@/components/blog/Tippy';
-import { GuideCard } from '@/components/blog/GuideCard';
-import { StepCard } from '@/components/blog/StepCard';
-import { StepCode } from '@/components/blog/StepCode';
+
+const LandingMarqueeWrapper = (props) => {
+  return <LandingMarquee {...props} />;
+};
 
 import {
   ChromeIcon,
@@ -52,6 +60,11 @@ import {
   LayersIcon,
   LineChartIcon,
   SparklesIcon,
+  TwitchIcon,
+  TwitterIcon,
+  GitlabIcon,
+  InstagramIcon,
+  SlackIcon,
 } from 'lucide-react';
 
 export const components: MDXComponents = {
@@ -98,6 +111,10 @@ export const components: MDXComponents = {
   LandingProductHuntAward,
   LandingProductFeatureKeyPoints,
   LandingRating,
+  LandingMarquee: LandingMarqueeWrapper,
+  LandingAvatar,
+  LandingShowcase,
+  LandingShowcaseItem,
 
   ChromeIcon,
   FigmaIcon,
@@ -106,4 +123,9 @@ export const components: MDXComponents = {
   LayersIcon,
   LineChartIcon,
   SparklesIcon,
+  TwitchIcon,
+  TwitterIcon,
+  GitlabIcon,
+  InstagramIcon,
+  SlackIcon,
 };
