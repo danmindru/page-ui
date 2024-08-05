@@ -36,6 +36,10 @@ export const LandingPageComponentsNav = ({
       label: 'Feature',
     },
     {
+      href: '/docs/landing-page-components/marquee',
+      label: 'Marquee',
+    },
+    {
       href: '/docs/landing-page-components/primary-image-cta',
       label: 'Primary Image Cta',
     },
@@ -66,6 +70,10 @@ export const LandingPageComponentsNav = ({
     {
       href: '/docs/landing-page-components/sale-cta',
       label: 'Sale Cta',
+    },
+    {
+      href: '/docs/landing-page-components/showcase',
+      label: 'Showcase',
     },
     {
       href: '/docs/landing-page-components/social-proof',
