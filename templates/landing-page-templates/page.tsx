@@ -171,7 +171,7 @@ export const TemplateListItem = ({
               alt={name}
               width={175}
               height={175}
-              className="w-auto h-44 lg:h-52 rounded-xl group-hover:scale-[0.98] transition-all duration-700"
+              className="w-auto h-44 lg:h-52 rounded-2xl group-hover:scale-[0.98] transition-all duration-700"
             />
 
             <Image
@@ -179,7 +179,7 @@ export const TemplateListItem = ({
               alt={name}
               width={175}
               height={175}
-              className="w-auto h-44 lg:h-52 rounded-xl group-hover:scale-[0.98] transition-all duration-700 delay-300"
+              className="w-auto h-44 lg:h-52 rounded-2xl group-hover:scale-[0.98] transition-all duration-700 delay-300"
             />
 
             <Image
@@ -187,7 +187,7 @@ export const TemplateListItem = ({
               alt={name}
               width={175}
               height={175}
-              className="w-auto h-44 lg:h-52 rounded-xl group-hover:scale-[0.98] transition-all duration-700 delay-500"
+              className="w-auto h-44 lg:h-52 rounded-2xl group-hover:scale-[0.98] transition-all duration-700 delay-500"
             />
           </div>
 
@@ -207,7 +207,7 @@ export const TemplateListItem = ({
         </a>
       ) : (
         <div className="hidden w-full sm:flex flex-col relative">
-          <div className="w-full h-48 bg-gray-200 dark:bg-gray-800 flex items-center justify-center rounded-xl">
+          <div className="w-full h-48 bg-gray-200 dark:bg-gray-800 flex items-center justify-center rounded-2xl">
             <span className="text-lg font-semibold text-gray-600 dark:text-gray-400">
               Coming Soon
             </span>
