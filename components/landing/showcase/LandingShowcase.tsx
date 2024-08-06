@@ -48,7 +48,7 @@ export const LandingShowcase = ({
     >
       <div
         className={clsx(
-          'grid gap-16 items-center relative container-wide lg:grid-cols-2',
+          'grid gap-16 items-center relative container-wide p-6 lg:grid-cols-2',
           innerClassName,
         )}
       >
