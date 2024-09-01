@@ -1,7 +1,7 @@
 import { LandingProductFeature } from '@/components/landing/LandingProductFeature';
 import { LandingProductVideoFeature } from '@/components/landing/LandingProductVideoFeature';
 import clsx from 'clsx';
-import { Children, ReactElement, cloneElement } from 'react';
+import { Children, ReactElement, ReactNode, cloneElement } from 'react';
 
 type Child = ReactElement<any, any>; // eslint-disable-line @typescript-eslint/no-explicit-any
 

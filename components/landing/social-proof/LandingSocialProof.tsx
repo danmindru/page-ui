@@ -18,7 +18,6 @@ export const LandingSocialProof = ({
   suffixText = 'happy users',
   showRating,
   disableAnimation,
-  size = 'medium',
 }: {
   children?: React.ReactNode;
   className?: string;
@@ -27,7 +26,6 @@ export const LandingSocialProof = ({
   suffixText?: string;
   showRating?: boolean;
   disableAnimation?: boolean;
-  size?: 'small' | 'medium' | 'large';
 }) => {
   const numberText =
     numberOfUsers > 1000
@@ -35,18 +33,17 @@ export const LandingSocialProof = ({
       : `${numberOfUsers}`;
 
   return (
-    <div className={clsx('flex flex-wrap gap-2', className)}>
-      <div className={clsx('group/sp flex gap-1')}>
+    <div className={clsx('group flex flex-wrap gap-2', className)}>
+      <div className={clsx('flex gap-1')}>
         {avatarItems.map((avatarItem, index) => (
           <LandingAvatar
             key={index}
-            size={size === 'small' ? 'medium' : size}
             imageSrc={avatarItem.imageSrc}
             name={avatarItem.name}
             className={clsx(
               'relative',
               !disableAnimation
-                ? 'md:group-hover/sp:-ml-0.5 transition-all duration-300'
+                ? 'md:group-hover:-ml-0.5 transition-all duration-300'
                 : '',
               index === 1 || index === 2 ? `-ml-4` : '',
               index === 3 ? `-ml-5` : '',
@@ -58,11 +55,9 @@ export const LandingSocialProof = ({
         <div
           className={clsx(
             !disableAnimation
-              ? 'md:group-hover/sp:-ml-0.5 transition-all duration-300'
+              ? 'md:group-hover:-ml-0.5 transition-all duration-300'
               : '',
-            size === 'small' || size === 'medium' ? 'h-9 w-9 text-xs' : '',
-            size === 'large' ? 'h-16 w-16 text-base' : '',
-            'relative flex items-center justify-center rounded-full border-2 border-solid border-primary-100 -ml-5 bg-primary-100 text-gray-900 dark:text-gray-900',
+            'relative flex items-center justify-center rounded-full h-9 w-9 border-2 border-solid border-primary-100 -ml-5 text-xs bg-primary-100 text-gray-900 dark:text-gray-900',
           )}
         >
           {numberText}+
@@ -70,16 +65,10 @@ export const LandingSocialProof = ({
       </div>
 
       <div className="flex flex-col justify-center gap-1">
-        {showRating ? <LandingRating size={size} /> : null}
+        {showRating ? <LandingRating /> : null}
 
         {!children ? (
-          <p
-            className={clsx(
-              'max-w-sm',
-              size === 'small' || size === 'medium' ? 'text-xs' : '',
-              size === 'large' ? 'text-base' : '',
-            )}
-          >
+          <p className="text-xs max-w-sm">
             from {numberText}+ {suffixText}
           </p>
         ) : (
