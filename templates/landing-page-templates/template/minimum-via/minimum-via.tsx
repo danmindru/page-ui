@@ -1,12 +1,21 @@
 'use client';
 
-import { Merriweather } from 'next/font/google';
+import { cn } from '@/lib/utils';
+import { useEffect } from 'react';
+import { Roboto_Slab, Merriweather } from 'next/font/google';
 
-const baseFont = Merriweather({
+const baseFont = Roboto_Slab({
+  subsets: ['latin'],
+  display: 'swap',
+  weight: 'variable',
+  variable: '--font-space-default',
+});
+
+const displayFont = Merriweather({
   subsets: ['latin'],
   display: 'swap',
   weight: ['300', '400', '700'],
-  variable: '--font-space-default',
+  variable: '--font-space-display',
 });
 
 import TemplateHeader from '@/app/demo/landing-page-templates/template/template-header';
@@ -14,12 +23,11 @@ import TemplateHeader from '@/app/demo/landing-page-templates/template/template-
 import { BrickProvider } from '@/components/bricks/brick-provider';
 import { Brick } from '@/components/bricks/brick';
 
+import { useThemeStore } from '@/components/bricks/state/theme-state';
+import { useThemeSwitch } from '@/components/shared/useThemeSwitch';
+
 import Logo from './minimum-via-logo.svg';
 import DarkLogo from './minimum-via-logo-dark.svg';
-
-import { useThemeStore } from '@/components/bricks/state/theme-state';
-import { cn } from '@/lib/utils';
-import { useEffect } from 'react';
 
 import OneTextCta from '@/app/demo/landing-page-templates/template/minimum-via/bricks/1-text-cta';
 import TwoFeaturesGrid from '@/app/demo/landing-page-templates/template/minimum-via/bricks/2-features-grid';
@@ -34,9 +42,11 @@ const DEMO_NAME = 'minimum-via';
 
 export const MinimumVia = () => {
   const setThemeByIndex = useThemeStore((state) => state.setThemeByIndex);
+  const { setCurrentTheme } = useThemeSwitch();
 
   useEffect(() => {
     setThemeByIndex(32);
+    setCurrentTheme('light');
   }, []);
 
   return (
@@ -45,7 +55,7 @@ export const MinimumVia = () => {
         <div
           className={cn(
             'w-full flex flex-col items-center',
-            `${baseFont.className} scroll-smooth`,
+            `${baseFont.className} ${displayFont.variable} scroll-smooth`,
           )}
         >
           <TemplateHeader
