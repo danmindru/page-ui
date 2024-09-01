@@ -15,24 +15,26 @@ export const LandingTestimonialInlineItem = ({
   suffix,
 }: {
   className?: string;
-  imageSrc: string;
+  imageSrc?: string;
   text: string;
   name: string;
   suffix?: string;
 }) => {
   return (
-    <div className={clsx('flex flex-col text-center', className)}>
-      <div className="flex gap-2 items-center justify-center">
-        <div className="opacity-90 flex-shrink-0">
-          <LandingAvatar
-            imageSrc={imageSrc}
-            name={name}
-            size="large"
-            className="rounded-full border-2 border-opacity-75"
-          />
-        </div>
+    <div className={clsx('flex flex-col lg:text-center', className)}>
+      <div className="flex gap-2 items-center lg:justify-center">
+        {imageSrc ? (
+          <div className="opacity-90 flex-shrink-0">
+            <LandingAvatar
+              imageSrc={imageSrc}
+              name={name}
+              size="large"
+              className="rounded-full border-2 border-opacity-75"
+            />
+          </div>
+        ) : null}
 
-        <div className="flex flex-col items-center text-xs truncate">
+        <div className="flex flex-col lg:items-center text-xs truncate">
           <LandingRating rating={5} />
 
           {text ? (
