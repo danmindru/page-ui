@@ -1,0 +1,303 @@
+---
+title: 'Landing Page Marquee'
+date: '2024-08-05'
+lastmod: '2024-08-05'
+tags:
+  - 'guide'
+  - 'components'
+  - 'documentation'
+  - 'landing-page'
+  - 'ui-library'
+  - 'react'
+  - 'nextjs'
+  - 'tailwind-css'
+  - 'marquee'
+  - 'shadcn-ui'
+  - 'shadcn-ui-marquee'
+  - 'shadcn-ui-landing-page'
+
+images:
+  - '/static/images/blog/docs/landing-page-marquee-component.webp'
+
+summary: 'A component meant to be used in the landing page. It displays an animated marquee that can loop through images, icons, or text.'
+layout: PostHub
+
+showThemeSelector: true
+showInstallNotice: true
+---
+
+This component displays an animated marquee that can loop through images, icons, or text.
+
+<ComponentExample
+  previewComponent={
+    <div className="grid grid-cols-1 overflow-hidden">
+      <LandingMarquee>
+        <ChromeIcon className="w-12 h-12 mx-8" />
+        <FigmaIcon className="w-12 h-12 mx-8" />
+        <GithubIcon className="w-12 h-12 mx-8" />
+        <FramerIcon className="w-12 h-12 mx-8" />
+        <TwitchIcon className="w-12 h-12 mx-8" />
+        <TwitterIcon className="w-12 h-12 mx-8" />
+        <GitlabIcon className="w-12 h-12 mx-8" />
+        <InstagramIcon className="w-12 h-12 mx-8" />
+        <SlackIcon className="w-12 h-12 mx-8" />
+      </LandingMarquee>
+    </div>
+    }
+>
+
+```jsx
+import { LandingMarquee } from '@/components/landing/LandingMarquee';
+import {
+  ChromeIcon,
+  FigmaIcon,
+  GithubIcon,
+  FramerIcon,
+  TwitchIcon,
+  TwitterIcon,
+  GitlabIcon,
+  InstagramIcon,
+  SlackIcon,
+} from 'lucide-react';
+
+<LandingMarquee>
+  <ChromeIcon className="w-12 h-12 mx-8" />
+  <FigmaIcon className="w-12 h-12 mx-8" />
+  <GithubIcon className="w-12 h-12 mx-8" />
+  <FramerIcon className="w-12 h-12 mx-8" />
+  <TwitchIcon className="w-12 h-12 mx-8" />
+  <TwitterIcon className="w-12 h-12 mx-8" />
+  <GitlabIcon className="w-12 h-12 mx-8" />
+  <InstagramIcon className="w-12 h-12 mx-8" />
+  <SlackIcon className="w-12 h-12 mx-8" />
+</LandingMarquee>;
+```
+
+</ComponentExample>
+
+```jsx
+import { LandingMarquee } from '@/components/landing/LandingMarquee';
+import {
+  ChromeIcon,
+  FigmaIcon,
+  GithubIcon,
+  FramerIcon,
+  TwitchIcon,
+  TwitterIcon,
+  GitlabIcon,
+  InstagramIcon,
+  SlackIcon,
+} from 'lucide-react';
+
+<LandingMarquee>
+  <ChromeIcon className="w-12 h-12 mx-8" />
+  <FigmaIcon className="w-12 h-12 mx-8" />
+  <GithubIcon className="w-12 h-12 mx-8" />
+  <FramerIcon className="w-12 h-12 mx-8" />
+  <TwitchIcon className="w-12 h-12 mx-8" />
+  <TwitterIcon className="w-12 h-12 mx-8" />
+  <GitlabIcon className="w-12 h-12 mx-8" />
+  <InstagramIcon className="w-12 h-12 mx-8" />
+  <SlackIcon className="w-12 h-12 mx-8" />
+</LandingMarquee>;
+```
+
+## Usage
+
+```jsx
+import { LandingMarquee } from '@/components/landing/LandingMarquee';
+```
+
+```jsx
+<LandingMarquee>
+  <ChromeIcon className="w-12 h-12 mx-8" />
+  <FigmaIcon className="w-12 h-12 mx-8" />
+  <GithubIcon className="w-12 h-12 mx-8" />
+  <FramerIcon className="w-12 h-12 mx-8" />
+  <TwitchIcon className="w-12 h-12 mx-8" />
+  <TwitterIcon className="w-12 h-12 mx-8" />
+  <GitlabIcon className="w-12 h-12 mx-8" />
+  <InstagramIcon className="w-12 h-12 mx-8" />
+  <SlackIcon className="w-12 h-12 mx-8" />
+</LandingMarquee>
+```
+
+## Examples
+
+### Animation Direction
+
+<ComponentExample
+  previewComponent={
+    <div className="grid grid-cols-1 overflow-hidden">
+      <LandingMarquee animationDirection="left">
+        <ChromeIcon className="w-12 h-12 mx-8" />
+        <FigmaIcon className="w-12 h-12 mx-8" />
+        <GithubIcon className="w-12 h-12 mx-8" />
+        <FramerIcon className="w-12 h-12 mx-8" />
+        <TwitchIcon className="w-12 h-12 mx-8" />
+        <TwitterIcon className="w-12 h-12 mx-8" />
+        <GitlabIcon className="w-12 h-12 mx-8" />
+        <InstagramIcon className="w-12 h-12 mx-8" />
+        <SlackIcon className="w-12 h-12 mx-8" />
+      </LandingMarquee>
+    </div>
+    }
+>
+
+```jsx
+import {
+  ChromeIcon,
+  FigmaIcon,
+  GithubIcon,
+  FramerIcon,
+  TwitchIcon,
+  TwitterIcon,
+  GitlabIcon,
+  InstagramIcon,
+  SlackIcon,
+} from 'lucide-react';
+import { LandingMarquee } from '@/components/landing/LandingMarquee';
+
+<LandingMarquee animationDirection="left">
+  <ChromeIcon className="w-12 h-12 mx-8" />
+  <FigmaIcon className="w-12 h-12 mx-8" />
+  <GithubIcon className="w-12 h-12 mx-8" />
+  <FramerIcon className="w-12 h-12 mx-8" />
+  <TwitchIcon className="w-12 h-12 mx-8" />
+  <TwitterIcon className="w-12 h-12 mx-8" />
+  <GitlabIcon className="w-12 h-12 mx-8" />
+  <InstagramIcon className="w-12 h-12 mx-8" />
+  <SlackIcon className="w-12 h-12 mx-8" />
+</LandingMarquee>;
+```
+
+</ComponentExample>
+
+### With images
+
+<ComponentExample
+  previewComponent={
+    <div className="grid grid-cols-1 overflow-hidden">
+      <LandingMarquee>
+        <div className="flex gap-8 px-4">
+          {[
+            {
+              imageSrc: '/static/images/people/1.webp',
+              name: 'John Doe',
+            },
+            {
+              imageSrc: '/static/images/people/2.webp',
+              name: 'Jane Doe',
+            },
+            {
+              imageSrc: '/static/images/people/3.webp',
+              name: 'Alice Doe',
+            },
+            {
+              imageSrc: '/static/images/people/4.webp',
+              name: 'Bob Doe',
+            },
+            {
+              imageSrc: '/static/images/people/5.webp',
+              name: 'Eve Doe',
+            }
+          ].map((person, index) => (
+            <LandingAvatar size="large" key={index} imageSrc={person.imageSrc} name={person.name} />
+          ))}
+        </div>
+      </LandingMarquee>
+    </div>
+    }
+>
+
+```jsx
+<LandingMarquee>
+  <div className="flex gap-8 px-4">
+    {[
+      {
+        imageSrc: '/static/images/people/1.webp',
+        name: 'John Doe',
+      },
+      {
+        imageSrc: '/static/images/people/2.webp',
+        name: 'Jane Doe',
+      },
+      {
+        imageSrc: '/static/images/people/3.webp',
+        name: 'Alice Doe',
+      },
+      {
+        imageSrc: '/static/images/people/4.webp',
+        name: 'Bob Doe',
+      },
+      {
+        imageSrc: '/static/images/people/5.webp',
+        name: 'Eve Doe',
+      },
+    ].map((person, index) => (
+      <LandingAvatar
+        size="large"
+        key={index}
+        imageSrc={person.imageSrc}
+        name={person.name}
+      />
+    ))}
+  </div>
+</LandingMarquee>
+```
+
+</ComponentExample>
+
+### With background
+
+<ComponentExample
+  previewComponent={
+    <div className="grid grid-cols-1 overflow-hidden">
+      <LandingMarquee withBackground variant="secondary" animationDurationInSeconds="10s">
+        <ChromeIcon className="w-12 h-12 mx-8" />
+        <FigmaIcon className="w-12 h-12 mx-8" />
+        <GithubIcon className="w-12 h-12 mx-8" />
+        <FramerIcon className="w-12 h-12 mx-8" />
+        <TwitchIcon className="w-12 h-12 mx-8" />
+        <TwitterIcon className="w-12 h-12 mx-8" />
+        <GitlabIcon className="w-12 h-12 mx-8" />
+        <InstagramIcon className="w-12 h-12 mx-8" />
+        <SlackIcon className="w-12 h-12 mx-8" />
+      </LandingMarquee>
+    </div>
+    }
+>
+
+    ```jsx
+    import { ChromeIcon, FigmaIcon, GithubIcon, FramerIcon, TwitchIcon, TwitterIcon, GitlabIcon, InstagramIcon, SlackIcon } from 'lucide-react';
+    import { LandingMarquee } from '@/components/landing/LandingMarquee';
+
+    <LandingMarquee withBackground variant="secondary" animationDurationInSeconds="10s">
+      <ChromeIcon className="w-12 h-12 mx-8" />
+      <FigmaIcon className="w-12 h-12 mx-8" />
+      <GithubIcon className="w-12 h-12 mx-8" />
+      <FramerIcon className="w-12 h-12 mx-8" />
+      <TwitchIcon className="w-12 h-12 mx-8" />
+      <TwitterIcon className="w-12 h-12 mx-8" />
+      <GitlabIcon className="w-12 h-12 mx-8" />
+      <InstagramIcon className="w-12 h-12 mx-8" />
+      <SlackIcon className="w-12 h-12 mx-8" />
+    </LandingMarquee>;
+    ```
+
+</ComponentExample>
+
+## API Reference
+
+| Prop Name <Tippy>Prop Description</Tippy>                                                                                             | Prop Type                    | Required | Default     |
+| ------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------- | -------- | ----------- |
+| **children** <Tippy>React nodes to be rendered within the component (below the text on smaller screen, right side on larger).</Tippy> | `React.ReactNode` ǀ `string` | No       | -           |
+| **innerClassName** <Tippy>Additional class names to apply to the inner marquee container.</Tippy>                                     | `string`                     | No       | -           |
+| **withBackground** <Tippy>Flag to determine if a background should be applied.</Tippy>                                                | `boolean`                    | No       | `false`     |
+| **animationDurationInSeconds** <Tippy>Duration of the marquee animation in seconds e.g. "10s".</Tippy>                                | `string`                     | No       | -           |
+| **animationDirection** <Tippy>Direction of the marquee animation ('left' or 'right').</Tippy>                                         | `'left'` ǀ `'right'`         | No       | -           |
+| **variant** <Tippy>Variant of the marquee background ('primary' or 'secondary').</Tippy>                                              | `'primary'` ǀ `'secondary'`  | No       | `'primary'` |
+
+## More Examples
+
+For more even more examples, see our <a href="/demo/landing-page-component-examples" className="fancy-link">Landing Page Component Examples</a> page or see complete landing page examples by <a href="/demo/landing-page-templates" className="fancy-link">Exploring Our Landing Page Templates</a>.
