@@ -1,30 +1,22 @@
 'use client';
 
-import { cn } from '@/lib/utils';
-import { useEffect } from 'react';
-import { Poppins, Inter } from 'next/font/google';
+import TemplateHeader from '@/app/demo/landing-page-templates/template/template-header';
 
-const baseFont = Inter({
+import { Cabin } from 'next/font/google';
+
+const baseFont = Cabin({
   subsets: ['latin'],
   display: 'swap',
   weight: 'variable',
   variable: '--font-space-default',
 });
 
-const displayFont = Poppins({
-  subsets: ['latin'],
-  display: 'swap',
-  weight: '500',
-  variable: '--font-space-display',
-});
-
-import TemplateHeader from '@/app/demo/landing-page-templates/template/template-header';
-
 import Logo from './screenshot-two-logo.svg';
 import DarkLogo from './screenshot-two-logo-dark.svg';
 
 import { useThemeStore } from '@/components/bricks/state/theme-state';
-import { useThemeSwitch } from '@/components/shared/useThemeSwitch';
+import { cn } from '@/lib/utils';
+import { useEffect } from 'react';
 
 import { BrickProvider } from '@/components/bricks/brick-provider';
 import { Brick } from '@/components/bricks/brick';
@@ -42,11 +34,9 @@ const DEMO_NAME = 'screenshot-two';
 
 export const ScreenshotTwo = () => {
   const setThemeByIndex = useThemeStore((state) => state.setThemeByIndex);
-  const { setCurrentTheme } = useThemeSwitch();
 
   useEffect(() => {
     setThemeByIndex(10);
-    setCurrentTheme('light');
   }, []);
 
   return (
@@ -55,7 +45,7 @@ export const ScreenshotTwo = () => {
         <div
           className={cn(
             'w-full flex flex-col items-center',
-            `${baseFont.className} ${displayFont.variable} scroll-smooth`,
+            `${baseFont.variable} scroll-smooth`,
           )}
         >
           <TemplateHeader

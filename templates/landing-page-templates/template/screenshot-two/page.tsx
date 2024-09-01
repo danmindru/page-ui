@@ -5,7 +5,7 @@ const socialBanner = '/static/images/templatesOgImg.jpg';
 const title =
   'Front Centre Landing Page Template | Shipixen, Next.js & Shadcn UI';
 const description =
-  'A Next.js landing page template for a learning platform, featuring a centered video beneath the fold. Uses text and minimal colors to create a clean look. Using React, TypeScript, Shadcn UI and Tailwind CSS.';
+  'A Next.js landing page templatefor a learning platform, featuring a centered video beneath the fold. Uses text and minimal colors to create a clean look. Using React, TypeScript, Shadcn UI and Tailwind CSS.';
 
 export const metadata: Metadata = {
   title: {
