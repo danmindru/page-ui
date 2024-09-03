@@ -85,7 +85,7 @@ export const MinimumVia = () => {
             <FiveBand />
           </Brick>
 
-          <Brick demo={DEMO_NAME} brick={'6-testimonial'}>
+          <Brick demo={DEMO_NAME} brick={'6-testimonials'}>
             <SixTestimonial />
           </Brick>
 
