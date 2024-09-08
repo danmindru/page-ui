@@ -353,6 +353,25 @@
 /**
  * Container utilities
  */
+.narrow-container {
+  @apply w-full p-6 max-w-4xl;
+}
+
+.wide-container {
+  @apply w-full p-6 max-w-full xl:max-w-6xl;
+}
+
+.ultrawide-container {
+  @apply w-full p-6 max-w-full xl:max-w-7xl;
+}
+
+.gigawide-container {
+  @apply w-full p-6 max-w-full xl:max-w-[1400px];
+}
+
+/**
+ * Container utilities
+ */
 .container-narrow {
   @apply max-w-4xl;
 }
