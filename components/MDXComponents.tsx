@@ -39,6 +39,12 @@ import { LandingMarquee } from '@/components/landing/LandingMarquee';
 import { LandingAvatar } from '@/components/landing/social-proof/LandingAvatar';
 import { LandingShowcase } from '@/components/landing/showcase/LandingShowcase';
 import { LandingShowcaseItem } from '@/components/landing/showcase/LandingShowcaseItem';
+import {
+  LandingProductTourSection,
+  LandingProductTourList,
+  LandingProductTourTrigger,
+  LandingProductTourContent,
+} from '@/components/landing/LandingProductTour';
 
 import { GuideCard } from '@/components/blog/GuideCard';
 import { StepCard } from '@/components/blog/StepCard';
@@ -50,6 +56,22 @@ import { Tippy } from '@/components/blog/Tippy';
 
 const LandingMarqueeWrapper = (props) => {
   return <LandingMarquee {...props} />;
+};
+
+const LandingProductTourTriggerWrapper = (props) => {
+  return <LandingProductTourTrigger {...props} />;
+};
+
+const LandingProductTourContentWrapper = (props) => {
+  return <LandingProductTourContent {...props} />;
+};
+
+const LandingProductTourListWrapper = (props) => {
+  return <LandingProductTourList {...props} />;
+};
+
+const LandingProductTourSectionWrapper = (props) => {
+  return <LandingProductTourSection {...props} />;
 };
 
 import {
@@ -115,6 +137,10 @@ export const components: MDXComponents = {
   LandingAvatar,
   LandingShowcase,
   LandingShowcaseItem,
+  LandingProductTourSection: LandingProductTourSectionWrapper,
+  LandingProductTourList: LandingProductTourListWrapper,
+  LandingProductTourTrigger: LandingProductTourTriggerWrapper,
+  LandingProductTourContent: LandingProductTourContentWrapper,
 
   ChromeIcon,
   FigmaIcon,
