@@ -236,12 +236,24 @@ export default function Page() {
             name="Specta"
             description="A landing page template for a creator platform, featuring a marquee section and a showcase section."
             imageUrls={[
-              '/static/images/shipixen/templates/demo/specta-1.jpg',
-              '/static/images/shipixen/templates/demo/specta-2.jpg',
-              '/static/images/shipixen/templates/demo/specta-3.jpg',
+              '/static/images/shipixen/templates/demo/specta-1.webp',
+              '/static/images/shipixen/templates/demo/specta-2.webp',
+              '/static/images/shipixen/templates/demo/specta-3.webp',
             ]}
             tags={['creator', 'marquee', 'SaaS', 'video', 'playful']}
             href="/demo/landing-page-templates/template/specta"
+          />
+
+          <TemplateListItem
+            name="Gnomie AI"
+            description="A landing page template for a B2C AI SaaS app, featuring carousel examples and product tours."
+            imageUrls={[
+              '/static/images/shipixen/templates/demo/gnomie-1.webp',
+              '/static/images/shipixen/templates/demo/gnomie-2.webp',
+              '/static/images/shipixen/templates/demo/gnomie-3.webp',
+            ]}
+            tags={['AI', 'SaaS', 'carousel', 'product tour', 'B2C']}
+            href="/demo/landing-page-templates/template/gnomie-ai"
             isNew
           />
 
@@ -249,9 +261,9 @@ export default function Page() {
             name="Emerald AI"
             description="A landing page template for an AI-powered product, featuring a video in the main CTA."
             imageUrls={[
-              '/static/images/shipixen/templates/demo/emerald-1.jpg',
-              '/static/images/shipixen/templates/demo/emerald-2.jpg',
-              '/static/images/shipixen/templates/demo/emerald-3.jpg',
+              '/static/images/shipixen/templates/demo/emerald-1.webp',
+              '/static/images/shipixen/templates/demo/emerald-2.webp',
+              '/static/images/shipixen/templates/demo/emerald-3.webp',
             ]}
             tags={['video', 'AI', 'SaaS', 'feature list', 'faq', 'classic']}
             href="/demo/landing-page-templates/template/emerald-ai"
@@ -261,9 +273,9 @@ export default function Page() {
             name="Minimum Via"
             description="A landing page template for a minimalistic product, or productized agency. Uses text and minimal colors to create a clean look."
             imageUrls={[
-              '/static/images/shipixen/templates/demo/minimum-via-1.jpg',
-              '/static/images/shipixen/templates/demo/minimum-via-2.jpg',
-              '/static/images/shipixen/templates/demo/minimum-via-3.jpg',
+              '/static/images/shipixen/templates/demo/minimum-via-1.webp',
+              '/static/images/shipixen/templates/demo/minimum-via-2.webp',
+              '/static/images/shipixen/templates/demo/minimum-via-3.webp',
             ]}
             tags={['text', 'agency', 'SaaS', 'minimal', 'clean', 'simple']}
             href="/demo/landing-page-templates/template/minimum-via"
@@ -273,9 +285,9 @@ export default function Page() {
             name="Front Centre"
             description="A landing page template for a learning platform, featuring a centered video beneath the fold."
             imageUrls={[
-              '/static/images/shipixen/templates/demo/front-centre-1.jpg',
-              '/static/images/shipixen/templates/demo/front-centre-2.jpg',
-              '/static/images/shipixen/templates/demo/front-centre-3.jpg',
+              '/static/images/shipixen/templates/demo/front-centre-1.webp',
+              '/static/images/shipixen/templates/demo/front-centre-2.webp',
+              '/static/images/shipixen/templates/demo/front-centre-3.webp',
             ]}
             tags={['video', 'education', 'SaaS', 'feature grid', 'colorful']}
             href="/demo/landing-page-templates/template/front-centre"
@@ -285,9 +297,9 @@ export default function Page() {
             name="ScreenshotTwo"
             description="A landing page template for a developer tool, featuring inline testimonials and a two-column layout with screenshots."
             imageUrls={[
-              '/static/images/shipixen/templates/demo/screenshot-two-1.jpg',
-              '/static/images/shipixen/templates/demo/screenshot-two-2.jpg',
-              '/static/images/shipixen/templates/demo/screenshot-two-3.jpg',
+              '/static/images/shipixen/templates/demo/screenshot-two-1.webp',
+              '/static/images/shipixen/templates/demo/screenshot-two-2.webp',
+              '/static/images/shipixen/templates/demo/screenshot-two-3.webp',
             ]}
             tags={[
               'image',

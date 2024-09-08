@@ -19,40 +19,28 @@ const avatarItems = [
 export default function Component() {
   return (
     <LandingSaleCtaSection
-      titleComponent={
-        <>
-          <p className="text-xl font-cursive font-semibold tracking-wider bg-clip-text bg-gradient-to-r text-transparent from-pink-500 via-pink-400 to-pink-500">
-            It takes 1 minute
-          </p>
-
-          <h2 className="text-4xl font-semibold leading-tight">
-            The faster, easier way to create videos
-          </h2>
-        </>
-      }
+      title="Transform Your Garden Today"
       descriptionComponent={
         <>
           <p>
-            Jump in today and see how easy it is to create stunning videos with
-            Snappy.
+            Join thousands of gardeners who are reimagining their outdoor spaces
+            with Gnomie. From planning to planting, we’re here to help every
+            step of the way.
           </p>
 
           <LandingSocialProof
             className="w-full mt-6"
             showRating
-            numberOfUsers={25000}
-            suffixText="happy users"
+            numberOfUsers={110000}
+            suffixText="happy gardeners"
             avatarItems={avatarItems}
+            size="medium"
             disableAnimation
-          >
-            <p className="text-xs">loved by 25,000+ editors</p>
-          </LandingSocialProof>
+          />
         </>
       }
       ctaHref="#"
-      ctaLabel="Sign up now"
-      withBackgroundGlow
-      withBackground
+      ctaLabel="Get started in minutes"
     />
   );
 }
