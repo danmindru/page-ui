@@ -60,7 +60,7 @@ export const LandingPageComponentsNav = ({
       label: 'Product Features Grid',
     },
     {
-      href: '/boilerplate-documentation/landing-page-components/product-tour',
+      href: '/docs/landing-page-components/product-tour',
       label: 'Product Tour',
     },
     {
