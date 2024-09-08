@@ -85,6 +85,7 @@ const LandingProductTourSection = React.forwardRef<
     </section>
   ),
 );
+LandingProductTourSection.displayName = 'LandingProductTourSection';
 
 const LandingProductTour = React.forwardRef<
   React.ElementRef<typeof TabsPrimitive.Root>,
@@ -96,6 +97,7 @@ const LandingProductTour = React.forwardRef<
     {...props}
   />
 ));
+LandingProductTour.displayName = TabsPrimitive.Root.displayName;
 
 const LandingProductTourList = React.forwardRef<
   React.ElementRef<typeof TabsPrimitive.List>,
