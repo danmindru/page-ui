@@ -37,6 +37,13 @@ export const FILES = [
   },
 
   {
+    from: `${PLACEHOLDER_PATH}/shared/ui/carousel.tsx`,
+    to: 'components/shared/ui/carousel.tsx',
+    fallbackPath:
+      'https://github.com/danmindru/page-ui/blob/main/components/shared/ui/carousel.tsx',
+  },
+
+  {
     from: `${PLACEHOLDER_PATH}/shared/ui/glow-bg.tsx`,
     to: 'components/shared/ui/glow-bg.tsx',
     fallbackPath:

@@ -60,6 +60,10 @@ export const LandingPageComponentsNav = ({
       label: 'Product Features Grid',
     },
     {
+      href: '/boilerplate-documentation/landing-page-components/product-tour',
+      label: 'Product Tour',
+    },
+    {
       href: '/docs/landing-page-components/product-hunt-award',
       label: 'Product Hunt Award',
     },

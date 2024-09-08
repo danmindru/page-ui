@@ -1,0 +1,645 @@
+---
+title: 'Landing Page Product Tour Component'
+date: '2024-09-08'
+lastmod: '2024-09-08'
+tags:
+  - 'guide'
+  - 'components'
+  - 'documentation'
+  - 'landing-page'
+  - 'product-tour'
+  - 'product-feature'
+  - 'feature-list'
+  - 'ui-library'
+  - 'react'
+  - 'nextjs'
+  - 'tailwind-css'
+  - 'shadcn-ui'
+  - 'shadcn-ui-landing-page'
+
+images:
+  - '/static/images/blog/docs/landing-page-tour-component.webp'
+
+summary: 'A component meant to be used in the landing page. It displays a list of features and content corresponding to each, creating a product tour. Useful to showcase many features in a compact way and guide the user through the product.'
+layout: PostHub
+
+showThemeSelector: true
+showInstallNotice: true
+
+canonicalUrl: 'https://shipixen.com/boilerplate-documentation/landing-page-components/product-tour'
+---
+
+This component displays a list of features and content corresponding to each, creating a product tour. It is useful to showcase many features in a compact way and guide the user through the product.
+
+<ComponentExample
+  previewComponent={
+    <LandingProductTourSection
+      title='Landing page in minutes'
+      description="Get 10x more done with Shadcn UI, React & Next.js, and say goodbye to repetitive tasks. You'll never go back."
+      defaultValue="feature-1"
+    >
+      <LandingProductTourList>
+        <LandingProductTourTrigger value="feature-1">
+          <p className="text-xl font-bold">
+            Automatic deployment to Vercel
+          </p>
+          <p>
+           Deploying the generated template to Vercel is as easy as clicking a button.
+          </p>
+        </LandingProductTourTrigger>
+
+        <LandingProductTourTrigger value="feature-2">
+          <p className="text-xl font-bold">
+            MDX blog, no server required
+          </p>
+          <p>
+            Shipixen comes with a fully featured MDX blog.
+          </p>
+        </LandingProductTourTrigger>
+
+        <LandingProductTourTrigger value="feature-3">
+          <p className="text-xl font-bold">
+            Customizable themes
+          </p>
+          <p>
+            Choose from more than 30+ beautifully designed themes or create your own.
+          </p>
+        </LandingProductTourTrigger>
+      </LandingProductTourList>
+      <LandingProductTourContent value="feature-1">
+        <WrappedVideoPlayer
+          className={'w-full rounded-md'}
+          src={'https://cache.shipixen.com/features/20-mobile-optimized.mp4'}
+          autoPlay={true}
+          controls={false}
+          loop={true}
+        />
+      </LandingProductTourContent>
+      <LandingProductTourContent value="feature-2">
+        <WrappedVideoPlayer
+          className={'w-full rounded-md'}
+          src={
+            'https://cache.shipixen.com/features/11-pricing-page-builder.mp4'
+          }
+          autoPlay={true}
+          controls={false}
+          loop={true}
+        />
+      </LandingProductTourContent>
+      <LandingProductTourContent value="feature-3">
+        <WrappedVideoPlayer
+          className={'w-full rounded-md'}
+          src={'https://cache.shipixen.com/features/21-run-locally.mp4'}
+          autoPlay={true}
+          controls={false}
+          loop={true}
+        />
+      </LandingProductTourContent>
+    </LandingProductTourSection>
+  }
+>
+
+```jsx
+import { LandingProductTourSection, LandingProductTourList, LandingProductTourTrigger, LandingProductTourContent } from '@/components/landing/LandingProductTour';
+import { VideoPlayer } from '@/components/shared/ui/VideoPlayer';
+
+<LandingProductTourSection
+  title='Landing page in minutes'
+  description="Get 10x more done with Shadcn UI, React & Next.js, and say goodbye to repetitive tasks. You'll never go back."
+  defaultValue="feature-1"
+>
+  <LandingProductTourList>
+    <LandingProductTourTrigger value="feature-1">
+      <p className="text-xl font-bold">
+        Automatic deployment to Vercel
+      </p>
+      <p>
+        Deploying the generated template to Vercel is as easy as clicking a button.
+      </p>
+    </LandingProductTourTrigger>
+
+    <LandingProductTourTrigger value="feature-2">
+      <p className="text-xl font-bold">
+        MDX blog, no server required
+      </p>
+      <p>
+        Shipixen comes with a fully featured MDX blog.
+      </p>
+    </LandingProductTourTrigger>
+
+    <LandingProductTourTrigger value="feature-3">
+      <p className="text-xl font-bold">
+        Customizable themes
+      </p>
+      <p>
+        Choose from more than 30+ beautifully designed themes or create your own.
+      </p>
+    </LandingProductTourTrigger>
+  </LandingProductTourList>
+  <LandingProductTourContent value="feature-1">
+    <VideoPlayer
+      className={'w-full rounded-md'}
+      src={'https://cache.shipixen.com/features/20-mobile-optimized.mp4'}
+      autoPlay={true}
+      controls={false}
+      loop={true}
+    />
+  </LandingProductTourContent>
+  <LandingProductTourContent value="feature-2">
+    <VideoPlayer
+      className={'w-full rounded-md'}
+      src={
+        'https://cache.shipixen.com/features/11-pricing-page-builder.mp4'
+      }
+      autoPlay={true}
+      controls={false}
+      loop={true}
+    />
+  </LandingProductTourContent>
+  <LandingProductTourContent value="feature-3">
+    <VideoPlayer
+      className={'w-full rounded-md'}
+      src={'https://cache.shipixen.com/features/21-run-locally.mp4'}
+      autoPlay={true}
+      controls={false}
+      loop={true}
+    />
+  </LandingProductTourContent>
+</LandingProductTourSection>
+```
+
+</ComponentExample>
+
+## Usage
+
+```jsx
+import { LandingProductTourSection, LandingProductTourList, LandingProductTourTrigger, LandingProductTourContent } from '@/components/landing/LandingProductTour';
+import { VideoPlayer } from '@/components/shared/ui/VideoPlayer';
+```
+
+```jsx
+<LandingProductTourSection
+  title='Landing page in minutes'
+  description="Get 10x more done with Shadcn UI, React & Next.js, and say goodbye to repetitive tasks. You'll never go back."
+  defaultValue="feature-1"
+>
+  <LandingProductTourList>
+    <LandingProductTourTrigger value="feature-1">
+      <p className="text-xl font-bold">
+        Automatic deployment to Vercel
+      </p>
+      <p>
+        Deploying the generated template to Vercel is as easy as clicking a button.
+      </p>
+    </LandingProductTourTrigger>
+
+    <LandingProductTourTrigger value="feature-2">
+      <p className="text-xl font-bold">
+        MDX blog, no server required
+      </p>
+      <p>
+        Shipixen comes with a fully featured MDX blog.
+      </p>
+    </LandingProductTourTrigger>
+
+    <LandingProductTourTrigger value="feature-3">
+      <p className="text-xl font-bold">
+        Customizable themes
+      </p>
+      <p>
+        Choose from more than 30+ beautifully designed themes or create your own.
+      </p>
+    </LandingProductTourTrigger>
+  </LandingProductTourList>
+  <LandingProductTourContent value="feature-1">
+    <VideoPlayer
+      className={'w-full rounded-md'}
+      src={'https://cache.shipixen.com/features/20-mobile-optimized.mp4'}
+      autoPlay={true}
+      controls={false}
+      loop={true}
+    />
+  </LandingProductTourContent>
+  <LandingProductTourContent value="feature-2">
+    <VideoPlayer
+      className={'w-full rounded-md'}
+      src={
+        'https://cache.shipixen.com/features/11-pricing-page-builder.mp4'
+      }
+      autoPlay={true}
+      controls={false}
+      loop={true}
+    />
+  </LandingProductTourContent>
+  <LandingProductTourContent value="feature-3">
+    <VideoPlayer
+      className={'w-full rounded-md'}
+      src={'https://cache.shipixen.com/features/21-run-locally.mp4'}
+      autoPlay={true}
+      controls={false}
+      loop={true}
+    />
+  </LandingProductTourContent>
+</LandingProductTourSection>
+```
+
+## Examples
+
+### With images
+<ComponentExample
+  previewComponent={
+    <LandingProductTourSection
+      title='Landing page in minutes'
+      description="Get 10x more done with Shadcn UI, React & Next.js, and say goodbye to repetitive tasks. You'll never go back."
+      defaultValue="feature-1"
+    >
+      <LandingProductTourList>
+        <LandingProductTourTrigger value="feature-1">
+          <p className="text-xl font-bold">
+            Automatic deployment to Vercel
+          </p>
+          <p>
+           Deploying the generated template to Vercel is as easy as clicking a button.
+          </p>
+        </LandingProductTourTrigger>
+
+        <LandingProductTourTrigger value="feature-2">
+          <p className="text-xl font-bold">
+            MDX blog, no server required
+          </p>
+          <p>
+            Shipixen comes with a fully featured MDX blog.
+          </p>
+        </LandingProductTourTrigger>
+
+        <LandingProductTourTrigger value="feature-3">
+          <p className="text-xl font-bold">
+            Customizable themes
+          </p>
+          <p>
+            Choose from more than 30+ beautifully designed themes or create your own.
+          </p>
+        </LandingProductTourTrigger>
+      </LandingProductTourList>
+      <LandingProductTourContent value="feature-1">
+        <Image src="https://picsum.photos/id/206/800/800" width={800} height={800} />
+      </LandingProductTourContent>
+      <LandingProductTourContent value="feature-2">
+        <Image src="https://picsum.photos/id/33/800/800" width={800} height={800} />
+      </LandingProductTourContent>
+      <LandingProductTourContent value="feature-3">
+        <Image src="https://picsum.photos/id/59/800/800" width={800} height={800} />
+      </LandingProductTourContent>
+    </LandingProductTourSection>
+  }
+>
+
+```jsx
+import { LandingProductTourSection, LandingProductTourList, LandingProductTourTrigger, LandingProductTourContent } from '@/components/landing/LandingProductTour';
+import Image from '@/components/shared/Image';
+
+<LandingProductTourSection
+  title='Landing page in minutes'
+  description="Get 10x more done with Shadcn UI, React & Next.js, and say goodbye to repetitive tasks. You'll never go back."
+  defaultValue="feature-1"
+>
+  <LandingProductTourList>
+    <LandingProductTourTrigger value="feature-1">
+      <p className="text-xl font-bold">
+        Automatic deployment to Vercel
+      </p>
+      <p>
+        Deploying the generated template to Vercel is as easy as clicking a button.
+      </p>
+    </LandingProductTourTrigger>
+
+    <LandingProductTourTrigger value="feature-2">
+      <p className="text-xl font-bold">
+        MDX blog, no server required
+      </p>
+      <p>
+        Shipixen comes with a fully featured MDX blog.
+      </p>
+    </LandingProductTourTrigger>
+
+    <LandingProductTourTrigger value="feature-3">
+      <p className="text-xl font-bold">
+        Customizable themes
+      </p>
+      <p>
+        Choose from more than 30+ beautifully designed themes or create your own.
+      </p>
+    </LandingProductTourTrigger>
+  </LandingProductTourList>
+  <LandingProductTourContent value="feature-1">
+    <Image src="https://picsum.photos/id/206/800/800" width={800} height={800} />
+  </LandingProductTourContent>
+  <LandingProductTourContent value="feature-2">
+    <Image src="https://picsum.photos/id/33/800/800" width={800} height={800} />
+  </LandingProductTourContent>
+  <LandingProductTourContent value="feature-3">
+    <Image src="https://picsum.photos/id/59/800/800" width={800} height={800} />
+  </LandingProductTourContent>
+</LandingProductTourSection>
+```
+
+</ComponentExample>
+
+### With background
+<ComponentExample
+  previewComponent={
+    <LandingProductTourSection
+      title='Landing page in minutes'
+      description="Get 10x more done with Shadcn UI, React & Next.js, and say goodbye to repetitive tasks. You'll never go back."
+      defaultValue="feature-1"
+      withBackground
+      variant="secondary"
+    >
+      <LandingProductTourList>
+        <LandingProductTourTrigger value="feature-1">
+          <p className="text-xl font-bold">
+            Automatic deployment to Vercel
+          </p>
+          <p>
+           Deploying the generated template to Vercel is as easy as clicking a button.
+          </p>
+        </LandingProductTourTrigger>
+
+        <LandingProductTourTrigger value="feature-2">
+          <p className="text-xl font-bold">
+            MDX blog, no server required
+          </p>
+          <p>
+            Shipixen comes with a fully featured MDX blog.
+          </p>
+        </LandingProductTourTrigger>
+
+        <LandingProductTourTrigger value="feature-3">
+          <p className="text-xl font-bold">
+            Customizable themes
+          </p>
+          <p>
+            Choose from more than 30+ beautifully designed themes or create your own.
+          </p>
+        </LandingProductTourTrigger>
+      </LandingProductTourList>
+      <LandingProductTourContent value="feature-1">
+        <WrappedVideoPlayer
+          className={'w-full rounded-md'}
+          src={'https://cache.shipixen.com/features/20-mobile-optimized.mp4'}
+          autoPlay={true}
+          controls={false}
+          loop={true}
+        />
+      </LandingProductTourContent>
+      <LandingProductTourContent value="feature-2">
+        <WrappedVideoPlayer
+          className={'w-full rounded-md'}
+          src={
+            'https://cache.shipixen.com/features/11-pricing-page-builder.mp4'
+          }
+          autoPlay={true}
+          controls={false}
+          loop={true}
+        />
+      </LandingProductTourContent>
+      <LandingProductTourContent value="feature-3">
+        <WrappedVideoPlayer
+          className={'w-full rounded-md'}
+          src={'https://cache.shipixen.com/features/21-run-locally.mp4'}
+          autoPlay={true}
+          controls={false}
+          loop={true}
+        />
+      </LandingProductTourContent>
+    </LandingProductTourSection>
+  }
+>
+
+```jsx
+import { LandingProductTourSection, LandingProductTourList, LandingProductTourTrigger, LandingProductTourContent } from '@/components/landing/LandingProductTour';
+import { VideoPlayer } from '@/components/shared/ui/VideoPlayer';
+
+<LandingProductTourSection
+  title='Landing page in minutes'
+  description="Get 10x more done with Shadcn UI, React & Next.js, and say goodbye to repetitive tasks. You'll never go back."
+  defaultValue="feature-1"
+  withBackground
+  variant="secondary"
+>
+  <LandingProductTourList>
+    <LandingProductTourTrigger value="feature-1">
+      <p className="text-xl font-bold">
+        Automatic deployment to Vercel
+      </p>
+      <p>
+        Deploying the generated template to Vercel is as easy as clicking a button.
+      </p>
+    </LandingProductTourTrigger>
+
+    <LandingProductTourTrigger value="feature-2">
+      <p className="text-xl font-bold">
+        MDX blog, no server required
+      </p>
+      <p>
+        Shipixen comes with a fully featured MDX blog.
+      </p>
+    </LandingProductTourTrigger>
+
+    <LandingProductTourTrigger value="feature-3">
+      <p className="text-xl font-bold">
+        Customizable themes
+      </p>
+      <p>
+        Choose from more than 30+ beautifully designed themes or create your own.
+      </p>
+    </LandingProductTourTrigger>
+  </LandingProductTourList>
+  <LandingProductTourContent value="feature-1">
+    <VideoPlayer
+      className={'w-full rounded-md'}
+      src={'https://cache.shipixen.com/features/20-mobile-optimized.mp4'}
+      autoPlay={true}
+      controls={false}
+      loop={true}
+    />
+  </LandingProductTourContent>
+  <LandingProductTourContent value="feature-2">
+    <VideoPlayer
+      className={'w-full rounded-md'}
+      src={
+        'https://cache.shipixen.com/features/11-pricing-page-builder.mp4'
+      }
+      autoPlay={true}
+      controls={false}
+      loop={true}
+    />
+  </LandingProductTourContent>
+  <LandingProductTourContent value="feature-3">
+    <VideoPlayer
+      className={'w-full rounded-md'}
+      src={'https://cache.shipixen.com/features/21-run-locally.mp4'}
+      autoPlay={true}
+      controls={false}
+      loop={true}
+    />
+  </LandingProductTourContent>
+</LandingProductTourSection>
+```
+
+</ComponentExample>
+
+### With background glow
+<ComponentExample
+  previewComponent={
+    <LandingProductTourSection
+      title='Landing page in minutes'
+      description="Get 10x more done with Shadcn UI, React & Next.js, and say goodbye to repetitive tasks. You'll never go back."
+      defaultValue="feature-1"
+      withBackgroundGlow
+    >
+      <LandingProductTourList>
+        <LandingProductTourTrigger value="feature-1">
+          <p className="text-xl font-bold">
+            Automatic deployment to Vercel
+          </p>
+          <p>
+           Deploying the generated template to Vercel is as easy as clicking a button.
+          </p>
+        </LandingProductTourTrigger>
+
+        <LandingProductTourTrigger value="feature-2">
+          <p className="text-xl font-bold">
+            MDX blog, no server required
+          </p>
+          <p>
+            Shipixen comes with a fully featured MDX blog.
+          </p>
+        </LandingProductTourTrigger>
+
+        <LandingProductTourTrigger value="feature-3">
+          <p className="text-xl font-bold">
+            Customizable themes
+          </p>
+          <p>
+            Choose from more than 30+ beautifully designed themes or create your own.
+          </p>
+        </LandingProductTourTrigger>
+      </LandingProductTourList>
+      <LandingProductTourContent value="feature-1">
+        <WrappedVideoPlayer
+          className={'w-full rounded-md'}
+          src={'https://cache.shipixen.com/features/20-mobile-optimized.mp4'}
+          autoPlay={true}
+          controls={false}
+          loop={true}
+        />
+      </LandingProductTourContent>
+      <LandingProductTourContent value="feature-2">
+        <WrappedVideoPlayer
+          className={'w-full rounded-md'}
+          src={
+            'https://cache.shipixen.com/features/11-pricing-page-builder.mp4'
+          }
+          autoPlay={true}
+          controls={false}
+          loop={true}
+        />
+      </LandingProductTourContent>
+      <LandingProductTourContent value="feature-3">
+        <WrappedVideoPlayer
+          className={'w-full rounded-md'}
+          src={'https://cache.shipixen.com/features/21-run-locally.mp4'}
+          autoPlay={true}
+          controls={false}
+          loop={true}
+        />
+      </LandingProductTourContent>
+    </LandingProductTourSection>
+  }
+>
+
+```jsx
+import { LandingProductTourSection, LandingProductTourList, LandingProductTourTrigger, LandingProductTourContent } from '@/components/landing/LandingProductTour';
+import { VideoPlayer } from '@/components/shared/ui/VideoPlayer';
+
+<LandingProductTourSection
+  title='Landing page in minutes'
+  description="Get 10x more done with Shadcn UI, React & Next.js, and say goodbye to repetitive tasks. You'll never go back."
+  defaultValue="feature-1"
+  withBackgroundGlow
+>
+  <LandingProductTourList>
+    <LandingProductTourTrigger value="feature-1">
+      <p className="text-xl font-bold">
+        Automatic deployment to Vercel
+      </p>
+      <p>
+        Deploying the generated template to Vercel is as easy as clicking a button.
+      </p>
+    </LandingProductTourTrigger>
+
+    <LandingProductTourTrigger value="feature-2">
+      <p className="text-xl font-bold">
+        MDX blog, no server required
+      </p>
+      <p>
+        Shipixen comes with a fully featured MDX blog.
+      </p>
+    </LandingProductTourTrigger>
+
+    <LandingProductTourTrigger value="feature-3">
+      <p className="text-xl font-bold">
+        Customizable themes
+      </p>
+      <p>
+        Choose from more than 30+ beautifully designed themes or create your own.
+      </p>
+    </LandingProductTourTrigger>
+  </LandingProductTourList>
+  <LandingProductTourContent value="feature-1">
+    <VideoPlayer
+      className={'w-full rounded-md'}
+      src={'https://cache.shipixen.com/features/20-mobile-optimized.mp4'}
+      autoPlay={true}
+      controls={false}
+      loop={true}
+    />
+  </LandingProductTourContent>
+  <LandingProductTourContent value="feature-2">
+    <VideoPlayer
+      className={'w-full rounded-md'}
+      src={
+        'https://cache.shipixen.com/features/11-pricing-page-builder.mp4'
+      }
+      autoPlay={true}
+      controls={false}
+      loop={true}
+    />
+  </LandingProductTourContent>
+  <LandingProductTourContent value="feature-3">
+    <VideoPlayer
+      className={'w-full rounded-md'}
+      src={'https://cache.shipixen.com/features/21-run-locally.mp4'}
+      autoPlay={true}
+      controls={false}
+      loop={true}
+    />
+  </LandingProductTourContent>
+</LandingProductTourSection>
+```
+
+</ComponentExample>
+
+## API Reference
+
+| Prop Name | Prop Type | Required | Default |
+| --------- | --------- | -------- | ------- |
+| **title** <Tippy>Text content for the section's title.</Tippy> | `string` ǀ `React.ReactNode` | No | - |
+| **titleComponent** <Tippy>React node to render a custom title component.</Tippy> | `React.ReactNode` | No | - |
+| **description** <Tippy>Text content for the section's description.</Tippy> | `string` ǀ `React.ReactNode` | No | - |
+| **descriptionComponent** <Tippy>React node to render a custom description component.</Tippy> | `React.ReactNode` | No | - |
+| **withBackground** <Tippy>Determines whether the section has a background.</Tippy> | `boolean` | No | `false` |
+| **withBackgroundGlow** <Tippy>Determines whether the section has a glowing background effect.</Tippy> | `boolean` | No | `false` |
+| **variant** <Tippy>Specifies the variant of the background.</Tippy> | `'primary'` ǀ `'secondary'` | No | `'primary'` |
+| **backgroundGlowVariant** <Tippy>Specifies the variant of the glowing background effect.</Tippy> | `'primary'` ǀ `'secondary'` | No | `'primary'` |
