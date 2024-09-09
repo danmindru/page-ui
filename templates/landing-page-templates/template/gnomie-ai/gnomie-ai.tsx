@@ -78,39 +78,39 @@ export const GnomieAi = () => {
             <OneVideoCta />
           </Brick>
 
-          <Brick demo={DEMO_NAME} brick={'3-example-carousel'}>
+          <Brick demo={DEMO_NAME} brick={'2-example-carousel'}>
             <TwoExampleCarousel />
           </Brick>
 
-          <Brick demo={DEMO_NAME} brick={'4-product-tour'}>
+          <Brick demo={DEMO_NAME} brick={'3-product-tour'}>
             <ThreeProductTour />
           </Brick>
 
-          <Brick demo={DEMO_NAME} brick={'5-product-tour'}>
+          <Brick demo={DEMO_NAME} brick={'4-product-tour'}>
             <FourProductTour />
           </Brick>
 
-          <Brick demo={DEMO_NAME} brick={'6-feature-grid'}>
+          <Brick demo={DEMO_NAME} brick={'5-features-grid'}>
             <FiveFeatureGrid />
           </Brick>
 
-          <Brick demo={DEMO_NAME} brick={'7-example-carousel'}>
+          <Brick demo={DEMO_NAME} brick={'6-example-carousel'}>
             <SixExampleCarousel />
           </Brick>
 
-          <Brick demo={DEMO_NAME} brick={'8-testimonials'}>
+          <Brick demo={DEMO_NAME} brick={'7-testimonials'}>
             <SevenTestimonials />
           </Brick>
 
-          <Brick demo={DEMO_NAME} brick={'9-pricing'}>
+          <Brick demo={DEMO_NAME} brick={'8-pricing'}>
             <EightPricing />
           </Brick>
 
-          <Brick demo={DEMO_NAME} brick={'10-sale-cta'}>
+          <Brick demo={DEMO_NAME} brick={'9-sale-cta'}>
             <NineSaleCta />
           </Brick>
 
-          <Brick demo={DEMO_NAME} brick={'11-faq'}>
+          <Brick demo={DEMO_NAME} brick={'10-faq'}>
             <TenFaq />
           </Brick>
         </div>
