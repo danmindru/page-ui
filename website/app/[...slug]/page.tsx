@@ -82,6 +82,13 @@ export async function generateMetadata({
       description: post.summary,
       images: imageList,
     },
+    ...(post.canonicalUrl
+      ? {
+          alternates: {
+            canonical: post.canonicalUrl,
+          },
+        }
+      : {}),
   };
 }
 
