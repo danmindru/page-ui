@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { logger } from 'logger';
 import { useCallback, useEffect, useState } from 'react';
 
 export const useCopyBrickCode = ({ demo, brick }) => {
@@ -21,14 +20,12 @@ export const useCopyBrickCode = ({ demo, brick }) => {
         if (response.status === 200) {
           setFormattedCodeString(response.data.code);
         } else {
-          logger.error(response.data.message, { demo, brick });
           setErrorString('Oops! Something went wrong. Please try again.');
         }
 
         return response.data.code;
       } catch (error) {
         if (!axios.isCancel(error)) {
-          logger.error(error, { demo, brick });
           setErrorString(
             'There was an error fetching the code. Please try again.',
           );
@@ -41,22 +38,6 @@ export const useCopyBrickCode = ({ demo, brick }) => {
     },
     [demo, setFormattedCodeString, setLoading, setErrorString, brick],
   );
-
-  // useEffect(() => {
-  //   const controller = new AbortController();
-  //   const signal = controller.signal;
-
-  //   const getCodeAsync = async () => {
-  //     await getCode(signal);
-  //   };
-
-  //   getCodeAsync();
-
-  //   return () => {
-  //     // Cancel the request when the component unmounts
-  //     controller.abort();
-  //   };
-  // }, [demo, getCode]);
 
   return { formattedCodeString, loading, errorString, getCode };
 };
