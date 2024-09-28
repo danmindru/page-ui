@@ -36,7 +36,7 @@ export const ComponentExample = ({
 
       <TabsContent
         value="preview"
-        className="mt-0 w-full border-2 border-gray-200 border-opacity-60 dark:border-gray-900 border-t-none rounded-b-md overflow-hidden"
+        className="preview mt-0 w-full border-2 border-gray-200 border-opacity-60 dark:border-gray-900 border-t-none rounded-b-md overflow-hidden"
       >
         <Card className="rounded-none border-none shadow-none w-full">
           <CardContent className={cn('p-0 not-prose', fontSans)}>

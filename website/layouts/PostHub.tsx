@@ -13,7 +13,7 @@ import { TOC } from '@/components/blog/Toc';
 import { ScrollRestoration } from '@/lib/ScrollRestoration';
 import { LandingPageComponentsNav } from '@/components/blog/LandingPageComponentsNav';
 import { TooltipProvider } from '@/components/shared/ui/tooltip';
-import { ThemeSelector } from '@/components/bricks/theme/theme-selector';
+import { ThemeAndFontSelector } from '@/components/bricks/theme/theme-and-font-selector';
 import Header from '@/components/shared/Header';
 import { InstallBlurb } from '@/components/blog/InstallBlurb';
 
@@ -176,10 +176,7 @@ export default function PostHubLayout({
               </div>
             </header>
 
-            <div
-              className="prose max-w-none px-6 pb-8 pt-10 lg:px-0 dark:prose-invert overflow-hidden"
-              id="preview"
-            >
+            <div className="prose max-w-none px-6 pb-8 pt-10 lg:px-0 dark:prose-invert overflow-hidden">
               {children}
             </div>
           </div>
@@ -278,10 +275,17 @@ export default function PostHubLayout({
 
         <aside className="relative xl:sticky top-0 p-6 w-full xl:max-w-[15rem] xl:max-h-screen flex-col items-center overflow-auto pb-12 lg:max-w-xl">
           {showThemeSelector ? (
-            <ThemeSelector showCopyCodeButton={false} className="w-28" />
+            <div className="mb-4">
+              <p className="text-sm text-muted-foreground mb-1">Change theme</p>
+
+              <ThemeAndFontSelector
+                showChangeThemeLabel={false}
+                className="w-16 h-auto flex-grow-0 hidden lg:flex"
+              />
+            </div>
           ) : null}
 
-          <h2 className="mt-4 font-semibold text-sm">Jump to section</h2>
+          <h2 className="mt-8 font-semibold text-sm">Jump to section</h2>
           <TOC
             toc={toc}
             className={cn('toc-list w-full container-wide p-0 mt-4')}

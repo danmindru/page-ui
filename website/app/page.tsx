@@ -287,7 +287,7 @@ export default function Home() {
         description="Page UI is a set of landing page components & templates that you can copy & paste into you codebase. Made for React & built on top of TailwindCSS."
         textPosition="left"
         withBackground
-        videoSrc="https://cache.shipixen.com/page-ui%2F1-launch-templates.mp4"
+        videoSrc="https://cache.shipixen.com/page-ui/36-landing-page-fonts-templates-and-themes.mp4"
         autoPlay={true}
         loop
         leadingComponent={
@@ -496,7 +496,7 @@ export default function Home() {
             </p>
           </>
         }
-        videoSrc="https://cache.shipixen.com/page-ui%2F3-theme-docs.mp4"
+        videoSrc="https://cache.shipixen.com/page-ui/37-new-landing-page-documentation.mp4"
         withBackground
         withBackgroundGlow
         variant="secondary"

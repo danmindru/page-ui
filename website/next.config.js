@@ -6,13 +6,13 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 
 // You might need to insert additional domains in script-src if you are using external services
 const ContentSecurityPolicy = `
-  default-src 'self';
+  default-src 'self' *.googleapis.com *.gstatic.com;
   script-src 'self' 'unsafe-eval' 'unsafe-inline' *.vercel-analytics.com *.vercel-scripts.com *.cloudflareinsights.com;
-  style-src 'self' 'unsafe-inline';
+  style-src 'self' 'unsafe-inline' *.googleapis.com *.gstatic.com;
   img-src * blob: data:;
   media-src *.s3.amazonaws.com *.shipixen.com;
   connect-src *;
-  font-src 'self';
+  font-src 'self' *.googleapis.com *.gstatic.com;
 `;
 
 const securityHeaders = [

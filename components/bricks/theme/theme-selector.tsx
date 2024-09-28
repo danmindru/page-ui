@@ -6,7 +6,7 @@ import {
   PopoverTrigger,
 } from '@/components/shared/ui/popover';
 import { useThemeSwitch } from '@/components/shared/useThemeSwitch';
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import chroma from 'chroma-js';
 import { Button } from '@/components/shared/ui/button';
 import {
@@ -27,30 +27,9 @@ import {
 } from '@/components/shared/ui/dialog';
 import { CodeEditor } from '@/components/shared/CodeEditor';
 import { CopyButton } from '@/components/shared/ui/copy-button';
-import { DEFAULT_COLORS } from '@/components/bricks/theme/default-colors';
-import { getShipixenThemeJs } from '@/components/bricks/theme/get-theme-js-file';
+import { getShipixenThemeJs } from '@/components/bricks/theme/code-stringifiers/get-theme-js-file';
 import { useThemeStore } from '@/components/bricks/state/theme-state';
-
-const getStyleString = (
-  colorThemeValues: Omit<
-    typeof DEFAULT_COLORS,
-    'primaryTailwindName' | 'secondaryTailwindName'
-  >,
-) => {
-  const style: string[] = [];
-
-  Object.keys(colorThemeValues).map((variant) => {
-    return Object.keys(colorThemeValues[variant]).map((color) => {
-      const value = colorThemeValues[variant][color];
-      const rgbValue = chroma(value).rgb().join(',');
-
-      style.push(`--${variant}-${color}-hex: ${value}`);
-      style.push(`--${variant}-${color}: ${rgbValue}`);
-    });
-  });
-
-  return style.join(';');
-};
+import { getStyleString } from '@/components/bricks/theme/code-stringifiers/get-style-string';
 
 export const ThemeSelector = ({
   className,
@@ -65,6 +44,9 @@ export const ThemeSelector = ({
 }) => {
   const stateThemeObject = useThemeStore((state) => state.themeObject);
   const stateSetThemeObject = useThemeStore((state) => state.setThemeObject);
+  const stateFonts = useThemeStore((state) => state.fonts);
+  const stateSetFonts = useThemeStore((state) => state.setFonts);
+  const { default: fontFamilyDefault, display: fontFamilyDisplay } = stateFonts;
 
   const { currentTheme } = useThemeSwitch();
   const isDarkMode = currentTheme === 'dark';
@@ -161,6 +143,27 @@ export const ThemeSelector = ({
 
   const formattedCodeString = getShipixenThemeJs(theme);
 
+  // Create font URL for Google Fonts
+  const fonts = useMemo(() => {
+    // replace space with '+'
+    const headingFont = fontFamilyDefault.name.replace(/ /g, '+');
+    const displayFont = fontFamilyDisplay.name.replace(/ /g, '+');
+
+    const headingFontWeights = fontFamilyDefault.variableFont
+      ? `:wght@400..600`
+      : `:wght@${(fontFamilyDefault.weights || [400, 600]).join(';')}`;
+    const displayFontWeights =
+      fontFamilyDisplay.variableFont || !fontFamilyDisplay.weights
+        ? `:wght@400..600`
+        : `:wght@${(fontFamilyDisplay.weights || [400, 600]).join(';')}`;
+
+    return {
+      fontUrl: `https://fonts.googleapis.com/css2?family=${headingFont}${headingFontWeights}&family=${displayFont}${displayFontWeights}&display=swap`,
+      bodyFont: fontFamilyDefault,
+      displayFont: fontFamilyDisplay,
+    };
+  }, [fontFamilyDefault, fontFamilyDisplay]);
+
   useEffect(() => {
     setIsClient(true);
   }, []);
@@ -168,8 +171,17 @@ export const ThemeSelector = ({
   return (
     <>
       {isClient ? (
-        <style>
-          {`
+        <>
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossOrigin="anonymous"
+          />
+          <link href={fonts.fontUrl} rel="stylesheet" />
+
+          <style>
+            {`
 
           .fancy-glass, .fancy-glass-contrast {
             --glass-color: ${chroma(theme.secondary.main).rgb().join(',')}
@@ -199,7 +211,17 @@ export const ThemeSelector = ({
             border-color: var(--primary-main)!important;
           }
 
+          /* Fonts */
+          #preview:not(.without-preview-styles) {
+            --font-space-default: '${stateFonts.default.name}', sans-serif;
+            --font-space-display: '${stateFonts.display.name}', sans-serif;
+          }
 
+          #preview .font-sans {
+            font-family: var(--font-space-default);
+          }
+
+          /* Tailwind Overrides */
           ${
             !isDarkMode
               ? `
@@ -247,7 +269,8 @@ export const ThemeSelector = ({
              `
           }
         `}
-        </style>
+          </style>
+        </>
       ) : null}
 
       <div
