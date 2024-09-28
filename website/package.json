@@ -60,7 +60,7 @@
     "framer-motion": "^10.16.4",
     "github-slugger": "^1.4.0",
     "image-size": "^1.0.0",
-    "lucide-react": "^0.279.0",
+    "lucide-react": "^0.400.0",
     "mime-types": "^2.1.35",
     "monaco-editor": "^0.45.0",
     "next": "14.2.2",
