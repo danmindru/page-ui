@@ -54,6 +54,10 @@ const Header = ({ className }: { className?: string }) => {
         </div>
         <div className="flex items-center leading-5 gap-4 sm:gap-6">
           {headerNavLinks.map((link) => {
+            const hiddenOnSmallScreen =
+              link.href.includes('component-examples') ||
+              link.href.includes('templates');
+
             if (link.href === 'https://shipixen.com') {
               return (
                 <a
@@ -74,7 +78,10 @@ const Header = ({ className }: { className?: string }) => {
               <ActiveLink
                 key={link.title}
                 href={link.href}
-                className="nav-link hidden sm:block"
+                className={cn(
+                  'nav-link',
+                  hiddenOnSmallScreen ? 'hidden md:flex' : 'hidden sm:block',
+                )}
                 activeClassName="nav-link-active"
               >
                 <span>{link.title}</span>

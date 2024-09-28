@@ -94,7 +94,7 @@ export default function ListLayoutWithTags({
 
   return (
     <>
-      <SectionContainer type="ultrawide" className="fancy-overlay">
+      <SectionContainer type="ultrawide" className="fancy-overlay px-4 md:px-6">
         <div className="flex sm:gap-12">
           <div className="w-full">
             <div className="pb-6">

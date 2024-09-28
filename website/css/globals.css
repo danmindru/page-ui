@@ -453,6 +453,11 @@ input:-webkit-autofill:focus {
   background: rgba(240, 240, 240, 0.1);
 }
 
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
 /**
  * Set select colors to primary and respect dark mode
  */

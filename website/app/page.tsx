@@ -16,8 +16,7 @@ import { LandingBandSection } from '@/components/landing/LandingBand';
 import { LandingTestimonialReadMoreWrapper } from '@/components/landing/testimonial/LandingTestimonialReadMoreWrapper';
 import { LandingFeatureList } from '@/components/landing/feature/LandingFeatureList';
 import { LandingFaqCollapsibleSection } from '@/components/landing/LandingFaqCollapsible';
-import { LandingSocialProofBand } from '@/components/landing/social-proof/LandingSocialProofBand';
-import { LandingSocialProofBandItem } from '@/components/landing/social-proof/LandingSocialProofBandItem';
+import { TemplateListItem } from '@/components/shared/TemplateListItem';
 
 import {
   BookOpenCheckIcon,
@@ -29,11 +28,13 @@ import {
   MoonIcon,
   PaintbrushIcon,
   SparklesIcon,
+  SquareArrowOutUpRightIcon,
   VenetianMaskIcon,
 } from 'lucide-react';
 import { LandingProductVideoFeature } from '@/components/landing/LandingProductVideoFeature';
 import Image from '@/components/shared/Image';
 import { CtaButton } from '@/components/shared/ui/cta-button';
+import Link from 'next/link';
 
 const testimonialItems = [
   // {
@@ -396,54 +397,87 @@ export default function Home() {
         </p>
       </LandingProductVideoFeature>
 
-      <div className="w-full relative flex items-center justify-end overflow-hidden bg-primary-100/20 dark:bg-primary-900/10">
-        <LandingProductFeature
-          className="z-10"
-          descriptionComponent={
-            <div className="md:bg-white/80 dark:md:bg-black/80 md:backdrop-blur-xl md:rounded-md md:shadow-md md:p-6 xl:p-8 max-w-lg">
-              <h2 className="text-4xl font-semibold">Inspired by the best</h2>
-              <p>
-                We've analyzed 10s of landing pages that convert and distilled
-                them into a set of components that you can use in your projects.
-              </p>
-              <LandingProductFeatureKeyPoints
-                keyPoints={[
-                  {
-                    title: 'Social proof',
-                    description:
-                      'Increase trust with testimonials, reviews, and ratings.',
-                  },
-                  {
-                    title: 'Feature highlights',
-                    description:
-                      'Show off your product with beautiful feature sections.',
-                  },
-                  {
-                    title: 'Dark mode & themes',
-                    description:
-                      'Never ship too late & choose from tons of themes to match your brand.',
-                  },
-                ]}
-              />
+      <section className="mt-12 w-full bg-white dark:bg-black/70 flex items-center justify-center p-4 md:p-6 gap-6">
+        <section className={'ultrawide-container gap-6'}>
+          <div className="flex flex-col max-w-3xl">
+            <h2 className="text-2xl md:text-4xl leading-snug font-bold">
+              Inspired by the best
+            </h2>
 
-              <Button asChild className="mt-6">
-                <a href="/docs/installation">Get Started</a>
-              </Button>
+            <p className="text-sm my-4 max-w-2xl">
+              Designing a website is hard. Making a sale is hard. We've spent
+              months painstakingly analyzing the most successful SaaS landing
+              pages to create{' '}
+              <span className="fancy-text-purple font-semibold">
+                templates that convert
+              </span>{' '}
+              ― copy & paste any section in your app.
+            </p>
 
-              <p className="text-sm mt-4">
-                Compatible with React, Next.js, and more.
-              </p>
-            </div>
+            <a
+              className="relative z-10 flex items-center gap-2 text-purple-600 dark:text-purple-300 transition-all hover:text-purple-800 dark:hover:text-purple-200"
+              href="/demo/landing-page-templates"
+            >
+              <SquareArrowOutUpRightIcon className="w-4 h-4" />
+              <span className="text-sm">See all templates</span>
+            </a>
+          </div>
+        </section>
+      </section>
+
+      <div className="w-full relative flex flex-col items-center gap-12 py-12">
+        <section
+          className={'ultrawide-container flex flex-col gap-16 ml-8 md:ml-0'}
+        >
+          <TemplateListItem
+            name="Gnomie AI"
+            description="A landing page template for a B2C AI SaaS app, featuring carousel examples and product tours."
+            imageUrls={[
+              '/static/images/shipixen/templates/demo/gnomie-1.webp',
+              '/static/images/shipixen/templates/demo/gnomie-2.webp',
+              '/static/images/shipixen/templates/demo/gnomie-3.webp',
+            ]}
+            tags={['AI', 'SaaS', 'carousel', 'product tour', 'B2C']}
+            href="https://shipixen.com/demo/landing-page-templates/template/gnomie-ai"
+            isNew
+          />
+
+          <TemplateListItem
+            name="Specta"
+            description="A landing page template for a creator platform, featuring a marquee section and a showcase section."
+            imageUrls={[
+              '/static/images/shipixen/templates/demo/specta-1.jpg',
+              '/static/images/shipixen/templates/demo/specta-2.jpg',
+              '/static/images/shipixen/templates/demo/specta-3.jpg',
+            ]}
+            tags={['creator', 'marquee', 'SaaS', 'video', 'playful']}
+            href="https://shipixen.com/demo/landing-page-templates/template/specta"
+          />
+
+          <TemplateListItem
+            name="Minimum Via"
+            description="A landing page template for a minimalistic product, or productized agency. Uses text and minimal colors to create a clean look."
+            imageUrls={[
+              '/static/images/shipixen/templates/demo/minimum-via-1.jpg',
+              '/static/images/shipixen/templates/demo/minimum-via-2.jpg',
+              '/static/images/shipixen/templates/demo/minimum-via-3.jpg',
+            ]}
+            tags={['text', 'agency', 'SaaS', 'minimal', 'clean', 'simple']}
+            href="https://shipixen.com/demo/landing-page-templates/template/minimum-via"
+          />
+        </section>
+
+        <div
+          className={
+            'pointer-events-none z-20 absolute bottom-0 left-0 w-full h-2/5 bg-gradient-to-t from-gray-100 via-gray-100/40 dark:from-gray-950 dark:via-gray-950/60'
           }
         />
 
-        <Image
-          src="/static/images/template-collection.webp"
-          alt="Page UI template collection examples"
-          width={2000}
-          height={2000}
-          className="hidden md:flex absolute w-screen max-w-[800px]"
-        />
+        <div className="relative z-30">
+          <Button asChild>
+            <Link href="/demo/landing-page-templates">See all templates</Link>
+          </Button>
+        </div>
       </div>
 
       <LandingProductVideoFeature
@@ -451,7 +485,7 @@ export default function Home() {
         descriptionComponent={
           <>
             <p>
-              Page UI documentation has houndreds of examples that you can copy
+              Page UI documentation has hundreds of examples that you can copy
               and modify.
               <br />
               Start from a blank slate to create, start by example to innovate.
@@ -503,74 +537,6 @@ export default function Home() {
         backgroundGlowVariant="secondary"
         autoPlay={false}
       />
-
-      {/* <LandingProductFeature
-        title="Technical Excellence"
-        descriptionComponent={
-          <>
-            <p>
-              Specifically made for React and integrated with Shadcn UI, our
-              components strive for technical superiority. Expect stable code,
-              reliable performance, and brilliant compatibility. No more
-              worrying about inconsistent behavior or compatibility issues.
-            </p>
-
-            <Button asChild variant="outlinePrimary">
-              <a href="/read-more">Read more</a>
-            </Button>
-
-            <p className="text-sm">First month is on us.</p>
-          </>
-        }
-        imageSrc="/static/images/backdrop-5.webp"
-        imageAlt="Screenshot of the product"
-        imagePosition="left"
-        imagePerspective="none"
-        variant="secondary"
-      /> */}
-
-      {/* <LandingBandSection
-        title="4.9/5 stars"
-        description="Our customers love our product."
-        supportingComponent={
-          <LandingSocialProof
-            showRating
-            numberOfUsers={99}
-            avatarItems={[
-              {
-                imageSrc: 'https://picsum.photos/id/64/100/100',
-                name: 'John Doe',
-              },
-              {
-                imageSrc: 'https://picsum.photos/id/65/100/100',
-                name: 'Jane Doe',
-              },
-              {
-                imageSrc: 'https://picsum.photos/id/669/100/100',
-                name: 'Alice Doe',
-              },
-            ]}
-          />
-        }
-      /> */}
-
-      {/* <LandingProductFeature
-        title="Page Master"
-        descriptionComponent={
-          <>
-            Design with purpose, code with simplicity
-            <Button asChild variant="outlinePrimary">
-              <a href="/read-more">Read more</a>
-            </Button>
-          </>
-        }
-        withBackground
-        variant="secondary"
-        imageSrc="/static/images/product-sample.webp"
-        imageAlt="Screenshot of the product"
-        imagePosition="center"
-        textPosition="center"
-      /> */}
 
       <LandingSaleCtaSection
         title="Ship that landing page today"
