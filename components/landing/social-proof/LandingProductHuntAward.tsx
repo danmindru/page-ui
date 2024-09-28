@@ -84,7 +84,7 @@ export const LandingProductHuntAward = ({
 
         <div
           className={clsx(
-            '-mx-1 h-full flex flex-col justify-between items-center font-sans',
+            '-mx-1 h-full flex flex-col justify-between items-center',
             textContainerClassName,
             size === 'default' && 'py-0.5',
           )}
