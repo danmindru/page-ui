@@ -37,8 +37,10 @@ export const getNextjsFontImportString = (fonts: {
 }) => {
   const fontImportNames =
     fonts.default.name === fonts.display.name
-      ? fonts.default.name
-      : [fonts.default.name, fonts.display.name].join(', ');
+      ? getFontName(fonts.default.name)
+      : [getFontName(fonts.default.name), getFontName(fonts.display.name)].join(
+          ', ',
+        );
 
   return `import { ${fontImportNames} } from 'next/font/google';`;
 };

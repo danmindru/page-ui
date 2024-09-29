@@ -261,7 +261,10 @@ export const ThemeAndFontSelector = ({
     ];
 
     return (
-      <div className="relative flex flex-wrap w-full h-full items-center justify-center">
+      <div
+        aria-label={theme.name}
+        className="relative flex flex-wrap w-full h-full items-center justify-center"
+      >
         {isClient ? (
           <>
             {selected && (
@@ -277,6 +280,11 @@ export const ThemeAndFontSelector = ({
             <Loader2 className="h-4 w-4 animate-spin" />
           </div>
         )}
+
+        <div
+          aria-hidden
+          className="hidden group-focus:flex w-full h-full absolute border-2 rounded-md border-primary-500 dark:border-primary-500 z-10"
+        ></div>
       </div>
     );
   };
@@ -501,7 +509,7 @@ export const ThemeAndFontSelector = ({
                         onClick={() => {
                           stateSetFonts(fontPairing);
                         }}
-                        className="flex w-full h-full items-center justify-center bg-gray-500/10 border border-solid border-transparent hover:border-gray-500/20"
+                        className="flex w-full h-full items-center justify-center bg-gray-500/10 border border-solid border-transparent hover:border-gray-500/20 focus-visible:ring-1 focus-visible:ring-offset-0 focus-visible:ring-inset"
                         variant="ghost"
                       >
                         <img
@@ -539,7 +547,7 @@ export const ThemeAndFontSelector = ({
                     onClick={() => pickColorTheme(theme, index)}
                     variant="unstyled"
                     size="unsized"
-                    className="relative flex flex-col items-center justify-between hover:opacity-80"
+                    className="relative flex flex-col items-center justify-between hover:opacity-80 group"
                   >
                     {mapColors(
                       theme,
@@ -566,7 +574,7 @@ export const ThemeAndFontSelector = ({
                         onClick={() => pickColorTheme(theme, index)}
                         variant="unstyled"
                         size="unsized"
-                        className="relative flex flex-col items-center justify-between hover:opacity-80"
+                        className="relative flex flex-col items-center justify-between hover:opacity-80 group"
                       >
                         {mapColors(
                           theme,
@@ -584,7 +592,7 @@ export const ThemeAndFontSelector = ({
                 onClick={() => setShowMoreThemes(!showMoreThemes)}
                 variant="ghost"
                 className={cn(
-                  'mx-4 w-full flex items-center justify-center gap-1 mt-0 hover:bg-gray-500/10 h-6 rounded-md',
+                  'mt-1 mx-4 w-full flex items-center justify-center gap-1 hover:bg-gray-500/10 h-6 rounded-md',
                 )}
               >
                 {showMoreThemes ? (
