@@ -283,7 +283,7 @@ export const ThemeAndFontSelector = ({
 
         <div
           aria-hidden
-          className="hidden group-focus:flex w-full h-full absolute border-2 rounded-md border-primary-500 dark:border-primary-500 z-10"
+          className="hidden group-focus-visible:flex w-full h-full absolute border-2 rounded-md border-primary-500 dark:border-primary-500 z-10"
         ></div>
       </div>
     );
