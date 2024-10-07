@@ -2,21 +2,6 @@
 
 import { cn } from '@/lib/utils';
 import { useEffect } from 'react';
-import { Poppins, Inter } from 'next/font/google';
-
-const baseFont = Inter({
-  subsets: ['latin'],
-  display: 'swap',
-  weight: 'variable',
-  variable: '--font-space-default',
-});
-
-const displayFont = Poppins({
-  subsets: ['latin'],
-  display: 'swap',
-  weight: '500',
-  variable: '--font-space-display',
-});
 
 import TemplateHeader from '@/app/demo/landing-page-templates/template/template-header';
 
@@ -42,9 +27,21 @@ const DEMO_NAME = 'screenshot-two';
 
 export const ScreenshotTwo = () => {
   const setThemeByIndex = useThemeStore((state) => state.setThemeByIndex);
+  const setFonts = useThemeStore((state) => state.setFonts);
   const { setCurrentTheme } = useThemeSwitch();
 
   useEffect(() => {
+    setFonts({
+      display: {
+        name: 'DM Serif Display',
+        variableFont: false,
+        weights: [400],
+      },
+      default: {
+        name: 'DM Sans',
+        variableFont: true,
+      },
+    });
     setThemeByIndex(10);
     setCurrentTheme('light');
   }, []);
@@ -52,12 +49,7 @@ export const ScreenshotTwo = () => {
   return (
     <div className="w-full flex flex-col items-center">
       <BrickProvider>
-        <div
-          className={cn(
-            'w-full flex flex-col items-center',
-            `${baseFont.className} ${displayFont.variable} scroll-smooth`,
-          )}
-        >
+        <div className={cn('w-full flex flex-col items-center scroll-smooth')}>
           <TemplateHeader
             className="mb-0 lg:mb-0 pointer-events-none"
             logo={<Logo className="h-10 w-auto" />}

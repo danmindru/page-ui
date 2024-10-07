@@ -2,27 +2,6 @@
 
 import { cn } from '@/lib/utils';
 import { useEffect } from 'react';
-import {
-  Inter,
-  Merriweather,
-  Nunito_Sans,
-  Poppins,
-  Syne,
-} from 'next/font/google';
-
-const baseFont = Nunito_Sans({
-  subsets: ['latin'],
-  display: 'swap',
-  weight: 'variable',
-  variable: '--font-space-default',
-});
-
-const displayFont = Poppins({
-  subsets: ['latin'],
-  display: 'swap',
-  weight: ['700'],
-  variable: '--font-space-display',
-});
 
 import { useThemeStore } from '@/components/bricks/state/theme-state';
 import { useThemeSwitch } from '@/components/shared/useThemeSwitch';
@@ -48,9 +27,21 @@ const DEMO_NAME = 'gnomie-ai';
 
 export const GnomieAi = () => {
   const setThemeByIndex = useThemeStore((state) => state.setThemeByIndex);
+  const setFonts = useThemeStore((state) => state.setFonts);
   const { setCurrentTheme } = useThemeSwitch();
 
   useEffect(() => {
+    setFonts({
+      display: {
+        name: 'Montserrat',
+        variableFont: true,
+      },
+      default: {
+        name: 'Hind',
+        variableFont: false,
+        weights: [400, 600],
+      },
+    });
     setThemeByIndex(34);
     setCurrentTheme('light');
   }, []);
@@ -58,12 +49,7 @@ export const GnomieAi = () => {
   return (
     <div className="w-full flex flex-col items-center">
       <BrickProvider>
-        <div
-          className={cn(
-            'w-full flex flex-col items-center',
-            `${baseFont.variable} ${displayFont.variable} scroll-smooth`,
-          )}
-        >
+        <div className={cn('w-full flex flex-col items-center scroll-smooth')}>
           <TemplateHeader
             className="absolute mb-0 lg:mb-0 pointer-events-none"
             logo={<Logo className="h-9 w-auto" />}

@@ -2,21 +2,6 @@
 
 import { cn } from '@/lib/utils';
 import { useEffect } from 'react';
-import { Roboto_Slab, Merriweather } from 'next/font/google';
-
-const baseFont = Roboto_Slab({
-  subsets: ['latin'],
-  display: 'swap',
-  weight: 'variable',
-  variable: '--font-space-default',
-});
-
-const displayFont = Merriweather({
-  subsets: ['latin'],
-  display: 'swap',
-  weight: ['300', '400', '700'],
-  variable: '--font-space-display',
-});
 
 import TemplateHeader from '@/app/demo/landing-page-templates/template/template-header';
 
@@ -42,9 +27,22 @@ const DEMO_NAME = 'minimum-via';
 
 export const MinimumVia = () => {
   const setThemeByIndex = useThemeStore((state) => state.setThemeByIndex);
+  const setFonts = useThemeStore((state) => state.setFonts);
   const { setCurrentTheme } = useThemeSwitch();
 
   useEffect(() => {
+    setFonts({
+      default: {
+        name: 'Roboto Slab',
+        variableFont: true,
+      },
+
+      display: {
+        name: 'Roboto Serif',
+        variableFont: false,
+        weights: [300, 400, 700],
+      },
+    });
     setThemeByIndex(32);
     setCurrentTheme('light');
   }, []);
@@ -52,12 +50,7 @@ export const MinimumVia = () => {
   return (
     <div className={cn('w-full flex flex-col items-center')}>
       <BrickProvider>
-        <div
-          className={cn(
-            'w-full flex flex-col items-center',
-            `${baseFont.className} ${displayFont.variable} scroll-smooth`,
-          )}
-        >
+        <div className={cn('w-full flex flex-col items-center scroll-smooth')}>
           <TemplateHeader
             hideMenuItems
             className="mb-0 lg:mb-0 pointer-events-none"

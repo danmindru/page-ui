@@ -4,22 +4,6 @@ import { useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import TemplateHeader from '@/app/demo/landing-page-templates/template/template-header';
 
-import { Source_Sans_3, Montserrat } from 'next/font/google';
-
-const baseFont = Source_Sans_3({
-  subsets: ['latin'],
-  display: 'swap',
-  weight: '400',
-  variable: '--font-space-default',
-});
-
-const displayFont = Montserrat({
-  subsets: ['latin'],
-  display: 'swap',
-  weight: ['300', '400', '500', '700'],
-  variable: '--font-space-display',
-});
-
 import { BrickProvider } from '@/components/bricks/brick-provider';
 import { Brick } from '@/components/bricks/brick';
 
@@ -44,9 +28,21 @@ const DEMO_NAME = 'front-centre';
 
 export const FrontCentre = () => {
   const setThemeByIndex = useThemeStore((state) => state.setThemeByIndex);
+  const setFonts = useThemeStore((state) => state.setFonts);
   const { setCurrentTheme } = useThemeSwitch();
 
   useEffect(() => {
+    setFonts({
+      display: {
+        name: 'Roboto',
+        variableFont: false,
+        weights: [400, 700],
+      },
+      default: {
+        name: 'Roboto Mono',
+        variableFont: true,
+      },
+    });
     setThemeByIndex(26);
     setCurrentTheme('light');
   }, []);
@@ -54,12 +50,7 @@ export const FrontCentre = () => {
   return (
     <div className="w-full flex flex-col items-center">
       <BrickProvider>
-        <div
-          className={cn(
-            'w-full flex flex-col items-center',
-            `${baseFont.className} ${displayFont.variable} scroll-smooth`,
-          )}
-        >
+        <div className={cn('w-full flex flex-col items-center  scroll-smooth')}>
           <Brick demo={DEMO_NAME} brick={'1-social-proof-band'}>
             <OneSocialProofBand />
           </Brick>

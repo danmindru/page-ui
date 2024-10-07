@@ -135,7 +135,7 @@ export default function Component() {
     <>
       <LandingPrimaryVideoCtaSection
         title="Beautiful Garden Designs in Minutes"
-        description="AI-powered garden design and landscaping. Tailored for your region."
+        description="AI-powered garden design and landscaping. Tailored for your region. No design skills required."
         autoPlay
         controls={false}
         textPosition="center"

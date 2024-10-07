@@ -2,21 +2,6 @@
 
 import { cn } from '@/lib/utils';
 import { useEffect } from 'react';
-import { Inter, Syne } from 'next/font/google';
-
-const baseFont = Inter({
-  subsets: ['latin'],
-  display: 'swap',
-  weight: 'variable',
-  variable: '--font-space-default',
-});
-
-const displayFont = Syne({
-  subsets: ['latin'],
-  display: 'swap',
-  weight: ['600'],
-  variable: '--font-space-display',
-});
 
 import { useThemeStore } from '@/components/bricks/state/theme-state';
 import { useThemeSwitch } from '@/components/shared/useThemeSwitch';
@@ -41,9 +26,21 @@ const DEMO_NAME = 'specta';
 
 export const Specta = () => {
   const setThemeByIndex = useThemeStore((state) => state.setThemeByIndex);
+  const setFonts = useThemeStore((state) => state.setFonts);
   const { setCurrentTheme } = useThemeSwitch();
 
   useEffect(() => {
+    setFonts({
+      default: {
+        name: 'Inter',
+        variableFont: true,
+      },
+
+      display: {
+        name: 'Syne',
+        variableFont: true,
+      },
+    });
     setThemeByIndex(18);
     setCurrentTheme('dark');
   }, []);
@@ -51,12 +48,7 @@ export const Specta = () => {
   return (
     <div className="w-full flex flex-col items-center">
       <BrickProvider>
-        <div
-          className={cn(
-            'w-full flex flex-col items-center',
-            `${baseFont.variable} ${displayFont.variable} scroll-smooth`,
-          )}
-        >
+        <div className={cn('w-full flex flex-col items-center scroll-smooth')}>
           <TemplateHeader
             className="absolute mb-0 lg:mb-0 pointer-events-none"
             logo={<Logo className="h-9 w-auto" />}

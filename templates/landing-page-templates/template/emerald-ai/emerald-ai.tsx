@@ -3,22 +3,6 @@
 import { useEffect } from 'react';
 import { cn } from '@/lib/utils';
 
-import { Inter, IBM_Plex_Sans } from 'next/font/google';
-
-const baseFont = Inter({
-  subsets: ['latin'],
-  display: 'swap',
-  weight: 'variable',
-  variable: '--font-space-default',
-});
-
-const displayFont = IBM_Plex_Sans({
-  subsets: ['latin'],
-  display: 'swap',
-  weight: '500',
-  variable: '--font-space-display',
-});
-
 import TemplateHeader from '@/app/demo/landing-page-templates/template/template-header';
 
 import { BrickProvider } from '@/components/bricks/brick-provider';
@@ -46,9 +30,20 @@ const DEMO_NAME = 'emerald-ai';
 
 export const EmeraldAi = () => {
   const setThemeByIndex = useThemeStore((state) => state.setThemeByIndex);
+  const setFonts = useThemeStore((state) => state.setFonts);
   const { setCurrentTheme } = useThemeSwitch();
 
   useEffect(() => {
+    setFonts({
+      display: {
+        name: 'Rubik',
+        variableFont: true,
+      },
+      default: {
+        name: 'Roboto Serif',
+        variableFont: true,
+      },
+    });
     setThemeByIndex(14);
     setCurrentTheme('dark');
   }, []);
@@ -56,12 +51,7 @@ export const EmeraldAi = () => {
   return (
     <div className="w-full flex flex-col items-center">
       <BrickProvider>
-        <div
-          className={cn(
-            'w-full flex flex-col items-center',
-            `${baseFont.className} ${displayFont.variable} scroll-smooth`,
-          )}
-        >
+        <div className={cn('w-full flex flex-col items-center scroll-smooth')}>
           <Brick demo={DEMO_NAME} brick={'1-social-proof-band'}>
             <OneSocialProofBand />
           </Brick>
