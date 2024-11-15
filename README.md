@@ -5,11 +5,9 @@
 **Landing page components & templates that you can copy 📋 & paste 🍝**<br/>
 [pageui.dev](https://pageui.dev)
 
-![ogImg](https://github.com/danmindru/page-ui/assets/1515742/f750b862-360e-467d-b00b-f3435fcb1ef9)
-
-A collection of templates, components and examples to create beautiful,
+A collection of **free templates**, components and examples to create beautiful,
 high-converting landing pages with React and Next.js. Open source & themeable
-with Tailwind CSS, similar to [Shadcn UI](https://ui.shadcn.com/).
+with Tailwind CSS. Inspired by [Shadcn UI](https://ui.shadcn.com/).
 
 Quick links:
 - [📀 Installation](https://pageui.shipixen.com/docs/installation)
@@ -17,6 +15,15 @@ Quick links:
 - [👩‍💻 A ton of demos](https://shipixen.com/demo/landing-page-component-examples)
 
 [Read more](https://pageui.dev/docs/introduction) about Page UI.
+
+## 🎨 Templates
+
+[![Specta - A landing page template for a creator platform, featuring a marquee section and a showcase section](https://github.com/user-attachments/assets/e2cc026a-70eb-4b07-a20a-3b2128b90056)](https://shipixen.com/demo/landing-page-templates/template/specta)
+[![Gnomie AI - A landing page template for a B2C AI SaaS app, featuring carousel examples and product tours.](https://github.com/user-attachments/assets/a20b5c40-1955-48c4-b5f0-b8e3f47d3e9f)](https://shipixen.com/demo/landing-page-templates/template/gnomie-ai)
+[![Minimum Via - A landing page template for a minimalistic product, or productized agency. Uses text and minimal colors to create a clean look.](https://github.com/user-attachments/assets/b654b414-d1c8-492f-92c6-9c798e28a207)](https://shipixen.com/demo/landing-page-templates/template/minimum-via)
+[![ScreenshotTwo - A landing page template for a developer tool, featuring inline testimonials and a two-column layout with screenshots.](https://github.com/user-attachments/assets/6a778633-14de-455c-b5bf-8163929057ff)](https://shipixen.com/demo/landing-page-templates/template/screenshot-two)
+
+[See all templates 👀](https://shipixen.com/demo/landing-page-templates) <br/>
 
 ## 💻 Installation (Next.js)
 
