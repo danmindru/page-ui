@@ -21,7 +21,7 @@ export const LandingSocialProofBandItem = ({
   return (
     <div className={clsx('flex items-center justify-start gap-0.5', className)}>
       {graphic ? (
-        <>
+        <span className="flex-shrink-0">
           {graphic === 'checkmark' ? (
             <CheckCheckIcon className="w-4 h-4 text-green-500 mr-1.5" />
           ) : null}
@@ -40,7 +40,7 @@ export const LandingSocialProofBandItem = ({
           {graphic === 'rating' ? (
             <LandingRating size="small" className="mr-1.5" />
           ) : null}
-        </>
+        </span>
       ) : null}
 
       {customGraphic}
