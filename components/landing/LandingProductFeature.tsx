@@ -68,12 +68,25 @@ export const LandingProductFeature = ({
           ? 'bg-secondary-100/20 dark:bg-secondary-900/10'
           : '',
         withBackgroundGlow || imagePerspective !== 'none'
-          ? 'overflow-x-hidden'
+          ? 'relative overflow-hidden'
           : '',
         imagePerspective === 'paper' ? 'md:pb-24' : '',
         className,
       )}
     >
+      {imageSrc && withBackgroundGlow ? (
+        <div className="hidden lg:flex justify-center w-full h-full absolute pointer-events-none">
+          <GlowBg
+            className={clsx(
+              'w-full lg:w-1/2 h-auto z-0 dark:opacity-50',
+              imagePosition === 'center' ? 'top-5' : ' -top-1/3',
+              imagePerspective === 'paper' ? 'opacity-70' : 'opacity-100',
+            )}
+            variant={backgroundGlowVariant}
+          />
+        </div>
+      ) : null}
+
       <div
         className={clsx(
           'w-full p-6 flex flex-col items-center relative',
@@ -112,19 +125,6 @@ export const LandingProductFeature = ({
 
         {imageSrc ? (
           <>
-            {withBackgroundGlow ? (
-              <div className="hidden lg:flex justify-center w-full h-full absolute pointer-events-none">
-                <GlowBg
-                  className={clsx(
-                    'w-full lg:w-1/2 h-auto z-0 dark:opacity-50',
-                    imagePosition === 'center' ? 'top-5' : ' -top-1/3',
-                    imagePerspective === 'paper' ? 'opacity-70' : 'opacity-100',
-                  )}
-                  variant={backgroundGlowVariant}
-                />
-              </div>
-            ) : null}
-
             {imagePosition === 'center' ? (
               <section className="w-full mt-auto pt-4 md:pt-6">
                 <Image
