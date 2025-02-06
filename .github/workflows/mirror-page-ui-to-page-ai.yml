@@ -13,14 +13,14 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Pushes all PageUI templates to PageAI
-        uses: danmindru/copy_folder_to_another_repo_action@2.0.1
+        uses: nkoppel/push-files-to-another-repository@v1.1.4
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          source_folder: './'
-          destination_repo: 'danmindru/page-ai'
-          destination_branch: 'main'
-          destination_folder: 'packages/api/page-ui'
-          user_email: 'action@github.com'
-          user_name: 'danmindru'
-          commit_msg: '🔄 Sync Page UI'
+          source-files: '/'
+          destination-username: 'danmindru'
+          destination-repository: 'page-ai'
+          destination-directory: 'packages/api/page-ui'
+          commit-email: 'action@github.com'
+          commit-username: 'danmindru'
+          commit-message: '🔄 Sync Page UI'
