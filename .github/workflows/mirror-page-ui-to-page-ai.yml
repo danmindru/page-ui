@@ -18,6 +18,7 @@ jobs:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
           source-files: '/'
+          destination-branch: 'main'
           destination-username: 'danmindru'
           destination-repository: 'page-ai'
           destination-directory: 'packages/api/page-ui'
