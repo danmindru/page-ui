@@ -1,0 +1,26 @@
+name: Push PageUI
+
+on:
+  push:
+    branches:
+      - main # Adjust branch as needed
+
+jobs:
+  copy-file:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Pushes all PageUI templates to PageAI
+        uses: datalbry/copy_folder_to_another_repo_action@1.0.0
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+        with:
+          source_folder: './'
+          destination_repo: 'danmindru/page-ai'
+          destination_branch: 'main'
+          destination_folder: 'packages/api/page-ui'
+          user_email: 'action@github.com'
+          user_name: 'danmindru'
+          commit_msg: '🔄 Sync Page UI'
