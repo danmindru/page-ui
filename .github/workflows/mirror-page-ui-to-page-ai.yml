@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Pushes all PageUI templates to PageAI
-        uses: danmindru/push-files-to-another-repository@1.0.0
+        uses: danmindru/push-files-to-another-repository@1.0.1
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
