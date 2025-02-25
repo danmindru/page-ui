@@ -42,7 +42,7 @@ export const LandingTestimonialListSection = ({
         withBackground && variant === 'secondary'
           ? 'bg-secondary-100/20 dark:bg-secondary-900/10'
           : '',
-        withBackgroundGlow ? 'overflow-hidden' : '',
+        withBackgroundGlow ? 'relative overflow-hidden' : '',
         className,
       )}
     >

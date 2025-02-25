@@ -1,19 +1,19 @@
-import { GlowBg } from '@/components/shared/ui/glow-bg';
 import clsx from 'clsx';
+import { GlowBg } from '@/components/shared/ui/glow-bg';
+import React from 'react';
 
 /**
  * A component meant to be used in the landing page.
- * It displays text and a grid of logos/images, optionally showcasing the companies that use the product, integrations etc.
+ * It shows a pricing section with a title, description, and can render columns of pricing plans.
  */
-export const LandingShowcase = ({
+export const LandingPricingSection = ({
   children,
   className,
-  innerClassName,
   title,
   titleComponent,
   description,
   descriptionComponent,
-  textPosition = 'left',
+  textPosition = 'center',
   withBackground = false,
   withBackgroundGlow = false,
   variant = 'primary',
@@ -21,17 +21,19 @@ export const LandingShowcase = ({
 }: {
   children?: React.ReactNode;
   className?: string;
-  innerClassName?: string;
   title?: string | React.ReactNode;
   titleComponent?: React.ReactNode;
   description?: string | React.ReactNode;
   descriptionComponent?: React.ReactNode;
-  textPosition?: 'left' | 'right';
+  textPosition?: 'center' | 'left';
   withBackground?: boolean;
   withBackgroundGlow?: boolean;
+  withAvatars?: boolean;
   variant?: 'primary' | 'secondary';
   backgroundGlowVariant?: 'primary' | 'secondary';
 }) => {
+  const columnNumber = React.Children.count(children);
+
   return (
     <section
       className={clsx(
@@ -42,20 +44,31 @@ export const LandingShowcase = ({
         withBackground && variant === 'secondary'
           ? 'bg-secondary-100/20 dark:bg-secondary-900/10'
           : '',
-        withBackgroundGlow ? 'relative overflow-x-hidden' : '',
+        withBackgroundGlow ? 'relative overflow-hidden' : '',
         className,
       )}
     >
+      {withBackgroundGlow ? (
+        <div className="hidden lg:flex justify-center w-full h-full absolute -bottom-2/3 pointer-events-none">
+          <GlowBg
+            className={clsx('w-full h-auto z-0 dark:opacity-50 opacity-100')}
+            variant={backgroundGlowVariant}
+          />
+        </div>
+      ) : null}
+
       <div
         className={clsx(
-          'grid gap-16 items-center relative container-wide p-6 lg:grid-cols-2',
-          innerClassName,
+          'w-full p-6 flex flex-col items-center relative',
+          textPosition === 'center' ? 'justify-center' : 'md:max-w-2xl',
         )}
       >
         <div
           className={clsx(
-            'flex flex-col gap-4',
-            textPosition === 'right' && 'order-2 lg:order-1',
+            'w-full flex flex-col gap-4',
+            textPosition === 'center'
+              ? 'md:max-w-lg items-center text-center'
+              : 'items-start',
           )}
         >
           {title ? (
@@ -65,28 +78,22 @@ export const LandingShowcase = ({
           )}
 
           {description ? (
-            <p className="mt-4 md:text-xl">{description}</p>
+            <p className="md:text-lg -mt-3">{description}</p>
           ) : (
             descriptionComponent
           )}
         </div>
 
-        {withBackgroundGlow ? (
-          <div className="hidden lg:flex justify-center w-full h-full absolute pointer-events-none">
-            <GlowBg
-              className={clsx(
-                'w-full lg:w-1/2 h-auto z-0 dark:opacity-50 -top-1/3',
-              )}
-              variant={backgroundGlowVariant}
-            />
-          </div>
-        ) : null}
-
-        {children ? (
-          <div className="relative z-10 grid grid-cols-6 md:grid-cols-8 lg:grid-cols-5 2xl:grid-cols-6 gap-4">
-            {children}
-          </div>
-        ) : null}
+        <div
+          className={clsx(
+            'isolate mt-12 grid mx-auto max-w-md grid-cols-1 gap-8 lg:mx-0 lg:max-w-none text-left',
+            columnNumber === 2 ? 'lg:grid-cols-2' : '',
+            columnNumber === 3 ? 'lg:grid-cols-3' : '',
+            columnNumber === 4 ? 'lg:grid-cols-4' : '',
+          )}
+        >
+          {children}
+        </div>
       </div>
     </section>
   );
