@@ -64,6 +64,9 @@ import { LandingPageGrid } from '@/components/blog/LandingPageGrid';
 import { Tippy } from '@/components/blog/Tippy';
 import { PageUiLink } from '@/components/blog/PageUiLink';
 import { InstallBlurb } from '@/components/blog/InstallBlurb';
+import { StepCard } from '@/components/blog/StepCard';
+import { GuideCard } from '@/components/blog/GuideCard';
+import { StepCode } from '@/components/blog/StepCode';
 
 const LandingMarqueeWrapper = (props) => {
   return <LandingMarquee {...props} />;
@@ -135,6 +138,9 @@ export const components: MDXComponents = {
   ComponentExample,
   InstallBlurb,
   ThemeSwitch,
+  GuideCard,
+  StepCard,
+  StepCode,
 
   Button,
   WrappedVideoPlayer,
