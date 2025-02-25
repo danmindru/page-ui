@@ -10,7 +10,7 @@ tags:
   - 'react'
   - 'tailwindcss'
 
-summary: 'Learn how to install Page UI landing page components manually in your React.js app. Install Tailwind CSS  to get started.'
+summary: 'Learn how to install Page UI landing page components manually in your React.js app. Install Tailwind CSS to get started.'
 layout: PostHub
 ---
 
@@ -39,7 +39,7 @@ layout: PostHub
 ## Install dependencies
 
 ```bash
-npm install -D tailwindcss postcss autoprefixer @tailwindcss/forms @tailwindcss/typography tailwindcss-animate embla-carousel-react class-variance-authority clsx tailwind-merge lucide-react @radix-ui/react-accordion
+npm install -D tailwindcss@3 postcss autoprefixer @tailwindcss/forms @tailwindcss/typography tailwindcss-animate embla-carousel-react class-variance-authority clsx tailwind-merge lucide-react @radix-ui/react-accordion @radix-ui/react-tabs
 ```
 
 </StepCard>
@@ -245,6 +245,10 @@ Add the below to your main CSS file, usually `index.css`, `app.css`, or `global.
     --input: 240 3.7% 15.9%;
   }
 
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
   *,
   ::before,
   ::after {
@@ -360,4 +364,7 @@ Alternatively, you can change `data/config/color.js` manually.
 ## Next steps
 
 Start adding components to your Next.js app. <br/>
-Go to the [component documentation](/docs/landing-page-components) to copy and paste components into your app, or head over to [templates](https://shipixen.com/demo/landing-page-templates) or [usage examples](https://shipixen.com/demo/landing-page-component-examples) to see how components are used in a real-world app.
+
+- copy & paste any section from [templates](https://shipixen.com/demo/landing-page-templates) (turn on thief mode)
+- see a gigantic collection of [usage examples](https://shipixen.com/demo/landing-page-component-examples)
+- go to the [component documentation](/docs/landing-page-components) to find more usage examples and documentation on props and customization.
