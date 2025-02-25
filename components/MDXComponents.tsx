@@ -2,8 +2,10 @@ import TOCInline from '@shipixen/pliny/ui/TOCInline';
 import Pre from '@shipixen/pliny/ui/Pre';
 import BlogNewsletterForm from '@shipixen/pliny/ui/BlogNewsletterForm';
 import type { MDXComponents } from 'mdx/types';
+import ThemeSwitch from '@/components/shared/ThemeSwitch';
 import Image from './shared/Image';
 import CustomLink from './shared/Link';
+import { CodebaseFilelistNav } from '@/components/blog/CodebaseFilelistNav';
 import { Protip } from '@/components/blog/Protip';
 import { DemoTitle } from '@/components/blog/DemoTitle';
 import { DemoSubtitle } from '@/components/blog/DemoSubtitle';
@@ -45,14 +47,23 @@ import {
   LandingProductTourTrigger,
   LandingProductTourContent,
 } from '@/components/landing/LandingProductTour';
+import { LandingHeaderMenuItem } from '@/components/landing/navigation/LandingHeaderMenuItem';
+import { LandingHeader } from '@/components/landing/navigation/LandingHeader';
+import { LandingNewsletterSection } from '@/components/landing/newsletter/LandingNewsletterSection';
+import { LandingNewsletterInput } from '@/components/landing/newsletter/LandingNewsletterInput';
+import { LandingFooter } from '@/components/landing/footer/LandingFooter';
+import { LandingFooterColumn } from '@/components/landing/footer/LandingFooterColumn';
+import { LandingFooterLink } from '@/components/landing/footer/LandingFooterLink';
+import { LandingPricingSection } from '@/components/landing/pricing/LandingPricingSection';
+import { LandingPricingPlan } from '@/components/landing/pricing/LandingPricingPlan';
 
-import { GuideCard } from '@/components/blog/GuideCard';
-import { StepCard } from '@/components/blog/StepCard';
-import { StepCode } from '@/components/blog/StepCode';
 import { WrappedVideoPlayer } from '@/components/blog/WrappedVideoPlayer';
+import { GettingStartedGrid } from '@/components/blog/GettingStartedGrid';
 import { ToolsGrid } from '@/components/blog/ToolsGrid';
 import { LandingPageGrid } from '@/components/blog/LandingPageGrid';
 import { Tippy } from '@/components/blog/Tippy';
+import { PageUiLink } from '@/components/blog/PageUiLink';
+import { InstallBlurb } from '@/components/blog/InstallBlurb';
 
 const LandingMarqueeWrapper = (props) => {
   return <LandingMarquee {...props} />;
@@ -74,7 +85,24 @@ const LandingProductTourSectionWrapper = (props) => {
   return <LandingProductTourSection {...props} />;
 };
 
+const LandingHeaderWrapper = (props) => {
+  return <LandingHeader {...props} />;
+};
+
+const LandingNewsletterSectionWrapper = (props) => {
+  return <LandingNewsletterSection {...props} />;
+};
+
+const LandingNewsletterInputWrapper = (props) => {
+  return <LandingNewsletterInput {...props} />;
+};
+
+const LandingPricingPlanWrapper = (props) => {
+  return <LandingPricingPlan {...props} />;
+};
+
 import {
+  SearchIcon,
   ChromeIcon,
   FigmaIcon,
   FramerIcon,
@@ -95,16 +123,18 @@ export const components: MDXComponents = {
   a: CustomLink,
   pre: Pre,
   BlogNewsletterForm,
+  CodebaseFilelistNav,
   Protip,
   Tippy,
+  PageUiLink,
   DemoTitle,
   DemoSubtitle,
+  GettingStartedGrid,
   ToolsGrid,
   LandingPageGrid,
   ComponentExample,
-  GuideCard,
-  StepCard,
-  StepCode,
+  InstallBlurb,
+  ThemeSwitch,
 
   Button,
   WrappedVideoPlayer,
@@ -141,6 +171,15 @@ export const components: MDXComponents = {
   LandingProductTourList: LandingProductTourListWrapper,
   LandingProductTourTrigger: LandingProductTourTriggerWrapper,
   LandingProductTourContent: LandingProductTourContentWrapper,
+  LandingHeader: LandingHeaderWrapper,
+  LandingHeaderMenuItem,
+  LandingNewsletterSection: LandingNewsletterSectionWrapper,
+  LandingNewsletterInput: LandingNewsletterInputWrapper,
+  LandingFooter,
+  LandingFooterColumn,
+  LandingFooterLink,
+  LandingPricingSection,
+  LandingPricingPlan: LandingPricingPlanWrapper,
 
   ChromeIcon,
   FigmaIcon,
@@ -154,4 +193,5 @@ export const components: MDXComponents = {
   GitlabIcon,
   InstagramIcon,
   SlackIcon,
+  SearchIcon,
 };
