@@ -7,14 +7,14 @@ import Link from 'next/link';
  * It represents a single navigation item, which can be a link or a button.
  */
 export const LandingHeaderMenuItem = ({
-  href,
-  label,
+  href = '#',
+  label = '',
   type,
   onClick,
   variant = 'primary',
 }: {
-  href: string;
-  label: string | React.ReactNode;
+  href?: string;
+  label?: string | React.ReactNode;
   type: 'button' | 'link' | 'icon-button';
   onClick?: () => void;
   variant?: 'primary' | 'secondary' | 'ghost';
