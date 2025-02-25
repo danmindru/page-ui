@@ -1,0 +1,297 @@
+---
+title: 'Landing Page Pricing Plan'
+date: '2025-02-25'
+lastmod: '2025-02-25'
+tags:
+  - 'guide'
+  - 'components'
+  - 'documentation'
+  - 'landing-page'
+  - 'ui-library'
+  - 'react'
+  - 'nextjs'
+  - 'tailwind-css'
+  - 'pricing-plan'
+  - 'landing-pricing-plan'
+  - 'shadcn-ui'
+  - 'shadcn-ui-pricing-plan'
+  - 'shadcn-ui-landing-page'
+
+summary: 'A component meant to be used for landing page pricing plan display with features and a call-to-action button. On smaller screens, the layout becomes a single column to ensure usability.'
+layout: PostHub
+
+images:
+  - '/static/images/blog/docs/landing-page-pricing-plans-component.webp'
+
+showThemeSelector: true
+showInstallNotice: true
+
+canonicalUrl: 'https://shipixen.com/boilerplate-documentation/landing-page-components/pricing'
+---
+
+This component displays a pricing plan (tier) with features and a call-to-action button. On smaller screens, the layout becomes a single column to ensure usability.
+
+Meant to be used as a child of: [Landing Page Pricing Section](/boilerplate-documentation/landing-page-components/pricing)
+
+<ComponentExample
+  previewComponent={
+    <LandingPricingPlan
+      title="Pro"
+      description="For larger teams or businesses."
+      ctaText="Upgrade now"
+      price="$20"
+      priceSuffix="/mo"
+      highlighted
+    >
+      <p>Unlimited users</p>
+      <p>AI features</p>
+      <p>Priority support</p>
+    </LandingPricingPlan>
+  }
+>
+
+```jsx
+import { LandingPricingPlan } from '@/components/landing/pricing/LandingPricingPlan';
+
+<LandingPricingPlan
+  title="Pro"
+  description="For larger teams or businesses."
+  ctaText="Upgrade now"
+  price="$20"
+  priceSuffix="/mo"
+  highlighted
+>
+  <p>Unlimited users</p>
+  <p>AI features</p>
+  <p>Priority support</p>
+</LandingPricingPlan>
+```
+
+</ComponentExample>
+
+## Usage
+
+```jsx
+import { LandingPricingPlan } from '@/components/landing/pricing/LandingPricingPlan';
+```
+
+```jsx
+<LandingPricingPlan
+  title="Pro"
+  description="For larger teams or businesses."
+  ctaText="Upgrade now"
+  price="$20"
+  priceSuffix="/mo"
+  highlighted
+>
+  <p>Unlimited users</p>
+  <p>AI features</p>
+  <p>Priority support</p>
+</LandingPricingPlan>
+```
+
+## Examples
+
+### With Price suffix
+For some pricing plans, you may want to add a suffix to the price, like /mo or /year etc.
+
+<ComponentExample
+  previewComponent={
+    <LandingPricingPlan
+      title="Pro"
+      description="For larger teams or businesses."
+      ctaText="Upgrade now"
+      price="$20"
+      priceSuffix="/mo"
+    >
+      <p>Unlimited users</p>
+      <p>AI features</p>
+      <p>Priority support</p>
+    </LandingPricingPlan>
+  }
+>
+
+```jsx
+import { LandingPricingPlan } from '@/components/landing/pricing/LandingPricingPlan';
+
+<LandingPricingPlan
+  title="Pro"
+  description="For larger teams or businesses."
+  ctaText="Upgrade now"
+  price="$20"
+  priceSuffix="/mo"
+>
+  <p>Unlimited users</p>
+  <p>AI features</p>
+  <p>Priority support</p>
+</LandingPricingPlan>
+```
+
+</ComponentExample>
+
+### With highlighted plan
+<ComponentExample
+  previewComponent={
+    <LandingPricingPlan
+      title="Pro"
+      description="For larger teams or businesses."
+      ctaText="Upgrade now"
+      price="$20"
+      highlighted
+    >
+      <p>Unlimited users</p>
+      <p>AI features</p>
+      <p>Priority support</p>
+    </LandingPricingPlan>
+  }
+>
+
+```jsx
+import { LandingPricingPlan } from '@/components/landing/pricing/LandingPricingPlan';
+
+<LandingPricingPlan
+  title="Pro"
+  description="For larger teams or businesses."
+  ctaText="Upgrade now"
+  price="$20"
+  highlighted
+>
+  <p>Unlimited users</p>
+  <p>AI features</p>
+  <p>Priority support</p>
+</LandingPricingPlan>
+```
+
+</ComponentExample>
+
+### With featured plan
+Featured plans are meant to stand out and are usually used for more expensive / enterprise plans.
+
+<ComponentExample
+  previewComponent={
+    <LandingPricingPlan
+      title="Pro"
+      description="For larger teams or businesses."
+      ctaText="Upgrade now"
+      price="$20"
+      featured
+    >
+      <p>Unlimited users</p>
+      <p>AI features</p>
+      <p>Priority support</p>
+    </LandingPricingPlan>
+  }
+>
+
+```jsx
+import { LandingPricingPlan } from '@/components/landing/pricing/LandingPricingPlan';
+
+<LandingPricingPlan
+  title="Pro"
+  description="For larger teams or businesses."
+  ctaText="Upgrade now"
+  price="$20"
+  featured
+>
+  <p>Unlimited users</p>
+  <p>AI features</p>
+  <p>Priority support</p>
+</LandingPricingPlan>
+```
+
+</ComponentExample>
+
+### With discount
+<ComponentExample
+  previewComponent={
+    <LandingPricingPlan
+      title="Pro"
+      description="For larger teams or businesses."
+      ctaText="Upgrade now"
+      price="$20"
+      discountPrice="$10"
+    >
+      <p>Unlimited users</p>
+      <p>AI features</p>
+      <p>Priority support</p>
+    </LandingPricingPlan>
+  }
+>
+
+```jsx
+import { LandingPricingPlan } from '@/components/landing/pricing/LandingPricingPlan';
+
+<LandingPricingPlan
+  title="Pro"
+  description="For larger teams or businesses."
+  ctaText="Upgrade now"
+  price="$20"
+  discountPrice="$10"
+>
+  <p>Unlimited users</p>
+  <p>AI features</p>
+  <p>Priority support</p>
+</LandingPricingPlan>
+```
+
+</ComponentExample>
+
+### Sold out
+<ComponentExample
+  previewComponent={
+    <LandingPricingPlan
+      title="Pro"
+      description="For larger teams or businesses."
+      ctaText="Upgrade now"
+      price="$20"
+      soldOut
+    >
+      <p>Unlimited users</p>
+      <p>AI features</p>
+      <p>Priority support</p>
+    </LandingPricingPlan>
+  }
+>
+
+```jsx
+import { LandingPricingPlan } from '@/components/landing/pricing/LandingPricingPlan';
+
+<LandingPricingPlan
+  title="Pro"
+  description="For larger teams or businesses."
+  ctaText="Upgrade now"
+  price="$20"
+  soldOut
+>
+  <p>Unlimited users</p>
+  <p>AI features</p>
+  <p>Priority support</p>
+</LandingPricingPlan>
+```
+
+</ComponentExample>
+
+
+## API Reference
+
+| Prop Name | Prop Type | Required | Default |
+| --------- | --------- | -------- | ------- |
+| **children** <Tippy>React nodes to be rendered within the component.</Tippy> | `React.ReactNode` | Yes | - |
+| **title** <Tippy>The title of the pricing plan.</Tippy> | `string` | No | - |
+| **titleComponent** <Tippy>Custom React node to replace the title.</Tippy> | `React.ReactNode` | No | - |
+| **description** <Tippy>A brief description of the pricing plan.</Tippy> | `string` | No | - |
+| **descriptionComponent** <Tippy>Custom React node to replace the description.</Tippy> | `React.ReactNode` | No | - |
+| **href** <Tippy>The link for the call-to-action button.</Tippy> | `string` | No | `"#"` |
+| **onClick** <Tippy>Click handler for the call-to-action button.</Tippy> | `() => void` | No | `() => {}` |
+| **ctaText** <Tippy>Text displayed on the call-to-action button.</Tippy> | `string` | No | `"Get started"` |
+| **price** <Tippy>The main price of the plan.</Tippy> | `string` | Yes | - |
+| **discountPrice** <Tippy>A discounted price if applicable.</Tippy> | `string` | No | - |
+| **priceSuffix** <Tippy>Suffix text displayed after the price.</Tippy> | `string` | No | - |
+| **featured** <Tippy>Marks the plan as featured, affecting styling.</Tippy> | `boolean` | No | - |
+| **highlighted** <Tippy>Highlights the plan visually.</Tippy> | `boolean` | No | - |
+| **soldOut** <Tippy>Disables the call-to-action button if the plan is sold out.</Tippy> | `boolean` | No | - |
+
+
+## More Examples
+
+For more even more examples, see our <a href="/demo/landing-page-component-examples" className="fancy-link">Landing Page Component Examples</a> page or see complete landing page examples by <a href="/demo/landing-page-templates" className="fancy-link">Exploring Our Landing Page Templates</a>.

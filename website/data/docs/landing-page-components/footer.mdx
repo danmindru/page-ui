@@ -1,0 +1,364 @@
+---
+title: 'Landing Page Footer Section'
+date: '2025-02-24'
+lastmod: '2025-02-24'
+tags:
+  - 'guide'
+  - 'components'
+  - 'documentation'
+  - 'landing-page'
+  - 'ui-library'
+  - 'react'
+  - 'nextjs'
+  - 'tailwind-css'
+  - 'footer'
+  - 'landing-footer'
+  - 'shadcn-ui'
+  - 'shadcn-ui-footer'
+  - 'shadcn-ui-landing-page'
+
+summary: 'A component meant to be used for the footer on the landing page. It provides additional information and links related to the website, organized in columns. On smaller screens, it changes to a horizontal layout to ensure usability.'
+layout: PostHub
+
+images:
+  - '/static/images/blog/docs/landing-page-footer-component.webp'
+
+showThemeSelector: true
+showInstallNotice: true
+
+canonicalUrl: 'https://shipixen.com/boilerplate-documentation/landing-page-components/footer'
+---
+
+This component displays a footer on the landing page. It provides additional information and links related to the website. On smaller screens, it changes to a horizontal layout to ensure usability.
+
+<ComponentExample
+  previewComponent={
+    <LandingFooter
+      title="Beautiful landing pages in minutes"
+      description="The easiest way to make a landing page for your startup: SaaS, iOS/Android app, directory, personal page and more."
+      footnote="© 2025 Page AI. All rights reserved."
+    >
+      <LandingFooterColumn title="Product">
+        <LandingFooterLink href="#">Features</LandingFooterLink>
+        <LandingFooterLink href="#">Pricing</LandingFooterLink>
+        <LandingFooterLink href="#">Integrations</LandingFooterLink>
+        <LandingFooterLink href="#">FAQ</LandingFooterLink>
+      </LandingFooterColumn>
+
+      <LandingFooterColumn title="Company">
+        <LandingFooterLink href="#">About</LandingFooterLink>
+        <LandingFooterLink href="#">Careers</LandingFooterLink>
+        <LandingFooterLink href="#">Press</LandingFooterLink>
+        <LandingFooterLink href="#">Blog</LandingFooterLink>
+      </LandingFooterColumn>
+    </LandingFooter>
+  }
+>
+
+```jsx
+import { LandingFooter } from '@/components/landing/footer/LandingFooter';
+import { LandingFooterColumn } from '@/components/landing/footer/LandingFooterColumn';
+import { LandingFooterLink } from '@/components/landing/footer/LandingFooterLink';
+
+<LandingFooter
+  title="Beautiful landing pages in minutes"
+  description="The easiest way to make a landing page for your startup: SaaS, iOS/Android app, directory, personal page and more."
+  footnote="© 2025 Page AI. All rights reserved."
+>
+  <LandingFooterColumn title="Product">
+    <LandingFooterLink href="#">Features</LandingFooterLink>
+    <LandingFooterLink href="#">Pricing</LandingFooterLink>
+    <LandingFooterLink href="#">Integrations</LandingFooterLink>
+    <LandingFooterLink href="#">FAQ</LandingFooterLink>
+  </LandingFooterColumn>
+
+  <LandingFooterColumn title="Company">
+    <LandingFooterLink href="#">About</LandingFooterLink>
+    <LandingFooterLink href="#">Careers</LandingFooterLink>
+    <LandingFooterLink href="#">Press</LandingFooterLink>
+    <LandingFooterLink href="#">Blog</LandingFooterLink>
+  </LandingFooterColumn>
+</LandingFooter>
+```
+
+</ComponentExample>
+
+## Usage
+
+```jsx
+import { LandingFooter } from '@/components/landing/footer/LandingFooter';
+import { LandingFooterColumn } from '@/components/landing/footer/LandingFooterColumn';
+import { LandingFooterLink } from '@/components/landing/footer/LandingFooterLink';
+```
+
+```jsx
+<LandingFooter
+  title="Beautiful landing pages in minutes"
+  description="The easiest way to make a landing page for your startup: SaaS, iOS/Android app, directory, personal page and more."
+  footnote="© 2025 Page AI. All rights reserved."
+>
+  <LandingFooterColumn title="Product">
+    <LandingFooterLink href="#">Features</LandingFooterLink>
+    <LandingFooterLink href="#">Pricing</LandingFooterLink>
+    <LandingFooterLink href="#">Integrations</LandingFooterLink>
+    <LandingFooterLink href="#">FAQ</LandingFooterLink>
+  </LandingFooterColumn>
+
+  <LandingFooterColumn title="Company">
+    <LandingFooterLink href="#">About</LandingFooterLink>
+    <LandingFooterLink href="#">Careers</LandingFooterLink>
+    <LandingFooterLink href="#">Press</LandingFooterLink>
+    <LandingFooterLink href="#">Blog</LandingFooterLink>
+  </LandingFooterColumn>
+</LandingFooter>
+```
+
+## Examples
+
+### With custom logo
+<ComponentExample
+  previewComponent={
+    <LandingFooter
+      title="Beautiful landing pages in minutes"
+      description="The easiest way to make a landing page for your startup: SaaS, iOS/Android app, directory, personal page and more."
+      footnote="© 2025 Page AI. All rights reserved." logoComponent={<Image width={40} height={40} className="rounded-full" src="https://picsum.photos/id/250/200/200" />}
+    >
+      <LandingFooterColumn title="Product">
+        <LandingFooterLink href="#">Features</LandingFooterLink>
+        <LandingFooterLink href="#">Pricing</LandingFooterLink>
+        <LandingFooterLink href="#">Integrations</LandingFooterLink>
+        <LandingFooterLink href="#">FAQ</LandingFooterLink>
+      </LandingFooterColumn>
+
+      <LandingFooterColumn title="Company">
+        <LandingFooterLink href="#">About</LandingFooterLink>
+        <LandingFooterLink href="#">Careers</LandingFooterLink>
+        <LandingFooterLink href="#">Press</LandingFooterLink>
+        <LandingFooterLink href="#">Blog</LandingFooterLink>
+      </LandingFooterColumn>
+    </LandingFooter>
+  }
+>
+
+```jsx
+import { LandingFooter } from '@/components/landing/footer/LandingFooter';
+import { LandingFooterColumn } from '@/components/landing/footer/LandingFooterColumn';
+import { LandingFooterLink } from '@/components/landing/footer/LandingFooterLink';
+
+<LandingFooter
+  title="Beautiful landing pages in minutes"
+  description="The easiest way to make a landing page for your startup: SaaS, iOS/Android app, directory, personal page and more."
+  footnote="© 2025 Page AI. All rights reserved." logoComponent={<Image width={40} height={40} className="rounded-full" src="https://picsum.photos/id/250/200/200" />}
+>
+  <LandingFooterColumn title="Product">
+    <LandingFooterLink href="#">Features</LandingFooterLink>
+    <LandingFooterLink href="#">Pricing</LandingFooterLink>
+    <LandingFooterLink href="#">Integrations</LandingFooterLink>
+    <LandingFooterLink href="#">FAQ</LandingFooterLink>
+  </LandingFooterColumn>
+
+  <LandingFooterColumn title="Company">
+    <LandingFooterLink href="#">About</LandingFooterLink>
+    <LandingFooterLink href="#">Careers</LandingFooterLink>
+    <LandingFooterLink href="#">Press</LandingFooterLink>
+    <LandingFooterLink href="#">Blog</LandingFooterLink>
+  </LandingFooterColumn>
+</LandingFooter>
+```
+
+</ComponentExample>
+
+### With more columns
+
+<ComponentExample
+  previewComponent={
+    <LandingFooter
+      title="Beautiful landing pages in minutes"
+      description="The easiest way to make a landing page for your startup: SaaS, iOS/Android app, directory, personal page and more."
+      footnote="© 2025 Page AI. All rights reserved."
+    >
+      <LandingFooterColumn title="Product">
+        <LandingFooterLink href="#">Features</LandingFooterLink>
+        <LandingFooterLink href="#">Pricing</LandingFooterLink>
+        <LandingFooterLink href="#">API</LandingFooterLink>
+        <LandingFooterLink href="#">FAQ</LandingFooterLink>
+      </LandingFooterColumn>
+
+      <LandingFooterColumn title="Help">
+        <LandingFooterLink href="#">Contact</LandingFooterLink>
+        <LandingFooterLink href="#">Support</LandingFooterLink>
+        <LandingFooterLink href="#">Docs</LandingFooterLink>
+      </LandingFooterColumn>
+
+      <LandingFooterColumn title="More">
+        <LandingFooterLink href="#">About</LandingFooterLink>
+        <LandingFooterLink href="#">Careers</LandingFooterLink>
+        <LandingFooterLink href="#">Press</LandingFooterLink>
+        <LandingFooterLink href="#">Blog</LandingFooterLink>
+      </LandingFooterColumn>
+    </LandingFooter>
+  }
+>
+
+```jsx
+import { LandingFooter } from '@/components/landing/footer/LandingFooter';
+import { LandingFooterColumn } from '@/components/landing/footer/LandingFooterColumn';
+import { LandingFooterLink } from '@/components/landing/footer/LandingFooterLink';
+
+<LandingFooter
+  title="Beautiful landing pages in minutes"
+  description="The easiest way to make a landing page for your startup: SaaS, iOS/Android app, directory, personal page and more."
+  footnote="© 2025 Page AI. All rights reserved."
+>
+  <LandingFooterColumn title="Product">
+    <LandingFooterLink href="#">Features</LandingFooterLink>
+    <LandingFooterLink href="#">Pricing</LandingFooterLink>
+    <LandingFooterLink href="#">API</LandingFooterLink>
+    <LandingFooterLink href="#">FAQ</LandingFooterLink>
+  </LandingFooterColumn>
+
+  <LandingFooterColumn title="Help">
+    <LandingFooterLink href="#">Docs</LandingFooterLink>
+    <LandingFooterLink href="#">Support</LandingFooterLink>
+    <LandingFooterLink href="#">Contact</LandingFooterLink>
+  </LandingFooterColumn>
+
+  <LandingFooterColumn title="More">
+    <LandingFooterLink href="#">About</LandingFooterLink>
+    <LandingFooterLink href="#">Careers</LandingFooterLink>
+    <LandingFooterLink href="#">Press</LandingFooterLink>
+    <LandingFooterLink href="#">Blog</LandingFooterLink>
+  </LandingFooterColumn>
+</LandingFooter>
+```
+
+</ComponentExample>
+
+### With background
+<ComponentExample
+  previewComponent={
+    <LandingFooter
+      title="Beautiful landing pages in minutes"
+      description="The easiest way to make a landing page for your startup: SaaS, iOS/Android app, directory, personal page and more."
+      footnote="© 2025 Page AI. All rights reserved."
+      withBackground
+    >
+      <LandingFooterColumn title="Product">
+        <LandingFooterLink href="#">Features</LandingFooterLink>
+        <LandingFooterLink href="#">Pricing</LandingFooterLink>
+        <LandingFooterLink href="#">Integrations</LandingFooterLink>
+        <LandingFooterLink href="#">FAQ</LandingFooterLink>
+      </LandingFooterColumn>
+
+      <LandingFooterColumn title="Company">
+        <LandingFooterLink href="#">About</LandingFooterLink>
+        <LandingFooterLink href="#">Careers</LandingFooterLink>
+        <LandingFooterLink href="#">Press</LandingFooterLink>
+        <LandingFooterLink href="#">Blog</LandingFooterLink>
+      </LandingFooterColumn>
+    </LandingFooter>
+  }
+>
+
+```jsx
+import { LandingFooter } from '@/components/landing/footer/LandingFooter';
+import { LandingFooterColumn } from '@/components/landing/footer/LandingFooterColumn';
+import { LandingFooterLink } from '@/components/landing/footer/LandingFooterLink';
+
+<LandingFooter
+  title="Beautiful landing pages in minutes"
+  description="The easiest way to make a landing page for your startup: SaaS, iOS/Android app, directory, personal page and more."
+  footnote="© 2025 Page AI. All rights reserved."
+  withBackground
+>
+  <LandingFooterColumn title="Product">
+    <LandingFooterLink href="#">Features</LandingFooterLink>
+    <LandingFooterLink href="#">Pricing</LandingFooterLink>
+    <LandingFooterLink href="#">Integrations</LandingFooterLink>
+    <LandingFooterLink href="#">FAQ</LandingFooterLink>
+  </LandingFooterColumn>
+
+  <LandingFooterColumn title="Company">
+    <LandingFooterLink href="#">About</LandingFooterLink>
+    <LandingFooterLink href="#">Careers</LandingFooterLink>
+    <LandingFooterLink href="#">Press</LandingFooterLink>
+    <LandingFooterLink href="#">Blog</LandingFooterLink>
+  </LandingFooterColumn>
+</LandingFooter>
+```
+
+</ComponentExample>
+
+### With background glow
+<ComponentExample
+  previewComponent={
+    <LandingFooter
+      title="Beautiful landing pages in minutes"
+      description="The easiest way to make a landing page for your startup: SaaS, iOS/Android app, directory, personal page and more."
+      footnote="© 2025 Page AI. All rights reserved."
+      withBackgroundGlow
+    >
+      <LandingFooterColumn title="Product">
+        <LandingFooterLink href="#">Features</LandingFooterLink>
+        <LandingFooterLink href="#">Pricing</LandingFooterLink>
+        <LandingFooterLink href="#">Integrations</LandingFooterLink>
+        <LandingFooterLink href="#">FAQ</LandingFooterLink>
+      </LandingFooterColumn>
+
+      <LandingFooterColumn title="Company">
+        <LandingFooterLink href="#">About</LandingFooterLink>
+        <LandingFooterLink href="#">Careers</LandingFooterLink>
+        <LandingFooterLink href="#">Press</LandingFooterLink>
+        <LandingFooterLink href="#">Blog</LandingFooterLink>
+      </LandingFooterColumn>
+    </LandingFooter>
+  }
+>
+
+```jsx
+import { LandingFooter } from '@/components/landing/footer/LandingFooter';
+import { LandingFooterColumn } from '@/components/landing/footer/LandingFooterColumn';
+import { LandingFooterLink } from '@/components/landing/footer/LandingFooterLink';
+
+<LandingFooter
+  title="Beautiful landing pages in minutes"
+  description="The easiest way to make a landing page for your startup: SaaS, iOS/Android app, directory, personal page and more."
+  footnote="© 2025 Page AI. All rights reserved."
+  withBackgroundGlow
+>
+  <LandingFooterColumn title="Product">
+    <LandingFooterLink href="#">Features</LandingFooterLink>
+    <LandingFooterLink href="#">Pricing</LandingFooterLink>
+    <LandingFooterLink href="#">Integrations</LandingFooterLink>
+    <LandingFooterLink href="#">FAQ</LandingFooterLink>
+  </LandingFooterColumn>
+
+  <LandingFooterColumn title="Company">
+    <LandingFooterLink href="#">About</LandingFooterLink>
+    <LandingFooterLink href="#">Careers</LandingFooterLink>
+    <LandingFooterLink href="#">Press</LandingFooterLink>
+    <LandingFooterLink href="#">Blog</LandingFooterLink>
+  </LandingFooterColumn>
+</LandingFooter>
+```
+
+</ComponentExample>
+
+## API Reference
+
+| Prop Name | Prop Type | Required | Default |
+| --------- | --------- | -------- | ------- |
+| **children** <Tippy>React nodes to be rendered within the footer.</Tippy> | `React.ReactNode` | No | - |
+| **title** <Tippy>The title text displayed in the footer.</Tippy> | `string` | No | - |
+| **description** <Tippy>A brief description displayed below the title.</Tippy> | `string` | No | - |
+| **footnote** <Tippy>Text or React nodes to be displayed as a footnote.</Tippy> | `string` ǀ `React.ReactNode` | No | - |
+| **logoComponent** <Tippy>A custom React node to replace the default logo.</Tippy> | `React.ReactNode` | No | - |
+| **withBackground** <Tippy>Determines if the footer should have a background color.</Tippy> | `boolean` | No | `false` |
+| **withBackgroundGlow** <Tippy>Adds a glowing background effect to the footer.</Tippy> | `boolean` | No | `false` |
+| **variant** <Tippy>The color variant of the footer.</Tippy> | `'primary'` ǀ `'secondary'` | No | `'primary'` |
+| **backgroundGlowVariant** <Tippy>The color variant of the glowing background.</Tippy> | `'primary'` ǀ `'secondary'` | No | `'primary'` |
+
+
+## More Examples
+
+For more even more examples, see our <a href="/demo/landing-page-component-examples" className="fancy-link">Landing Page Component Examples</a> page or see complete landing page examples by <a href="/demo/landing-page-templates" className="fancy-link">Exploring Our Landing Page Templates</a>.

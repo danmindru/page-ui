@@ -1,0 +1,232 @@
+---
+title: 'Landing Page Newsletter Section'
+date: '2025-02-23'
+lastmod: '2025-02-23'
+tags:
+  - 'guide'
+  - 'components'
+  - 'documentation'
+  - 'landing-page'
+  - 'ui-library'
+  - 'react'
+  - 'nextjs'
+  - 'tailwind-css'
+  - 'newsletter'
+  - 'waitlist'
+  - 'input-email'
+  - 'landing-newsletter'
+  - 'shadcn-ui'
+  - 'shadcn-ui-newsletter'
+  - 'shadcn-ui-landing-page'
+
+summary: 'A component meant to be used for a newsletter subscription on the landing page. It allows users to enter their email to subscribe to updates. On smaller screens, the input field may adjust accordingly.'
+layout: PostHub
+
+images:
+  - '/static/images/blog/docs/landing-page-newsletter-component.webp'
+
+showThemeSelector: true
+showInstallNotice: true
+
+canonicalUrl: 'https://shipixen.com/boilerplate-documentation/landing-page-components/newsletter'
+---
+
+This component displays a newsletter subscription form. On smaller screens, the input field may adjust accordingly to ensure usability.
+
+<ComponentExample
+  previewComponent={
+    <LandingNewsletterSection
+      title="Never miss an update!"
+      description="Subscribe to our newsletter to get the latest announcements, news and exclusive offers."
+    >
+      <LandingSocialProof
+        className="mt-6 w-full flex justify-center"
+        numberOfUsers={99}
+        avatarItems={[
+          {
+            imageSrc: '/static/images/people/1.webp',
+            name: 'John Doe',
+          },
+          {
+            imageSrc: '/static/images/people/2.webp',
+            name: 'Jane Doe',
+          },
+          {
+            imageSrc: '/static/images/people/3.webp',
+            name: 'Alice Doe',
+          },
+        ]}
+      >
+        <p className="text-sm">already joined</p>
+      </LandingSocialProof>
+    </LandingNewsletterSection>
+  }
+>
+
+```jsx
+import { LandingNewsletterSection } from '@/components/landing/LandingNewsletterSection';
+
+<LandingNewsletterSection
+  title="Never miss an update!"
+  description="Subscribe to our newsletter to get the latest announcements, news and exclusive offers."
+>
+  <LandingSocialProof
+    className="mt-6 w-full flex justify-center"
+    numberOfUsers={99}
+    avatarItems={[
+      {
+        imageSrc: '/static/images/people/1.webp',
+        name: 'John Doe',
+      },
+      {
+        imageSrc: '/static/images/people/2.webp',
+        name: 'Jane Doe',
+      },
+      {
+        imageSrc: '/static/images/people/3.webp',
+        name: 'Alice Doe',
+      },
+    ]}
+  >
+    <p className="text-sm">already joined</p>
+  </LandingSocialProof>
+</LandingNewsletterSection>
+```
+
+</ComponentExample>
+
+## Usage
+
+```jsx
+import { LandingNewsletterSection } from '@/components/landing/LandingNewsletterSection';
+```
+
+```jsx
+<LandingNewsletterSection
+  title="Never miss an update!"
+  description="Subscribe to our newsletter to get the latest announcements, news and exclusive offers."
+>
+</LandingNewsletterSection>
+```
+
+## Examples
+
+### Text position
+<ComponentExample
+  previewComponent={
+    <LandingNewsletterSection
+      title="Never miss an update!"
+      description="Subscribe to our newsletter to get the latest announcements, news and exclusive offers."
+      textPosition="left"
+    >
+    </LandingNewsletterSection>
+  }
+>
+
+```jsx
+<LandingNewsletterSection
+  title="Never miss an update!"
+  description="Subscribe to our newsletter to get the latest announcements, news and exclusive offers."
+  textPosition="left"
+>
+</LandingNewsletterSection>
+```
+
+</ComponentExample>
+
+### With avatar images
+Showing user images is a great way to add social proof to your newsletter section and increase conversions.
+
+<ComponentExample
+  previewComponent={
+    <LandingNewsletterSection
+      title="Never miss an update!"
+      description="Subscribe to our newsletter to get the latest announcements, news and exclusive offers."
+      withAvatars
+    >
+    </LandingNewsletterSection>
+  }
+>
+
+```jsx
+<LandingNewsletterSection
+  title="Never miss an update!"
+  description="Subscribe to our newsletter to get the latest announcements, news and exclusive offers."
+  withAvatars
+>
+</LandingNewsletterSection>
+```
+
+</ComponentExample>
+
+### With background
+<ComponentExample
+  previewComponent={
+    <LandingNewsletterSection
+      title="Never miss an update!"
+      description="Subscribe to our newsletter to get the latest announcements, news and exclusive offers."
+      withBackground
+    >
+    </LandingNewsletterSection>
+  }
+>
+
+```jsx
+<LandingNewsletterSection
+  title="Never miss an update!"
+  description="Subscribe to our newsletter to get the latest announcements, news and exclusive offers."
+  withBackground
+>
+</LandingNewsletterSection>
+```
+
+</ComponentExample>
+
+### With background glow
+<ComponentExample
+  previewComponent={
+    <LandingNewsletterSection
+      title="Never miss an update!"
+      description="Subscribe to our newsletter to get the latest announcements, news and exclusive offers."
+      withBackgroundGlow
+    >
+    </LandingNewsletterSection>
+  }
+>
+
+```jsx
+<LandingNewsletterSection
+  title="Never miss an update!"
+  description="Subscribe to our newsletter to get the latest announcements, news and exclusive offers."
+  withBackgroundGlow
+>
+</LandingNewsletterSection>
+```
+
+</ComponentExample>
+
+## API Reference
+
+| Prop Name | Prop Type | Required | Default |
+| --------- | --------- | -------- | ------- |
+| **children** <Tippy>React nodes to be rendered within the component.</Tippy> | `React.ReactNode` ǀ `string` | No | - |
+| **innerClassName** <Tippy>Additional class names for the inner container.</Tippy> | `string` | No | - |
+| **title** <Tippy>The title text or React node.</Tippy> | `string` ǀ `React.ReactNode` | No | - |
+| **titleComponent** <Tippy>Optional React node to replace the title.</Tippy> | `React.ReactNode` | No | - |
+| **description** <Tippy>The description text or React node.</Tippy> | `string` ǀ `React.ReactNode` | No | - |
+| **descriptionComponent** <Tippy>Optional React node to replace the description.</Tippy> | `React.ReactNode` | No | - |
+| **buttonLabel** <Tippy>The label for the submit button.</Tippy> | `string` | No | `'Subscribe'` |
+| **placeholderLabel** <Tippy>The placeholder text for the email input.</Tippy> | `string` | No | `'Enter your email'` |
+| **inputLabel** <Tippy>The label for the email input.</Tippy> | `string` | No | `'Email address'` |
+| **textPosition** <Tippy>Position of the text inside the section.</Tippy> | `'center'` ǀ `'left'` | No | `'left'` |
+| **minHeight** <Tippy>Minimum height of the section.</Tippy> | `number` | No | `350` |
+| **withBackground** <Tippy>Whether to display a background.</Tippy> | `boolean` | No | `false` |
+| **withBackgroundGlow** <Tippy>Whether to display a glowing background.</Tippy> | `boolean` | No | `false` |
+| **withAvatars** <Tippy>Whether to display user images.</Tippy> | `boolean` | No | `true` |
+| **variant** <Tippy>Determines the section's visual style.</Tippy> | `'primary'` ǀ `'secondary'` | No | `'primary'` |
+| **backgroundGlowVariant** <Tippy>Determines the glow background style.</Tippy> | `'primary'` ǀ `'secondary'` | No | `'primary'` |
+| **onSubmit** <Tippy>Callback function triggered on form submission.</Tippy> | `(e: React.FormEvent<HTMLFormElement>) => void` | No | `() => {}` |
+
+## More Examples
+
+For more even more examples, see our <a href="/demo/landing-page-component-examples" className="fancy-link">Landing Page Component Examples</a> page or see complete landing page examples by <a href="/demo/landing-page-templates" className="fancy-link">Exploring Our Landing Page Templates</a>.

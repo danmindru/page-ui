@@ -1,0 +1,410 @@
+---
+title: 'Landing Page Navigation / Header'
+date: '2025-02-22'
+lastmod: '2025-02-22'
+tags:
+  - 'guide'
+  - 'components'
+  - 'documentation'
+  - 'landing-page'
+  - 'ui-library'
+  - 'react'
+  - 'nextjs'
+  - 'tailwind-css'
+  - 'navigation'
+  - 'main-menu'
+  - 'top-navigation'
+  - 'navigation'
+  - 'header'
+  - 'landing-navigation'
+  - 'landing-page-header'
+  - 'shadcn-ui'
+  - 'shadcn-ui-navigation'
+  - 'shadcn-ui-landing-page'
+
+summary: 'A component meant to be used as navigation / header in the landing page. It displays a top navigation bar with a main menu and a logo. On smaller screens, the main menu is hidden and a hamburger menu is displayed instead.'
+layout: PostHub
+
+images:
+  - '/static/images/blog/docs/landing-page-navigation-and-header-component.webp'
+
+showThemeSelector: true
+showInstallNotice: true
+
+canonicalUrl: 'https://shipixen.com/boilerplate-documentation/landing-page-components/navigation'
+---
+
+This component displays a top navigation / header bar with a main menu and a logo. On smaller screens, the main menu is hidden and a menu is displayed instead. The menu will open a side sheet with the main menu items.
+
+<ComponentExample
+  previewComponent={
+    <LandingHeader>
+      <LandingHeaderMenuItem href="#" label="Home" />
+      <LandingHeaderMenuItem href="#" label="Pricing" />
+      <LandingHeaderMenuItem href="#" label="Articles" />
+      <LandingHeaderMenuItem href="#" label="Sign In" type="button" />
+      <LandingHeaderMenuItem href="#" label={<SearchIcon />} type="icon-button" variant="ghost" />
+
+      <ThemeSwitch />
+    </LandingHeader>
+  }
+>
+
+```jsx
+import ThemeSwitch from '@/components/shared/ThemeSwitch';
+import { SearchIcon } from 'lucide-react';
+import { LandingHeader } from '@/components/landing/LandingHeader';
+import { LandingHeaderMenuItem } from '@/components/landing/LandingHeaderMenuItem';
+
+<LandingHeader>
+  <LandingHeaderMenuItem href="#" label="Home" />
+  <LandingHeaderMenuItem href="#" label="Pricing" />
+  <LandingHeaderMenuItem href="#" label="Articles" />
+  <LandingHeaderMenuItem href="#" label="Sign In" type="button" />
+  <LandingHeaderMenuItem href="#" label={<SearchIcon />} type="icon-button" variant="ghost" />
+
+  <ThemeSwitch />
+</LandingHeader>
+```
+
+</ComponentExample>
+
+## Usage
+
+```jsx
+import { LandingHeader } from '@/components/landing/LandingHeader';
+import { LandingHeaderMenuItem } from '@/components/landing/LandingHeaderMenuItem';
+```
+
+```jsx
+<LandingHeader>
+  <LandingHeaderMenuItem href="#" label="Home" />
+  <LandingHeaderMenuItem href="#" label="Pricing" />
+  <LandingHeaderMenuItem href="#" label="Articles" />
+</LandingHeader>
+```
+
+## Examples
+
+### With custom logo
+<ComponentExample
+  previewComponent={
+    <LandingHeader
+      logoComponent={<Image width={40} height={40} className="rounded-full" src="https://picsum.photos/id/250/200/200" />}
+    >
+      <LandingHeaderMenuItem
+        href="#"
+        label="Home"
+      />
+
+      <LandingHeaderMenuItem
+        href="#"
+        label="Pricing"
+      />
+
+      <LandingHeaderMenuItem
+        href="#"
+        label="Articles"
+      />
+    </LandingHeader>
+  }
+>
+
+```jsx
+import Image from '@/components/shared/Image';
+import { LandingHeader } from '@/components/landing/LandingHeader';
+import { LandingHeaderMenuItem } from '@/components/landing/LandingHeaderMenuItem';
+
+<LandingHeader
+  logoComponent={<Image width={40} height={40} className="rounded-full" src="https://picsum.photos/id/250/200/200" />}
+>
+  <LandingHeaderMenuItem
+    href="#"
+    label="Home"
+  />
+
+  <LandingHeaderMenuItem
+    href="#"
+    label="Pricing"
+  />
+
+  <LandingHeaderMenuItem
+    href="#"
+    label="Articles"
+  />
+</LandingHeader>
+```
+
+</ComponentExample>
+
+### With background
+
+This adds a background to the navigation bar (centered on larger screens).
+
+<ComponentExample
+  previewComponent={
+    <LandingHeader withBackground>
+      <LandingHeaderMenuItem
+        href="#"
+        label="Home"
+      />
+
+      <LandingHeaderMenuItem
+        href="#"
+        label="Pricing"
+      />
+
+      <LandingHeaderMenuItem
+        href="#"
+        label="Articles"
+      />
+    </LandingHeader>
+  }
+>
+
+```jsx
+import { LandingHeader } from '@/components/landing/LandingHeader';
+import { LandingHeaderMenuItem } from '@/components/landing/LandingHeaderMenuItem';
+
+<LandingHeader withBackground>
+  <LandingHeaderMenuItem
+    href="#"
+    label="Home"
+  />
+
+  <LandingHeaderMenuItem
+    href="#"
+    label="Pricing"
+  />
+
+  <LandingHeaderMenuItem
+    href="#"
+    label="Articles"
+  />
+</LandingHeader>
+```
+
+</ComponentExample>
+
+### With button
+<ComponentExample
+  previewComponent={
+    <LandingHeader>
+      <LandingHeaderMenuItem
+        href="#"
+        label="Home"
+      />
+
+      <LandingHeaderMenuItem
+        href="#"
+        label="Pricing"
+      />
+
+      <LandingHeaderMenuItem
+        href="#"
+        label="Articles"
+      />
+
+      <LandingHeaderMenuItem
+        href="#"
+        label="Sign In"
+        type="button"
+      />
+    </LandingHeader>
+  }
+>
+
+```jsx
+import { LandingHeader } from '@/components/landing/LandingHeader';
+import { LandingHeaderMenuItem } from '@/components/landing/LandingHeaderMenuItem';
+
+<LandingHeader>
+  <LandingHeaderMenuItem
+    href="#"
+    label="Home"
+  />
+
+  <LandingHeaderMenuItem
+    href="#"
+    label="Pricing"
+  />
+
+  <LandingHeaderMenuItem
+    href="#"
+    label="Articles"
+  />
+
+  <LandingHeaderMenuItem
+    href="#"
+    label="Sign In"
+    type="button"
+  />
+</LandingHeader>
+```
+
+</ComponentExample>
+
+### With icon button (or other elements)
+<ComponentExample
+  previewComponent={
+    <LandingHeader>
+      <LandingHeaderMenuItem
+        href="#"
+        label="Home"
+      />
+
+      <LandingHeaderMenuItem
+        href="#"
+        label="Pricing"
+      />
+
+      <LandingHeaderMenuItem
+        href="#"
+        label="Articles"
+      />
+
+      <LandingHeaderMenuItem
+        href="#"
+        label="Sign In"
+        type="button"
+      />
+
+      <LandingHeaderMenuItem
+        href="#"
+        label={<SearchIcon />}
+        type="icon-button"
+        variant="ghost"
+      />
+    </LandingHeader>
+  }
+>
+
+```jsx
+import { SearchIcon } from 'lucide-react';
+import { LandingHeader } from '@/components/landing/LandingHeader';
+import { LandingHeaderMenuItem } from '@/components/landing/LandingHeaderMenuItem';
+
+<LandingHeader>
+  <LandingHeaderMenuItem
+    href="#"
+    label="Home"
+  />
+
+  <LandingHeaderMenuItem
+    href="#"
+    label="Pricing"
+  />
+
+  <LandingHeaderMenuItem
+    href="#"
+    label="Articles"
+  />
+
+  <LandingHeaderMenuItem
+    href="#"
+    label="Sign In"
+    type="button"
+  />
+
+  <LandingHeaderMenuItem
+    href="#"
+    label={<SearchIcon />}
+    type="icon-button"
+    variant="ghost"
+  />
+</LandingHeader>
+```
+
+</ComponentExample>
+
+### Variant
+<ComponentExample
+  previewComponent={
+    <LandingHeader withBackground variant="secondary">
+      <LandingHeaderMenuItem
+        href="#"
+        label="Home"
+      />
+
+      <LandingHeaderMenuItem
+        href="#"
+        label="Pricing"
+      />
+
+      <LandingHeaderMenuItem
+        href="#"
+        label="Articles"
+      />
+
+      <LandingHeaderMenuItem
+        href="#"
+        label="Sign In"
+        type="button"
+      />
+
+      <LandingHeaderMenuItem
+        href="#"
+        label={<SearchIcon />}
+        type="icon-button"
+        variant="ghost"
+      />
+
+      <ThemeSwitch />
+    </LandingHeader>
+  }
+>
+
+```jsx
+import ThemeSwitch from '@/components/shared/ThemeSwitch';
+import { SearchIcon } from 'lucide-react';
+import { LandingHeader } from '@/components/landing/LandingHeader';
+import { LandingHeaderMenuItem } from '@/components/landing/LandingHeaderMenuItem';
+
+<LandingHeader withBackground variant="secondary">
+  <LandingHeaderMenuItem
+    href="#"
+    label="Home"
+  />
+
+  <LandingHeaderMenuItem
+    href="#"
+    label="Pricing"
+  />
+
+  <LandingHeaderMenuItem
+    href="#"
+    label="Articles"
+  />
+
+  <LandingHeaderMenuItem
+    href="#"
+    label="Sign In"
+    type="button"
+  />
+
+  <LandingHeaderMenuItem
+    href="#"
+    label={<SearchIcon />}
+    type="icon-button"
+    variant="ghost"
+  />
+
+  <ThemeSwitch />
+</LandingHeader>
+```
+
+</ComponentExample>
+
+## API Reference
+
+| Prop Name | Prop Type | Required | Default |
+| --------- | --------- | -------- | ------- |
+| **logoComponent** <Tippy>An optional React element to be used as the logo.</Tippy> | `React.ReactElement` | No | - |
+| **children** <Tippy>Navigation items to be rendered within the navigation bar, usually `LandingHeaderMenuItem`.</Tippy> | `React.ReactElement` | Yes | - |
+| **withBackground** <Tippy>Determines if the navigation bar should have a background.</Tippy> | `boolean` | No | `false` |
+| **variant** <Tippy>Defines the color variant of the background when `withBackground` is `true`.</Tippy> | `'primary' ǀ 'secondary'` | No | `'primary'` |
+| **fixed** <Tippy>Flag to determine if the navigation bar should be fixed at the top of the screen.</Tippy> | `boolean` | No | `false` |
+
+## More Examples
+
+For more even more examples, see our <a href="/demo/landing-page-component-examples" className="fancy-link">Landing Page Component Examples</a> page or see complete landing page examples by <a href="/demo/landing-page-templates" className="fancy-link">Exploring Our Landing Page Templates</a>.

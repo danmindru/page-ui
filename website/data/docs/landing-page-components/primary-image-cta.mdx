@@ -1074,6 +1074,114 @@ import { LandingSocialProofBandItem } from '@/components/landing/social-proof/La
 
 </ComponentExample>
 
+### With Newsletter Form
+<ComponentExample
+  previewComponent={
+    <LandingPrimaryImageCtaSection
+      title="Sign up now"
+      description="Never miss an update! Subscribe today for the latest announcements."
+      imageSrc="/static/images/shipixen/product/1.webp"
+      imageAlt="Sample image"
+    >
+      <LandingNewsletterInput />
+    </LandingPrimaryImageCtaSection>
+}>
+
+```jsx
+import { Button } from '@/components/shared/ui/button';
+import { LandingPrimaryImageCtaSection } from '@/components/landing/cta/LandingPrimaryCta';
+import { LandingNewsletterInput } from '@/components/landing/newsletter/LandingNewsletterInput';
+
+<LandingPrimaryImageCtaSection
+  title="Sign up now"
+  description="Never miss an update! Subscribe today for the latest announcements."
+  imageSrc="/static/images/shipixen/product/1.webp"
+  imageAlt="Sample image"
+>
+  <LandingNewsletterInput />
+</LandingPrimaryImageCtaSection>
+```
+
+</ComponentExample>
+
+
+### With Newsletter and Social Proof
+
+<ComponentExample
+  previewComponent={
+    <LandingPrimaryImageCtaSection
+      title="Sign up now"
+      description="Never miss an update! Subscribe today for the latest announcements."
+      imageSrc="/static/images/shipixen/product/1.webp"
+      imageAlt="Sample image"
+      imagePosition="center"
+      textPosition="center"
+    >
+      <LandingNewsletterInput className="max-w-xs" />
+
+      <LandingSocialProof
+        className="mt-6 w-full flex justify-center"
+        showRating
+        numberOfUsers={99}
+        avatarItems={[
+          {
+            imageSrc: '/static/images/people/1.webp',
+            name: 'John Doe',
+          },
+          {
+            imageSrc: '/static/images/people/2.webp',
+            name: 'Jane Doe',
+          },
+          {
+            imageSrc: '/static/images/people/3.webp',
+            name: 'Alice Doe',
+          },
+        ]}
+      />
+    </LandingPrimaryImageCtaSection>
+}>
+
+```jsx
+import { Button } from '@/components/shared/ui/button';
+import { LandingPrimaryImageCtaSection } from '@/components/landing/cta/LandingPrimaryCta';
+import { LandingSocialProof } from '@/components/landing/social-proof/LandingSocialProof';
+import { LandingNewsletterInput } from '@/components/landing/newsletter/LandingNewsletterInput';
+
+<LandingPrimaryImageCtaSection
+  title="Landing page in minutes"
+  description="Get 10x more done with Shadcn UI, React & Next.js, and say goodbye to repetitive tasks. You'll never go back."
+  imageSrc="/static/images/shipixen/product/1.webp"
+  imageAlt="Sample image"
+  imagePosition="center"
+  textPosition="center"
+>
+  <LandingNewsletterInput className="max-w-xs" />
+
+  <LandingSocialProof
+    className="mt-6 w-full flex justify-center"
+    showRating
+    numberOfUsers={99}
+    avatarItems={[
+      {
+        imageSrc: '/static/images/people/1.webp',
+        name: 'John Doe',
+      },
+      {
+        imageSrc: '/static/images/people/2.webp',
+        name: 'Jane Doe',
+      },
+      {
+        imageSrc: '/static/images/people/3.webp',
+        name: 'Alice Doe',
+      },
+    ]}
+  />
+</LandingPrimaryImageCtaSection>;
+```
+
+</ComponentExample>
+
+
 ## API Reference
 
 | Prop Name                                                                                                                             | Prop Type                                                                | Required | Default     |

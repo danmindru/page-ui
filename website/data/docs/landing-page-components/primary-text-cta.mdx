@@ -1,7 +1,7 @@
 ---
 title: 'Landing Page Primary Text Call to Action (CTA) Component'
 date: '2024-04-04'
-lastmod: '2024-07-06'
+lastmod: '2025-02-24'
 tags:
   - 'guide'
   - 'components'
@@ -887,6 +887,32 @@ import { LandingSocialProofBandItem } from '@/components/landing/social-proof/La
       },
     ]}
   />
+</LandingPrimaryTextCtaSection>
+```
+
+</ComponentExample>
+
+### With Newsletter Form
+<ComponentExample
+  previewComponent={
+    <LandingPrimaryTextCtaSection
+      title="Sign up today"
+      description="Never miss an update! Subscribe to our newsletter to get the latest announcements, news and exclusive offers."
+    >
+      <LandingNewsletterInput />
+    </LandingPrimaryTextCtaSection>
+}>
+
+```jsx
+import { Button } from '@/components/shared/ui/button';
+import { LandingPrimaryTextCtaSection } from '@/components/landing/cta/LandingPrimaryCta';
+import { LandingNewsletterInput } from '@/components/landing/newsletter/LandingNewsletterInput';
+
+<LandingPrimaryTextCtaSection
+  title="Sign up today"
+  description="Never miss an update! Subscribe to our newsletter to get the latest announcements, news and exclusive offers."
+>
+  <LandingNewsletterInput />
 </LandingPrimaryTextCtaSection>
 ```
 

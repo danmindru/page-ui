@@ -1,0 +1,752 @@
+---
+title: 'Landing Page Pricing Section'
+date: '2025-02-25'
+lastmod: '2025-02-25'
+tags:
+  - 'guide'
+  - 'components'
+  - 'documentation'
+  - 'landing-page'
+  - 'ui-library'
+  - 'react'
+  - 'nextjs'
+  - 'tailwind-css'
+  - 'pricing'
+  - 'landing-pricing'
+  - 'shadcn-ui'
+  - 'shadcn-ui-pricing'
+  - 'shadcn-ui-landing-page'
+
+summary: 'A component meant to be used for landing page pricing display. It can show different pricing plans or tiers, features, and a call-to-action button.'
+layout: PostHub
+
+images:
+  - '/static/images/blog/docs/landing-page-pricing-plans-component.webp'
+
+showThemeSelector: true
+showInstallNotice: true
+
+canonicalUrl: 'https://shipixen.com/boilerplate-documentation/landing-page-components/pricing'
+---
+
+This component displays different pricing tiers with features and a call-to-action button. On smaller screens, the layout becomes a single column to ensure usability.
+
+Also see: [Landing Page Pricing Plan](/boilerplate-documentation/landing-page-components/pricing-plan)
+
+<ComponentExample
+  previewComponent={
+    <LandingPricingSection
+      title="Simple, scalable pricing"
+      description="Affordable pricing plans tailored to your needs. Choose a plan that works best for you."
+    >
+      <LandingPricingPlan
+        title="Free"
+        description="For small teams & personal use."
+        price="$0"
+      >
+        <p>Up to 5 users</p>
+        <p>Basic features</p>
+        <p>Discord access</p>
+      </LandingPricingPlan>
+
+      <LandingPricingPlan
+        title="Pro"
+        description="For larger teams or businesses."
+        ctaText="Upgrade now"
+        price="$20"
+        priceSuffix="/mo"
+        highlighted
+      >
+        <p>Unlimited users</p>
+        <p>AI features</p>
+        <p>Priority support</p>
+      </LandingPricingPlan>
+    </LandingPricingSection>
+  }
+>
+
+```jsx
+import { LandingPricingSection } from '@/components/landing/pricing/LandingPricingSection';
+import { LandingPricingPlan } from '@/components/landing/pricing/LandingPricingPlan';
+
+<LandingPricingSection
+  title="Simple, scalable pricing"
+  description="Affordable pricing plans tailored to your needs. Choose a plan that works best for you."
+>
+  <LandingPricingPlan
+    title="Free"
+    description="For small teams & personal use."
+    price="$0"
+  >
+    <p>Up to 5 users</p>
+    <p>Basic features</p>
+    <p>Discord access</p>
+  </LandingPricingPlan>
+
+  <LandingPricingPlan
+    title="Pro"
+    description="For larger teams or businesses."
+    ctaText="Upgrade now"
+    price="$20"
+    priceSuffix="/mo"
+    highlighted
+  >
+    <p>Unlimited users</p>
+    <p>AI features</p>
+    <p>Priority support</p>
+  </LandingPricingPlan>
+</LandingPricingSection>
+```
+
+</ComponentExample>
+
+## Usage
+
+```jsx
+import { LandingPricingSection } from '@/components/landing/pricing/LandingPricingSection';
+import { LandingPricingPlan } from '@/components/landing/pricing/LandingPricingPlan';
+```
+
+```jsx
+<LandingPricingSection
+  title="Simple, scalable pricing"
+  description="Affordable pricing plans tailored to your needs. Choose a plan that works best for you."
+>
+  <LandingPricingPlan
+    title="Free"
+    description="For small teams & personal use."
+    price="$0"
+  >
+    <p>Up to 5 users</p>
+    <p>Basic features</p>
+    <p>Discord access</p>
+  </LandingPricingPlan>
+
+  <LandingPricingPlan
+    title="Pro"
+    description="For larger teams or businesses."
+    ctaText="Upgrade now"
+    price="$20"
+    priceSuffix="/mo"
+    highlighted
+  >
+    <p>Unlimited users</p>
+    <p>AI features</p>
+    <p>Priority support</p>
+  </LandingPricingPlan>
+</LandingPricingSection>
+```
+
+## Examples
+
+### Text position
+<ComponentExample
+  previewComponent={
+    <LandingPricingSection
+      title="Simple, scalable pricing"
+      description="Affordable pricing plans tailored to your needs. Choose a plan that works best for you."
+      textPosition="left"
+    >
+      <LandingPricingPlan
+        title="Free"
+        description="For small teams & personal use."
+        price="$0"
+      >
+        <p>Up to 5 users</p>
+        <p>Basic features</p>
+        <p>Discord access</p>
+      </LandingPricingPlan>
+
+      <LandingPricingPlan
+        title="Pro"
+        description="For larger teams or businesses."
+        ctaText="Upgrade now"
+        price="$20"
+      >
+        <p>Unlimited users</p>
+        <p>AI features</p>
+        <p>Priority support</p>
+      </LandingPricingPlan>
+    </LandingPricingSection>
+  }
+>
+
+```jsx
+import { LandingPricingSection } from '@/components/landing/pricing/LandingPricingSection';
+import { LandingPricingPlan } from '@/components/landing/pricing/LandingPricingPlan';
+
+<LandingPricingSection
+  title="Simple, scalable pricing"
+  description="Affordable pricing plans tailored to your needs. Choose a plan that works best for you."
+  textPosition="left"
+>
+  <LandingPricingPlan
+    title="Free"
+    description="For small teams & personal use."
+    price="$0"
+  >
+    <p>Up to 5 users</p>
+    <p>Basic features</p>
+    <p>Discord access</p>
+  </LandingPricingPlan>
+
+  <LandingPricingPlan
+    title="Pro"
+    description="For larger teams or businesses."
+    ctaText="Upgrade now"
+    price="$20"
+  >
+    <p>Unlimited users</p>
+    <p>AI features</p>
+    <p>Priority support</p>
+  </LandingPricingPlan>
+</LandingPricingSection>
+```
+
+</ComponentExample>
+
+### With Price suffix
+For some pricing plans, you may want to add a suffix to the price, like /mo or /year etc.
+
+<ComponentExample
+  previewComponent={
+    <LandingPricingSection
+      title="Simple, scalable pricing"
+      description="Affordable pricing plans tailored to your needs. Choose a plan that works best for you."
+    >
+      <LandingPricingPlan
+        title="Free"
+        description="For small teams & personal use."
+        price="$0"
+        priceSuffix="/forever"
+      >
+        <p>Up to 5 users</p>
+        <p>Basic features</p>
+        <p>Discord access</p>
+      </LandingPricingPlan>
+
+      <LandingPricingPlan
+        title="Pro"
+        description="For larger teams or businesses."
+        ctaText="Upgrade now"
+        price="$20"
+        priceSuffix="/mo"
+      >
+        <p>Unlimited users</p>
+        <p>AI features</p>
+        <p>Priority support</p>
+      </LandingPricingPlan>
+    </LandingPricingSection>
+  }
+>
+
+```jsx
+import { LandingPricingSection } from '@/components/landing/pricing/LandingPricingSection';
+import { LandingPricingPlan } from '@/components/landing/pricing/LandingPricingPlan';
+
+<LandingPricingSection
+  title="Simple, scalable pricing"
+  description="Affordable pricing plans tailored to your needs. Choose a plan that works best for you."
+>
+  <LandingPricingPlan
+    title="Free"
+    description="For small teams & personal use."
+    price="$0"
+    priceSuffix="/forever"
+  >
+    <p>Up to 5 users</p>
+    <p>Basic features</p>
+    <p>Discord access</p>
+  </LandingPricingPlan>
+
+  <LandingPricingPlan
+    title="Pro"
+    description="For larger teams or businesses."
+    ctaText="Upgrade now"
+    price="$20"
+    priceSuffix="/mo"
+  >
+    <p>Unlimited users</p>
+    <p>AI features</p>
+    <p>Priority support</p>
+  </LandingPricingPlan>
+</LandingPricingSection>
+```
+
+</ComponentExample>
+
+### With highlighted plan
+<ComponentExample
+  previewComponent={
+    <LandingPricingSection
+      title="Simple, scalable pricing"
+      description="Affordable pricing plans tailored to your needs. Choose a plan that works best for you."
+    >
+      <LandingPricingPlan
+        title="Free"
+        description="For small teams & personal use."
+        price="$0"
+      >
+        <p>Up to 5 users</p>
+        <p>Basic features</p>
+        <p>Discord access</p>
+      </LandingPricingPlan>
+
+      <LandingPricingPlan
+        title="Pro"
+        description="For larger teams or businesses."
+        ctaText="Upgrade now"
+        price="$20"
+        highlighted
+      >
+        <p>Unlimited users</p>
+        <p>AI features</p>
+        <p>Priority support</p>
+      </LandingPricingPlan>
+    </LandingPricingSection>
+  }
+>
+
+```jsx
+import { LandingPricingSection } from '@/components/landing/pricing/LandingPricingSection';
+import { LandingPricingPlan } from '@/components/landing/pricing/LandingPricingPlan';
+
+<LandingPricingSection
+  title="Simple, scalable pricing"
+  description="Affordable pricing plans tailored to your needs. Choose a plan that works best for you."
+>
+  <LandingPricingPlan
+    title="Free"
+    description="For small teams & personal use."
+    price="$0"
+  >
+    <p>Up to 5 users</p>
+    <p>Basic features</p>
+    <p>Discord access</p>
+  </LandingPricingPlan>
+
+  <LandingPricingPlan
+    title="Pro"
+    description="For larger teams or businesses."
+    ctaText="Upgrade now"
+    price="$20"
+    highlighted
+  >
+    <p>Unlimited users</p>
+    <p>AI features</p>
+    <p>Priority support</p>
+  </LandingPricingPlan>
+</LandingPricingSection>
+```
+
+</ComponentExample>
+
+### With featured plan
+Featured plans are meant to stand out and are usually used for more expensive / enterprise plans.
+
+<ComponentExample
+  previewComponent={
+    <LandingPricingSection
+      title="Simple, scalable pricing"
+      description="Affordable pricing plans tailored to your needs. Choose a plan that works best for you."
+    >
+      <LandingPricingPlan
+        title="Free"
+        description="For small teams & personal use."
+        price="$0"
+      >
+        <p>Up to 5 users</p>
+        <p>Basic features</p>
+        <p>Discord access</p>
+      </LandingPricingPlan>
+
+      <LandingPricingPlan
+        title="Pro"
+        description="For larger teams or businesses."
+        ctaText="Upgrade now"
+        price="$20"
+        featured
+      >
+        <p>Unlimited users</p>
+        <p>AI features</p>
+        <p>Priority support</p>
+      </LandingPricingPlan>
+    </LandingPricingSection>
+  }
+>
+
+```jsx
+import { LandingPricingSection } from '@/components/landing/pricing/LandingPricingSection';
+import { LandingPricingPlan } from '@/components/landing/pricing/LandingPricingPlan';
+
+<LandingPricingSection
+  title="Simple, scalable pricing"
+  description="Affordable pricing plans tailored to your needs. Choose a plan that works best for you."
+>
+  <LandingPricingPlan
+    title="Free"
+    description="For small teams & personal use."
+    price="$0"
+  >
+    <p>Up to 5 users</p>
+    <p>Basic features</p>
+    <p>Discord access</p>
+  </LandingPricingPlan>
+
+  <LandingPricingPlan
+    title="Pro"
+    description="For larger teams or businesses."
+    ctaText="Upgrade now"
+    price="$20"
+    featured
+  >
+    <p>Unlimited users</p>
+    <p>AI features</p>
+    <p>Priority support</p>
+  </LandingPricingPlan>
+</LandingPricingSection>
+```
+
+</ComponentExample>
+
+### With discount
+<ComponentExample
+  previewComponent={
+    <LandingPricingSection
+      title="Simple, scalable pricing"
+      description="Affordable pricing plans tailored to your needs. Choose a plan that works best for you."
+    >
+      <LandingPricingPlan
+        title="Free"
+        description="For small teams & personal use."
+        price="$0"
+      >
+        <p>Up to 5 users</p>
+        <p>Basic features</p>
+        <p>Discord access</p>
+      </LandingPricingPlan>
+
+      <LandingPricingPlan
+        title="Pro"
+        description="For larger teams or businesses."
+        ctaText="Upgrade now"
+        price="$20"
+        discountPrice="$10"
+      >
+        <p>Unlimited users</p>
+        <p>AI features</p>
+        <p>Priority support</p>
+      </LandingPricingPlan>
+    </LandingPricingSection>
+  }
+>
+
+```jsx
+import { LandingPricingSection } from '@/components/landing/pricing/LandingPricingSection';
+import { LandingPricingPlan } from '@/components/landing/pricing/LandingPricingPlan';
+
+<LandingPricingSection
+  title="Simple, scalable pricing"
+  description="Affordable pricing plans tailored to your needs. Choose a plan that works best for you."
+>
+  <LandingPricingPlan
+    title="Free"
+    description="For small teams & personal use."
+    price="$0"
+  >
+    <p>Up to 5 users</p>
+    <p>Basic features</p>
+    <p>Discord access</p>
+  </LandingPricingPlan>
+
+  <LandingPricingPlan
+    title="Pro"
+    description="For larger teams or businesses."
+    ctaText="Upgrade now"
+    price="$20"
+    discountPrice="$10"
+  >
+    <p>Unlimited users</p>
+    <p>AI features</p>
+    <p>Priority support</p>
+  </LandingPricingPlan>
+</LandingPricingSection>
+```
+
+</ComponentExample>
+
+### Sold out
+<ComponentExample
+  previewComponent={
+    <LandingPricingSection
+      title="Simple, scalable pricing"
+      description="Affordable pricing plans tailored to your needs. Choose a plan that works best for you."
+    >
+      <LandingPricingPlan
+        title="Free"
+        description="For small teams & personal use."
+        price="$0"
+      >
+        <p>Up to 5 users</p>
+        <p>Basic features</p>
+        <p>Discord access</p>
+      </LandingPricingPlan>
+
+      <LandingPricingPlan
+        title="Pro"
+        description="For larger teams or businesses."
+        ctaText="Upgrade now"
+        price="$20"
+        soldOut
+      >
+        <p>Unlimited users</p>
+        <p>AI features</p>
+        <p>Priority support</p>
+      </LandingPricingPlan>
+    </LandingPricingSection>
+  }
+>
+
+```jsx
+import { LandingPricingSection } from '@/components/landing/pricing/LandingPricingSection';
+import { LandingPricingPlan } from '@/components/landing/pricing/LandingPricingPlan';
+
+<LandingPricingSection
+  title="Simple, scalable pricing"
+  description="Affordable pricing plans tailored to your needs. Choose a plan that works best for you."
+>
+  <LandingPricingPlan
+    title="Free"
+    description="For small teams & personal use."
+    price="$0"
+  >
+    <p>Up to 5 users</p>
+    <p>Basic features</p>
+    <p>Discord access</p>
+  </LandingPricingPlan>
+
+  <LandingPricingPlan
+    title="Pro"
+    description="For larger teams or businesses."
+    ctaText="Upgrade now"
+    price="$20"
+    soldOut
+  >
+    <p>Unlimited users</p>
+    <p>AI features</p>
+    <p>Priority support</p>
+  </LandingPricingPlan>
+</LandingPricingSection>
+```
+
+</ComponentExample>
+
+### Multiple columns
+You can use the pricing section to display between 1 to 4 pricing plans. The layout will automatically adjust based on the number of plans you provide.
+
+<ComponentExample
+  previewComponent={
+    <LandingPricingSection
+      title="Simple, scalable pricing"
+      description="Affordable pricing plans tailored to your needs. Choose a plan that works best for you."
+    >
+      <LandingPricingPlan
+        title="Free"
+        description="For small teams & personal use."
+        price="$0"
+      >
+        <p>Up to 5 users</p>
+        <p>Basic features</p>
+        <p>Discord access</p>
+      </LandingPricingPlan>
+
+      <LandingPricingPlan
+        title="Pro"
+        description="For larger teams or businesses."
+        ctaText="Upgrade"
+        price="$20"
+        priceSuffix="/mo"
+        highlighted
+      >
+        <p>Unlimited users</p>
+        <p>AI features</p>
+        <p>Priority support</p>
+      </LandingPricingPlan>
+
+      <LandingPricingPlan
+        title="Enterprise"
+        description="For enterprise teams & businesses."
+        ctaText="Sign up"
+        price="$100"
+        priceSuffix="/mo"
+        featured
+      >
+        <p>Unlimited users</p>
+        <p>AI features</p>
+        <p>Priority support</p>
+      </LandingPricingPlan>
+    </LandingPricingSection>
+  }
+>
+
+```jsx
+import { LandingPricingSection } from '@/components/landing/pricing/LandingPricingSection';
+import { LandingPricingPlan } from '@/components/landing/pricing/LandingPricingPlan';
+
+
+```
+
+</ComponentExample>
+
+
+### With background
+<ComponentExample
+  previewComponent={
+    <LandingPricingSection
+      title="Simple, scalable pricing"
+      description="Affordable pricing plans tailored to your needs. Choose a plan that works best for you."
+      withBackground
+    >
+      <LandingPricingPlan
+        title="Free"
+        description="For small teams & personal use."
+        price="$0"
+      >
+        <p>Up to 5 users</p>
+        <p>Basic features</p>
+        <p>Discord access</p>
+      </LandingPricingPlan>
+
+      <LandingPricingPlan
+        title="Pro"
+        description="For larger teams or businesses."
+        ctaText="Upgrade now"
+        price="$20"
+      >
+        <p>Unlimited users</p>
+        <p>AI features</p>
+        <p>Priority support</p>
+      </LandingPricingPlan>
+    </LandingPricingSection>
+  }
+>
+
+```jsx
+import { LandingPricingSection } from '@/components/landing/pricing/LandingPricingSection';
+import { LandingPricingPlan } from '@/components/landing/pricing/LandingPricingPlan';
+
+<LandingPricingSection
+  title="Simple, scalable pricing"
+  description="Affordable pricing plans tailored to your needs. Choose a plan that works best for you."
+  withBackground
+>
+  <LandingPricingPlan
+    title="Free"
+    description="For small teams & personal use."
+    price="$0"
+  >
+    <p>Up to 5 users</p>
+    <p>Basic features</p>
+    <p>Discord access</p>
+  </LandingPricingPlan>
+
+  <LandingPricingPlan
+    title="Pro"
+    description="For larger teams or businesses."
+    ctaText="Upgrade now"
+    price="$20"
+  >
+    <p>Unlimited users</p>
+    <p>AI features</p>
+    <p>Priority support</p>
+  </LandingPricingPlan>
+</LandingPricingSection>
+```
+
+</ComponentExample>
+
+### With background glow
+<ComponentExample
+  previewComponent={
+    <LandingPricingSection
+      title="Simple, scalable pricing"
+      description="Affordable pricing plans tailored to your needs. Choose a plan that works best for you."
+      withBackgroundGlow
+    >
+      <LandingPricingPlan
+        title="Free"
+        description="For small teams & personal use."
+        price="$0"
+      >
+        <p>Up to 5 users</p>
+        <p>Basic features</p>
+        <p>Discord access</p>
+      </LandingPricingPlan>
+
+      <LandingPricingPlan
+        title="Pro"
+        description="For larger teams or businesses."
+        ctaText="Upgrade now"
+        price="$20"
+      >
+        <p>Unlimited users</p>
+        <p>AI features</p>
+        <p>Priority support</p>
+      </LandingPricingPlan>
+    </LandingPricingSection>
+  }
+>
+
+```jsx
+import { LandingPricingSection } from '@/components/landing/pricing/LandingPricingSection';
+import { LandingPricingPlan } from '@/components/landing/pricing/LandingPricingPlan';
+
+<LandingPricingSection
+  title="Simple, scalable pricing"
+  description="Affordable pricing plans tailored to your needs. Choose a plan that works best for you."
+  withBackgroundGlow
+>
+  <LandingPricingPlan
+    title="Free"
+    description="For small teams & personal use."
+    price="$0"
+  >
+    <p>Up to 5 users</p>
+    <p>Basic features</p>
+    <p>Discord access</p>
+  </LandingPricingPlan>
+
+  <LandingPricingPlan
+    title="Pro"
+    description="For larger teams or businesses."
+    ctaText="Upgrade now"
+    price="$20"
+  >
+    <p>Unlimited users</p>
+    <p>AI features</p>
+    <p>Priority support</p>
+  </LandingPricingPlan>
+</LandingPricingSection>
+```
+
+</ComponentExample>
+
+## API Reference
+
+| Prop Name | Prop Type | Required | Default |
+| --------- | --------- | -------- | ------- |
+| **children** <Tippy>React nodes to be rendered within the component (below the text on smaller screen, right side on larger).</Tippy> | `React.ReactNode` | No | - |
+| **title** <Tippy>The main title text or React node.</Tippy> | `string` ǀ `React.ReactNode` | No | - |
+| **titleComponent** <Tippy>A React node to render as the title instead of text.</Tippy> | `React.ReactNode` | No | - |
+| **description** <Tippy>The description text or React node.</Tippy> | `string` ǀ `React.ReactNode` | No | - |
+| **descriptionComponent** <Tippy>A React node to render as the description instead of text.</Tippy> | `React.ReactNode` | No | - |
+| **textPosition** <Tippy>Position of the text content.</Tippy> | `'center'` ǀ `'left'` | No | `'center'` |
+| **withBackground** <Tippy>Whether to display a background.</Tippy> | `boolean` | No | `false` |
+| **withBackgroundGlow** <Tippy>Whether to add a glowing background effect.</Tippy> | `boolean` | No | `false` |
+| **withAvatars** <Tippy>Whether to display avatars.</Tippy> | `boolean` | No | `false` |
+| **variant** <Tippy>The visual style of the component.</Tippy> | `'primary'` ǀ `'secondary'` | No | `'primary'` |
+| **backgroundGlowVariant** <Tippy>The variant of the glowing background effect.</Tippy> | `'primary'` ǀ `'secondary'` | No | `'primary'` |
+
+## More Examples
+
+For more even more examples, see our <a href="/demo/landing-page-component-examples" className="fancy-link">Landing Page Component Examples</a> page or see complete landing page examples by <a href="/demo/landing-page-templates" className="fancy-link">Exploring Our Landing Page Templates</a>.
