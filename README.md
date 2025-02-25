@@ -16,6 +16,8 @@ Quick links:
 
 [Read more](https://pageui.dev/docs/introduction) about Page UI.
 
+> ⚠️ Page UI currently works with Tailwind v3. We are working on adding support for v4.
+
 ## 🎨 Templates
 
 [![Specta - A landing page template for a creator platform, featuring a marquee section and a showcase section](https://github.com/user-attachments/assets/e2cc026a-70eb-4b07-a20a-3b2128b90056)](https://shipixen.com/demo/landing-page-templates/template/specta)
