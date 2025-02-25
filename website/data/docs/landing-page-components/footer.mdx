@@ -344,6 +344,61 @@ import { LandingFooterLink } from '@/components/landing/footer/LandingFooterLink
 
 </ComponentExample>
 
+### With background gradient
+<ComponentExample
+  previewComponent={
+    <LandingFooter
+      title="Beautiful landing pages in minutes"
+      description="The easiest way to make a landing page for your startup: SaaS, iOS/Android app, directory, personal page and more."
+      footnote="© 2025 Page AI. All rights reserved."
+      withBackgroundGradient
+    >
+      <LandingFooterColumn title="Product">
+        <LandingFooterLink href="#">Features</LandingFooterLink>
+        <LandingFooterLink href="#">Pricing</LandingFooterLink>
+        <LandingFooterLink href="#">Integrations</LandingFooterLink>
+        <LandingFooterLink href="#">FAQ</LandingFooterLink>
+      </LandingFooterColumn>
+
+      <LandingFooterColumn title="Company">
+        <LandingFooterLink href="#">About</LandingFooterLink>
+        <LandingFooterLink href="#">Careers</LandingFooterLink>
+        <LandingFooterLink href="#">Press</LandingFooterLink>
+        <LandingFooterLink href="#">Blog</LandingFooterLink>
+      </LandingFooterColumn>
+    </LandingFooter>
+  }
+>
+
+```jsx
+import { LandingFooter } from '@/components/landing/footer/LandingFooter';
+import { LandingFooterColumn } from '@/components/landing/footer/LandingFooterColumn';
+import { LandingFooterLink } from '@/components/landing/footer/LandingFooterLink';
+
+<LandingFooter
+  title="Beautiful landing pages in minutes"
+  description="The easiest way to make a landing page for your startup: SaaS, iOS/Android app, directory, personal page and more."
+  footnote="© 2025 Page AI. All rights reserved."
+  withBackgroundGradient
+>
+  <LandingFooterColumn title="Product">
+    <LandingFooterLink href="#">Features</LandingFooterLink>
+    <LandingFooterLink href="#">Pricing</LandingFooterLink>
+    <LandingFooterLink href="#">Integrations</LandingFooterLink>
+    <LandingFooterLink href="#">FAQ</LandingFooterLink>
+  </LandingFooterColumn>
+
+  <LandingFooterColumn title="Company">
+    <LandingFooterLink href="#">About</LandingFooterLink>
+    <LandingFooterLink href="#">Careers</LandingFooterLink>
+    <LandingFooterLink href="#">Press</LandingFooterLink>
+    <LandingFooterLink href="#">Blog</LandingFooterLink>
+  </LandingFooterColumn>
+</LandingFooter>
+```
+
+</ComponentExample>
+
 ## API Reference
 
 | Prop Name | Prop Type | Required | Default |
@@ -357,6 +412,7 @@ import { LandingFooterLink } from '@/components/landing/footer/LandingFooterLink
 | **withBackgroundGlow** <Tippy>Adds a glowing background effect to the footer.</Tippy> | `boolean` | No | `false` |
 | **variant** <Tippy>The color variant of the footer.</Tippy> | `'primary'` ǀ `'secondary'` | No | `'primary'` |
 | **backgroundGlowVariant** <Tippy>The color variant of the glowing background.</Tippy> | `'primary'` ǀ `'secondary'` | No | `'primary'` |
+| **withBackgroundGradient** <Tippy>Determines if the footer should have a gradient background.</Tippy> | `boolean` | No | `false` |
 
 
 ## More Examples
