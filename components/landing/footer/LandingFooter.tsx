@@ -17,6 +17,7 @@ export const LandingFooter = ({
   logoComponent,
   withBackground = false,
   withBackgroundGlow = false,
+  withBackgroundGradient = false,
   variant = 'primary',
   backgroundGlowVariant = 'primary',
 }: {
@@ -28,6 +29,7 @@ export const LandingFooter = ({
   logoComponent?: React.ReactNode;
   withBackground?: boolean;
   withBackgroundGlow?: boolean;
+  withBackgroundGradient?: boolean;
   variant?: 'primary' | 'secondary';
   backgroundGlowVariant?: 'primary' | 'secondary';
 }) => {
@@ -36,7 +38,7 @@ export const LandingFooter = ({
   return (
     <footer
       className={clsx(
-        'mt-auto w-full bg-gradient-to-r from-white/5 via-white/60 to-white/5 backdrop-blur-sm dark:from-slate-700/5 dark:via-slate-700/60 dark:to-slate-700/5',
+        'mt-auto w-full bg-gradient-to-r',
         withBackground && variant === 'primary'
           ? 'bg-primary-100/20 dark:bg-primary-900/10'
           : '',
@@ -44,6 +46,9 @@ export const LandingFooter = ({
           ? 'bg-secondary-100/20 dark:bg-secondary-900/10'
           : '',
         withBackgroundGlow ? 'relative overflow-hidden' : '',
+        withBackgroundGradient
+          ? 'from-gray-50/5 via-gray-100/60 to-gray-50/5 backdrop-blur-sm dark:from-slate-700/5 dark:via-slate-700/60 dark:to-slate-700/5'
+          : '',
         className,
       )}
     >
