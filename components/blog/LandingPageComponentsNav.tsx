@@ -36,8 +36,33 @@ export const LandingPageComponentsNav = ({
       label: 'Feature',
     },
     {
+      href: '/docs/landing-page-components/footer',
+      label: 'Footer',
+      isNew: true,
+    },
+    {
       href: '/docs/landing-page-components/marquee',
       label: 'Marquee',
+    },
+    {
+      href: '/docs/landing-page-components/navigation',
+      label: 'Navigation / Header',
+      isNew: true,
+    },
+    {
+      href: '/docs/landing-page-components/newsletter',
+      label: 'Newsletter',
+      isNew: true,
+    },
+    {
+      href: '/docs/landing-page-components/pricing',
+      label: 'Pricing',
+      isNew: true,
+    },
+    {
+      href: '/docs/landing-page-components/pricing-plan',
+      label: 'Pricing Plan',
+      isNew: true,
     },
     {
       href: '/docs/landing-page-components/primary-image-cta',
@@ -115,10 +140,18 @@ export const LandingPageComponentsNav = ({
 
   return (
     <ul className={cn('flex flex-col text-sm', className)}>
-      {links.map(({ href, label }) => (
+      {links.map(({ href, label, isNew }) => (
         <li key={label}>
           <ActiveLink activeClassName="text-primary-500" href={href + '#main'}>
-            <span>{label}</span>
+            <span className="flex items-center">
+              {label}
+
+              {isNew ? (
+                <span className="ml-2 px-1.5 py-0.5 rounded-md text-[0.6rem] font-semibold bg-primary-500 text-white">
+                  New
+                </span>
+              ) : null}
+            </span>
           </ActiveLink>
         </li>
       ))}
