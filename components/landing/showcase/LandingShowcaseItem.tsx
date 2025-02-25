@@ -1,5 +1,3 @@
-import { LandingRating } from '@/components/landing/rating/LandingRating';
-import { LandingAvatar } from '@/components/landing/social-proof/LandingAvatar';
 import { clsx } from 'clsx';
 
 /**
