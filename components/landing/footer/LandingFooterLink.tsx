@@ -6,12 +6,12 @@ import Link from 'next/link';
  * It shows a title and a column of links or other content.
  */
 export const LandingFooterLink = ({
-  href,
+  href = '#',
   children,
   variant = 'primary',
   className,
 }: {
-  href: string;
+  href?: string;
   children: string | React.ReactNode;
   variant?: 'primary' | 'secondary';
   className?: string;
