@@ -34,7 +34,7 @@ export const LandingHeader = ({
     <nav
       className={clsx(
         'flex items-center justify-between gap-6 p-4 w-full max-w-full container-narrow',
-        fixed ? 'fixed top-0 left-auto right-auto z-50 backdrop-blur-xl' : '',
+        fixed ? 'sticky top-4 left-auto right-auto z-50 backdrop-blur-xl' : '',
         withBackground ? 'lg:m-4 lg:rounded-lg justify-self-center' : '',
         withBackground && variant === 'primary'
           ? 'bg-primary-100/20 dark:bg-primary-900/10 border border-primary-100/30 dark:border-primary-900/30'
