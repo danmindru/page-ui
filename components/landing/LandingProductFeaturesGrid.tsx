@@ -78,7 +78,7 @@ export const LandingProductFeaturesGrid = ({
         <div
           className={clsx(
             'relative flex flex-col sm:items-center',
-            `${containerType}-container`,
+            `container-${containerType}`,
           )}
         >
           {title ? (
