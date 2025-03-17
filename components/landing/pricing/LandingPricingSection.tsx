@@ -28,7 +28,6 @@ export const LandingPricingSection = ({
   textPosition?: 'center' | 'left';
   withBackground?: boolean;
   withBackgroundGlow?: boolean;
-  withAvatars?: boolean;
   variant?: 'primary' | 'secondary';
   backgroundGlowVariant?: 'primary' | 'secondary';
 }) => {
