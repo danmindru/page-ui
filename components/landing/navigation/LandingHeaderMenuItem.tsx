@@ -9,13 +9,13 @@ import Link from 'next/link';
 export const LandingHeaderMenuItem = ({
   href = '#',
   label = '',
-  type,
+  type = 'link',
   onClick,
   variant = 'primary',
 }: {
   href?: string;
   label?: string | React.ReactNode;
-  type: 'button' | 'link' | 'icon-button';
+  type?: 'button' | 'link' | 'icon-button';
   onClick?: () => void;
   variant?: 'primary' | 'secondary' | 'ghost';
 }) => {
