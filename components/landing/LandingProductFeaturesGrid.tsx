@@ -1,5 +1,6 @@
 import { LandingProductFeature } from '@/components/landing/LandingProductFeature';
 import { LandingProductVideoFeature } from '@/components/landing/LandingProductVideoFeature';
+import { GlowBg } from '@/components/shared/ui/glow-bg';
 import clsx from 'clsx';
 import { Children, ReactElement, cloneElement } from 'react';
 
@@ -17,7 +18,9 @@ export const LandingProductFeaturesGrid = ({
   description,
   descriptionComponent,
   withBackground = true,
+  withBackgroundGlow = false,
   variant = 'primary',
+  backgroundGlowVariant = 'primary',
   containerType = 'ultrawide',
 }: {
   className?: string;
@@ -27,7 +30,9 @@ export const LandingProductFeaturesGrid = ({
   description?: string | React.ReactNode;
   descriptionComponent?: React.ReactNode;
   withBackground?: boolean;
+  withBackgroundGlow?: boolean;
   variant?: 'primary' | 'secondary';
+  backgroundGlowVariant?: 'primary' | 'secondary';
   containerType?: 'narrow' | 'wide' | 'ultrawide';
 }) => {
   const childrenWithBackground = Children.map(children, (child) => {
@@ -71,9 +76,19 @@ export const LandingProductFeaturesGrid = ({
         withBackground && variant === 'secondary'
           ? 'bg-secondary-100/20 dark:bg-secondary-900/10'
           : '',
+        withBackgroundGlow ? 'relative overflow-hidden' : '',
         className,
       )}
     >
+      {withBackgroundGlow ? (
+        <div className="hidden lg:flex justify-center w-full h-full absolute -bottom-1/2 pointer-events-none">
+          <GlowBg
+            className={clsx('w-full lg:w-2/3 h-auto z-0')}
+            variant={backgroundGlowVariant}
+          />
+        </div>
+      ) : null}
+
       {title || description || titleComponent || descriptionComponent ? (
         <div
           className={clsx(
