@@ -23,8 +23,8 @@ export const LandingHeader = ({
   fixed = false,
   className,
 }: {
-  logoComponent?: React.ReactElement;
-  children: React.ReactElement;
+  logoComponent?: React.ReactNode;
+  children: React.ReactNode;
   withBackground?: boolean;
   variant?: 'primary' | 'secondary';
   fixed?: boolean;
