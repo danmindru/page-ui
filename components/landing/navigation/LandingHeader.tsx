@@ -21,12 +21,14 @@ export const LandingHeader = ({
   withBackground = false,
   variant = 'primary',
   fixed = false,
+  className,
 }: {
   logoComponent?: React.ReactElement;
   children: React.ReactElement;
   withBackground?: boolean;
   variant?: 'primary' | 'secondary';
   fixed?: boolean;
+  className?: string;
 }) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -42,6 +44,7 @@ export const LandingHeader = ({
         withBackground && variant === 'secondary'
           ? 'bg-secondary-100/20 dark:bg-secondary-900/10 border border-secondary-100/30 dark:border-secondary-900/30'
           : '',
+        className,
       )}
     >
       <div className="flex items-center">

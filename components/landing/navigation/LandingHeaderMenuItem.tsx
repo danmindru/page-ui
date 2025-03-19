@@ -12,12 +12,14 @@ export const LandingHeaderMenuItem = ({
   type = 'link',
   onClick,
   variant = 'primary',
+  className,
 }: {
   href?: string;
   label?: string | React.ReactNode;
   type?: 'button' | 'link' | 'icon-button';
   onClick?: () => void;
   variant?: 'primary' | 'secondary' | 'ghost';
+  className?: string;
 }) => {
   if (type === 'button' || type === 'icon-button') {
     return (
@@ -25,7 +27,10 @@ export const LandingHeaderMenuItem = ({
         asChild
         onClick={onClick}
         variant={variant}
-        className={clsx(type === 'icon-button' && 'rounded-full p-2')}
+        className={clsx(
+          type === 'icon-button' && 'rounded-full p-2',
+          className,
+        )}
       >
         <Link href={href}>{label}</Link>
       </Button>
@@ -40,6 +45,7 @@ export const LandingHeaderMenuItem = ({
         variant === 'primary'
           ? 'text-primary hover:text-primary-500'
           : 'text-secondary hover:text-secondary-500',
+        className,
       )}
       onClick={onClick}
     >
