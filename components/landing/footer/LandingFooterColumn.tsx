@@ -3,6 +3,8 @@ import { clsx } from 'clsx';
 /**
  * A component meant to be used with LandingFooter.
  * It shows a title and a column of links or other content.
+ *
+ * LandingFooters can have between 1-4 columns.
  */
 export const LandingFooterColumn = ({
   className,
