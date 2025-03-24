@@ -58,6 +58,20 @@ export const FILES = [
   },
 
   {
+    from: `${PLACEHOLDER_PATH}/shared/ui/input.tsx`,
+    to: 'components/shared/ui/input.tsx',
+    fallbackPath:
+      'https://github.com/danmindru/page-ui/blob/main/components/shared/ui/input.tsx',
+  },
+
+  {
+    from: `${PLACEHOLDER_PATH}/shared/ui/label.tsx`,
+    to: 'components/shared/ui/label.tsx',
+    fallbackPath:
+      'https://github.com/danmindru/page-ui/blob/main/components/shared/ui/label.tsx',
+  },
+
+  {
     from: `${PLACEHOLDER_PATH}/shared/VideoPlayer.tsx`,
     to: 'components/shared/VideoPlayer.tsx',
     fallbackPath:
