@@ -290,7 +290,7 @@ export const LandingPrimaryVideoCtaSection = ({
         withBackground && variant === 'secondary'
           ? 'bg-secondary-100/20 dark:bg-secondary-900/10'
           : '',
-        withBackgroundGlow ? 'overflow-hidden' : '',
+        withBackgroundGlow ? 'relative overflow-hidden' : '',
         className,
       )}
     >
@@ -399,7 +399,9 @@ export const LandingPrimaryTextCtaSection = ({
   footerComponent,
   textPosition = 'center',
   withBackground = false,
+  withBackgroundGlow = false,
   variant = 'primary',
+  backgroundGlowVariant = 'primary',
 }: {
   children?: React.ReactNode;
   className?: string;
@@ -412,7 +414,9 @@ export const LandingPrimaryTextCtaSection = ({
   footerComponent?: React.ReactNode;
   textPosition?: 'center' | 'left';
   withBackground?: boolean;
+  withBackgroundGlow?: boolean;
   variant?: 'primary' | 'secondary';
+  backgroundGlowVariant?: 'primary' | 'secondary';
 }) => {
   return (
     <section
@@ -427,6 +431,18 @@ export const LandingPrimaryTextCtaSection = ({
         className,
       )}
     >
+      {withBackgroundGlow ? (
+        <div className="hidden lg:flex justify-center w-full h-full absolute pointer-events-none">
+          <GlowBg
+            className={clsx(
+              'w-full lg:w-1/2 h-auto z-0 dark:opacity-50',
+              textPosition === 'center' ? 'top-5' : ' -top-1/3',
+            )}
+            variant={backgroundGlowVariant}
+          />
+        </div>
+      ) : null}
+
       <div
         className={clsx(
           'w-full p-6 flex flex-col gap-8 relative',
