@@ -3,17 +3,19 @@ import { CheckIcon } from 'lucide-react';
 
 export interface KeyPoint {
   title: string;
-  description: string;
+  description?: string;
 }
 
 export const LandingProductFeatureKeyPoints = ({
   className,
   keyPoints,
   variant = 'primary',
+  descriptionStyle = 'block',
 }: {
   className?: string;
   keyPoints: KeyPoint[];
   variant?: 'primary' | 'secondary';
+  descriptionStyle?: 'inline' | 'block';
 }) => {
   return (
     <dl
@@ -36,7 +38,13 @@ export const LandingProductFeatureKeyPoints = ({
               />{' '}
               {keyPoint.title}.
             </dt>{' '}
-            <dd className="inline">{keyPoint.description}</dd>
+            {keyPoint.description ? (
+              <dd
+                className={clsx(descriptionStyle === 'inline' ? 'inline' : '')}
+              >
+                {keyPoint.description}
+              </dd>
+            ) : null}
           </div>
         );
       })}

@@ -34,7 +34,7 @@ export const LandingTestimonialInlineItem = ({
           </div>
         ) : null}
 
-        <div className="flex flex-col lg:items-center text-xs truncate">
+        <div className="w-full flex flex-col lg:items-center text-xs truncate">
           <LandingRating rating={5} />
 
           {text ? (

@@ -34,7 +34,7 @@ export const LandingTestimonialInline = ({
     >
       <div
         className={clsx(
-          '!p-0 relative isolate grid md:grid-cols-2 lg:grid-cols-4 gap-4',
+          '!p-0 relative isolate w-full flex flex-col md:grid md:grid-cols-2 lg:grid-cols-4 gap-4 overflow-ellipsis',
           `container-${containerType}`,
         )}
       >

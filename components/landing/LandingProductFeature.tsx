@@ -24,6 +24,7 @@ export const LandingProductFeature = ({
   imagePosition = 'right',
   imagePerspective = 'paper',
   imageShadow = 'hard',
+  imageClassName,
   zoomOnHover = true,
   minHeight = 350,
   withBackground = false,
@@ -50,6 +51,7 @@ export const LandingProductFeature = ({
     | 'bottom-lg'
     | 'paper';
   imageShadow?: 'none' | 'soft' | 'hard';
+  imageClassName?: string;
   zoomOnHover?: boolean;
   minHeight?: number;
   withBackground?: boolean;
@@ -132,11 +134,12 @@ export const LandingProductFeature = ({
                     'w-full rounded-md overflow-hidden',
                     imageShadow === 'soft' && 'shadow-md',
                     imageShadow === 'hard' && 'hard-shadow',
+                    imageClassName,
                   )}
                   src={imageSrc}
                   alt={imageAlt}
-                  width={minHeight + 75}
-                  height={minHeight + 75}
+                  width={minHeight ? minHeight + 75 : 1000}
+                  height={minHeight ? minHeight + 75 : 1000}
                 />
               </section>
             ) : null}
@@ -158,11 +161,12 @@ export const LandingProductFeature = ({
                   imagePerspective === 'paper' &&
                     'lg:perspective-paper hover:scale-90',
                   imagePerspective === 'none' ? 'my-4' : 'my-8',
+                  imageClassName,
                 )}
                 alt={imageAlt}
                 src={imageSrc}
-                width={minHeight + 75}
-                height={minHeight + 75}
+                width={minHeight ? minHeight + 75 : 1000}
+                height={minHeight ? minHeight + 75 : 1000}
               />
             ) : null}
           </>
