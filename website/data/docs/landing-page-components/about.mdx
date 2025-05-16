@@ -1,0 +1,420 @@
+---
+title: 'About Section'
+date: '2025-05-16'
+lastmod: '2025-05-16'
+tags:
+  - 'guide'
+  - 'components'
+  - 'documentation'
+  - 'landing-page'
+  - 'ui-library'
+  - 'react'
+  - 'nextjs'
+  - 'tailwind-css'
+  - 'about'
+  - 'about-us'
+  - 'vision'
+  - 'mission'
+  - 'company-info'
+  - 'landing-about'
+  - 'shadcn-ui'
+  - 'shadcn-ui-landing-page'
+  - 'shadcn-ui-about'
+
+summary: 'Showcase your company information with elegant About, Vision, and Mission sections to build trust with your audience'
+layout: PostHub
+
+# images:
+#   - '/static/images/blog/docs/about-preview.webp'
+
+showThemeSelector: true
+showInstallNotice: true
+
+canonicalUrl: 'https://shipixen.com/boilerplate-documentation/landing-page-components/about'
+---
+
+The About section provides a sleek, modern way to showcase your company information, mission, vision, and key statistics. These components are designed to build trust and communicate your core values to your audience.
+
+## About Section
+
+The `LandingAboutSection` component displays a heading, description, and an image side by side, perfect for introducing your company or team.
+
+<ComponentExample
+  previewComponent={
+    <LandingAboutSection
+      title="About Us"
+      description="We are committed to creating a safe and supportive environment where you can explore your thoughts and feelings, develop coping strategies, and achieve your mental health goals."
+      imageSrc="/static/images/backdrop-1.webp"
+      imageAlt="About us image"
+    />
+  }
+>
+
+```jsx
+import { LandingAboutSection } from '@/components/landing/about/LandingAboutSection';
+
+<LandingAboutSection
+  title="About Us"
+  description="We are committed to creating a safe and supportive environment where you can explore your thoughts and feelings, develop coping strategies, and achieve your mental health goals."
+  imageSrc="/static/images/backdrop-1.webp"
+  imageAlt="About us image"
+/>
+```
+
+</ComponentExample>
+
+## Usage
+
+```jsx
+import { LandingAboutSection } from '@/components/landing/about/LandingAboutSection';
+```
+
+```jsx
+<LandingAboutSection
+  title="About Us"
+  description="We are committed to creating a safe and supportive environment where you can explore your thoughts and feelings, develop coping strategies, and achieve your mental health goals."
+  imageSrc="/static/images/backdrop-1.webp"
+  imageAlt="About us image"
+/>
+```
+
+## Examples
+
+### About Section with Background
+
+<ComponentExample
+  previewComponent={
+    <LandingAboutSection
+      title="Our Story"
+      description="Founded in 2010, we've grown from a small team of passionate developers to a global agency serving clients worldwide. Our journey has been defined by innovation, quality, and a commitment to excellence in everything we do."
+      imageSrc="/static/images/backdrop-2.webp"
+      imageAlt="Team working together"
+      withBackground={true}
+      variant="secondary"
+    />
+  }
+>
+
+```jsx
+import { LandingAboutSection } from '@/components/landing/about/LandingAboutSection';
+
+<LandingAboutSection
+  title="Our Story"
+  description="Founded in 2010, we've grown from a small team of passionate developers to a global agency serving clients worldwide. Our journey has been defined by innovation, quality, and a commitment to excellence in everything we do."
+  imageSrc="/static/images/backdrop-2.webp"
+  imageAlt="Team working together"
+  withBackground={true}
+  variant="secondary"
+/>
+```
+
+</ComponentExample>
+
+### About Section with Background Glow
+
+<ComponentExample
+  previewComponent={
+    <LandingAboutSection
+      title="About Our Platform"
+      description="Our platform combines cutting-edge technology with user-friendly design to create a seamless experience for our users. We're constantly innovating and improving to provide the best possible service."
+      imageSrc="/static/images/backdrop-3.webp"
+      imageAlt="Platform showcase"
+      withBackground={true}
+      withBackgroundGlow={true}
+      variant="primary"
+    />
+  }
+>
+
+```jsx
+import { LandingAboutSection } from '@/components/landing/about/LandingAboutSection';
+
+<LandingAboutSection
+  title="About Our Platform"
+  description="Our platform combines cutting-edge technology with user-friendly design to create a seamless experience for our users. We're constantly innovating and improving to provide the best possible service."
+  imageSrc="/static/images/backdrop-3.webp"
+  imageAlt="Platform showcase"
+  withBackground={true}
+  withBackgroundGlow={true}
+  variant="primary"
+/>
+```
+
+</ComponentExample>
+
+### Vision & Mission Section
+
+The `LandingVisionMissionSection` component displays your company's vision and mission statements in a clean, organized layout.
+
+<ComponentExample
+  previewComponent={
+    <LandingVisionMissionSection
+      title="Empowering Global Mental Health Access"
+      visionTitle="OUR VISION"
+      visionDescription="To be the leading mental health platform, providing accessible, compassionate, and innovative care for emotional and mental well-being worldwide."
+      missionTitle="OUR MISSION"
+      missionDescription="To support individuals in achieving mental and emotional balance through tailored therapy, education, ensuring everyone has access to professional care."
+    />
+  }
+>
+
+```jsx
+import { LandingVisionMissionSection } from '@/components/landing/about/LandingVisionMissionSection';
+
+<LandingVisionMissionSection
+  title="Empowering Global Mental Health Access"
+  visionTitle="OUR VISION"
+  visionDescription="To be the leading mental health platform, providing accessible, compassionate, and innovative care for emotional and mental well-being worldwide."
+  missionTitle="OUR MISSION"
+  missionDescription="To support individuals in achieving mental and emotional balance through tailored therapy, education, ensuring everyone has access to professional care."
+/>
+```
+
+</ComponentExample>
+
+### Vision & Mission with Background
+
+<ComponentExample
+  previewComponent={
+    <LandingVisionMissionSection
+      title="Our Core Values"
+      visionTitle="WHY WE EXIST"
+      visionDescription="To transform how businesses approach digital solutions, making advanced technology accessible to companies of all sizes."
+      missionTitle="HOW WE WORK"
+      missionDescription="By combining innovative design thinking with cutting-edge development practices to create solutions that are both powerful and user-friendly."
+      withBackground={true}
+      variant="secondary"
+    />
+  }
+>
+
+```jsx
+import { LandingVisionMissionSection } from '@/components/landing/about/LandingVisionMissionSection';
+
+<LandingVisionMissionSection
+  title="Our Core Values"
+  visionTitle="WHY WE EXIST"
+  visionDescription="To transform how businesses approach digital solutions, making advanced technology accessible to companies of all sizes."
+  missionTitle="HOW WE WORK"
+  missionDescription="By combining innovative design thinking with cutting-edge development practices to create solutions that are both powerful and user-friendly."
+  withBackground={true}
+  variant="secondary"
+/>
+```
+
+</ComponentExample>
+
+### Complete About Page Example
+
+This example combines the About Section, Vision & Mission Section, and Stats Section to create a comprehensive About page.
+
+<ComponentExample
+  previewComponent={
+    <div className="flex flex-col w-full">
+      <LandingAboutSection
+        title="About Our Agency"
+        description="We are a full-service digital agency specializing in web development, design, and marketing. With over a decade of experience, we've helped hundreds of clients achieve their goals and grow their online presence."
+        imageSrc="/static/images/backdrop-4.webp"
+        imageAlt="Agency team photo"
+      />
+
+      <LandingStatsSection
+        columnsDesktop={3}
+        hasBorders={true}
+        stats={[
+          { value: '150+', description: 'Over 150 projects successfully delivered.' },
+          { value: '9', label: 'team members', description: 'Our core team consists of 9 experts.' },
+          { value: '300+', label: 'creative freelancers', description: 'We collaborate with 300+ creative freelancers.' },
+          { value: '25+', label: 'awards & featured', description: 'Recognized with 25+ awards and featured in industry publications.' },
+          { value: '10+', label: 'years experience', description: 'Bringing 10+ years of design experience to every project.' },
+          { value: '$25B+', label: 'revenue', description: 'Our work has contributed to over $25 billion in revenue.' }
+        ]}
+      />
+
+      <LandingVisionMissionSection
+        title="Our Guiding Principles"
+        visionTitle="VISION"
+        visionDescription="To be the most trusted partner for businesses seeking to transform their digital presence and achieve meaningful growth."
+        missionTitle="MISSION"
+        missionDescription="To deliver exceptional digital solutions that drive real business results through a combination of creativity, technical excellence, and strategic thinking."
+        withBackground={true}
+        withBackgroundGlow={true}
+        variant="primary"
+      />
+    </div>
+  }
+>
+
+```jsx
+import { LandingAboutSection } from '@/components/landing/about/LandingAboutSection';
+import { LandingVisionMissionSection } from '@/components/landing/about/LandingVisionMissionSection';
+import { LandingStatsSection } from '@/components/landing/stats/LandingStatsSection';
+
+<div className="flex flex-col w-full">
+  <LandingAboutSection
+    title="About Our Agency"
+    description="We are a full-service digital agency specializing in web development, design, and marketing. With over a decade of experience, we've helped hundreds of clients achieve their goals and grow their online presence."
+    imageSrc="/static/images/backdrop-4.webp"
+    imageAlt="Agency team photo"
+  />
+
+  <LandingStatsSection
+    columnsDesktop={3}
+    hasBorders={true}
+    stats={[
+      { value: '150+', description: 'Over 150 projects successfully delivered.' },
+      { value: '9', label: 'team members', description: 'Our core team consists of 9 experts.' },
+      { value: '300+', label: 'creative freelancers', description: 'We collaborate with 300+ creative freelancers.' },
+      { value: '25+', label: 'awards & featured', description: 'Recognized with 25+ awards and featured in industry publications.' },
+      { value: '10+', label: 'years experience', description: 'Bringing 10+ years of design experience to every project.' },
+      { value: '$25B+', label: 'revenue', description: 'Our work has contributed to over $25 billion in revenue.' }
+    ]}
+  />
+
+  <LandingVisionMissionSection
+    title="Our Guiding Principles"
+    visionTitle="VISION"
+    visionDescription="To be the most trusted partner for businesses seeking to transform their digital presence and achieve meaningful growth."
+    missionTitle="MISSION"
+    missionDescription="To deliver exceptional digital solutions that drive real business results through a combination of creativity, technical excellence, and strategic thinking."
+    withBackground={true}
+    withBackgroundGlow={true}
+    variant="primary"
+  />
+</div>
+```
+
+</ComponentExample>
+
+### Complete example with custom stats
+
+<ComponentExample
+  previewComponent={
+    <div className="flex flex-col w-full">
+      <LandingAboutSection
+        title="About Us"
+        description="We're a team of passionate designers and developers building exceptional digital experiences."
+        imageSrc="/static/images/backdrop-5.webp"
+        imageAlt="Our team"
+      />
+
+      <div className="py-8">
+        <div className="container-wide px-6">
+          <h2 className="w-full text-3xl font-semibold mb-6 text-left">Key Statistics</h2>
+          <div className="grid grid-cols-2 md:grid-cols-3 border-l border-t border-gray-200 dark:border-gray-800">
+            <LandingStatItem
+              value="150+"
+              label="projects"
+              description="Successfully completed projects"
+              variant="primary"
+            />
+            <LandingStatItem
+              value="9"
+              label="team members"
+              description="Dedicated team members"
+              variant="secondary"
+            />
+            <LandingStatItem
+              value="10+"
+              label="years"
+              description="Years of industry experience"
+              variant="primary"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  }
+>
+
+```jsx
+import { LandingAboutSection } from '@/components/landing/about/LandingAboutSection';
+import { LandingStatItem } from '@/components/landing/stats/LandingStatItem';
+
+<div className="flex flex-col w-full">
+  <LandingAboutSection
+    title="About Us"
+    description="We're a team of passionate designers and developers building exceptional digital experiences."
+    imageSrc="/static/images/backdrop-5.webp"
+    imageAlt="Our team"
+  />
+
+  <div className="py-8">
+    <div className="container-wide px-6">
+      <h2 className="w-full text-3xl font-semibold mb-6 text-left">Key Statistics</h2>
+      <div className="grid grid-cols-2 md:grid-cols-3 border-l border-t border-gray-200 dark:border-gray-800">
+        <LandingStatItem
+          value="150+"
+          label="projects"
+          description="Successfully completed projects"
+          variant="primary"
+        />
+        <LandingStatItem
+          value="9"
+          label="team members"
+          description="Dedicated team members"
+          variant="secondary"
+        />
+        <LandingStatItem
+          value="10+"
+          label="years"
+          description="Years of industry experience"
+          variant="primary"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+</ComponentExample>
+
+
+## API Reference
+
+### LandingAboutSection Props
+
+| Prop Name | Prop Type | Required | Default |
+| --- | --- | ----- | ---- |
+| **title** <Tippy>The main heading for the About section</Tippy> | `string` | No | `'About Us'` |
+| **titleComponent** <Tippy>Custom component to replace the default title</Tippy> | `React.ReactNode` | No | `-` |
+| **description** <Tippy>The description text for the About section</Tippy> | `string \| React.ReactNode` | No | `-` |
+| **descriptionComponent** <Tippy>Custom component to replace the default description</Tippy> | `React.ReactNode` | No | `-` |
+| **imageSrc** <Tippy>The URL for the image to display</Tippy> | `string` | No | `'/static/images/about-image.webp'` |
+| **imageAlt** <Tippy>The alt text for the image</Tippy> | `string` | No | `'About us image'` |
+| **textPosition** <Tippy>The alignment of the text content</Tippy> | `'center' \| 'left'` | No | `'left'` |
+| **withBackground** <Tippy>Whether to display a background color</Tippy> | `boolean` | No | `false` |
+| **withBackgroundGlow** <Tippy>Whether to display a background glow effect</Tippy> | `boolean` | No | `false` |
+| **variant** <Tippy>Visual style variant of the section</Tippy> | `'primary' \| 'secondary'` | No | `'primary'` |
+| **backgroundGlowVariant** <Tippy>Visual style variant of the background glow</Tippy> | `'primary' \| 'secondary'` | No | `'primary'` |
+| **className** <Tippy>Additional classes to apply to the section wrapper</Tippy> | `string` | No | `-` |
+| **innerClassName** <Tippy>Additional classes to apply to the inner container</Tippy> | `string` | No | `-` |
+
+### LandingVisionMissionSection Props
+
+| Prop Name | Prop Type | Required | Default |
+| --- | --- | ----- | ---- |
+| **title** <Tippy>The main heading for the section</Tippy> | `string` | No | `-` |
+| **titleComponent** <Tippy>Custom component to replace the default title</Tippy> | `React.ReactNode` | No | `-` |
+| **visionTitle** <Tippy>The heading for the vision section</Tippy> | `string` | No | `-` |
+| **visionDescription** <Tippy>The description text for the vision</Tippy> | `string \| React.ReactNode` | No | `-` |
+| **missionTitle** <Tippy>The heading for the mission section</Tippy> | `string` | No | `-` |
+| **missionDescription** <Tippy>The description text for the mission</Tippy> | `string \| React.ReactNode` | No | `-` |
+| **variant** <Tippy>Visual style variant of the section</Tippy> | `'primary' \| 'secondary'` | No | `'primary'` |
+| **withBackground** <Tippy>Whether to display a background color</Tippy> | `boolean` | No | `false` |
+| **withBackgroundGlow** <Tippy>Whether to display a background glow effect</Tippy> | `boolean` | No | `false` |
+| **backgroundGlowVariant** <Tippy>Visual style variant of the background glow</Tippy> | `'primary' \| 'secondary'` | No | `'primary'` |
+| **textPosition** <Tippy>The alignment of the text content</Tippy> | `'center' \| 'left'` | No | `'left'` |
+| **className** <Tippy>Additional classes to apply to the section wrapper</Tippy> | `string` | No | `-` |
+| **innerClassName** <Tippy>Additional classes to apply to the inner container</Tippy> | `string` | No | `-` |
+| **children** <Tippy>Additional content to display below the vision and mission content</Tippy> | `React.ReactNode` | No | `-` |
+
+## More Examples
+
+For more even more examples, see our <a href="/demo/landing-page-component-examples" className="fancy-link">Landing Page Component Examples</a> page or see complete landing page examples by <a href="/demo/landing-page-templates" className="fancy-link">Exploring Our Landing Page Templates</a>.
+
+Also see:
+
+- <a href="/boilerplate-documentation/landing-page-components/stats" className="fancy-link">Stats Section</a> component
+- <a href="/boilerplate-documentation/landing-page-components/team" className="fancy-link">Team Section</a> component
+- <a href="/boilerplate-documentation/landing-page-components/testimonials" className="fancy-link">Testimonials Section</a> component

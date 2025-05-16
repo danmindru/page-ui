@@ -1,0 +1,379 @@
+---
+title: 'Stats Section'
+date: '2025-05-16'
+lastmod: '2025-05-16'
+tags:
+  - 'guide'
+  - 'components'
+  - 'documentation'
+  - 'landing-page'
+  - 'ui-library'
+  - 'react'
+  - 'nextjs'
+  - 'tailwind-css'
+  - 'stats'
+  - 'metrics'
+  - 'achievements'
+  - 'data-display'
+  - 'grid'
+  - 'landing-stats'
+  - 'shadcn-ui'
+  - 'shadcn-ui-landing-page'
+  - 'shadcn-ui-stats'
+
+summary: 'A customizable grid of statistics showcased in a clean, bordered layout for displaying key metrics and achievements'
+layout: PostHub
+
+# images:
+#   - '/static/images/blog/docs/stats-preview.webp'
+
+showThemeSelector: true
+showInstallNotice: true
+
+canonicalUrl: 'https://shipixen.com/boilerplate-documentation/landing-page-components/stats'
+---
+
+The Stats Section is a versatile component for showcasing key metrics, accomplishments, or any numerical data in an elegant grid layout. It's designed to highlight important statistics with clear visual hierarchy, making them stand out on your landing page.
+
+<ComponentExample
+  previewComponent={
+    <LandingStatsSection
+      columnsDesktop={3}
+      hasBorders={true}
+      stats={[
+        { value: '150+', label: 'projects', description: 'Over 150 projects successfully delivered.' },
+        { value: '9', label: 'team members', description: 'Our core team consists of 9 experts.' },
+        { value: '300+', label: 'freelancers', description: 'We collaborate with 300+ creative freelancers.' },
+        { value: '25+', label: 'awards', description: 'Recognized with 25+ awards and featured in industry publications.' },
+        { value: '10+', label: 'years experience', description: 'Bringing 10+ years of design experience to every project.' },
+        { value: '$25B+', label: 'revenue', description: 'Our work has contributed to over $25 billion in revenue.' }
+      ]}
+    />
+  }
+>
+
+```jsx
+import { LandingStatsSection } from '@/components/landing/stats/LandingStatsSection';
+
+<LandingStatsSection
+  columnsDesktop={3}
+  hasBorders={true}
+  stats={[
+    { value: '150+', label: 'projects', description: 'Over 150 projects successfully delivered.' },
+    { value: '9', label: 'team members', description: 'Our core team consists of 9 experts.' },
+    { value: '300+', label: 'freelancers', description: 'We collaborate with 300+ creative freelancers.' },
+    { value: '25+', label: 'awards', description: 'Recognized with 25+ awards and featured in industry publications.' },
+    { value: '10+', label: 'years experience', description: 'Bringing 10+ years of design experience to every project.' },
+    { value: '$25B+', label: 'revenue', description: 'Our work has contributed to over $25 billion in revenue.' }
+  ]}
+/>
+```
+
+</ComponentExample>
+
+## Usage
+
+Import the component:
+
+```jsx
+import { LandingStatsSection } from '@/components/landing/stats/LandingStatsSection';
+```
+
+Basic implementation:
+
+```jsx
+<LandingStatsSection
+  stats={[
+    { value: '150+', label: 'projects', description: 'Over 150 projects successfully delivered.' },
+    { value: '9', label: 'team members', description: 'Our core team consists of 9 experts.' },
+    { value: '300+', label: 'freelancers', description: 'We collaborate with 300+ creative freelancers.' }
+  ]}
+/>
+```
+
+## Examples
+
+### With Title and Description
+
+<ComponentExample
+  previewComponent={
+    <LandingStatsSection
+      title="Our Achievements"
+      description="We take pride in our accomplishments and the impact we've made across various projects and industries."
+      columnsDesktop={3}
+      hasBorders={true}
+      stats={[
+        { value: '150+', label: 'projects', description: 'Over 150 projects successfully delivered.' },
+        { value: '9', label: 'team members', description: 'Our core team consists of 9 experts.' },
+        { value: '300+', label: 'freelancers', description: 'We collaborate with 300+ creative freelancers.' }
+      ]}
+    />
+  }
+>
+
+```jsx
+import { LandingStatsSection } from '@/components/landing/stats/LandingStatsSection';
+
+<LandingStatsSection
+  title="Our Achievements"
+  description="We take pride in our accomplishments and the impact we've made across various projects and industries."
+  columnsDesktop={3}
+  hasBorders={true}
+  stats={[
+    { value: '150+', label: 'projects', description: 'Over 150 projects successfully delivered.' },
+    { value: '9', label: 'team members', description: 'Our core team consists of 9 experts.' },
+    { value: '300+', label: 'freelancers', description: 'We collaborate with 300+ creative freelancers.' }
+  ]}
+/>
+```
+
+</ComponentExample>
+
+### Without Borders
+
+<ComponentExample
+  previewComponent={
+    <LandingStatsSection
+      columnsDesktop={3}
+      hasBorders={false}
+      stats={[
+        { value: '150+', description: 'Over 150 projects successfully delivered.' },
+        { value: '9', label: 'team members', description: 'Our core team consists of 9 experts.' },
+        { value: '300+', label: 'freelancers', description: 'We collaborate with 300+ creative freelancers.' }
+      ]}
+    />
+  }
+>
+
+```jsx
+import { LandingStatsSection } from '@/components/landing/stats/LandingStatsSection';
+
+<LandingStatsSection
+  columnsDesktop={3}
+  hasBorders={false}
+  stats={[
+    { value: '150+', label: 'projects', description: 'Over 150 projects successfully delivered.' },
+    { value: '9', label: 'team members', description: 'Our core team consists of 9 experts.' },
+    { value: '300+', label: 'freelancers', description: 'We collaborate with 300+ creative freelancers.' }
+  ]}
+/>
+```
+
+</ComponentExample>
+
+### With Background
+
+<ComponentExample
+  previewComponent={
+    <LandingStatsSection
+      columnsDesktop={2}
+      withBackground={true}
+      variant="secondary"
+      stats={[
+        { value: '150+', label: 'projects', description: 'Over 150 projects successfully delivered.' },
+        { value: '9', label: 'team members', description: 'Our core team consists of 9 experts.' },
+        { value: '300+', label: 'freelancers', description: 'We collaborate with 300+ creative freelancers.' },
+        { value: '25+', label: 'awards', description: 'Recognized with 25+ awards and featured in industry publications.' }
+      ]}
+    />
+  }
+>
+
+```jsx
+import { LandingStatsSection } from '@/components/landing/stats/LandingStatsSection';
+
+<LandingStatsSection
+  columnsDesktop={2}
+  withBackground={true}
+  variant="secondary"
+  stats={[
+    { value: '150+', label: 'projects', description: 'Over 150 projects successfully delivered.' },
+    { value: '9', label: 'team members', description: 'Our core team consists of 9 experts.' },
+    { value: '300+', label: 'freelancers', description: 'We collaborate with 300+ creative freelancers.' },
+    { value: '25+', label: 'awards', description: 'Recognized with 25+ awards and featured in industry publications.' }
+  ]}
+/>
+```
+
+</ComponentExample>
+
+### With Background Glow
+
+<ComponentExample
+  previewComponent={
+    <LandingStatsSection
+      columnsDesktop={2}
+      withBackground={true}
+      withBackgroundGlow={true}
+      backgroundGlowVariant="secondary"
+      stats={[
+        { value: '150+', label: 'projects', description: 'Over 150 projects successfully delivered.' },
+        { value: '9', label: 'team members', description: 'Our core team consists of 9 experts.' },
+        { value: '300+', label: 'freelancers', description: 'We collaborate with 300+ creative freelancers.' },
+        { value: '25+', label: 'awards', description: 'Recognized with 25+ awards and featured in industry publications.' }
+      ]}
+    />
+  }
+>
+
+```jsx
+import { LandingStatsSection } from '@/components/landing/stats/LandingStatsSection';
+
+<LandingStatsSection
+  columnsDesktop={2}
+  withBackground={true}
+  withBackgroundGlow={true}
+  backgroundGlowVariant="secondary"
+  stats={[
+    { value: '150+', label: 'projects', description: 'Over 150 projects successfully delivered.' },
+    { value: '9', label: 'team members', description: 'Our core team consists of 9 experts.' },
+    { value: '300+', label: 'freelancers', description: 'We collaborate with 300+ creative freelancers.' },
+    { value: '25+', label: 'awards', description: 'Recognized with 25+ awards and featured in industry publications.' }
+  ]}
+/>
+```
+
+</ComponentExample>
+
+### Different Column Layouts
+
+It's possible to use different column layouts for desktop and mobile screens.
+For example, you can use 4 columns on desktop and 1 column on mobile.
+
+<ComponentExample
+  previewComponent={
+    <LandingStatsSection
+      columnsDesktop={4}
+      columnsMobile={1}
+      stats={[
+        { value: '150+', label: 'projects', description: 'Projects delivered in the last 12 months.' },
+        { value: '9', label: 'designers', description: 'That are part of our team.' },
+        { value: '30+', label: 'devs', description: 'Developers that we work with.' },
+        { value: '25+', label: 'awards', description: 'Industry awards since 2010.' }
+      ]}
+    />
+  }
+>
+
+```jsx
+import { LandingStatsSection } from '@/components/landing/stats/LandingStatsSection';
+
+<LandingStatsSection
+  columnsDesktop={4}
+  columnsMobile={1}
+  stats={[
+    { value: '150+', label: 'projects', description: 'Projects delivered in the last 12 months.' },
+    { value: '9', label: 'designers', description: 'That are part of our team.' },
+    { value: '30+', label: 'devs', description: 'Developers that we work with.' },
+    { value: '25+', label: 'awards', description: 'Industry awards since 2010.' }
+  ]}
+/>
+```
+
+</ComponentExample>
+
+## Individual Stat Items
+
+You can also use `LandingStatItem` directly for more control:
+
+<ComponentExample
+  previewComponent={
+    <div className="grid grid-cols-2 md:grid-cols-3 border-l border-t border-gray-200 dark:border-gray-800">
+      <LandingStatItem
+        value="150+"
+        label="projects"
+        description="Over 150 projects successfully delivered."
+      />
+      <LandingStatItem
+        value="9"
+        label="team members"
+        description="Our core team consists of 9 experts."
+        variant="secondary"
+      />
+      <LandingStatItem
+        value="300+"
+        label="freelancers"
+        description="We collaborate with 300+ creative freelancers."
+      />
+    </div>
+  }
+>
+
+```jsx
+import { LandingStatItem } from '@/components/landing/stats/LandingStatItem';
+
+<div className="grid grid-cols-2 md:grid-cols-3 border-l border-t border-gray-200 dark:border-gray-800">
+  <LandingStatItem
+    value="150+"
+    label="projects"
+    description="Over 150 projects successfully delivered."
+  />
+  <LandingStatItem
+    value="9"
+    label="team members"
+    description="Our core team consists of 9 experts."
+    variant="secondary"
+  />
+  <LandingStatItem
+    value="300+"
+    label="creative freelancers"
+    description="We collaborate with 300+ creative freelancers."
+  />
+</div>
+```
+
+</ComponentExample>
+
+## API Reference
+
+### LandingStatsSection Props
+
+| Prop Name | Prop Type | Required | Default |
+| --- | --- | ----- | ---- |
+| **stats** <Tippy>Array of statistic objects to display</Tippy> | `Array<{ value: string; label?: string; description: string }>` | Yes | `[]` |
+| **className** <Tippy>Additional classes to apply to the section wrapper</Tippy> | `string` | No | `''` |
+| **innerClassName** <Tippy>Additional classes to apply to the inner container</Tippy> | `string` | No | `''` |
+| **title** <Tippy>Section title text</Tippy> | `string` | No | `undefined` |
+| **titleComponent** <Tippy>Custom component to replace the default title</Tippy> | `React.ReactNode` | No | `undefined` |
+| **description** <Tippy>Section description text</Tippy> | `string \| React.ReactNode` | No | `undefined` |
+| **descriptionComponent** <Tippy>Custom component to replace the default description</Tippy> | `React.ReactNode` | No | `undefined` |
+| **variant** <Tippy>Visual style variant of the section</Tippy> | `'primary' \| 'secondary'` \| `'default'` | No | `'default'` |
+| **withBackground** <Tippy>Whether to display a background color</Tippy> | `boolean` | No | `false` |
+| **withBackgroundGlow** <Tippy>Whether to display a background glow effect</Tippy> | `boolean` | No | `false` |
+| **backgroundGlowVariant** <Tippy>Visual style variant of the background glow</Tippy> | `'primary' \| 'secondary'` | No | `'primary'` |
+| **columnsDesktop** <Tippy>Number of columns on desktop screens</Tippy> | `2 \| 3 \| 4` | No | `3` |
+| **columnsMobile** <Tippy>Number of columns on mobile screens</Tippy> | `1 \| 2` | No | `1` |
+| **hasBorders** <Tippy>Whether to display borders between stats</Tippy> | `boolean` | No | `true` |
+| **textPosition** <Tippy>Alignment of section text</Tippy> | `'center' \| 'left'` | No | `'center'` |
+| **children** <Tippy>Additional content to display below the stats grid</Tippy> | `React.ReactNode` | No | `undefined` |
+
+### LandingStatItem Props
+
+| Prop Name | Prop Type | Required | Default |
+| --- | --- | ----- | ---- |
+| **value** <Tippy>The main statistic value to display</Tippy> | `string` | Yes | - |
+| **description** <Tippy>Description of the statistic</Tippy> | `string` | Yes | - |
+| **label** <Tippy>Optional label displayed next to the value</Tippy> | `string` | No | `undefined` |
+| **className** <Tippy>Additional classes to apply to the stat item wrapper</Tippy> | `string` | No | `''` |
+| **variant** <Tippy>Visual style variant of the stat item</Tippy> | `'primary' \| 'secondary'` | No | `'primary'` |
+| **hasBorder** <Tippy>Whether to display borders around the item</Tippy> | `boolean` | No | `true` |
+
+### Stats Object Interface
+
+```ts
+interface StatItem {
+  value: string;
+  label?: string;
+  description: string;
+}
+```
+
+## More Examples
+
+For more even more examples, see our <a href="/demo/landing-page-component-examples" className="fancy-link">Landing Page Component Examples</a> page or see complete landing page examples by <a href="/demo/landing-page-templates" className="fancy-link">Exploring Our Landing Page Templates</a>.
+
+Also see:
+
+- <a href="/boilerplate-documentation/landing-page-components/about" className="fancy-link">About Section</a> component
+- <a href="/boilerplate-documentation/landing-page-components/testimonial-grid" className="fancy-link">Testimonial Grid</a> component
+- <a href="/boilerplate-documentation/landing-page-components/product-feature" className="fancy-link">Product Feature</a> component

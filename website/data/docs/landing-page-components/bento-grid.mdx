@@ -1,0 +1,475 @@
+---
+title: 'Bento Grid'
+date: '2025-05-16'
+lastmod: '2025-05-16'
+tags:
+  - 'guide'
+  - 'components'
+  - 'documentation'
+  - 'landing-page'
+  - 'ui-library'
+  - 'react'
+  - 'nextjs'
+  - 'tailwind-css'
+  - 'bento-grid'
+  - 'bento-ui'
+  - 'grid-layout'
+  - 'card-grid'
+  - 'feature-grid'
+  - 'shadcn-ui'
+  - 'shadcn-ui-landing-page'
+  - 'shadcn-ui-bento-grid'
+
+summary: 'A flexible bento grid component for creating visually appealing grid layouts for landing pages'
+layout: PostHub
+
+# images:
+#   - '/static/images/blog/docs/bento-grid-preview.webp'
+
+showThemeSelector: true
+showInstallNotice: true
+
+canonicalUrl: 'https://shipixen.com/boilerplate-documentation/landing-page-components/bento-grid'
+---
+
+The `LandingBentoGridSection` component is a flexible container for creating visually appealing grid layouts for landing pages. It provides a grid layout with customizable columns and rows, and can be used to display a variety of content types.
+
+It can contain generic items or specialized Bento Grid items as children. These specialized items extend the basic bento grid with pre-designed layouts for displaying tech specs, feature highlights, and product information.
+
+<ComponentExample
+  previewComponent={
+    <LandingBentoGridSection
+      title="Processor Specifications"
+      description="Technical details of our latest chipset"
+    >
+      <LandingBentoGridIconItem
+        icon={<SparklesIcon className="w-12 h-12" />}
+        bottomText="High-speed I/O"
+      />
+      <LandingBentoGridNumberItem
+        topText="Up to"
+        number="20%"
+        bottomText="faster CPU"
+      />
+      <LandingBentoGridImageItem
+        topText="Data-center-class"
+        imageSrc="/static/images/backdrop-1.webp"
+        imageAlt="Data-center-class"
+        bottomText="performance per watt"
+        colSpan={2}
+        rowSpan={2}
+      />
+      <LandingBentoGridNumberItem
+        topText="Up to"
+        number="30%"
+        bottomText="faster GPU"
+      />
+
+      <LandingBentoGridNumberItem
+        topText="Up to"
+        number="1 TB"
+        bottomText="DDR5 memory"
+      />
+      <LandingBentoGridNumberItem
+        topText="Over"
+        number="60 billion"
+        bottomText="transistors"
+        colSpan={2}
+        variant="primary"
+      />
+      <LandingBentoGridImageItem
+        topText="16-core"
+        imageSrc="/static/images/backdrop-2.webp"
+        imageAlt="AI Accelerator"
+        bottomText="300 TOPS"
+      />
+      <LandingBentoGridNumberItem
+        number="40%"
+        bottomText="faster AI processing"
+        variant="secondary"
+      />
+      <LandingBentoGridIconItem
+        topText="Dedicated"
+        icon={<span className="text-5xl">🎬</span>}
+        bottomText="media engine"
+      />
+      <LandingBentoGridNumberItem
+        topText="Advanced"
+        number="5 nm"
+        bottomText="process technology"
+      />
+      <LandingBentoGridNumberItem
+        number="800 GB/s"
+        bottomText="Memory bandwidth"
+        colSpan={2}
+      />
+    </LandingBentoGridSection>
+  }
+>
+
+```jsx
+import {
+  LandingBentoGridSection,
+  LandingBentoGridIconItem,
+  LandingBentoGridNumberItem,
+  LandingBentoGridImageItem,
+} from '@/components/landing/bento-grid';
+
+<LandingBentoGridSection
+  title="Processor Specifications"
+  description="Technical details of our latest chipset"
+>
+  <LandingBentoGridIconItem
+    icon={<SparklesIcon className="w-12 h-12" />}
+    bottomText="High-speed I/O"
+  />
+  <LandingBentoGridNumberItem
+    topText="Up to"
+    number="20%"
+    bottomText="faster CPU"
+  />
+  <LandingBentoGridImageItem
+    topText="Data-center-class"
+    imageSrc="/static/images/backdrop-1.webp"
+    imageAlt="Data-center-class"
+    bottomText="performance per watt"
+    colSpan={2}
+    rowSpan={2}
+  />
+  <LandingBentoGridNumberItem
+    topText="Up to"
+    number="30%"
+    bottomText="faster GPU"
+  />
+
+  <LandingBentoGridNumberItem
+    topText="Up to"
+    number="1 TB"
+    bottomText="DDR5 memory"
+  />
+  <LandingBentoGridNumberItem
+    topText="Over"
+    number="60 billion"
+    bottomText="transistors"
+    colSpan={2}
+    variant="primary"
+  />
+  <LandingBentoGridImageItem
+    topText="16-core"
+    imageSrc="/static/images/backdrop-2.webp"
+    imageAlt="AI Accelerator"
+    bottomText="300 TOPS"
+  />
+  <LandingBentoGridNumberItem
+    number="40%"
+    bottomText="faster AI processing"
+    variant="secondary"
+  />
+  <LandingBentoGridIconItem
+    topText="Dedicated"
+    icon={<span className="text-5xl">🎬</span>}
+    bottomText="media engine"
+  />
+  <LandingBentoGridNumberItem
+    topText="Advanced"
+    number="5 nm"
+    bottomText="process technology"
+  />
+  <LandingBentoGridNumberItem
+    number="800 GB/s"
+    bottomText="Memory bandwidth"
+    colSpan={2}
+  />
+</LandingBentoGridSection>
+```
+
+</ComponentExample>
+
+## Usage
+
+```jsx
+import {
+  LandingBentoGridSection,
+  LandingBentoGridIconItem,
+  LandingBentoGridNumberItem,
+  LandingBentoGridImageItem,
+} from '@/components/landing/bento-grid';
+```
+
+```jsx
+<LandingBentoGridSection
+  title="Processor Specifications"
+  description="Technical details of our latest chipset"
+>
+  <LandingBentoGridIconItem
+    icon={<SparklesIcon className="w-12 h-12" />}
+    bottomText="High-speed I/O"
+  />
+  <LandingBentoGridNumberItem
+    topText="Up to"
+    number="20%"
+    bottomText="faster CPU"
+  />
+  <LandingBentoGridImageItem
+    topText="Data-center-class"
+    imageSrc="/static/images/backdrop-1.webp"
+    imageAlt="Data-center-class"
+    bottomText="performance per watt"
+    colSpan={2}
+    rowSpan={2}
+  />
+
+  {/* more items */}
+</LandingBentoGridSection>
+```
+
+## Examples
+
+### Icon-based Grid Items
+
+<ComponentExample
+  previewComponent={
+    <LandingBentoGridSection
+      title="Technical Specifications"
+      description="Cutting-edge technology in every component"
+    >
+      <LandingBentoGridIconItem
+        icon={<SparklesIcon className="w-10 h-10" />}
+        bottomText="High-speed I/O"
+      />
+      <LandingBentoGridIconItem
+        topText="Dedicated"
+        icon={<LayersIcon className="w-10 h-10" />}
+        bottomText="media engine"
+        variant="secondary"
+      />
+      <LandingBentoGridIconItem
+        topText="Advanced"
+        icon={<LineChartIcon className="w-10 h-10" />}
+        bottomText="process technology"
+        variant="primary"
+      />
+      <LandingBentoGridIconItem
+        icon={<FramerIcon className="w-10 h-10" />}
+        bottomText="More battery"
+        topText="More power"
+        variant="primary"
+      />
+    </LandingBentoGridSection>
+  }
+>
+
+```jsx
+import { LandingBentoGridSection, LandingBentoGridIconItem } from '@/components/landing/bento-grid';
+
+<LandingBentoGridSection
+  title="Technical Specifications"
+  description="Cutting-edge technology in every component"
+>
+  <LandingBentoGridIconItem
+    icon={<SparklesIcon className="w-10 h-10" />}
+    bottomText="High-speed I/O"
+  />
+  <LandingBentoGridIconItem
+    topText="Dedicated"
+    icon={<LayersIcon className="w-10 h-10" />}
+    bottomText="media engine"
+  />
+  <LandingBentoGridIconItem
+    topText="Advanced"
+    icon={<LineChartIcon className="w-10 h-10" />}
+    bottomText="process technology"
+  />
+  <LandingBentoGridIconItem
+    icon={<BatteryIcon className="w-10 h-10" />}
+    bottomText="More battery"
+    topText="More power"
+  />
+</LandingBentoGridSection>
+```
+
+</ComponentExample>
+
+### Number-based Grid Items
+
+<ComponentExample
+  previewComponent={
+    <LandingBentoGridSection
+      title="Performance Metrics"
+      description="Benchmark results for our latest generation"
+    >
+      <LandingBentoGridNumberItem
+        topText="Up to"
+        number="20%"
+        bottomText="faster CPU"
+      />
+      <LandingBentoGridNumberItem
+        topText="Up to"
+        number="30%"
+        bottomText="faster GPU"
+      />
+      <LandingBentoGridNumberItem
+        number="60 billion"
+        bottomText="transistors"
+        topText="Over"
+            colSpan={2}
+      />
+      <LandingBentoGridNumberItem
+        topText="Up to"
+        number="800 GB/s"
+        bottomText="Memory bandwidth"
+        colSpan={4}
+      />
+    </LandingBentoGridSection>
+  }
+>
+
+```jsx
+import { LandingBentoGridSection, LandingBentoGridNumberItem } from '@/components/landing/bento-grid';
+
+<LandingBentoGridSection
+  title="Performance Metrics"
+  description="Benchmark results for our latest generation"
+>
+  <LandingBentoGridNumberItem
+    topText="Up to"
+    number="20%"
+    bottomText="faster CPU"
+  />
+  <LandingBentoGridNumberItem
+    topText="Up to"
+    number="30%"
+    bottomText="faster GPU"
+  />
+  <LandingBentoGridNumberItem
+    number="60 billion"
+    bottomText="transistors"
+    topText="Over"
+  />
+  <LandingBentoGridNumberItem
+    topText="Up to"
+    number="800 GB/s"
+    bottomText="Memory bandwidth"
+    colSpan={4}
+  />
+</LandingBentoGridSection>
+```
+
+</ComponentExample>
+
+### Image-based Grid Items
+
+<ComponentExample
+  previewComponent={
+    <LandingBentoGridSection
+      title="Product Gallery"
+      description="Our latest innovations in images"
+    >
+      <LandingBentoGridImageItem
+        imageSrc="/static/images/backdrop-1.webp"
+        bottomText="Next-generation display"
+        colSpan={2}
+      />
+      <LandingBentoGridImageItem
+        topText="Pro Camera"
+        imageSrc="/static/images/backdrop-2.webp"
+        bottomText="128MP"
+      />
+      <LandingBentoGridImageItem
+        topText="Redesigned"
+        imageSrc="/static/images/backdrop-3.webp"
+        bottomText="Architecture"
+      />
+    </LandingBentoGridSection>
+  }
+>
+
+```jsx
+import { LandingBentoGridSection, LandingBentoGridImageItem } from '@/components/landing/bento-grid';
+
+<LandingBentoGridSection
+  title="Product Gallery"
+  description="Our latest innovations in images"
+>
+  <LandingBentoGridImageItem
+    imageSrc="/static/images/backdrop-1.webp"
+    bottomText="Next-generation display"
+    colSpan={2}
+  />
+  <LandingBentoGridImageItem
+    topText="Pro Camera"
+    imageSrc="/static/images/backdrop-2.webp"
+    bottomText="128MP"
+  />
+  <LandingBentoGridImageItem
+    topText="Redesigned"
+    imageSrc="/static/images/backdrop-3.webp"
+    bottomText="Architecture"
+  />
+</LandingBentoGridSection>
+```
+
+</ComponentExample>
+
+## API Reference
+
+### LandingBentoGridIconItem Props
+
+| Prop Name | Prop Type | Required | Default |
+| --- | --- | ----- | ---- |
+| **variant** <Tippy>Color variant for the item</Tippy> | `'default' \| 'primary' \| 'secondary'` | No | `'default'` |
+| **topText** <Tippy>Text displayed above the icon</Tippy> | `string` | No | - |
+| **topTextComponent** <Tippy>Custom component for top text</Tippy> | `React.ReactNode` | No | - |
+| **icon** <Tippy>Icon to display in the center</Tippy> | `React.ReactNode` | No | - |
+| **bottomText** <Tippy>Text displayed below the icon</Tippy> | `string` | No | - |
+| **bottomTextComponent** <Tippy>Custom component for bottom text</Tippy> | `React.ReactNode` | No | - |
+| **colSpan** <Tippy>Number of columns the item should span</Tippy> | `1 \| 2 \| 3 \| 4` | No | `1` |
+| **rowSpan** <Tippy>Number of rows the item should span</Tippy> | `1 \| 2 \| 3` | No | `1` |
+| **className** <Tippy>Additional CSS classes</Tippy> | `string` | No | `''` |
+| **href** <Tippy>Link URL to make the item clickable</Tippy> | `string` | No | - |
+| **asChild** <Tippy>Whether to render children as the main component</Tippy> | `boolean` | No | `false` |
+
+### LandingBentoGridNumberItem Props
+
+| Prop Name | Prop Type | Required | Default |
+| --- | --- | ----- | ---- |
+| **variant** <Tippy>Color variant for the item</Tippy> | `'default' \| 'primary' \| 'secondary'` | No | `'default'` |
+| **topText** <Tippy>Text displayed above the number</Tippy> | `string` | No | - |
+| **topTextComponent** <Tippy>Custom component for top text</Tippy> | `React.ReactNode` | No | - |
+| **number** <Tippy>Number or text to display in the center</Tippy> | `string \| number` | No | - |
+| **bottomText** <Tippy>Text displayed below the number</Tippy> | `string` | No | - |
+| **bottomTextComponent** <Tippy>Custom component for bottom text</Tippy> | `React.ReactNode` | No | - |
+| **colSpan** <Tippy>Number of columns the item should span</Tippy> | `1 \| 2 \| 3 \| 4` | No | `1` |
+| **rowSpan** <Tippy>Number of rows the item should span</Tippy> | `1 \| 2 \| 3` | No | `1` |
+| **className** <Tippy>Additional CSS classes</Tippy> | `string` | No | `''` |
+| **href** <Tippy>Link URL to make the item clickable</Tippy> | `string` | No | - |
+| **asChild** <Tippy>Whether to render children as the main component</Tippy> | `boolean` | No | `false` |
+
+### LandingBentoGridImageItem Props
+
+| Prop Name | Prop Type | Required | Default |
+| --- | --- | ----- | ---- |
+| **variant** <Tippy>Color variant for the item</Tippy> | `'default' \| 'primary' \| 'secondary'` | No | `'default'` |
+| **topText** <Tippy>Text displayed above the image</Tippy> | `string` | No | - |
+| **topTextComponent** <Tippy>Custom component for top text</Tippy> | `React.ReactNode` | No | - |
+| **imageSrc** <Tippy>URL of the image to display</Tippy> | `string` | No | - |
+| **imageAlt** <Tippy>Alt text for the image</Tippy> | `string` | No | `''` |
+| **imageComponent** <Tippy>Custom component instead of default Image</Tippy> | `React.ReactNode` | No | - |
+| **imageFill** <Tippy>Whether the image should fill its container</Tippy> | `boolean` | No | `true` |
+| **imageHeight** <Tippy>Height of the image in pixels</Tippy> | `number` | No | `100` |
+| **imageWidth** <Tippy>Width of the image in pixels</Tippy> | `number` | No | `100` |
+| **bottomText** <Tippy>Text displayed below the image</Tippy> | `string` | No | - |
+| **bottomTextComponent** <Tippy>Custom component for bottom text</Tippy> | `React.ReactNode` | No | - |
+| **colSpan** <Tippy>Number of columns the item should span</Tippy> | `1 \| 2 \| 3 \| 4` | No | `1` |
+| **rowSpan** <Tippy>Number of rows the item should span</Tippy> | `1 \| 2 \| 3` | No | `1` |
+| **className** <Tippy>Additional CSS classes</Tippy> | `string` | No | `''` |
+| **href** <Tippy>Link URL to make the item clickable</Tippy> | `string` | No | - |
+| **asChild** <Tippy>Whether to render children as the main component</Tippy> | `boolean` | No | `false` |
+
+## More Examples
+
+For more even more examples, see our <a href="/demo/landing-page-component-examples" className="fancy-link">Landing Page Component Examples</a> page or see complete landing page examples by <a href="/demo/landing-page-templates" className="fancy-link">Exploring Our Landing Page Templates</a>.
+
+Also see:
+
+- <a href="/boilerplate-documentation/landing-page-components/product-features-grid" className="fancy-link">Product Features Grid</a> component

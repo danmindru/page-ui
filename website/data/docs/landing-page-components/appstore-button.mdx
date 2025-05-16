@@ -1,0 +1,203 @@
+---
+title: 'Landing Page App Store Button'
+date: '2025-05-13'
+lastmod: '2025-05-13'
+tags:
+  - 'guide'
+  - 'components'
+  - 'documentation'
+  - 'landing-page'
+  - 'ui-library'
+  - 'react'
+  - 'nextjs'
+  - 'tailwind-css'
+  - 'app-store'
+  - 'download-button'
+  - 'ios-appstore'
+  - 'google-playstore'
+  - 'microsoft-store'
+  - 'mac-appstore'
+  - 'landing-app-store-button'
+  - 'shadcn-ui'
+  - 'shadcn-ui-button'
+
+summary: 'A component for displaying app store download buttons on landing pages. Supports iOS App Store, Mac App Store, Microsoft Store, and Google Play Store with white and black variants.'
+layout: PostHub
+
+# images:
+#   - '/static/images/blog/docs/landing-page-appstore-button-component.webp'
+
+showThemeSelector: true
+showInstallNotice: true
+
+canonicalUrl: 'https://shipixen.com/boilerplate-documentation/landing-page-components/appstore-button'
+---
+
+This component displays app store download buttons with proper branding. It supports multiple app stores and black/white variants.
+
+<ComponentExample
+  previewComponent={
+    <div className="flex flex-col gap-4">
+      <div className="flex flex-wrap gap-4">
+        <LandingAppStoreButton appStore="ios-appstore" />
+        <LandingAppStoreButton appStore="mac-appstore" />
+        <LandingAppStoreButton appStore="microsoft-store" />
+        <LandingAppStoreButton appStore="google-playstore" />
+      </div>
+
+      <div className="flex flex-wrap gap-4">
+        <LandingAppStoreButton variant="white" appStore="ios-appstore" />
+        <LandingAppStoreButton variant="white" appStore="mac-appstore" />
+        <LandingAppStoreButton variant="white" appStore="microsoft-store" />
+        <LandingAppStoreButton variant="white" appStore="google-playstore" />
+      </div>
+    </div>
+  }
+>
+
+```jsx
+import { LandingAppStoreButton } from '@/components/landing/app-store-button/LandingAppStoreButton';
+
+<LandingAppStoreButton appStore="ios-appstore" />
+<LandingAppStoreButton appStore="mac-appstore" />
+<LandingAppStoreButton appStore="microsoft-store" />
+<LandingAppStoreButton appStore="google-playstore" />
+<LandingAppStoreButton variant="white" appStore="ios-appstore" />
+<LandingAppStoreButton variant="white" appStore="mac-appstore" />
+<LandingAppStoreButton variant="white" appStore="microsoft-store" />
+<LandingAppStoreButton variant="white" appStore="google-playstore" />
+```
+
+</ComponentExample>
+
+## Usage
+
+```jsx
+import { LandingAppStoreButton } from '@/components/landing/app-store-button/LandingAppStoreButton';
+```
+
+```jsx
+<LandingAppStoreButton appStore="ios-appstore" />
+```
+
+## Examples
+
+### Use as Link
+
+<ComponentExample
+  previewComponent={
+    <LandingAppStoreButton appStore="ios-appstore" asChild>
+      <a href="https://www.apple.com/app-store">Download</a>
+    </LandingAppStoreButton>
+  }
+>
+
+```jsx
+<LandingAppStoreButton appStore="ios-appstore" asChild>
+  <a href="https://www.apple.com/app-store">Download</a>
+</LandingAppStoreButton>
+```
+
+</ComponentExample>
+
+### Use with onClick Event
+You can also use the onClick event handler for custom interactions.
+
+<ComponentExample
+  previewComponent={
+    <LandingAppStoreButton
+      appStore="google-playstore"
+    />
+  }
+>
+
+```jsx
+<LandingAppStoreButton
+  appStore="google-playstore"
+  onClick={() => console.log('Button clicked!')}
+/>
+```
+
+</ComponentExample>
+
+### Explicit Theme Variant
+You can explicitly set the button variant to white or black, overriding the default theme.
+
+<ComponentExample
+  previewComponent={
+    <div className="flex flex-wrap gap-4">
+      <LandingAppStoreButton appStore="ios-appstore" variant="white" />
+      <LandingAppStoreButton appStore="ios-appstore" variant="black" />
+    </div>
+  }
+>
+
+```jsx
+<div className="flex flex-wrap gap-4">
+  <LandingAppStoreButton appStore="ios-appstore" variant="white" />
+  <LandingAppStoreButton appStore="ios-appstore" variant="black" />
+</div>
+```
+
+</ComponentExample>
+
+### Different Sizes
+The button supports different sizes, corresponding to regular `<Button>` component sizes.
+
+<ComponentExample
+  previewComponent={
+    <div className="flex flex-wrap gap-4">
+      <LandingAppStoreButton appStore="ios-appstore" size="sm" />
+      <LandingAppStoreButton appStore="ios-appstore" size="default" />
+      <LandingAppStoreButton appStore="ios-appstore" size="lg" />
+      <LandingAppStoreButton appStore="ios-appstore" size="xl" />
+    </div>
+  }
+>
+
+```jsx
+<div className="flex flex-wrap gap-4">
+  <LandingAppStoreButton appStore="ios-appstore" size="sm" />
+  <LandingAppStoreButton appStore="ios-appstore" size="default" />
+  <LandingAppStoreButton appStore="ios-appstore" size="lg" />
+  <LandingAppStoreButton appStore="ios-appstore" size="xl" />
+</div>
+```
+
+</ComponentExample>
+
+### Custom Styling
+You can add custom styling using the className prop.
+
+<ComponentExample
+  previewComponent={
+    <LandingAppStoreButton
+      appStore="ios-appstore"
+      className="shadow-lg hover:shadow-xl transition-shadow duration-300"
+    />
+  }
+>
+
+```jsx
+<LandingAppStoreButton
+  appStore="ios-appstore"
+  className="shadow-lg hover:shadow-xl transition-shadow duration-300"
+/>
+```
+
+</ComponentExample>
+
+## API Reference
+
+| Prop Name | Prop Type | Required | Default |
+| --------- | --------- | -------- | ------- |
+| **appStore** <Tippy>The app store type to display.</Tippy> | `'ios-appstore'` ǀ `'mac-appstore'` ǀ `'microsoft-store'` ǀ `'google-playstore'` | Yes | - |
+| **variant** <Tippy>Explicitly set the button theme variant.</Tippy> | `'white'` ǀ `'black'` | No | `'black'` |
+| **size** <Tippy>Size of the button.</Tippy> | `'default'` ǀ `'sm'` ǀ `'lg'` ǀ `'xl'` | No | `'default'` |
+| **onClick** <Tippy>Event handler for the button click.</Tippy> | `(event: React.MouseEvent<HTMLButtonElement>) => void` | No | - |
+| **asChild** <Tippy>When true, the component will render its child component instead of a button element.</Tippy> | `boolean` | No | `false` |
+| **className** <Tippy>Additional CSS classes to apply to the button.</Tippy> | `string` | No | `''` |
+
+## More Examples
+
+For more even more examples, see our <a href="/demo/landing-page-component-examples" className="fancy-link">Landing Page Component Examples</a> page or see complete landing page examples by <a href="/demo/landing-page-templates" className="fancy-link">Exploring Our Landing Page Templates</a>.

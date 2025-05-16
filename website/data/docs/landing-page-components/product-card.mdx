@@ -1,0 +1,507 @@
+---
+title: 'Product Card'
+date: '2025-05-16'
+lastmod: '2025-05-16'
+tags:
+  - 'guide'
+  - 'components'
+  - 'documentation'
+  - 'landing-page'
+  - 'ui-library'
+  - 'react'
+  - 'nextjs'
+  - 'tailwind-css'
+  - 'product-section'
+  - 'product-card'
+  - 'product-grid'
+  - 'e-commerce'
+  - 'shadcn-ui'
+  - 'shadcn-ui-landing-page'
+  - 'shadcn-ui-product-card'
+  - 'shadcn-ui-card'
+summary: 'A flexible product grid section component for displaying product cards in a responsive layout'
+layout: PostHub
+
+# images:
+#   - '/static/images/blog/docs/product-section-preview.webp'
+
+showThemeSelector: true
+showInstallNotice: true
+
+canonicalUrl: 'https://shipixen.com/boilerplate-documentation/landing-page-components/product-card'
+---
+
+The Product Card Section component is designed to showcase products in a responsive grid layout with customizable columns. It's perfect for e-commerce sections, featured products, or any collection of items that need to be displayed in an organized grid format. The component supports both programmatic usage with an array of products and declarative usage with children components.
+
+<ComponentExample
+  previewComponent={
+    <LandingProductCardSection
+      title="Featured Products"
+      description="Browse our collection of featured products"
+      products={[
+        {
+          title: "Eco Chair",
+          description: "Chair constructed from beech wood with a plywood back. The seat can just be upholstered or the seat and back rest as well.",
+          imageSrc: "/static/images/backdrop-3.webp",
+          actionComponent: <Button>View Details</Button>,
+          featured: true
+        },
+        {
+          title: "Modern Desk",
+          description: "Minimalist desk with solid oak frame and tempered glass top.",
+          imageSrc: "/static/images/backdrop-4.webp",
+          actionComponent: <Button variant="outline">Learn More</Button>
+        },
+        {
+          title: "Lounge Sofa",
+          description: "Comfortable 3-seater sofa with premium fabric upholstery.",
+          imageSrc: "/static/images/backdrop-5.webp",
+          actionComponent: <Button>View Details</Button>
+        }
+      ]}
+    />
+  }
+>
+
+```jsx
+import { LandingProductCardSection } from '@/components/landing/product';
+import { Button } from '@/components/shared/ui/button';
+
+<LandingProductCardSection
+  title="Featured Products"
+  description="Browse our collection of featured products"
+  products={[
+    {
+      title: "Eco Chair",
+      description: "Chair constructed from beech wood with a plywood back. The seat can just be upholstered or the seat and back rest as well.",
+      imageSrc: "/static/images/backdrop-3.webp",
+      actionComponent: <Button>View Details</Button>,
+      featured: true
+    },
+    {
+      title: "Modern Desk",
+      description: "Minimalist desk with solid oak frame and tempered glass top.",
+      imageSrc: "/static/images/backdrop-4.webp",
+      actionComponent: <Button variant="outline">Learn More</Button>
+    },
+    {
+      title: "Lounge Sofa",
+      description: "Comfortable 3-seater sofa with premium fabric upholstery.",
+      imageSrc: "/static/images/backdrop-5.webp",
+      actionComponent: <Button>View Details</Button>
+    }
+  ]}
+/>
+```
+
+</ComponentExample>
+
+## Usage
+
+```jsx
+import { LandingProductCardSection, LandingProductCard } from '@/components/landing/product';
+```
+
+```jsx
+<LandingProductCardSection
+  title="Our Products"
+  description="Explore our collection"
+  products={[
+    {
+      title: "Product 1",
+      description: "Description of product 1",
+      imageSrc: "/static/images/backdrop-1.webp",
+    },
+    // ... more products
+  ]}
+/>
+```
+
+## Examples
+
+### Four Column Grid
+
+Display products in a 4-column grid for a more compact layout.
+
+<ComponentExample
+  previewComponent={
+    <LandingProductCardSection
+      title="Featured Collection"
+      description="A selection of our most popular items"
+      gridColumns={4}
+      variant="secondary"
+      withBackground
+      textPosition="left"
+      products={[
+        {
+          title: "Side Table",
+          description: "Compact side table with marble top.",
+          imageSrc: "/static/images/backdrop-12.webp",
+          actionComponent: <Button>View</Button>
+        },
+        {
+          title: "Floor Lamp",
+          description: "Adjustable floor lamp with linen shade.",
+          imageSrc: "/static/images/backdrop-13.webp",
+          actionComponent: <Button>Details</Button>
+        },
+        {
+          title: "Bookshelf",
+          description: "Modular bookshelf with adjustable shelves.",
+          imageSrc: "/static/images/backdrop-14.webp",
+          actionComponent: <Button>View</Button>
+        },
+        {
+          title: "Desk Chair",
+          description: "Ergonomic desk chair with breathable mesh.",
+          imageSrc: "/static/images/backdrop-15.webp",
+          actionComponent: <Button>Details</Button>
+        }
+      ]}
+    />
+  }
+>
+
+```jsx
+import { LandingProductCardSection } from '@/components/landing/product';
+import { Button } from '@/components/shared/ui/button';
+
+<LandingProductCardSection
+  title="Featured Collection"
+  description="A selection of our most popular items"
+  gridColumns={4}
+  variant="secondary"
+  withBackground
+  textPosition="left"
+  products={[
+    {
+      title: "Side Table",
+      description: "Compact side table with marble top.",
+      imageSrc: "/static/images/backdrop-12.webp",
+      actionComponent: <Button>View</Button>
+    },
+    {
+      title: "Floor Lamp",
+      description: "Adjustable floor lamp with linen shade.",
+      imageSrc: "/static/images/backdrop-13.webp",
+      actionComponent: <Button>Details</Button>
+    },
+    {
+      title: "Bookshelf",
+      description: "Modular bookshelf with adjustable shelves.",
+      imageSrc: "/static/images/backdrop-14.webp",
+      actionComponent: <Button>View</Button>
+    },
+    {
+      title: "Desk Chair",
+      description: "Ergonomic desk chair with breathable mesh.",
+      imageSrc: "/static/images/backdrop-15.webp",
+      actionComponent: <Button>Details</Button>
+    }
+  ]}
+/>
+```
+
+</ComponentExample>
+
+
+### Component-Based Usage
+
+You can use the component-based approach by providing child `LandingProductCard` components directly. This allows for more customization and flexibility.
+
+<ComponentExample
+  previewComponent={
+    <LandingProductCardSection
+      title="Product Collection"
+      description="Handcrafted with attention to detail"
+    >
+      <LandingProductCard
+        title="Wooden Table"
+        description="Handcrafted oak dining table with natural finish."
+        imageSrc="/static/images/backdrop-6.webp"
+        actionComponent={<Button>Add to Cart</Button>}
+      />
+      <LandingProductCard
+        title="Ceramic Vase"
+        description="Hand-thrown ceramic vase with unique glaze pattern."
+        imageSrc="/static/images/backdrop-7.webp"
+        actionComponent={<Button variant="secondary">View Details</Button>}
+        variant="secondary"
+        featured
+      />
+      <LandingProductCard
+        title="Wall Sconce"
+        description="Modern wall sconce with adjustable arm and warm lighting."
+        imageSrc="/static/images/backdrop-8.webp"
+        actionComponent={<Button>Purchase</Button>}
+      />
+    </LandingProductCardSection>
+  }
+>
+
+```jsx
+import { LandingProductCardSection, LandingProductCard } from '@/components/landing/product';
+import { Button } from '@/components/shared/ui/button';
+
+<LandingProductCardSection
+  title="Product Collection"
+  description="Handcrafted with attention to detail"
+>
+  <LandingProductCard
+    title="Wooden Table"
+    description="Handcrafted oak dining table with natural finish."
+    imageSrc="/static/images/backdrop-6.webp"
+    actionComponent={<Button>Add to Cart</Button>}
+  />
+  <LandingProductCard
+    title="Ceramic Vase"
+    description="Hand-thrown ceramic vase with unique glaze pattern."
+    imageSrc="/static/images/backdrop-7.webp"
+    actionComponent={<Button variant="secondary">View Details</Button>}
+    variant="secondary"
+    featured
+  />
+  <LandingProductCard
+    title="Wall Sconce"
+    description="Modern wall sconce with adjustable arm and warm lighting."
+    imageSrc="/static/images/backdrop-8.webp",
+    actionComponent={<Button>Purchase</Button>}
+  />
+</LandingProductCardSection>
+```
+
+</ComponentExample>
+
+### With Background
+
+<ComponentExample
+  previewComponent={
+    <LandingProductCardSection
+      title="Premium Collection"
+      description="Our finest selection of premium products"
+      withBackground
+      variant="primary"
+      gridColumns={3}
+      products={[
+        {
+          title: "Leather Armchair",
+          description: "Premium leather armchair with walnut frame.",
+          imageSrc: "/static/images/backdrop-9.webp",
+          actionComponent: <Button>View Details</Button>
+        },
+        {
+          title: "Pendant Light",
+          description: "Handblown glass pendant light with brass accents.",
+          imageSrc: "/static/images/backdrop-10.webp",
+          actionComponent: <Button>Purchase</Button>
+        },
+        {
+          title: "Area Rug",
+          description: "Hand-knotted wool area rug in natural colors.",
+          imageSrc: "/static/images/backdrop-11.webp",
+          actionComponent: <Button>View Details</Button>
+        }
+      ]}
+    />
+  }
+>
+
+```jsx
+import { LandingProductCardSection } from '@/components/landing/product';
+import { Button } from '@/components/shared/ui/button';
+
+<LandingProductCardSection
+  title="Premium Collection"
+  description="Our finest selection of premium products"
+  withBackground
+  variant="primary"
+  gridColumns={3}
+  products={[
+    {
+      title: "Leather Armchair",
+      description: "Premium leather armchair with walnut frame.",
+      imageSrc: "/static/images/backdrop-9.webp",
+      actionComponent: <Button>View Details</Button>
+    },
+    {
+      title: "Pendant Light",
+      description: "Handblown glass pendant light with brass accents.",
+      imageSrc: "/static/images/backdrop-10.webp",
+      actionComponent: <Button>Purchase</Button>
+    },
+    {
+      title: "Area Rug",
+      description: "Hand-knotted wool area rug in natural colors.",
+      imageSrc: "/static/images/backdrop-11.webp",
+      actionComponent: <Button>View Details</Button>
+    }
+  ]}
+/>
+```
+
+</ComponentExample>
+
+
+### Custom Card Components
+
+Demonstrate using the `topComponent` and `bottomComponent` props to add custom content to the product cards.
+
+<ComponentExample
+  previewComponent={
+    <LandingProductCardSection
+      title="Custom Product Cards"
+      description="Featuring custom component slots for flexible layouts"
+    >
+      <LandingProductCard
+        title="Premium Chair"
+        description="Ergonomic office chair with adjustable height and lumbar support."
+        imageSrc="/static/images/backdrop-16.webp"
+        topComponent={<Badge className="mb-2">New Arrival</Badge>}
+        actionComponent={<Button className="w-full">Add to Cart</Button>}
+      />
+      <LandingProductCard
+        title="Standing Desk"
+        description="Height-adjustable standing desk with memory presets."
+        imageSrc="/static/images/backdrop-17.webp"
+        topComponent={<Badge variant="outline" className="mb-2">Bestseller</Badge>}
+        bottomComponent={<div className="flex justify-center"><LandingRating /></div>}
+        actionComponent={<Button className="w-full">View Details</Button>}
+      />
+      <LandingProductCard
+        title="Desk Lamp"
+        description="Adjustable desk lamp with wireless charging base."
+        imageSrc="/static/images/backdrop-18.webp"
+        topComponent={<Badge variant="secondary" className="mb-2">Limited Edition</Badge>}
+        bottomComponent={<div className="mt-2 text-sm font-medium text-green-600">In stock - ships in 24 hours</div>}
+        actionComponent={<Button className="w-full">Buy Now</Button>}
+      />
+    </LandingProductCardSection>
+  }
+>
+
+```jsx
+import { LandingProductCardSection, LandingProductCard } from '@/components/landing/product';
+import { Button } from '@/components/shared/ui/button';
+import { Badge } from '@/components/shared/ui/badge';
+
+<LandingProductCardSection
+  title="Custom Product Cards"
+  description="Featuring custom component slots for flexible layouts"
+>
+  <LandingProductCard
+    title="Premium Chair"
+    description="Ergonomic office chair with adjustable height and lumbar support."
+    imageSrc="/static/images/backdrop-16.webp"
+    topComponent={<Badge className="mb-2">New Arrival</Badge>}
+    actionComponent={<Button className="w-full">Add to Cart</Button>}
+  />
+  <LandingProductCard
+    title="Standing Desk"
+    description="Height-adjustable standing desk with memory presets."
+    imageSrc="/static/images/backdrop-17.webp"
+    topComponent={<Badge variant="outline" className="mb-2">Bestseller</Badge>}
+    bottomComponent={<div className="flex justify-center"><LandingRating /></div>}
+    actionComponent={<Button className="w-full">View Details</Button>}
+  />
+  <LandingProductCard
+    title="Desk Lamp"
+    description="Adjustable desk lamp with wireless charging base."
+    imageSrc="/static/images/backdrop-18.webp"
+    topComponent={<Badge variant="secondary" className="mb-2">Limited Edition</Badge>}
+    bottomComponent={<div className="mt-2 text-sm font-medium text-green-600">In stock - ships in 24 hours</div>}
+    actionComponent={<Button className="w-full">Buy Now</Button>}
+  />
+</LandingProductCardSection>
+```
+
+</ComponentExample>
+
+## API Reference
+
+### LandingProductCardSection Props
+
+| Prop Name | Prop Type | Required | Default |
+| --- | --- | ----- | ---- |
+| **title** <Tippy>Main title of the product card section</Tippy> | `string` | No | - |
+| **titleComponent** <Tippy>Custom component for the title</Tippy> | `React.ReactNode` | No | - |
+| **description** <Tippy>Text description displayed below the title</Tippy> | `string` | No | - |
+| **descriptionComponent** <Tippy>Custom component for the description</Tippy> | `React.ReactNode` | No | - |
+| **products** <Tippy>Array of product objects to be displayed</Tippy> | `ProductCardProps[]` | No | `[]` |
+| **children** <Tippy>Child components to render instead of products array</Tippy> | `React.ReactNode` | No | - |
+| **className** <Tippy>Additional CSS classes for the section</Tippy> | `string` | No | `''` |
+| **innerClassName** <Tippy>Additional CSS classes for the inner container</Tippy> | `string` | No | `''` |
+| **gridClassName** <Tippy>Additional CSS classes for the grid</Tippy> | `string` | No | `''` |
+| **gridColumns** <Tippy>Number of columns to display on desktop</Tippy> | `3 \| 4` | No | `3` |
+| **withBackground** <Tippy>Whether to display a background color</Tippy> | `boolean` | No | `false` |
+| **withBackgroundGlow** <Tippy>Whether to display a background glow effect</Tippy> | `boolean` | No | `false` |
+| **backgroundGlowVariant** <Tippy>Color variant for the background glow</Tippy> | `'primary' \| 'secondary'` | No | `'primary'` |
+| **variant** <Tippy>Color variant for the section</Tippy> | `'primary' \| 'secondary'` | No | `'primary'` |
+| **textPosition** <Tippy>Alignment of the text content</Tippy> | `'center' \| 'left'` | No | `'center'` |
+
+### LandingProductCard Props
+
+| Prop Name | Prop Type | Required | Default |
+| --- | --- | ----- | ---- |
+| **title** <Tippy>Title of the product</Tippy> | `string` | Yes | - |
+| **titleComponent** <Tippy>Custom component for the title</Tippy> | `React.ReactNode` | No | - |
+| **description** <Tippy>Description of the product</Tippy> | `string` | No | - |
+| **descriptionComponent** <Tippy>Custom component for the description</Tippy> | `React.ReactNode` | No | - |
+| **imageSrc** <Tippy>Source URL for the product image</Tippy> | `string` | No | - |
+| **imageAlt** <Tippy>Alt text for the product image</Tippy> | `string` | No | `''` |
+| **actionComponent** <Tippy>Component for the call-to-action (e.g., button)</Tippy> | `React.ReactNode` | No | - |
+| **topComponent** <Tippy>Custom component to display at the top of the card content</Tippy> | `React.ReactNode` | No | - |
+| **bottomComponent** <Tippy>Custom component to display at the bottom of the card content</Tippy> | `React.ReactNode` | No | - |
+| **featured** <Tippy>Whether to highlight this card as featured</Tippy> | `boolean` | No | `false` |
+| **className** <Tippy>Additional CSS classes for the card</Tippy> | `string` | No | - |
+| **variant** <Tippy>Color variant for the card</Tippy> | `'primary' \| 'secondary' \| 'default'` | No | `'default'` |
+| **href** <Tippy>URL to navigate to when the card is clicked</Tippy> | `string` | No | - |
+
+### Type Definitions
+
+```typescript
+export interface ProductCardProps {
+  title: string;
+  titleComponent?: React.ReactNode;
+  description?: string;
+  descriptionComponent?: React.ReactNode;
+  imageSrc?: string;
+  imageAlt?: string;
+  actionComponent?: React.ReactNode;
+  topComponent?: React.ReactNode;
+  bottomComponent?: React.ReactNode;
+  featured?: boolean;
+  className?: string;
+  variant?: 'primary' | 'secondary' | 'default';
+  href?: string;
+}
+```
+
+```typescript
+export interface LandingProductCardSectionProps {
+  title?: string;
+  titleComponent?: React.ReactNode;
+  description?: string;
+  descriptionComponent?: React.ReactNode;
+  products?: ProductCardProps[];
+  children?: React.ReactNode;
+  className?: string;
+  innerClassName?: string;
+  gridClassName?: string;
+  gridColumns?: 3 | 4;
+  withBackground?: boolean;
+  withBackgroundGlow?: boolean;
+  backgroundGlowVariant?: 'primary' | 'secondary';
+  variant?: 'primary' | 'secondary';
+  textPosition?: 'center' | 'left';
+}
+```
+
+## More Examples
+
+For more even more examples, see our <a href="/demo/landing-page-component-examples" className="fancy-link">Landing Page Component Examples</a> page or see complete landing page examples by <a href="/demo/landing-page-templates" className="fancy-link">Exploring Our Landing Page Templates</a>.
+
+Also see:
+
+- <a href="/boilerplate-documentation/landing-page-components/product-feature" className="fancy-link">Product Feature</a> component
+- <a href="/boilerplate-documentation/landing-page-components/pricing" className="fancy-link">Pricing</a> component
+- <a href="/boilerplate-documentation/landing-page-components/bento-grid" className="fancy-link">Bento Grid</a> component

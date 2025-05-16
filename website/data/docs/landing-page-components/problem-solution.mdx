@@ -1,0 +1,373 @@
+---
+title: 'Problem Solution'
+date: '2025-05-16'
+lastmod: '2025-05-16'
+tags:
+  - 'guide'
+  - 'components'
+  - 'documentation'
+  - 'landing-page'
+  - 'ui-library'
+  - 'react'
+  - 'nextjs'
+  - 'tailwind-css'
+  - 'problem-solution'
+  - 'problem-statement'
+  - 'product-feature'
+  - 'shadcn-ui'
+  - 'shadcn-ui-landing-page'
+  - 'shadcn-ui-problem-solution'
+  - 'shadcn-ui-problem-statement'
+
+summary: 'A component for presenting problems and their solutions in a side-by-side comparison format'
+layout: PostHub
+
+# images:
+#   - '/static/images/blog/docs/problem-solution-preview.webp'
+
+showThemeSelector: true
+showInstallNotice: true
+
+canonicalUrl: 'https://shipixen.com/boilerplate-documentation/landing-page-components/problem-solution'
+---
+
+The Problem / Solution component presents a clear comparison between problems and their solutions. This pattern is effective for highlighting how your product addresses specific pain points and provides value to users.
+
+<ComponentExample
+  previewComponent={
+    <LandingProductProblemSolution
+      title="It takes too long"
+      problems={[
+        { title: 'Complex setup process' },
+        { title: 'Poor performance' }
+      ]}
+      solutions={[
+        { title: 'One-click installation' },
+        { title: 'Optimized performance' }
+      ]}
+    />
+  }
+>
+
+```jsx
+import { LandingProductProblemSolution } from '@/components/landing/LandingProductProblemSolution';
+
+<LandingProductProblemSolution
+  title="Getting started is too complicated"
+  problems={[
+    { title: 'Complex setup process' },
+    { title: 'Poor performance' }
+  ]}
+  solutions={[
+    { title: 'One-click installation' },
+    { title: 'Optimized performance' }
+  ]}
+/>
+```
+
+</ComponentExample>
+
+## Usage
+
+Import the component:
+
+```jsx
+import { LandingProductProblemSolution } from '@/components/landing/LandingProductProblemSolution';
+```
+
+Basic implementation:
+
+```jsx
+<LandingProductProblemSolution
+  title="Problems and Solutions"
+  description="Addressing key customer pain points with innovative solutions"
+  problems={[
+    { title: 'Problem title' },
+  ]}
+  solutions={[
+    { title: 'Solution title' },
+  ]}
+/>
+```
+
+## Examples
+
+### No titles
+
+<ComponentExample
+  previewComponent={
+    <LandingProductProblemSolution
+      solutionTitle=''
+      problemTitle=''
+      problems={[
+        { title: "Too many steps" },
+        { title: "Too many clicks" },
+      ]}
+      solutions={[
+        { title: "One-click installation" },
+        { title: "Optimized performance" },
+      ]}
+    />
+  }
+>
+
+```jsx
+import { LandingProductProblemSolution } from '@/components/landing/LandingProductProblemSolution';
+<LandingProductProblemSolution
+  solutionTitle=''
+  problemTitle=''
+  problems={[
+    { title: "Too many steps" },
+    { title: "Too many clicks" },
+  ]}
+  solutions={[
+    { title: "One-click installation" },
+    { title: "Optimized performance" },
+  ]}
+/>
+```
+
+</ComponentExample>
+
+### With Left Alignment
+
+<ComponentExample
+  previewComponent={
+    <LandingProductProblemSolution
+      title="Problems and Solutions"
+      description="Addressing key customer pain points with innovative solutions"
+      textPosition="left"
+      problems={[
+        { title: 'Complex setup process' },
+        { title: 'Poor performance' }
+      ]}
+      solutions={[
+        { title: 'One-click installation' },
+        { title: 'Optimized performance' }
+      ]}
+    />
+  }
+>
+
+```jsx
+import { LandingProductProblemSolution } from '@/components/landing/LandingProductProblemSolution';
+
+<LandingProductProblemSolution
+  title="Problems and Solutions"
+  description="Addressing key customer pain points with innovative solutions"
+  textPosition="left"
+  problems={[
+    { title: 'Complex setup process' },
+    { title: 'Poor performance' }
+  ]}
+  solutions={[
+    { title: 'One-click installation' },
+    { title: 'Optimized performance' }
+  ]}
+/>
+```
+
+</ComponentExample>
+
+### Custom Titles
+
+<ComponentExample
+  previewComponent={
+    <LandingProductProblemSolution
+      title="Before vs After"
+      description="See the difference our product makes"
+      problemTitle="Before"
+      solutionTitle="After"
+      problems={[
+        { title: 'Manual process' },
+      ]}
+      solutions={[
+        { title: 'Automated workflow' },
+      ]}
+    />
+  }
+>
+
+```jsx
+import { LandingProductProblemSolution } from '@/components/landing/LandingProductProblemSolution';
+
+<LandingProductProblemSolution
+  title="Before vs After"
+  description="See the difference our product makes"
+  problemTitle="Before"
+  solutionTitle="After"
+  problems={[
+    { title: 'Manual process' },
+  ]}
+  solutions={[
+    { title: 'Automated workflow' },
+  ]}
+/>
+```
+
+</ComponentExample>
+
+### With descriptions
+
+<ComponentExample
+  previewComponent={
+    <LandingProductProblemSolution
+      title="Before vs After"
+      description="See the difference our product makes"
+      problemTitle="Before"
+      solutionTitle="After"
+      problems={[
+        { title: 'Manual process', description: 'Time-consuming and error-prone' },
+        { title: 'Manual process', description: 'Time-consuming and error-prone' },
+      ]}
+      solutions={[
+        { title: 'Automated workflow', description: 'Fast, accurate, and reliable' },
+        { title: 'Automated workflow', description: 'Fast, accurate, and reliable' },
+      ]}
+    />
+  }
+>
+
+```jsx
+import { LandingProductProblemSolution } from '@/components/landing/LandingProductProblemSolution';
+
+<LandingProductProblemSolution
+  title="Before vs After"
+  description="See the difference our product makes"
+  problemTitle="Before"
+  solutionTitle="After"
+  problems={[
+    { title: 'Manual process', description: 'Time-consuming and error-prone' },
+    { title: 'Manual process', description: 'Time-consuming and error-prone' },
+  ]}
+  solutions={[
+    { title: 'Automated workflow', description: 'Fast, accurate, and reliable' },
+    { title: 'Automated workflow', description: 'Fast, accurate, and reliable' },
+  ]}
+/>
+
+```
+
+</ComponentExample>
+
+### With Background
+
+<ComponentExample
+  previewComponent={
+    <LandingProductProblemSolution
+      title="Problems and Solutions"
+      description="Addressing key customer pain points with innovative solutions"
+      withBackground={true}
+      problems={[
+        { title: 'Complex setup process' },
+        { title: 'Poor performance' }
+      ]}
+      solutions={[
+        { title: 'One-click installation' },
+        { title: 'Optimized performance' }
+      ]}
+    />
+  }
+>
+
+```jsx
+import { LandingProductProblemSolution } from '@/components/landing/LandingProductProblemSolution';
+
+<LandingProductProblemSolution
+  title="Problems and Solutions"
+  description="Addressing key customer pain points with innovative solutions"
+  withBackground={true}
+  problems={[
+    { title: 'Complex setup process' },
+    { title: 'Poor performance' }
+  ]}
+  solutions={[
+    { title: 'One-click installation' },
+    { title: 'Optimized performance' }
+  ]}
+/>
+```
+
+</ComponentExample>
+
+### With Background Glow
+
+<ComponentExample
+  previewComponent={
+    <LandingProductProblemSolution
+      title="Problems and Solutions"
+      withBackgroundGlow={true}
+      problems={[
+        { title: 'Complex setup process' },
+        { title: 'Poor performance' }
+      ]}
+      solutions={[
+        { title: 'One-click installation' },
+        { title: 'Optimized performance' }
+      ]}
+    />
+  }
+>
+
+```jsx
+import { LandingProductProblemSolution } from '@/components/landing/LandingProductProblemSolution';
+
+<LandingProductProblemSolution
+  title="Problems and Solutions"
+  withBackgroundGlow={true}
+  problems={[
+    { title: 'Complex setup process' },
+    { title: 'Poor performance' }
+  ]}
+  solutions={[
+    { title: 'One-click installation' },
+    { title: 'Optimized performance' }
+  ]}
+/>
+```
+
+</ComponentExample>
+
+## API Reference
+
+### LandingProductProblemSolution Props
+
+| Prop Name | Prop Type | Required | Default |
+| --- | --- | ----- | ---- |
+| **className** <Tippy>Additional CSS classes to apply to the section container</Tippy> | `string` | No | - |
+| **problems** <Tippy>Array of problems to display</Tippy> | `KeyPoint[]` | Yes | - |
+| **solutions** <Tippy>Array of solutions to display</Tippy> | `KeyPoint[]` | Yes | - |
+| **title** <Tippy>Main heading text for the section</Tippy> | `string` | No | - |
+| **titleComponent** <Tippy>Custom React component to replace the default title</Tippy> | `ReactNode` | No | - |
+| **description** <Tippy>Supporting text that appears under the title</Tippy> | `string` | No | - |
+| **descriptionComponent** <Tippy>Custom React component to replace the default description</Tippy> | `ReactNode` | No | - |
+| **solutionTitle** <Tippy>Heading text for the solution column</Tippy> | `string` | No | `'Solution'` |
+| **solutionTitleComponent** <Tippy>Custom React component to replace the default solution title</Tippy> | `ReactNode` | No | - |
+| **problemTitle** <Tippy>Heading text for the problem column</Tippy> | `string` | No | `'Problem'` |
+| **problemTitleComponent** <Tippy>Custom React component to replace the default problem title</Tippy> | `ReactNode` | No | - |
+| **variant** <Tippy>Color theme variant</Tippy> | `'primary' \| 'secondary'` | No | `'primary'` |
+| **withBackground** <Tippy>Apply a subtle background color based on the variant</Tippy> | `boolean` | No | `false` |
+| **withBackgroundGlow** <Tippy>Add a background glow effect</Tippy> | `boolean` | No | `false` |
+| **backgroundGlowVariant** <Tippy>Color theme for the background glow</Tippy> | `'primary' \| 'secondary'` | No | `'primary'` |
+| **textPosition** <Tippy>Alignment of the section title and description</Tippy> | `'center' \| 'left'` | No | `'center'` |
+
+### Interfaces
+
+```ts
+export interface KeyPoint {
+  title: string;
+  description?: string;
+}
+```
+
+The `KeyPoint` interface is used both for problems and solutions to provide consistent formatting.
+
+## More Examples
+
+For more even more examples, see our <a href="/demo/landing-page-component-examples" className="fancy-link">Landing Page Component Examples</a> page or see complete landing page examples by <a href="/demo/landing-page-templates" className="fancy-link">Exploring Our Landing Page Templates</a>.
+
+Also see:
+
+- <a href="/boilerplate-documentation/landing-page-components/product-feature" className="fancy-link">Product Feature</a> component.
+- <a href="/boilerplate-documentation/landing-page-components/feature-comparison" className="fancy-link">Feature Comparison</a> component.
+- <a href="/boilerplate-documentation/landing-page-components/feature-key-points" className="fancy-link">Product Feature Key Points</a> component that this component uses internally for displaying the problems and solutions.

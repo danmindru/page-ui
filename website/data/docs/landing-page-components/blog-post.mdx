@@ -1,0 +1,488 @@
+---
+title: 'Blog Post'
+date: '2025-05-14'
+lastmod: '2025-05-14'
+tags:
+  - 'guide'
+  - 'components'
+  - 'documentation'
+  - 'landing-page'
+  - 'ui-library'
+  - 'react'
+  - 'nextjs'
+  - 'tailwind-css'
+  - 'blog'
+  - 'blog-post'
+  - 'blog-card'
+  - 'article'
+  - 'content'
+summary: 'A component for displaying blog post cards in a clean, modern design'
+layout: PostHub
+
+# images:
+#   - '/static/images/blog/docs/blog-post-preview.webp'
+
+showThemeSelector: true
+showInstallNotice: true
+
+canonicalUrl: 'https://shipixen.com/boilerplate-documentation/landing-page-components/blog-post'
+---
+
+The `LandingBlogPost` component displays a single blog post card with an image, author information, date, title, summary, reading time, and tags. It's designed to be used within a blog list component but can also function as a standalone element.
+
+Can be used in a `LandingBlogList` component or as a standalone element.
+
+<ComponentExample
+  previewComponent={
+    <LandingBlogPost
+      post={{
+        slug: 'getting-started',
+        date: 'November 15, 2023',
+        title: 'Getting Started with Shipixen',
+        summary: 'Learn how to quickly set up and customize your Shipixen landing page with our comprehensive guide.',
+        tags: ['Guide', 'Tutorial'],
+        images: ['/static/images/backdrop-3.webp'],
+        readingTime: 5,
+        author: {
+          name: 'Alex Johnson',
+          avatar: '/static/images/people/2.webp'
+        }
+      }}
+    />
+  }
+>
+
+```jsx
+import { LandingBlogPost } from '@/components/landing/blog/LandingBlogPost';
+
+<LandingBlogPost
+  post={{
+    slug: 'getting-started',
+    date: 'November 15, 2023',
+    title: 'Getting Started with Shipixen',
+    summary: 'Learn how to quickly set up and customize your Shipixen landing page with our comprehensive guide.',
+    tags: ['Guide', 'Tutorial'],
+    images: ['/static/images/backdrop-3.webp'],
+    readingTime: 5,
+    author: {
+      name: 'Alex Johnson',
+      avatar: '/static/images/people/2.webp'
+    }
+  }}
+/>
+```
+
+</ComponentExample>
+
+## Usage
+
+Import the component and provide a post object with the required properties:
+
+```jsx
+import { LandingBlogPost } from '@/components/landing/blog/LandingBlogPost';
+```
+
+```jsx
+<LandingBlogPost
+  post={{
+    slug: 'blog-post-slug',
+    date: 'November 15, 2023',
+    title: 'Blog Post Title',
+    summary: 'This is a summary of the blog post content.',
+    tags: ['Tag 1', 'Tag 2'],
+    images: ['/static/images/backdrop-1.webp'],
+    readingTime: 5,
+    author: {
+      name: 'John Doe',
+      avatar: '/static/images/people/1.webp'
+    }
+  }}
+/>
+```
+
+## Examples
+
+### Basic Blog Post
+
+A minimal blog post card with only the essential information:
+
+<ComponentExample
+  previewComponent={
+    <LandingBlogPost
+      post={{
+        slug: 'minimal-post',
+        date: 'November 10, 2023',
+        title: 'Minimal Blog Post Example',
+        summary: 'This is a minimal blog post example with only the essential information.',
+      }}
+    />
+  }
+>
+
+```jsx
+import { LandingBlogPost } from '@/components/landing/blog/LandingBlogPost';
+
+<LandingBlogPost
+  post={{
+    slug: 'minimal-post',
+    date: 'November 10, 2023',
+    title: 'Minimal Blog Post Example',
+    summary: 'This is a minimal blog post example with only the essential information.',
+  }}
+/>
+```
+
+</ComponentExample>
+
+### Image Position Variants
+
+The `LandingBlogPost` component supports three image position layouts:
+
+#### Left Image Layout
+
+<ComponentExample
+  previewComponent={
+    <LandingBlogPost
+      post={{
+        slug: 'left-image-post',
+        date: 'November 12, 2023',
+        title: 'Blog Post with Left Image',
+        summary: 'This example shows a blog post with the image positioned on the left side.',
+        images: ['/static/images/backdrop-5.webp'],
+        readingTime: 4
+      }}
+      imagePosition="left"
+    />
+  }
+>
+
+```jsx
+import { LandingBlogPost } from '@/components/landing/blog/LandingBlogPost';
+
+<LandingBlogPost
+  post={{
+    slug: 'left-image-post',
+    date: 'November 12, 2023',
+    title: 'Blog Post with Left Image',
+    summary: 'This example shows a blog post with the image positioned on the left side.',
+    images: ['/static/images/backdrop-5.webp'],
+    readingTime: 4
+  }}
+  imagePosition="left"
+/>
+```
+
+</ComponentExample>
+
+#### Center Image Layout
+
+Used by default in grid displays:
+
+<ComponentExample
+  previewComponent={
+    <LandingBlogPost
+      post={{
+        slug: 'center-image-post',
+        date: 'November 13, 2023',
+        title: 'Blog Post with Center Image',
+        summary: 'This example shows a blog post with the image positioned at the top (center layout).',
+        images: ['/static/images/backdrop-9.webp'],
+        readingTime: 5
+      }}
+      imagePosition="center"
+    />
+  }
+>
+
+```jsx
+import { LandingBlogPost } from '@/components/landing/blog/LandingBlogPost';
+
+<LandingBlogPost
+  post={{
+    slug: 'center-image-post',
+    date: 'November 13, 2023',
+    title: 'Blog Post with Center Image',
+    summary: 'This example shows a blog post with the image positioned at the top (center layout).',
+    images: ['/static/images/backdrop-9.webp'],
+    readingTime: 5
+  }}
+  imagePosition="center"
+/>
+```
+
+</ComponentExample>
+
+#### Right Image Layout (Default)
+
+Used by default in list displays:
+
+<ComponentExample
+  previewComponent={
+    <LandingBlogPost
+      post={{
+        slug: 'right-image-post',
+        date: 'November 14, 2023',
+        title: 'Blog Post with Right Image',
+        summary: 'This example shows a blog post with the image positioned on the right side.',
+        images: ['/static/images/backdrop-7.webp'],
+        readingTime: 6
+      }}
+      imagePosition="right"
+    />
+  }
+>
+
+```jsx
+import { LandingBlogPost } from '@/components/landing/blog/LandingBlogPost';
+
+<LandingBlogPost
+  post={{
+    slug: 'right-image-post',
+    date: 'November 14, 2023',
+    title: 'Blog Post with Right Image',
+    summary: 'This example shows a blog post with the image positioned on the right side.',
+    images: ['/static/images/backdrop-7.webp'],
+    readingTime: 6
+  }}
+  imagePosition="right" // This is the default, so it can be omitted
+/>
+```
+
+</ComponentExample>
+
+### With Image and Summary
+
+A blog post card featuring an image and summary text:
+
+<ComponentExample
+  previewComponent={
+    <LandingBlogPost
+      post={{
+        slug: 'image-post',
+        date: 'November 12, 2023',
+        title: 'Blog Post with Image and Summary',
+        summary: 'This is a brief summary of the blog post that gives readers an idea of what to expect.',
+        images: ['/static/images/backdrop-5.webp']
+      }}
+    />
+  }
+>
+
+```jsx
+import { LandingBlogPost } from '@/components/landing/blog/LandingBlogPost';
+
+<LandingBlogPost
+  post={{
+    slug: 'image-post',
+    date: 'November 12, 2023',
+    title: 'Blog Post with Image and Summary',
+    summary: 'This is a brief summary of the blog post that gives readers an idea of what to expect.',
+    images: ['/static/images/backdrop-5.webp']
+  }}
+/>
+```
+
+</ComponentExample>
+
+### With Author and Reading Time
+
+A blog post with author information and reading time displayed:
+
+<ComponentExample
+  previewComponent={
+    <LandingBlogPost
+      post={{
+        slug: 'author-post',
+        date: 'November 14, 2023',
+        title: 'Blog Post with Author Information',
+        summary: 'A comprehensive guide written by an expert in the field.',
+        readingTime: 8,
+        author: {
+          name: 'Sarah Williams',
+          avatar: '/static/images/people/3.webp'
+        }
+      }}
+    />
+  }
+>
+
+```jsx
+import { LandingBlogPost } from '@/components/landing/blog/LandingBlogPost';
+
+<LandingBlogPost
+  post={{
+    slug: 'author-post',
+    date: 'November 14, 2023',
+    title: 'Blog Post with Author Information',
+    summary: 'A comprehensive guide written by an expert in the field.',
+    readingTime: 8,
+    author: {
+      name: 'Sarah Williams',
+      avatar: '/static/images/people/3.webp'
+    }
+  }}
+/>
+```
+
+</ComponentExample>
+
+### With Tags
+
+A blog post card displaying category tags:
+
+<ComponentExample
+  previewComponent={
+    <LandingBlogPost
+      post={{
+        slug: 'tagged-post',
+        date: 'November 16, 2023',
+        title: 'Blog Post with Category Tags',
+        summary: 'Learn about the latest features and updates in our newest release.',
+        tags: ['New Features', 'Updates', 'Tutorial'],
+        readingTime: 6
+      }}
+    />
+  }
+>
+
+```jsx
+import { LandingBlogPost } from '@/components/landing/blog/LandingBlogPost';
+
+<LandingBlogPost
+  post={{
+    slug: 'tagged-post',
+    date: 'November 16, 2023',
+    title: 'Blog Post with Category Tags',
+    summary: 'Learn about the latest features and updates in our newest release.',
+    tags: ['New Features', 'Updates', 'Tutorial'],
+    readingTime: 6
+  }}
+/>
+```
+
+</ComponentExample>
+
+### With Clickable Tags
+
+A blog post with tags that link to other pages:
+
+<ComponentExample
+  previewComponent={
+    <LandingBlogPost
+      post={{
+        slug: 'clickable-tags-post',
+        date: 'November 20, 2023',
+        title: 'Blog Post with Clickable Tags',
+        summary: 'This example shows a blog post with tags that link to other pages when clicked.',
+        tags: [
+          { url: '/tags/react', text: 'React' },
+          { url: '/tags/nextjs', text: 'Next.js' }
+        ],
+        readingTime: 7
+      }}
+    />
+  }
+>
+
+```jsx
+import { LandingBlogPost } from '@/components/landing/blog/LandingBlogPost';
+
+<LandingBlogPost
+  post={{
+    slug: 'clickable-tags-post',
+    date: 'November 20, 2023',
+    title: 'Blog Post with Clickable Tags',
+    summary: 'This example shows a blog post with tags that link to other pages when clicked.',
+    tags: [
+      { url: '/tags/react', text: 'React' },
+      { url: '/tags/nextjs', text: 'Next.js' }
+    ],
+    readingTime: 7
+  }}
+/>
+```
+
+</ComponentExample>
+
+### Complete Example
+
+A fully-featured blog post card with all available properties:
+
+<ComponentExample
+  previewComponent={
+    <LandingBlogPost
+      post={{
+        path: '/blog/complete-example',
+        slug: 'complete-example',
+        date: 'November 18, 2023',
+        title: 'The Complete Guide to Modern Web Development',
+        summary: 'Explore the latest tools, frameworks, and best practices for building exceptional web experiences in 2023 and beyond.',
+        tags: ['Web Development', 'Tutorial', 'Best Practices'],
+        images: ['/static/images/backdrop-10.webp'],
+        readingTime: 12,
+        author: {
+          name: 'Michael Chen',
+          avatar: '/static/images/people/4.webp'
+        }
+      }}
+    />
+  }
+>
+
+```jsx
+import { LandingBlogPost } from '@/components/landing/blog/LandingBlogPost';
+
+<LandingBlogPost
+  post={{
+    path: '/blog/complete-example',
+    slug: 'complete-example',
+    date: 'November 18, 2023',
+    title: 'The Complete Guide to Modern Web Development',
+    summary: 'Explore the latest tools, frameworks, and best practices for building exceptional web experiences in 2023 and beyond.',
+    tags: ['Web Development', 'Tutorial', 'Best Practices'],
+    images: ['/static/images/backdrop-10.webp'],
+    readingTime: 12,
+    author: {
+      name: 'Michael Chen',
+      avatar: '/static/images/people/4.webp'
+    }
+  }}
+/>
+```
+
+</ComponentExample>
+
+## API Reference
+
+| Prop Name | Prop Type | Required | Default |
+| --- | --- | ----- | ---- |
+| **post** <Tippy>Blog post object with post details</Tippy> | `BlogPost` | Yes | - |
+| **imagePosition** <Tippy>Controls the layout of the post image</Tippy> | `'left' \| 'center' \| 'right'` | No | `'right'` |
+
+
+```ts
+export interface BlogPost {
+  slug: string; // Unique identifier for the blog post
+  date: string; // Publication date of the post
+  title: string; // Title of the blog post
+  summary?: string; // Brief summary of the blog post content
+  tags?: string[] | Array<{url: string; text: string}>; // Array of category tags (strings) or objects with url and text properties
+  images?: string[]; // Array of image URLs, with the first one used as the post thumbnail
+  readingTime?: number; // Estimated reading time in minutes
+  author?: {
+    name?: string; // Name of the blog post author
+    avatar?: string; // URL to the author's avatar image
+  };
+}
+```
+
+## Usage with LandingBlogList
+
+When using `LandingBlogPost` inside a `LandingBlogList` component, the `imagePosition` depends on the list's display mode:
+
+- For `display="grid"` (grid layout), the `imagePosition` should be set to `'center'`
+- For `display="list"` (list layout), the `imagePosition` should be set to `'right'` (default)
+
+## More Examples
+
+For more examples, see <a href="/boilerplate-documentation/landing-page-components/blog-list">Blog List</a>.

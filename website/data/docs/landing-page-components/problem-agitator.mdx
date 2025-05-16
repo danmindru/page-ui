@@ -1,0 +1,380 @@
+---
+title: 'Problem Agitator'
+date: '2025-05-15'
+lastmod: '2025-05-15'
+tags:
+  - 'guide'
+  - 'components'
+  - 'documentation'
+  - 'landing-page'
+  - 'ui-library'
+  - 'react'
+  - 'nextjs'
+  - 'tailwind-css'
+  - 'problem-agitator'
+  - 'agitator'
+  - 'pain-points'
+  - 'user-problems'
+  - 'shadcn-ui'
+summary: 'A component for displaying common user problems in a visually engaging format with hover annotations'
+layout: PostHub
+
+images:
+  - '/static/images/blog/docs/problem-agitator-preview.webp'
+
+showThemeSelector: true
+showInstallNotice: true
+
+canonicalUrl: 'https://shipixen.com/boilerplate-documentation/landing-page-components/problem-agitator'
+---
+
+The Problem Agitator component creates a visually engaging layout for highlighting common pain points or problems your users face. It arranges 3-4 problem statements in a grid pattern connected by directional arrows, creating a flow that leads to a cliffhanger or solution teaser.
+
+<ComponentExample
+  previewComponent={
+    <LandingProblemAgitator
+      titleComponent={
+        <h2 className="text-4xl font-semibold leading-tight md:leading-tight max-w-sm sm:max-w-none">
+          AI for websites doesn't deliver.
+        </h2>
+      }
+      cliffhangerComponent={
+        <p className="text-3xl font-medium mt-12">Page AI can do better ↓</p>
+      }
+    >
+      <LandingProblemAgitatorItem>
+        <p>Build new website with AI</p>
+      </LandingProblemAgitatorItem>
+
+      <LandingProblemAgitatorItem>
+        <p>AI makes average websites</p>
+        <LandingProblemAgitatorComment className="-right-9 top-1 rotate-6">
+          slop code
+        </LandingProblemAgitatorComment>
+
+        <LandingProblemAgitatorComment className="-right-9 bottom-2 -rotate-6">
+          bad copy
+        </LandingProblemAgitatorComment>
+
+        <LandingProblemAgitatorComment className="-right-10 -bottom-2 -rotate-6">
+          low conversion
+        </LandingProblemAgitatorComment>
+      </LandingProblemAgitatorItem>
+
+      <LandingProblemAgitatorItem>
+        <p>Spend days improving</p>
+
+        <LandingProblemAgitatorComment className="-left-3 top-1 -rotate-6">
+          need design skills
+        </LandingProblemAgitatorComment>
+
+        <LandingProblemAgitatorComment className="-left-1 bottom-0 rotate-6">
+          need research
+        </LandingProblemAgitatorComment>
+      </LandingProblemAgitatorItem>
+    </LandingProblemAgitator>
+  }
+>
+
+```jsx
+import { LandingProblemAgitator } from '@/components/landing/problem-agitator/LandingProblemAgitator';
+import { LandingProblemAgitatorItem } from '@/components/landing/problem-agitator/LandingProblemAgitatorItem';
+import { LandingProblemAgitatorComment } from '@/components/landing/problem-agitator/LandingProblemAgitatorComment';
+
+<LandingProblemAgitator
+  titleComponent={
+    <h2 className="text-4xl font-semibold leading-tight md:leading-tight max-w-sm sm:max-w-none">
+      AI for websites doesn't deliver.
+    </h2>
+  }
+  cliffhangerComponent={
+    <p className="text-3xl font-medium mt-12">Page AI can do better ↓</p>
+  }
+>
+  <LandingProblemAgitatorItem>
+    <p>Build new website with AI</p>
+  </LandingProblemAgitatorItem>
+
+  <LandingProblemAgitatorItem>
+    <p>AI makes average websites</p>
+    <LandingProblemAgitatorComment className="-right-9 top-1 rotate-6">
+      slop code
+    </LandingProblemAgitatorComment>
+
+    <LandingProblemAgitatorComment className="-right-9 bottom-2 -rotate-6">
+      bad copy
+    </LandingProblemAgitatorComment>
+
+    <LandingProblemAgitatorComment className="-right-10 -bottom-2 -rotate-6">
+      low conversion
+    </LandingProblemAgitatorComment>
+  </LandingProblemAgitatorItem>
+
+  <LandingProblemAgitatorItem>
+    <p>Spend days improving</p>
+
+    <LandingProblemAgitatorComment className="-left-3 top-1 -rotate-6">
+      need design skills
+    </LandingProblemAgitatorComment>
+
+    <LandingProblemAgitatorComment className="-left-1 bottom-0 rotate-6">
+      need research
+    </LandingProblemAgitatorComment>
+  </LandingProblemAgitatorItem>
+</LandingProblemAgitator>
+```
+
+</ComponentExample>
+
+## Usage
+
+Import the components from their respective paths:
+
+```jsx
+import { LandingProblemAgitator } from '@/components/landing/problem-agitator/LandingProblemAgitator';
+import { LandingProblemAgitatorItem } from '@/components/landing/problem-agitator/LandingProblemAgitatorItem';
+import { LandingProblemAgitatorComment } from '@/components/landing/problem-agitator/LandingProblemAgitatorComment';
+```
+
+Basic implementation:
+
+```jsx
+<LandingProblemAgitator
+  title="Common User Challenges"
+  description="These are the problems our users face every day"
+  cliffhanger="Our solution makes these problems disappear"
+>
+  <LandingProblemAgitatorItem>
+    <p>Problem 1</p>
+  </LandingProblemAgitatorItem>
+
+  <LandingProblemAgitatorItem>
+    <p>Problem 2</p>
+    <LandingProblemAgitatorComment className="-right-8 top-0">
+      Pain point 1
+    </LandingProblemAgitatorComment>
+  </LandingProblemAgitatorItem>
+
+  <LandingProblemAgitatorItem>
+    <p>Problem 3</p>
+  </LandingProblemAgitatorItem>
+</LandingProblemAgitator>
+```
+
+## Examples
+
+### Four-Item Grid with Custom Container
+
+<ComponentExample
+  previewComponent={
+    <LandingProblemAgitator
+      titleComponent={
+        <h2 className="text-3xl font-bold text-gradient-primary">
+          Common Website Development Challenges
+        </h2>
+      }
+      containerType="narrow"
+      withBackground={false}
+    >
+      <LandingProblemAgitatorItem>
+        <p>Unclear requirements</p>
+      </LandingProblemAgitatorItem>
+
+      <LandingProblemAgitatorItem>
+        <p>Lack of expertise</p>
+      </LandingProblemAgitatorItem>
+
+      <LandingProblemAgitatorItem>
+        <p>Budget constraints</p>
+      </LandingProblemAgitatorItem>
+
+      <LandingProblemAgitatorItem>
+        <p>Time pressure</p>
+      </LandingProblemAgitatorItem>
+    </LandingProblemAgitator>
+  }
+>
+
+```jsx
+<LandingProblemAgitator
+  titleComponent={
+    <h2 className="text-3xl font-bold text-gradient-primary">
+      Common Website Development Challenges
+    </h2>
+  }
+  containerType="narrow"
+  withBackground={false}
+>
+  <LandingProblemAgitatorItem>
+    <p>Unclear requirements</p>
+  </LandingProblemAgitatorItem>
+
+  <LandingProblemAgitatorItem>
+    <p>Lack of expertise</p>
+  </LandingProblemAgitatorItem>
+
+  <LandingProblemAgitatorItem>
+    <p>Budget constraints</p>
+  </LandingProblemAgitatorItem>
+
+  <LandingProblemAgitatorItem>
+    <p>Time pressure</p>
+  </LandingProblemAgitatorItem>
+</LandingProblemAgitator>
+```
+
+</ComponentExample>
+
+### Left-aligned Text with Secondary Color Scheme
+
+<ComponentExample
+  previewComponent={
+    <LandingProblemAgitator
+      title="Building websites is challenging"
+      description="Traditional approaches leave teams frustrated and projects delayed"
+      cliffhanger="There's a better approach"
+      textPosition="left"
+      variant="secondary"
+      withBackground
+    >
+      <LandingProblemAgitatorItem>
+        <p>Complex requirements</p>
+      </LandingProblemAgitatorItem>
+
+      <LandingProblemAgitatorItem>
+        <p>Limited resources</p>
+        <LandingProblemAgitatorComment className="-right-9 top-1 rotate-6">
+          tight budget
+        </LandingProblemAgitatorComment>
+      </LandingProblemAgitatorItem>
+
+      <LandingProblemAgitatorItem>
+        <p>Technical constraints</p>
+      </LandingProblemAgitatorItem>
+    </LandingProblemAgitator>
+  }
+>
+
+```jsx
+<LandingProblemAgitator
+  title="Building websites is challenging"
+  description="Traditional approaches leave teams frustrated and projects delayed"
+  cliffhanger="There's a better approach"
+  textPosition="left"
+  variant="secondary"
+  withBackground
+>
+  <LandingProblemAgitatorItem>
+    <p>Complex requirements</p>
+  </LandingProblemAgitatorItem>
+
+  <LandingProblemAgitatorItem>
+    <p>Limited resources</p>
+    <LandingProblemAgitatorComment className="-right-9 top-1 rotate-6">
+      tight budget
+    </LandingProblemAgitatorComment>
+  </LandingProblemAgitatorItem>
+
+  <LandingProblemAgitatorItem>
+    <p>Technical constraints</p>
+  </LandingProblemAgitatorItem>
+</LandingProblemAgitator>
+```
+
+</ComponentExample>
+
+### With Background Glow
+
+<ComponentExample
+  previewComponent={
+    <LandingProblemAgitator
+      title="Building websites is challenging"
+      description="Traditional approaches leave teams frustrated and projects delayed"
+      cliffhanger="There's a better approach"
+      withBackgroundGlow
+      withBackground={false}
+    >
+      <LandingProblemAgitatorItem>
+        <p>Complex requirements</p>
+      </LandingProblemAgitatorItem>
+
+      <LandingProblemAgitatorItem>
+        <p>Limited resources</p>
+      </LandingProblemAgitatorItem>
+
+      <LandingProblemAgitatorItem>
+        <p>Technical constraints</p>
+      </LandingProblemAgitatorItem>
+    </LandingProblemAgitator>
+  }
+>
+
+```jsx
+<LandingProblemAgitator
+  title="Building websites is challenging"
+  description="Traditional approaches leave teams frustrated and projects delayed"
+  cliffhanger="There's a better approach"
+  withBackgroundGlow
+  withBackground={false}
+>
+  <LandingProblemAgitatorItem>
+    <p>Complex requirements</p>
+  </LandingProblemAgitatorItem>
+
+  <LandingProblemAgitatorItem>
+    <p>Limited resources</p>
+  </LandingProblemAgitatorItem>
+
+  <LandingProblemAgitatorItem>
+    <p>Technical constraints</p>
+  </LandingProblemAgitatorItem>
+</LandingProblemAgitator>
+```
+
+</ComponentExample>
+
+## API Reference
+
+### LandingProblemAgitator
+
+| Prop Name | Prop Type | Required | Default |
+| --- | --- | ----- | ---- |
+| **className** <Tippy>Additional CSS classes to apply to the section</Tippy> | `string` | No | `-` |
+| **children** <Tippy>LandingProblemAgitatorItem components (3 or 4 recommended)</Tippy> | `React.ReactNode` | Yes | - |
+| **title** <Tippy>Main heading text for the section</Tippy> | `string \| React.ReactNode` | No | `-` |
+| **titleComponent** <Tippy>Custom React component for the title (used instead of title prop)</Tippy> | `React.ReactNode` | No | `-` |
+| **description** <Tippy>Descriptive text displayed below the title</Tippy> | `string \| React.ReactNode` | No | `-` |
+| **descriptionComponent** <Tippy>Custom React component for the description (used instead of description prop)</Tippy> | `React.ReactNode` | No | `-` |
+| **cliffhanger** <Tippy>Conclusion text displayed after the problem items</Tippy> | `string \| React.ReactNode` | No | `-` |
+| **cliffhangerComponent** <Tippy>Custom React component for the cliffhanger (used instead of cliffhanger prop)</Tippy> | `React.ReactNode` | No | `-` |
+| **textPosition** <Tippy>Alignment of text within the component</Tippy> | `'center' \| 'left'` | No | `'center'` |
+| **withBackground** <Tippy>Whether to display a background color</Tippy> | `boolean` | No | `true` |
+| **withBackgroundGlow** <Tippy>Whether to include a glow effect in the background</Tippy> | `boolean` | No | `false` |
+| **variant** <Tippy>Color scheme variant</Tippy> | `'primary' \| 'secondary'` | No | `'primary'` |
+| **backgroundGlowVariant** <Tippy>Color scheme for the background glow effect</Tippy> | `'primary' \| 'secondary'` | No | `'primary'` |
+| **containerType** <Tippy>Width constraint for the container</Tippy> | `'narrow' \| 'wide' \| 'ultrawide'` | No | `'ultrawide'` |
+
+### LandingProblemAgitatorItem
+
+| Prop Name | Prop Type | Required | Default |
+| --- | --- | ----- | ---- |
+| **className** <Tippy>Additional CSS classes to apply to the item</Tippy> | `string` | No | `-` |
+| **children** <Tippy>Content of the problem item (text and optional LandingProblemAgitatorComment components)</Tippy> | `React.ReactNode` | Yes | - |
+
+### LandingProblemAgitatorComment
+
+| Prop Name | Prop Type | Required | Default |
+| --- | --- | ----- | ---- |
+| **className** <Tippy>Additional CSS classes to apply to the comment (use for positioning)</Tippy> | `string` | No | `-` |
+| **children** <Tippy>Text content of the comment</Tippy> | `React.ReactNode` | Yes | - |
+
+## More Examples
+
+For more even more examples, see our <a href="/demo/landing-page-component-examples" className="fancy-link">Landing Page Component Examples</a> page or see complete landing page examples by <a href="/demo/landing-page-templates" className="fancy-link">Exploring Our Landing Page Templates</a>.
+
+Also see:
+
+- <a href="/boilerplate-documentation/landing-page-components/product-feature" className="fancy-link">Product Feature</a> component for highlighting solutions to these problems
+- <a href="/boilerplate-documentation/landing-page-components/primary-text-cta" className="fancy-link">Primary Text Call to Action</a> component for directing users to solutions
+- <a href="/boilerplate-documentation/landing-page-components/primary-image-cta" className="fancy-link">Primary Image Call to Action</a> component for directing users to solutions
+- <a href="/boilerplate-documentation/landing-page-components/primary-video-cta" className="fancy-link">Primary Image Video Call to Action</a> component for directing users to solutions

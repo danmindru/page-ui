@@ -1,0 +1,391 @@
+---
+title: 'Blog List'
+date: '2025-05-14'
+lastmod: '2025-05-14'
+tags:
+  - 'guide'
+  - 'components'
+  - 'documentation'
+  - 'landing-page'
+  - 'landing-blog'
+  - 'blog'
+  - 'blog-list'
+  - 'blog-post'
+  - 'blog-post-card'
+  - 'blog-post-grid'
+  - 'ui-library'
+  - 'react'
+  - 'nextjs'
+  - 'tailwind-css'
+  - 'shadcn-ui'
+  - 'shadcn-ui-blog-list'
+summary: 'A responsive blog list component that displays blog posts in a grid or list format.'
+layout: PostHub
+
+# images:
+#   - '/static/images/blog/docs/blog-list-preview.webp'
+
+showThemeSelector: true
+showInstallNotice: true
+
+canonicalUrl: 'https://shipixen.com/boilerplate-documentation/landing-page-components/blog-list'
+---
+
+The `LandingBlogList` component displays a collection of blog posts (`LandingBlogPost`) in either a grid or list format. It includes customizable titles, descriptions, and various styling options.
+
+<ComponentExample
+  previewComponent={
+    <LandingBlogList
+      title="Latest Articles"
+      description="Check out our latest blog posts and stay updated with the newest trends."
+    >
+      <LandingBlogPost
+        post={{
+          slug: "getting-started",
+          date: "2023-08-10",
+          title: "Getting Started with Shipixen",
+          summary: "Learn how to set up your first project using Shipixen templates and components.",
+          tags: ["Tutorial", "Beginners"],
+          images: ["/static/images/backdrop-1.webp"],
+          readingTime: 5,
+          author: {
+            name: "Jack Doe",
+            avatar: "/static/images/people/1.webp"
+          }
+        }}
+      />
+      <LandingBlogPost
+        post={{
+          slug: "advanced-techniques",
+          date: "2023-08-05",
+          title: "Advanced Component Techniques",
+          summary: "Discover advanced patterns and techniques for building complex components.",
+          tags: ["Advanced", "Components"],
+          images: ["/static/images/backdrop-2.webp"],
+          readingTime: 8,
+          author: {
+            name: "John Smith",
+            avatar: "/static/images/people/2.webp"
+          }
+        }}
+      />
+    </LandingBlogList>
+  }
+>
+
+```jsx
+import { LandingBlogList } from '@/components/landing/LandingBlogList';
+import { LandingBlogPost } from '@/components/landing/blog/LandingBlogPost';
+
+<LandingBlogList
+  title="Latest Articles"
+  description="Check out our latest blog posts and stay updated with the newest trends."
+>
+  <LandingBlogPost
+    post={{
+      slug: "getting-started",
+      date: "2023-08-10",
+      title: "Getting Started with Shipixen",
+      summary: "Learn how to set up your first project using Shipixen templates and components.",
+      tags: ["Tutorial", "Beginners"],
+      images: ["/static/images/backdrop-1.webp"],
+      readingTime: 5,
+      author: {
+        name: "Jack Doe",
+        avatar: "/static/images/people/1.webp"
+      }
+    }}
+  />
+  <LandingBlogPost
+    post={{
+      slug: "advanced-techniques",
+      date: "2023-08-05",
+      title: "Advanced Component Techniques",
+      summary: "Discover advanced patterns and techniques for building complex components.",
+      tags: ["Advanced", "Components"],
+      images: ["/static/images/backdrop-2.webp"],
+      readingTime: 8,
+      author: {
+        name: "John Smith",
+        avatar: "/static/images/people/2.webp"
+      }
+    }}
+  />
+</LandingBlogList>
+```
+
+</ComponentExample>
+
+## Usage
+
+Import the component and use it to display a collection of blog posts:
+
+```jsx
+import { LandingBlogList } from '@/components/landing/LandingBlogList';
+import { LandingBlogPost } from '@/components/landing/blog/LandingBlogPost';
+```
+
+```jsx
+<LandingBlogList
+  title="Latest Articles"
+  description="Check out our latest blog posts and stay updated with the newest trends."
+>
+  <LandingBlogPost
+    post={{
+      slug: "getting-started",
+      date: "2023-08-10",
+      title: "Getting Started with Shipixen",
+      summary: "Learn how to set up your first project using Shipixen templates and components.",
+      tags: ["Tutorial", "Beginners"],
+      images: ["/static/images/backdrop-1.webp"],
+      readingTime: 5,
+      author: {
+        name: "Jack Doe",
+        avatar: "/static/images/people/1.webp"
+      }
+    }}
+  />
+</LandingBlogList>
+```
+
+## Examples
+
+### Grid Display
+
+Display blog posts in a grid format instead of a list.
+
+<ComponentExample
+  previewComponent={
+    <LandingBlogList
+      title="Featured Articles"
+      description="Our most popular content curated for you."
+      display="grid"
+    >
+      <LandingBlogPost
+        post={{
+          slug: "react-patterns",
+          date: "2023-07-15",
+          title: "Essential React Patterns",
+          summary: "Learn the essential patterns that every React developer should know.",
+          tags: ["React", "Patterns"],
+          images: ["/static/images/backdrop-3.webp"],
+          readingTime: 6,
+          author: {
+            name: "Alex Johnson",
+            avatar: "/static/images/people/3.webp"
+          }
+        }}
+      />
+      <LandingBlogPost
+        post={{
+          slug: "tailwind-tips",
+          date: "2023-07-10",
+          title: "Tailwind CSS Pro Tips",
+          summary: "Improve your Tailwind workflow with these professional tips and tricks.",
+          tags: ["CSS", "Tailwind"],
+          images: ["/static/images/backdrop-4.webp"],
+          readingTime: 4,
+          author: {
+            name: "Brett Carlsen",
+            avatar: "/static/images/people/4.webp"
+          }
+        }}
+      />
+    </LandingBlogList>
+  }
+>
+
+```jsx
+<LandingBlogList
+  title="Featured Articles"
+  description="Our most popular content curated for you."
+  display="grid"
+>
+  <LandingBlogPost
+    post={{
+      slug: "react-patterns",
+      date: "2023-07-15",
+      title: "Essential React Patterns",
+      summary: "Learn the essential patterns that every React developer should know.",
+      tags: ["React", "Patterns"],
+      images: ["/static/images/backdrop-3.webp"],
+      readingTime: 6,
+      author: {
+        name: "Alex Johnson",
+        avatar: "/static/images/people/3.webp"
+      }
+    }}
+  />
+  <LandingBlogPost
+    post={{
+      slug: "tailwind-tips",
+      date: "2023-07-10",
+      title: "Tailwind CSS Pro Tips",
+      summary: "Improve your Tailwind workflow with these professional tips and tricks.",
+      tags: ["CSS", "Tailwind"],
+      images: ["/static/images/backdrop-4.webp"],
+      readingTime: 4,
+      author: {
+        name: "Brett Carlsen",
+        avatar: "/static/images/people/4.webp"
+      }
+    }}
+  />
+</LandingBlogList>
+```
+
+</ComponentExample>
+
+### With Background and Left-Aligned Text
+
+Add a background and left-align the title and description.
+
+<ComponentExample
+  previewComponent={
+    <LandingBlogList
+      title="Latest Updates"
+      description="Stay updated with our newest content and announcements."
+      textPosition="left"
+      withBackground={true}
+    >
+      <LandingBlogPost
+        post={{
+          slug: "nextjs-13",
+          date: "2023-08-01",
+          title: "Next.js 13 Features You Should Know",
+          summary: "Explore the most important features and improvements in Next.js 13.",
+          tags: ["Next.js", "Features"],
+          images: ["/static/images/backdrop-5.webp"],
+          readingTime: 7,
+          author: {
+            name: "Michael Brown",
+            avatar: "/static/images/people/5.webp"
+          }
+        }}
+      />
+    </LandingBlogList>
+  }
+>
+
+```jsx
+<LandingBlogList
+  title="Latest Updates"
+  description="Stay updated with our newest content and announcements."
+  textPosition="left"
+  withBackground={true}
+>
+  <LandingBlogPost
+    post={{
+      slug: "nextjs-13",
+      date: "2023-08-01",
+      title: "Next.js 13 Features You Should Know",
+      summary: "Explore the most important features and improvements in Next.js 13.",
+      tags: ["Next.js", "Features"],
+      images: ["/static/images/backdrop-5.webp"],
+      readingTime: 7,
+      author: {
+        name: "Michael Brown",
+        avatar: "/static/images/people/5.webp"
+      }
+    }}
+  />
+</LandingBlogList>
+```
+
+</ComponentExample>
+
+### Secondary Variant with Background Glow
+
+Use the secondary color variant with a background glow effect.
+
+<ComponentExample
+  previewComponent={
+    <LandingBlogList
+      title="Editor's Picks"
+      description="Hand-picked articles from our editorial team."
+      variant="secondary"
+      withBackgroundGlow={true}
+    >
+      <LandingBlogPost
+        post={{
+          slug: "typescript-tips",
+          date: "2023-07-25",
+          title: "TypeScript Tips for React Developers",
+          summary: "Improve your React applications with these TypeScript best practices.",
+          tags: ["TypeScript", "React"],
+          images: ["/static/images/backdrop-6.webp"],
+          readingTime: 6,
+          author: {
+            name: "Timothy Billow",
+            avatar: "/static/images/people/6.webp"
+          }
+        }}
+      />
+    </LandingBlogList>
+  }
+>
+
+```jsx
+<LandingBlogList
+  title="Editor's Picks"
+  description="Hand-picked articles from our editorial team."
+  variant="secondary"
+  withBackgroundGlow={true}
+>
+  <LandingBlogPost
+    post={{
+      slug: "typescript-tips",
+      date: "2023-07-25",
+      title: "TypeScript Tips for React Developers",
+      summary: "Improve your React applications with these TypeScript best practices.",
+      tags: ["TypeScript", "React"],
+      images: ["/static/images/backdrop-6.webp"],
+      readingTime: 6,
+      author: {
+        name: "Timothy Billow",
+        avatar: "/static/images/people/6.webp"
+      }
+    }}
+  />
+</LandingBlogList>
+```
+
+</ComponentExample>
+
+## API Reference
+
+| Prop Name | Prop Type | Required | Default |
+| --- | --- | ----- | ---- |
+| **children** <Tippy>The blog post components to render inside the list</Tippy> | `ReactNode` | Yes | - |
+| **title** <Tippy>The main heading for the blog list section</Tippy> | `string` | No | - |
+| **titleComponent** <Tippy>Custom component to use instead of the default title</Tippy> | `ReactNode` | No | - |
+| **description** <Tippy>The description text displayed below the title</Tippy> | `string` | No | - |
+| **descriptionComponent** <Tippy>Custom component to use instead of the default description</Tippy> | `ReactNode` | No | - |
+| **className** <Tippy>Additional CSS classes to apply to the section</Tippy> | `string` | No | - |
+| **variant** <Tippy>Color theme variant to use for styling</Tippy> | `'primary' \| 'secondary'` | No | `'primary'` |
+| **withBackground** <Tippy>Whether to show a colored background</Tippy> | `boolean` | No | `false` |
+| **withBackgroundGlow** <Tippy>Whether to show a gradient background glow effect</Tippy> | `boolean` | No | `false` |
+| **backgroundGlowVariant** <Tippy>Color variant for the background glow</Tippy> | `'primary' \| 'secondary'` | No | `'primary'` |
+| **textPosition** <Tippy>Alignment of the title and description</Tippy> | `'center' \| 'left'` | No | `'center'` |
+| **display** <Tippy>How to display the blog posts - as a grid or list</Tippy> | `'grid' \| 'list'` | No | `'list'` |
+
+```ts
+export interface BlogPost {
+  slug: string; // Unique identifier for the blog post
+  date: string; // Publication date of the post
+  title: string; // Title of the blog post
+  summary?: string; // Brief summary of the blog post content
+  tags?: string[] | Array<{url: string; text: string}>; // Array of category tags (strings) or objects with url and text properties
+  images?: string[]; // Array of image URLs, with the first one used as the post thumbnail
+  readingTime?: number; // Estimated reading time in minutes
+  author?: {
+    name?: string; // Name of the blog post author
+    avatar?: string; // URL to the author's avatar image
+  };
+}
+```
+
+## More Examples
+
+For more examples, see <a href="/boilerplate-documentation/landing-page-components/blog-post">Blog Post</a>.
+

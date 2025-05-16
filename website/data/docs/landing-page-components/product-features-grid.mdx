@@ -30,11 +30,14 @@ canonicalUrl: 'https://shipixen.com/boilerplate-documentation/landing-page-compo
 
 This component displays a title, description and a grid of [Product Feature](/boilerplate-documentation/landing-page-components/product-feature) and/or [Product Video Feature](/boilerplate-documentation/landing-page-components/product-video-feature) (in any combination, passed as children).
 
+The component is responsive and will display a different number of columns depending on the number of features passed. The number of columns can be specified using the `numberOfColumns` prop.
+
 <ComponentExample
   previewComponent={
     <LandingProductFeaturesGrid
       title="Get the job done in no time"
       description="You'll save days of work and the only question you'll have is 'What do I do with all this free time?'"
+      numberOfColumns={2}
     >
       <LandingProductFeature
         title="The wait is over"
@@ -50,7 +53,7 @@ This component displays a title, description and a grid of [Product Feature](/bo
         imageAlt="Sample image"
       />
 
-       <LandingProductFeature
+      <LandingProductFeature
         title="39+ themes"
         description="Choose from more than 30+ themes or create your own."
         imageSrc="/static/images/shipixen/product/2.webp"
@@ -65,6 +68,7 @@ import { LandingProductFeature } from '@/components/landing/LandingProductFeatur
 <LandingProductFeaturesGrid
   title="Get the job done in no time"
   description="You'll save days of work and the only question you'll have is 'What do I do with all this free time?'"
+  numberOfColumns={2}
 >
   <LandingProductFeature
     title="The wait is over"
@@ -102,6 +106,7 @@ import { LandingProductFeature } from '@/components/landing/LandingProductFeatur
 <LandingProductFeaturesGrid
   title="Get the job done in no time"
   description="You'll save days of work and the only question you'll have is 'What do I do with all this free time?'"
+  numberOfColumns={2}
 >
   <LandingProductFeature
     title="The wait is over"
@@ -135,6 +140,7 @@ import { LandingProductFeature } from '@/components/landing/LandingProductFeatur
     <LandingProductFeaturesGrid
       title="Get the job done in no time"
       description="You'll save days of work and the only question you'll have is 'What do I do with all this free time?'"
+      numberOfColumns={2}
     >
       <LandingProductVideoFeature
         title="Generate"
@@ -165,6 +171,7 @@ import { LandingProductVideoFeature } from '@/components/landing/LandingProductV
 <LandingProductFeaturesGrid
   title="Get the job done in no time"
   description="You'll save days of work and the only question you'll have is 'What do I do with all this free time?'"
+  numberOfColumns={2}
 >
   <LandingProductVideoFeature
     title="Generate"
@@ -293,6 +300,72 @@ import { LandingProductVideoFeature } from '@/components/landing/LandingProductV
 
 </ComponentExample>
 
+### With a 3 column layout
+
+<ComponentExample
+  previewComponent={
+    <LandingProductFeaturesGrid
+      title="Get the job done in no time"
+      description="You'll save days of work and the only question you'll have is 'What do I do with all this free time?'"
+      numberOfColumns={3}
+    >
+      <LandingProductFeature
+        title="Deploy"
+        description="Give your project the home it deserves."
+        imageSrc="/static/images/shipixen/product/14.webp"
+        imageAlt="Sample image"
+      />
+
+      <LandingProductFeature
+        title="No config"
+        description="No configuration needed. We take care of it."
+        imageSrc="/static/images/shipixen/product/4.webp"
+        imageAlt="Sample image"
+      />
+
+       <LandingProductFeature
+        title="Themes"
+        description="Choose from more than 30+ themes or create your own."
+        imageSrc="/static/images/shipixen/product/2.webp"
+        imageAlt="Sample image"
+      />
+    </LandingProductFeaturesGrid>}>
+
+```jsx
+import { LandingProductFeaturesGrid } from '@/components/landing/LandingProductFeaturesGrid';
+import { LandingProductFeature } from '@/components/landing/LandingProductFeature';
+
+<LandingProductFeaturesGrid
+  title="Get the job done in no time"
+  description="You'll save days of work and the only question you'll have is 'What do I do with all this free time?'"
+  numberOfColumns={3}
+>
+  <LandingProductFeature
+    title="Deploy"
+    description="Give your project the home it deserves."
+    imageSrc="/static/images/shipixen/product/14.webp"
+    imageAlt="Sample image"
+  />
+
+  <LandingProductFeature
+    title="No config"
+    description="No configuration needed. We take care of it."
+    imageSrc="/static/images/shipixen/product/4.webp"
+    imageAlt="Sample image"
+  />
+
+  <LandingProductFeature
+    title="Theme"
+    description="Choose from more than 30+ themes or create your own."
+    imageSrc="/static/images/shipixen/product/2.webp"
+    imageAlt="Sample image"
+  />
+</LandingProductFeaturesGrid>;
+```
+
+</ComponentExample>
+
+
 ## API Reference
 
 | Prop Name                                                                                                                                                              | Prop Type                             | Required | Default       |
@@ -305,7 +378,13 @@ import { LandingProductVideoFeature } from '@/components/landing/LandingProductV
 | **withBackground** <Tippy>Determines whether the background styling based on the variant is applied to the component.</Tippy>                                          | `boolean`                             | No       | `true`        |
 | **variant** <Tippy>Defines the color scheme variant for the component, affecting both background and child components.</Tippy>                                         | `'primary'` ǀ `'secondary'`           | No       | `'primary'`   |
 | **containerType** <Tippy>Specifies the width of the container, affecting its max-width on larger screens.</Tippy>                                                      | `'narrow'` ǀ `'wide'` ǀ `'ultrawide'` | No       | `'ultrawide'` |
+| **numberOfColumns** <Tippy>Specifies the number of columns to display in the grid.</Tippy>                                                                            | `number`                              | No       | -             |
 
 ## More Examples
 
 For more even more examples, see our <a href="/demo/landing-page-component-examples" className="fancy-link">Landing Page Component Examples</a> page or see complete landing page examples by <a href="/demo/landing-page-templates" className="fancy-link">Exploring Our Landing Page Templates</a>.
+
+Also see:
+
+- [Landing Product Feature](/boilerplate-documentation/landing-page-components/product-feature)
+- [Landing Product Video Feature](/boilerplate-documentation/landing-page-components/product-video-feature)

@@ -1,0 +1,336 @@
+---
+title: 'Product Steps'
+date: '2025-05-15'
+lastmod: '2025-05-15'
+tags:
+  - 'guide'
+  - 'components'
+  - 'documentation'
+  - 'landing-page'
+  - 'ui-library'
+  - 'react'
+  - 'nextjs'
+  - 'tailwind-css'
+  - 'product-steps'
+  - 'product-features'
+  - 'step-by-step'
+  - 'instructions'
+  - 'landing-steps'
+  - 'shadcn-ui'
+  - 'shadcn-ui-landing-page'
+  - 'shadcn-ui-product-steps'
+  - 'shadcn-ui-step-by-step'
+  - 'shadcn-ui-instructions'
+summary: 'A component for displaying a series of product steps or features with alternating media positions'
+layout: PostHub
+
+# images:
+#   - '/static/images/blog/docs/product-steps-preview.webp'
+
+showThemeSelector: true
+showInstallNotice: true
+
+canonicalUrl: 'https://shipixen.com/boilerplate-documentation/landing-page-components/product-steps'
+---
+
+The `LandingProductSteps` component displays a title, description, and a list of steps with alternating media positions. It's designed for showcasing product features, workflows, or processes on landing pages. This component is ideal when you need to present more than three features in a visually engaging format.
+
+<ComponentExample
+  previewComponent={
+    <LandingProductSteps
+      title="How it works"
+      description="Follow these simple steps to get started with our product."
+    >
+      <LandingProductFeature
+        title="Create your account"
+        description="Sign up in seconds and get instant access to our platform."
+        imageSrc="/static/images/backdrop-4.webp"
+      />
+      <LandingProductFeature
+        title="Customize your workflow"
+        description="Set up your preferences and configure your workspace."
+        imageSrc="/static/images/backdrop-8.webp"
+      />
+      <LandingProductFeature
+        title="Start collaborating"
+        description="Invite your team and begin working together seamlessly."
+        imageSrc="/static/images/backdrop-9.webp"
+      />
+    </LandingProductSteps>
+  }
+>
+
+```jsx
+import { LandingProductSteps } from '@/components/landing/LandingProductSteps';
+import { LandingProductFeature } from '@/components/landing/LandingProductFeature';
+
+<LandingProductSteps
+  title="How it works"
+  description="Follow these simple steps to get started with our product."
+>
+  <LandingProductFeature
+    title="Create your account"
+    description="Sign up in seconds and get instant access to our platform."
+    imageSrc="/static/images/backdrop-4.webp"
+  />
+  <LandingProductFeature
+    title="Customize your workflow"
+    description="Set up your preferences and configure your workspace."
+    imageSrc="/static/images/backdrop-8.webp"
+  />
+  <LandingProductFeature
+    title="Start collaborating"
+    description="Invite your team and begin working together seamlessly."
+    imageSrc="/static/images/backdrop-9.webp"
+  />
+</LandingProductSteps>
+```
+
+</ComponentExample>
+
+## Usage
+
+```jsx
+import { LandingProductSteps } from '@/components/landing/LandingProductSteps';
+import { LandingProductFeature } from '@/components/landing/LandingProductFeature';
+import { LandingProductVideoFeature } from '@/components/landing/LandingProductVideoFeature';
+```
+
+```jsx
+<LandingProductSteps
+  title="Product Features"
+  description="Discover what makes our product stand out."
+>
+  <LandingProductFeature
+    title="Feature One"
+    description="Description of feature one"
+    imageSrc="/path/to/image.webp"
+  />
+  <LandingProductFeature
+    title="Feature Two"
+    description="Description of feature two"
+    imageSrc="/path/to/image.webp"
+  />
+</LandingProductSteps>
+```
+
+## Examples
+
+### Grid Display
+
+<ComponentExample
+  previewComponent={
+    <LandingProductSteps
+      title="Our Process"
+      description="How we deliver quality results every time."
+      display="grid"
+    >
+      <LandingProductFeature
+        title="Research"
+        description="We start by understanding your needs and goals."
+        imageSrc="/static/images/backdrop-1.webp"
+      />
+      <LandingProductFeature
+        title="Design"
+        description="Our team creates tailored solutions for your business."
+        imageSrc="/static/images/backdrop-5.webp"
+      />
+      <LandingProductFeature
+        title="Code"
+        description="We build your project to perfection."
+        imageSrc="/static/images/backdrop-6.webp"
+      />
+    </LandingProductSteps>
+  }
+>
+
+```jsx
+import { LandingProductSteps } from '@/components/landing/LandingProductSteps';
+import { LandingProductFeature } from '@/components/landing/LandingProductFeature';
+
+<LandingProductSteps
+  title="Our Process"
+  description="How we deliver quality results every time."
+  display="grid"
+>
+  <LandingProductFeature
+    title="Research"
+    description="We start by understanding your needs and goals."
+    imageSrc="/static/images/backdrop-1.webp"
+  />
+  <LandingProductFeature
+    title="Design"
+    description="Our team creates tailored solutions for your business."
+    imageSrc="/static/images/backdrop-5.webp"
+  />
+  <LandingProductFeature
+    title="Code"
+    description="We build your project to perfection."
+    imageSrc="/static/images/backdrop-6.webp"
+  />
+</LandingProductSteps>
+```
+
+</ComponentExample>
+### Secondary Variant
+
+<ComponentExample
+  previewComponent={
+    <LandingProductSteps
+      title="Our Process"
+      description="How we deliver quality results every time."
+      variant="secondary"
+    >
+      <LandingProductFeature
+        title="Research"
+        description="We start by understanding your needs and goals."
+        imageSrc="/static/images/backdrop-4.webp"
+      />
+      <LandingProductFeature
+        title="Design"
+        description="Our team creates tailored solutions for your business."
+        imageSrc="/static/images/backdrop-5.webp"
+      />
+    </LandingProductSteps>
+  }
+>
+
+```jsx
+import { LandingProductSteps } from '@/components/landing/LandingProductSteps';
+import { LandingProductFeature } from '@/components/landing/LandingProductFeature';
+
+<LandingProductSteps
+  title="Our Process"
+  description="How we deliver quality results every time."
+  variant="secondary"
+>
+  <LandingProductFeature
+    title="Research"
+    description="We start by understanding your needs and goals."
+    imageSrc="/static/images/backdrop-4.webp"
+  />
+  <LandingProductFeature
+    title="Design"
+    description="Our team creates tailored solutions for your business."
+    imageSrc="/static/images/backdrop-5.webp"
+  />
+</LandingProductSteps>
+```
+
+</ComponentExample>
+
+### With Background Glow
+
+<ComponentExample
+  previewComponent={
+    <LandingProductSteps
+      title="Platform Features"
+      description="Discover the powerful capabilities of our platform."
+      withBackgroundGlow={true}
+    >
+      <LandingProductFeature
+        title="Analytics Dashboard"
+        description="Track key metrics and performance indicators in real-time."
+        imageSrc="/static/images/backdrop-6.webp"
+      />
+      <LandingProductFeature
+        title="Team Collaboration"
+        description="Work together efficiently with integrated tools."
+        imageSrc="/static/images/backdrop-7.webp"
+      />
+    </LandingProductSteps>
+  }
+>
+
+```jsx
+import { LandingProductSteps } from '@/components/landing/LandingProductSteps';
+import { LandingProductFeature } from '@/components/landing/LandingProductFeature';
+
+<LandingProductSteps
+  title="Platform Features"
+  description="Discover the powerful capabilities of our platform."
+  withBackgroundGlow={true}
+>
+  <LandingProductFeature
+    title="Analytics Dashboard"
+    description="Track key metrics and performance indicators in real-time."
+    imageSrc="/static/images/backdrop-6.webp"
+  />
+  <LandingProductFeature
+    title="Team Collaboration"
+    description="Work together efficiently with integrated tools."
+    imageSrc="/static/images/backdrop-7.webp"
+  />
+</LandingProductSteps>
+```
+
+</ComponentExample>
+
+### With Video Features
+
+<ComponentExample
+  previewComponent={
+    <LandingProductSteps
+      title="See it in action"
+      description="Watch how our product solves real-world problems."
+    >
+      <LandingProductVideoFeature
+        title="Easy Setup"
+        description="Get started in minutes with our guided setup process."
+        videoSrc="https://cache.shipixen.com/features/8-customize-pages.mp4"
+        posterSrc="/static/images/backdrop-8.webp"
+      />
+      <LandingProductFeature
+        title="Intuitive Interface"
+        description="Navigate with ease through our user-friendly platform."
+        imageSrc="/static/images/backdrop-9.webp"
+      />
+    </LandingProductSteps>
+  }
+>
+
+```jsx
+import { LandingProductSteps } from '@/components/landing/LandingProductSteps';
+import { LandingProductFeature } from '@/components/landing/LandingProductFeature';
+import { LandingProductVideoFeature } from '@/components/landing/LandingProductVideoFeature';
+
+<LandingProductSteps
+  title="See it in action"
+  description="Watch how our product solves real-world problems."
+>
+  <LandingProductVideoFeature
+    title="Easy Setup"
+    description="Get started in minutes with our guided setup process."
+    videoSrc="https://cache.shipixen.com/features/8-customize-pages.mp4"
+    posterSrc="/static/images/backdrop-8.webp"
+  />
+  <LandingProductFeature
+    title="Intuitive Interface"
+    description="Navigate with ease through our user-friendly platform."
+    imageSrc="/static/images/backdrop-9.webp"
+  />
+</LandingProductSteps>
+```
+
+</ComponentExample>
+
+## API Reference
+
+| Prop Name | Prop Type | Required | Default |
+| --- | --- | ----- | ---- |
+| **className** <Tippy>Additional CSS classes for the section container.</Tippy> | `string` | No | `undefined` |
+| **children** <Tippy>LandingProductFeature and/or LandingProductVideoFeature components to display as steps.</Tippy> | `React.ReactNode` | No | `undefined` |
+| **title** <Tippy>The main heading text for the section.</Tippy> | `string \| React.ReactNode` | No | `undefined` |
+| **titleComponent** <Tippy>Custom React component to use instead of the default title.</Tippy> | `React.ReactNode` | No | `undefined` |
+| **description** <Tippy>Descriptive text that appears below the title.</Tippy> | `string \| React.ReactNode` | No | `undefined` |
+| **descriptionComponent** <Tippy>Custom React component to use instead of the default description.</Tippy> | `React.ReactNode` | No | `undefined` |
+| **withBackground** <Tippy>Determines if the component has a semi-transparent background color.</Tippy> | `boolean` | No | `true` |
+| **withBackgroundGlow** <Tippy>Adds a decorative glow effect to the background.</Tippy> | `boolean` | No | `false` |
+| **variant** <Tippy>Color theme for the component, affecting background colors.</Tippy> | `'primary' \| 'secondary'` | No | `'primary'` |
+| **backgroundGlowVariant** <Tippy>Color theme for the background glow effect.</Tippy> | `'primary' \| 'secondary'` | No | `'primary'` |
+| **containerType** <Tippy>Controls the maximum width of the content container.</Tippy> | `'narrow' \| 'wide' \| 'ultrawide'` | No | `'ultrawide'` |
+| **display** <Tippy>Controls the display of the component.</Tippy> | `'list' \| 'grid'` | No | `'list'` |
+
+## More Examples
+
+For more examples, see <a href="/boilerplate-documentation/landing-page-components" className="fancy-link">Landing Page Components</a> or explore the <a href="/boilerplate-documentation/landing-page-components/product-feature" className="fancy-link">Product Feature</a> and <a href="/boilerplate-documentation/landing-page-components/product-video-feature" className="fancy-link">Product Video Feature</a> components.

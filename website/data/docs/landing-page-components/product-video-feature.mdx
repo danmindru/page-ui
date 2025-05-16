@@ -1,7 +1,7 @@
 ---
 title: 'Landing Page Video Feature Component'
 date: '2024-04-04'
-lastmod: '2024-07-06'
+lastmod: '2025-05-15'
 tags:
   - 'guide'
   - 'components'
@@ -372,6 +372,55 @@ import { LandingProductVideoFeature } from '@/components/landing/LandingProductV
 
 </ComponentExample>
 
+### With Product Steps
+
+<ComponentExample
+  previewComponent={
+    <LandingProductSteps
+      title="See it in action"
+      description="Watch how our product solves real-world problems."
+    >
+      <LandingProductVideoFeature
+        title="Easy Setup"
+        description="Get started in minutes with our guided setup process."
+        videoSrc="https://cache.shipixen.com/features/8-customize-pages.mp4"
+        posterSrc="/static/images/backdrop-8.webp"
+      />
+      <LandingProductVideoFeature
+        title="Intuitive Interface"
+        description="Navigate with ease through our user-friendly platform."
+        videoSrc="https://cache.shipixen.com/features/11-pricing-page-builder.mp4"
+        posterSrc="/static/images/backdrop-8.webp"
+      />
+    </LandingProductSteps>
+  }
+>
+
+```jsx
+import { LandingProductSteps } from '@/components/landing/LandingProductSteps';
+import { LandingProductVideoFeature } from '@/components/landing/LandingProductVideoFeature';
+
+<LandingProductSteps
+  title="See it in action"
+  description="Watch how our product solves real-world problems."
+>
+  <LandingProductVideoFeature
+    title="Easy Setup"
+    description="Get started in minutes with our guided setup process."
+    videoSrc="https://cache.shipixen.com/features/8-customize-pages.mp4"
+    posterSrc="/static/images/backdrop-8.webp"
+  />
+  <LandingProductVideoFeature
+    title="Intuitive Interface"
+    description="Navigate with ease through our user-friendly platform."
+    videoSrc="https://cache.shipixen.com/features/11-pricing-page-builder.mp4"
+    posterSrc="/static/images/backdrop-8.webp"
+  />
+</LandingProductSteps>
+```
+
+</ComponentExample>
+
 ## API Reference
 
 | Prop Name                                                                                                                             | Prop Type                         | Required | Default     |
@@ -400,3 +449,9 @@ import { LandingProductVideoFeature } from '@/components/landing/LandingProductV
 ## More Examples
 
 For more even more examples, see our <a href="/demo/landing-page-component-examples" className="fancy-link">Landing Page Component Examples</a> page or see complete landing page examples by <a href="/demo/landing-page-templates" className="fancy-link">Exploring Our Landing Page Templates</a>.
+
+Also see:
+
+- <a href="/boilerplate-documentation/landing-page-components/product-feature" className="fancy-link">Product Feature</a> component.
+- <a href="/boilerplate-documentation/landing-page-components/product-features-grid" className="fancy-link">Product Features Grid</a> component.
+- <a href="/boilerplate-documentation/landing-page-components/product-steps" className="fancy-link">Product Steps</a> component.

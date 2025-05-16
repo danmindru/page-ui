@@ -1,0 +1,364 @@
+---
+title: 'Team Section'
+date: '2025-05-16'
+lastmod: '2025-05-16'
+tags:
+  - 'guide'
+  - 'components'
+  - 'documentation'
+  - 'landing-page'
+  - 'ui-library'
+  - 'react'
+  - 'nextjs'
+  - 'tailwind-css'
+  - 'team'
+  - 'members'
+  - 'team-members'
+  - 'team-section'
+  - 'team-member'
+  - 'profile'
+  - 'shadcn-ui'
+  - 'shadcn-ui-team'
+
+summary: 'A flexible component for showcasing team members with customizable layout and styling options'
+layout: PostHub
+
+images:
+  - '/static/images/blog/docs/team-section-preview.webp'
+
+showThemeSelector: true
+showInstallNotice: true
+
+canonicalUrl: 'https://shipixen.com/boilerplate-documentation/landing-page-components/team'
+---
+
+The Team Section component provides a beautiful and customizable way to showcase your team members on a landing page. It supports both array-based and component-based approaches, giving you flexibility in how you structure your code.
+
+<ComponentExample
+  previewComponent={
+    <LandingTeamSection
+      title="Meet Our Team"
+      description="Our team is a tight-knit family of developers and visionaries, all bound by the same passion and enthusiasm."
+      members={[
+        { name: "Lee Rob", role: "CEO & Founder", imageSrc: "/static/images/people/11.webp" },
+        { name: "David Chen", role: "CTO", imageSrc: "/static/images/people/2.webp" },
+        { name: "Alex Rivera", role: "Lead Designer", imageSrc: "/static/images/people/12.webp" }
+      ]}
+    />
+  }
+>
+
+```jsx
+import { LandingTeamSection } from '@/components/landing/team/LandingTeamSection';
+
+<LandingTeamSection
+  title="Meet Our Team"
+  description="Our team is a tight-knit family of developers and visionaries, all bound by the same passion and enthusiasm."
+  members={[
+    { name: "Lee Rob", role: "CEO & Founder", imageSrc: "/static/images/people/11.webp" },
+    { name: "David Chen", role: "CTO", imageSrc: "/static/images/people/2.webp" },
+    { name: "Alex Rivera", role: "Lead Designer", imageSrc: "/static/images/people/12.webp" }
+  ]}
+/>
+```
+
+</ComponentExample>
+
+## Usage
+
+```jsx
+import { LandingTeamSection } from '@/components/landing/team/LandingTeamSection';
+```
+
+```jsx
+<LandingTeamSection
+  title="Meet Our Team"
+  description="Our team is a tight-knit family of developers and visionaries, all bound by the same passion and enthusiasm."
+  members={[
+    { name: "Lee Rob", role: "CEO & Founder", imageSrc: "/static/images/people/11.webp" },
+    { name: "David Chen", role: "CTO", imageSrc: "/static/images/people/2.webp" },
+    { name: "Alex Rivera", role: "Lead Designer", imageSrc: "/static/images/people/12.webp" }
+  ]}
+/>
+```
+
+## Examples
+
+### Centered Text Layout
+
+<ComponentExample
+  previewComponent={
+    <LandingTeamSection
+      title="Our Amazing Team"
+      description="Meet the talented individuals behind our success."
+      textPosition="center"
+      members={[
+        { name: "Lee Rob", role: "CEO & Founder", imageSrc: "/static/images/people/11.webp" },
+        { name: "David Chen", role: "CTO", imageSrc: "/static/images/people/2.webp" },
+        { name: "Alex Rivera", role: "Lead Designer", imageSrc: "/static/images/people/12.webp" }
+      ]}
+    />
+  }
+>
+
+```jsx
+import { LandingTeamSection } from '@/components/landing/team/LandingTeamSection';
+
+<LandingTeamSection
+  title="Our Amazing Team"
+  description="Meet the talented individuals behind our success."
+  textPosition="center"
+  members={[
+    { name: "Lee Rob", role: "CEO & Founder", imageSrc: "/static/images/people/11.webp" },
+    { name: "David Chen", role: "CTO", imageSrc: "/static/images/people/2.webp" },
+    { name: "Alex Rivera", role: "Lead Designer", imageSrc: "/static/images/people/12.webp" }
+  ]}
+/>
+```
+
+</ComponentExample>
+
+### Secondary Variant
+
+<ComponentExample
+  previewComponent={
+    <LandingTeamSection
+      title="Development Team"
+      description="The talented engineers that build our product."
+      variant="secondary"
+      withBackground={true}
+      members={[
+        { name: "Lee Rob", role: "CEO & Founder", imageSrc: "/static/images/people/11.webp" },
+        { name: "David Chen", role: "CTO", imageSrc: "/static/images/people/2.webp" },
+        { name: "Alex Rivera", role: "Lead Designer", imageSrc: "/static/images/people/12.webp" }
+      ]}
+    />
+  }
+>
+
+```jsx
+import { LandingTeamSection } from '@/components/landing/team/LandingTeamSection';
+
+<LandingTeamSection
+  title="Development Team"
+  description="The talented engineers that build our product."
+  variant="secondary"
+  withBackground={true}
+  members={[
+    { name: "Lee Rob", role: "CEO & Founder", imageSrc: "/static/images/people/11.webp" },
+    { name: "David Chen", role: "CTO", imageSrc: "/static/images/people/2.webp" },
+    { name: "Alex Rivera", role: "Lead Designer", imageSrc: "/static/images/people/12.webp" }
+  ]}
+/>
+```
+
+</ComponentExample>
+
+### Custom Team Member Styling
+
+<ComponentExample
+  previewComponent={
+    <LandingTeamSection
+      title="Our Team"
+      description="Meet the people who make it all happen."
+    >
+      <LandingTeamMember
+        imageClassName="border-4 border-gray-200 dark:border-gray-800"
+        member={{ name: "Lee Rob", role: "CEO & Founder", imageSrc: "/static/images/people/11.webp" }}
+      />
+      <LandingTeamMember
+        imageClassName="border-4 border-gray-200 dark:border-gray-800"
+        member={{ name: "David Chen", role: "CTO", imageSrc: "/static/images/people/2.webp" }}
+      />
+      <LandingTeamMember
+        imageClassName="border-4 border-gray-200 dark:border-gray-800"
+        member={{ name: "Alex Rivera", role: "Lead Designer", imageSrc: "/static/images/people/12.webp" }}
+      />
+    </LandingTeamSection>
+  }
+>
+
+```jsx
+import { LandingTeamSection } from '@/components/landing/team/LandingTeamSection';
+import { LandingTeamMember } from '@/components/landing/team/LandingTeamMember';
+
+<LandingTeamSection
+  title="Our Team"
+  description="Meet the people who make it all happen."
+>
+  <LandingTeamMember
+    imageClassName="border-4 border-gray-200 dark:border-gray-800"
+    member={{ name: "Lee Rob", role: "CEO & Founder", imageSrc: "/static/images/people/11.webp" }}
+  />
+  <LandingTeamMember
+    imageClassName="border-4 border-gray-200 dark:border-gray-800"
+    member={{ name: "David Chen", role: "CTO", imageSrc: "/static/images/people/2.webp" }}
+  />
+  <LandingTeamMember
+    imageClassName="border-4 border-gray-200 dark:border-gray-800"
+    member={{ name: "Alex Rivera", role: "Lead Designer", imageSrc: "/static/images/people/12.webp" }}
+  />
+</LandingTeamSection>
+```
+
+</ComponentExample>
+
+### With Background
+
+<ComponentExample
+  previewComponent={
+    <LandingTeamSection
+      title="Meet Our Experts"
+      description="The talented professionals who make everything possible."
+      withBackground={true}
+      members={[
+        { name: "Lee Rob", role: "CEO & Founder", imageSrc: "/static/images/people/11.webp" },
+        { name: "David Chen", role: "CTO", imageSrc: "/static/images/people/2.webp" },
+        { name: "Alex Rivera", role: "Lead Designer", imageSrc: "/static/images/people/12.webp" }
+      ]}
+    />
+  }
+>
+
+```jsx
+import { LandingTeamSection } from '@/components/landing/team/LandingTeamSection';
+
+<LandingTeamSection
+  title="Meet Our Experts"
+  description="The talented professionals who make everything possible."
+  withBackground={true}
+  members={[
+    { name: "Lee Rob", role: "CEO & Founder", imageSrc: "/static/images/people/11.webp" },
+    { name: "David Chen", role: "CTO", imageSrc: "/static/images/people/2.webp" },
+    { name: "Alex Rivera", role: "Lead Designer", imageSrc: "/static/images/people/12.webp" }
+  ]}
+/>
+```
+
+</ComponentExample>
+
+### With Background Glow
+
+<ComponentExample
+  previewComponent={
+    <LandingTeamSection
+      title="Meet Our Experts"
+      description="The talented professionals who make everything possible."
+      withBackgroundGlow={true}
+      members={[
+        { name: "Lee Rob", role: "CEO & Founder", imageSrc: "/static/images/people/11.webp" },
+        { name: "David Chen", role: "CTO", imageSrc: "/static/images/people/2.webp" },
+        { name: "Alex Rivera", role: "Lead Designer", imageSrc: "/static/images/people/12.webp" }
+      ]}
+    />
+  }
+>
+
+```jsx
+import { LandingTeamSection } from '@/components/landing/team/LandingTeamSection';
+
+<LandingTeamSection
+  title="Meet Our Experts"
+  description="The talented professionals who make everything possible."
+  withBackgroundGlow={true}
+  members={[
+    { name: "Lee Rob", role: "CEO & Founder", imageSrc: "/static/images/people/11.webp" },
+    { name: "David Chen", role: "CTO", imageSrc: "/static/images/people/2.webp" },
+    { name: "Alex Rivera", role: "Lead Designer", imageSrc: "/static/images/people/12.webp" }
+  ]}
+/>
+```
+
+</ComponentExample>
+
+### Component-based Usage
+
+Alternatively, you can use individual `LandingTeamMember` components as children:
+
+<ComponentExample
+  previewComponent={
+    <LandingTeamSection
+      title="Leadership Team"
+      description="Meet the people driving our vision forward."
+    >
+      <LandingTeamMember
+        member={{ name: "Lee Rob", role: "CEO & Founder", imageSrc: "/static/images/people/11.webp" }}
+      />
+      <LandingTeamMember
+        member={{ name: "David Chen", role: "CTO", imageSrc: "/static/images/people/2.webp" }}
+      />
+      <LandingTeamMember
+        member={{ name: "Alex Rivera", role: "Lead Designer", imageSrc: "/static/images/people/12.webp" }}
+      />
+    </LandingTeamSection>
+  }
+>
+
+```jsx
+import { LandingTeamSection } from '@/components/landing/team/LandingTeamSection';
+import { LandingTeamMember } from '@/components/landing/team/LandingTeamMember';
+
+<LandingTeamSection
+  title="Leadership Team"
+  description="Meet the people driving our vision forward."
+>
+  <LandingTeamMember
+    member={{ name: "Lee Rob", role: "CEO & Founder", imageSrc: "/static/images/people/11.webp" }}
+  />
+  <LandingTeamMember
+    member={{ name: "David Chen", role: "CTO", imageSrc: "/static/images/people/2.webp" }}
+  />
+  <LandingTeamMember
+    member={{ name: "Alex Rivera", role: "Lead Designer", imageSrc: "/static/images/people/12.webp" }}
+  />
+</LandingTeamSection>
+```
+
+</ComponentExample>
+
+## API Reference
+
+### LandingTeamSection
+
+| Prop Name | Prop Type | Required | Default |
+| --- | --- | ----- | ---- |
+| **className** <Tippy>Additional CSS classes for the section container</Tippy> | `string` | No | `-` |
+| **innerClassName** <Tippy>Additional CSS classes for the inner content container</Tippy> | `string` | No | `-` |
+| **title** <Tippy>Main title text for the team section</Tippy> | `string` | No | `'Our Members'` |
+| **titleComponent** <Tippy>Custom React component to replace the default title</Tippy> | `React.ReactNode` | No | `-` |
+| **description** <Tippy>Description text shown below the title</Tippy> | `string \| React.ReactNode` | No | `'Our team is a tight-knit family of developers and visionaries, all bound by the same passion and enthusiasm.'` |
+| **descriptionComponent** <Tippy>Custom React component to replace the default description</Tippy> | `React.ReactNode` | No | `-` |
+| **members** <Tippy>Array of team members to display</Tippy> | `TeamMember[]` | No | `[]` |
+| **textPosition** <Tippy>Alignment of the title and description text</Tippy> | `'center' \| 'left'` | No | `'left'` |
+| **withBackground** <Tippy>Whether to display a background color</Tippy> | `boolean` | No | `false` |
+| **withBackgroundGlow** <Tippy>Whether to display a glow effect in the background</Tippy> | `boolean` | No | `false` |
+| **variant** <Tippy>Color theme variant for the component</Tippy> | `'primary' \| 'secondary'` | No | `'primary'` |
+| **backgroundGlowVariant** <Tippy>Color theme variant for the background glow effect</Tippy> | `'primary' \| 'secondary'` | No | `'primary'` |
+| **children** <Tippy>Child components to render (used when not using the members array)</Tippy> | `React.ReactNode` | No | `-` |
+
+### LandingTeamMember
+
+| Prop Name | Prop Type | Required | Default |
+| --- | --- | ----- | ---- |
+| **className** <Tippy>Additional CSS classes for the team member container</Tippy> | `string` | No | `-` |
+| **member** <Tippy>Team member data object</Tippy> | `TeamMember` | Yes | `-` |
+| **imageClassName** <Tippy>Additional CSS classes for the team member's image</Tippy> | `string` | No | `-` |
+
+### TeamMember Interface
+
+```ts
+export interface TeamMember {
+  name: string;
+  role: string;
+  imageSrc: string;
+}
+```
+
+## More Examples
+
+For more even more examples, see our <a href="/demo/landing-page-component-examples" className="fancy-link">Landing Page Component Examples</a> page or see complete landing page examples by <a href="/demo/landing-page-templates" className="fancy-link">Exploring Our Landing Page Templates</a>.
+
+Also see:
+
+- <a href="/boilerplate-documentation/landing-page-components/about" className="fancy-link">About</a> component
+- <a href="/boilerplate-documentation/landing-page-components/stats" className="fancy-link">Stats</a> component

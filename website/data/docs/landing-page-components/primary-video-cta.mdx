@@ -1,0 +1,833 @@
+---
+title: 'Primary Video CTA'
+date: '2025-05-14'
+lastmod: '2025-05-15'
+tags:
+  - 'guide'
+  - 'components'
+  - 'documentation'
+  - 'landing-page'
+  - 'ui-library'
+  - 'react'
+  - 'nextjs'
+  - 'tailwind-css'
+  - 'primary-cta'
+  - 'video-player'
+  - 'cta-section'
+  - 'video-cta'
+  - 'landing-cta'
+summary: 'A versatile landing page component for showcasing a video alongside compelling call-to-action content'
+layout: PostHub
+
+# images:
+#   - '/static/images/blog/docs/primary-video-cta-preview.webp'
+
+showThemeSelector: true
+showInstallNotice: true
+
+canonicalUrl: 'https://shipixen.com/boilerplate-documentation/landing-page-components/primary-video-cta'
+---
+
+A high-impact component designed for landing pages that combines a compelling video with a call-to-action. This section helps draw attention to key messages while using video content to enhance engagement and demonstrate features or products.
+
+<ComponentExample
+  previewComponent={
+    <LandingPrimaryVideoCtaSection
+      title="Generate Content With AI"
+      description="Create marketing copy, product descriptions, and more with our advanced AI content generation tools."
+      videoSrc="https://cache.shipixen.com/features/8-customize-pages.mp4"
+      muted={true}
+      autoPlay={true}
+      loop={true}
+      controls={false}
+    >
+      <Button size="xl" asChild>
+        <a href="#">Get Started</a>
+      </Button>
+    </LandingPrimaryVideoCtaSection>
+  }
+>
+
+```jsx
+import { Button } from '@/components/shared/ui/button';
+import { LandingPrimaryVideoCtaSection } from '@/components/landing/cta/LandingPrimaryCta';
+
+<LandingPrimaryVideoCtaSection
+  title="Generate Content With AI"
+  description="Create marketing copy, product descriptions, and more with our advanced AI content generation tools."
+  videoSrc="https://cache.shipixen.com/features/8-customize-pages.mp4"
+  muted={true}
+  autoPlay={true}
+  loop={true}
+  controls={false}
+>
+  <Button size="xl" asChild>
+    <a href="#">Get Started</a>
+  </Button>
+</LandingPrimaryVideoCtaSection>
+```
+
+</ComponentExample>
+
+## Usage
+
+```jsx
+import { Button } from '@/components/shared/ui/button';
+import { LandingPrimaryVideoCtaSection } from '@/components/landing/cta/LandingPrimaryCta';
+```
+
+```jsx
+<LandingPrimaryVideoCtaSection
+  title="Your Headline Here"
+  description="Your description text goes here."
+  videoSrc="path/to/your/video.mp4"
+  videoPoster="path/to/your/poster-image.jpg"
+>
+  <Button size="xl" asChild>
+    <a href="#">Get Started</a>
+  </Button>
+</LandingPrimaryVideoCtaSection>
+```
+
+## Examples
+
+### Centered Text Layout
+
+When you need to emphasize both text and video equally, use the centered text layout with the video positioned below.
+
+<ComponentExample
+  previewComponent={
+    <LandingPrimaryVideoCtaSection
+      title="Streamline Your Workflow"
+      description="Our intuitive tools help teams work more efficiently with less effort."
+      videoSrc="https://cache.shipixen.com/features/8-customize-pages.mp4"
+      textPosition="center"
+      videoPosition="center"
+      withBackground={true}
+      autoPlay={true}
+      loop={true}
+      muted={true}
+    >
+      <Button size="xl" asChild>
+        <a href="#">Try It Free</a>
+      </Button>
+      <Button size="xl" variant="outlinePrimary">
+        <a href="#">Learn More</a>
+      </Button>
+    </LandingPrimaryVideoCtaSection>
+  }
+>
+
+```jsx
+import { Button } from '@/components/shared/ui/button';
+import { LandingPrimaryVideoCtaSection } from '@/components/landing/cta/LandingPrimaryCta';
+
+<LandingPrimaryVideoCtaSection
+  title="Streamline Your Workflow"
+  description="Our intuitive tools help teams work more efficiently with less effort."
+  videoSrc="https://cache.shipixen.com/features/8-customize-pages.mp4"
+  textPosition="center"
+  videoPosition="center"
+  withBackground={true}
+  autoPlay={true}
+  loop={true}
+  muted={true}
+>
+  <Button size="xl" asChild>
+    <a href="#">Try It Free</a>
+  </Button>
+  <Button size="xl" variant="outlinePrimary">
+    <a href="#">Learn More</a>
+  </Button>
+</LandingPrimaryVideoCtaSection>
+```
+
+</ComponentExample>
+
+### With Video Controls
+
+Display video controls to give users more control over the playback experience.
+
+<ComponentExample
+  previewComponent={
+    <LandingPrimaryVideoCtaSection
+      title="See How It Works"
+      description="Watch our detailed tutorial showing the key features in action."
+      videoSrc="https://cache.shipixen.com/features/8-customize-pages.mp4"
+      videoPoster="/static/images/backdrop-3.webp"
+      videoPosition="right"
+      controls={true}
+      autoPlay={false}
+      muted={true}
+    >
+      <Button size="xl" asChild>
+        <a href="#">Start Now</a>
+      </Button>
+      <Button size="xl" variant="outlinePrimary">
+        <a href="#">Contact Sales</a>
+      </Button>
+    </LandingPrimaryVideoCtaSection>
+  }
+>
+
+```jsx
+import { Button } from '@/components/shared/ui/button';
+import { LandingPrimaryVideoCtaSection } from '@/components/landing/cta/LandingPrimaryCta';
+
+<LandingPrimaryVideoCtaSection
+  title="See How It Works"
+  description="Watch our detailed tutorial showing the key features in action."
+  videoSrc="https://cache.shipixen.com/features/8-customize-pages.mp4"
+  videoPoster="/static/images/backdrop-3.webp"
+  videoPosition="right"
+  controls={true}
+  autoPlay={false}
+  muted={true}
+>
+  <Button size="xl" asChild>
+    <a href="#">Start Now</a>
+  </Button>
+  <Button size="xl" variant="outlinePrimary">
+    <a href="#">Contact Sales</a>
+  </Button>
+</LandingPrimaryVideoCtaSection>
+```
+
+</ComponentExample>
+
+### With Background Glow
+
+Add a subtle background glow to enhance the visual appeal and draw attention to your content.
+
+<ComponentExample
+  previewComponent={
+    <LandingPrimaryVideoCtaSection
+      title="Powerful Visual Storytelling"
+      description="Engage your audience with stunning visuals and compelling narratives."
+      videoSrc="https://cache.shipixen.com/features/8-customize-pages.mp4"
+      videoPosition="left"
+      withBackgroundGlow={true}
+      backgroundGlowVariant="secondary"
+      autoPlay={true}
+      loop={true}
+      muted={true}
+    >
+      <Button size="xl" variant="secondary" asChild>
+        <a href="#">Get Started</a>
+      </Button>
+      <Button size="xl" variant="outlineSecondary">
+        <a href="#">View Demo</a>
+      </Button>
+    </LandingPrimaryVideoCtaSection>
+  }
+>
+
+```jsx
+import { Button } from '@/components/shared/ui/button';
+import { LandingPrimaryVideoCtaSection } from '@/components/landing/cta/LandingPrimaryCta';
+
+<LandingPrimaryVideoCtaSection
+  title="Powerful Visual Storytelling"
+  description="Engage your audience with stunning visuals and compelling narratives."
+  videoSrc="https://cache.shipixen.com/features/8-customize-pages.mp4"
+  videoPosition="left"
+  withBackgroundGlow={true}
+  backgroundGlowVariant="secondary"
+  autoPlay={true}
+  loop={true}
+  muted={true}
+>
+  <Button size="xl" variant="secondary" asChild>
+    <a href="#">Get Started</a>
+  </Button>
+  <Button size="xl" variant="outlineSecondary">
+    <a href="#">View Demo</a>
+  </Button>
+</LandingPrimaryVideoCtaSection>
+```
+
+</ComponentExample>
+
+### With Social Proof
+
+Add social proof to increase credibility and show popularity of your product.
+
+<ComponentExample
+  previewComponent={
+    <LandingPrimaryVideoCtaSection
+      title="Trusted by Thousands"
+      description="Join the community of professionals leveraging our platform for increased productivity."
+      videoSrc="https://cache.shipixen.com/features/8-customize-pages.mp4"
+      muted={true}
+      autoPlay={true}
+      loop={true}
+    >
+      <Button size="xl" asChild>
+        <a href="#">Start Free Trial</a>
+      </Button>
+      <Button size="xl" variant="outlinePrimary">
+        <a href="#">Learn More</a>
+      </Button>
+      <LandingSocialProof
+        className="mt-6 w-full"
+        showRating
+        numberOfUsers={99}
+        avatarItems={[
+          {
+            imageSrc: '/static/images/people/1.webp',
+            name: 'John Doe',
+          },
+          {
+            imageSrc: '/static/images/people/2.webp',
+            name: 'Jane Doe',
+          },
+          {
+            imageSrc: '/static/images/people/3.webp',
+            name: 'Alice Doe',
+          },
+        ]}
+      />
+    </LandingPrimaryVideoCtaSection>
+  }
+>
+
+```jsx
+import { Button } from '@/components/shared/ui/button';
+import { LandingPrimaryVideoCtaSection } from '@/components/landing/cta/LandingPrimaryCta';
+import { LandingSocialProof } from '@/components/landing/social-proof/LandingSocialProof';
+
+<LandingPrimaryVideoCtaSection
+  title="Trusted by Thousands"
+  description="Join the community of professionals leveraging our platform for increased productivity."
+  videoSrc="https://cache.shipixen.com/features/8-customize-pages.mp4"
+  muted={true}
+  autoPlay={true}
+  loop={true}
+>
+  <Button size="xl" asChild>
+    <a href="#">Start Free Trial</a>
+  </Button>
+  <Button size="xl" variant="outlinePrimary">
+    <a href="#">Learn More</a>
+  </Button>
+  <LandingSocialProof
+    className="mt-6 w-full"
+    showRating
+    numberOfUsers={99}
+    avatarItems={[
+      {
+        imageSrc: '/static/images/people/1.webp',
+        name: 'John Doe',
+      },
+      {
+        imageSrc: '/static/images/people/2.webp',
+        name: 'Jane Doe',
+      },
+      {
+        imageSrc: '/static/images/people/3.webp',
+        name: 'Alice Doe',
+      },
+    ]}
+  />
+</LandingPrimaryVideoCtaSection>
+```
+
+</ComponentExample>
+
+### With Discount/Offer
+
+Highlight special offers or discounts to encourage conversion.
+
+<ComponentExample
+  previewComponent={
+    <LandingPrimaryVideoCtaSection
+      title="Limited Time Offer"
+      description="Get exclusive access to premium features and save with our special pricing."
+      videoSrc="https://cache.shipixen.com/features/8-customize-pages.mp4"
+      textPosition="center"
+      videoPosition="center"
+      autoPlay={true}
+      loop={true}
+      muted={true}
+    >
+      <Button size="xl" asChild>
+        <a href="#">Claim Discount</a>
+      </Button>
+      <Button size="xl" variant="outlinePrimary">
+        <a href="#">Learn More</a>
+      </Button>
+      <LandingDiscount
+        className="w-full flex justify-center"
+        discountValueText="$350 off"
+        discountDescriptionText="for the first 10 customers (2 left)"
+      />
+    </LandingPrimaryVideoCtaSection>
+  }
+>
+
+```jsx
+import { Button } from '@/components/shared/ui/button';
+import { LandingPrimaryVideoCtaSection } from '@/components/landing/cta/LandingPrimaryCta';
+import { LandingDiscount } from '@/components/landing/discount/LandingDiscount';
+
+<LandingPrimaryVideoCtaSection
+  title="Limited Time Offer"
+  description="Get exclusive access to premium features and save with our special pricing."
+  videoSrc="https://cache.shipixen.com/features/8-customize-pages.mp4"
+  textPosition="center"
+  videoPosition="center"
+  autoPlay={true}
+  loop={true}
+  muted={true}
+>
+  <Button size="xl" asChild>
+    <a href="#">Claim Discount</a>
+  </Button>
+  <Button size="xl" variant="outlinePrimary">
+    <a href="#">Learn More</a>
+  </Button>
+  <LandingDiscount
+    className="w-full flex justify-center"
+    discountValueText="$350 off"
+    discountDescriptionText="for the first 10 customers (2 left)"
+  />
+</LandingPrimaryVideoCtaSection>
+```
+
+</ComponentExample>
+
+### With Discount and Left Alignment
+
+<ComponentExample
+  previewComponent={
+    <LandingPrimaryVideoCtaSection
+      title="Early Bird Pricing"
+      description="Sign up now and save with our early adopter discount program."
+      videoSrc="https://cache.shipixen.com/features/8-customize-pages.mp4"
+      autoPlay={true}
+      loop={true}
+      muted={true}
+    >
+      <Button size="xl" asChild>
+        <a href="#">Get Started</a>
+      </Button>
+      <Button size="xl" variant="outlinePrimary">
+        <a href="#">View Plans</a>
+      </Button>
+      <LandingDiscount
+        className="w-full"
+        discountValueText="$350 off"
+        discountDescriptionText="for the first 10 customers (2 left)"
+      />
+    </LandingPrimaryVideoCtaSection>
+  }
+>
+
+```jsx
+import { Button } from '@/components/shared/ui/button';
+import { LandingPrimaryVideoCtaSection } from '@/components/landing/cta/LandingPrimaryCta';
+import { LandingDiscount } from '@/components/landing/discount/LandingDiscount';
+
+<LandingPrimaryVideoCtaSection
+  title="Early Bird Pricing"
+  description="Sign up now and save with our early adopter discount program."
+  videoSrc="https://cache.shipixen.com/features/8-customize-pages.mp4"
+  autoPlay={true}
+  loop={true}
+  muted={true}
+>
+  <Button size="xl" asChild>
+    <a href="#">Get Started</a>
+  </Button>
+  <Button size="xl" variant="outlinePrimary">
+    <a href="#">View Plans</a>
+  </Button>
+  <LandingDiscount
+    className="w-full"
+    discountValueText="$350 off"
+    discountDescriptionText="for the first 10 customers (2 left)"
+  />
+</LandingPrimaryVideoCtaSection>
+```
+
+</ComponentExample>
+
+### With Bullet Points
+
+Use bullet points to highlight key features or benefits of your product.
+
+<ComponentExample
+  previewComponent={
+    <LandingPrimaryVideoCtaSection
+      title="Why Choose Our Platform"
+      descriptionComponent={
+        <LandingProductFeatureKeyPoints
+          keyPoints={[
+            {
+              title: 'Intelligent Assistance',
+              description:
+                'Receive personalized recommendations and insights tailored to your workflow.',
+            },
+            {
+              title: 'Seamless Collaboration',
+              description:
+                'Easily collaborate with team members and clients in real-time.',
+            },
+            {
+              title: 'Advanced Customization',
+              description:
+                'Tailor your app to fit your unique requirements with extensive customization options.',
+            },
+          ]}
+        />
+      }
+      videoSrc="https://cache.shipixen.com/features/8-customize-pages.mp4"
+      autoPlay={true}
+      loop={true}
+      muted={true}
+    >
+      <Button size="xl" asChild>
+        <a href="#">Get Started</a>
+      </Button>
+      <Button size="xl" variant="outlinePrimary">
+        <a href="#">Learn More</a>
+      </Button>
+    </LandingPrimaryVideoCtaSection>
+  }
+>
+
+```jsx
+import { Button } from '@/components/shared/ui/button';
+import { LandingPrimaryVideoCtaSection } from '@/components/landing/cta/LandingPrimaryCta';
+import { LandingProductFeatureKeyPoints } from '@/components/landing/LandingProductFeatureKeyPoints';
+
+<LandingPrimaryVideoCtaSection
+  title="Why Choose Our Platform"
+  descriptionComponent={
+    <LandingProductFeatureKeyPoints
+      keyPoints={[
+        {
+          title: 'Intelligent Assistance',
+          description:
+            'Receive personalized recommendations and insights tailored to your workflow.',
+        },
+        {
+          title: 'Seamless Collaboration',
+          description:
+            'Easily collaborate with team members and clients in real-time.',
+        },
+        {
+          title: 'Advanced Customization',
+          description:
+            'Tailor your app to fit your unique requirements with extensive customization options.',
+        },
+      ]}
+    />
+  }
+  videoSrc="https://cache.shipixen.com/features/8-customize-pages.mp4"
+  autoPlay={true}
+  loop={true}
+  muted={true}
+>
+  <Button size="xl" asChild>
+    <a href="#">Get Started</a>
+  </Button>
+  <Button size="xl" variant="outlinePrimary">
+    <a href="#">Learn More</a>
+  </Button>
+</LandingPrimaryVideoCtaSection>
+```
+
+</ComponentExample>
+
+### With Product Hunt Award
+
+Showcase awards and recognition to build credibility.
+
+<ComponentExample
+  previewComponent={
+    <LandingPrimaryVideoCtaSection
+      title="Award-Winning Platform"
+      description="Join thousands of satisfied users who rely on our platform daily."
+      videoSrc="https://cache.shipixen.com/features/8-customize-pages.mp4"
+      leadingComponent={<LandingProductHuntAward />}
+      autoPlay={true}
+      loop={true}
+      muted={true}
+    >
+      <Button size="xl" asChild>
+        <a href="#">Get Started</a>
+      </Button>
+      <Button size="xl" variant="outlinePrimary">
+        <a href="#">Learn More</a>
+      </Button>
+    </LandingPrimaryVideoCtaSection>
+  }
+>
+
+```jsx
+import { Button } from '@/components/shared/ui/button';
+import { LandingPrimaryVideoCtaSection } from '@/components/landing/cta/LandingPrimaryCta';
+import { LandingProductHuntAward } from '@/components/landing/social-proof/LandingProductHuntAward';
+
+<LandingPrimaryVideoCtaSection
+  title="Award-Winning Platform"
+  description="Join thousands of satisfied users who rely on our platform daily."
+  videoSrc="https://cache.shipixen.com/features/8-customize-pages.mp4"
+  leadingComponent={<LandingProductHuntAward />}
+  autoPlay={true}
+  loop={true}
+  muted={true}
+>
+  <Button size="xl" asChild>
+    <a href="#">Get Started</a>
+  </Button>
+  <Button size="xl" variant="outlinePrimary">
+    <a href="#">Learn More</a>
+  </Button>
+</LandingPrimaryVideoCtaSection>
+```
+
+</ComponentExample>
+
+### With Social Proof Band
+
+Add a social proof band to showcase key benefits or testimonials.
+
+<ComponentExample
+  previewComponent={
+    <>
+      <LandingSocialProofBand>
+        <LandingSocialProofBandItem>
+          100% encrypted and secure
+        </LandingSocialProofBandItem>
+        <LandingSocialProofBandItem>24/7 customer support</LandingSocialProofBandItem>
+        <LandingSocialProofBandItem>
+          99% customer satisfaction
+        </LandingSocialProofBandItem>
+      </LandingSocialProofBand>
+      <LandingPrimaryVideoCtaSection
+        title="Enterprise-Grade Solution"
+        description="Powerful tools designed for businesses of all sizes, with the security and reliability you need."
+        videoSrc="https://cache.shipixen.com/features/8-customize-pages.mp4"
+        autoPlay={true}
+        loop={true}
+        muted={true}
+      >
+        <Button size="xl" asChild>
+          <a href="#">Schedule Demo</a>
+        </Button>
+        <Button size="xl" variant="outlinePrimary">
+          <a href="#">Contact Sales</a>
+        </Button>
+      </LandingPrimaryVideoCtaSection>
+    </>
+  }
+>
+
+```jsx
+import { Button } from '@/components/shared/ui/button';
+import { LandingPrimaryVideoCtaSection } from '@/components/landing/cta/LandingPrimaryCta';
+import { LandingSocialProofBand } from '@/components/landing/social-proof/LandingSocialProofBand';
+import { LandingSocialProofBandItem } from '@/components/landing/social-proof/LandingSocialProofBandItem';
+
+<>
+  <LandingSocialProofBand>
+    <LandingSocialProofBandItem>
+      100% encrypted and secure
+    </LandingSocialProofBandItem>
+    <LandingSocialProofBandItem>24/7 customer support</LandingSocialProofBandItem>
+    <LandingSocialProofBandItem>
+      99% customer satisfaction
+    </LandingSocialProofBandItem>
+  </LandingSocialProofBand>
+  <LandingPrimaryVideoCtaSection
+    title="Enterprise-Grade Solution"
+    description="Powerful tools designed for businesses of all sizes, with the security and reliability you need."
+    videoSrc="https://cache.shipixen.com/features/8-customize-pages.mp4"
+    autoPlay={true}
+    loop={true}
+    muted={true}
+  >
+    <Button size="xl" asChild>
+      <a href="#">Schedule Demo</a>
+    </Button>
+    <Button size="xl" variant="outlinePrimary">
+      <a href="#">Contact Sales</a>
+    </Button>
+  </LandingPrimaryVideoCtaSection>
+</>
+```
+
+</ComponentExample>
+
+### Full Example with Combined Elements
+
+<ComponentExample
+  previewComponent={
+    <>
+      <LandingSocialProofBand invert>
+        <LandingSocialProofBandItem>
+          100% encrypted and secure
+        </LandingSocialProofBandItem>
+        <LandingSocialProofBandItem>24/7 customer support</LandingSocialProofBandItem>
+        <LandingSocialProofBandItem>
+          99% customer satisfaction
+        </LandingSocialProofBandItem>
+      </LandingSocialProofBand>
+      <LandingPrimaryVideoCtaSection
+        title="Transform Your Business"
+        description="Get everything you need to grow your business with our comprehensive platform."
+        videoSrc="https://cache.shipixen.com/features/8-customize-pages.mp4"
+        textPosition="center"
+        videoPosition="center"
+        withBackground={true}
+        withBackgroundGlow={true}
+        variant="secondary"
+        leadingComponent={<LandingProductHuntAward />}
+        autoPlay={true}
+        loop={true}
+        muted={true}
+      >
+        <Button size="xl" variant="secondary" asChild>
+          <a href="#">Get Started</a>
+        </Button>
+        <Button size="xl" variant="outlineSecondary">
+          <a href="#">View Pricing</a>
+        </Button>
+        <LandingDiscount
+          className="w-full flex justify-center"
+          discountValueText="$350 off"
+          discountDescriptionText="for the first 10 customers (2 left)"
+        />
+        <LandingSocialProof
+          className="mt-12 w-full flex justify-center"
+          showRating
+          numberOfUsers={99}
+          avatarItems={[
+            {
+              imageSrc: '/static/images/people/1.webp',
+              name: 'John Doe',
+            },
+            {
+              imageSrc: '/static/images/people/2.webp',
+              name: 'Jane Doe',
+            },
+            {
+              imageSrc: '/static/images/people/3.webp',
+              name: 'Alice Doe',
+            },
+          ]}
+        />
+      </LandingPrimaryVideoCtaSection>
+    </>
+  }
+>
+
+```jsx
+import { Button } from '@/components/shared/ui/button';
+import { LandingPrimaryVideoCtaSection } from '@/components/landing/cta/LandingPrimaryCta';
+import { LandingDiscount } from '@/components/landing/discount/LandingDiscount';
+import { LandingProductHuntAward } from '@/components/landing/social-proof/LandingProductHuntAward';
+import { LandingSocialProof } from '@/components/landing/social-proof/LandingSocialProof';
+import { LandingSocialProofBand } from '@/components/landing/social-proof/LandingSocialProofBand';
+import { LandingSocialProofBandItem } from '@/components/landing/social-proof/LandingSocialProofBandItem';
+
+<>
+  <LandingSocialProofBand invert>
+    <LandingSocialProofBandItem>
+      100% encrypted and secure
+    </LandingSocialProofBandItem>
+    <LandingSocialProofBandItem>24/7 customer support</LandingSocialProofBandItem>
+    <LandingSocialProofBandItem>
+      99% customer satisfaction
+    </LandingSocialProofBandItem>
+  </LandingSocialProofBand>
+  <LandingPrimaryVideoCtaSection
+    title="Transform Your Business"
+    description="Get everything you need to grow your business with our comprehensive platform."
+    videoSrc="https://cache.shipixen.com/features/8-customize-pages.mp4"
+    textPosition="center"
+    videoPosition="center"
+    withBackground={true}
+    withBackgroundGlow={true}
+    variant="secondary"
+    leadingComponent={<LandingProductHuntAward />}
+    autoPlay={true}
+    loop={true}
+    muted={true}
+  >
+    <Button size="xl" variant="secondary" asChild>
+      <a href="#">Get Started</a>
+    </Button>
+    <Button size="xl" variant="outlineSecondary">
+      <a href="#">View Pricing</a>
+    </Button>
+    <LandingDiscount
+      className="w-full flex justify-center"
+      discountValueText="$350 off"
+      discountDescriptionText="for the first 10 customers (2 left)"
+    />
+    <LandingSocialProof
+      className="mt-12 w-full flex justify-center"
+      showRating
+      numberOfUsers={99}
+      avatarItems={[
+        {
+          imageSrc: '/static/images/people/1.webp',
+          name: 'John Doe',
+        },
+        {
+          imageSrc: '/static/images/people/2.webp',
+          name: 'Jane Doe',
+        },
+        {
+          imageSrc: '/static/images/people/3.webp',
+          name: 'Alice Doe',
+        },
+      ]}
+    />
+  </LandingPrimaryVideoCtaSection>
+</>
+```
+
+</ComponentExample>
+
+## API Reference
+
+| Prop Name | Prop Type | Required | Default |
+| --- | --- | ----- | ---- |
+| **title** <Tippy>The main headline for the CTA section</Tippy> | `string \| React.ReactNode` | No | - |
+| **titleComponent** <Tippy>Custom component for the title if more control is needed</Tippy> | `React.ReactNode` | No | - |
+| **description** <Tippy>Supporting text that explains the value proposition</Tippy> | `string \| React.ReactNode` | No | - |
+| **descriptionComponent** <Tippy>Custom component for the description</Tippy> | `React.ReactNode` | No | - |
+| **videoSrc** <Tippy>URL to the video file</Tippy> | `string` | No | - |
+| **videoPoster** <Tippy>URL to the poster image shown before video plays</Tippy> | `string` | No | - |
+| **videoPosition** <Tippy>Position of the video relative to text content</Tippy> | `'left' \| 'right' \| 'center'` | No | `'right'` |
+| **videoMaxWidth** <Tippy>Maximum width constraint for the video</Tippy> | `string` | No | `'none'` |
+| **videoShadow** <Tippy>Shadow style for the video container</Tippy> | `'none' \| 'soft' \| 'hard'` | No | `'hard'` |
+| **textPosition** <Tippy>Text alignment within the section</Tippy> | `'center' \| 'left'` | No | `'left'` |
+| **muted** <Tippy>Whether the video should be muted</Tippy> | `boolean` | No | `true` |
+| **autoPlay** <Tippy>Whether the video should auto-play</Tippy> | `boolean` | No | `false` |
+| **controls** <Tippy>Whether to show video controls</Tippy> | `boolean` | No | `false` |
+| **loop** <Tippy>Whether the video should loop</Tippy> | `boolean` | No | `false` |
+| **minHeight** <Tippy>Minimum height of the section</Tippy> | `number` | No | `350` |
+| **withBackground** <Tippy>Whether to show a background color</Tippy> | `boolean` | No | `false` |
+| **withBackgroundGlow** <Tippy>Whether to add a glowing background effect</Tippy> | `boolean` | No | `false` |
+| **variant** <Tippy>Color variant for the component</Tippy> | `'primary' \| 'secondary'` | No | `'primary'` |
+| **backgroundGlowVariant** <Tippy>Color variant for the background glow</Tippy> | `'primary' \| 'secondary'` | No | `'primary'` |
+| **className** <Tippy>Additional CSS classes for the outer container</Tippy> | `string` | No | - |
+| **innerClassName** <Tippy>Additional CSS classes for the inner container</Tippy> | `string` | No | - |
+| **leadingComponent** <Tippy>Component to display above the title</Tippy> | `React.ReactNode` | No | - |
+| **footerComponent** <Tippy>Component to display at the bottom of the section</Tippy> | `React.ReactNode` | No | - |
+| **children** <Tippy>Call-to-action elements like buttons</Tippy> | `React.ReactNode` | No | - |
+
+## More Examples
+
+For more even more examples, see [Primary Text CTA](/boilerplate-documentation/landing-page-components/primary-text-cta) or [Primary Image CTA](/boilerplate-documentation/landing-page-components/primary-image-cta).
+
+Also see:
+
+- <a href="/boilerplate-documentation/landing-page-components/product-feature" className="fancy-link">Product Feature</a> component for highlighting solutions to these problems
+- <a href="/boilerplate-documentation/landing-page-components/primary-text-cta" className="fancy-link">Primary Text Call to Action</a> component for directing users to solutions
+- <a href="/boilerplate-documentation/landing-page-components/primary-image-cta" className="fancy-link">Primary Image Call to Action</a> component for directing users to solutions

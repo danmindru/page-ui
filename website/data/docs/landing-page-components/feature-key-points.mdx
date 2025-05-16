@@ -7,11 +7,15 @@ tags:
   - 'components'
   - 'documentation'
   - 'landing-page'
+  - 'key-points'
+  - 'bullet-points'
   - 'ui-library'
   - 'react'
   - 'nextjs'
   - 'tailwind-css'
   - 'shadcn-ui'
+  - 'shadcn-ui-bullet-points'
+  - 'shadcn-ui-key-points'
 
 summary: 'A component meant to be used in the landing page. This component displays bullet points (key features) in the description of LandingProductFeature.'
 layout: PostHub
@@ -23,6 +27,8 @@ canonicalUrl: 'https://shipixen.com/boilerplate-documentation/landing-page-compo
 ---
 
 Use this to display a bullet point in the description of a [Product Feature](/boilerplate-documentation/landing-page-components/product-feature). This component can clarify the key features of the product or service, especially when the description is long and detailed.
+
+Can also be used as a standalone component.
 
 <ComponentExample
   previewComponent={
@@ -190,6 +196,9 @@ import { LandingProductFeatureKeyPoints } from '@/components/landing/LandingProd
 | ----------------------------------------------------------------------------------------------------------------------- | --------------------------- | -------- | ----------- |
 | **keyPoints** <Tippy>Array of objects each containing a title and description to be displayed as bullet points.</Tippy> | `KeyPoint[]`                | Yes      | -           |
 | **variant** <Tippy>Styling variant for the bullet points, determining the icon and text color.</Tippy>                  | `'primary'` ǀ `'secondary'` | No       | `'primary'` |
+| **icon** <Tippy>Custom icon to be displayed instead of the default checkmark.</Tippy>                                  | `React.ReactNode` ǀ `LucideIcon`          | No       | -           |
+| **descriptionStyle** <Tippy>Determines if the description should be displayed inline or as a block.</Tippy>             | `'inline'` ǀ `'block'`                  | No       | `'block'`   |
+| **iconClassName** <Tippy>Custom class name for the icon, use to override color and size etc.</Tippy>                                                      | `string`                        | No       | -           |
 
 ```ts
 export interface KeyPoint {
@@ -201,3 +210,8 @@ export interface KeyPoint {
 ## More Examples
 
 For more even more examples, see our <a href="/demo/landing-page-component-examples" className="fancy-link">Landing Page Component Examples</a> page or see complete landing page examples by <a href="/demo/landing-page-templates" className="fancy-link">Exploring Our Landing Page Templates</a>.
+
+Also see:
+
+- [LandingProductFeature](/boilerplate-documentation/landing-page-components/product-feature)
+- [LandingProductProblemSolution](/boilerplate-documentation/landing-page-components/product-problem-solution)
