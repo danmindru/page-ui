@@ -35,9 +35,11 @@ export const LandingHeader = ({
   return (
     <nav
       className={clsx(
-        'flex items-center justify-between gap-6 p-4 w-full max-w-full container-narrow',
-        fixed ? 'sticky top-4 left-auto right-auto z-50 backdrop-blur-xl' : '',
-        withBackground ? 'lg:m-4 lg:rounded-lg justify-self-center' : '',
+        'flex items-center justify-between gap-6 p-4 w-full max-w-full container-narrow lg:rounded-lg',
+        fixed
+          ? 'sticky top-4 left-auto right-auto z-50 bg-white/50 dark:bg-black/20 backdrop-blur-xl'
+          : '',
+        withBackground ? 'lg:m-4 justify-self-center' : '',
         withBackground && variant === 'primary'
           ? 'bg-primary-100/20 dark:bg-primary-900/10 border border-primary-100/30 dark:border-primary-900/30'
           : '',

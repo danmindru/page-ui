@@ -9,9 +9,9 @@ type Child = ReactElement<any, any>; // eslint-disable-line @typescript-eslint/n
 /**
  * A component meant to be used in the landing page.
  * It displays a title, description and a list of horizontal steps with a LandingProductFeature and/or LandingProductVideoFeature (in any combination, passed as children).
- * Use for more than 3 steps
+ * Use for more than 3 steps.
  */
-export const LandingProductFeaturesHorizontalSteps = ({
+export const LandingProductSteps = ({
   className,
   children,
   title,
@@ -23,6 +23,7 @@ export const LandingProductFeaturesHorizontalSteps = ({
   variant = 'primary',
   backgroundGlowVariant = 'primary',
   containerType = 'ultrawide',
+  display = 'list',
 }: {
   className?: string;
   children?: React.ReactNode;
@@ -35,6 +36,7 @@ export const LandingProductFeaturesHorizontalSteps = ({
   variant?: 'primary' | 'secondary';
   backgroundGlowVariant?: 'primary' | 'secondary';
   containerType?: 'narrow' | 'wide' | 'ultrawide';
+  display?: 'list' | 'grid';
 }) => {
   const childrenWithBackground = Children.map(children, (child, index) => {
     if (!child) {
@@ -60,19 +62,23 @@ export const LandingProductFeaturesHorizontalSteps = ({
           ? ' bg-primary-300/10 dark:bg-primary-900/10'
           : ' bg-secondary-300/10 dark:bg-secondary-900/10',
         isOdd ? 'gap-8' : 'gap-2',
+        display === 'grid' ? '!px-0 !pb-0' : '',
       ),
+      textClassName: clsx(display === 'grid' ? 'p-6' : ''),
       imageClassName: clsx(
-        'mb-0 lg:-mb-12 lg:-mt-12 !scale-100 rounded-xl',
+        'mb-0 !scale-100 rounded-xl',
+        display === 'list' ? 'lg:-mb-12 lg:-mt-12' : '',
+        display === 'grid' ? 'md:-mt-6' : '',
         reactChild.props.imageClassName,
       ),
       ...(reactChildType === LandingProductFeature
         ? {
-            imagePosition: mediaPosition,
+            imagePosition: display === 'grid' ? 'center' : mediaPosition,
             imageShadow: reactChild.props.imageShadow || 'hard',
           }
         : {}),
       ...(reactChildType === LandingProductVideoFeature
-        ? { videoPosition: mediaPosition }
+        ? { videoPosition: display === 'grid' ? 'center' : mediaPosition }
         : {}),
     });
   });
@@ -125,8 +131,9 @@ export const LandingProductFeaturesHorizontalSteps = ({
 
       <div
         className={clsx(
-          '!p-0 relative isolate flex flex-col gap-6',
+          '!p-0 relative isolate gap-6',
           `container-${containerType}`,
+          display === 'list' ? 'flex flex-col' : 'grid lg:grid-cols-3',
         )}
       >
         {childrenWithBackground}

@@ -41,7 +41,7 @@ const LandingProductTourSection = React.forwardRef<
   ) => (
     <section
       className={clsx(
-        'relative w-full flex flex-col justify-center items-center gap-8 py-12 lg:py-16',
+        'relative w-full flex flex-col justify-center items-center gap-8 p-6 py-12 lg:py-16',
         withBackground && variant === 'primary'
           ? 'bg-primary-100/20 dark:bg-primary-900/10'
           : '',

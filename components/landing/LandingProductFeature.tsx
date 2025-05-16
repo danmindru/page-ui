@@ -14,6 +14,7 @@ export const LandingProductFeature = ({
   children,
   className,
   innerClassName,
+  textClassName,
   title,
   titleComponent,
   description,
@@ -35,6 +36,7 @@ export const LandingProductFeature = ({
   children?: React.ReactNode;
   className?: string;
   innerClassName?: string;
+  textClassName?: string;
   title?: string | React.ReactNode;
   titleComponent?: React.ReactNode;
   description?: string | React.ReactNode;
@@ -103,11 +105,12 @@ export const LandingProductFeature = ({
       >
         <div
           className={clsx(
-            'flex flex-col gap-4',
+            'w-full flex flex-col gap-4',
             imagePosition === 'left' && 'lg:col-start-2 lg:row-start-1',
             textPosition === 'center'
               ? 'md:max-w-lg items-center text-center'
               : 'items-start',
+            textClassName,
           )}
         >
           {title ? (
@@ -132,6 +135,7 @@ export const LandingProductFeature = ({
                 <Image
                   className={clsx(
                     'w-full rounded-md overflow-hidden',
+                    imageShadow === 'none' && '!shadow-none',
                     imageShadow === 'soft' && 'shadow-md',
                     imageShadow === 'hard' && 'hard-shadow',
                     imageClassName,
@@ -159,8 +163,10 @@ export const LandingProductFeature = ({
                   imagePerspective === 'bottom' && 'lg:perspective-bottom',
                   imagePerspective === 'bottom-lg' &&
                     'lg:perspective-bottom-lg',
-                  imagePerspective === 'paper' &&
-                    'lg:perspective-paper hover:scale-90',
+                  imagePerspective === 'paper' && 'lg:perspective-paper',
+                  imagePerspective === 'paper' && zoomOnHover
+                    ? 'hover:scale-90 transition-all'
+                    : '',
                   imagePerspective === 'none' ? 'my-4' : 'my-8',
                   imageClassName,
                 )}

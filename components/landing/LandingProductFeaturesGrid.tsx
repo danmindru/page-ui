@@ -22,6 +22,7 @@ export const LandingProductFeaturesGrid = ({
   variant = 'primary',
   backgroundGlowVariant = 'primary',
   containerType = 'ultrawide',
+  numberOfColumns,
 }: {
   className?: string;
   children?: React.ReactNode;
@@ -34,7 +35,9 @@ export const LandingProductFeaturesGrid = ({
   variant?: 'primary' | 'secondary';
   backgroundGlowVariant?: 'primary' | 'secondary';
   containerType?: 'narrow' | 'wide' | 'ultrawide';
+  numberOfColumns?: number;
 }) => {
+  const childrenCount = Children.count(children);
   const childrenWithBackground = Children.map(children, (child) => {
     if (!child) {
       return null;
@@ -114,8 +117,14 @@ export const LandingProductFeaturesGrid = ({
 
       <div
         className={clsx(
-          '!p-0 relative isolate grid md:grid-cols-2 gap-4',
+          '!p-0 relative isolate grid gap-4',
           `container-${containerType}`,
+          !numberOfColumns && childrenCount % 3 === 0
+            ? 'md:grid-cols-3'
+            : 'md:grid-cols-2',
+          numberOfColumns === 1 && 'md:grid-cols-1',
+          numberOfColumns === 2 && 'md:grid-cols-2',
+          numberOfColumns === 3 && 'md:grid-cols-3',
         )}
       >
         {childrenWithBackground}

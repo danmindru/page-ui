@@ -13,6 +13,7 @@ export const LandingHeaderMenuItem = ({
   onClick,
   variant = 'primary',
   className,
+  children,
 }: {
   href?: string;
   label?: string | React.ReactNode;
@@ -20,6 +21,7 @@ export const LandingHeaderMenuItem = ({
   onClick?: () => void;
   variant?: 'primary' | 'secondary' | 'ghost';
   className?: string;
+  children?: React.ReactNode;
 }) => {
   if (type === 'button' || type === 'icon-button') {
     return (
@@ -41,15 +43,15 @@ export const LandingHeaderMenuItem = ({
     <Link
       href={href}
       className={clsx(
-        'transition-colors',
+        'transition-colors font-medium',
         variant === 'primary'
-          ? 'text-primary hover:text-primary-500'
-          : 'text-secondary hover:text-secondary-500',
+          ? 'text-black dark:text-gray-200 hover:text-primary-500 dark:hover:text-primary-500'
+          : 'text-black dark:text-gray-200 hover:text-secondary-500 dark:hover:text-secondary-500',
         className,
       )}
       onClick={onClick}
     >
-      {label}
+      {children || label}
     </Link>
   );
 };

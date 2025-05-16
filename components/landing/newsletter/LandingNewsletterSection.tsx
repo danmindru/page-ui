@@ -75,7 +75,7 @@ export const LandingNewsletterSection = ({
 
       <div
         className={clsx(
-          'w-full p-6 flex flex-col items-center justify-center relative',
+          'container-wide w-full p-6 flex flex-col items-center justify-center relative',
           innerClassName,
         )}
         style={{
@@ -153,7 +153,9 @@ export const LandingNewsletterSection = ({
           ) : null}
 
           {title ? (
-            <h2 className="text-4xl font-semibold leading-tight">{title}</h2>
+            <h2 className="text-3xl md:text-4xl font-semibold leading-tight">
+              {title}
+            </h2>
           ) : (
             titleComponent
           )}

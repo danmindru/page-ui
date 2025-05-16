@@ -163,6 +163,7 @@ export const LandingPrimaryImageCtaSection = ({
       >
         <LandingPrimaryCtaContent
           className={clsx(
+            'relative z-10',
             imagePosition === 'left' && 'lg:col-start-2 lg:row-start-1',
           )}
           title={title}
@@ -309,6 +310,7 @@ export const LandingPrimaryVideoCtaSection = ({
       >
         <LandingPrimaryCtaContent
           className={clsx(
+            'relative z-10',
             videoPosition === 'left' && 'lg:col-start-2 lg:row-start-1',
           )}
           title={title}

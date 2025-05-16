@@ -21,9 +21,11 @@ export const LandingFooterLink = ({
       href={href}
       className={clsx(
         'transition-colors text-xs',
-        variant === 'primary' ? 'text-primary hover:text-primary-500' : null,
+        variant === 'primary'
+          ? 'text-gray-900 dark:text-gray-200 hover:text-primary-500 dark:hover:text-primary-500'
+          : null,
         variant === 'secondary'
-          ? 'text-secondary hover:text-secondary-500'
+          ? 'text-gray-900 dark:text-gray-200 hover:text-secondary-500 dark:hover:text-secondary-500'
           : null,
         className,
       )}
