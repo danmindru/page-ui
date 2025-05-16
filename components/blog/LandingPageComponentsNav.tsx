@@ -8,8 +8,33 @@ export const LandingPageComponentsNav = ({
 }) => {
   const links = [
     {
+      href: '/docs/landing-page-components/about',
+      label: 'About',
+      isNew: true,
+    },
+    {
+      href: '/docs/landing-page-components/appstore-button',
+      label: 'App Store Button',
+      isNew: true,
+    },
+    {
       href: '/docs/landing-page-components/band',
       label: 'Band',
+    },
+    {
+      href: '/docs/landing-page-components/bento-grid',
+      label: 'Bento Grid',
+      isNew: true,
+    },
+    {
+      href: '/docs/landing-page-components/blog-list',
+      label: 'Blog List',
+      isNew: true,
+    },
+    {
+      href: '/docs/landing-page-components/blog-post',
+      label: 'Blog Post',
+      isNew: true,
     },
     {
       href: '/docs/landing-page-components/discount',
@@ -38,7 +63,6 @@ export const LandingPageComponentsNav = ({
     {
       href: '/docs/landing-page-components/footer',
       label: 'Footer',
-      isNew: true,
     },
     {
       href: '/docs/landing-page-components/marquee',
@@ -47,34 +71,54 @@ export const LandingPageComponentsNav = ({
     {
       href: '/docs/landing-page-components/navigation',
       label: 'Navigation / Header',
-      isNew: true,
     },
     {
       href: '/docs/landing-page-components/newsletter',
       label: 'Newsletter',
-      isNew: true,
     },
     {
       href: '/docs/landing-page-components/pricing',
       label: 'Pricing',
-      isNew: true,
     },
     {
       href: '/docs/landing-page-components/pricing-plan',
       label: 'Pricing Plan',
-      isNew: true,
     },
     {
       href: '/docs/landing-page-components/primary-image-cta',
       label: 'Primary Image Cta',
     },
     {
+      href: '/docs/landing-page-components/primary-video-cta',
+      label: 'Primary Video Cta',
+    },
+    {
       href: '/docs/landing-page-components/primary-text-cta',
       label: 'Primary Text Cta',
     },
     {
+      href: '/docs/landing-page-components/problem-agitator',
+      label: 'Problem Agitator',
+      isNew: true,
+    },
+    {
+      href: '/docs/landing-page-components/problem-solution',
+      label: 'Problem Solution',
+      isNew: true,
+    },
+    {
+      href: '/docs/landing-page-components/product-card',
+      label: 'Product Card',
+      isNew: true,
+    },
+    {
       href: '/docs/landing-page-components/product-feature',
       label: 'Product Feature',
+    },
+    {
+      href: '/docs/landing-page-components/product-steps',
+      label: 'Product Steps',
+      isNew: true,
     },
     {
       href: '/docs/landing-page-components/product-video-feature',
@@ -117,6 +161,16 @@ export const LandingPageComponentsNav = ({
       label: 'Social Proof Band Item',
     },
     {
+      href: '/docs/landing-page-components/stats',
+      label: 'Stats',
+      isNew: true,
+    },
+    {
+      href: '/docs/landing-page-components/team',
+      label: 'Team',
+      isNew: true,
+    },
+    {
       href: '/docs/landing-page-components/testimonial-grid',
       label: 'Testimonial Grid',
     },
@@ -139,7 +193,7 @@ export const LandingPageComponentsNav = ({
   ];
 
   return (
-    <ul className={cn('flex flex-col text-sm', className)}>
+    <ul className={cn('flex flex-col text-[13px]', className)}>
       {links.map(({ href, label, isNew }) => (
         <li key={label}>
           <ActiveLink activeClassName="text-primary-500" href={href + '#main'}>

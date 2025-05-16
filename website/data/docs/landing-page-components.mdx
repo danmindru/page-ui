@@ -1,7 +1,7 @@
 ---
 title: 'Landing Page Components'
 date: '2023-11-19'
-lastmod: '2024-08-05'
+lastmod: '2025-05-16'
 tags:
   - 'blog'
   - 'guide'
@@ -9,6 +9,7 @@ tags:
   - 'documentation'
   - 'landing-page'
   - 'ui-library'
+  - 'shadcn-ui-landing-page'
 
 images:
   - '/static/images/blog/docs/landing-page-blog-post-list.webp'
@@ -18,10 +19,35 @@ layout: PostHub
 
 export const links = [
   {
+    title: 'About',
+    href: '/docs/landing-page-components/about',
+    description: 'Display a section about the company.',
+  },
+  {
+    title: 'App Store Button',
+    href: '/docs/landing-page-components/appstore-button',
+    description: 'Display a button to download an app from the App Store.',
+  },
+  {
     title: 'Band',
     href: '/docs/landing-page-components/band',
     description:
       'Display a band with a background color, large text and icons.',
+  },
+  {
+    title: 'Bento Grid',
+    href: '/docs/landing-page-components/bento-grid',
+    description: 'Display a grid of items in a bento style.',
+  },
+  {
+    title: 'Blog List',
+    href: '/docs/landing-page-components/blog-list',
+    description: 'Display a list of blog posts.',
+  },
+  {
+    title: 'Blog Post',
+    href: '/docs/landing-page-components/blog-post',
+    description: 'Display a single blog post.',
   },
   {
     title: 'Discount',
@@ -56,9 +82,35 @@ export const links = [
     description: 'Display a bullet point to highlight key features.',
   },
   {
+    title: 'Footer',
+    href: '/docs/landing-page-components/footer',
+    description: 'Display a footer with columns of links.',
+  },
+  {
     title: 'Marquee',
     href: '/docs/landing-page-components/marquee',
     description: 'Display a marquee that loops through a list of items.',
+  },
+  {
+    title: 'Navigation / Header',
+    href: '/docs/landing-page-components/navigation',
+    description:
+      'Display a top navigation bar with a main menu and a logo.',
+  },
+  {
+    title: 'Newsletter',
+    href: '/docs/landing-page-components/newsletter',
+    description: 'Display a newsletter subscription section.',
+  },
+  {
+    title: 'Pricing',
+    href: '/docs/landing-page-components/pricing',
+    description: 'Display a pricing section with pricing plans.',
+  },
+  {
+    title: 'Pricing Plan',
+    href: '/docs/landing-page-components/pricing-plan',
+    description: 'Display a pricing plan with features and a call-to-action button.',
   },
   {
     title: 'Primary Image CTA',
@@ -66,15 +118,40 @@ export const links = [
     description: 'Display a large image with a call to action.',
   },
   {
+    title: 'Primary Video CTA',
+    href: '/docs/landing-page-components/primary-video-cta',
+    description: 'Display a large video with a call to action.',
+  },
+  {
     title: 'Primary Text CTA',
     href: '/docs/landing-page-components/primary-text-cta',
     description: 'Display a large text with a call to action.',
+  },
+  {
+    title: 'Problem Agitator',
+    href: '/docs/landing-page-components/problem-agitator',
+    description: 'Display a problem agitator with a call to action.',
+  },
+  {
+    title: 'Problem / Solution',
+    href: '/docs/landing-page-components/problem-solution',
+    description: 'Display a problem and solution side by side.',
+  },
+  {
+    title: 'Product Card',
+    href: '/docs/landing-page-components/product-card',
+    description: 'Display a product card with a title, description and image.',
   },
   {
     title: 'Product Feature',
     href: '/docs/landing-page-components/product-feature',
     description:
       "It displays a title, description and optionally, an image of a product's feature",
+  },
+  {
+    title: 'Product Steps',
+    href: '/docs/landing-page-components/product-steps',
+    description: 'Display a list of steps with a Product Feature.',
   },
   {
     title: 'Product Video Feature',
@@ -131,9 +208,19 @@ export const links = [
       'Display a single social proof item, to be used with the Social Proof Band.',
   },
   {
+    title: 'Stats',
+    href: '/docs/landing-page-components/stats',
+    description: 'Display a grid of statistics.',
+  },
+  {
     title: 'Testimonial Grid',
     href: '/docs/landing-page-components/testimonial-grid',
     description: 'Display a grid of testimonials.',
+  },
+  {
+    title: 'Team',
+    href: '/docs/landing-page-components/team',
+    description: 'Display a team section with a grid of team members.',
   },
   {
     title: 'Testimonial Inline',
@@ -164,7 +251,7 @@ Shipixen landing page components are made so they work well together and can be 
 
 You can combine them to create new sections, or use them individually to add specific elements to your landing page.
 
-<LandingPageGrid />
+<LandingPageGrid showLinkToDocs={false} />
 
 See the overview below and open any of the components to see the code and usage examples.
 
@@ -184,3 +271,7 @@ See the overview below and open any of the components to see the code and usage 
     );
   })}
 </div>
+
+<br />
+
+<PageUiLink />

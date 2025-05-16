@@ -56,6 +56,27 @@ import { LandingFooterColumn } from '@/components/landing/footer/LandingFooterCo
 import { LandingFooterLink } from '@/components/landing/footer/LandingFooterLink';
 import { LandingPricingSection } from '@/components/landing/pricing/LandingPricingSection';
 import { LandingPricingPlan } from '@/components/landing/pricing/LandingPricingPlan';
+import { LandingAppStoreButton } from '@/components/landing/app-store-button/LandingAppStoreButton';
+import { LandingBlogList } from '@/components/landing/blog/LandingBlogList';
+import { LandingBlogPost } from '@/components/landing/blog/LandingBlogPost';
+import { LandingProductSteps } from '@/components/landing/LandingProductSteps';
+import { LandingProblemAgitator } from '@/components/landing/problem-agitator/LandingProblemAgitator';
+import { LandingProblemAgitatorItem } from '@/components/landing/problem-agitator/LandingProblemAgitatorItem';
+import { LandingProblemAgitatorComment } from '@/components/landing/problem-agitator/LandingProblemAgitatorComment';
+import { LandingProductProblemSolution } from '@/components/landing/LandingProductProblemSolution';
+import { LandingStatsSection } from '@/components/landing/stats/LandingStatsSection';
+import { LandingStatItem } from '@/components/landing/stats/LandingStatItem';
+import { LandingVisionMissionSection } from '@/components/landing/about/LandingVisionMissionSection';
+import { LandingAboutSection } from '@/components/landing/about/LandingAboutSection';
+import { LandingTeamSection } from '@/components/landing/team/LandingTeamSection';
+import { LandingTeamMember } from '@/components/landing/team/LandingTeamMember';
+import { LandingBentoGridSection } from '@/components/landing/bento-grid/LandingBentoGridSection';
+import { LandingBentoGridItem } from '@/components/landing/bento-grid/LandingBentoGridItem';
+import { LandingBentoGridIconItem } from '@/components/landing/bento-grid/LandingBentoGridIconItem';
+import { LandingBentoGridNumberItem } from '@/components/landing/bento-grid/LandingBentoGridNumberItem';
+import { LandingBentoGridImageItem } from '@/components/landing/bento-grid/LandingBentoGridImageItem';
+import { LandingProductCardSection } from '@/components/landing/card/LandingProductCardSection';
+import { LandingProductCard } from '@/components/landing/card/LandingProductCard';
 
 import { WrappedVideoPlayer } from '@/components/blog/WrappedVideoPlayer';
 import { GettingStartedGrid } from '@/components/blog/GettingStartedGrid';
@@ -186,6 +207,26 @@ export const components: MDXComponents = {
   LandingFooterLink,
   LandingPricingSection,
   LandingPricingPlan: LandingPricingPlanWrapper,
+  LandingBlogList,
+  LandingBlogPost,
+  LandingProductSteps,
+  LandingProblemAgitator,
+  LandingProblemAgitatorItem,
+  LandingProblemAgitatorComment,
+  LandingProductProblemSolution,
+  LandingStatsSection,
+  LandingStatItem,
+  LandingVisionMissionSection,
+  LandingAboutSection,
+  LandingTeamSection,
+  LandingTeamMember,
+  LandingBentoGridSection,
+  LandingBentoGridItem,
+  LandingBentoGridIconItem,
+  LandingBentoGridNumberItem,
+  LandingBentoGridImageItem,
+  LandingProductCardSection,
+  LandingProductCard,
 
   ChromeIcon,
   FigmaIcon,
