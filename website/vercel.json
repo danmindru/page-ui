@@ -1,0 +1,14 @@
+{
+  "redirects": [
+    {
+      "source": "/boilerplate-documentation",
+      "destination": "/docs",
+      "permanent": true
+    },
+    {
+      "source": "/boilerplate-documentation/:path*",
+      "destination": "/docs/:path*",
+      "permanent": true
+    }
+  ]
+}
