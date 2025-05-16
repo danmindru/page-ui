@@ -13,6 +13,7 @@ import { DemoReadMoreWrapper } from '@/components/blog/DemoReadMoreWrapper';
 import { ComponentExample } from '@/components/blog/CodePreview';
 
 import { Button } from '@/components/shared/ui/button';
+import { Badge } from '@/components/shared/ui/badge';
 
 import { LandingFeature } from '@/components/landing/feature/LandingFeature';
 import { LandingProductVideoFeature } from '@/components/landing/LandingProductVideoFeature';
@@ -164,9 +165,11 @@ export const components: MDXComponents = {
   StepCode,
 
   Button,
+  Badge,
   WrappedVideoPlayer,
 
   DemoReadMoreWrapper,
+  LandingAppStoreButton,
   LandingPrimaryImageCtaSection,
   LandingPrimaryTextCtaSection,
   LandingFeature,
