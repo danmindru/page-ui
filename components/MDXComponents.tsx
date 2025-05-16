@@ -34,7 +34,7 @@ import { LandingSocialProofBand } from '@/components/landing/social-proof/Landin
 import { LandingSocialProofBandItem } from '@/components/landing/social-proof/LandingSocialProofBandItem';
 import { LandingPrimaryImageCtaSection } from '@/components/landing/cta/LandingPrimaryCta';
 import { LandingPrimaryTextCtaSection } from '@/components/landing/cta/LandingPrimaryCta';
-import { LandingPrimaryVideoCtaSection } from '@/components/landing/cta/LandingPrimaryVideoCta';
+import { LandingPrimaryVideoCtaSection } from '@/components/landing/cta/LandingPrimaryCta';
 import { LandingDiscount } from '@/components/landing/discount/LandingDiscount';
 import { LandingProductHuntAward } from '@/components/landing/social-proof/LandingProductHuntAward';
 import { LandingProductFeatureKeyPoints } from '@/components/landing/LandingProductFeatureKeyPoints';
