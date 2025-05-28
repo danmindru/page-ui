@@ -41,10 +41,10 @@ The Stats Section is a versatile component for showcasing key metrics, accomplis
       columnsDesktop={3}
       hasBorders={true}
       stats={[
-        { value: '150+', label: 'projects', description: 'Over 150 projects successfully delivered.' },
-        { value: '9', label: 'team members', description: 'Our core team consists of 9 experts.' },
-        { value: '300+', label: 'freelancers', description: 'We collaborate with 300+ creative freelancers.' },
-        { value: '25+', label: 'awards', description: 'Recognized with 25+ awards and featured in industry publications.' },
+        { value: '150+', label: 'apps', description: 'Over 150 apps successfully delivered.' },
+        { value: '9', label: 'members', description: 'Our core team consists of 9 experts.' },
+        { value: '300+', label: 'devs', description: 'We collaborate with 300+ creative devs.' },
+        { value: '5+', label: 'awards', description: 'Recognized with 5+ awards and featured in industry publications.' },
         { value: '10+', label: 'years experience', description: 'Bringing 10+ years of design experience to every project.' },
         { value: '$25B+', label: 'revenue', description: 'Our work has contributed to over $25 billion in revenue.' }
       ]}
@@ -59,10 +59,10 @@ import { LandingStatsSection } from '@/components/landing/stats/LandingStatsSect
   columnsDesktop={3}
   hasBorders={true}
   stats={[
-    { value: '150+', label: 'projects', description: 'Over 150 projects successfully delivered.' },
-    { value: '9', label: 'team members', description: 'Our core team consists of 9 experts.' },
-    { value: '300+', label: 'freelancers', description: 'We collaborate with 300+ creative freelancers.' },
-    { value: '25+', label: 'awards', description: 'Recognized with 25+ awards and featured in industry publications.' },
+    { value: '150+', label: 'apps', description: 'Over 150 apps successfully delivered.' },
+    { value: '9', label: 'members', description: 'Our core team consists of 9 experts.' },
+    { value: '300+', label: 'devs', description: 'We collaborate with 300+ creative devs.' },
+    { value: '5+', label: 'awards', description: 'Recognized with 5+ awards and featured in industry publications.' },
     { value: '10+', label: 'years experience', description: 'Bringing 10+ years of design experience to every project.' },
     { value: '$25B+', label: 'revenue', description: 'Our work has contributed to over $25 billion in revenue.' }
   ]}
@@ -84,9 +84,9 @@ Basic implementation:
 ```jsx
 <LandingStatsSection
   stats={[
-    { value: '150+', label: 'projects', description: 'Over 150 projects successfully delivered.' },
-    { value: '9', label: 'team members', description: 'Our core team consists of 9 experts.' },
-    { value: '300+', label: 'freelancers', description: 'We collaborate with 300+ creative freelancers.' }
+    { value: '150+', label: 'apps', description: 'Over 150 apps successfully delivered.' },
+    { value: '9', label: 'members', description: 'Our core team consists of 9 experts.' },
+    { value: '300+', label: 'devs', description: 'We collaborate with 300+ creative devs.' }
   ]}
 />
 ```
@@ -99,13 +99,13 @@ Basic implementation:
   previewComponent={
     <LandingStatsSection
       title="Our Achievements"
-      description="We take pride in our accomplishments and the impact we've made across various projects and industries."
+      description="We take pride in our accomplishments and the impact we've made across various apps and industries."
       columnsDesktop={3}
       hasBorders={true}
       stats={[
-        { value: '150+', label: 'projects', description: 'Over 150 projects successfully delivered.' },
-        { value: '9', label: 'team members', description: 'Our core team consists of 9 experts.' },
-        { value: '300+', label: 'freelancers', description: 'We collaborate with 300+ creative freelancers.' }
+        { value: '150+', label: 'apps', description: 'Over 150 apps successfully delivered.' },
+        { value: '9', label: 'members', description: 'Our core team consists of 9 experts.' },
+        { value: '300+', label: 'devs', description: 'We collaborate with 300+ creative devs.' }
       ]}
     />
   }
@@ -116,13 +116,13 @@ import { LandingStatsSection } from '@/components/landing/stats/LandingStatsSect
 
 <LandingStatsSection
   title="Our Achievements"
-  description="We take pride in our accomplishments and the impact we've made across various projects and industries."
+  description="We take pride in our accomplishments and the impact we've made across various apps and industries."
   columnsDesktop={3}
   hasBorders={true}
   stats={[
-    { value: '150+', label: 'projects', description: 'Over 150 projects successfully delivered.' },
-    { value: '9', label: 'team members', description: 'Our core team consists of 9 experts.' },
-    { value: '300+', label: 'freelancers', description: 'We collaborate with 300+ creative freelancers.' }
+    { value: '150+', label: 'apps', description: 'Over 150 apps successfully delivered.' },
+    { value: '9', label: 'members', description: 'Our core team consists of 9 experts.' },
+    { value: '300+', label: 'devs', description: 'We collaborate with 300+ creative devs.' }
   ]}
 />
 ```
@@ -137,9 +137,9 @@ import { LandingStatsSection } from '@/components/landing/stats/LandingStatsSect
       columnsDesktop={3}
       hasBorders={false}
       stats={[
-        { value: '150+', description: 'Over 150 projects successfully delivered.' },
-        { value: '9', label: 'team members', description: 'Our core team consists of 9 experts.' },
-        { value: '300+', label: 'freelancers', description: 'We collaborate with 300+ creative freelancers.' }
+        { value: '150+', description: 'Over 150 apps successfully delivered.' },
+        { value: '9', label: 'members', description: 'Our core team consists of 9 experts.' },
+        { value: '300+', label: 'devs', description: 'We collaborate with 300+ creative devs.' }
       ]}
     />
   }
@@ -152,9 +152,9 @@ import { LandingStatsSection } from '@/components/landing/stats/LandingStatsSect
   columnsDesktop={3}
   hasBorders={false}
   stats={[
-    { value: '150+', label: 'projects', description: 'Over 150 projects successfully delivered.' },
-    { value: '9', label: 'team members', description: 'Our core team consists of 9 experts.' },
-    { value: '300+', label: 'freelancers', description: 'We collaborate with 300+ creative freelancers.' }
+    { value: '150+', label: 'apps', description: 'Over 150 apps successfully delivered.' },
+    { value: '9', label: 'members', description: 'Our core team consists of 9 experts.' },
+    { value: '300+', label: 'devs', description: 'We collaborate with 300+ creative devs.' }
   ]}
 />
 ```
@@ -170,10 +170,10 @@ import { LandingStatsSection } from '@/components/landing/stats/LandingStatsSect
       withBackground={true}
       variant="secondary"
       stats={[
-        { value: '150+', label: 'projects', description: 'Over 150 projects successfully delivered.' },
-        { value: '9', label: 'team members', description: 'Our core team consists of 9 experts.' },
-        { value: '300+', label: 'freelancers', description: 'We collaborate with 300+ creative freelancers.' },
-        { value: '25+', label: 'awards', description: 'Recognized with 25+ awards and featured in industry publications.' }
+        { value: '150+', label: 'apps', description: 'Over 150 apps successfully delivered.' },
+        { value: '9', label: 'members', description: 'Our core team consists of 9 experts.' },
+        { value: '300+', label: 'devs', description: 'We collaborate with 300+ creative devs.' },
+        { value: '5+', label: 'awards', description: 'Recognized with 5+ awards and featured in industry publications.' }
       ]}
     />
   }
@@ -187,10 +187,10 @@ import { LandingStatsSection } from '@/components/landing/stats/LandingStatsSect
   withBackground={true}
   variant="secondary"
   stats={[
-    { value: '150+', label: 'projects', description: 'Over 150 projects successfully delivered.' },
-    { value: '9', label: 'team members', description: 'Our core team consists of 9 experts.' },
-    { value: '300+', label: 'freelancers', description: 'We collaborate with 300+ creative freelancers.' },
-    { value: '25+', label: 'awards', description: 'Recognized with 25+ awards and featured in industry publications.' }
+    { value: '150+', label: 'apps', description: 'Over 150 apps successfully delivered.' },
+    { value: '9', label: 'members', description: 'Our core team consists of 9 experts.' },
+    { value: '300+', label: 'devs', description: 'We collaborate with 300+ creative devs.' },
+    { value: '5+', label: 'awards', description: 'Recognized with 5+ awards and featured in industry publications.' }
   ]}
 />
 ```
@@ -207,10 +207,10 @@ import { LandingStatsSection } from '@/components/landing/stats/LandingStatsSect
       withBackgroundGlow={true}
       backgroundGlowVariant="secondary"
       stats={[
-        { value: '150+', label: 'projects', description: 'Over 150 projects successfully delivered.' },
-        { value: '9', label: 'team members', description: 'Our core team consists of 9 experts.' },
-        { value: '300+', label: 'freelancers', description: 'We collaborate with 300+ creative freelancers.' },
-        { value: '25+', label: 'awards', description: 'Recognized with 25+ awards and featured in industry publications.' }
+        { value: '150+', label: 'apps', description: 'Over 150 apps successfully delivered.' },
+        { value: '9', label: 'members', description: 'Our core team consists of 9 experts.' },
+        { value: '300+', label: 'devs', description: 'We collaborate with 300+ creative devs.' },
+        { value: '5+', label: 'awards', description: 'Recognized with 5+ awards and featured in industry publications.' }
       ]}
     />
   }
@@ -225,10 +225,10 @@ import { LandingStatsSection } from '@/components/landing/stats/LandingStatsSect
   withBackgroundGlow={true}
   backgroundGlowVariant="secondary"
   stats={[
-    { value: '150+', label: 'projects', description: 'Over 150 projects successfully delivered.' },
-    { value: '9', label: 'team members', description: 'Our core team consists of 9 experts.' },
-    { value: '300+', label: 'freelancers', description: 'We collaborate with 300+ creative freelancers.' },
-    { value: '25+', label: 'awards', description: 'Recognized with 25+ awards and featured in industry publications.' }
+    { value: '150+', label: 'apps', description: 'Over 150 apps successfully delivered.' },
+    { value: '9', label: 'members', description: 'Our core team consists of 9 experts.' },
+    { value: '300+', label: 'devs', description: 'We collaborate with 300+ creative devs.' },
+    { value: '5+', label: 'awards', description: 'Recognized with 5+ awards and featured in industry publications.' }
   ]}
 />
 ```
@@ -246,10 +246,10 @@ For example, you can use 4 columns on desktop and 1 column on mobile.
       columnsDesktop={4}
       columnsMobile={1}
       stats={[
-        { value: '150+', label: 'projects', description: 'Projects delivered in the last 12 months.' },
-        { value: '9', label: 'designers', description: 'That are part of our team.' },
+        { value: '15+', label: 'apps', description: 'Projects delivered in the last 12 months.' },
+        { value: '9', label: 'people', description: 'That are part of our team.' },
         { value: '30+', label: 'devs', description: 'Developers that we work with.' },
-        { value: '25+', label: 'awards', description: 'Industry awards since 2010.' }
+        { value: '5+', label: 'prizes', description: 'Industry prizes since 2010.' }
       ]}
     />
   }
@@ -262,10 +262,10 @@ import { LandingStatsSection } from '@/components/landing/stats/LandingStatsSect
   columnsDesktop={4}
   columnsMobile={1}
   stats={[
-    { value: '150+', label: 'projects', description: 'Projects delivered in the last 12 months.' },
-    { value: '9', label: 'designers', description: 'That are part of our team.' },
+    { value: '15+', label: 'apps', description: 'Projects delivered in the last 12 months.' },
+    { value: '9', label: 'people', description: 'That are part of our team.' },
     { value: '30+', label: 'devs', description: 'Developers that we work with.' },
-    { value: '25+', label: 'awards', description: 'Industry awards since 2010.' }
+    { value: '5+', label: 'prizes', description: 'Industry prizes since 2010.' }
   ]}
 />
 ```
@@ -278,22 +278,22 @@ You can also use `LandingStatItem` directly for more control:
 
 <ComponentExample
   previewComponent={
-    <div className="grid grid-cols-2 md:grid-cols-3 border-l border-t border-gray-200 dark:border-gray-800">
+    <div className="grid grid-cols-2 md:grid-cols-3">
       <LandingStatItem
         value="150+"
-        label="projects"
-        description="Over 150 projects successfully delivered."
+        label="apps"
+        description="Over 150 apps successfully delivered."
       />
       <LandingStatItem
         value="9"
-        label="team members"
+        label="members"
         description="Our core team consists of 9 experts."
         variant="secondary"
       />
       <LandingStatItem
         value="300+"
-        label="freelancers"
-        description="We collaborate with 300+ creative freelancers."
+        label="devs"
+        description="We collaborate with 300+ creative devs."
       />
     </div>
   }
@@ -302,22 +302,22 @@ You can also use `LandingStatItem` directly for more control:
 ```jsx
 import { LandingStatItem } from '@/components/landing/stats/LandingStatItem';
 
-<div className="grid grid-cols-2 md:grid-cols-3 border-l border-t border-gray-200 dark:border-gray-800">
+<div className="grid grid-cols-2 md:grid-cols-3">
   <LandingStatItem
     value="150+"
-    label="projects"
-    description="Over 150 projects successfully delivered."
+    label="apps"
+    description="Over 150 apps successfully delivered."
   />
   <LandingStatItem
     value="9"
-    label="team members"
+    label="members"
     description="Our core team consists of 9 experts."
     variant="secondary"
   />
   <LandingStatItem
     value="300+"
-    label="creative freelancers"
-    description="We collaborate with 300+ creative freelancers."
+    label="creative devs"
+    description="We collaborate with 300+ creative devs."
   />
 </div>
 ```

@@ -223,7 +223,7 @@ This example combines the About Section, Vision & Mission Section, and Stats Sec
         hasBorders={true}
         stats={[
           { value: '150+', description: 'Over 150 projects successfully delivered.' },
-          { value: '9', label: 'team members', description: 'Our core team consists of 9 experts.' },
+          { value: '9', label: 'members', description: 'Our core team consists of 9 experts.' },
           { value: '300+', label: 'creative freelancers', description: 'We collaborate with 300+ creative freelancers.' },
           { value: '25+', label: 'awards & featured', description: 'Recognized with 25+ awards and featured in industry publications.' },
           { value: '10+', label: 'years experience', description: 'Bringing 10+ years of design experience to every project.' },
@@ -263,7 +263,7 @@ import { LandingStatsSection } from '@/components/landing/stats/LandingStatsSect
     hasBorders={true}
     stats={[
       { value: '150+', description: 'Over 150 projects successfully delivered.' },
-      { value: '9', label: 'team members', description: 'Our core team consists of 9 experts.' },
+      { value: '9', label: 'members', description: 'Our core team consists of 9 experts.' },
       { value: '300+', label: 'creative freelancers', description: 'We collaborate with 300+ creative freelancers.' },
       { value: '25+', label: 'awards & featured', description: 'Recognized with 25+ awards and featured in industry publications.' },
       { value: '10+', label: 'years experience', description: 'Bringing 10+ years of design experience to every project.' },
@@ -301,7 +301,7 @@ import { LandingStatsSection } from '@/components/landing/stats/LandingStatsSect
       <div className="py-8">
         <div className="container-wide px-6">
           <h2 className="w-full text-3xl font-semibold mb-6 text-left">Key Statistics</h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 border-l border-t border-gray-200 dark:border-gray-800">
+          <div className="grid grid-cols-2 md:grid-cols-3">
             <LandingStatItem
               value="150+"
               label="projects"
@@ -310,9 +310,9 @@ import { LandingStatsSection } from '@/components/landing/stats/LandingStatsSect
             />
             <LandingStatItem
               value="9"
-              label="team members"
-              description="Dedicated team members"
-              variant="secondary"
+              label="members"
+              description="Dedicated members"
+              variant="primary"
             />
             <LandingStatItem
               value="10+"
@@ -342,7 +342,7 @@ import { LandingStatItem } from '@/components/landing/stats/LandingStatItem';
   <div className="py-8">
     <div className="container-wide px-6">
       <h2 className="w-full text-3xl font-semibold mb-6 text-left">Key Statistics</h2>
-      <div className="grid grid-cols-2 md:grid-cols-3 border-l border-t border-gray-200 dark:border-gray-800">
+      <div className="grid grid-cols-2 md:grid-cols-3">
         <LandingStatItem
           value="150+"
           label="projects"
@@ -351,9 +351,9 @@ import { LandingStatItem } from '@/components/landing/stats/LandingStatItem';
         />
         <LandingStatItem
           value="9"
-          label="team members"
-          description="Dedicated team members"
-          variant="secondary"
+          label="members"
+          description="Dedicated members"
+          variant="primary"
         />
         <LandingStatItem
           value="10+"
