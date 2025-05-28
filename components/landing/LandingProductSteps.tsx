@@ -22,7 +22,7 @@ export const LandingProductSteps = ({
   withBackgroundGlow = false,
   variant = 'primary',
   backgroundGlowVariant = 'primary',
-  containerType = 'ultrawide',
+  containerType = 'wide',
   display = 'list',
 }: {
   className?: string;
@@ -38,7 +38,7 @@ export const LandingProductSteps = ({
   containerType?: 'narrow' | 'wide' | 'ultrawide';
   display?: 'list' | 'grid';
 }) => {
-  const childrenWithBackground = Children.map(children, (child, index) => {
+  const childrenWithProps = Children.map(children, (child, index) => {
     if (!child) {
       return null;
     }
@@ -71,6 +71,7 @@ export const LandingProductSteps = ({
         display === 'grid' ? 'md:-mt-6' : '',
         reactChild.props.imageClassName,
       ),
+      containerType: reactChild.props.containerType || containerType,
       ...(reactChildType === LandingProductFeature
         ? {
             imagePosition: display === 'grid' ? 'center' : mediaPosition,
@@ -114,7 +115,7 @@ export const LandingProductSteps = ({
           )}
         >
           {title ? (
-            <h2 className="w-full text-3xl font-semibold leading-tight md:leading-tight max-w-sm sm:max-w-none md:text-4xl lg:text-5xl">
+            <h2 className="w-full text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight md:leading-tight max-w-sm sm:max-w-none">
               {title}
             </h2>
           ) : (
@@ -136,7 +137,7 @@ export const LandingProductSteps = ({
           display === 'list' ? 'flex flex-col' : 'grid lg:grid-cols-3',
         )}
       >
-        {childrenWithBackground}
+        {childrenWithProps}
       </div>
     </section>
   );

@@ -81,7 +81,7 @@ export const LandingFooter = ({
             </Link>
 
             {title ? (
-              <div className="text-lg font-semibold h-full">{title}</div>
+              <div className="text-lg font-semibold">{title}</div>
             ) : null}
 
             {description ? (

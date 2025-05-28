@@ -116,7 +116,7 @@ export const LandingPricingPlan = ({
           <span
             className={clsx(
               featured ? 'text-white dark:text-black' : '',
-              'text-4xl font-bold tracking-tight',
+              'text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight',
               discountPrice ? 'line-through' : '',
             )}
           >

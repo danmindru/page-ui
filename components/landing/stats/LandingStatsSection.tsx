@@ -83,7 +83,7 @@ export function LandingStatsSection({
             )}
           >
             {title ? (
-              <h2 className="text-3xl md:text-4xl font-semibold leading-tight">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight">
                 {title}
               </h2>
             ) : (
@@ -102,28 +102,14 @@ export function LandingStatsSection({
 
         <div
           className={clsx(
-            'w-full grid border-l border-t border-gray-200 dark:border-gray-800',
+            'w-full grid gap-4',
             columnsMobile === 1 ? 'grid-cols-1' : 'grid-cols-2',
             columnsDesktop === 2 ? 'md:grid-cols-2' : '',
             columnsDesktop === 3 ? 'md:grid-cols-3' : '',
             columnsDesktop === 4 ? 'md:grid-cols-4' : '',
-            !hasBorders && 'border-none',
           )}
         >
           {stats?.map((stat, index) => {
-            // Calculate if this is the last item in a row for mobile and desktop
-            const isLastInMobileRow =
-              columnsMobile === 1 ? true : index % 2 === 1;
-            const isLastInDesktopRow =
-              (columnsDesktop === 2 && index % 2 === 1) ||
-              (columnsDesktop === 3 && index % 3 === 2) ||
-              (columnsDesktop === 4 && index % 4 === 3);
-
-            // Calculate if this is in the last row
-            const totalRows = Math.ceil(stats.length / columnsDesktop);
-            const currentRow = Math.floor(index / columnsDesktop) + 1;
-            const isLastRow = currentRow === totalRows;
-
             return (
               <LandingStatItem
                 key={index}
@@ -132,12 +118,6 @@ export function LandingStatsSection({
                 description={stat.description}
                 variant={variant}
                 hasBorder={hasBorders}
-                className={clsx(
-                  hasBorders && 'md:last:border-r-0 md:last:border-b-0',
-                  hasBorders && isLastInMobileRow && 'border-r-0 sm:border-r',
-                  hasBorders && isLastInDesktopRow && 'md:border-r-0',
-                  hasBorders && isLastRow && 'md:border-b-0',
-                )}
               />
             );
           })}

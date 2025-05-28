@@ -76,7 +76,7 @@ export function LandingAboutSection({
             )}
           >
             {title ? (
-              <h1 className="text-4xl md:text-5xl font-semibold leading-tight">
+              <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight">
                 {title}
               </h1>
             ) : (

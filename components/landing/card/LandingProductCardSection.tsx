@@ -80,7 +80,7 @@ export function LandingProductCardSection({
       >
         {titleComponent ||
           (title && (
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight mb-4">
               {title}
             </h2>
           ))}

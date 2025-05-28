@@ -100,7 +100,7 @@ export const LandingProductFeaturesGrid = ({
           )}
         >
           {title ? (
-            <h2 className="w-full text-3xl font-semibold leading-tight md:leading-tight max-w-sm sm:max-w-none md:text-4xl lg:text-5xl">
+            <h2 className="w-full text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight md:leading-tight max-w-sm sm:max-w-none">
               {title}
             </h2>
           ) : (

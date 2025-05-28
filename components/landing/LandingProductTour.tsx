@@ -63,7 +63,7 @@ const LandingProductTourSection = React.forwardRef<
 
       <div className={clsx(className, 'wide-container')}>
         {title ? (
-          <h2 className="text-3xl font-semibold leading-tight max-w-xs sm:max-w-none md:text-4xl lg:text-5xl fancyHeading">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight max-w-xs sm:max-w-none fancyHeading">
             {title}
           </h2>
         ) : (
@@ -136,7 +136,7 @@ const LandingProductTourContent = React.forwardRef<
   <TabsPrimitive.Content
     ref={ref}
     className={cn(
-      'w-full mt-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2',
+      'w-full max-w-[500px] mt-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2',
       className,
     )}
     {...props}

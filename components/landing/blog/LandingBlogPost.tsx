@@ -47,7 +47,7 @@ export const LandingBlogPost = ({
   return (
     <div
       className={clsx(
-        'flex group h-full bg-white dark:bg-gray-900 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-gray-200 dark:border-gray-800',
+        'flex group bg-white dark:bg-gray-900 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-gray-200 dark:border-gray-800',
         isHorizontalLayout ? 'flex-col-reverse md:flex-row' : 'flex-col',
       )}
     >

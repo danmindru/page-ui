@@ -100,7 +100,7 @@ export const LandingBlogList = ({
             )}
           >
             {title ? (
-              <h2 className="text-3xl md:text-4xl font-semibold leading-tight">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight">
                 {title}
               </h2>
             ) : (

@@ -82,7 +82,9 @@ export function LandingProductProblemSolution({
             )}
           >
             {title ? (
-              <h2 className="text-4xl font-semibold leading-tight">{title}</h2>
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight">
+                {title}
+              </h2>
             ) : (
               titleComponent
             )}
@@ -96,49 +98,53 @@ export function LandingProductProblemSolution({
         ) : null}
 
         <div className="w-full grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-12 max-w-2xl">
-          <div
-            className={clsx(
-              'flex flex-col bg-red-100/50 dark:bg-red-950/50 py-6 px-4 rounded-lg',
-              textPosition === 'left' ? 'px-6' : '',
-            )}
-          >
-            {problemTitle ? (
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-6">
-                {problemTitle}
-              </h3>
-            ) : null}
-            {problemTitleComponent ? problemTitleComponent : null}
+          {problems.length ? (
+            <div
+              className={clsx(
+                'flex flex-col bg-red-100/50 dark:bg-red-950/50 py-6 px-4 rounded-lg',
+                textPosition === 'left' ? 'px-6' : '',
+              )}
+            >
+              {problemTitle ? (
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-6">
+                  {problemTitle}
+                </h3>
+              ) : null}
+              {problemTitleComponent ? problemTitleComponent : null}
 
-            <LandingProductFeatureKeyPoints
-              keyPoints={problems}
-              variant={variant}
-              icon={<XIcon />}
-              iconClassName="!text-red-500"
-              className="!mt-0"
-            />
-          </div>
+              <LandingProductFeatureKeyPoints
+                keyPoints={problems}
+                variant={variant}
+                icon={<XIcon />}
+                iconClassName="!text-red-500"
+                className="!mt-0 text-left"
+              />
+            </div>
+          ) : null}
 
-          <div
-            className={clsx(
-              'flex flex-col bg-green-100/50 dark:bg-green-950/50 py-6 px-4 rounded-lg',
-              textPosition === 'left' ? 'px-6' : '',
-            )}
-          >
-            {solutionTitle ? (
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-6">
-                {solutionTitle}
-              </h3>
-            ) : null}
-            {solutionTitleComponent ? solutionTitleComponent : null}
+          {solutions.length ? (
+            <div
+              className={clsx(
+                'flex flex-col bg-green-100/50 dark:bg-green-950/50 py-6 px-4 rounded-lg',
+                textPosition === 'left' ? 'px-6' : '',
+              )}
+            >
+              {solutionTitle ? (
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-6">
+                  {solutionTitle}
+                </h3>
+              ) : null}
+              {solutionTitleComponent ? solutionTitleComponent : null}
 
-            <LandingProductFeatureKeyPoints
-              keyPoints={solutions}
-              variant={variant}
-              icon={<CheckIcon />}
-              iconClassName="!text-green-500"
-              className="!mt-0"
-            />
-          </div>
+              <LandingProductFeatureKeyPoints
+                keyPoints={solutions}
+                variant={variant}
+                icon={<CheckIcon />}
+                iconClassName="!text-green-500"
+                className="!mt-0 text-left"
+              />
+            </div>
+          ) : null}
         </div>
       </div>
     </section>

@@ -48,7 +48,7 @@ export const LandingTestimonialListSection = ({
     >
       <div className="w-full p-6 max-w-full container-wide relative flex flex-col items-center">
         {title ? (
-          <h2 className="text-center text-3xl font-semibold leading-tight md:leading-tight max-w-xs sm:max-w-none md:text-4xl lg:text-5xl">
+          <h2 className="text-center text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight md:leading-tight max-w-xs sm:max-w-none">
             {title}
           </h2>
         ) : (
