@@ -38,7 +38,7 @@ export function LandingProductCard({
   href,
 }: ProductCardProps) {
   const cardClasses = clsx(
-    'group flex flex-row md:flex-col gap-4 p-4 rounded-xl border shadow-sm transition-all duration-200 overflow-hidden h-full',
+    'relative group flex flex-row md:flex-col gap-4 rounded-xl border shadow-sm transition-all duration-200 overflow-hidden h-full',
     featured && 'border-2 shadow-md',
     featured &&
       variant === 'primary' &&
@@ -70,14 +70,18 @@ export function LandingProductCard({
       )}
 
       {/* Content section */}
-      <div className="flex-1 flex flex-col justify-between gap-4">
-        {topComponent && <div>{topComponent}</div>}
+      <div className="flex-1 flex flex-col justify-between gap-4 px-4 pb-4">
+        {topComponent && (
+          <div className="absolute left-0 top-2 w-full flex items center justify-center">
+            {topComponent}
+          </div>
+        )}
 
-        <div className="space-y-2">
+        <div className="text-left space-y-2">
           {titleComponent || (
             <h3
               className={clsx(
-                'text-lg md:text-xl font-medium',
+                'md:text-lg font-medium',
                 featured && 'font-bold',
               )}
             >
@@ -87,20 +91,16 @@ export function LandingProductCard({
 
           {descriptionComponent ||
             (description && (
-              <p className="text-sm text-gray-600 dark:text-gray-300 line-clamp-3">
+              <p className="text-xs md:text-sm text-gray-600 dark:text-gray-300 line-clamp-3">
                 {description}
               </p>
             ))}
         </div>
 
-        {bottomComponent && (
-          <div className="flex justify-center">{bottomComponent}</div>
-        )}
+        {bottomComponent && <div className="flex">{bottomComponent}</div>}
 
         {actionComponent && (
-          <div className="flex justify-center mt-auto pt-2">
-            {actionComponent}
-          </div>
+          <div className="flex flex-col mt-auto pt-2">{actionComponent}</div>
         )}
       </div>
     </Component>
