@@ -356,14 +356,14 @@ Demonstrate using the `topComponent` and `bottomComponent` props to add custom c
         title="Premium Chair"
         description="Ergonomic office chair with adjustable height and lumbar support."
         imageSrc="/static/images/backdrop-16.webp"
-        topComponent={<Badge className="mb-2">New Arrival</Badge>}
+        topComponent={<Badge>New Arrival</Badge>}
         actionComponent={<Button className="w-full">Add to Cart</Button>}
       />
       <LandingProductCard
         title="Standing Desk"
         description="Height-adjustable standing desk with memory presets."
         imageSrc="/static/images/backdrop-17.webp"
-        topComponent={<Badge variant="outline" className="mb-2">Bestseller</Badge>}
+        topComponent={<Badge variant="destructive">Bestseller</Badge>}
         bottomComponent={<div className="flex justify-center"><LandingRating /></div>}
         actionComponent={<Button className="w-full">View Details</Button>}
       />
@@ -371,8 +371,8 @@ Demonstrate using the `topComponent` and `bottomComponent` props to add custom c
         title="Desk Lamp"
         description="Adjustable desk lamp with wireless charging base."
         imageSrc="/static/images/backdrop-18.webp"
-        topComponent={<Badge variant="secondary" className="mb-2">Limited Edition</Badge>}
-        bottomComponent={<div className="mt-2 text-sm font-medium text-green-600">In stock - ships in 24 hours</div>}
+        topComponent={<Badge variant="secondary">Limited Edition</Badge>}
+        bottomComponent={<div className="text-sm font-medium text-green-600">In stock - ships in 24 hours</div>}
         actionComponent={<Button className="w-full">Buy Now</Button>}
       />
     </LandingProductCardSection>
@@ -392,14 +392,14 @@ import { Badge } from '@/components/shared/ui/badge';
     title="Premium Chair"
     description="Ergonomic office chair with adjustable height and lumbar support."
     imageSrc="/static/images/backdrop-16.webp"
-    topComponent={<Badge className="mb-2">New Arrival</Badge>}
+    topComponent={<Badge>New Arrival</Badge>}
     actionComponent={<Button className="w-full">Add to Cart</Button>}
   />
   <LandingProductCard
     title="Standing Desk"
     description="Height-adjustable standing desk with memory presets."
     imageSrc="/static/images/backdrop-17.webp"
-    topComponent={<Badge variant="outline" className="mb-2">Bestseller</Badge>}
+    topComponent={<Badge variant="destructive">Bestseller</Badge>}
     bottomComponent={<div className="flex justify-center"><LandingRating /></div>}
     actionComponent={<Button className="w-full">View Details</Button>}
   />
@@ -407,8 +407,8 @@ import { Badge } from '@/components/shared/ui/badge';
     title="Desk Lamp"
     description="Adjustable desk lamp with wireless charging base."
     imageSrc="/static/images/backdrop-18.webp"
-    topComponent={<Badge variant="secondary" className="mb-2">Limited Edition</Badge>}
-    bottomComponent={<div className="mt-2 text-sm font-medium text-green-600">In stock - ships in 24 hours</div>}
+    topComponent={<Badge variant="secondary">Limited Edition</Badge>}
+    bottomComponent={<div className="text-sm font-medium text-green-600">In stock - ships in 24 hours</div>}
     actionComponent={<Button className="w-full">Buy Now</Button>}
   />
 </LandingProductCardSection>
