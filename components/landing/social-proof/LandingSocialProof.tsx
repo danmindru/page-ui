@@ -5,6 +5,18 @@ import {
 } from '@/components/landing/social-proof/LandingAvatar';
 import { LandingRating } from '@/components/landing/rating/LandingRating';
 
+const getFormattedNumberOfUsers = (numberOfUsers: number) => {
+  if (numberOfUsers >= 500000) {
+    return `${(numberOfUsers / 500000).toFixed(0)}M`;
+  }
+
+  if (numberOfUsers >= 1000) {
+    return `${(numberOfUsers / 1000).toFixed(0)}k`;
+  }
+
+  return `${numberOfUsers}`;
+};
+
 /**
  * Shows social proof with avatars, number of users and an optional rating.
  *
@@ -14,7 +26,7 @@ export const LandingSocialProof = ({
   children,
   className,
   avatarItems,
-  numberOfUsers = 100,
+  numberOfUsers = 169,
   suffixText = 'happy users',
   showRating,
   disableAnimation,
@@ -29,10 +41,7 @@ export const LandingSocialProof = ({
   disableAnimation?: boolean;
   size?: 'small' | 'medium' | 'large';
 }) => {
-  const numberText =
-    numberOfUsers > 1000
-      ? `${(numberOfUsers / 1000).toFixed(0)}k`
-      : `${numberOfUsers}`;
+  const numberText = getFormattedNumberOfUsers(numberOfUsers);
 
   return (
     <div className={clsx('flex flex-wrap gap-2', className)}>
