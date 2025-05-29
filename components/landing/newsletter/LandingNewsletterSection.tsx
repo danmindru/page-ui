@@ -27,6 +27,7 @@ export const LandingNewsletterSection = ({
   withAvatars = false,
   variant = 'primary',
   backgroundGlowVariant = 'primary',
+  disabled = false,
   onSubmit = () => {},
 }: {
   children?: React.ReactNode;
@@ -46,6 +47,7 @@ export const LandingNewsletterSection = ({
   withAvatars?: boolean;
   variant?: 'primary' | 'secondary';
   backgroundGlowVariant?: 'primary' | 'secondary';
+  disabled?: boolean;
   onSubmit?: (e: React.FormEvent<HTMLFormElement>) => void;
 }) => {
   return (
@@ -75,7 +77,7 @@ export const LandingNewsletterSection = ({
 
       <div
         className={clsx(
-          'container-wide w-full p-6 flex flex-col items-center justify-center relative',
+          'container-wide w-full pt-12 p-6 flex flex-col items-center justify-center relative',
           innerClassName,
         )}
         style={{
@@ -172,6 +174,7 @@ export const LandingNewsletterSection = ({
             buttonLabel={buttonLabel}
             placeholderLabel={placeholderLabel}
             inputLabel={inputLabel}
+            disabled={disabled}
           />
 
           {children}

@@ -14,6 +14,7 @@ export const LandingNewsletterInput = ({
   placeholderLabel = 'Enter your email',
   inputLabel = 'Email address',
   variant = 'primary',
+  disabled = false,
   onSubmit = () => {},
 }: {
   className?: string;
@@ -21,6 +22,7 @@ export const LandingNewsletterInput = ({
   placeholderLabel?: string;
   inputLabel?: string;
   variant?: 'primary' | 'secondary';
+  disabled?: boolean;
   onSubmit?: (e: React.FormEvent<HTMLFormElement>) => void;
 }) => {
   return (
@@ -38,13 +40,20 @@ export const LandingNewsletterInput = ({
         <Input
           type="email"
           id="email"
+          name="email"
           placeholder={placeholderLabel}
           required
           className="w-full"
+          disabled={disabled}
         />
       </div>
 
-      <Button type="submit" className="w-full sm:w-auto" variant={variant}>
+      <Button
+        type="submit"
+        className="w-full sm:w-auto"
+        variant={variant}
+        disabled={disabled}
+      >
         {buttonLabel}
       </Button>
     </form>
