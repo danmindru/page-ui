@@ -68,3 +68,6 @@ export { LandingBentoGridNumberItem } from '@/components/landing/bento-grid/Land
 export { LandingBentoGridImageItem } from '@/components/landing/bento-grid/LandingBentoGridImageItem';
 export { LandingProductCardSection } from '@/components/landing/card/LandingProductCardSection';
 export { LandingProductCard } from '@/components/landing/card/LandingProductCard';
+export { LandingPriceComparisonSection } from '@/components/landing/pricing-comparison/LandingPriceComparisonSection';
+export { LandingPriceComparisonColumn } from '@/components/landing/pricing-comparison/LandingPriceComparisonColumn';
+export { LandingPriceComparisonItem } from '@/components/landing/pricing-comparison/LandingPriceComparisonItem';
