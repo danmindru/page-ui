@@ -1,7 +1,7 @@
 ---
 title: 'Landing Page Newsletter Section'
 date: '2025-02-23'
-lastmod: '2025-02-23'
+lastmod: '2025-05-29'
 tags:
   - 'guide'
   - 'components'
@@ -64,7 +64,7 @@ This component displays a newsletter subscription form. On smaller screens, the 
 >
 
 ```jsx
-import { LandingNewsletterSection } from '@/components/landing/LandingNewsletterSection';
+import { LandingNewsletterSection } from '@/components/landing/newsletter/LandingNewsletterSection';
 
 <LandingNewsletterSection
   title="Never miss an update!"
@@ -98,7 +98,7 @@ import { LandingNewsletterSection } from '@/components/landing/LandingNewsletter
 ## Usage
 
 ```jsx
-import { LandingNewsletterSection } from '@/components/landing/LandingNewsletterSection';
+import { LandingNewsletterSection } from '@/components/landing/newsletter/LandingNewsletterSection';
 ```
 
 ```jsx
@@ -225,8 +225,11 @@ Showing user images is a great way to add social proof to your newsletter sectio
 | **withAvatars** <Tippy>Whether to display user images.</Tippy> | `boolean` | No | `true` |
 | **variant** <Tippy>Determines the section's visual style.</Tippy> | `'primary'` ǀ `'secondary'` | No | `'primary'` |
 | **backgroundGlowVariant** <Tippy>Determines the glow background style.</Tippy> | `'primary'` ǀ `'secondary'` | No | `'primary'` |
+| **disabled** <Tippy>Whether to disable the component.</Tippy> | `boolean` | No | `false` |
 | **onSubmit** <Tippy>Callback function triggered on form submission.</Tippy> | `(e: React.FormEvent<HTMLFormElement>) => void` | No | `() => {}` |
 
 ## More Examples
 
 For more even more examples, see our <a href="/demo/landing-page-component-examples" className="fancy-link">Landing Page Component Examples</a> page or see complete landing page examples by <a href="/demo/landing-page-templates" className="fancy-link">Exploring Our Landing Page Templates</a>.
+
+To see how to configure the newsletter component, see our [Configuring the Newsletter Component](/boilerplate-documentation/configuring-newsletter-component) guide.
