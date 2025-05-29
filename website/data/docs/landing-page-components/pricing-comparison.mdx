@@ -1,0 +1,905 @@
+---
+title: 'Landing Page Price Comparison'
+date: '2025-05-29'
+lastmod: '2025-05-29'
+tags:
+  - 'guide'
+  - 'components'
+  - 'documentation'
+  - 'landing-page'
+  - 'ui-library'
+  - 'react'
+  - 'nextjs'
+  - 'tailwind-css'
+  - 'pricing'
+  - 'comparison'
+  - 'features'
+  - 'product-comparison'
+  - 'shadcn-ui'
+  - 'shadcn-ui-landing-page'
+summary: 'A comprehensive price comparison component that allows you to compare features across 2-5 products or services with customizable headers, footers, and feature lists.'
+layout: PostHub
+
+# images:
+#   - '/static/images/blog/docs/pricing-comparison-preview.webp'
+
+showThemeSelector: true
+showInstallNotice: true
+
+canonicalUrl: 'https://shipixen.com/boilerplate-documentation/landing-page-components/pricing-comparison'
+---
+
+A versatile price comparison section that enables you to showcase feature differences across multiple products or services. Perfect for SaaS feature comparison pages, product comparisons, and feature matrices.
+
+The component supports 2-5 comparison columns, each with customizable headers, feature lists, and optional footers. Featured columns can be highlighted to draw attention to preferred options.
+
+<ComponentExample
+  previewComponent={
+    <LandingPriceComparisonSection
+      title="How we compare"
+      description="See how our product stacks up against the competition"
+    >
+      <LandingPriceComparisonColumn
+        featured
+        headerComponent={
+          <div className="flex items-center gap-2">
+            <ChromeIcon className="w-6 h-6" />
+            <span>Our Product</span>
+          </div>
+        }
+        footer="$29 /mo"
+      >
+        <LandingPriceComparisonItem
+          state="check"
+          text="10 projects"
+        />
+        <LandingPriceComparisonItem
+          state="check"
+          text="24/7 support"
+        />
+        <LandingPriceComparisonItem
+          state="check"
+          text="Analytics"
+        />
+      </LandingPriceComparisonColumn>
+
+      <LandingPriceComparisonColumn
+        header="Competitor A"
+        footer="$49 /mo"
+      >
+        <LandingPriceComparisonItem state="cross" text="10 projects" />
+        <LandingPriceComparisonItem state="check" text="24/7 support" />
+        <LandingPriceComparisonItem state="cross" text="Analytics" />
+      </LandingPriceComparisonColumn>
+
+      <LandingPriceComparisonColumn
+        header="Competitor B"
+        footer="$39 /mo"
+      >
+        <LandingPriceComparisonItem state="check" text="10 projects" />
+        <LandingPriceComparisonItem state="cross" text="24/7 support" />
+        <LandingPriceComparisonItem state="check" text="Analytics" />
+      </LandingPriceComparisonColumn>
+    </LandingPriceComparisonSection>
+  }
+>
+
+```jsx
+import {
+  LandingPriceComparisonSection,
+  LandingPriceComparisonColumn,
+  LandingPriceComparisonItem,
+} from '@/components/landing';
+
+<LandingPriceComparisonSection
+  title="How we compare"
+  description="See how our product stacks up against the competition"
+>
+  <LandingPriceComparisonColumn
+    featured
+    headerComponent={
+      <div className="flex items-center gap-2">
+        <ChromeIcon className="w-6 h-6" />
+        <span>Our Product</span>
+      </div>
+    }
+    footer="$29 /mo"
+  >
+      <LandingPriceComparisonItem
+        state="check"
+        text="10 projects"
+      />
+      <LandingPriceComparisonItem
+        state="check"
+        text="24/7 support"
+      />
+      <LandingPriceComparisonItem
+        state="check"
+        text="Analytics"
+      />
+  </LandingPriceComparisonColumn>
+
+  <LandingPriceComparisonColumn
+    header="Competitor A"
+    footer="$49 /mo"
+  >
+    <LandingPriceComparisonItem state="cross" text="10 projects" />
+    <LandingPriceComparisonItem state="check" text="24/7 support" />
+    <LandingPriceComparisonItem state="cross" text="Analytics" />
+  </LandingPriceComparisonColumn>
+
+  <LandingPriceComparisonColumn
+    header="Competitor B"
+    footer="$39 /mo"
+  >
+    <LandingPriceComparisonItem state="check" text="10 projects" />
+    <LandingPriceComparisonItem state="cross" text="24/7 support" />
+    <LandingPriceComparisonItem state="check" text="Analytics" />
+  </LandingPriceComparisonColumn>
+</LandingPriceComparisonSection>
+```
+
+</ComponentExample>
+
+## Usage
+
+```js
+import {
+  LandingPriceComparisonSection,
+  LandingPriceComparisonColumn,
+  LandingPriceComparisonItem,
+} from '@/components/landing';
+```
+
+```jsx
+<LandingPriceComparisonSection
+  title="Product Comparison"
+  description="Compare features across different plans"
+>
+  <LandingPriceComparisonColumn
+    featured
+    header="Premium Plan"
+    footer="$99/month"
+  >
+    <LandingPriceComparisonItem
+      state="check"
+      text="All features included"
+    />
+  </LandingPriceComparisonColumn>
+</LandingPriceComparisonSection>
+```
+
+## Examples
+
+### Featured Column Highlighting & CTA
+
+Any column can be featured, but only one column can be featured at a time.
+
+<ComponentExample
+  previewComponent={
+    <LandingPriceComparisonSection
+      title="Why choose us?"
+      textPosition="center"
+    >
+      <LandingPriceComparisonColumn
+        header="Competitor A"
+        footer="$129 /mo"
+      >
+        <LandingPriceComparisonItem state="check" text="All features" />
+        <LandingPriceComparisonItem state="cross" text="Premium support" />
+      </LandingPriceComparisonColumn>
+
+      <LandingPriceComparisonColumn
+        featured
+        header="Our Product"
+        footer="$19 /mo"
+        ctaText="Get Started"
+        href="#"
+      >
+        <LandingPriceComparisonItem state="check" text="All features" />
+        <LandingPriceComparisonItem state="check" text="Premium support" />
+      </LandingPriceComparisonColumn>
+
+      <LandingPriceComparisonColumn
+        header="Competitor B"
+        footer="$299 /mo"
+      >
+        <LandingPriceComparisonItem state="check" text="All features" />
+        <LandingPriceComparisonItem state="check" text="Premium support" />
+      </LandingPriceComparisonColumn>
+    </LandingPriceComparisonSection>
+  }
+>
+
+```jsx
+<LandingPriceComparisonSection
+  title="Why choose us?"
+  textPosition="center"
+>
+  <LandingPriceComparisonColumn
+    header="Competitor A"
+    footer="$129 /mo"
+  >
+    <LandingPriceComparisonItem state="check" text="All features" />
+    <LandingPriceComparisonItem state="cross" text="Premium support" />
+  </LandingPriceComparisonColumn>
+
+  <LandingPriceComparisonColumn
+    featured
+    header="Our Product"
+    footer="$19 /mo"
+    ctaText="Get Started"
+    href="#"
+  >
+    <LandingPriceComparisonItem state="check" text="All features" />
+    <LandingPriceComparisonItem state="check" text="Premium support" />
+  </LandingPriceComparisonColumn>
+
+  <LandingPriceComparisonColumn
+    header="Competitor B"
+    footer="$299 /mo"
+  >
+    <LandingPriceComparisonItem state="check" text="All features" />
+    <LandingPriceComparisonItem state="check" text="Premium support" />
+  </LandingPriceComparisonColumn>
+</LandingPriceComparisonSection>
+```
+
+</ComponentExample>
+
+### With Tooltips and Descriptions
+
+<ComponentExample
+  previewComponent={
+    <LandingPriceComparisonSection
+      title="Feature Comparison"
+      description="Detailed comparison with helpful tooltips"
+    >
+      <LandingPriceComparisonColumn
+        featured
+        header="Professional"
+        footer="$79 /mo"
+        ctaText="Start Free Trial"
+        href="#"
+      >
+        <LandingPriceComparisonItem
+          state="check"
+          text="Advanced Security"
+          description="Enterprise-grade security with SOC 2 compliance and advanced encryption"
+        />
+        <LandingPriceComparisonItem
+          state="check"
+          text="Priority Support"
+          description="24/7 dedicated support with guaranteed response times"
+        />
+        <LandingPriceComparisonItem
+          state="check"
+          text="Custom Integrations"
+          description="Build custom integrations with our comprehensive API"
+        />
+      </LandingPriceComparisonColumn>
+
+      <LandingPriceComparisonColumn
+        header="Standard"
+        footer="$39 /mo"
+      >
+        <LandingPriceComparisonItem state="cross" text="Advanced Security" />
+        <LandingPriceComparisonItem state="check" text="Priority Support" />
+        <LandingPriceComparisonItem state="cross" text="Custom Integrations" />
+      </LandingPriceComparisonColumn>
+    </LandingPriceComparisonSection>
+  }
+>
+
+```jsx
+<LandingPriceComparisonSection
+  title="Feature Comparison"
+  description="Detailed comparison with helpful tooltips"
+>
+  <LandingPriceComparisonColumn
+    featured
+    header="Professional"
+    footer="$79 /mo"
+    ctaText="Start Free Trial"
+    href="#"
+  >
+    <LandingPriceComparisonItem
+      state="check"
+      text="Advanced Security"
+      description="Enterprise-grade security with SOC 2 compliance"
+    />
+    <LandingPriceComparisonItem
+      state="check"
+      text="Priority Support"
+      description="24/7 dedicated support with guaranteed response times"
+    />
+  </LandingPriceComparisonColumn>
+
+  <LandingPriceComparisonColumn
+    header="Standard"
+    footer="$39 /mo"
+  >
+    <LandingPriceComparisonItem state="cross" text="Advanced Security" />
+    <LandingPriceComparisonItem state="check" text="Priority Support" />
+  </LandingPriceComparisonColumn>
+</LandingPriceComparisonSection>
+```
+
+</ComponentExample>
+
+### Secondary Variant
+
+The secondary variant provides an alternative color scheme for the comparison section.
+
+<ComponentExample
+  previewComponent={
+    <LandingPriceComparisonSection
+      title="Compare Plans"
+      description="Choose the plan that's right for you"
+      variant="secondary"
+    >
+      <LandingPriceComparisonColumn
+        featured
+        header="Pro"
+        footer="$49 /mo"
+        ctaText="Get Started"
+        href="#"
+        variant="secondary"
+      >
+        <LandingPriceComparisonItem state="check" text="Unlimited Projects" />
+        <LandingPriceComparisonItem state="check" text="Priority Support" />
+        <LandingPriceComparisonItem state="check" text="Advanced Analytics" />
+      </LandingPriceComparisonColumn>
+
+      <LandingPriceComparisonColumn
+        header="Basic"
+        footer="$19 /mo"
+        variant="secondary"
+      >
+        <LandingPriceComparisonItem state="check" text="5 Projects" />
+        <LandingPriceComparisonItem state="cross" text="Priority Support" />
+        <LandingPriceComparisonItem state="cross" text="Advanced Analytics" />
+      </LandingPriceComparisonColumn>
+
+      <LandingPriceComparisonColumn
+        header="Enterprise"
+        footer="$99 /mo"
+        variant="secondary"
+      >
+        <LandingPriceComparisonItem state="check" text="Unlimited Projects" />
+        <LandingPriceComparisonItem state="cross" text="Priority Support" />
+        <LandingPriceComparisonItem state="check" text="Advanced Analytics" />
+      </LandingPriceComparisonColumn>
+    </LandingPriceComparisonSection>
+  }
+>
+
+```jsx
+<LandingPriceComparisonSection
+  title="Compare Plans"
+  description="Choose the plan that's right for you"
+  variant="secondary"
+>
+  <LandingPriceComparisonColumn
+    featured
+    header="Pro"
+    footer="$49 /mo"
+    ctaText="Get Started"
+    href="#"
+    variant="secondary"
+  >
+    <LandingPriceComparisonItem state="check" text="Unlimited Projects" />
+    <LandingPriceComparisonItem state="check" text="Priority Support" />
+    <LandingPriceComparisonItem state="check" text="Advanced Analytics" />
+  </LandingPriceComparisonColumn>
+
+
+  <LandingPriceComparisonColumn
+    header="Basic"
+    footer="$19 /mo"
+    variant="secondary"
+  >
+    <LandingPriceComparisonItem state="check" text="5 Projects" />
+    <LandingPriceComparisonItem state="cross" text="Priority Support" />
+    <LandingPriceComparisonItem state="cross" text="Advanced Analytics" />
+  </LandingPriceComparisonColumn>
+
+  <LandingPriceComparisonColumn
+    header="Enterprise"
+    footer="$99 /mo"
+    variant="secondary"
+  >
+    <LandingPriceComparisonItem state="check" text="Unlimited Projects" />
+    <LandingPriceComparisonItem state="cross" text="Priority Support" />
+    <LandingPriceComparisonItem state="check" text="Advanced Analytics" />
+  </LandingPriceComparisonColumn>
+</LandingPriceComparisonSection>
+```
+
+</ComponentExample>
+
+### Without Price
+
+Perfect for feature comparisons where pricing is not the focus.
+
+<ComponentExample
+  previewComponent={
+    <LandingPriceComparisonSection
+      title="Feature Comparison"
+      description="See how different solutions stack up"
+    >
+      <LandingPriceComparisonColumn
+        header="Solution A"
+      >
+        <LandingPriceComparisonItem state="check" text="API Access" />
+        <LandingPriceComparisonItem state="cross" text="Real-time Sync" />
+        <LandingPriceComparisonItem state="check" text="Basic Support" />
+        <LandingPriceComparisonItem state="cross" text="Custom Integrations" />
+      </LandingPriceComparisonColumn>
+
+      <LandingPriceComparisonColumn
+        featured
+        header="Our Solution"
+        ctaText="Learn More"
+        href="#"
+      >
+        <LandingPriceComparisonItem state="check" text="API Access" />
+        <LandingPriceComparisonItem state="check" text="Real-time Sync" />
+        <LandingPriceComparisonItem state="check" text="Premium Support" />
+        <LandingPriceComparisonItem state="check" text="Custom Integrations" />
+      </LandingPriceComparisonColumn>
+
+      <LandingPriceComparisonColumn
+        header="Solution B"
+      >
+        <LandingPriceComparisonItem state="cross" text="API Access" />
+        <LandingPriceComparisonItem state="check" text="Real-time Sync" />
+        <LandingPriceComparisonItem state="check" text="Basic Support" />
+        <LandingPriceComparisonItem state="cross" text="Custom Integrations" />
+      </LandingPriceComparisonColumn>
+    </LandingPriceComparisonSection>
+  }
+>
+
+```jsx
+<LandingPriceComparisonSection
+  title="Feature Comparison"
+  description="See how different solutions stack up"
+>
+  <LandingPriceComparisonColumn
+    header="Solution A"
+  >
+    <LandingPriceComparisonItem state="check" text="API Access" />
+    <LandingPriceComparisonItem state="cross" text="Real-time Sync" />
+    <LandingPriceComparisonItem state="check" text="Basic Support" />
+    <LandingPriceComparisonItem state="cross" text="Custom Integrations" />
+  </LandingPriceComparisonColumn>
+
+  <LandingPriceComparisonColumn
+    featured
+    header="Our Solution"
+    ctaText="Learn More"
+    href="#"
+  >
+    <LandingPriceComparisonItem state="check" text="API Access" />
+    <LandingPriceComparisonItem state="check" text="Real-time Sync" />
+    <LandingPriceComparisonItem state="check" text="Premium Support" />
+    <LandingPriceComparisonItem state="check" text="Custom Integrations" />
+  </LandingPriceComparisonColumn>
+
+  <LandingPriceComparisonColumn
+    header="Solution B"
+  >
+    <LandingPriceComparisonItem state="cross" text="API Access" />
+    <LandingPriceComparisonItem state="check" text="Real-time Sync" />
+    <LandingPriceComparisonItem state="check" text="Basic Support" />
+    <LandingPriceComparisonItem state="cross" text="Custom Integrations" />
+  </LandingPriceComparisonColumn>
+</LandingPriceComparisonSection>
+```
+
+</ComponentExample>
+
+### Without Button or footer
+
+Clean comparison tables without call-to-action buttons for informational purposes.
+
+<ComponentExample
+  previewComponent={
+    <LandingPriceComparisonSection
+      title="Product Specifications"
+      description="Technical comparison of our products"
+    >
+      <LandingPriceComparisonColumn
+        header="Starter Edition"
+      >
+        <LandingPriceComparisonItem state="check" text="2 CPU Cores" />
+        <LandingPriceComparisonItem state="check" text="4GB RAM" />
+        <LandingPriceComparisonItem state="cross" text="SSD Storage" />
+        <LandingPriceComparisonItem state="cross" text="24/7 Monitoring" />
+      </LandingPriceComparisonColumn>
+
+      <LandingPriceComparisonColumn
+        header="Professional Edition"
+      >
+        <LandingPriceComparisonItem state="check" text="8 CPU Cores" />
+        <LandingPriceComparisonItem state="check" text="16GB RAM" />
+        <LandingPriceComparisonItem state="cross" text="NVMe SSD Storage" />
+        <LandingPriceComparisonItem state="check" text="24/7 Monitoring" />
+      </LandingPriceComparisonColumn>
+
+      <LandingPriceComparisonColumn
+        featured
+        header="Enterprise Edition"
+      >
+        <LandingPriceComparisonItem state="check" text="4 CPU Cores" />
+        <LandingPriceComparisonItem state="check" text="8GB RAM" />
+        <LandingPriceComparisonItem state="check" text="SSD Storage" />
+        <LandingPriceComparisonItem state="check" text="24/7 Monitoring" />
+      </LandingPriceComparisonColumn>
+    </LandingPriceComparisonSection>
+  }
+>
+
+```jsx
+<LandingPriceComparisonSection
+  title="Product Specifications"
+  description="Technical comparison of our products"
+>
+  <LandingPriceComparisonColumn
+    header="Starter Edition"
+  >
+    <LandingPriceComparisonItem state="check" text="2 CPU Cores" />
+    <LandingPriceComparisonItem state="check" text="4GB RAM" />
+    <LandingPriceComparisonItem state="cross" text="SSD Storage" />
+    <LandingPriceComparisonItem state="cross" text="24/7 Monitoring" />
+  </LandingPriceComparisonColumn>
+
+  <LandingPriceComparisonColumn
+    header="Professional Edition"
+  >
+    <LandingPriceComparisonItem state="check" text="8 CPU Cores" />
+    <LandingPriceComparisonItem state="check" text="16GB RAM" />
+    <LandingPriceComparisonItem state="cross" text="NVMe SSD Storage" />
+    <LandingPriceComparisonItem state="check" text="24/7 Monitoring" />
+  </LandingPriceComparisonColumn>
+
+  <LandingPriceComparisonColumn
+    featured
+    header="Enterprise Edition"
+  >
+    <LandingPriceComparisonItem state="check" text="4 CPU Cores" />
+    <LandingPriceComparisonItem state="check" text="8GB RAM" />
+    <LandingPriceComparisonItem state="check" text="SSD Storage" />
+    <LandingPriceComparisonItem state="check" text="24/7 Monitoring" />
+  </LandingPriceComparisonColumn>
+</LandingPriceComparisonSection>
+```
+
+</ComponentExample>
+
+### With Background
+
+Adds a subtle background to make the comparison section stand out from the rest of the page.
+
+<ComponentExample
+  previewComponent={
+    <LandingPriceComparisonSection
+      title="Service Tiers"
+      description="Choose the right level of service for your needs"
+      withBackground
+    >
+      <LandingPriceComparisonColumn
+        featured
+        header="Premium"
+        footer="$79 /mo"
+        ctaText="Upgrade Now"
+        href="#"
+      >
+        <LandingPriceComparisonItem state="check" text="Priority Support" />
+        <LandingPriceComparisonItem state="check" text="All Features" />
+        <LandingPriceComparisonItem state="check" text="Priority Queue" />
+      </LandingPriceComparisonColumn>
+
+      <LandingPriceComparisonColumn
+        header="Enterprise"
+        footer="Custom"
+      >
+        <LandingPriceComparisonItem state="check" text="Dedicated Support" />
+        <LandingPriceComparisonItem state="check" text="Custom Features" />
+        <LandingPriceComparisonItem state="check" text="Dedicated Infrastructure" />
+      </LandingPriceComparisonColumn>
+    </LandingPriceComparisonSection>
+  }
+>
+
+```jsx
+<LandingPriceComparisonSection
+  title="Service Tiers"
+  description="Choose the right level of service for your needs"
+  withBackground
+>
+  <LandingPriceComparisonColumn
+    featured
+    header="Premium"
+    footer="$79 /mo"
+    ctaText="Upgrade Now"
+    href="#"
+  >
+    <LandingPriceComparisonItem state="check" text="Priority Support" />
+    <LandingPriceComparisonItem state="check" text="All Features" />
+    <LandingPriceComparisonItem state="check" text="Priority Queue" />
+  </LandingPriceComparisonColumn>
+
+  <LandingPriceComparisonColumn
+    header="Enterprise"
+    footer="Custom"
+  >
+    <LandingPriceComparisonItem state="check" text="Dedicated Support" />
+    <LandingPriceComparisonItem state="check" text="Custom Features" />
+    <LandingPriceComparisonItem state="check" text="Dedicated Infrastructure" />
+  </LandingPriceComparisonColumn>
+</LandingPriceComparisonSection>
+```
+
+</ComponentExample>
+
+### With Background Glow
+
+Creates an eye-catching glow effect that draws attention to the comparison section.
+
+<ComponentExample
+  previewComponent={
+    <LandingPriceComparisonSection
+      title="Platform Comparison"
+      description="See why developers choose our platform"
+      variant="secondary"
+      withBackgroundGlow
+      backgroundGlowVariant="secondary"
+    >
+      <LandingPriceComparisonColumn
+        header="Other Platforms"
+        footer="Variable pricing"
+      >
+        <LandingPriceComparisonItem state="cross" text="Easy Setup" />
+        <LandingPriceComparisonItem state="check" text="Basic Documentation" />
+        <LandingPriceComparisonItem state="cross" text="Modern UI Components" />
+        <LandingPriceComparisonItem state="cross" text="One-click Deploy" />
+      </LandingPriceComparisonColumn>
+
+      <LandingPriceComparisonColumn
+        featured
+        header="Our Platform"
+        footer="Free to start"
+        ctaText="Try It Now"
+        href="#"
+      >
+        <LandingPriceComparisonItem state="check" text="Easy Setup" />
+        <LandingPriceComparisonItem state="check" text="Comprehensive Docs" />
+        <LandingPriceComparisonItem state="check" text="Modern UI Components" />
+        <LandingPriceComparisonItem state="check" text="One-click Deploy" />
+      </LandingPriceComparisonColumn>
+    </LandingPriceComparisonSection>
+  }
+>
+
+```jsx
+<LandingPriceComparisonSection
+  title="Platform Comparison"
+  description="See why developers choose our platform"
+  variant="secondary"
+  withBackgroundGlow
+  backgroundGlowVariant="secondary"
+>
+  <LandingPriceComparisonColumn
+    header="Other Platforms"
+    footer="Variable pricing"
+  >
+    <LandingPriceComparisonItem state="cross" text="Easy Setup" />
+    <LandingPriceComparisonItem state="check" text="Basic Documentation" />
+    <LandingPriceComparisonItem state="cross" text="Modern UI Components" />
+    <LandingPriceComparisonItem state="cross" text="One-click Deploy" />
+  </LandingPriceComparisonColumn>
+
+  <LandingPriceComparisonColumn
+    featured
+    header="Our Platform"
+    footer="Free to start"
+    ctaText="Try It Now"
+    href="#"
+  >
+    <LandingPriceComparisonItem state="check" text="Easy Setup" />
+    <LandingPriceComparisonItem state="check" text="Comprehensive Docs" />
+    <LandingPriceComparisonItem state="check" text="Modern UI Components" />
+    <LandingPriceComparisonItem state="check" text="One-click Deploy" />
+  </LandingPriceComparisonColumn>
+</LandingPriceComparisonSection>
+```
+
+</ComponentExample>
+
+### Custom Icons and Content
+
+<ComponentExample
+  previewComponent={
+    <LandingPriceComparisonSection
+      title="Service Tiers"
+    >
+      <LandingPriceComparisonColumn
+        header={
+          <div className="flex items-center gap-2">
+            <LayersIcon className="w-6 h-6" />
+            <span className='font-bold'>Competitor</span>
+          </div>
+        }
+        footer={
+
+           <div>
+            <div className="text-2xl font-bold">$29</div>
+            <div className="text-sm text-gray-500">per month</div>
+          </div>
+        }
+      >
+        <LandingPriceComparisonItem
+          icon={<div className="w-5 h-5 bg-red-500 rounded-full"></div>}
+          text="5 Projects"
+        />
+        <LandingPriceComparisonItem
+          icon={<div className="w-5 h-5 bg-red-500 rounded-full"></div>}
+          text="Basic Support"
+        />
+      </LandingPriceComparisonColumn>
+
+      <LandingPriceComparisonColumn
+        featured
+        header={
+          <div className="flex items-center gap-2">
+            <SparklesIcon className="w-6 h-6" />
+            <span className='font-bold'>Our Product</span>
+          </div>
+        }
+        footer={
+          <div>
+            <div className="text-2xl font-bold">Free</div>
+            <div className="text-sm text-gray-500">Forever</div>
+          </div>
+        }
+        ctaTextComponent={
+          <Button variant="secondary" className="w-full mt-4">
+            <span>Get Started</span>
+          </Button>
+        }
+      >
+        <LandingPriceComparisonItem
+          icon={<div className="w-5 h-5 bg-green-500 rounded-full"></div>}
+          text="10 projects"
+        />
+        <LandingPriceComparisonItem
+          icon={<div className="w-5 h-5 bg-green-500 rounded-full"></div>}
+          text="Priority Support"
+        />
+      </LandingPriceComparisonColumn>
+    </LandingPriceComparisonSection>
+  }
+>
+
+```jsx
+<LandingPriceComparisonSection title="Service Tiers">
+  <LandingPriceComparisonColumn
+    header={
+      <div className="flex items-center gap-2">
+        <LayersIcon className="w-6 h-6" />
+        <span className='font-bold'>Competitor</span>
+      </div>
+    }
+    footer={
+      <div>
+        <div className="text-2xl font-bold">$29</div>
+        <div className="text-sm text-gray-300">per month</div>
+      </div>
+    }
+  >
+    <LandingPriceComparisonItem
+      icon={<div className="w-5 h-5 bg-red-500 rounded-full"></div>}
+      text="5 Projects"
+    />
+    <LandingPriceComparisonItem
+      icon={<div className="w-5 h-5 bg-red-500 rounded-full"></div>}
+      text="Basic Support"
+    />
+  </LandingPriceComparisonColumn>
+
+  <LandingPriceComparisonColumn
+    featured
+    header={
+      <div className="flex items-center gap-2">
+        <SparklesIcon className="w-6 h-6" />
+        <span className='font-bold'>Our Product</span>
+      </div>
+    }
+    footer={
+      <div>
+        <div className="text-2xl font-bold">$29</div>
+        <div className="text-sm text-gray-300">per month</div>
+      </div>
+    }
+    ctaTextComponent={
+      <Button variant="outlineSecondary">
+        <span>Get Started</span>
+      </Button>
+    }
+  >
+    <LandingPriceComparisonItem
+      icon={<div className="w-5 h-5 bg-green-500 rounded-full"></div>}
+      text="10 projects"
+    />
+    <LandingPriceComparisonItem
+      icon={<div className="w-5 h-5 bg-green-500 rounded-full"></div>}
+      text="Priority Support"
+    />
+  </LandingPriceComparisonColumn>
+</LandingPriceComparisonSection>
+```
+
+</ComponentExample>
+
+
+## API Reference
+
+### LandingPriceComparisonSection
+
+| Prop Name | Prop Type | Required | Default |
+| --- | --- | ----- | ---- |
+| **children** <Tippy>The comparison columns to display</Tippy> | `React.ReactNode` | Yes | - |
+| **className** <Tippy>Additional CSS classes for styling</Tippy> | `string` | No | - |
+| **title** <Tippy>Main heading for the comparison section</Tippy> | `string \| React.ReactNode` | No | - |
+| **titleComponent** <Tippy>Custom title component override</Tippy> | `React.ReactNode` | No | - |
+| **description** <Tippy>Subtitle text below the main heading</Tippy> | `string \| React.ReactNode` | No | - |
+| **descriptionComponent** <Tippy>Custom description component override</Tippy> | `React.ReactNode` | No | - |
+| **textPosition** <Tippy>Alignment of title and description text</Tippy> | `'center' \| 'left'` | No | `'center'` |
+| **withBackground** <Tippy>Adds a subtle background color to the section</Tippy> | `boolean` | No | `false` |
+| **withBackgroundGlow** <Tippy>Adds a glow effect background</Tippy> | `boolean` | No | `false` |
+| **variant** <Tippy>Color scheme variant for backgrounds</Tippy> | `'primary' \| 'secondary'` | No | `'primary'` |
+| **backgroundGlowVariant** <Tippy>Color variant for the glow effect</Tippy> | `'primary' \| 'secondary'` | No | `'primary'` |
+
+### LandingPriceComparisonColumn
+
+| Prop Name | Prop Type | Required | Default |
+| --- | --- | ----- | ---- |
+| **children** <Tippy>The comparison items or content to display</Tippy> | `React.ReactNode` | Yes | - |
+| **className** <Tippy>Additional CSS classes for styling</Tippy> | `string` | No | - |
+| **header** <Tippy>Header content (usually product/service name)</Tippy> | `string \| React.ReactNode` | No | - |
+| **headerComponent** <Tippy>Custom header component override</Tippy> | `React.ReactNode` | No | - |
+| **footer** <Tippy>Footer content (usually pricing information)</Tippy> | `string \| React.ReactNode` | No | - |
+| **footerComponent** <Tippy>Custom footer component override</Tippy> | `React.ReactNode` | No | - |
+| **featured** <Tippy>Highlights this column as the featured/recommended option</Tippy> | `boolean` | No | `false` |
+| **ctaText** <Tippy>Text for the call-to-action button</Tippy> | `string` | No | - |
+| **ctaTextComponent** <Tippy>Custom call-to-action button component</Tippy> | `React.ReactNode` | No | - |
+| **href** <Tippy>URL for the call-to-action button link</Tippy> | `string` | No | - |
+| **onClick** <Tippy>Click handler for the call-to-action button</Tippy> | `() => void` | No | - |
+| **variant** <Tippy>Color scheme variant for backgrounds</Tippy> | `'primary' \| 'secondary'` | No | `'primary'` |
+
+### LandingPriceComparisonItem
+
+| Prop Name | Prop Type | Required | Default |
+| --- | --- | ----- | ---- |
+| **className** <Tippy>Additional CSS classes for styling</Tippy> | `string` | No | - |
+| **icon** <Tippy>Custom icon to display (overrides state-based icons)</Tippy> | `React.ReactNode` | No | - |
+| **iconComponent** <Tippy>Alternative way to pass custom icon component</Tippy> | `React.ReactNode` | No | - |
+| **text** <Tippy>The feature text to display</Tippy> | `string \| React.ReactNode` | No | - |
+| **textComponent** <Tippy>Alternative way to pass custom text component</Tippy> | `React.ReactNode` | No | - |
+| **description** <Tippy>Additional details shown in tooltip on hover</Tippy> | `string \| React.ReactNode` | No | - |
+| **descriptionComponent** <Tippy>Custom description component for tooltip</Tippy> | `React.ReactNode` | No | - |
+| **state** <Tippy>Predefined state that determines icon and styling</Tippy> | `'check' \| 'cross' \| 'neutral' \| 'custom'` | No | `'neutral'` |
+| **showText** <Tippy>Whether to display the text content visibly</Tippy> | `boolean` | No | `false` |
+| **showDescription** <Tippy>Whether to show the info icon with tooltip</Tippy> | `boolean` | No | `false` |
+
+## More Examples
+
+For more even more examples, see our <a href="/demo/landing-page-component-examples" className="fancy-link">Landing Page Component Examples</a> page or see complete landing page examples by <a href="/demo/landing-page-templates" className="fancy-link">Exploring Our Landing Page Templates</a>.
+
+Also see:
+
+- <a href="/boilerplate-documentation/landing-page-components/pricing" className="fancy-link">Pricing Section</a> component for traditional pricing tables.
+- <a href="/boilerplate-documentation/landing-page-components/product-feature" className="fancy-link">Product Feature</a> component for highlighting individual features.
+- <a href="/boilerplate-documentation/landing-page-components/feature" className="fancy-link">Feature List</a> component for listing product capabilities.
