@@ -22,7 +22,7 @@ export function LandingStatItem({
     <dl
       className={clsx(
         'flex flex-col items-start p-8',
-        hasBorder && 'border-r',
+        hasBorder && 'border-l',
         hasBorder && variant === 'primary'
           ? 'border-primary-100/30 dark:border-primary-900/30'
           : '',
