@@ -1,0 +1,673 @@
+---
+title: 'Landing Page Primary CTA Text Effects Components'
+date: '2025-05-31'
+lastmod: '2025-05-31'
+tags:
+  - 'guide'
+  - 'components'
+  - 'documentation'
+  - 'landing-page'
+  - 'ui-library'
+  - 'react'
+  - 'nextjs'
+  - 'tailwind-css'
+  - 'tailwind-css-effects'
+  - 'tailwind-text-effects'
+  - 'cta'
+  - 'call-to-action'
+  - 'text-effects'
+  - 'underline-effects'
+  - 'shadcn-ui'
+  - 'shadcn-ui-landing-page'
+
+# images:
+#   - '/static/images/docs/landing-page-primary-cta-effects.webp'
+
+summary: 'A collection of text effects for the primary CTA section. Great for adding visual interest to your landing page and making it more engaging.'
+layout: PostHub
+
+showThemeSelector: true
+showInstallNotice: true
+
+canonicalUrl: 'https://shipixen.com/boilerplate-documentation/landing-page-components/primary-cta-effects'
+---
+
+A collection of text effects for the primary CTA section. These are meant to be used together with `LandingPrimaryImageCtaSection`, `LandingPrimaryTextCtaSection` and `LandingPrimaryVideoCtaSection`, as part of the `titleComponent` prop.
+
+On a landing page, they can be used to emphasize parts of the CTA title and increase conversion rates.
+
+There are not components per say, but a collection of patterns using Tailwind CSS effects and text effects.
+
+## Monochrome Gradient Text
+
+**Monochrome Gradient Text**<br/>
+This works with `primary`, `secondary` and Tailwind color schemes.
+
+<ComponentExample
+  previewComponent={
+    <LandingPrimaryTextCtaSection
+      titleComponent={
+        <h1 className="font-normal text-2xl md:text-3xl lg:text-4xl leading-tight md:max-w-2xl">
+          Grow your{' '}
+          <span className="font-semibold bg-gradient-to-r from-primary-700 via-primary-300 to-primary-700 bg-clip-text text-transparent">
+            revenue
+          </span><br/>
+          across multiple channels
+        </h1>
+      }
+      description="Never miss that sale again. Get notified instantly when a customer buys something."
+      textPosition="center"
+    >
+      <Button size="xl" asChild>
+        <a href="#">Start Free Trial</a>
+      </Button>
+    </LandingPrimaryTextCtaSection>
+  }
+>
+
+```jsx
+import { Button } from '@/components/shared/ui/button';
+import { LandingPrimaryTextCtaSection } from '@/components/landing/cta/LandingPrimaryCta';
+
+<LandingPrimaryTextCtaSection
+  titleComponent={
+    <h1 className="font-normal text-2xl md:text-3xl lg:text-4xl leading-tight md:max-w-2xl">
+      Grow your{' '}
+      <span className="font-semibold bg-gradient-to-r from-primary-500 via-primary-300 to-primary-500 bg-clip-text text-transparent">
+        revenue
+      </span><br/>
+      across multiple channels
+    </h1>
+  }
+  description="Never miss that sale again. Get notified instantly when a customer buys something."
+  textPosition="center"
+>
+  <Button size="xl" asChild>
+    <a href="#">Start Free Trial</a>
+  </Button>
+</LandingPrimaryTextCtaSection>
+```
+
+</ComponentExample>
+
+## Color scheme gradient text
+
+**Color scheme gradient text**
+
+<ComponentExample
+  previewComponent={
+    <LandingPrimaryTextCtaSection
+      titleComponent={
+        <h1 className="font-normal text-2xl md:text-3xl lg:text-4xl leading-tight md:max-w-2xl">
+          Grow your{' '}
+          <span className="font-semibold bg-gradient-to-r from-primary-300 via-secondary-500 to-primary-300 bg-clip-text text-transparent">
+            revenue
+          </span><br/>
+          across multiple channels
+        </h1>
+      }
+      description="Never miss that sale again. Get notified instantly when a customer buys something."
+      textPosition="center"
+    >
+      <Button size="xl" asChild>
+        <a href="#">Start Free Trial</a>
+      </Button>
+    </LandingPrimaryTextCtaSection>
+  }
+>
+
+```jsx
+import { Button } from '@/components/shared/ui/button';
+import { LandingPrimaryTextCtaSection } from '@/components/landing/cta/LandingPrimaryCta';
+
+<LandingPrimaryTextCtaSection
+  titleComponent={
+    <h1 className="font-normal text-2xl md:text-3xl lg:text-4xl leading-tight md:max-w-2xl">
+      Grow your{' '}
+      <span className="font-semibold bg-gradient-to-r from-primary-300 via-secondary-500 to-primary-300 bg-clip-text text-transparent">
+        revenue
+      </span><br/>
+      across multiple channels
+    </h1>
+  }
+  description="Never miss that sale again. Get notified instantly when a customer buys something."
+  textPosition="center"
+>
+  <Button size="xl" asChild>
+    <a href="#">Start Free Trial</a>
+  </Button>
+</LandingPrimaryTextCtaSection>
+```
+
+</ComponentExample>
+
+## Rainbow Gradient Text
+
+**Rainbow Gradient Text**
+
+<ComponentExample
+  previewComponent={
+    <LandingPrimaryTextCtaSection
+      titleComponent={
+        <h1 className="font-normal text-2xl md:text-3xl lg:text-4xl leading-tight md:max-w-2xl">
+          Grow your{' '}
+          <span className="font-semibold bg-gradient-to-r from-amber-400 via-red-500 to-indigo-500 bg-clip-text text-transparent">
+            revenue
+          </span><br/>
+          across multiple channels
+        </h1>
+      }
+      description="Never miss that sale again. Get notified instantly when a customer buys something."
+      textPosition="center"
+    >
+      <Button size="xl" asChild>
+        <a href="#">Start Free Trial</a>
+      </Button>
+    </LandingPrimaryTextCtaSection>
+  }
+>
+
+```jsx
+import { Button } from '@/components/shared/ui/button';
+import { LandingPrimaryTextCtaSection } from '@/components/landing/cta/LandingPrimaryCta';
+
+<LandingPrimaryTextCtaSection
+  titleComponent={
+    <h1 className="font-normal text-2xl md:text-3xl lg:text-4xl leading-tight md:max-w-2xl">
+      Grow your{' '}
+      <span className="font-semibold bg-gradient-to-r from-amber-400 via-red-500 to-indigo-500 bg-clip-text text-transparent">
+        revenue
+      </span><br/>
+      across multiple channels
+    </h1>
+  }
+  description="Never miss that sale again. Get notified instantly when a customer buys something."
+  textPosition="center"
+>
+  <Button size="xl" asChild>
+    <a href="#">Start Free Trial</a>
+  </Button>
+</LandingPrimaryTextCtaSection>
+```
+
+</ComponentExample>
+
+## Soft Gradient Text
+
+**Soft Gradient Text**
+
+<ComponentExample
+  previewComponent={
+    <LandingPrimaryTextCtaSection
+      titleComponent={
+        <h1 className="font-normal text-2xl md:text-3xl lg:text-4xl leading-tight md:max-w-2xl">
+          Grow your{' '}
+          <span className="font-semibold bg-gradient-to-r from-amber-900 via-red-900 to-indigo-900 dark:from-amber-200 dark:via-red-200 dark:to-indigo-200 bg-clip-text text-transparent">
+            revenue
+          </span><br/>
+          across multiple channels
+        </h1>
+      }
+      description="Never miss that sale again. Get notified instantly when a customer buys something."
+      textPosition="center"
+    >
+      <Button size="xl" asChild>
+        <a href="#">Start Free Trial</a>
+      </Button>
+    </LandingPrimaryTextCtaSection>
+  }
+>
+
+```jsx
+import { Button } from '@/components/shared/ui/button';
+import { LandingPrimaryTextCtaSection } from '@/components/landing/cta/LandingPrimaryCta';
+
+<LandingPrimaryTextCtaSection
+  titleComponent={
+    <h1 className="font-normal text-2xl md:text-3xl lg:text-4xl leading-tight md:max-w-2xl">
+      Grow your{' '}
+      <span className="font-semibold bg-gradient-to-r from-amber-900 via-red-900 to-indigo-900 dark:from-amber-200 dark:via-red-200 dark:to-indigo-200 bg-clip-text text-transparent">
+        revenue
+      </span><br/>
+      across multiple channels
+    </h1>
+  }
+  description="Never miss that sale again. Get notified instantly when a customer buys something."
+  textPosition="center"
+>
+  <Button size="xl" asChild>
+    <a href="#">Start Free Trial</a>
+  </Button>
+</LandingPrimaryTextCtaSection>
+```
+
+</ComponentExample>
+
+
+## Underline Text
+
+**Underline Text**<br/>
+This works with `primary`, `secondary` and Tailwind color schemes.
+
+<ComponentExample
+  previewComponent={
+    <LandingPrimaryTextCtaSection
+      titleComponent={
+        <h1 className="font-normal text-2xl md:text-3xl lg:text-4xl leading-tight md:max-w-2xl">
+          Grow your{' '}
+          <span className="font-semibold italic underline decoration-primary-500 decoration-4">
+            revenue
+          </span><br/>
+          across multiple channels
+        </h1>
+      }
+      description="Never miss that sale again. Get notified instantly when a customer buys something."
+      textPosition="center"
+    >
+      <Button size="xl" asChild>
+        <a href="#">Start Free Trial</a>
+      </Button>
+    </LandingPrimaryTextCtaSection>
+  }
+>
+
+```jsx
+import { Button } from '@/components/shared/ui/button';
+import { LandingPrimaryTextCtaSection } from '@/components/landing/cta/LandingPrimaryCta';
+
+<LandingPrimaryTextCtaSection
+  titleComponent={
+    <h1 className="font-normal text-2xl md:text-3xl lg:text-4xl leading-tight md:max-w-2xl">
+      Grow your{' '}
+      <span className="font-semibold italic underline decoration-primary-500 decoration-4">
+        revenue
+      </span><br/>
+      across multiple channels
+    </h1>
+  }
+  description="Never miss that sale again. Get notified instantly when a customer buys something."
+  textPosition="center"
+>
+  <Button size="xl" asChild>
+    <a href="#">Start Free Trial</a>
+  </Button>
+</LandingPrimaryTextCtaSection>
+```
+
+</ComponentExample>
+
+## Underline Wave Text
+
+**Underline Wave Text**<br/>
+This works with `primary`, `secondary` and Tailwind color schemes.
+
+<ComponentExample
+  previewComponent={
+    <LandingPrimaryTextCtaSection
+      titleComponent={
+        <h1 className="font-normal text-2xl md:text-3xl lg:text-4xl leading-tight md:max-w-2xl">
+          Grow your{' '}
+          <span className="font-semibold underline decoration-primary-500 decoration-4 decoration-wavy">
+            revenue
+          </span><br/>
+          across multiple channels
+        </h1>
+      }
+      description="Never miss that sale again. Get notified instantly when a customer buys something."
+      textPosition="center"
+    >
+      <Button size="xl" asChild>
+        <a href="#">Start Free Trial</a>
+      </Button>
+    </LandingPrimaryTextCtaSection>
+  }
+>
+
+```jsx
+import { Button } from '@/components/shared/ui/button';
+import { LandingPrimaryTextCtaSection } from '@/components/landing/cta/LandingPrimaryCta';
+
+<LandingPrimaryTextCtaSection
+  titleComponent={
+    <h1 className="font-normal text-2xl md:text-3xl lg:text-4xl leading-tight md:max-w-2xl">
+      Grow your{' '}
+      <span className="font-semibold underline decoration-primary-500 decoration-4 decoration-wavy">
+        revenue
+      </span><br/>
+      across multiple channels
+    </h1>
+  }
+  description="Never miss that sale again. Get notified instantly when a customer buys something."
+  textPosition="center"
+>
+  <Button size="xl" asChild>
+    <a href="#">Start Free Trial</a>
+  </Button>
+</LandingPrimaryTextCtaSection>
+```
+
+</ComponentExample>
+
+## Underline Dash Text
+
+**Underline Dash Text**<br/>
+This works with `primary`, `secondary` and Tailwind color schemes.
+
+<ComponentExample
+  previewComponent={
+    <LandingPrimaryTextCtaSection
+      titleComponent={
+        <h1 className="font-normal text-2xl md:text-3xl lg:text-4xl leading-tight md:max-w-2xl">
+          Grow your{' '}
+          <span className="font-semibold underline decoration-primary-500 decoration-4 decoration-dashed">
+            revenue
+          </span><br/>
+          across multiple channels
+        </h1>
+      }
+      description="Never miss that sale again. Get notified instantly when a customer buys something."
+      textPosition="center"
+    >
+      <Button size="xl" asChild>
+        <a href="#">Start Free Trial</a>
+      </Button>
+    </LandingPrimaryTextCtaSection>
+  }
+>
+
+```jsx
+import { Button } from '@/components/shared/ui/button';
+import { LandingPrimaryTextCtaSection } from '@/components/landing/cta/LandingPrimaryCta';
+
+<LandingPrimaryTextCtaSection
+  titleComponent={
+    <h1 className="font-normal text-2xl md:text-3xl lg:text-4xl leading-tight md:max-w-2xl">
+      Grow your{' '}
+      <span className="font-semibold underline decoration-primary-500 decoration-4 decoration-dashed">
+        revenue
+      </span><br/>
+      across multiple channels
+    </h1>
+  }
+  description="Never miss that sale again. Get notified instantly when a customer buys something."
+  textPosition="center"
+>
+  <Button size="xl" asChild>
+    <a href="#">Start Free Trial</a>
+  </Button>
+</LandingPrimaryTextCtaSection>
+```
+
+</ComponentExample>
+
+## Line Gradient Text
+
+**Line Gradient Text**<br/>
+This works with `primary`, `secondary` and Tailwind color schemes.
+
+<ComponentExample
+  previewComponent={
+    <LandingPrimaryTextCtaSection
+      titleComponent={
+        <h1 className="font-medium text-2xl md:text-3xl lg:text-4xl leading-tight md:max-w-2xl bg-gradient-to-b from-gray-950 to-55% via-gray-800 to-gray-500 dark:bg-gradient-to-t dark:from-gray-600 dark:to-55% dark:via-gray-400 dark:to-gray-50 bg-clip-text text-transparent">
+          Grow your revenue<br/>
+          across multiple channels
+        </h1>
+      }
+      description="Never miss that sale again. Get notified instantly when a customer buys something."
+      textPosition="center"
+    >
+      <Button size="xl" asChild>
+        <a href="#">Start Free Trial</a>
+      </Button>
+    </LandingPrimaryTextCtaSection>
+  }
+>
+
+```jsx
+import { Button } from '@/components/shared/ui/button';
+import { LandingPrimaryTextCtaSection } from '@/components/landing/cta/LandingPrimaryCta';
+
+<LandingPrimaryTextCtaSection
+  titleComponent={
+    <h1 className="font-medium text-2xl md:text-3xl lg:text-4xl leading-tight md:max-w-2xl bg-gradient-to-b from-gray-950 to-55% via-gray-800 to-gray-500 dark:bg-gradient-to-t dark:from-gray-600 dark:to-55% dark:via-gray-400 dark:to-gray-50 bg-clip-text text-transparent">
+      Grow your revenue<br/>
+      across multiple channels
+    </h1>
+  }
+  description="Never miss that sale again. Get notified instantly when a customer buys something."
+  textPosition="center"
+>
+  <Button size="xl" asChild>
+    <a href="#">Start Free Trial</a>
+  </Button>
+</LandingPrimaryTextCtaSection>
+```
+
+</ComponentExample>
+
+## Box Highlight Text
+
+**Box Highlight Text**<br/>
+This works with `primary`, `secondary` and Tailwind color schemes.
+
+<ComponentExample
+  previewComponent={
+    <LandingPrimaryTextCtaSection
+      titleComponent={
+        <h1 className="font-normal text-2xl md:text-3xl lg:text-4xl leading-tight md:max-w-2xl">
+          Grow your{' '}
+          <span className="font-medium inline-block md:leading-12 px-2 md:px-4 py-1 md:py-2 bg-primary-500/20">
+            revenue
+          </span><br/>
+          across multiple channels
+        </h1>
+      }
+      description="Never miss that sale again. Get notified instantly when a customer buys something."
+      textPosition="center"
+    >
+      <Button size="xl" asChild>
+        <a href="#">Start Free Trial</a>
+      </Button>
+    </LandingPrimaryTextCtaSection>
+  }
+>
+
+```jsx
+import { Button } from '@/components/shared/ui/button';
+import { LandingPrimaryTextCtaSection } from '@/components/landing/cta/LandingPrimaryCta';
+
+<LandingPrimaryTextCtaSection
+  titleComponent={
+    <h1 className="font-normal text-2xl md:text-3xl lg:text-4xl leading-tight md:max-w-2xl">
+      Grow your{' '}
+      <span className="font-medium inline-block md:leading-12 px-2 md:px-4 py-1 md:py-2 bg-primary-500/20">
+        revenue
+      </span><br/>
+      across multiple channels
+    </h1>
+  }
+  description="Never miss that sale again. Get notified instantly when a customer buys something."
+  textPosition="center"
+>
+  <Button size="xl" asChild>
+    <a href="#">Start Free Trial</a>
+  </Button>
+</LandingPrimaryTextCtaSection>
+```
+
+</ComponentExample>
+
+## Inverted Box Highlight Text
+
+**Inverted Box Highlight Text**<br/>
+This works with `primary`, `secondary` and Tailwind color schemes.
+
+<ComponentExample
+  previewComponent={
+    <LandingPrimaryTextCtaSection
+      titleComponent={
+        <h1 className="font-normal text-2xl md:text-3xl lg:text-4xl leading-tight md:max-w-2xl">
+          Grow your{' '}
+          <span className="font-medium inline-block md:leading-12 px-2 md:px-4 py-1 md:py-2 bg-primary-900 dark:bg-primary-100 text-white dark:text-black">
+            revenue
+          </span><br/>
+          across multiple channels
+        </h1>
+      }
+      description="Never miss that sale again. Get notified instantly when a customer buys something."
+      textPosition="center"
+    >
+      <Button size="xl" asChild>
+        <a href="#">Start Free Trial</a>
+      </Button>
+    </LandingPrimaryTextCtaSection>
+  }
+>
+
+```jsx
+import { Button } from '@/components/shared/ui/button';
+import { LandingPrimaryTextCtaSection } from '@/components/landing/cta/LandingPrimaryCta';
+
+<LandingPrimaryTextCtaSection
+  titleComponent={
+    <h1 className="font-normal text-2xl md:text-3xl lg:text-4xl leading-tight md:max-w-2xl">
+      Grow your{' '}
+      <span className="font-medium inline-block md:leading-12 px-2 md:px-4 py-1 md:py-2 bg-primary-900 dark:bg-primary-100 text-white dark:text-black">
+        revenue
+      </span><br/>
+      across multiple channels
+    </h1>
+  }
+  description="Never miss that sale again. Get notified instantly when a customer buys something."
+  textPosition="center"
+>
+  <Button size="xl" asChild>
+    <a href="#">Start Free Trial</a>
+  </Button>
+</LandingPrimaryTextCtaSection>
+```
+
+</ComponentExample>
+
+## Crooked Box Highlight Text
+
+**Crooked Box Highlight Text**<br/>
+This works with `primary`, `secondary` and Tailwind color schemes.
+
+<ComponentExample
+  previewComponent={
+    <LandingPrimaryTextCtaSection
+      titleComponent={
+        <h1 className="font-normal text-2xl md:text-3xl lg:text-4xl leading-tight md:max-w-2xl">
+          Grow your{' '}
+          <span className="font-medium inline-block md:leading-12 px-2 md:px-4 py-1 md:py-2 bg-primary-500/20 -rotate-2">
+            <span className="inline-block rotate-2">
+              revenue
+            </span>
+          </span><br/>
+          across multiple channels
+        </h1>
+      }
+      description="Never miss that sale again. Get notified instantly when a customer buys something."
+      textPosition="center"
+    >
+      <Button size="xl" asChild>
+        <a href="#">Start Free Trial</a>
+      </Button>
+    </LandingPrimaryTextCtaSection>
+  }
+>
+
+```jsx
+import { Button } from '@/components/shared/ui/button';
+import { LandingPrimaryTextCtaSection } from '@/components/landing/cta/LandingPrimaryCta';
+
+<LandingPrimaryTextCtaSection
+  titleComponent={
+    <h1 className="font-normal text-2xl md:text-3xl lg:text-4xl leading-tight md:max-w-2xl">
+      Grow your{' '}
+      <span className="font-medium inline-block md:leading-12 px-2 md:px-4 py-1 md:py-2 bg-primary-500/20 -rotate-2">
+        <span className="inline-block rotate-2">
+          revenue
+        </span>
+      </span><br/>
+      across multiple channels
+    </h1>
+  }
+  description="Never miss that sale again. Get notified instantly when a customer buys something."
+  textPosition="center"
+>
+  <Button size="xl" asChild>
+    <a href="#">Start Free Trial</a>
+  </Button>
+</LandingPrimaryTextCtaSection>
+```
+
+</ComponentExample>
+
+## Crooked Inverted Box Highlight Text
+
+**Crooked Inverted Box Highlight Text**<br/>
+This works with `primary`, `secondary` and Tailwind color schemes.
+
+<ComponentExample
+  previewComponent={
+    <LandingPrimaryTextCtaSection
+      titleComponent={
+        <h1 className="font-normal text-2xl md:text-3xl lg:text-4xl leading-tight md:max-w-2xl">
+          Grow your{' '}
+          <span className="font-medium inline-block md:leading-12 px-2 md:px-4 py-1 md:py-2 bg-primary-900 dark:bg-primary-100 text-white dark:text-black -rotate-2">
+            <span className="inline-block rotate-2">
+              revenue
+            </span>
+          </span><br/>
+          across multiple channels
+        </h1>
+      }
+      description="Never miss that sale again. Get notified instantly when a customer buys something."
+      textPosition="center"
+    >
+      <Button size="xl" asChild>
+        <a href="#">Start Free Trial</a>
+      </Button>
+    </LandingPrimaryTextCtaSection>
+  }
+>
+
+```jsx
+import { Button } from '@/components/shared/ui/button';
+import { LandingPrimaryTextCtaSection } from '@/components/landing/cta/LandingPrimaryCta';
+
+<LandingPrimaryTextCtaSection
+  titleComponent={
+    <h1 className="font-normal text-2xl md:text-3xl lg:text-4xl leading-tight md:max-w-2xl">
+      Grow your{' '}
+      <span className="font-medium inline-block md:leading-12 px-2 md:px-4 py-1 md:py-2 bg-primary-900 dark:bg-primary-100 text-white dark:text-black -rotate-2">
+        <span className="inline-block rotate-2">
+          revenue
+        </span>
+      </span><br/>
+      across multiple channels
+    </h1>
+  }
+  description="Never miss that sale again. Get notified instantly when a customer buys something."
+  textPosition="center"
+>
+  <Button size="xl" asChild>
+    <a href="#">Start Free Trial</a>
+  </Button>
+</LandingPrimaryTextCtaSection>
+```
+
+</ComponentExample>
+
+## More Examples
+
+For more even more examples, see our <a href="/demo/landing-page-component-examples" className="fancy-link">Landing Page Component Examples</a> page or see complete landing page examples by <a href="/demo/landing-page-templates" className="fancy-link">Exploring Our Landing Page Templates</a>.
+
+Also see:
+
+- <a href="/boilerplate-documentation/landing-page-components/primary-image-cta" className="fancy-link">Primary Image Call to Action</a> component for the main CTA integration
+- <a href="/boilerplate-documentation/landing-page-components/primary-text-cta" className="fancy-link">Primary Text Call to Action</a> component for text-focused CTAs
+- <a href="/boilerplate-documentation/landing-page-components/primary-video-cta" className="fancy-link">Primary Video Call to Action</a> component for video-based CTAs

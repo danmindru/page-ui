@@ -1,0 +1,749 @@
+---
+title: 'Landing Leading Pill components'
+date: '2025-05-31'
+lastmod: '2025-05-31'
+tags:
+  - 'guide'
+  - 'components'
+  - 'documentation'
+  - 'landing-page'
+  - 'ui-library'
+  - 'react'
+  - 'nextjs'
+  - 'tailwind-css'
+  - 'pill'
+  - 'badge'
+  - 'announcement'
+  - 'cta'
+  - 'inline'
+  - 'shadcn-ui'
+  - 'shadcn-ui-landing-page'
+  - 'shadcn-ui-pill'
+  - 'shadcn-ui-badge'
+summary: 'A flexible inline pill component for announcements, badges, and call-to-action elements with SVG borders, gradient variants, glass backgrounds, and comprehensive customization options.'
+layout: PostHub
+
+# images:
+#   - '/static/images/blog/docs/leading-pill-preview.webp'
+
+showThemeSelector: true
+showInstallNotice: true
+
+canonicalUrl: 'https://shipixen.com/boilerplate-documentation/landing-page-components/leading-pill'
+---
+
+The `LandingLeadingPill` is a versatile inline component perfect for announcements, badges, feature highlights, and call-to-action elements. It features **SVG-based borders** for all variants ensuring perfect rounded corners, supports multiple color variants including rainbow gradients, glass backgrounds, and can be made clickable as either a link or button. It also supports left and right components, custom text components, children, and custom opacity.
+
+**Key Features:**
+- **Rainbow gradient borders** with smooth color transitions
+- **Glass background effects** with backdrop blur
+- **Flexible content** support
+- **Clickable variants** (link or button)
+- **Responsive design** with proper dimension handling
+
+These work well together with `LandingPrimaryImageCtaSection`, `LandingPrimaryTextCtaSection`, `LandingPrimaryVideoCtaSection`, `LandingProductFeature`, `LandingProductVideoFeature` as the `leadingComponent` prop.
+
+<ComponentExample
+  previewComponent={
+    <LandingLeadingPill
+      borderVariant="primary"
+      textVariant="primary"
+    >
+      Latest integration is here
+    </LandingLeadingPill>
+  }
+>
+
+```jsx
+import { LandingLeadingPill } from '@/components/landing/leading/LandingLeadingPill';
+
+<LandingLeadingPill
+  borderVariant="primary"
+  textVariant="primary"
+>
+  Latest integration is here
+</LandingLeadingPill>
+```
+
+</ComponentExample>
+
+## Usage
+
+```js
+import { LandingLeadingPill } from '@/components/landing/leading/LandingLeadingPill';
+```
+
+```jsx
+<LandingLeadingPill
+  text="New Feature"
+  borderVariant="primary"
+  textVariant="primary"
+/>
+```
+
+## Full Examples
+
+### News Announcement
+
+<ComponentExample
+  previewComponent={
+    <LandingLeadingPill
+      borderVariant="primary"
+      textVariant="primary"
+      leftComponent={<span className="inline-block bg-primary-500 text-white py-0.5 px-2 rounded-xl text-xs -ml-2">New</span>}
+    >
+      Latest integration is here
+    </LandingLeadingPill>
+  }
+>
+
+```jsx
+import { LandingLeadingPill } from '@/components/landing/leading/LandingLeadingPill';
+
+<LandingLeadingPill
+  borderVariant="primary"
+  textVariant="primary"
+>
+  Latest integration is here
+</LandingLeadingPill>
+```
+
+</ComponentExample>
+
+### With Announcement & Notification
+
+<ComponentExample
+  previewComponent={
+    <LandingLeadingPill
+      borderVariant="primary"
+      textVariant="primary"
+      leftComponent={<span className="inline-block w-2 h-2 bg-primary-500 rounded-full"></span>}
+    >
+      Latest integration is here
+    </LandingLeadingPill>
+  }
+>
+
+```jsx
+import { LandingLeadingPill } from '@/components/landing/leading/LandingLeadingPill';
+
+<LandingLeadingPill
+  borderVariant="primary"
+  textVariant="primary"
+>
+  Latest integration is here
+</LandingLeadingPill>
+```
+
+</ComponentExample>
+
+### With Announcement & Read More
+
+<ComponentExample
+  previewComponent={
+    <LandingLeadingPill
+      borderVariant="primary"
+      textVariant="primary"
+      leftComponent={<span className="inline-block w-2 h-2 bg-primary-500 rounded-full"></span>}
+      rightComponent={<span className="opacity-70">Read More →</span>}
+    >
+      Latest integration is here
+    </LandingLeadingPill>
+  }
+>
+
+```jsx
+import { LandingLeadingPill } from '@/components/landing/leading/LandingLeadingPill';
+
+<LandingLeadingPill
+  borderVariant="primary"
+  textVariant="primary"
+  leftComponent={<span className="inline-block w-2 h-2 bg-primary-500 rounded-full"></span>}
+  rightComponent={<span className="opacity-70">Read More →</span>}
+>
+  Latest integration is here
+</LandingLeadingPill>
+```
+
+</ComponentExample>
+
+### With Clean Icon
+
+<ComponentExample
+  previewComponent={
+    <LandingLeadingPill
+      withBorder={false}
+      leftComponent={<SparklesIcon className="w-4 h-4" />}
+    >
+      Made for you
+    </LandingLeadingPill>
+  }
+>
+
+```jsx
+import { LandingLeadingPill } from '@/components/landing/leading/LandingLeadingPill';
+import { SparklesIcon } from 'lucide-react';
+
+<LandingLeadingPill
+  withBorder={false}
+  leftComponent={<SparklesIcon className="w-4 h-4" />}
+>
+  Made for you
+</LandingLeadingPill>
+```
+
+</ComponentExample>
+
+
+### With Clean Background
+
+<ComponentExample
+  previewComponent={
+    <LandingLeadingPill
+      withBackground={true}
+      withBorder={false}
+    >
+      Made for you
+    </LandingLeadingPill>
+  }
+>
+
+```jsx
+import { LandingLeadingPill } from '@/components/landing/leading/LandingLeadingPill';
+
+<LandingLeadingPill
+  withBackground={true}
+  withBorder={false}
+>
+  Made for you
+</LandingLeadingPill>
+```
+
+</ComponentExample>
+
+### With Icon and Background
+
+<ComponentExample
+  previewComponent={
+    <LandingLeadingPill
+      withBorder={false}
+      withBackground={true}
+      backgroundVariant="primary"
+      textVariant="primary"
+      leftComponent={<SparklesIcon className="w-4 h-4" />}
+    >
+      Made for you
+    </LandingLeadingPill>
+  }
+>
+
+```jsx
+import { LandingLeadingPill } from '@/components/landing/leading/LandingLeadingPill';
+import { SparklesIcon } from 'lucide-react';
+
+<LandingLeadingPill
+  withBorder={false}
+  withBackground={true}
+  backgroundVariant="primary"
+  textVariant="white"
+  leftComponent={<SparklesIcon className="w-4 h-4" />}
+>
+  Made for you
+</LandingLeadingPill>
+```
+
+</ComponentExample>
+
+### With Clean End Arrow
+
+<ComponentExample
+  previewComponent={
+    <LandingLeadingPill
+      rightComponent={<span className="opacity-70">→</span>}
+    >
+      Latest integration is here
+    </LandingLeadingPill>
+  }
+>
+
+```jsx
+import { LandingLeadingPill } from '@/components/landing/leading/LandingLeadingPill';
+
+<LandingLeadingPill
+  rightComponent={<span className="opacity-70">→</span>}
+>
+  Latest integration is here
+</LandingLeadingPill>
+```
+
+</ComponentExample>
+
+### With Clean Read More
+
+<ComponentExample
+  previewComponent={
+    <LandingLeadingPill
+      rightComponent={<span className="opacity-70">Read More →</span>}
+    >
+      Latest integration is here
+    </LandingLeadingPill>
+  }
+>
+
+```jsx
+import { LandingLeadingPill } from '@/components/landing/leading/LandingLeadingPill';
+
+<LandingLeadingPill
+  rightComponent={<span className="opacity-70">Read More →</span>}
+>
+  Latest integration is here
+</LandingLeadingPill>
+```
+
+</ComponentExample>
+
+
+### With Icon and Read More
+
+<ComponentExample
+  previewComponent={
+    <LandingLeadingPill
+      leftComponent={<SparklesIcon className="w-4 h-4" />}
+      rightComponent={<span className="opacity-70">Read More →</span>}
+    >
+      Latest integration is here
+    </LandingLeadingPill>
+  }
+>
+
+```jsx
+import { LandingLeadingPill } from '@/components/landing/leading/LandingLeadingPill';
+import { SparklesIcon } from 'lucide-react';
+
+<LandingLeadingPill
+  leftComponent={<SparklesIcon className="w-4 h-4" />}
+  rightComponent={<span className="opacity-70">Read More →</span>}
+>
+  Latest integration is here
+</LandingLeadingPill>
+```
+
+</ComponentExample>
+
+### With Start Emoji
+
+<ComponentExample
+  previewComponent={
+    <LandingLeadingPill
+      leftComponent={<span className="opacity-70">🎉</span>}
+    >
+      Latest integration is here
+    </LandingLeadingPill>
+  }
+>
+
+```jsx
+import { LandingLeadingPill } from '@/components/landing/leading/LandingLeadingPill';
+
+<LandingLeadingPill
+  leftComponent={<span className="opacity-70">🎉</span>}
+>
+  Latest integration is here
+</LandingLeadingPill>
+```
+
+</ComponentExample>
+
+### With Stand Out Border and Badge
+
+<ComponentExample
+  previewComponent={
+    <LandingLeadingPill
+      borderVariant="greenRainbow"
+      leftComponent={<span className="inline-block bg-neutral-200 text-neutral-800 dark:invert py-0.5 px-2 rounded-xl text-xs -ml-2">New</span>}
+    >
+      Latest integration is here
+    </LandingLeadingPill>
+  }
+>
+
+```jsx
+import { LandingLeadingPill } from '@/components/landing/leading/LandingLeadingPill';
+
+<LandingLeadingPill
+  borderVariant="greenRainbow"
+  leftComponent={<span className="inline-block bg-gray-800 text-white py-0.5 px-2 rounded-xl text-xs -ml-2">New</span>}
+>
+  Latest integration is here
+</LandingLeadingPill>
+```
+
+</ComponentExample>
+
+### With Modern Glass Background
+
+<ComponentExample
+  previewComponent={
+    <LandingLeadingPill
+      withBackground={true}
+      withBorder={false}
+      backgroundVariant="primary"
+    >
+      Latest integration is here
+    </LandingLeadingPill>
+  }
+>
+
+```jsx
+import { LandingLeadingPill } from '@/components/landing/leading/LandingLeadingPill';
+
+<LandingLeadingPill
+  withBackground={true}
+  withBorder={false}
+  backgroundVariant="primary"
+>
+  Latest integration is here
+</LandingLeadingPill>
+```
+
+</ComponentExample>
+
+### With Primary CTA
+
+<ComponentExample
+  previewComponent={
+    <LandingPrimaryImageCtaSection
+      title="Landing page in minutes"
+      description="Get 10x more done with Shadcn UI, React & Next.js, and say goodbye to repetitive tasks. You'll never go back."
+      imageSrc="/static/images/shipixen/product/1.webp"
+      imageAlt="Sample image"
+      imagePosition="center"
+      leadingComponent={<LandingLeadingPill
+        text="Best generator"
+        borderVariant="primary"
+        textVariant="primary"
+      />}
+    >
+      <Button size="xl" asChild>
+        <a href="#">
+          Buy now
+        </a>
+      </Button>
+
+      <Button size="xl" variant="outlinePrimary">
+        <a href="#">
+          Read more
+        </a>
+      </Button>
+    </LandingPrimaryImageCtaSection>
+
+}
+
+>
+
+```jsx
+import { Button } from '@/components/shared/ui/button';
+import { LandingPrimaryImageCtaSection } from '@/components/landing/cta/LandingPrimaryCta';
+import { LandingLeadingPill } from '@/components/landing/leading/LandingLeadingPill';
+
+<LandingPrimaryImageCtaSection
+  title="Landing page in minutes"
+  description="Get 10x more done with Shadcn UI, React & Next.js, and say goodbye to repetitive tasks. You'll never go back."
+  imageSrc="/static/images/shipixen/product/1.webp"
+  imageAlt="Sample image"
+  imagePosition="center"
+  leadingComponent={<LandingLeadingPill
+    text="Best generator"
+    borderVariant="primary"
+  />}
+>
+  <Button size="xl" asChild>
+    <a href="#">Buy now</a>
+  </Button>
+
+  <Button size="xl" variant="outlinePrimary">
+    <a href="#">Read more</a>
+  </Button>
+</LandingPrimaryImageCtaSection>;
+```
+
+</ComponentExample>
+
+### With Product Feature
+
+<ComponentExample previewComponent={
+  <LandingProductFeature
+    title="The wait is over"
+    description="Give your project the home it deserves. Your users will love you for it."
+    imageSrc="/static/images/backdrop-5.webp"
+    imageAlt="Sample image"
+    leadingComponent={
+      <LandingLeadingPill
+        withBorder={false}
+        withBackground={true}
+        backgroundVariant="primary"
+        leftComponent={<SparklesIcon className="w-4 h-4" />}
+      >
+        Join today
+      </LandingLeadingPill>
+    }
+  />}>
+
+```jsx
+import { LandingProductFeature } from '@/components/landing/LandingProductFeature';
+
+<LandingProductFeature
+  title="The wait is over"
+  description="Give your project the home it deserves. Your users will love you for it."
+  imageSrc="/static/images/backdrop-5.webp"
+  imageAlt="Sample image"
+  leadingComponent={
+    <LandingLeadingPill
+      withBorder={false}
+      withBackground={true}
+      backgroundVariant="primary"
+      leftComponent={<SparklesIcon className="w-4 h-4" />}
+    >
+      Join today
+    </LandingLeadingPill>
+  }
+/>;
+```
+
+</ComponentExample>
+
+## Variant Examples
+
+### Basic Border Variants
+
+All borders are now rendered using SVG for perfect consistency and rounded corners.
+
+<ComponentExample
+  previewComponent={
+    <div className="flex flex-wrap gap-3">
+      <LandingLeadingPill text="Default" borderVariant="default" />
+      <LandingLeadingPill text="Primary" borderVariant="primary" />
+      <LandingLeadingPill text="Secondary" borderVariant="secondary" />
+      <LandingLeadingPill text="Light Gray" borderVariant="lightGray" />
+      <LandingLeadingPill text="Dark Gray" borderVariant="darkGray" />
+    </div>
+  }
+>
+
+```jsx
+<LandingLeadingPill text="Default" borderVariant="default" />
+<LandingLeadingPill text="Primary" borderVariant="primary" />
+<LandingLeadingPill text="Secondary" borderVariant="secondary" />
+<LandingLeadingPill text="Light Gray" borderVariant="lightGray" />
+<LandingLeadingPill text="Dark Gray" borderVariant="darkGray" />
+```
+
+</ComponentExample>
+
+### Rainbow Gradient Border Variants
+
+Rainbow borders use SVG gradients with smooth color transitions and automatic white/black text for optimal contrast.
+
+<ComponentExample
+  previewComponent={
+    <div className="flex flex-wrap gap-3">
+      <LandingLeadingPill text="Pink Rainbow" borderVariant="pinkRainbow" />
+      <LandingLeadingPill text="Purple Rainbow" borderVariant="purpleRainbow" />
+      <LandingLeadingPill text="Yellow Rainbow" borderVariant="yellowRainbow" />
+      <LandingLeadingPill text="Green Rainbow" borderVariant="greenRainbow" />
+    </div>
+  }
+>
+
+```jsx
+<LandingLeadingPill text="Pink Rainbow" borderVariant="pinkRainbow" />
+<LandingLeadingPill text="Purple Rainbow" borderVariant="purpleRainbow" />
+<LandingLeadingPill text="Yellow Rainbow" borderVariant="yellowRainbow" />
+<LandingLeadingPill text="Green Rainbow" borderVariant="greenRainbow" />
+```
+
+</ComponentExample>
+
+### Text Variants
+
+<ComponentExample
+  previewComponent={
+    <div className="flex flex-wrap gap-3">
+      <LandingLeadingPill text="Default Text" textVariant="default" borderVariant="primary" />
+      <LandingLeadingPill text="Primary Text" textVariant="primary" borderVariant="default" />
+      <LandingLeadingPill text="Secondary Text" textVariant="secondary" borderVariant="default" />
+    </div>
+  }
+>
+
+```jsx
+<LandingLeadingPill text="Default Text" textVariant="default" borderVariant="primary" />
+<LandingLeadingPill text="Primary Text" textVariant="primary" borderVariant="default" />
+<LandingLeadingPill text="Secondary Text" textVariant="secondary" borderVariant="default" />
+```
+
+</ComponentExample>
+
+### Background Variants
+
+<ComponentExample
+  previewComponent={
+    <div className="flex flex-wrap gap-3">
+      <LandingLeadingPill text="Default BG" withBackground={true} backgroundVariant="default" />
+      <LandingLeadingPill text="Primary BG" withBackground={true} backgroundVariant="primary" />
+      <LandingLeadingPill text="Secondary BG" withBackground={true} backgroundVariant="secondary" />
+      <LandingLeadingPill text="Glass" withBackground={true} backgroundVariant="glass" />
+      <LandingLeadingPill text="Primary Glass" withBackground={true} backgroundVariant="primaryGlass" />
+      <LandingLeadingPill text="Secondary Glass" withBackground={true} backgroundVariant="secondaryGlass" />
+    </div>
+  }
+>
+
+```jsx
+<LandingLeadingPill text="Default BG" withBackground={true} backgroundVariant="default" />
+<LandingLeadingPill text="Primary BG" withBackground={true} backgroundVariant="primary" />
+<LandingLeadingPill text="Secondary BG" withBackground={true} backgroundVariant="secondary" />
+<LandingLeadingPill text="Glass" withBackground={true} backgroundVariant="glass" />
+<LandingLeadingPill text="Primary Glass" withBackground={true} backgroundVariant="primaryGlass" />
+<LandingLeadingPill text="Secondary Glass" withBackground={true} backgroundVariant="secondaryGlass" />
+```
+
+</ComponentExample>
+
+### Text Styling
+
+<ComponentExample
+  previewComponent={
+    <div className="flex flex-wrap gap-3">
+      <LandingLeadingPill text="capitalized text" textStyle="default" borderVariant="primary" />
+      <LandingLeadingPill text="uppercase text" textStyle="uppercase" borderVariant="secondary" />
+    </div>
+  }
+>
+
+```jsx
+<LandingLeadingPill text="capitalized text" textStyle="default" borderVariant="primary" />
+<LandingLeadingPill text="uppercase text" textStyle="uppercase" borderVariant="secondary" />
+```
+
+</ComponentExample>
+
+### With Left and Right Components
+
+<ComponentExample
+  previewComponent={
+    <div className="flex flex-wrap gap-3">
+      <LandingLeadingPill
+        text="New Feature"
+        leftComponent={<span className="inline-block w-2 h-2 bg-green-500 rounded-full"></span>}
+        borderVariant="primary"
+      />
+      <LandingLeadingPill
+        text="Get Started"
+        rightComponent={<span className="text-xs">→</span>}
+        borderVariant="secondary"
+      />
+      <LandingLeadingPill
+        text="Version 2.0"
+        leftComponent={<span className="text-xs">🚀</span>}
+        rightComponent={<span className="text-xs">✨</span>}
+        borderVariant="greenRainbow"
+      />
+    </div>
+  }
+>
+
+```jsx
+<LandingLeadingPill
+  text="New Feature"
+  leftComponent={<span className="inline-block w-2 h-2 bg-green-500 rounded-full"></span>}
+  borderVariant="primary"
+/>
+<LandingLeadingPill
+  text="Get Started"
+  rightComponent={<span className="text-xs">→</span>}
+  borderVariant="secondary"
+/>
+<LandingLeadingPill
+  text="Version 2.0"
+  leftComponent={<span className="text-xs">🚀</span>}
+  rightComponent={<span className="text-xs">✨</span>}
+  borderVariant="greenRainbow"
+/>
+```
+
+</ComponentExample>
+
+### Clickable Pills
+
+<ComponentExample
+  previewComponent={
+    <div className="flex flex-wrap gap-3">
+      <LandingLeadingPill
+        text="Visit Documentation"
+        href="/docs"
+        borderVariant="darkGray"
+        withBackground={true}
+      />
+      <LandingLeadingPill
+        text="See more"
+        onClick={true}
+        borderVariant="primary"
+        withBackground={true}
+        rightComponent={<span className="text-xs">→</span>}
+      />
+    </div>
+  }
+>
+
+```jsx
+<LandingLeadingPill
+  text="Visit Documentation"
+  href="/docs"
+  borderVariant="darkGray"
+  withBackground={true}
+/>
+<LandingLeadingPill
+  text="See more"
+  onClick={() => alert('Button clicked!')}
+  borderVariant="primary"
+  withBackground={true}
+  rightComponent={<span className="text-xs">→</span>}
+/>
+```
+
+</ComponentExample>
+
+## API Reference
+
+| Prop Name | Prop Type | Required | Default |
+| --- | --- | ----- | ---- |
+| **className** <Tippy>Additional CSS classes to apply to the pill</Tippy> | `string` | No | `-` |
+| **textVariant** <Tippy>Text color variant of the pill</Tippy> | `'default' \| 'primary' \| 'secondary' \| 'lightGray' \| 'darkGray' \| 'white' \| 'black'` | No | `'default'` |
+| **borderVariant** <Tippy>Border style variant of the pill (all rendered with SVG)</Tippy> | `'default' \| 'primary' \| 'secondary' \| 'lightGray' \| 'darkGray' \| 'pinkRainbow' \| 'purpleRainbow' \| 'yellowRainbow' \| 'greenRainbow'` | No | `'default'` |
+| **backgroundVariant** <Tippy>Background style of the pill (only applied when withBackground is true)</Tippy> | `'default' \| 'primary' \| 'secondary' \| 'glass' \| 'primaryGlass' \| 'secondaryGlass'` | No | `'default'` |
+| **withBackground** <Tippy>Whether to apply background styling</Tippy> | `boolean` | No | `false` |
+| **withBorder** <Tippy>Whether to apply border styling</Tippy> | `boolean` | No | `true` |
+| **borderWidth** <Tippy>Width of the border in pixels</Tippy> | `number` | No | `1` |
+| **text** <Tippy>Text content to display in the pill</Tippy> | `string` | No | `-` |
+| **textComponent** <Tippy>Custom React component to display instead of text</Tippy> | `React.ReactNode` | No | `-` |
+| **children** <Tippy>Children components to display (takes precedence over text and textComponent)</Tippy> | `React.ReactNode` | No | `-` |
+| **textStyle** <Tippy>Text styling variant</Tippy> | `'default' \| 'capitalize' \| 'uppercase'` | No | `'default'` |
+| **leftComponent** <Tippy>Component to display on the left side of the text</Tippy> | `React.ReactNode` | No | `-` |
+| **rightComponent** <Tippy>Component to display on the right side of the text</Tippy> | `React.ReactNode` | No | `-` |
+| **href** <Tippy>URL to navigate to when clicked (makes the pill a link)</Tippy> | `string` | No | `-` |
+| **onClick** <Tippy>Function to call when clicked (makes the pill a button)</Tippy> | `() => void` | No | `-` |
+
+## More Examples
+
+For more even more examples, see our <a href="/demo/landing-page-component-examples" className="fancy-link">Landing Page Component Examples</a> page or see complete landing page examples by <a href="/demo/landing-page-templates" className="fancy-link">Exploring Our Landing Page Templates</a>.
+
+Also see:
+
+- <a href="/boilerplate-documentation/landing-page-components/primary-image-cta" className="fancy-link">Primary Image Call to Action</a> component for the main CTA integration
+- <a href="/boilerplate-documentation/landing-page-components/primary-text-cta" className="fancy-link">Primary Text Call to Action</a> component for text-focused CTAs
+- <a href="/boilerplate-documentation/landing-page-components/primary-video-cta" className="fancy-link">Primary Video Call to Action</a> component for video-based CTAs
+- <a href="/boilerplate-documentation/landing-page-components/primary-cta-text-effects" className="fancy-link">Primary CTA Text Effects</a> component for text-focused CTAs
+- <a href="/boilerplate-documentation/landing-page-components/primary-cta-effects" className="fancy-link">Primary CTA Effects</a> component for text-focused CTAs
+- <a href="/boilerplate-documentation/landing-page-components/product-feature" className="fancy-link">Product Feature</a> component.
+- <a href="/boilerplate-documentation/landing-page-components/product-video-feature" className="fancy-link">Product Feature</a> component.

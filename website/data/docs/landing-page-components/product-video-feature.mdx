@@ -1,7 +1,7 @@
 ---
 title: 'Landing Page Video Feature Component'
 date: '2024-04-04'
-lastmod: '2025-05-15'
+lastmod: '2025-05-31'
 tags:
   - 'guide'
   - 'components'
@@ -384,13 +384,13 @@ import { LandingProductVideoFeature } from '@/components/landing/LandingProductV
         title="Easy Setup"
         description="Get started in minutes with our guided setup process."
         videoSrc="https://cache.shipixen.com/features/8-customize-pages.mp4"
-        posterSrc="/static/images/backdrop-8.webp"
+        videoPoster="/static/images/backdrop-8.webp"
       />
       <LandingProductVideoFeature
         title="Intuitive Interface"
         description="Navigate with ease through our user-friendly platform."
         videoSrc="https://cache.shipixen.com/features/11-pricing-page-builder.mp4"
-        posterSrc="/static/images/backdrop-8.webp"
+        videoPoster="/static/images/backdrop-8.webp"
       />
     </LandingProductSteps>
   }
@@ -408,18 +408,89 @@ import { LandingProductVideoFeature } from '@/components/landing/LandingProductV
     title="Easy Setup"
     description="Get started in minutes with our guided setup process."
     videoSrc="https://cache.shipixen.com/features/8-customize-pages.mp4"
-    posterSrc="/static/images/backdrop-8.webp"
+    videoPoster="/static/images/backdrop-8.webp"
   />
   <LandingProductVideoFeature
     title="Intuitive Interface"
     description="Navigate with ease through our user-friendly platform."
     videoSrc="https://cache.shipixen.com/features/11-pricing-page-builder.mp4"
-    posterSrc="/static/images/backdrop-8.webp"
+    videoPoster="/static/images/backdrop-8.webp"
   />
 </LandingProductSteps>
 ```
 
 </ComponentExample>
+
+### With Background Effect
+
+<ComponentExample previewComponent={
+  <LandingProductVideoFeature
+    title="The wait is over"
+    description="Give your project the home it deserves. Your users will love you for it."
+    videoSrc="https://cache.shipixen.com/features/3-theme-and-logo.mp4"
+    videoPoster="/static/images/backdrop-5.webp"
+    effectComponent={<LandingDotParticleCtaBg />}
+  />}>
+
+```jsx
+import { LandingProductVideoFeature } from '@/components/landing/LandingProductVideoFeature';
+import { LandingDotParticleCtaBg } from '@/components/landing/cta-backgrounds/LandingDotParticleCtaBg';
+
+<LandingProductVideoFeature
+  title="The wait is over"
+  description="Give your project the home it deserves. Your users will love you for it."
+  videoSrc="https://cache.shipixen.com/features/3-theme-and-logo.mp4"
+  videoPoster="/static/images/backdrop-5.webp"
+  effectComponent={<LandingDotParticleCtaBg />}
+/>;
+```
+
+</ComponentExample>
+
+
+### With Leading Pill
+
+<ComponentExample previewComponent={
+  <LandingProductVideoFeature
+    title="The wait is over"
+    description="Give your project the home it deserves. Your users will love you for it."
+    videoSrc="https://cache.shipixen.com/features/3-theme-and-logo.mp4"
+    videoPoster="/static/images/backdrop-5.webp"
+    leadingComponent={
+      <LandingLeadingPill
+        withBorder={false}
+        withBackground={true}
+        backgroundVariant="primary"
+        leftComponent={<SparklesIcon className="w-4 h-4" />}
+      >
+        Join today
+      </LandingLeadingPill>
+    }
+  />}>
+
+```jsx
+import { LandingProductVideoFeature } from '@/components/landing/LandingProductVideoFeature';
+
+<LandingProductVideoFeature
+  title="The wait is over"
+  description="Give your project the home it deserves. Your users will love you for it."
+  videoSrc="https://cache.shipixen.com/features/3-theme-and-logo.mp4"
+  videoPoster="/static/images/backdrop-5.webp"
+  leadingComponent={
+    <LandingLeadingPill
+      withBorder={false}
+      withBackground={true}
+      backgroundVariant="primary"
+      leftComponent={<SparklesIcon className="w-4 h-4" />}
+    >
+      Join today
+    </LandingLeadingPill>
+  }
+/>;
+```
+
+</ComponentExample>
+
 
 ## API Reference
 
@@ -432,6 +503,7 @@ import { LandingProductVideoFeature } from '@/components/landing/LandingProductV
 | **titleComponent** <Tippy>Custom React component for the title.</Tippy>                                                               | `React.ReactNode`                 | No       | -           |
 | **description** <Tippy>Description of the section.</Tippy>                                                                            | `string` ǀ `React.ReactNode`      | No       | -           |
 | **descriptionComponent** <Tippy>Custom React component for the description.</Tippy>                                                   | `React.ReactNode`                 | No       | -           |
+| **leadingComponent** <Tippy>Custom React component to render as the leading component.</Tippy>                                         | `React.ReactNode`                                                        | No       | -           |
 | **textPosition** <Tippy>Position of the text content. Can be `'center'` or `'left'`.</Tippy>                                          | `'center'` ǀ `'left'`             | No       | `'left'`    |
 | **videoSrc** <Tippy>Source URL for the video.</Tippy>                                                                                 | `string`                          | No       | -           |
 | **videoPoster** <Tippy>URL for the poster image of the video.</Tippy>                                                                 | `string`                          | No       | -           |
@@ -445,6 +517,8 @@ import { LandingProductVideoFeature } from '@/components/landing/LandingProductV
 | **withBackgroundGlow** <Tippy>Specifies whether the section should have a glowing background.</Tippy>                                 | `boolean`                         | No       | `false`     |
 | **variant** <Tippy>Variation style of the section. Can be `'primary'` or `'secondary'`.</Tippy>                                       | `'primary'` ǀ `'secondary'`       | No       | `'primary'` |
 | **backgroundGlowVariant** <Tippy>Variation style of the glowing background.</Tippy>                                                   | `'primary'` ǀ `'secondary'`       | No       | -           |
+| **effectComponent** <Tippy>Custom React component to be displayed as the background effect.</Tippy>                                    | `React.ReactNode`                                                        | No       | -           |
+| **effectClassName** <Tippy>Additional CSS classes to apply to the background effect.</Tippy>                                        | `string`                                                                 | No       | -           |
 
 ## More Examples
 
@@ -455,3 +529,5 @@ Also see:
 - <a href="/boilerplate-documentation/landing-page-components/product-feature" className="fancy-link">Product Feature</a> component.
 - <a href="/boilerplate-documentation/landing-page-components/product-features-grid" className="fancy-link">Product Features Grid</a> component.
 - <a href="/boilerplate-documentation/landing-page-components/product-steps" className="fancy-link">Product Steps</a> component.
+- <a href="/boilerplate-documentation/landing-page-components/primary-cta-effects" className="fancy-link">Background Effects</a> component for adding visual interest to a section
+- <a href="/boilerplate-documentation/landing-page-components/leading-pill" className="fancy-link">Leading Pill</a> component.

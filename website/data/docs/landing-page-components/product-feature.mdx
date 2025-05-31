@@ -1,7 +1,7 @@
 ---
 title: 'Landing Page Product Feature Component'
 date: '2023-11-19'
-lastmod: '2025-05-15'
+lastmod: '2025-05-31'
 tags:
   - 'guide'
   - 'components'
@@ -426,6 +426,77 @@ import { LandingProductFeature } from '@/components/landing/LandingProductFeatur
 
 </ComponentExample>
 
+### With Background Effect
+
+<ComponentExample previewComponent={
+  <LandingProductFeature
+    title="The wait is over"
+    description="Give your project the home it deserves. Your users will love you for it."
+    imageSrc="/static/images/backdrop-5.webp"
+    imageAlt="Sample image"
+    effectComponent={<LandingDotParticleCtaBg />}
+  />}>
+
+```jsx
+import { LandingProductFeature } from '@/components/landing/LandingProductFeature';
+import { LandingDotParticleCtaBg } from '@/components/landing/cta-backgrounds/LandingDotParticleCtaBg';
+
+<LandingProductFeature
+  title="The wait is over"
+  description="Give your project the home it deserves. Your users will love you for it."
+  imageSrc="/static/images/backdrop-5.webp"
+  imageAlt="Sample image"
+  effectComponent={<LandingDotParticleCtaBg />}
+/>;
+```
+
+</ComponentExample>
+
+
+
+### With Leading Pill
+
+<ComponentExample previewComponent={
+  <LandingProductFeature
+    title="The wait is over"
+    description="Give your project the home it deserves. Your users will love you for it."
+    imageSrc="/static/images/backdrop-5.webp"
+    imageAlt="Sample image"
+    leadingComponent={
+      <LandingLeadingPill
+        withBorder={false}
+        withBackground={true}
+        backgroundVariant="primary"
+        leftComponent={<SparklesIcon className="w-4 h-4" />}
+      >
+        Join today
+      </LandingLeadingPill>
+    }
+  />}>
+
+```jsx
+import { LandingProductFeature } from '@/components/landing/LandingProductFeature';
+
+<LandingProductFeature
+  title="The wait is over"
+  description="Give your project the home it deserves. Your users will love you for it."
+  imageSrc="/static/images/backdrop-5.webp"
+  imageAlt="Sample image"
+  leadingComponent={
+    <LandingLeadingPill
+      withBorder={false}
+      withBackground={true}
+      backgroundVariant="primary"
+      leftComponent={<SparklesIcon className="w-4 h-4" />}
+    >
+      Join today
+    </LandingLeadingPill>
+  }
+/>;
+```
+
+</ComponentExample>
+
 
 ## API Reference
 
@@ -438,6 +509,7 @@ import { LandingProductFeature } from '@/components/landing/LandingProductFeatur
 | **titleComponent** <Tippy>Custom React component to render as the title.</Tippy>                                                       | `React.ReactNode`                                                        | No       | -           |
 | **description** <Tippy>The description to be displayed in the component.</Tippy>                                                       | `string` ǀ `React.ReactNode`                                             | No       | -           |
 | **descriptionComponent** <Tippy>Custom React component to render as the description.</Tippy>                                           | `React.ReactNode`                                                        | No       | -           |
+| **leadingComponent** <Tippy>Custom React component to render as the leading component.</Tippy>                                         | `React.ReactNode`                                                        | No       | -           |
 | **textPosition** <Tippy>The position of the text content ('center' or 'left').</Tippy>                                                 | `'center'` ǀ `'left'`                                                    | No       | `'left'`    |
 | **imageSrc** <Tippy>The URL of the image to be displayed.</Tippy>                                                                      | `string`                                                                 | No       | -           |
 | **imageAlt** <Tippy>The alternative text for the image.</Tippy>                                                                        | `string`                                                                 | No       | ''          |
@@ -450,6 +522,8 @@ import { LandingProductFeature } from '@/components/landing/LandingProductFeatur
 | **withBackgroundGlow** <Tippy>Whether to include a glowing background effect.</Tippy>                                                  | `boolean`                                                                | No       | `false`     |
 | **variant** <Tippy>The variant of the component ('primary' or 'secondary').</Tippy>                                                    | `'primary'` ǀ `'secondary'`                                              | No       | `'primary'` |
 | **backgroundGlowVariant** <Tippy>The variant of the glowing background effect ('primary' or 'secondary').</Tippy>                      | `'primary'` ǀ `'secondary'`                                              | No       | `'primary'` |
+| **effectComponent** <Tippy>Custom React component to be displayed as the background effect.</Tippy>                                    | `React.ReactNode`                                                        | No       | -           |
+| **effectClassName** <Tippy>Additional CSS classes to apply to the background effect.</Tippy>                                        | `string`                                                                 | No       | -           |
 
 ## More Examples
 
@@ -460,3 +534,5 @@ Also see:
 - <a href="/boilerplate-documentation/landing-page-components/product-video-feature" className="fancy-link">Product Video Feature</a> component.
 - <a href="/boilerplate-documentation/landing-page-components/product-steps" className="fancy-link">Product Steps</a> component.
 - <a href="/boilerplate-documentation/landing-page-components/product-features-grid" className="fancy-link">Product Features Grid</a> component.
+- <a href="/boilerplate-documentation/landing-page-components/primary-cta-effects" className="fancy-link">Background Effects</a> component for adding visual interest to a section
+- <a href="/boilerplate-documentation/landing-page-components/leading-pill" className="fancy-link">Leading Pill</a> component.

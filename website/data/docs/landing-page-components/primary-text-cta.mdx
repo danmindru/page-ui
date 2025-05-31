@@ -1,7 +1,7 @@
 ---
 title: 'Landing Page Primary Text Call to Action (CTA) Component'
 date: '2024-04-04'
-lastmod: '2025-05-15'
+lastmod: '2025-05-30'
 tags:
   - 'guide'
   - 'components'
@@ -900,6 +900,94 @@ import { LandingNewsletterInput } from '@/components/landing/newsletter/LandingN
 
 </ComponentExample>
 
+### With Background Effects
+
+More effects are available in the <a href="/boilerplate-documentation/landing-page-components/primary-cta-effects" className="fancy-link">Primary CTA Background Effects</a> section.
+
+<ComponentExample
+  previewComponent={
+    <LandingPrimaryTextCtaSection
+      title="Revolutionary Product Launch"
+      description="Experience the future with our cutting-edge solution. Built for modern teams who demand excellence and reliability."
+      textPosition="center"
+      effectComponent={<LandingDotParticleCtaBg />}
+    >
+      <Button size="xl" asChild>
+        <a href="#">Start Free Trial</a>
+      </Button>
+
+      <Button size="xl" variant="outlineSecondary">
+        <a href="#">Watch Demo</a>
+      </Button>
+
+      <LandingSocialProof
+        className="mt-8 w-full flex justify-center"
+        showRating
+        numberOfUsers={1000}
+        avatarItems={[
+          {
+            imageSrc: '/static/images/people/1.webp',
+            name: 'John Doe',
+          },
+          {
+            imageSrc: '/static/images/people/2.webp',
+            name: 'Jane Smith',
+          },
+          {
+            imageSrc: '/static/images/people/3.webp',
+            name: 'Alex Johnson',
+          },
+        ]}
+      />
+    </LandingPrimaryTextCtaSection>
+  }
+>
+
+```jsx
+import { Button } from '@/components/shared/ui/button';
+import { LandingPrimaryTextCtaSection } from '@/components/landing/cta/LandingPrimaryCta';
+import { LandingDotParticleCtaBg } from '@/components/landing/cta-backgrounds/LandingDotParticleCtaBg';
+import { LandingSocialProof } from '@/components/landing/social-proof/LandingSocialProof';
+
+<LandingPrimaryTextCtaSection
+  title="Revolutionary Product Launch"
+  description="Experience the future with our cutting-edge solution. Built for modern teams who demand excellence and reliability."
+  textPosition="center"
+  effectComponent={<LandingDotParticleCtaBg />}
+>
+  <Button size="xl" asChild>
+    <a href="#">Start Free Trial</a>
+  </Button>
+
+  <Button size="xl" variant="outlineSecondary">
+    <a href="#">Watch Demo</a>
+  </Button>
+
+  <LandingSocialProof
+    className="mt-8 w-full flex justify-center"
+    showRating
+    numberOfUsers={1000}
+    avatarItems={[
+      {
+        imageSrc: '/static/images/people/1.webp',
+        name: 'John Doe',
+      },
+      {
+        imageSrc: '/static/images/people/2.webp',
+        name: 'Jane Smith',
+      },
+      {
+        imageSrc: '/static/images/people/3.webp',
+        name: 'Alex Johnson',
+      },
+    ]}
+  />
+</LandingPrimaryTextCtaSection>
+```
+
+</ComponentExample>
+
+
 ## API Reference
 
 | Prop Name                                                                                                                             | Prop Type                    | Required | Default     |
@@ -916,6 +1004,8 @@ import { LandingNewsletterInput } from '@/components/landing/newsletter/LandingN
 | **textPosition** <Tippy>The position of the text content within the section. Possible values: `'center'`, `'left'`.</Tippy>           | `'center'` ǀ `'left'`        | No       | `'center'`  |
 | **withBackground** <Tippy>Determines whether to show the section with a background or not.</Tippy>                                    | `boolean`                    | No       | `false`     |
 | **variant** <Tippy>The variant style of the section. Possible values: `'primary'`, `'secondary'`.</Tippy>                             | `'primary'` ǀ `'secondary'`  | No       | `'primary'` |
+| **effectComponent** <Tippy>Custom React component to be displayed as the background effect.</Tippy>                                    | `React.ReactNode`            | No       | -           |
+| **effectClassName** <Tippy>Additional CSS classes to apply to the background effect.</Tippy>                                        | `string`                     | No       | -           |
 
 ## More Examples
 
@@ -926,3 +1016,4 @@ Also see:
 - <a href="/boilerplate-documentation/landing-page-components/product-feature" className="fancy-link">Product Feature</a> component for highlighting solutions to these problems
 - <a href="/boilerplate-documentation/landing-page-components/primary-image-cta" className="fancy-link">Primary Image Call to Action</a> component for directing users to solutions
 - <a href="/boilerplate-documentation/landing-page-components/primary-video-cta" className="fancy-link">Primary Image Video Call to Action</a> component for directing users to solutions
+- <a href="/boilerplate-documentation/landing-page-components/primary-cta-effects" className="fancy-link">Primary CTA Background Effects</a> component for adding visual interest to the primary CTA section

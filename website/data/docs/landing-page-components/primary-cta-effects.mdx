@@ -1,0 +1,870 @@
+---
+title: 'Landing Page Primary CTA Background Effects Components'
+date: '2025-05-30'
+lastmod: '2025-05-30'
+tags:
+  - 'guide'
+  - 'components'
+  - 'documentation'
+  - 'landing-page'
+  - 'ui-library'
+  - 'react'
+  - 'nextjs'
+  - 'tailwind-css'
+  - 'cta'
+  - 'call-to-action'
+  - 'background-effects'
+  - 'particles'
+  - 'animation'
+  - 'canvas'
+  - 'shadcn-ui'
+  - 'shadcn-ui-landing-page'
+  - 'shadcn-ui-particles'
+
+# images:
+#   - '/static/images/docs/landing-page-primary-cta-effects.webp'
+
+summary: 'A collection of animated background effects for the primary CTA section. Great for adding visual interest to your landing page and making it more engaging.'
+layout: PostHub
+
+showThemeSelector: true
+showInstallNotice: true
+
+canonicalUrl: 'https://shipixen.com/boilerplate-documentation/landing-page-components/primary-cta-effects'
+---
+
+A collection of animated background effects for the primary CTA section. These components are meant to be used together with `LandingPrimaryImageCtaSection`, `LandingPrimaryTextCtaSection` and `LandingPrimaryVideoCtaSection`.
+
+On a landing page, they can make it stand out and make it more memorable and depending on the background effect - more engaging.
+
+## `LandingDotParticleCtaBg`
+
+**Dot Particle with CTA**
+
+<ComponentExample
+  previewComponent={
+    <LandingPrimaryImageCtaSection
+      title="Revolutionary Product Launch"
+      description="Experience the future with our cutting-edge solution. Built for modern teams who demand excellence and reliability."
+      imageSrc="/static/images/shipixen/product/1.webp"
+      imageAlt="Product showcase"
+      textPosition="center"
+      imagePosition="center"
+      effectComponent={<LandingDotParticleCtaBg variant="primary" />}
+    >
+      <Button size="xl" asChild>
+        <a href="#">Start Free Trial</a>
+      </Button>
+    </LandingPrimaryImageCtaSection>
+  }
+>
+
+```jsx
+import { Button } from '@/components/shared/ui/button';
+import { LandingPrimaryImageCtaSection } from '@/components/landing/cta/LandingPrimaryCta';
+import { LandingDotParticleCtaBg } from '@/components/landing/cta-backgrounds/LandingDotParticleCtaBg';
+
+<LandingPrimaryImageCtaSection
+  title="Revolutionary Product Launch"
+  description="Experience the future with our cutting-edge solution. Built for modern teams who demand excellence and reliability."
+  imageSrc="/static/images/shipixen/product/1.webp"
+  imageAlt="Product showcase"
+  textPosition="center"
+  imagePosition="center"
+  effectComponent={<LandingDotParticleCtaBg variant="primary" />}
+>
+  <Button size="xl" asChild>
+    <a href="#">Start Free Trial</a>
+  </Button>
+</LandingPrimaryImageCtaSection>
+```
+
+</ComponentExample>
+
+### LandingDotParticleCtaBg API Reference
+
+| Prop Name | Prop Type | Required | Default |
+| --- | --- | ----- | ---- |
+| **variant** <Tippy>The color variant for the particles and background. 'default' uses grayscale, 'primary' and 'secondary' use theme colors.</Tippy> | `'default'` ǀ `'primary'` ǀ `'secondary'` | No | `'default'` |
+| **className** <Tippy>Additional CSS classes to apply to the canvas element for custom styling.</Tippy> | `string` | No | `-` |
+
+## `LandingMouseHighlightCtaBg`
+
+**Mouse Highlight with CTA**
+
+<ComponentExample
+  previewComponent={
+    <LandingPrimaryImageCtaSection
+      title="Revolutionary Product Launch"
+      description="Experience the future with our cutting-edge solution. Built for modern teams who demand excellence and reliability."
+      imageSrc="/static/images/shipixen/product/1.webp"
+      imageAlt="Product showcase"
+      textPosition="center"
+      imagePosition="center"
+      effectComponent={<LandingMouseHighlightCtaBg variant="primary" />}
+    >
+      <Button size="xl" asChild>
+        <a href="#">Start Free Trial</a>
+      </Button>
+    </LandingPrimaryImageCtaSection>
+  }
+>
+
+```jsx
+import { Button } from '@/components/shared/ui/button';
+import { LandingPrimaryImageCtaSection } from '@/components/landing/cta/LandingPrimaryCta';
+import { LandingMouseHighlightCtaBg } from '@/components/landing/cta-backgrounds/LandingMouseHighlightCtaBg';
+
+<LandingPrimaryImageCtaSection
+  title="Revolutionary Product Launch"
+  description="Experience the future with our cutting-edge solution. Built for modern teams who demand excellence and reliability."
+  imageSrc="/static/images/shipixen/product/1.webp"
+  imageAlt="Product showcase"
+  textPosition="center"
+  imagePosition="center"
+  effectComponent={<LandingMouseHighlightCtaBg variant="primary" />}
+>
+  <Button size="xl" asChild>
+    <a href="#">Start Free Trial</a>
+  </Button>
+</LandingPrimaryImageCtaSection>
+```
+
+</ComponentExample>
+
+### LandingMouseHighlightCtaBg API Reference
+
+| Prop Name | Prop Type | Required | Default |
+| --- | --- | ----- | ---- |
+| **variant** <Tippy>The color variant for the particles and background. 'default' uses grayscale, 'primary' and 'secondary' use theme colors.</Tippy> | `'default'` ǀ `'primary'` ǀ `'secondary'` | No | `'default'` |
+| **className** <Tippy>Additional CSS classes to apply to the canvas element for custom styling.</Tippy> | `string` | No | `-` |
+
+## `LandingFlyingParticleCtaBg`
+
+**Flying Particles with CTA**
+
+<ComponentExample
+  previewComponent={
+    <LandingPrimaryImageCtaSection
+      title="Revolutionary Product Launch"
+      description="Experience the future with our cutting-edge solution. Built for modern teams who demand excellence and reliability."
+      imageSrc="/static/images/shipixen/product/1.webp"
+      imageAlt="Product showcase"
+      textPosition="center"
+      imagePosition="center"
+      effectComponent={<LandingFlyingParticleCtaBg variant="primary" />}
+    >
+      <Button size="xl" asChild>
+        <a href="#">Start Free Trial</a>
+      </Button>
+    </LandingPrimaryImageCtaSection>
+  }
+>
+
+```jsx
+import { Button } from '@/components/shared/ui/button';
+import { LandingPrimaryImageCtaSection } from '@/components/landing/cta/LandingPrimaryCta';
+import { LandingFlyingParticleCtaBg } from '@/components/landing/cta-backgrounds/LandingFlyingParticleCtaBg';
+
+<LandingPrimaryImageCtaSection
+  title="Revolutionary Product Launch"
+  description="Experience the future with our cutting-edge solution. Built for modern teams who demand excellence and reliability."
+  imageSrc="/static/images/shipixen/product/1.webp"
+  imageAlt="Product showcase"
+  textPosition="center"
+  imagePosition="center"
+  effectComponent={<LandingFlyingParticleCtaBg variant="primary" />}
+>
+  <Button size="xl" asChild>
+    <a href="#">Start Free Trial</a>
+  </Button>
+</LandingPrimaryImageCtaSection>
+```
+
+</ComponentExample>
+
+### LandingFlyingParticleCtaBg API Reference
+
+| Prop Name | Prop Type | Required | Default |
+| --- | --- | ----- | ---- |
+| **variant** <Tippy>The color variant for the particles and background. 'default' uses grayscale, 'primary' and 'secondary' use theme colors.</Tippy> | `'default'` ǀ `'primary'` ǀ `'secondary'` | No | `'default'` |
+| **className** <Tippy>Additional CSS classes to apply to the canvas element for custom styling.</Tippy> | `string` | No | `-` |
+
+## `LandingConicCtaBg`
+
+**Conic Gradient with CTA**
+
+<ComponentExample
+  previewComponent={
+    <LandingPrimaryImageCtaSection
+      title="Revolutionary Product Launch"
+      description="Experience the future with our cutting-edge solution. Built for modern teams who demand excellence and reliability."
+      imageSrc="/static/images/shipixen/product/1.webp"
+      imageAlt="Product showcase"
+      textPosition="center"
+      imagePosition="center"
+      effectComponent={<LandingConicCtaBg variant="primary" />}
+    >
+      <Button size="xl" asChild>
+        <a href="#">Start Free Trial</a>
+      </Button>
+    </LandingPrimaryImageCtaSection>
+  }
+>
+
+```jsx
+import { Button } from '@/components/shared/ui/button';
+import { LandingPrimaryImageCtaSection } from '@/components/landing/cta/LandingPrimaryCta';
+import { LandingConicCtaBg } from '@/components/landing/cta-backgrounds/LandingConicCtaBg';
+
+<LandingPrimaryImageCtaSection
+  title="Revolutionary Product Launch"
+  description="Experience the future with our cutting-edge solution. Built for modern teams who demand excellence and reliability."
+  imageSrc="/static/images/shipixen/product/1.webp"
+  imageAlt="Product showcase"
+  textPosition="center"
+  imagePosition="center"
+  effectComponent={<LandingConicCtaBg variant="primary" />}
+
+>
+  <Button size="xl" asChild>
+    <a href="#">Start Free Trial</a>
+  </Button>
+</LandingPrimaryImageCtaSection>
+```
+
+</ComponentExample>
+
+### LandingConicCtaBg API Reference
+
+| Prop Name | Prop Type | Required | Default |
+| --- | --- | ----- | ---- |
+| **variant** <Tippy>The color variant for the particles and background. 'default' uses grayscale, 'primary' and 'secondary' use theme colors.</Tippy> | `'default'` ǀ `'primary'` ǀ `'secondary'` | No | `'default'` |
+| **className** <Tippy>Additional CSS classes to apply to the canvas element for custom styling.</Tippy> | `string` | No | `-` |
+
+## `LandingBlobCtaBg`
+
+**Blob with CTA**
+
+<ComponentExample
+  previewComponent={
+    <LandingPrimaryImageCtaSection
+      title="Revolutionary Product Launch"
+      description="Experience the future with our cutting-edge solution. Built for modern teams who demand excellence and reliability."
+      imageSrc="/static/images/shipixen/product/1.webp"
+      imageAlt="Product showcase"
+      textPosition="center"
+      imagePosition="center"
+      effectComponent={<LandingBlobCtaBg variant="primary" />}
+    >
+      <Button size="xl" asChild>
+        <a href="#">Start Free Trial</a>
+      </Button>
+    </LandingPrimaryImageCtaSection>
+  }
+>
+
+```jsx
+import { Button } from '@/components/shared/ui/button';
+import { LandingPrimaryImageCtaSection } from '@/components/landing/cta/LandingPrimaryCta';
+import { LandingBlobCtaBg } from '@/components/landing/cta-backgrounds/LandingBlobCtaBg';
+
+<LandingPrimaryImageCtaSection
+  title="Revolutionary Product Launch"
+  description="Experience the future with our cutting-edge solution. Built for modern teams who demand excellence and reliability."
+  imageSrc="/static/images/shipixen/product/1.webp"
+  imageAlt="Product showcase"
+  textPosition="center"
+  imagePosition="center"
+  effectComponent={<LandingBlobCtaBg variant="primary" />}
+>
+  <Button size="xl" asChild>
+    <a href="#">Start Free Trial</a>
+  </Button>
+</LandingPrimaryImageCtaSection>
+```
+
+</ComponentExample>
+
+### LandingBlobCtaBg API Reference
+
+| Prop Name | Prop Type | Required | Default |
+| --- | --- | ----- | ---- |
+| **variant** <Tippy>The color variant for the particles and background. 'default' uses grayscale, 'primary' and 'secondary' use theme colors.</Tippy> | `'default'` ǀ `'primary'` ǀ `'secondary'` | No | `'default'` |
+| **className** <Tippy>Additional CSS classes to apply to the canvas element for custom styling.</Tippy> | `string` | No | `-` |
+| **blobPosition** <Tippy>The position of the blobs. 'left', 'right', 'center', 'top' and 'bottom' are available.</Tippy> | `'left'` ǀ `'right'` ǀ `'center'` ǀ `'top'` ǀ `'bottom'` | No | `'center'` |
+
+## `LandingGridPatternCtaBg`
+
+**Grid Pattern with CTA**
+
+<ComponentExample
+  previewComponent={
+    <LandingPrimaryImageCtaSection
+      title="Revolutionary Product Launch"
+      description="Experience the future with our cutting-edge solution. Built for modern teams who demand excellence and reliability."
+      imageSrc="/static/images/shipixen/product/1.webp"
+      imageAlt="Product showcase"
+      textPosition="center"
+      imagePosition="center"
+      effectComponent={<LandingGridPatternCtaBg variant="primary" />}
+    >
+      <Button size="xl" asChild>
+        <a href="#">Start Free Trial</a>
+      </Button>
+    </LandingPrimaryImageCtaSection>
+  }
+>
+
+```jsx
+import { Button } from '@/components/shared/ui/button';
+import { LandingPrimaryImageCtaSection } from '@/components/landing/cta/LandingPrimaryCta';
+import { LandingGridPatternCtaBg } from '@/components/landing/cta-backgrounds/LandingGridPatternCtaBg';
+
+<LandingPrimaryImageCtaSection
+  title="Revolutionary Product Launch"
+  description="Experience the future with our cutting-edge solution. Built for modern teams who demand excellence and reliability."
+  imageSrc="/static/images/shipixen/product/1.webp"
+  imageAlt="Product showcase"
+  textPosition="center"
+  imagePosition="center"
+  effectComponent={<LandingGridPatternCtaBg variant="primary" />}
+>
+  <Button size="xl" asChild>
+    <a href="#">Start Free Trial</a>
+  </Button>
+</LandingPrimaryImageCtaSection>
+```
+
+</ComponentExample>
+
+`Different Grid Sizes`
+
+<ComponentExample
+  previewComponent={
+    <LandingPrimaryImageCtaSection
+      title="Custom Grid Patterns"
+      description="Explore different grid sizes to match your design aesthetic."
+      imageSrc="/static/images/shipixen/product/1.webp"
+      imageAlt="Product showcase"
+      textPosition="center"
+      imagePosition="center"
+      effectComponent={<LandingGridPatternCtaBg variant="primary" gridSize="xlarge" />}
+    >
+      <Button size="xl" asChild>
+        <a href="#">Large Grid</a>
+      </Button>
+    </LandingPrimaryImageCtaSection>
+  }
+>
+
+```jsx
+import { Button } from '@/components/shared/ui/button';
+import { LandingPrimaryImageCtaSection } from '@/components/landing/cta/LandingPrimaryCta';
+import { LandingGridPatternCtaBg } from '@/components/landing/cta-backgrounds/LandingGridPatternCtaBg';
+
+<LandingPrimaryImageCtaSection
+  title="Custom Grid Patterns"
+  description="Explore different grid sizes to match your design aesthetic."
+  imageSrc="/static/images/shipixen/product/1.webp"
+  imageAlt="Product showcase"
+  textPosition="center"
+  imagePosition="center"
+  effectComponent={<LandingGridPatternCtaBg variant="primary" gridSize="large" />}
+>
+  <Button size="xl" asChild>
+    <a href="#">Large Grid</a>
+  </Button>
+</LandingPrimaryImageCtaSection>
+```
+
+</ComponentExample>
+
+### LandingGridPatternCtaBg API Reference
+
+| Prop Name | Prop Type | Required | Default |
+| --- | --- | ----- | ---- |
+| **variant** <Tippy>The color variant for the particles and background. 'default' uses grayscale, 'primary' and 'secondary' use theme colors.</Tippy> | `'default'` ǀ `'primary'` ǀ `'secondary'` | No | `'default'` |
+| **className** <Tippy>Additional CSS classes to apply to the canvas element for custom styling.</Tippy> | `string` | No | `-` |
+| **enableMouseTracking** <Tippy>When enabled, the grid pattern will move subtly based on mouse position for an interactive effect.</Tippy> | `boolean` | No | `true` |
+| **gridSize** <Tippy>Controls the size of the grid squares. Use 'small', 'medium', 'large', 'xlarge' for responsive sizes, or a number for fixed pixel size.</Tippy> | `'small'` ǀ `'medium'` ǀ `'large'` ǀ `'xlarge'` ǀ `number` | No | `'medium'` |
+
+## `LandingCurvedLinesCtaBg`
+
+**Curved Lines with CTA**
+
+<ComponentExample
+  previewComponent={
+    <LandingPrimaryImageCtaSection
+      title="Revolutionary Product Launch"
+      description="Experience the future with our cutting-edge solution. Built for modern teams who demand excellence and reliability."
+      imageSrc="/static/images/shipixen/product/1.webp"
+      imageAlt="Product showcase"
+      textPosition="center"
+      imagePosition="center"
+      effectComponent={<LandingCurvedLinesCtaBg variant="primary" />}
+    >
+      <Button size="xl" asChild>
+        <a href="#">Start Free Trial</a>
+      </Button>
+    </LandingPrimaryImageCtaSection>
+  }
+>
+
+```jsx
+import { Button } from '@/components/shared/ui/button';
+import { LandingPrimaryImageCtaSection } from '@/components/landing/cta/LandingPrimaryCta';
+import { LandingCurvedLinesCtaBg } from '@/components/landing/cta-backgrounds/LandingCurvedLinesCtaBg';
+
+<LandingPrimaryImageCtaSection
+  title="Revolutionary Product Launch"
+  description="Experience the future with our cutting-edge solution. Built for modern teams who demand excellence and reliability."
+  imageSrc="/static/images/shipixen/product/1.webp"
+  imageAlt="Product showcase"
+  textPosition="center"
+  imagePosition="center"
+  effectComponent={<LandingCurvedLinesCtaBg variant="primary" />}
+>
+  <Button size="xl" asChild>
+    <a href="#">Start Free Trial</a>
+  </Button>
+</LandingPrimaryImageCtaSection>
+```
+
+</ComponentExample>
+
+### LandingCurvedLinesCtaBg API Reference
+
+| Prop Name | Prop Type | Required | Default |
+| --- | --- | ----- | ---- |
+| **variant** <Tippy>The color variant for the animated lines. 'default' uses both primary and secondary colors, 'primary' uses primary-lighter and primary-darker, 'secondary' uses secondary-lighter and secondary-darker.</Tippy> | `'default'` ǀ `'primary'` ǀ `'secondary'` | No | `'default'` |
+| **speed** <Tippy>Controls the animation speed of the curved lines. 'slow' is 6 seconds, 'normal' is 4 seconds, 'fast' is 2 seconds per cycle.</Tippy> | `'slow'` ǀ `'normal'` ǀ `'fast'` | No | `'normal'` |
+| **className** <Tippy>Additional CSS classes to apply to the container element for custom styling.</Tippy> | `string` | No | `-` |
+
+## `LandingStraightLinesCtaBg`
+
+**Straight Lines with CTA**
+
+<ComponentExample
+  previewComponent={
+    <LandingPrimaryImageCtaSection
+      title="Revolutionary Product Launch"
+      description="Experience the future with our cutting-edge solution. Built for modern teams who demand excellence and reliability."
+      imageSrc="/static/images/shipixen/product/1.webp"
+      imageAlt="Product showcase"
+      textPosition="center"
+      imagePosition="center"
+      effectComponent={<LandingStraightLinesCtaBg variant="primary" />}
+    >
+      <Button size="xl" asChild>
+        <a href="#">Start Free Trial</a>
+      </Button>
+    </LandingPrimaryImageCtaSection>
+  }
+>
+
+```jsx
+import { Button } from '@/components/shared/ui/button';
+import { LandingPrimaryImageCtaSection } from '@/components/landing/cta/LandingPrimaryCta';
+import { LandingStraightLinesCtaBg } from '@/components/landing/cta-backgrounds/LandingStraightLinesCtaBg';
+
+<LandingPrimaryImageCtaSection
+  title="Revolutionary Product Launch"
+  description="Experience the future with our cutting-edge solution. Built for modern teams who demand excellence and reliability."
+  imageSrc="/static/images/shipixen/product/1.webp"
+  imageAlt="Product showcase"
+  textPosition="center"
+  imagePosition="center"
+  effectComponent={<LandingStraightLinesCtaBg variant="primary" />}
+>
+  <Button size="xl" asChild>
+    <a href="#">Start Free Trial</a>
+  </Button>
+</LandingPrimaryImageCtaSection>
+```
+
+</ComponentExample>
+
+### LandingStraightLinesCtaBg API Reference
+
+| Prop Name | Prop Type | Required | Default |
+| --- | --- | ----- | ---- |
+| **variant** <Tippy>The color variant for the animated lines. 'default' uses both primary and secondary colors, 'primary' uses primary-lighter and primary-darker, 'secondary' uses secondary-lighter and secondary-darker.</Tippy> | `'default'` ǀ `'primary'` ǀ `'secondary'` | No | `'default'` |
+| **speed** <Tippy>Controls the animation speed of the straight lines. 'slow' is 16 seconds, 'normal' is 10 seconds, 'fast' is 4 seconds per cycle.</Tippy> | `'slow'` ǀ `'normal'` ǀ `'fast'` | No | `'fast'` |
+| **className** <Tippy>Additional CSS classes to apply to the container element for custom styling.</Tippy> | `string` | No | `-` |
+
+## `LandingEllipseSideCtaBg`
+
+**Ellipse Side Effects with CTA**
+
+<ComponentExample
+  previewComponent={
+    <LandingPrimaryImageCtaSection
+      title="Revolutionary Product Launch"
+      description="Experience the future with our cutting-edge solution. Built for modern teams who demand excellence and reliability."
+      imageSrc="/static/images/shipixen/product/1.webp"
+      imageAlt="Product showcase"
+      textPosition="center"
+      imagePosition="center"
+      effectComponent={<LandingEllipseSideCtaBg variant="default" />}
+    >
+      <Button size="xl" asChild>
+        <a href="#">Start Free Trial</a>
+      </Button>
+    </LandingPrimaryImageCtaSection>
+  }
+>
+
+```jsx
+import { Button } from '@/components/shared/ui/button';
+import { LandingPrimaryImageCtaSection } from '@/components/landing/cta/LandingPrimaryCta';
+import { LandingEllipseSideCtaBg } from '@/components/landing/cta-backgrounds/LandingEllipseSideCtaBg';
+
+<LandingPrimaryImageCtaSection
+  title="Revolutionary Product Launch"
+  description="Experience the future with our cutting-edge solution. Built for modern teams who demand excellence and reliability."
+  imageSrc="/static/images/shipixen/product/1.webp"
+  imageAlt="Product showcase"
+  textPosition="center"
+  imagePosition="center"
+  effectComponent={<LandingEllipseSideCtaBg variant="default" />}
+>
+  <Button size="xl" asChild>
+    <a href="#">Start Free Trial</a>
+  </Button>
+</LandingPrimaryImageCtaSection>
+```
+
+</ComponentExample>
+
+### LandingEllipseSideCtaBg API Reference
+
+| Prop Name | Prop Type | Required | Default |
+| --- | --- | ----- | ---- |
+| **variant** <Tippy>The color variant for the ellipse effects. 'default' uses both primary and secondary colors, 'primary' uses primary-lighter and primary-darker, 'secondary' uses secondary-lighter and secondary-darker.</Tippy> | `'default'` ǀ `'primary'` ǀ `'secondary'` | No | `'default'` |
+| **className** <Tippy>Additional CSS classes to apply to the container element for custom styling.</Tippy> | `string` | No | `-` |
+
+## `LandingFlickeringGridCtaBg`
+
+**Flickering Grid with CTA**
+
+<ComponentExample
+  previewComponent={
+    <LandingPrimaryImageCtaSection
+      title="Revolutionary Product Launch"
+      description="Experience the future with our cutting-edge solution. Built for modern teams who demand excellence and reliability."
+      imageSrc="/static/images/shipixen/product/1.webp"
+      imageAlt="Product showcase"
+      textPosition="center"
+      imagePosition="center"
+      effectComponent={<LandingFlickeringGridCtaBg variant="primary" />}
+    >
+      <Button size="xl" asChild>
+        <a href="#">Start Free Trial</a>
+      </Button>
+    </LandingPrimaryImageCtaSection>
+  }
+>
+
+```jsx
+import { Button } from '@/components/shared/ui/button';
+import { LandingPrimaryImageCtaSection } from '@/components/landing/cta/LandingPrimaryCta';
+import { LandingFlickeringGridCtaBg } from '@/components/landing/cta-backgrounds/LandingFlickeringGridCtaBg';
+
+<LandingPrimaryImageCtaSection
+  title="Revolutionary Product Launch"
+  description="Experience the future with our cutting-edge solution. Built for modern teams who demand excellence and reliability."
+  imageSrc="/static/images/shipixen/product/1.webp"
+  imageAlt="Product showcase"
+  textPosition="center"
+  imagePosition="center"
+  effectComponent={<LandingFlickeringGridCtaBg variant="primary" />}
+>
+  <Button size="xl" asChild>
+    <a href="#">Start Free Trial</a>
+  </Button>
+</LandingPrimaryImageCtaSection>
+```
+
+</ComponentExample>
+
+### LandingFlickeringGridCtaBg API Reference
+
+| Prop Name | Prop Type | Required | Default |
+| --- | --- | ----- | ---- |
+| **variant** <Tippy>The color variant for the flickering grid. 'default' uses both primary and secondary colors, 'primary' uses primary-lighter, primary-main and primary-darker, 'secondary' uses secondary-lighter, secondary-main and secondary-darker.</Tippy> | `'default'` ǀ `'primary'` ǀ `'secondary'` | No | `'default'` |
+| **squareSize** <Tippy>Size of each grid square in pixels.</Tippy> | `number` | No | `4` |
+| **gridGap** <Tippy>Gap between grid squares in pixels.</Tippy> | `number` | No | `6` |
+| **flickerChance** <Tippy>Probability of a square changing per frame (0-1).</Tippy> | `number` | No | `0.1` |
+| **maxOpacity** <Tippy>Maximum opacity for the grid squares (0-1).</Tippy> | `number` | No | `0.3` |
+| **className** <Tippy>Additional CSS classes to apply to the container element for custom styling.</Tippy> | `string` | No | `-` |
+
+## `LandingWavesCtaBg`
+
+**Animated Waves with CTA**
+
+<ComponentExample
+  previewComponent={
+    <LandingPrimaryImageCtaSection
+      title="Revolutionary Product Launch"
+      description="Experience the future with our cutting-edge solution. Built for modern teams who demand excellence and reliability."
+      imageSrc="/static/images/shipixen/product/1.webp"
+      imageAlt="Product showcase"
+      textPosition="center"
+      imagePosition="center"
+      effectComponent={<LandingWavesCtaBg variant="primary" />}
+    >
+      <Button size="xl" asChild>
+        <a href="#">Start Free Trial</a>
+      </Button>
+    </LandingPrimaryImageCtaSection>
+  }
+>
+
+```jsx
+import { Button } from '@/components/shared/ui/button';
+import { LandingPrimaryImageCtaSection } from '@/components/landing/cta/LandingPrimaryCta';
+import { LandingWavesCtaBg } from '@/components/landing/cta-backgrounds/LandingWavesCtaBg';
+
+<LandingPrimaryImageCtaSection
+  title="Revolutionary Product Launch"
+  description="Experience the future with our cutting-edge solution. Built for modern teams who demand excellence and reliability."
+  imageSrc="/static/images/shipixen/product/1.webp"
+  imageAlt="Product showcase"
+  textPosition="center"
+  imagePosition="center"
+  effectComponent={<LandingWavesCtaBg variant="primary" />}
+>
+  <Button size="xl" asChild>
+    <a href="#">Start Free Trial</a>
+  </Button>
+</LandingPrimaryImageCtaSection>
+```
+
+</ComponentExample>
+
+### LandingWavesCtaBg API Reference
+
+| Prop Name | Prop Type | Required | Default |
+| --- | --- | ----- | ---- |
+| **variant** <Tippy>The color variant for the wave lines. 'default' uses neutral gray, 'primary' uses primary-main, 'secondary' uses secondary-main.</Tippy> | `'default'` ǀ `'primary'` ǀ `'secondary'` | No | `'default'` |
+| **waveSpeedX** <Tippy>Horizontal wave animation speed.</Tippy> | `number` | No | `0.0125` |
+| **waveSpeedY** <Tippy>Vertical wave animation speed.</Tippy> | `number` | No | `0.005` |
+| **waveAmpX** <Tippy>Horizontal wave amplitude in pixels.</Tippy> | `number` | No | `32` |
+| **waveAmpY** <Tippy>Vertical wave amplitude in pixels.</Tippy> | `number` | No | `16` |
+| **xGap** <Tippy>Horizontal gap between wave lines in pixels.</Tippy> | `number` | No | `10` |
+| **yGap** <Tippy>Vertical gap between wave points in pixels.</Tippy> | `number` | No | `32` |
+| **className** <Tippy>Additional CSS classes to apply to the container element for custom styling.</Tippy> | `string` | No | `-` |
+
+## `LandingPathsCtaBg`
+
+**Animated Paths with CTA**
+
+<ComponentExample
+  previewComponent={
+    <LandingPrimaryImageCtaSection
+      title="Revolutionary Product Launch"
+      description="Experience the future with our cutting-edge solution. Built for modern teams who demand excellence and reliability."
+      imageSrc="/static/images/shipixen/product/1.webp"
+      imageAlt="Product showcase"
+      textPosition="center"
+      imagePosition="center"
+      effectComponent={<LandingPathsCtaBg variant="primary" />}
+    >
+      <Button size="xl" asChild>
+        <a href="#">Start Free Trial</a>
+      </Button>
+    </LandingPrimaryImageCtaSection>
+  }
+>
+
+```jsx
+import { Button } from '@/components/shared/ui/button';
+import { LandingPrimaryImageCtaSection } from '@/components/landing/cta/LandingPrimaryCta';
+import { LandingPathsCtaBg } from '@/components/landing/cta-backgrounds/LandingPathsCtaBg';
+
+<LandingPrimaryImageCtaSection
+  title="Revolutionary Product Launch"
+  description="Experience the future with our cutting-edge solution. Built for modern teams who demand excellence and reliability."
+  imageSrc="/static/images/shipixen/product/1.webp"
+  imageAlt="Product showcase"
+  textPosition="center"
+  imagePosition="center"
+  effectComponent={<LandingPathsCtaBg variant="primary" />}
+>
+  <Button size="xl" asChild>
+    <a href="#">Start Free Trial</a>
+  </Button>
+</LandingPrimaryImageCtaSection>
+```
+
+</ComponentExample>
+
+### LandingPathsCtaBg API Reference
+
+| Prop Name | Prop Type | Required | Default |
+| --- | --- | ----- | ---- |
+| **variant** <Tippy>The color variant for the animated paths. 'default' uses neutral gray, 'primary' uses primary-main, 'secondary' uses secondary-main.</Tippy> | `'default'` ǀ `'primary'` ǀ `'secondary'` | No | `'default'` |
+| **position** <Tippy>Controls the path positioning and animation offset.</Tippy> | `number` | No | `1` |
+| **pathPosition** <Tippy>Controls the horizontal positioning of the paths. 'bottomLeft', 'topRight', 'bottomRight', and 'topLeft' positions are available.</Tippy> | `'bottomLeft'` ǀ `'topRight'` ǀ `'bottomRight'` ǀ `'topLeft'` | No | `'topRight'` |
+| **pathCount** <Tippy>Number of animated paths to render.</Tippy> | `number` | No | `36` |
+| **animationDuration** <Tippy>Base duration for path animations in seconds.</Tippy> | `number` | No | `20` |
+| **className** <Tippy>Additional CSS classes to apply to the container element for custom styling.</Tippy> | `string` | No | `-` |
+
+## `LandingShapesCtaBg`
+
+**Animated Shapes with CTA**
+
+<ComponentExample
+  previewComponent={
+    <LandingPrimaryImageCtaSection
+      title="Revolutionary Product Launch"
+      description="Experience the future with our cutting-edge solution. Built for modern teams who demand excellence and reliability."
+      imageSrc="/static/images/shipixen/product/1.webp"
+      imageAlt="Product showcase"
+      textPosition="center"
+      imagePosition="center"
+      effectComponent={<LandingShapesCtaBg />}
+    >
+      <Button size="xl" asChild>
+        <a href="#">Start Free Trial</a>
+      </Button>
+    </LandingPrimaryImageCtaSection>
+  }
+>
+
+```jsx
+import { Button } from '@/components/shared/ui/button';
+import { LandingPrimaryImageCtaSection } from '@/components/landing/cta/LandingPrimaryCta';
+import { LandingShapesCtaBg } from '@/components/landing/cta-backgrounds/LandingShapesCtaBg';
+
+<LandingPrimaryImageCtaSection
+  title="Revolutionary Product Launch"
+  description="Experience the future with our cutting-edge solution. Built for modern teams who demand excellence and reliability."
+  imageSrc="/static/images/shipixen/product/1.webp"
+  imageAlt="Product showcase"
+  textPosition="center"
+  imagePosition="center"
+  effectComponent={<LandingShapesCtaBg />}
+>
+  <Button size="xl" asChild>
+    <a href="#">Start Free Trial</a>
+  </Button>
+</LandingPrimaryImageCtaSection>
+```
+
+</ComponentExample>
+
+`Different Shape Types`
+
+<ComponentExample
+  previewComponent={
+    <LandingPrimaryImageCtaSection
+      title="Geometric Innovation"
+      description="Discover stunning visual effects with our customizable shape backgrounds."
+      imageSrc="/static/images/shipixen/product/1.webp"
+      imageAlt="Product showcase"
+      textPosition="center"
+      imagePosition="center"
+      effectComponent={<LandingShapesCtaBg variant="primary" shapeType="ellipse" shapeCount={4} />}
+    >
+      <Button size="xl" asChild>
+        <a href="#">Explore Shapes</a>
+      </Button>
+    </LandingPrimaryImageCtaSection>
+  }
+>
+
+```jsx
+import { Button } from '@/components/shared/ui/button';
+import { LandingPrimaryImageCtaSection } from '@/components/landing/cta/LandingPrimaryCta';
+import { LandingShapesCtaBg } from '@/components/landing/cta-backgrounds/LandingShapesCtaBg';
+
+<LandingPrimaryImageCtaSection
+  title="Geometric Innovation"
+  description="Discover stunning visual effects with our customizable shape backgrounds."
+  imageSrc="/static/images/shipixen/product/1.webp"
+  imageAlt="Product showcase"
+  textPosition="center"
+  imagePosition="center"
+  effectComponent={<LandingShapesCtaBg variant="primary" shapeType="ellipse" shapeCount={4} />}
+>
+  <Button size="xl" asChild>
+    <a href="#">Explore Shapes</a>
+  </Button>
+</LandingPrimaryImageCtaSection>
+```
+
+</ComponentExample>
+
+### LandingShapesCtaBg API Reference
+
+| Prop Name | Prop Type | Required | Default |
+| --- | --- | ----- | ---- |
+| **variant** <Tippy>The color variant for the animated shapes. 'default' uses both primary and secondary colors, 'primary' uses primary-lighter, primary-main and primary-darker, 'secondary' uses secondary-lighter, secondary-main and secondary-darker.</Tippy> | `'default'` ǀ `'primary'` ǀ `'secondary'` | No | `'default'` |
+| **shapeType** <Tippy>The type of shapes to render. Options include ellipse, circle, rectangle, triangle, square.</Tippy> | `'ellipse'` ǀ `'circle'` ǀ `'rectangle'` ǀ `'triangle'` ǀ `'square'` | No | `'rectangle'` |
+| **shapeCount** <Tippy>Number of animated shapes to render (1-5).</Tippy> | `number` | No | `5` |
+| **animationSpeed** <Tippy>Controls the animation speed of the floating shapes. 'slow' is 16 seconds, 'normal' is 12 seconds, 'fast' is 8 seconds per cycle.</Tippy> | `'slow'` ǀ `'normal'` ǀ `'fast'` | No | `'normal'` |
+| **className** <Tippy>Additional CSS classes to apply to the container element for custom styling.</Tippy> | `string` | No | `-` |
+
+## `LandingDiagonalCtaBg`
+
+**Diagonal Gradient with CTA**
+
+<ComponentExample
+  previewComponent={
+    <LandingPrimaryImageCtaSection
+      title="Revolutionary Product Launch"
+      description="Experience the future with our cutting-edge solution. Built for modern teams who demand excellence and reliability."
+      imageSrc="/static/images/shipixen/product/1.webp"
+      imageAlt="Product showcase"
+      textPosition="center"
+      imagePosition="center"
+      effectComponent={<LandingDiagonalCtaBg variant="primary" intensity="medium" />}
+    >
+      <Button size="xl" asChild>
+        <a href="#">Start Free Trial</a>
+      </Button>
+    </LandingPrimaryImageCtaSection>
+  }
+>
+
+```jsx
+import { Button } from '@/components/shared/ui/button';
+import { LandingPrimaryImageCtaSection } from '@/components/landing/cta/LandingPrimaryCta';
+import { LandingDiagonalCtaBg } from '@/components/landing/cta-backgrounds/LandingDiagonalCtaBg';
+
+<LandingPrimaryImageCtaSection
+  title="Revolutionary Product Launch"
+  description="Experience the future with our cutting-edge solution. Built for modern teams who demand excellence and reliability."
+  imageSrc="/static/images/shipixen/product/1.webp"
+  imageAlt="Product showcase"
+  textPosition="center"
+  imagePosition="center"
+  effectComponent={<LandingDiagonalCtaBg variant="primary" intensity="medium" />}
+>
+  <Button size="xl" asChild>
+    <a href="#">Start Free Trial</a>
+  </Button>
+</LandingPrimaryImageCtaSection>
+```
+
+</ComponentExample>
+
+### LandingDiagonalCtaBg API Reference
+
+| Prop Name | Prop Type | Required | Default |
+| --- | --- | ----- | ---- |
+| **variant** <Tippy>The color variant for the diagonal gradient. 'default' uses neutral gray, 'primary' uses primary-main, 'secondary' uses secondary-main.</Tippy> | `'default'` ǀ `'primary'` ǀ `'secondary'` | No | `'default'` |
+| **intensity** <Tippy>Controls the intensity of the diagonal gradient. 'light' is 10% opacity, 'medium' is 20% opacity, 'strong' is 30% opacity.</Tippy> | `'light'` ǀ `'medium'` ǀ `'strong'` | No | `'medium'` |
+| **className** <Tippy>Additional CSS classes to apply to the container element for custom styling.</Tippy> | `string` | No | `-` |
+
+## More Examples
+
+For more even more examples, see our <a href="/demo/landing-page-component-examples" className="fancy-link">Landing Page Component Examples</a> page or see complete landing page examples by <a href="/demo/landing-page-templates" className="fancy-link">Exploring Our Landing Page Templates</a>.
+
+Also see:
+
+- <a href="/boilerplate-documentation/landing-page-components/primary-image-cta" className="fancy-link">Primary Image Call to Action</a> component for the main CTA integration
+- <a href="/boilerplate-documentation/landing-page-components/primary-text-cta" className="fancy-link">Primary Text Call to Action</a> component for text-focused CTAs
+- <a href="/boilerplate-documentation/landing-page-components/primary-video-cta" className="fancy-link">Primary Video Call to Action</a> component for video-based CTAs

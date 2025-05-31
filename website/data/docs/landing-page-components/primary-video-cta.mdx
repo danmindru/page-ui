@@ -1,7 +1,7 @@
 ---
 title: 'Primary Video CTA'
 date: '2025-05-14'
-lastmod: '2025-05-15'
+lastmod: '2025-05-31'
 tags:
   - 'guide'
   - 'components'
@@ -793,6 +793,162 @@ import { LandingSocialProofBandItem } from '@/components/landing/social-proof/La
 
 </ComponentExample>
 
+### With Background Effects
+
+More effects are available in the <a href="/boilerplate-documentation/landing-page-components/primary-cta-effects" className="fancy-link">Primary CTA Background Effects</a> section.
+
+<ComponentExample
+  previewComponent={
+    <LandingPrimaryVideoCtaSection
+      title="Revolutionary Product Launch"
+      description="Experience the future with our cutting-edge solution. Built for modern teams who demand excellence and reliability."
+      textPosition="center"
+      videoSrc="https://cache.shipixen.com/features/8-customize-pages.mp4"
+      videoPoster="/static/images/shipixen/product/1.webp"
+      videoPosition="center"
+      effectComponent={<LandingDotParticleCtaBg />}
+    >
+      <Button size="xl" asChild>
+        <a href="#">Start Free Trial</a>
+      </Button>
+
+      <Button size="xl" variant="outlineSecondary">
+        <a href="#">Watch Demo</a>
+      </Button>
+
+      <LandingSocialProof
+        className="mt-8 w-full flex justify-center"
+        showRating
+        numberOfUsers={1000}
+        avatarItems={[
+          {
+            imageSrc: '/static/images/people/1.webp',
+            name: 'John Doe',
+          },
+          {
+            imageSrc: '/static/images/people/2.webp',
+            name: 'Jane Smith',
+          },
+          {
+            imageSrc: '/static/images/people/3.webp',
+            name: 'Alex Johnson',
+          },
+        ]}
+      />
+    </LandingPrimaryVideoCtaSection>
+  }
+>
+
+```jsx
+import { Button } from '@/components/shared/ui/button';
+import { LandingPrimaryVideoCtaSection } from '@/components/landing/cta/LandingPrimaryCta';
+import { LandingDotParticleCtaBg } from '@/components/landing/cta-backgrounds/LandingDotParticleCtaBg';
+import { LandingSocialProof } from '@/components/landing/social-proof/LandingSocialProof';
+
+<LandingPrimaryVideoCtaSection
+  title="Revolutionary Product Launch"
+  description="Experience the future with our cutting-edge solution. Built for modern teams who demand excellence and reliability."
+  textPosition="center"
+  videoSrc="https://cache.shipixen.com/features/8-customize-pages.mp4"
+  videoPoster="/static/images/shipixen/product/1.webp"
+  videoPosition="center"
+  effectComponent={<LandingDotParticleCtaBg />}
+>
+  <Button size="xl" asChild>
+    <a href="#">Start Free Trial</a>
+  </Button>
+
+  <Button size="xl" variant="outlineSecondary">
+    <a href="#">Watch Demo</a>
+  </Button>
+
+  <LandingSocialProof
+    className="mt-8 w-full flex justify-center"
+    showRating
+    numberOfUsers={1000}
+    avatarItems={[
+      {
+        imageSrc: '/static/images/people/1.webp',
+        name: 'John Doe',
+      },
+      {
+        imageSrc: '/static/images/people/2.webp',
+        name: 'Jane Smith',
+      },
+      {
+        imageSrc: '/static/images/people/3.webp',
+        name: 'Alex Johnson',
+      },
+    ]}
+  />
+</LandingPrimaryVideoCtaSection>
+```
+
+</ComponentExample>
+
+
+### With Leading Pill
+
+<ComponentExample
+  previewComponent={
+    <LandingPrimaryVideoCtaSection
+      title="Landing page in minutes"
+      description="Get 10x more done with Shadcn UI, React & Next.js, and say goodbye to repetitive tasks. You'll never go back."
+      videoSrc="https://cache.shipixen.com/features/8-customize-pages.mp4"
+      videoPoster="/static/images/shipixen/product/1.webp"
+      videoPosition="center"
+      leadingComponent={<LandingLeadingPill
+        text="Best generator"
+        borderVariant="primary"
+        textVariant="primary"
+      />}
+    >
+      <Button size="xl" asChild>
+        <a href="#">
+          Buy now
+        </a>
+      </Button>
+
+      <Button size="xl" variant="outlinePrimary">
+        <a href="#">
+          Read more
+        </a>
+      </Button>
+    </LandingPrimaryVideoCtaSection>
+
+}
+
+>
+
+```jsx
+import { Button } from '@/components/shared/ui/button';
+import { LandingPrimaryVideoCtaSection } from '@/components/landing/cta/LandingPrimaryCta';
+import { LandingLeadingPill } from '@/components/landing/leading/LandingLeadingPill';
+
+<LandingPrimaryVideoCtaSection
+  title="Landing page in minutes"
+  description="Get 10x more done with Shadcn UI, React & Next.js, and say goodbye to repetitive tasks. You'll never go back."
+  imageSrc="/static/images/shipixen/product/1.webp"
+  imageAlt="Sample image"
+  imagePosition="center"
+  leadingComponent={<LandingLeadingPill
+    text="Best generator"
+    borderVariant="primary"
+  />}
+>
+  <Button size="xl" asChild>
+    <a href="#">Buy now</a>
+  </Button>
+
+  <Button size="xl" variant="outlinePrimary">
+    <a href="#">Read more</a>
+  </Button>
+</LandingPrimaryVideoCtaSection>;
+```
+
+</ComponentExample>
+
+
 ## API Reference
 
 | Prop Name | Prop Type | Required | Default |
@@ -821,6 +977,8 @@ import { LandingSocialProofBandItem } from '@/components/landing/social-proof/La
 | **leadingComponent** <Tippy>Component to display above the title</Tippy> | `React.ReactNode` | No | - |
 | **footerComponent** <Tippy>Component to display at the bottom of the section</Tippy> | `React.ReactNode` | No | - |
 | **children** <Tippy>Call-to-action elements like buttons</Tippy> | `React.ReactNode` | No | - |
+| **effectComponent** <Tippy>Component to display as a background effect</Tippy> | `React.ReactNode` | No | - |
+| **effectClassName** <Tippy>Additional CSS classes for the effect component</Tippy> | `string` | No | - |
 
 ## More Examples
 
@@ -831,3 +989,6 @@ Also see:
 - <a href="/boilerplate-documentation/landing-page-components/product-feature" className="fancy-link">Product Feature</a> component for highlighting solutions to these problems
 - <a href="/boilerplate-documentation/landing-page-components/primary-text-cta" className="fancy-link">Primary Text Call to Action</a> component for directing users to solutions
 - <a href="/boilerplate-documentation/landing-page-components/primary-image-cta" className="fancy-link">Primary Image Call to Action</a> component for directing users to solutions
+- <a href="/boilerplate-documentation/landing-page-components/primary-cta-effects" className="fancy-link">Primary CTA Background Effects</a> component for adding visual interest to the primary CTA section
+- <a href="/boilerplate-documentation/landing-page-components/leading-pill" className="fancy-link">Leading Pill</a> component.
+
