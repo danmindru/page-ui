@@ -32,7 +32,7 @@ export const LandingConicCtaBg = ({
     };
 
     switch (variant) {
-      case 'primary':
+      case 'primary': {
         const primaryDarkColor = computedStyle
           .getPropertyValue('--primary-darker')
           .trim();
@@ -50,7 +50,8 @@ export const LandingConicCtaBg = ({
           opacity: 0.9,
         });
         break;
-      case 'secondary':
+      }
+      case 'secondary': {
         const secondaryDarkColor = computedStyle
           .getPropertyValue('--secondary-darker')
           .trim();
@@ -71,6 +72,7 @@ export const LandingConicCtaBg = ({
           opacity: 0.9,
         });
         break;
+      }
     }
 
     setBgColors(colors);
