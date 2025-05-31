@@ -1,6 +1,6 @@
 {
   "name": "@page-ui/wizard",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "description": "Landing page components & templates that you can copy & paste",
   "type": "module",
   "bin": "./packages/cli/index.mjs",
