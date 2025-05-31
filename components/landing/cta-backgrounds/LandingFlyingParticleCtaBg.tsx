@@ -42,7 +42,7 @@ export const LandingFlyingParticleCtaBg = ({
       const computedStyle = getComputedStyle(canvas);
 
       switch (variant) {
-        case 'primary':
+        case 'primary': {
           const primaryLighter = computedStyle
             .getPropertyValue('--primary-lighter')
             .trim();
@@ -58,7 +58,8 @@ export const LandingFlyingParticleCtaBg = ({
             convertToRgba({ color: primaryMain, opacity: 0.5 }),
             convertToRgba({ color: primaryDarker, opacity: 0.7 }),
           ];
-        case 'secondary':
+        }
+        case 'secondary': {
           const secondaryLighter = computedStyle
             .getPropertyValue('--secondary-lighter')
             .trim();
@@ -74,6 +75,7 @@ export const LandingFlyingParticleCtaBg = ({
             convertToRgba({ color: secondaryMain, opacity: 0.5 }),
             convertToRgba({ color: secondaryDarker, opacity: 0.7 }),
           ];
+        }
         default:
           return [
             'rgba(177, 177, 177, 0.6)',

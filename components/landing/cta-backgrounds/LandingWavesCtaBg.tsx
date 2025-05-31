@@ -105,6 +105,18 @@ class Noise {
   }
 }
 
+// Type definitions for wave points
+interface WavePoint {
+  x: number;
+  y: number;
+  wave: { x: number; y: number };
+}
+
+interface MovedPoint {
+  x: number;
+  y: number;
+}
+
 export const LandingWavesCtaBg = ({
   className,
   variant = 'default',
@@ -132,15 +144,7 @@ export const LandingWavesCtaBg = ({
 
   const boundingRef = useRef({ width: 0, height: 0, left: 0, top: 0 });
   const noiseRef = useRef(new Noise(Math.random()));
-  const linesRef = useRef<
-    Array<
-      Array<{
-        x: number;
-        y: number;
-        wave: { x: number; y: number };
-      }>
-    >
-  >([]);
+  const linesRef = useRef<Array<Array<WavePoint>>>([]);
 
   const generateNewColors = useCallback(() => {
     if (!domRef.current) return;
@@ -220,11 +224,7 @@ export const LandingWavesCtaBg = ({
       const xStart = (width - xGap * totalLines) / 2;
       const yStart = (height - yGap * totalPoints) / 2;
       for (let i = 0; i <= totalLines; i++) {
-        const pts: Array<{
-          x: number;
-          y: number;
-          wave: { x: number; y: number };
-        }> = [];
+        const pts: Array<WavePoint> = [];
         for (let j = 0; j <= totalPoints; j++) {
           pts.push({
             x: xStart + xGap * i,
@@ -240,7 +240,7 @@ export const LandingWavesCtaBg = ({
       const lines = linesRef.current;
       const noise = noiseRef.current;
       lines.forEach((pts) => {
-        pts.forEach((p: any) => {
+        pts.forEach((p: WavePoint) => {
           const move =
             noise.perlin2(
               (p.x + time * waveSpeedX) * 0.002,
@@ -252,7 +252,7 @@ export const LandingWavesCtaBg = ({
       });
     }
 
-    function moved(point: any) {
+    function moved(point: WavePoint): MovedPoint {
       const x = point.x + point.wave.x;
       const y = point.y + point.wave.y;
       return { x: Math.round(x * 10) / 10, y: Math.round(y * 10) / 10 };
@@ -269,7 +269,7 @@ export const LandingWavesCtaBg = ({
       linesRef.current.forEach((points) => {
         let p1 = moved(points[0]);
         ctx.moveTo(p1.x, p1.y);
-        points.forEach((p: any, idx: number) => {
+        points.forEach((p: WavePoint, idx: number) => {
           const isLast = idx === points.length - 1;
           p1 = moved(p);
           const p2 = moved(points[idx + 1] || points[points.length - 1]);

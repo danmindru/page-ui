@@ -71,16 +71,18 @@ export const LandingGridPatternCtaBg = ({
     const computedStyle = getComputedStyle(containerRef.current);
 
     switch (variant) {
-      case 'primary':
+      case 'primary': {
         const primaryColor = computedStyle
           .getPropertyValue('--primary-lighter')
           .trim();
         return convertToRgba({ color: primaryColor, opacity: 0.2 });
-      case 'secondary':
+      }
+      case 'secondary': {
         const secondaryColor = computedStyle
           .getPropertyValue('--secondary-lighter')
           .trim();
         return convertToRgba({ color: secondaryColor, opacity: 0.2 });
+      }
       default:
         return 'rgba(200, 200, 200, 0.2)';
     }

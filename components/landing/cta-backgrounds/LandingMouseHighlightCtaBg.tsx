@@ -26,16 +26,18 @@ export const LandingMouseHighlightCtaBg = ({
     const computedStyle = getComputedStyle(domRef.current);
 
     switch (variant) {
-      case 'primary':
+      case 'primary': {
         const primaryColor = computedStyle
           .getPropertyValue('--primary-lighter')
           .trim();
         return convertToRgba({ color: primaryColor, opacity: 0.5 });
-      case 'secondary':
+      }
+      case 'secondary': {
         const secondaryColor = computedStyle
           .getPropertyValue('--secondary-lighter')
           .trim();
         return convertToRgba({ color: secondaryColor, opacity: 0.5 });
+      }
       default:
         return 'rgba(177, 177, 177, 0.5)';
     }
