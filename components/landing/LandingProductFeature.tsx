@@ -19,6 +19,7 @@ export const LandingProductFeature = ({
   titleComponent,
   description,
   descriptionComponent,
+  leadingComponent,
   textPosition = 'left',
   imageSrc,
   imageAlt = '',
@@ -32,6 +33,8 @@ export const LandingProductFeature = ({
   withBackgroundGlow = false,
   variant = 'primary',
   backgroundGlowVariant = 'primary',
+  effectComponent,
+  effectClassName,
 }: {
   children?: React.ReactNode;
   className?: string;
@@ -41,6 +44,7 @@ export const LandingProductFeature = ({
   titleComponent?: React.ReactNode;
   description?: string | React.ReactNode;
   descriptionComponent?: React.ReactNode;
+  leadingComponent?: React.ReactNode;
   textPosition?: 'center' | 'left';
   imageSrc?: string;
   imageAlt?: string;
@@ -60,11 +64,13 @@ export const LandingProductFeature = ({
   withBackgroundGlow?: boolean;
   variant?: 'primary' | 'secondary';
   backgroundGlowVariant?: 'primary' | 'secondary';
+  effectComponent?: React.ReactNode;
+  effectClassName?: string;
 }) => {
   return (
     <section
       className={clsx(
-        'w-full flex flex-col justify-center items-center gap-8 py-12 lg:py-16',
+        'relative w-full flex flex-col justify-center items-center gap-8 py-12 lg:py-16',
         withBackground && variant === 'primary'
           ? 'bg-primary-100/20 dark:bg-primary-900/10'
           : '',
@@ -72,12 +78,18 @@ export const LandingProductFeature = ({
           ? 'bg-secondary-100/20 dark:bg-secondary-900/10'
           : '',
         withBackgroundGlow || imagePerspective !== 'none'
-          ? 'relative overflow-hidden'
+          ? 'overflow-hidden'
           : '',
         imagePerspective === 'paper' ? 'md:pb-24' : '',
         className,
       )}
     >
+      {effectComponent ? (
+        <div className={clsx('absolute inset-0', effectClassName)}>
+          {effectComponent}
+        </div>
+      ) : null}
+
       {imageSrc && withBackgroundGlow ? (
         <div className="hidden lg:flex justify-center w-full h-full absolute pointer-events-none">
           <GlowBg
@@ -113,6 +125,8 @@ export const LandingProductFeature = ({
             textClassName,
           )}
         >
+          {leadingComponent}
+
           {title ? (
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight">
               {title}

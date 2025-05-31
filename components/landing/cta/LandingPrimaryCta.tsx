@@ -90,6 +90,8 @@ export const LandingPrimaryImageCtaSection = ({
   withBackgroundGlow = false,
   variant = 'primary',
   backgroundGlowVariant = 'primary',
+  effectComponent,
+  effectClassName,
 }: {
   children?: React.ReactNode;
   className?: string;
@@ -117,11 +119,13 @@ export const LandingPrimaryImageCtaSection = ({
   withBackgroundGlow?: boolean;
   variant?: 'primary' | 'secondary';
   backgroundGlowVariant?: 'primary' | 'secondary';
+  effectComponent?: React.ReactNode;
+  effectClassName?: string;
 }) => {
   return (
     <section
       className={clsx(
-        'w-full flex flex-col justify-center items-center gap-8 py-12 lg:py-16',
+        'relative w-full flex flex-col justify-center items-center gap-8 py-12 lg:py-16',
         withBackground && variant === 'primary'
           ? 'bg-primary-100/20 dark:bg-primary-900/10'
           : '',
@@ -135,6 +139,18 @@ export const LandingPrimaryImageCtaSection = ({
         className,
       )}
     >
+      {effectComponent ? (
+        <div
+          aria-hidden="true"
+          className={clsx(
+            'absolute inset-0 h-full w-full pointer-events-none opacity-50',
+            effectClassName,
+          )}
+        >
+          {effectComponent}
+        </div>
+      ) : null}
+
       {imageSrc && withBackgroundGlow ? (
         <div className="hidden lg:flex justify-center w-full h-full absolute pointer-events-none">
           <GlowBg
@@ -255,6 +271,8 @@ export const LandingPrimaryVideoCtaSection = ({
   withBackgroundGlow = false,
   variant = 'primary',
   backgroundGlowVariant = 'primary',
+  effectComponent,
+  effectClassName,
 }: {
   children?: React.ReactNode;
   className?: string;
@@ -280,11 +298,13 @@ export const LandingPrimaryVideoCtaSection = ({
   withBackgroundGlow?: boolean;
   variant?: 'primary' | 'secondary';
   backgroundGlowVariant?: 'primary' | 'secondary';
+  effectComponent?: React.ReactNode;
+  effectClassName?: string;
 }) => {
   return (
     <section
       className={clsx(
-        'w-full flex flex-col justify-center items-center gap-8 py-12 lg:py-16',
+        'relative w-full flex flex-col justify-center items-center gap-8 py-12 lg:py-16',
         withBackground && variant === 'primary'
           ? 'bg-primary-100/20 dark:bg-primary-900/10'
           : '',
@@ -295,9 +315,21 @@ export const LandingPrimaryVideoCtaSection = ({
         className,
       )}
     >
+      {effectComponent ? (
+        <div
+          aria-hidden="true"
+          className={clsx(
+            'absolute inset-0 h-full w-full pointer-events-none opacity-50',
+            effectClassName,
+          )}
+        >
+          {effectComponent}
+        </div>
+      ) : null}
+
       <div
         className={clsx(
-          'w-full p-6 flex flex-col gap-8 relative',
+          'w-full p-6 flex flex-col gap-8 relative z-10',
           videoPosition === 'center'
             ? 'container-narrow'
             : 'max-w-full container-wide grid lg:grid-cols-2 items-center',
@@ -404,6 +436,8 @@ export const LandingPrimaryTextCtaSection = ({
   withBackgroundGlow = false,
   variant = 'primary',
   backgroundGlowVariant = 'primary',
+  effectComponent,
+  effectClassName,
 }: {
   children?: React.ReactNode;
   className?: string;
@@ -419,11 +453,13 @@ export const LandingPrimaryTextCtaSection = ({
   withBackgroundGlow?: boolean;
   variant?: 'primary' | 'secondary';
   backgroundGlowVariant?: 'primary' | 'secondary';
+  effectComponent?: React.ReactNode;
+  effectClassName?: string;
 }) => {
   return (
     <section
       className={clsx(
-        'w-full flex flex-col justify-center items-center gap-8 py-12 lg:py-16',
+        'relative w-full flex flex-col justify-center items-center gap-8 py-12 lg:py-16',
         withBackground && variant === 'primary'
           ? 'bg-primary-100/20 dark:bg-primary-900/10'
           : '',
@@ -433,6 +469,18 @@ export const LandingPrimaryTextCtaSection = ({
         className,
       )}
     >
+      {effectComponent ? (
+        <div
+          aria-hidden="true"
+          className={clsx(
+            'absolute inset-0 h-full w-full pointer-events-none opacity-50',
+            effectClassName,
+          )}
+        >
+          {effectComponent}
+        </div>
+      ) : null}
+
       {withBackgroundGlow ? (
         <div className="hidden lg:flex justify-center w-full h-full absolute pointer-events-none">
           <GlowBg
@@ -447,7 +495,7 @@ export const LandingPrimaryTextCtaSection = ({
 
       <div
         className={clsx(
-          'w-full p-6 flex flex-col gap-8 relative',
+          'w-full p-6 flex flex-col gap-8 relative z-10',
           textPosition === 'center'
             ? 'container-narrow'
             : 'max-w-full container-wide',
