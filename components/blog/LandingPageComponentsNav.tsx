@@ -10,7 +10,6 @@ export const LandingPageComponentsNav = ({
     {
       href: '/docs/landing-page-components/about',
       label: 'About',
-      isNew: true,
     },
     {
       href: '/docs/landing-page-components/appstore-button',
@@ -24,17 +23,22 @@ export const LandingPageComponentsNav = ({
     {
       href: '/docs/landing-page-components/bento-grid',
       label: 'Bento Grid',
-      isNew: true,
     },
     {
       href: '/docs/landing-page-components/blog-list',
       label: 'Blog List',
-      isNew: true,
     },
     {
       href: '/docs/landing-page-components/blog-post',
       label: 'Blog Post',
-      isNew: true,
+    },
+    {
+      href: '/docs/landing-page-components/primary-cta-effects',
+      label: 'Cta Background Effects',
+    },
+    {
+      href: '/docs/landing-page-components/primary-cta-text-effects',
+      label: 'Cta Text Effects',
     },
     {
       href: '/docs/landing-page-components/discount',
@@ -65,6 +69,11 @@ export const LandingPageComponentsNav = ({
       label: 'Footer',
     },
     {
+      href: '/docs/landing-page-components/leading-pill',
+      label: 'Leading Pills',
+      isNew: true,
+    },
+    {
       href: '/docs/landing-page-components/marquee',
       label: 'Marquee',
     },
@@ -85,6 +94,10 @@ export const LandingPageComponentsNav = ({
       label: 'Pricing Plan',
     },
     {
+      href: '/docs/landing-page-components/pricing-comparison',
+      label: 'Pricing Comparison',
+    },
+    {
       href: '/docs/landing-page-components/primary-image-cta',
       label: 'Primary Image Cta',
     },
@@ -99,12 +112,10 @@ export const LandingPageComponentsNav = ({
     {
       href: '/docs/landing-page-components/problem-agitator',
       label: 'Problem Agitator',
-      isNew: true,
     },
     {
       href: '/docs/landing-page-components/problem-solution',
       label: 'Problem Solution',
-      isNew: true,
     },
     {
       href: '/docs/landing-page-components/product-card',
@@ -163,12 +174,10 @@ export const LandingPageComponentsNav = ({
     {
       href: '/docs/landing-page-components/stats',
       label: 'Stats',
-      isNew: true,
     },
     {
       href: '/docs/landing-page-components/team',
       label: 'Team',
-      isNew: true,
     },
     {
       href: '/docs/landing-page-components/testimonial-grid',

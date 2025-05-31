@@ -79,6 +79,24 @@ import { LandingBentoGridNumberItem } from '@/components/landing/bento-grid/Land
 import { LandingBentoGridImageItem } from '@/components/landing/bento-grid/LandingBentoGridImageItem';
 import { LandingProductCardSection } from '@/components/landing/card/LandingProductCardSection';
 import { LandingProductCard } from '@/components/landing/card/LandingProductCard';
+import { LandingPriceComparisonSection } from '@/components/landing/pricing-comparison/LandingPriceComparisonSection';
+import { LandingPriceComparisonColumn } from '@/components/landing/pricing-comparison/LandingPriceComparisonColumn';
+import { LandingPriceComparisonItem } from '@/components/landing/pricing-comparison/LandingPriceComparisonItem';
+import { LandingDotParticleCtaBg } from '@/components/landing/cta-backgrounds/LandingDotParticleCtaBg';
+import { LandingMouseHighlightCtaBg } from '@/components/landing/cta-backgrounds/LandingMouseHighlightCtaBg';
+import { LandingConicCtaBg } from '@/components/landing/cta-backgrounds/LandingConicCtaBg';
+import { LandingBlobCtaBg } from '@/components/landing/cta-backgrounds/LandingBlobCtaBg';
+import { LandingGridPatternCtaBg } from '@/components/landing/cta-backgrounds/LandingGridPatternCtaBg';
+import { LandingFlyingParticleCtaBg } from '@/components/landing/cta-backgrounds/LandingFlyingParticleCtaBg';
+import { LandingCurvedLinesCtaBg } from '@/components/landing/cta-backgrounds/LandingCurvedLinesCtaBg';
+import { LandingStraightLinesCtaBg } from '@/components/landing/cta-backgrounds/LandingStraightLinesCtaBg';
+import { LandingEllipseSideCtaBg } from '@/components/landing/cta-backgrounds/LandingEllipseSideCtaBg';
+import { LandingFlickeringGridCtaBg } from '@/components/landing/cta-backgrounds/LandingFlickeringGridCtaBg';
+import { LandingWavesCtaBg } from '@/components/landing/cta-backgrounds/LandingWavesCtaBg';
+import { LandingPathsCtaBg } from '@/components/landing/cta-backgrounds/LandingPathsCtaBg';
+import { LandingShapesCtaBg } from '@/components/landing/cta-backgrounds/LandingShapesCtaBg';
+import { LandingDiagonalCtaBg } from '@/components/landing/cta-backgrounds/LandingDiagonalCtaBg';
+import { LandingLeadingPill } from '@/components/landing/leading/LandingLeadingPill';
 
 import { WrappedVideoPlayer } from '@/components/blog/WrappedVideoPlayer';
 import { GettingStartedGrid } from '@/components/blog/GettingStartedGrid';
@@ -125,6 +143,66 @@ const LandingNewsletterInputWrapper = (props) => {
 
 const LandingPricingPlanWrapper = (props) => {
   return <LandingPricingPlan {...props} />;
+};
+
+const LandingDotParticleCtaBgWrapper = (props) => {
+  return <LandingDotParticleCtaBg {...props} />;
+};
+
+const LandingMouseHighlightCtaBgWrapper = (props) => {
+  return <LandingMouseHighlightCtaBg {...props} />;
+};
+
+const LandingConicCtaBgWrapper = (props) => {
+  return <LandingConicCtaBg {...props} />;
+};
+
+const LandingBlobCtaBgWrapper = (props) => {
+  return <LandingBlobCtaBg {...props} />;
+};
+
+const LandingGridPatternCtaBgWrapper = (props) => {
+  return <LandingGridPatternCtaBg {...props} />;
+};
+
+const LandingFlyingParticleCtaBgWrapper = (props) => {
+  return <LandingFlyingParticleCtaBg {...props} />;
+};
+
+const LandingCurvedLinesCtaBgWrapper = (props) => {
+  return <LandingCurvedLinesCtaBg {...props} />;
+};
+
+const LandingStraightLinesCtaBgWrapper = (props) => {
+  return <LandingStraightLinesCtaBg {...props} />;
+};
+
+const LandingEllipseSideCtaBgWrapper = (props) => {
+  return <LandingEllipseSideCtaBg {...props} />;
+};
+
+const LandingFlickeringGridCtaBgWrapper = (props) => {
+  return <LandingFlickeringGridCtaBg {...props} />;
+};
+
+const LandingWavesCtaBgWrapper = (props) => {
+  return <LandingWavesCtaBg {...props} />;
+};
+
+const LandingPathsCtaBgWrapper = (props) => {
+  return <LandingPathsCtaBg {...props} />;
+};
+
+const LandingShapesCtaBgWrapper = (props) => {
+  return <LandingShapesCtaBg {...props} />;
+};
+
+const LandingDiagonalCtaBgWrapper = (props) => {
+  return <LandingDiagonalCtaBg {...props} />;
+};
+
+const LandingLeadingPillWrapper = (props) => {
+  return <LandingLeadingPill {...props} />;
 };
 
 import {
@@ -232,6 +310,24 @@ export const components: MDXComponents = {
   LandingBentoGridImageItem,
   LandingProductCardSection,
   LandingProductCard,
+  LandingPriceComparisonSection,
+  LandingPriceComparisonColumn,
+  LandingPriceComparisonItem,
+  LandingDotParticleCtaBg: LandingDotParticleCtaBgWrapper,
+  LandingMouseHighlightCtaBg: LandingMouseHighlightCtaBgWrapper,
+  LandingConicCtaBg: LandingConicCtaBgWrapper,
+  LandingBlobCtaBg: LandingBlobCtaBgWrapper,
+  LandingGridPatternCtaBg: LandingGridPatternCtaBgWrapper,
+  LandingFlyingParticleCtaBg: LandingFlyingParticleCtaBgWrapper,
+  LandingCurvedLinesCtaBg: LandingCurvedLinesCtaBgWrapper,
+  LandingStraightLinesCtaBg: LandingStraightLinesCtaBgWrapper,
+  LandingEllipseSideCtaBg: LandingEllipseSideCtaBgWrapper,
+  LandingFlickeringGridCtaBg: LandingFlickeringGridCtaBgWrapper,
+  LandingWavesCtaBg: LandingWavesCtaBgWrapper,
+  LandingPathsCtaBg: LandingPathsCtaBgWrapper,
+  LandingShapesCtaBg: LandingShapesCtaBgWrapper,
+  LandingDiagonalCtaBg: LandingDiagonalCtaBgWrapper,
+  LandingLeadingPill: LandingLeadingPillWrapper,
 
   ChromeIcon,
   FigmaIcon,
