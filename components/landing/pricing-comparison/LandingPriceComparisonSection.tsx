@@ -83,8 +83,8 @@ export const LandingPriceComparisonSection = ({
 
       <div
         className={clsx(
-          'w-full p-6 flex flex-col items-center relative',
-          textPosition === 'center' ? 'justify-center' : 'md:max-w-2xl',
+          'container-wide w-full px-6 flex flex-col items-center relative',
+          textPosition === 'center' ? 'justify-center' : '',
         )}
       >
         <div
