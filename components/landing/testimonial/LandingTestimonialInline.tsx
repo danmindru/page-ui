@@ -11,7 +11,7 @@ export const LandingTestimonialInline = ({
   children,
   withBackground = false,
   variant = 'primary',
-  containerType = 'ultrawide',
+  containerType = 'wide',
 }: {
   className?: string;
   children?: React.ReactNode;
