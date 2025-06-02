@@ -24,7 +24,7 @@ export const LandingProductFeature = ({
   imageSrc,
   imageAlt = '',
   imagePosition = 'right',
-  imagePerspective = 'paper',
+  imagePerspective = 'bottom',
   imageShadow = 'hard',
   imageClassName,
   zoomOnHover = true,
@@ -108,7 +108,7 @@ export const LandingProductFeature = ({
           'w-full p-6 flex flex-col items-center relative',
           imagePosition === 'center'
             ? 'container-narrow'
-            : 'max-w-full container-wide grid lg:grid-cols-2',
+            : 'max-w-full container-wide grid gap-4 lg:grid-cols-2',
           innerClassName,
         )}
         style={{
