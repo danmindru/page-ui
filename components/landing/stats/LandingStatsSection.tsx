@@ -100,30 +100,42 @@ export function LandingStatsSection({
           </div>
         )}
 
-        <div
-          className={clsx(
-            'w-full grid gap-4',
-            columnsMobile === 1 ? 'grid-cols-1' : 'grid-cols-2',
-            columnsDesktop === 2 ? 'md:grid-cols-2' : '',
-            columnsDesktop === 3 ? 'md:grid-cols-3' : '',
-            columnsDesktop === 4 ? 'md:grid-cols-4' : '',
-          )}
-        >
-          {stats?.map((stat, index) => {
-            return (
-              <LandingStatItem
-                key={index}
-                value={stat.value}
-                label={stat.label}
-                description={stat.description}
-                variant={variant}
-                hasBorder={hasBorders}
-              />
-            );
-          })}
-        </div>
-
-        {children}
+        {stats ? (
+          <div
+            className={clsx(
+              'w-full grid gap-4',
+              columnsMobile === 1 ? 'grid-cols-1' : 'grid-cols-2',
+              columnsDesktop === 2 ? 'md:grid-cols-2' : '',
+              columnsDesktop === 3 ? 'md:grid-cols-3' : '',
+              columnsDesktop === 4 ? 'md:grid-cols-4' : '',
+            )}
+          >
+            {stats.map((stat, index) => {
+              return (
+                <LandingStatItem
+                  key={index}
+                  value={stat.value}
+                  label={stat.label}
+                  description={stat.description}
+                  variant={variant}
+                  hasBorder={hasBorders}
+                />
+              );
+            })}
+          </div>
+        ) : (
+          <div
+            className={clsx(
+              'w-full grid gap-4',
+              columnsMobile === 1 ? 'grid-cols-1' : 'grid-cols-2',
+              columnsDesktop === 2 ? 'md:grid-cols-2' : '',
+              columnsDesktop === 3 ? 'md:grid-cols-3' : '',
+              columnsDesktop === 4 ? 'md:grid-cols-4' : '',
+            )}
+          >
+            {children}
+          </div>
+        )}
       </div>
     </section>
   );

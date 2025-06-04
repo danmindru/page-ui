@@ -113,7 +113,7 @@ export const LandingPriceComparisonSection = ({
         <div
           className={clsx(
             'isolate mt-12 grid mx-auto w-full',
-            columnNumber === 2 ? 'grid-cols-2' : '',
+            columnNumber === 2 ? 'grid-cols-2 max-w-2xl' : '',
             columnNumber === 3 ? 'grid-cols-3' : '',
             columnNumber === 4 ? 'grid-cols-4' : '',
             columnNumber === 5 ? 'grid-cols-5' : '',

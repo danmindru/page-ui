@@ -26,7 +26,7 @@ export const LandingShowcase = ({
   titleComponent?: React.ReactNode;
   description?: string | React.ReactNode;
   descriptionComponent?: React.ReactNode;
-  textPosition?: 'left' | 'right';
+  textPosition?: 'left' | 'right' | 'center';
   withBackground?: boolean;
   withBackgroundGlow?: boolean;
   variant?: 'primary' | 'secondary';
@@ -48,7 +48,8 @@ export const LandingShowcase = ({
     >
       <div
         className={clsx(
-          'grid gap-16 items-center relative container-wide p-6 lg:grid-cols-2',
+          'grid gap-16 items-center relative container-wide p-6',
+          textPosition === 'center' ? 'grid-cols-1' : 'lg:grid-cols-2',
           innerClassName,
         )}
       >
@@ -56,6 +57,7 @@ export const LandingShowcase = ({
           className={clsx(
             'flex flex-col gap-4',
             textPosition === 'right' && 'order-2 lg:order-1',
+            textPosition === 'center' && 'items-center text-center',
           )}
         >
           {title ? (
@@ -85,7 +87,11 @@ export const LandingShowcase = ({
         ) : null}
 
         {children ? (
-          <div className="relative z-10 grid grid-cols-6 md:grid-cols-8 lg:grid-cols-5 2xl:grid-cols-6 gap-4">
+          <div
+            className={clsx(
+              'relative z-10 grid grid-cols-6 md:grid-cols-8 lg:grid-cols-5 2xl:grid-cols-6 gap-4',
+            )}
+          >
             {children}
           </div>
         ) : null}
