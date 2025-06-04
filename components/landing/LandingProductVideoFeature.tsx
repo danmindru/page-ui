@@ -100,7 +100,7 @@ export const LandingProductVideoFeature = ({
             'flex flex-col gap-4 lg:col-span-5',
             videoPosition === 'left' && 'lg:col-start-8 lg:row-start-1',
             textPosition === 'center'
-              ? 'md:max-w-lg items-center text-center'
+              ? 'md:max-w-lg xl:max-w-2xl items-center text-center'
               : 'items-start',
           )}
         >

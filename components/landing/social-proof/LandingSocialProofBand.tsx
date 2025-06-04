@@ -9,26 +9,41 @@ export const LandingSocialProofBand = ({
   className,
   invert,
   children,
+  variant = 'default',
 }: {
   className?: string;
   invert?: boolean;
   children: React.ReactNode;
+  variant?: 'default' | 'primary' | 'secondary';
 }) => {
   return (
     <div
       className={clsx(
         'w-full py-2',
-        invert
-          ? 'bg-slate-700 dark:bg-slate-300'
-          : 'bg-slate-200 dark:bg-slate-900',
+        !invert && variant === 'primary'
+          ? 'bg-primary-100 dark:bg-primary-900'
+          : '',
+        !invert && variant === 'secondary'
+          ? 'bg-secondary-100 dark:bg-secondary-900'
+          : '',
+        !invert && variant === 'default'
+          ? 'bg-slate-200 dark:bg-slate-900'
+          : '',
+        invert && variant === 'primary'
+          ? 'bg-primary-900 dark:bg-primary-100'
+          : '',
+        invert && variant === 'secondary'
+          ? 'bg-secondary-900 dark:bg-secondary-100'
+          : '',
+        invert && variant === 'default' ? 'bg-slate-700 dark:bg-slate-300' : '',
         className,
       )}
     >
       <div
         className={clsx(
-          'max-w-7xl mx-auto flex flex-wrap items-center justify-center gap-8 px-8',
+          'w-full max-w-7xl mx-auto flex items-center md:justify-center gap-8 px-8 overflow-auto no-scrollbar',
           invert
-            ? 'text-gray-300 dark:text-gray-600'
+            ? 'text-gray-200 dark:text-gray-600'
             : 'text-gray-700 dark:text-gray-200',
         )}
       >

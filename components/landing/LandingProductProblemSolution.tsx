@@ -77,7 +77,7 @@ export function LandingProductProblemSolution({
             className={clsx(
               'w-full flex flex-col gap-4 mb-10',
               textPosition === 'center'
-                ? 'md:max-w-lg items-center text-center'
+                ? 'md:max-w-lg xl:max-w-2xl items-center text-center'
                 : 'items-start',
             )}
           >
@@ -101,7 +101,7 @@ export function LandingProductProblemSolution({
           {problems.length ? (
             <div
               className={clsx(
-                'flex flex-col bg-red-100/50 dark:bg-red-950/50 py-6 px-4 rounded-lg',
+                'flex flex-col bg-red-50 dark:bg-red-950 py-6 px-4 rounded-lg',
                 textPosition === 'left' ? 'px-6' : '',
               )}
             >
@@ -109,8 +109,9 @@ export function LandingProductProblemSolution({
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-6">
                   {problemTitle}
                 </h3>
-              ) : null}
-              {problemTitleComponent ? problemTitleComponent : null}
+              ) : (
+                problemTitleComponent
+              )}
 
               <LandingProductFeatureKeyPoints
                 keyPoints={problems}
@@ -125,7 +126,7 @@ export function LandingProductProblemSolution({
           {solutions.length ? (
             <div
               className={clsx(
-                'flex flex-col bg-green-100/50 dark:bg-green-950/50 py-6 px-4 rounded-lg',
+                'flex flex-col bg-green-50 dark:bg-green-950 py-6 px-4 rounded-lg',
                 textPosition === 'left' ? 'px-6' : '',
               )}
             >
@@ -133,8 +134,9 @@ export function LandingProductProblemSolution({
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-6">
                   {solutionTitle}
                 </h3>
-              ) : null}
-              {solutionTitleComponent ? solutionTitleComponent : null}
+              ) : (
+                solutionTitleComponent
+              )}
 
               <LandingProductFeatureKeyPoints
                 keyPoints={solutions}

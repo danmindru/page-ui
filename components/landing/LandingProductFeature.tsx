@@ -120,7 +120,7 @@ export const LandingProductFeature = ({
             'w-full flex flex-col gap-4',
             imagePosition === 'left' && 'lg:col-start-2 lg:row-start-1',
             textPosition === 'center'
-              ? 'md:max-w-lg items-center text-center'
+              ? 'md:max-w-lg xl:max-w-2xl items-center text-center'
               : 'items-start',
             textClassName,
           )}

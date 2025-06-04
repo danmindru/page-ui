@@ -19,9 +19,14 @@ export const LandingSocialProofBandItem = ({
   children: React.ReactNode;
 }) => {
   return (
-    <div className={clsx('flex items-center justify-start gap-0.5', className)}>
+    <div
+      className={clsx(
+        'flex items-center justify-start gap-0.5 shrink-0',
+        className,
+      )}
+    >
       {graphic ? (
-        <span className="flex-shrink-0">
+        <span className="shrink-0">
           {graphic === 'checkmark' ? (
             <CheckCheckIcon className="w-4 h-4 text-green-500 mr-1.5" />
           ) : null}
