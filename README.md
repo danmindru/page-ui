@@ -1,3 +1,5 @@
+> 🆕 New! Get an entire website from a prompt. Including design! Try it out at [pageai.pro](https://pageai.pro) 🚀
+
 # Page UI 📃
 
 [![Page UI CLI version](https://img.shields.io/npm/v/@page-ui/wizard?label=cli&style=flat)](https://github.com/danmindru/page-ui/tree/master/packages/cli)
