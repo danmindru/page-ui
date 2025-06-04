@@ -57,14 +57,13 @@ export const LandingProductSteps = ({
       className: '!p-0 rounded-xl overflow-hidden',
       minHeight: 0,
       innerClassName: clsx(
-        'm-0 lg:m-0 h-full',
+        'm-0 lg:m-0 h-full gap-2',
         variant === 'primary'
           ? ' bg-primary-300/10 dark:bg-primary-900/10'
           : ' bg-secondary-300/10 dark:bg-secondary-900/10',
-        isOdd ? 'gap-8' : 'gap-2',
         display === 'grid' ? '!px-0 !pb-0' : '',
       ),
-      textClassName: clsx(display === 'grid' ? 'p-6' : ''),
+      textClassName: 'p-6',
       imageClassName: clsx(
         'mb-0 !scale-100 rounded-xl',
         display === 'list' ? 'lg:-mb-12 lg:-mt-12' : '',
