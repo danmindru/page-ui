@@ -47,7 +47,9 @@ export const LandingBlobCtaBg = ({
   const positionClasses = getPositionClasses();
 
   return (
-    <div className={clsx('relative w-full h-full blur-3xl', className)}>
+    <div
+      className={clsx('relative w-full h-full blur-3xl opacity-60', className)}
+    >
       <style jsx>{`
         @keyframes blob-float {
           0%,

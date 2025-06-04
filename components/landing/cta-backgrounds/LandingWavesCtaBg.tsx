@@ -303,7 +303,7 @@ export const LandingWavesCtaBg = ({
   }, [waveSpeedX, waveSpeedY, waveAmpX, waveAmpY, xGap, yGap]);
 
   return (
-    <div ref={domRef} className={clsx('inset-0', className)}>
+    <div ref={domRef} className={clsx('inset-0 opacity-70', className)}>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

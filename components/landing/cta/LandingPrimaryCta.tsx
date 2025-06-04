@@ -2,6 +2,34 @@ import clsx from 'clsx';
 import Image from '@/components/shared/Image';
 import { GlowBg } from '@/components/shared/ui/glow-bg';
 import { VideoPlayer } from '@/components/shared/VideoPlayer';
+import { forwardRef } from 'react';
+
+/**
+ * A simple CSS mask component that fades content top and bottom to transparent
+ */
+const FadeMask = forwardRef<
+  HTMLDivElement,
+  {
+    children: React.ReactNode;
+    className?: string;
+    fadeHeight?: string;
+  }
+>(({ children, className, fadeHeight = '3rem' }, ref) => {
+  return (
+    <div
+      ref={ref}
+      className={clsx('overflow-hidden', className)}
+      style={{
+        maskImage: `linear-gradient(to bottom, transparent 0%, black ${fadeHeight}, black calc(100% - ${fadeHeight}), transparent 100%)`,
+        WebkitMaskImage: `linear-gradient(to bottom, transparent 0%, black ${fadeHeight}, black calc(100% - ${fadeHeight}), transparent 100%)`,
+      }}
+    >
+      {children}
+    </div>
+  );
+});
+
+FadeMask.displayName = 'FadeMask';
 
 const LandingPrimaryCtaContent = ({
   className,
@@ -140,15 +168,16 @@ export const LandingPrimaryImageCtaSection = ({
       )}
     >
       {effectComponent ? (
-        <div
-          aria-hidden="true"
+        <FadeMask
           className={clsx(
             'absolute inset-0 h-full w-full pointer-events-none opacity-50',
             effectClassName,
           )}
+          fadeHeight="4rem"
+          aria-hidden="true"
         >
           {effectComponent}
-        </div>
+        </FadeMask>
       ) : null}
 
       {imageSrc && withBackgroundGlow ? (
@@ -316,15 +345,16 @@ export const LandingPrimaryVideoCtaSection = ({
       )}
     >
       {effectComponent ? (
-        <div
-          aria-hidden="true"
+        <FadeMask
           className={clsx(
             'absolute inset-0 h-full w-full pointer-events-none opacity-50',
             effectClassName,
           )}
+          fadeHeight="4rem"
+          aria-hidden="true"
         >
           {effectComponent}
-        </div>
+        </FadeMask>
       ) : null}
 
       <div
@@ -470,15 +500,16 @@ export const LandingPrimaryTextCtaSection = ({
       )}
     >
       {effectComponent ? (
-        <div
-          aria-hidden="true"
+        <FadeMask
           className={clsx(
             'absolute inset-0 h-full w-full pointer-events-none opacity-50',
             effectClassName,
           )}
+          fadeHeight="4rem"
+          aria-hidden="true"
         >
           {effectComponent}
-        </div>
+        </FadeMask>
       ) : null}
 
       {withBackgroundGlow ? (
