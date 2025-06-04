@@ -1,7 +1,7 @@
 ---
 title: 'Landing Page Showcase'
 date: '2024-08-05'
-lastmod: '2024-08-05'
+lastmod: '2025-06-04'
 tags:
   - 'guide'
   - 'components'
@@ -291,6 +291,107 @@ import {
 
 </ComponentExample>
 
+### Center Text Position
+
+<ComponentExample
+  previewComponent={
+    <LandingShowcase
+      title="Import with ease"
+      description="All your video assets in one platform. Import your existing footage from any device with a click."
+      textPosition="center"
+    >
+      <LandingShowcaseItem>
+        <FigmaIcon className="w-10 h-10" />
+      </LandingShowcaseItem>
+
+      <LandingShowcaseItem>
+        <TwitchIcon className="w-10 h-10" />
+      </LandingShowcaseItem>
+
+      <LandingShowcaseItem>
+        <ChromeIcon className="w-10 h-10" />
+      </LandingShowcaseItem>
+
+      <LandingShowcaseItem>
+        <InstagramIcon className="w-10 h-10" />
+      </LandingShowcaseItem>
+
+      <LandingShowcaseItem>
+        <TwitterIcon className="w-10 h-10" />
+      </LandingShowcaseItem>
+
+      <LandingShowcaseItem>
+        <FramerIcon className="w-10 h-10" />
+      </LandingShowcaseItem>
+
+      <LandingShowcaseItem>
+        <GithubIcon className="w-10 h-10" />
+      </LandingShowcaseItem>
+
+      <LandingShowcaseItem>
+        <SlackIcon className="w-10 h-10" />
+      </LandingShowcaseItem>
+    </LandingShowcase>}
+
+>
+
+```jsx
+import {
+  FigmaIcon,
+  TwitchIcon,
+  ChromeIcon,
+  InstagramIcon,
+  TwitterIcon,
+  FramerIcon,
+  GithubIcon,
+  SlackIcon,
+} from 'lucide-react';
+import {
+  LandingShowcase,
+  LandingShowcaseItem,
+} from '@/components/landing/LandingShowcase';
+
+<LandingShowcase
+  title="Import with ease"
+  description="All your video assets in one platform. Import your existing footage from any device with a click."
+  textPosition="center"
+>
+  <LandingShowcaseItem>
+    <FigmaIcon className="w-10 h-10" />
+  </LandingShowcaseItem>
+
+  <LandingShowcaseItem>
+    <TwitchIcon className="w-10 h-10" />
+  </LandingShowcaseItem>
+
+  <LandingShowcaseItem>
+    <ChromeIcon className="w-10 h-10" />
+  </LandingShowcaseItem>
+
+  <LandingShowcaseItem>
+    <InstagramIcon className="w-10 h-10" />
+  </LandingShowcaseItem>
+
+  <LandingShowcaseItem>
+    <TwitterIcon className="w-10 h-10" />
+  </LandingShowcaseItem>
+
+  <LandingShowcaseItem>
+    <FramerIcon className="w-10 h-10" />
+  </LandingShowcaseItem>
+
+  <LandingShowcaseItem>
+    <GithubIcon className="w-10 h-10" />
+  </LandingShowcaseItem>
+
+  <LandingShowcaseItem>
+    <SlackIcon className="w-10 h-10" />
+  </LandingShowcaseItem>
+</LandingShowcase>
+```
+
+</ComponentExample>
+
 ### With Background
 
 <ComponentExample
@@ -511,7 +612,7 @@ import {
 | **titleComponent** <Tippy>React node to be rendered as the title, if `title` is not provided.</Tippy>                                 | `React.ReactNode`            | No       | -           |
 | **description** <Tippy>The description text or React node to be displayed in the component.</Tippy>                                   | `string` ǀ `React.ReactNode` | No       | -           |
 | **descriptionComponent** <Tippy>React node to be rendered as the description, if `description` is not provided.</Tippy>               | `React.ReactNode`            | No       | -           |
-| **textPosition** <Tippy>Position of the text within the component. Can be 'left' or 'right'.</Tippy>                                  | `'left'` ǀ `'right'`         | No       | `'left'`    |
+| **textPosition** <Tippy>Position of the text within the component. Can be 'left' or 'right' or 'center'.</Tippy>                                  | `'left'` ǀ `'right'`         | No       | `'left'`    |
 | **withBackground** <Tippy>Flag indicating whether the background should be applied.</Tippy>                                           | `boolean`                    | No       | `false`     |
 | **withBackgroundGlow** <Tippy>Flag indicating whether the background glow should be applied.</Tippy>                                  | `boolean`                    | No       | `false`     |
 | **variant** <Tippy>Variant of the background style. Can be 'primary' or 'secondary'.</Tippy>                                          | `'primary'` ǀ `'secondary'`  | No       | `'primary'` |
