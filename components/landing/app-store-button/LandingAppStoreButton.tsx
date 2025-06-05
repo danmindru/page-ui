@@ -66,7 +66,7 @@ export const LandingAppStoreButton = ({
     <Button
       type="button"
       className={clsx(
-        'p-0 relative inline-flex items-center justify-center cursor-pointer transition-opacity duration-200 hover:opacity-70 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary-500',
+        'p-0 relative inline-flex items-center justify-center cursor-pointer transition-opacity duration-200 hover:opacity-70 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary-500 px-0',
         className,
       )}
       aria-label={`Download from ${storeName}`}
