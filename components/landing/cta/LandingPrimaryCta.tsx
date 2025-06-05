@@ -7,7 +7,7 @@ import { forwardRef } from 'react';
 /**
  * A simple CSS mask component that fades content top and bottom to transparent
  */
-const FadeMask = forwardRef<
+export const FadeMask = forwardRef<
   HTMLDivElement,
   {
     children: React.ReactNode;
