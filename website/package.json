@@ -4,7 +4,7 @@
   "version": "1.6.2",
   "private": true,
   "scripts": {
-    "dev": "cross-env PORT=6009 next dev",
+    "dev": "cross-env PORT=6010 next dev",
     "build": "cross-env next build && cross-env NODE_OPTIONS='--experimental-json-modules' node ./scripts/postbuild.mjs",
     "serve": "next start",
     "analyze": "cross-env ANALYZE=true next build",

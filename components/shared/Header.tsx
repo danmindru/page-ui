@@ -7,10 +7,35 @@ import ThemeSwitch from './ThemeSwitch';
 import SearchButton from '../search/SearchButton';
 import ActiveLink from '@/components/shared/ActiveLink';
 import Image from 'next/image';
+import { CtaButton } from '@/components/shared/ui/cta-button';
 
 const Header = ({ className }: { className?: string }) => {
   return (
     <>
+      <div className="w-full flex gap-4 items-center justify-center px-1 py-4 md:p-4 bg-lime-950 shadow-[0_0_10px_rgba(0,0,0,0.1)]">
+        <section
+          className={cn(
+            'wide-container !py-0 flex justify-between items-center gap-4'
+          )}
+        >
+          <p className="text-white text-xs md:text-base">
+            <span className="font-semibold">New!</span> AI that uses Page UI to
+            build complete websites.
+          </p>
+
+          <CtaButton asChild className="shrink-0">
+            <a
+              href="https://pageai.pro"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="shrink-0 inline-flex items-center h-10 text-xs md:text-base"
+            >
+              Try Page AI →
+            </a>
+          </CtaButton>
+        </section>
+      </div>
+
       {/* <div className="w-full gap-4 flex items-center justify-center bg-purple-950 p-2">
         <a
           href="https://www.producthunt.com/posts/page-ui?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-page&#0045;ui"
@@ -32,7 +57,7 @@ const Header = ({ className }: { className?: string }) => {
       <header
         className={cn(
           'flex items-center justify-between py-10 flex-wrap w-full mb-20 lg:mb-32 pt-6 p-6 container-wide',
-          className,
+          className
         )}
       >
         <div>
@@ -80,7 +105,7 @@ const Header = ({ className }: { className?: string }) => {
                 href={link.href}
                 className={cn(
                   'nav-link',
-                  hiddenOnSmallScreen ? 'hidden md:flex' : 'hidden sm:block',
+                  hiddenOnSmallScreen ? 'hidden md:flex' : 'hidden sm:block'
                 )}
                 activeClassName="nav-link-active"
               >
