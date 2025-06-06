@@ -4,7 +4,8 @@ import { clsx } from 'clsx';
 
 export interface BlogPost {
   path?: string;
-  slug: string;
+  basePath?: string;
+  slug?: string;
   date: string;
   title: string;
   summary?: string;
@@ -30,6 +31,7 @@ export const LandingBlogPost = ({
 }) => {
   const {
     path,
+    basePath = '/blog',
     slug,
     date,
     title,
@@ -61,7 +63,7 @@ export const LandingBlogPost = ({
               'w-full h-40 md:w-1/3 md:h-auto order-last',
           )}
         >
-          <Link href={path || `/blog/${slug}`}>
+          <Link href={path || `${basePath}/${slug}`}>
             <Image
               src={firstImage}
               alt={title || 'Blog post image'}
@@ -79,7 +81,7 @@ export const LandingBlogPost = ({
         )}
       >
         <Link
-          href={path || `/blog/${slug}`}
+          href={path || `${basePath}/${slug}`}
           className="absolute w-full h-full top-0 left-0 opacity-0"
         >
           Open post
