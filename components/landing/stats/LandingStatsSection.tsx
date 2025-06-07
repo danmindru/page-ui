@@ -68,7 +68,7 @@ export function LandingStatsSection({
 
       <div
         className={clsx(
-          'container-wide w-full flex flex-col relative',
+          'container-wide w-full px-6 flex flex-col relative',
           textPosition === 'center' ? 'items-center' : 'items-start',
           innerClassName,
         )}
