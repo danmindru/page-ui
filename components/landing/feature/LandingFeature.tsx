@@ -10,12 +10,16 @@ export const LandingFeature = ({
   className,
   title,
   description,
+  titleComponent,
+  descriptionComponent,
   icon,
   variant = 'primary',
 }: {
   className?: string;
   title: string;
   description: string;
+  titleComponent?: React.ReactNode;
+  descriptionComponent?: React.ReactNode;
   icon: React.ReactNode;
   variant?: 'primary' | 'secondary';
 }) => {
@@ -33,8 +37,19 @@ export const LandingFeature = ({
         {icon}
       </div>
 
-      <h3 className="text-lg font-semibold">{title}</h3>
-      <p className="text-sm text-gray-800 dark:text-gray-200">{description}</p>
+      {title ? (
+        <h3 className="text-lg font-semibold">{title}</h3>
+      ) : (
+        titleComponent
+      )}
+
+      {description ? (
+        <p className="text-sm text-gray-800 dark:text-gray-200">
+          {description}
+        </p>
+      ) : (
+        descriptionComponent
+      )}
     </div>
   );
 };
