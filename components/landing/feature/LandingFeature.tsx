@@ -16,8 +16,8 @@ export const LandingFeature = ({
   variant = 'primary',
 }: {
   className?: string;
-  title: string;
-  description: string;
+  title?: string;
+  description?: string;
   titleComponent?: React.ReactNode;
   descriptionComponent?: React.ReactNode;
   icon: React.ReactNode;
