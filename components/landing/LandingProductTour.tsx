@@ -61,7 +61,7 @@ const LandingProductTourSection = React.forwardRef<
         </div>
       ) : null}
 
-      <div className={clsx(className, 'wide-container')}>
+      <div className={clsx(className, 'container-wide')}>
         {title ? (
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight max-w-xs sm:max-w-none fancyHeading">
             {title}
