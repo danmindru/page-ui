@@ -15,7 +15,9 @@ export interface FeatureListItem {
  * Each feature has a title, description and icon.
  */
 export const LandingFeatureList = ({
+  children,
   className,
+  innerClassName,
   title,
   titleComponent,
   description,
@@ -26,12 +28,14 @@ export const LandingFeatureList = ({
   variant = 'primary',
   backgroundGlowVariant = 'primary',
 }: {
+  children?: React.ReactNode;
   className?: string;
+  innerClassName?: string;
   title?: string | React.ReactNode;
   titleComponent?: React.ReactNode;
   description?: string | React.ReactNode;
   descriptionComponent?: React.ReactNode;
-  featureItems: FeatureListItem[];
+  featureItems?: FeatureListItem[];
   withBackground?: boolean;
   withBackgroundGlow?: boolean;
   variant?: 'primary' | 'secondary';
@@ -60,9 +64,7 @@ export const LandingFeatureList = ({
         </div>
       ) : null}
 
-      <div
-        className={clsx('w-full p-6 max-w-full container-wide relative z-10')}
-      >
+      <div className={clsx('wide-container relative z-10')}>
         {title ? (
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight max-w-xs sm:max-w-none fancyHeading">
             {title}
@@ -70,23 +72,29 @@ export const LandingFeatureList = ({
         ) : (
           titleComponent
         )}
-
         {description ? (
           <p className="mt-6 md:text-xl">{description}</p>
         ) : (
           descriptionComponent
         )}
 
-        <div className="mt-12 flex flex-col sm:grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-12">
-          {featureItems.map((featureItem, index) => (
-            <LandingFeature
-              key={index}
-              title={featureItem.title}
-              description={featureItem.description}
-              icon={featureItem.icon}
-              variant={variant}
-            />
-          ))}
+        <div
+          className={clsx(
+            'mt-12 flex flex-col sm:grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-12',
+            innerClassName,
+          )}
+        >
+          {featureItems
+            ? featureItems.map((featureItem, index) => (
+                <LandingFeature
+                  key={index}
+                  title={featureItem.title}
+                  description={featureItem.description}
+                  icon={featureItem.icon}
+                  variant={variant}
+                />
+              ))
+            : children}
         </div>
       </div>
     </section>
