@@ -12,7 +12,38 @@ import { CtaButton } from '@/components/shared/ui/cta-button';
 const Header = ({ className }: { className?: string }) => {
   return (
     <>
-      <div className="w-full flex gap-4 items-center justify-center px-1 py-4 md:p-4 bg-lime-950 shadow-[0_0_10px_rgba(0,0,0,0.1)]">
+      <div className="w-full flex gap-4 items-center justify-center p-4 bg-purple-950">
+        <section
+          className={cn(
+            'wide-container !py-0 flex justify-between items-center'
+          )}
+        >
+          <p className="text-white text-sm">
+            <span className="font-bold">
+              Today is PageAI launch day!{' '}
+              <span className="text-primary-400">🚀</span>
+            </span>
+            <span className="hidden lg:flex">
+              The best AI landing page builder is launching on Product Hunt. Any
+              support would be greatly appreciated!
+            </span>
+          </p>
+          <a
+            href="https://www.producthunt.com/products/page-ai-websites-a-human-would-build?embed=true&utm_source=badge-featured&utm_medium=badge&utm_source=badge-page&#0045;ai&#0045;websites&#0045;a&#0045;human&#0045;would&#0045;build"
+            target="_blank"
+          >
+            <img
+              src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=962284&theme=light&t=1749673353125"
+              alt="Page&#0032;AI&#0032;⋅&#0032;Websites&#0032;a&#0032;human&#0032;would&#0032;build - Prompt&#0032;to&#0032;design&#0032;&#0038;&#0032;clean&#0032;code&#0032;in&#0032;5&#0032;min&#0032;⋅&#0032;Deploy&#0032;with&#0032;1&#0032;click | Product Hunt"
+              width={250}
+              height={54}
+              className="w-36 md:w-40 lg:w-52 h-auto"
+            />
+          </a>
+        </section>
+      </div>
+
+      {/* <div className="w-full flex gap-4 items-center justify-center px-1 py-4 md:p-4 bg-lime-950 shadow-[0_0_10px_rgba(0,0,0,0.1)]">
         <section
           className={cn(
             'wide-container !py-0 flex justify-between items-center gap-4'
@@ -34,7 +65,7 @@ const Header = ({ className }: { className?: string }) => {
             </a>
           </CtaButton>
         </section>
-      </div>
+      </div> */}
 
       {/* <div className="w-full gap-4 flex items-center justify-center bg-purple-950 p-2">
         <a
