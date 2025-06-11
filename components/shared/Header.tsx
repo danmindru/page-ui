@@ -31,13 +31,14 @@ const Header = ({ className }: { className?: string }) => {
           <a
             href="https://www.producthunt.com/products/page-ai-websites-a-human-would-build?embed=true&utm_source=badge-featured&utm_medium=badge&utm_source=badge-page&#0045;ai&#0045;websites&#0045;a&#0045;human&#0045;would&#0045;build"
             target="_blank"
+            className="shrink-0"
           >
             <img
               src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=962284&theme=light&t=1749673353125"
               alt="Page&#0032;AI&#0032;⋅&#0032;Websites&#0032;a&#0032;human&#0032;would&#0032;build - Prompt&#0032;to&#0032;design&#0032;&#0038;&#0032;clean&#0032;code&#0032;in&#0032;5&#0032;min&#0032;⋅&#0032;Deploy&#0032;with&#0032;1&#0032;click | Product Hunt"
               width={250}
               height={54}
-              className="w-36 md:w-40 lg:w-52 h-auto"
+              className="w-40 lg:w-52 h-auto"
             />
           </a>
         </section>
