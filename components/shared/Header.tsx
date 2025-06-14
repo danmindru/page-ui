@@ -12,7 +12,7 @@ import { CtaButton } from '@/components/shared/ui/cta-button';
 const Header = ({ className }: { className?: string }) => {
   return (
     <>
-      <div className="w-full flex gap-4 items-center justify-center p-4 bg-purple-950">
+      {/* <div className="w-full flex gap-4 items-center justify-center p-4 bg-purple-950">
         <section
           className={cn(
             'wide-container !py-0 flex justify-between items-center'
@@ -42,17 +42,17 @@ const Header = ({ className }: { className?: string }) => {
             />
           </a>
         </section>
-      </div>
+      </div> */}
 
-      {/* <div className="w-full flex gap-4 items-center justify-center px-1 py-4 md:p-4 bg-lime-950 shadow-[0_0_10px_rgba(0,0,0,0.1)]">
+      <div className="w-full flex gap-4 items-center justify-center px-1 py-4 md:p-4 bg-purple-800 shadow-[0_0_10px_rgba(0,0,0,0.1)]">
         <section
           className={cn(
             'wide-container !py-0 flex justify-between items-center gap-4'
           )}
         >
           <p className="text-white text-xs md:text-base">
-            <span className="font-semibold">New!</span> AI that uses Page UI to
-            build complete websites.
+            <span className="font-semibold">New!</span> An AI that builds
+            production-ready websites using Page UI.
           </p>
 
           <CtaButton asChild className="shrink-0">
@@ -66,7 +66,7 @@ const Header = ({ className }: { className?: string }) => {
             </a>
           </CtaButton>
         </section>
-      </div> */}
+      </div>
 
       {/* <div className="w-full gap-4 flex items-center justify-center bg-purple-950 p-2">
         <a
