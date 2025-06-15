@@ -99,7 +99,7 @@ const ElegantShape = memo(
           <div
             className={clsx(
               getShapeStyles(shapeType),
-              'transition-all duration-[2000ms]',
+              'transition-all transition-duration-[2000ms]',
             )}
             style={{
               backgroundImage: `linear-gradient(to right, ${gradientColor})`,
