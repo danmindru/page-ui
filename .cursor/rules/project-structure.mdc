@@ -1,0 +1,181 @@
+---
+description:
+globs:
+alwaysApply: true
+---
+# Page UI Project Structure
+
+This rule outlines the directory structure and organization of the Page UI project - a collection of landing page components, templates, and tools for React/Next.js applications.
+
+## Project Overview
+
+**Page UI** (`@page-ui/wizard`) is a landing page component library and template collection that provides:
+- Copy-paste React/Next.js components
+- Complete landing page templates
+- CLI tools for easy setup
+- Tailwind CSS theming system
+- Shadcn UI compatibility
+
+## Root Directory Structure
+
+```
+page-ui/
+├── components/          # 🎨 Reusable React components (shared library)
+├── website/            # 🌐 Documentation & demo website (Next.js app)
+├── templates/          # 📄 Complete landing page templates
+├── packages/           # 📦 CLI tools and utilities
+├── package.json        # 📋 Main package manifest (CLI tool)
+├── README.md          # 📖 Project documentation
+└── LICENSE.md         # ⚖️ MIT license
+```
+
+## Components Directory (`/components/`)
+
+**Purpose**: Shared component library that can be used in both the website and external projects.
+
+```
+components/
+├── landing/           # 🏠 Landing page specific components
+│   ├── about/        # About sections & company info
+│   ├── app-store-button/ # App store download buttons
+│   ├── bento-grid/   # Grid layout components
+│   ├── blog/         # Blog listing components
+│   ├── card/         # Product cards & showcases
+│   ├── cta/          # Call-to-action components
+│   ├── cta-backgrounds/ # CTA background variations
+│   ├── discount/     # Discount & sale banners
+│   ├── feature/      # Feature showcases
+│   ├── footer/       # Page footers
+│   ├── leading/      # Leading pills & badges
+│   ├── navigation/   # Headers & navigation
+│   ├── newsletter/   # Newsletter signup forms
+│   ├── pricing/      # Pricing sections
+│   ├── pricing-comparison/ # Pricing comparison tables
+│   ├── problem-agitator/ # Problem statement sections
+│   ├── rating/       # Rating & review components
+│   ├── showcase/     # Product showcase sections
+│   ├── social-proof/ # Social proof & testimonials
+│   ├── stats/        # Statistics & metrics
+│   ├── team/         # Team member profiles
+│   └── testimonial/  # Customer testimonials
+├── shared/           # 🔧 Common UI components
+│   ├── ui/          # Shadcn-style base components
+│   ├── Header.tsx   # Global header component
+│   ├── Footer.tsx   # Global footer component
+│   └── ThemeSwitch.tsx
+├── bricks/           # 🧱 Interactive demo system
+│   ├── theme/       # Theming & color management
+│   ├── controls/    # Interactive controls
+│   └── state/       # State management
+├── blog/            # 📝 Blog-related components
+├── icons/           # 🎯 Custom icon components
+├── lib/             # 🛠️ Utility functions
+└── data/            # 📊 Configuration data
+```
+
+## Website Directory (`/website/`)
+
+**Purpose**: Next.js documentation website with demos, docs, and interactive examples.
+
+```
+website/
+├── app/             # 🚀 Next.js 15+ App Router
+│   ├── docs/        # Documentation pages
+│   ├── api/         # API routes (newsletter, etc.)
+│   ├── tags/        # Blog tagging system
+│   └── [...slug]/   # Dynamic routing
+├── components/       # 🎨 Website-specific components (mirrors /components/)
+├── data/            # 📊 Content & configuration
+│   ├── docs/        # Documentation content (MDX)
+│   ├── config/      # Site configuration
+│   └── authors/     # Author information
+├── demo/            # 🎪 Interactive component demos
+├── layouts/         # 📐 Page layout components
+├── public/          # 🌐 Static assets
+├── css/             # 🎨 Global styles & Prism themes
+└── contentlayer.config.ts # 📄 Content processing
+```
+
+## Templates Directory (`/templates/`)
+
+**Purpose**: Complete, production-ready landing page templates.
+
+```
+templates/
+└── landing-page-templates/
+    ├── template/
+    │   ├── specta/         # Creator platform template
+    │   ├── gnomie-ai/      # B2C AI SaaS template
+    │   ├── minimum-via/    # Minimalist product template
+    │   ├── screenshot-two/ # Developer tool template
+    │   ├── emerald-ai/     # AI platform template
+    │   └── front-centre/   # Agency template
+    └── page.tsx           # Template showcase page
+```
+
+## Packages Directory (`/packages/`)
+
+**Purpose**: CLI tools and utilities for the Page UI ecosystem.
+
+```
+packages/
+└── cli/
+    ├── index.mjs      # 🛠️ Main CLI entry point
+    ├── files/         # Template files for init
+    └── README.md      # CLI documentation
+```
+
+## Key Configuration Files
+
+### Package Management
+- `package.json` - Main CLI package configuration
+- `website/package.json` - Website dependencies
+
+### Build & Development
+- `website/next.config.js` - Next.js configuration
+- `website/tailwind.config.js` - Tailwind CSS setup
+- `website/tsconfig.json` - TypeScript configuration
+- `website/contentlayer.config.ts` - Content processing
+
+### Styling & Theming
+- `website/css/globals.css` - Global styles & CSS variables
+
+## Component Organization Patterns
+
+### Landing Components (`/components/landing/`)
+- **Grouped by function**: CTA, testimonials, pricing, features
+- **Self-contained**: Each component includes its own styling
+- **Export pattern**: Centralized exports via `index.ts`
+- **Naming convention**: `Landing[Purpose][Variant].tsx`
+
+### Shared Components (`/components/shared/`)
+- **Base UI**: Shadcn-compatible components in `/ui/`
+- **Layout**: Headers, footers, navigation
+- **Utilities**: Theme switching, analytics, etc.
+
+### Brick System (`/components/bricks/`)
+- **Interactive demos**: Live component playground
+- **Theme management**: Color scheme generation
+- **Code generation**: Export configurations as code
+
+## File Naming Conventions
+
+### Components
+- **PascalCase**: `LandingFeatureSection.tsx`
+- **Descriptive**: Purpose clearly indicated in name
+- **Consistent prefixes**: `Landing*`, `Blog*`, etc.
+
+### Directories
+- **kebab-case**: `landing-page-templates`
+- **Descriptive**: Clear purpose indication
+- **Grouped logically**: Related components together
+
+### Template Structure
+```typescript
+// Template organization
+template/
+├── bricks/           # Component implementations
+├── [name]-logo.svg   # Brand assets
+├── [name].tsx        # Main template file
+└── page.tsx          # Demo page (optional)
+```

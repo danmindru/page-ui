@@ -1,0 +1,415 @@
+---
+description: Creating or updating landing page components
+globs:
+alwaysApply: false
+---
+# Page UI Landing Components Guide
+
+## Component Architecture & Philosophy
+
+Page UI landing components follow a **shadcn-inspired** design pattern with these core principles:
+
+- **Copy-paste friendly**: Components are self-contained with minimal external dependencies
+- **Highly configurable**: Extensive props for customization without code changes
+- **Accessibility-first**: Built on Radix UI primitives with proper ARIA attributes
+- **Responsive by default**: Mobile-first design with Tailwind CSS
+- **Theme-aware**: Support for primary/secondary variants and dark mode
+
+## Naming Conventions
+
+### Component Names
+All landing components follow this strict pattern:
+```typescript
+// ✅ Correct naming pattern
+export const Landing[Purpose][Variant?] = () => {}
+
+// Examples:
+LandingNewsletterSection     // Main section component
+LandingNewsletterInput       // Sub-component for input
+LandingPrimaryImageCtaSection // CTA with specific variant/type
+LandingTestimonialGrid       // Layout variant
+```
+
+### File Organization
+```
+components/landing/
+├── [category]/              # Group by functional purpose
+│   ├── Landing[Name].tsx    # Main component
+│   ├── Landing[Name][Type].tsx # Variants
+│   └── index.ts            # Export centralization
+└── index.ts                # Root exports
+```
+
+**Category Examples**: `newsletter/`, `cta/`, `testimonial/`, `pricing/`, `social-proof/`
+
+## Required Component Structure
+
+### 1. File Header Pattern
+```typescript
+'use client';  // Always first line for interactive components
+
+import clsx from 'clsx';
+import Image from '@/components/shared/Image';
+import { ComponentName } from '@/components/shared/ui/component-name';
+
+/**
+ * A component meant to be used in the landing page.
+ * [Clear description of purpose and usage context]
+ */
+```
+
+### 2. Props Interface Pattern
+**Always use inline type definitions** (not separate interfaces):
+
+```typescript
+export const LandingComponentName = ({
+  // Core content props
+  children,
+  className,
+  innerClassName,          // For inner container styling
+  title,
+  titleComponent,          // Alternative to title string
+  description,
+  descriptionComponent,    // Alternative to description string
+
+  // Functional props with sensible defaults
+  buttonLabel = 'Default Label',
+  placeholderLabel = 'Default Placeholder',
+  textPosition = 'center',
+  variant = 'primary',
+
+  // Boolean flags with defaults
+  withBackground = false,
+  withBackgroundGlow = false,
+  disabled = false,
+
+  // Event handlers with empty defaults
+  onSubmit = () => {},
+}: {
+  // Always use React.ReactNode for flexible content
+  children?: React.ReactNode;
+  className?: string;
+  innerClassName?: string;
+  title?: string | React.ReactNode;
+  titleComponent?: React.ReactNode;
+  description?: string | React.ReactNode;
+  descriptionComponent?: React.ReactNode;
+
+  // String props with specific values
+  buttonLabel?: string;
+  placeholderLabel?: string;
+  textPosition?: 'center' | 'left';      // Always define allowed values
+  variant?: 'primary' | 'secondary';     // Standard variant system
+
+  // Boolean props
+  withBackground?: boolean;
+  withBackgroundGlow?: boolean;
+  disabled?: boolean;
+
+  // Event handlers
+  onSubmit?: (e: React.FormEvent<HTMLFormElement>) => void;
+}) => {
+```
+
+## Styling Conventions
+
+### 1. className Assembly Pattern
+**Always use clsx** for conditional classes:
+
+```typescript
+<section
+  className={clsx(
+    // Base classes first (required styling)
+    'w-full flex flex-col justify-center items-center gap-8 py-12 lg:py-16',
+
+    // Conditional classes (variant-based)
+    withBackground && variant === 'primary'
+      ? 'bg-primary-100/20 dark:bg-primary-900/10'
+      : '',
+    withBackground && variant === 'secondary'
+      ? 'bg-secondary-100/20 dark:bg-secondary-900/10'
+      : '',
+
+    // State-dependent classes
+    withBackgroundGlow ? 'relative overflow-hidden' : '',
+
+    // User-provided className last
+    className,
+  )}
+>
+```
+
+### 2. Container Structure Pattern
+```typescript
+<section className="outer-section-classes">
+  {/* Background effects */}
+  {withBackgroundGlow ? (
+    <div className="background-glow-container">
+      <GlowBg variant={backgroundGlowVariant} />
+    </div>
+  ) : null}
+
+  {/* Main content container */}
+  <div
+    className={clsx(
+      'container-wide w-full pt-12 p-6 flex flex-col items-center justify-center relative',
+      innerClassName,
+    )}
+    style={{ minHeight }}  // Dynamic styles via style prop
+  >
+    {/* Content wrapper */}
+    <div className={clsx(
+      'flex flex-col gap-4',
+      textPosition === 'center'
+        ? 'md:max-w-lg xl:max-w-2xl items-center text-center'
+        : 'items-start',
+    )}>
+      {/* Component content */}
+    </div>
+  </div>
+</section>
+```
+
+### 3. Responsive Design Pattern
+Follow **mobile-first** approach:
+```typescript
+// ✅ Correct responsive classes
+'w-14 h-14 shrink-0 rounded-full sm:w-16 sm:h-16 md:w-20 md:h-20'
+'text-2xl md:text-3xl lg:text-4xl'
+'py-12 lg:py-16'
+'gap-4 md:gap-6 lg:gap-8'
+
+// ❌ Avoid desktop-first
+'lg:w-20 lg:h-20 md:w-16 md:h-16 w-14 h-14'
+```
+
+## Content Rendering Patterns
+
+### 1. Title/Description Component Pattern
+**Always provide both string and component alternatives**:
+
+```typescript
+{title ? (
+  <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight">
+    {title}
+  </h2>
+) : (
+  titleComponent
+)}
+
+{description ? (
+  <p className="md:text-lg -mt-3">{description}</p>
+) : (
+  descriptionComponent
+)}
+```
+
+### 2. Conditional Feature Rendering
+```typescript
+{withAvatars ? (
+  <div className="flex mb-6">
+    {/* Avatar components with consistent styling */}
+  </div>
+) : null}
+
+{/* Alternative using && operator for simpler conditions */}
+{children && <div className="mt-4">{children}</div>}
+```
+
+## Color System & Variants
+
+### 1. Standard Variant System
+**Always support primary/secondary variants**:
+```typescript
+// Background variants
+variant === 'primary' ? 'bg-primary-100/20 dark:bg-primary-900/10' : ''
+variant === 'secondary' ? 'bg-secondary-100/20 dark:bg-secondary-900/10' : ''
+
+// Border variants
+variant === 'primary' ? 'border-2 border-primary-500' : ''
+variant === 'secondary' ? 'border-2 border-secondary-500' : ''
+```
+
+### 2. Dark Mode Support
+**Always include dark mode variants**:
+```typescript
+'bg-primary-100/20 dark:bg-primary-900/10'
+'text-gray-700 dark:text-gray-300'
+'dark:opacity-50 opacity-100'
+```
+
+## State Management Patterns
+
+### 1. Event Handler Defaults
+```typescript
+// ✅ Always provide safe defaults
+onSubmit = () => {},
+onClick = () => {},
+onToggle = () => {},
+
+// Props interface
+onSubmit?: (e: React.FormEvent<HTMLFormElement>) => void;
+```
+
+### 2. Boolean Flag Patterns
+```typescript
+// ✅ Descriptive boolean props with defaults
+withBackground = false,
+withBackgroundGlow = false,
+withAvatars = false,
+disabled = false,
+
+// ❌ Avoid ambiguous boolean names
+isActive = false,     // What does "active" mean?
+enabled = true,       // Double negative with disabled
+```
+
+## Accessibility Standards
+
+### 1. Form Accessibility
+```typescript
+<Label htmlFor="email" className="sr-only">
+  {inputLabel}
+</Label>
+<Input
+  type="email"
+  id="email"
+  name="email"
+  placeholder={placeholderLabel}
+  required
+  disabled={disabled}
+/>
+```
+
+### 2. Image Accessibility
+```typescript
+<Image
+  src="/static/images/people/1.webp"
+  alt="Person 1"  // Always meaningful alt text
+  width={200}
+  height={200}
+  className="w-14 h-14 shrink-0 rounded-full"
+/>
+```
+
+## Performance Patterns
+
+### 1. Import Organization
+```typescript
+// External libraries first
+import clsx from 'clsx';
+
+// Internal shared components
+import Image from '@/components/shared/Image';
+import { GlowBg } from '@/components/shared/ui/glow-bg';
+
+// Sibling components
+import { LandingNewsletterInput } from './LandingNewsletterInput';
+```
+
+### 2. Conditional Rendering Optimization
+```typescript
+// ✅ Efficient conditional rendering
+{withBackgroundGlow ? (
+  <div className="background-container">
+    <GlowBg variant={backgroundGlowVariant} />
+  </div>
+) : null}
+
+// ❌ Avoid always-rendered hidden elements
+<div className={withBackgroundGlow ? 'block' : 'hidden'}>
+  <GlowBg variant={backgroundGlowVariant} />
+</div>
+```
+
+## Export Patterns
+
+### 1. Component Exports
+```typescript
+// Individual component files
+export const LandingComponentName = ({ ... }) => { ... };
+
+// Index files - centralized exports
+export { LandingNewsletterSection } from './newsletter/LandingNewsletterSection';
+export { LandingNewsletterInput } from './newsletter/LandingNewsletterInput';
+```
+
+### 2. Multi-Component Exports
+```typescript
+// For components with multiple related exports
+export {
+  LandingPrimaryImageCtaSection,
+  LandingPrimaryVideoCtaSection,
+  LandingPrimaryTextCtaSection,
+} from './cta/LandingPrimaryCta';
+```
+
+## Common Anti-Patterns to Avoid
+
+### ❌ Don't Do
+```typescript
+// Missing 'use client' directive for interactive components
+// Missing default values for optional props
+// Using separate interface definitions
+// Hardcoded styles without variants
+// Missing dark mode support
+// Inconsistent naming (not starting with "Landing")
+// Using div for semantic sections
+// Missing accessibility attributes
+
+// Bad prop interface
+interface Props {
+  title: string;
+}
+export const BadComponent = (props: Props) => {}
+
+// Bad conditional classes
+className={`base-class ${isActive ? 'active-class' : ''}`}
+```
+
+### ✅ Do This Instead
+```typescript
+'use client';
+
+export const LandingGoodComponent = ({
+  title,
+  variant = 'primary',
+  withBackground = false,
+}: {
+  title?: string | React.ReactNode;
+  variant?: 'primary' | 'secondary';
+  withBackground?: boolean;
+}) => {
+  return (
+    <section
+      className={clsx(
+        'base-classes',
+        variant === 'primary' ? 'primary-classes' : 'secondary-classes',
+        withBackground ? 'bg-classes dark:bg-dark-classes' : '',
+      )}
+    >
+      {/* Content */}
+    </section>
+  );
+};
+```
+
+## Component Documentation
+
+### JSDoc Pattern
+```typescript
+/**
+ * A component meant to be used in the landing page.
+ * [Specific purpose and functionality description].
+ *
+ * @example
+ * <LandingNewsletterSection
+ *   title="Subscribe to our newsletter"
+ *   description="Get updates on new features"
+ *   variant="primary"
+ *   withBackground
+ * />
+ */
+```
+
+Follow these patterns for consistency across all landing page components. Reference existing components like [LandingNewsletterSection.tsx](mdc:components/landing/newsletter/LandingNewsletterSection.tsx) and [LandingNewsletterInput.tsx](mdc:components/landing/newsletter/LandingNewsletterInput.tsx) for implementation examples.

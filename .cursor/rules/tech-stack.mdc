@@ -1,0 +1,258 @@
+---
+description:
+globs:
+alwaysApply: true
+---
+# Page UI Tech Stack & Dependencies Guide
+
+## Project Overview
+
+**Page UI** is a landing page component library built on modern React/Next.js stack with:
+- **Website**: Next.js 14 documentation site with component demos
+- **CLI Tool**: `@page-ui/wizard` for easy project initialization
+- **Components**: Copy-paste React components built on Radix UI + Tailwind CSS
+
+## Core Framework Stack
+
+### **Next.js 14.2.24** (App Router)
+- **Framework**: React meta-framework with App Router architecture
+- **Features Used**: API routes, SSG/SSR, OG image generation, bundle analysis
+- **Best Practice**: Use App Router patterns, avoid pages directory
+
+### **React 18.2.0**
+- **UI Library**: Core React library with concurrent features
+- **Features**: Suspense, automatic batching, server components
+- **Best Practice**: Use React 18 patterns
+
+### **TypeScript 5.1.3**
+- **Configuration**: Strict mode enabled for better type safety
+- **Best Practice**: Modern TS version
+
+## UI Component System
+
+### **Radix UI Primitives** (v1.x series)
+Complete accessibility-first component library ecosystem:
+
+**Best Practices**:
+- Use compound component patterns
+- Always customize with Tailwind classes, not inline styles
+- Implement proper ARIA attributes (built-in)
+- Wrap in custom components for consistent styling
+
+### **Shadcn/UI Design Pattern**
+- **Location**: `/components/shared/ui/` directory
+- **Philosophy**: Copy-paste components, not NPM dependencies
+- **Styling**: Tailwind CSS + CSS variables for theming
+- **Variants**: Uses `class-variance-authority` for type-safe variants
+
+## Styling & Design System
+
+### **Tailwind CSS 3.3.3** + Ecosystem
+```json
+{
+  "tailwindcss": "^3.3.3",
+  "@tailwindcss/forms": "^0.5.4",
+  "@tailwindcss/typography": "^0.5.9",
+  "tailwindcss-animate": "^1.0.7",
+  "tailwind-merge": "^1.14.0"
+}
+```
+
+**Best Practices**:
+- Use `tailwind-merge` for conditional classes: `cn(baseClasses, conditionalClasses)`
+- Leverage CSS variables for theming: `hsl(var(--primary))`
+- Use plugins for forms and typography
+- Implement consistent spacing and color systems
+
+### **Animation Libraries**
+- **Framer Motion 10.16.4**: Complex animations, page transitions
+- **Tailwind Animate**: Simple CSS animations
+- **Best Practice**: Use CSS animations for simple effects, Framer Motion for complex interactions
+
+```typescript
+// Framer Motion best practices:
+import { motion, AnimatePresence } from 'framer-motion'
+
+function AnimatedComponent() {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.3 }}
+    >
+      Content
+    </motion.div>
+  )
+}
+```
+
+## State Management & Forms
+
+### **Zustand 4.5.2** (Global State)
+- **Philosophy**: Minimal, unopinionated state management
+- **Usage**: Theme preferences, global UI state, component playground state
+- **Best Practice**: Create typed stores with proper selectors
+
+```typescript
+interface ThemeState {
+  theme: 'light' | 'dark'
+  setTheme: (theme: 'light' | 'dark') => void
+}
+
+export const useThemeStore = create<ThemeState>((set) => ({
+  theme: 'light',
+  setTheme: (theme) => set({ theme }),
+}))
+```
+
+### **React Hook Form 7.46.2** + Validation
+- **Form Library**: Performant, uncontrolled forms
+- **Validation**: `@hookform/resolvers` ^3.3.1 + `zod` ^3.22.2
+- **Integration**: Works seamlessly with Radix UI form components
+
+```typescript
+// Best practice form setup:
+const formSchema = z.object({
+  email: z.string().email(),
+  name: z.string().min(2),
+})
+
+function ContactForm() {
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+  })
+
+  return <form onSubmit={form.handleSubmit(onSubmit)}>...</form>
+}
+```
+
+### **Zod 3.22.2** (Schema Validation)
+- **Usage**: Form validation, API response validation, type generation
+- **Best Practice**: Define schemas close to usage, leverage type inference
+
+## Content Management System
+
+### **Custom Contentlayer Implementation**
+```json
+{
+  "@shipixen/next-contentlayer-module": "1.0.2",
+  "shipixen-contentlayer": "1.0.2",
+  "@shipixen/pliny": "1.0.13"
+}
+```
+
+**Features**:
+- Type-safe MDX processing
+- Frontmatter parsing
+- Automated content imports
+- RSS feed generation
+
+### **MDX Processing Pipeline**
+**Remark Plugins** (Markdown processing):
+- `remark-gfm` ^3.0.1: GitHub Flavored Markdown
+- `remark-math` ^5.1.1: Math expressions
+
+**Rehype Plugins** (HTML processing):
+- `rehype-slug` ^5.1.0: Auto-generate heading IDs
+- `rehype-autolink-headings` ^6.1.0: Auto-link headings
+- `rehype-prism-plus` ^1.6.1: Syntax highlighting
+- `rehype-katex` ^6.0.3: Math rendering
+
+**Best Practices**:
+- Process content at build time, not runtime
+- Use consistent plugin versions for stable builds
+- Type-safe content queries with generated types
+
+## Development Experience
+
+### **Code Quality Tools**
+```json
+{
+  "eslint": "^8.45.0",
+  "@typescript-eslint/eslint-plugin": "^6.1.0",
+  "@typescript-eslint/parser": "^6.1.0",
+  "eslint-config-next": "^14.2.24",
+  "eslint-config-prettier": "^8.8.0",
+  "prettier": "^3.0.0",
+  "prettier-plugin-tailwindcss": "^0.4.1"
+}
+```
+
+**Git Workflow**:
+- **Husky 8.0.0**: Git hooks automation
+- **lint-staged 13.0.0**: Pre-commit linting and formatting
+
+### **Interactive Development Tools**
+- **Monaco Editor 0.45.0**: In-browser code editing for component playground
+- **Command Palette**: `cmdk` ^0.2.0 for global search and navigation
+- **Bundle Analyzer**: `@next/bundle-analyzer` for performance monitoring
+
+## CLI Tooling (@page-ui/wizard)
+
+### **Package Configuration**
+```json
+{
+  "name": "@page-ui/wizard",
+  "type": "module",
+  "bin": "./packages/cli/index.mjs",
+  "engines": {
+    "node": ">=14.17.0"
+  }
+}
+```
+
+### **CLI Dependencies**
+```json
+{
+  "chalk": "^5.3.0",      // Terminal colors and styling
+  "commander": "^12.0.0",  // Command-line interface framework
+  "enquirer": "^2.4.1",   // Interactive CLI prompts
+  "ora": "^8.0.1"         // Loading spinners for CLI
+}
+```
+
+**Best Practices**:
+- Use ESM modules (`.mjs` extension)
+- Provide interactive prompts with enquirer
+- Show progress with ora spinners
+- Consistent terminal styling with chalk
+
+## Analytics & External Services
+
+### **Vercel Ecosystem**
+- **Analytics**: `@vercel/analytics` ^1.1.1
+- **OG Images**: `@vercel/og` ^0.5.20
+- **Best Practice**: Use Vercel's native tooling for optimal performance
+
+### **Product Analytics**
+- **PostHog 1.130.1**: Feature flags, user tracking, A/B testing
+- **Best Practice**: Privacy-compliant setup with proper consent management
+
+### **HTTP Client**
+- **Axios 1.7.7**: API calls, newsletter subscriptions
+- **Best Practice**: Create axios instances with base configuration
+
+## Utility Libraries
+
+### **Date & Time**
+- **date-fns 2.30.0**: Modular date utility library
+- **Best Practice**: Import only needed functions for tree-shaking
+
+```typescript
+// ✅ Good: Tree-shakeable imports
+import { format, parseISO } from 'date-fns'
+
+// ❌ Bad: Full library import
+import * as dateFns from 'date-fns'
+```
+
+### **Styling & UI Utilities**
+- **clsx 2.0.0**: Conditional className utility
+- **class-variance-authority 0.7.0**: Type-safe component variants
+- **chroma-js 2.4.2**: Color manipulation and theme generation
+
+### **Data Presentation**
+- **@tanstack/react-table 8.10.7**: Powerful table component
+- **lucide-react 0.400.0**: Icon library
+- **sonner 1.3.1**: Toast notifications
