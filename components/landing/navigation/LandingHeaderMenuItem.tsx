@@ -34,7 +34,7 @@ export const LandingHeaderMenuItem = ({
           className,
         )}
       >
-        <Link href={href}>{label}</Link>
+        <Link href={href}>{children || label}</Link>
       </Button>
     );
   }
