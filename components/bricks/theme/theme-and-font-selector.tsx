@@ -478,7 +478,7 @@ export const ThemeAndFontSelector = ({
               )}
             </div>
           </PopoverTrigger>
-          <PopoverContent className="w-[285px] max-h-[400px] overflow-y-auto px-0">
+          <PopoverContent className="w-[285px] md:w-[340px] max-h-[400px] overflow-y-auto px-0">
             <div className="flex flex-wrap justify-center gap-1 overflow-x-auto">
               {/* fonts */}
               <p className="w-full flex gap-2 justify-between text-xs mb-2 px-4">
