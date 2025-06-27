@@ -1,6 +1,14 @@
 import { LandingRating } from '@/components/landing/rating/LandingRating';
 import clsx from 'clsx';
-import { CheckCheckIcon, GiftIcon, TrophyIcon, Wand2Icon } from 'lucide-react';
+import {
+  CheckCheckIcon,
+  ClockIcon,
+  GiftIcon,
+  RocketIcon,
+  TrophyIcon,
+  Wand2Icon,
+  ZapIcon,
+} from 'lucide-react';
 
 /**
  * Shows a social proof/key feature/milestone item with an optional graphic.
@@ -14,7 +22,16 @@ export const LandingSocialProofBandItem = ({
   children,
 }: {
   className?: string;
-  graphic?: 'none' | 'checkmark' | 'gift' | 'magic' | 'trophy' | 'rating';
+  graphic?:
+    | 'none'
+    | 'checkmark'
+    | 'gift'
+    | 'magic'
+    | 'trophy'
+    | 'rating'
+    | 'zap'
+    | 'rocket'
+    | 'time';
   customGraphic?: React.ReactNode;
   children: React.ReactNode;
 }) => {
@@ -44,6 +61,18 @@ export const LandingSocialProofBandItem = ({
 
           {graphic === 'rating' ? (
             <LandingRating size="small" className="mr-1.5" />
+          ) : null}
+
+          {graphic === 'zap' ? (
+            <ZapIcon className="w-4 h-4 text-yellow-500 mr-1.5" />
+          ) : null}
+
+          {graphic === 'rocket' ? (
+            <RocketIcon className="w-4 h-4 text-yellow-500 mr-1.5" />
+          ) : null}
+
+          {graphic === 'time' ? (
+            <ClockIcon className="w-4 h-4 text-yellow-500 mr-1.5" />
           ) : null}
         </span>
       ) : null}
