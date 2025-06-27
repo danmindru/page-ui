@@ -77,6 +77,9 @@ export const ThemeAndFontSelector = ({
     minimalColorThemes[0],
     minimalColorThemes[4],
     minimalColorThemes[7],
+    expensiveColorThemes[2],
+    expensiveColorThemes[3],
+    freshColorThemes[5],
   ];
 
   const moreThemes = [
@@ -261,10 +264,7 @@ export const ThemeAndFontSelector = ({
     ];
 
     return (
-      <div
-        aria-label={theme.name}
-        className="relative flex flex-wrap w-full h-full items-center justify-center"
-      >
+      <div className="relative flex flex-wrap w-full h-full items-center justify-center">
         {isClient ? (
           <>
             {selected && (
@@ -280,11 +280,6 @@ export const ThemeAndFontSelector = ({
             <Loader2 className="h-4 w-4 animate-spin" />
           </div>
         )}
-
-        <div
-          aria-hidden
-          className="hidden group-focus-visible:flex w-full h-full absolute border-2 rounded-md border-primary-500 dark:border-primary-500 z-10"
-        ></div>
       </div>
     );
   };
@@ -478,7 +473,7 @@ export const ThemeAndFontSelector = ({
               )}
             </div>
           </PopoverTrigger>
-          <PopoverContent className="w-[285px] md:w-[340px] max-h-[400px] overflow-y-auto px-0">
+          <PopoverContent className="w-[285px] md:w-[380px] max-h-[400px] overflow-y-auto px-0">
             <div className="flex flex-wrap justify-center gap-1 overflow-x-auto">
               {/* fonts */}
               <p className="w-full flex gap-2 justify-between text-xs mb-2 px-4">
@@ -509,7 +504,7 @@ export const ThemeAndFontSelector = ({
                         onClick={() => {
                           stateSetFonts(fontPairing);
                         }}
-                        className="flex w-full h-full items-center justify-center bg-gray-500/10 border border-solid border-transparent hover:border-gray-500/20 focus-visible:ring-1 focus-visible:ring-offset-0 focus-visible:ring-inset"
+                        className="flex w-full h-full items-center justify-center bg-gray-500/10 border border-solid border-transparent hover:border-gray-500/20"
                         variant="ghost"
                       >
                         <img
@@ -537,54 +532,58 @@ export const ThemeAndFontSelector = ({
                 <span className="opacity-50">{stateThemeObject.name}</span>
               </p>
 
-              {themes.map((theme, index) => (
-                <div
-                  key={theme.name}
-                  className="flex-shrink-0 w-[5rem] h-[2rem] rounded-md overflow-hidden"
-                >
-                  <Button
-                    type="button"
-                    onClick={() => pickColorTheme(theme, index)}
-                    variant="unstyled"
-                    size="unsized"
-                    className="relative flex flex-col items-center justify-between hover:opacity-80 group"
+              <div className="w-full flex flex-wrap gap-1 px-4">
+                {themes.map((theme, index) => (
+                  <div
+                    key={theme.name}
+                    className="flex-shrink-0 w-[5rem] h-[2rem] rounded-md overflow-hidden"
                   >
-                    {mapColors(
-                      theme,
-                      index,
-                      stateThemeObject.name === theme.name,
-                    )}
-                    {/* {theme.name} */}
-                  </Button>
-                </div>
-              ))}
+                    <Button
+                      type="button"
+                      onClick={() => pickColorTheme(theme, index)}
+                      variant="unstyled"
+                      size="unsized"
+                      className="relative flex flex-col items-center justify-between hover:opacity-80"
+                    >
+                      {mapColors(
+                        theme,
+                        index,
+                        stateThemeObject.name === theme.name,
+                      )}
+                      {/* {theme.name} */}
+                    </Button>
+                  </div>
+                ))}
+              </div>
 
               {/* other themes */}
               {showMoreThemes ? (
                 <>
                   <hr className="w-full border-t border-grey-500/20 my-4" />
 
-                  {moreThemes.map((theme, index) => (
-                    <div
-                      key={theme.name}
-                      className="flex-shrink-0 w-[5rem] h-[2rem] rounded-md overflow-hidden"
-                    >
-                      <Button
-                        type="button"
-                        onClick={() => pickColorTheme(theme, index)}
-                        variant="unstyled"
-                        size="unsized"
-                        className="relative flex flex-col items-center justify-between hover:opacity-80 group"
+                  <div className="w-full flex flex-wrap gap-1 px-4">
+                    {moreThemes.map((theme, index) => (
+                      <div
+                        key={theme.name}
+                        className="flex-shrink-0 w-[5rem] h-[2rem] rounded-md overflow-hidden"
                       >
-                        {mapColors(
-                          theme,
-                          index,
-                          stateThemeObject.name === theme.name,
-                        )}
-                        {/* {theme.name} */}
-                      </Button>
-                    </div>
-                  ))}
+                        <Button
+                          type="button"
+                          onClick={() => pickColorTheme(theme, index)}
+                          variant="unstyled"
+                          size="unsized"
+                          className="relative flex flex-col items-center justify-between hover:opacity-80"
+                        >
+                          {mapColors(
+                            theme,
+                            index,
+                            stateThemeObject.name === theme.name,
+                          )}
+                          {/* {theme.name} */}
+                        </Button>
+                      </div>
+                    ))}
+                  </div>
                 </>
               ) : null}
 
@@ -592,7 +591,7 @@ export const ThemeAndFontSelector = ({
                 onClick={() => setShowMoreThemes(!showMoreThemes)}
                 variant="ghost"
                 className={cn(
-                  'mt-1 mx-4 w-full flex items-center justify-center gap-1 hover:bg-gray-500/10 h-6 rounded-md',
+                  'mx-4 w-full flex items-center justify-center gap-1 mt-0 hover:bg-gray-500/10 h-6 rounded-md',
                 )}
               >
                 {showMoreThemes ? (
