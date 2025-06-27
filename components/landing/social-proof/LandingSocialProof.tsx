@@ -5,13 +5,13 @@ import {
 } from '@/components/landing/social-proof/LandingAvatar';
 import { LandingRating } from '@/components/landing/rating/LandingRating';
 
-const getFormattedNumberOfUsers = (numberOfUsers: number) => {
-  if (numberOfUsers >= 500000) {
-    return `${(numberOfUsers / 500000).toFixed(0)}M`;
+export const getFormattedNumberOfUsers = (numberOfUsers: number) => {
+  if (numberOfUsers >= 1000000) {
+    return `${(numberOfUsers / 1000000).toFixed(1)}M`;
   }
 
   if (numberOfUsers >= 1000) {
-    return `${(numberOfUsers / 1000).toFixed(0)}k`;
+    return `${(numberOfUsers / 1000).toFixed(1)}k`;
   }
 
   return `${numberOfUsers}`;
