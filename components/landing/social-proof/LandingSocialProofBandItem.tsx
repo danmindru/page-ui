@@ -20,6 +20,7 @@ export const LandingSocialProofBandItem = ({
   graphic = 'checkmark',
   customGraphic,
   children,
+  graphicClassName,
 }: {
   className?: string;
   graphic?:
@@ -33,8 +34,42 @@ export const LandingSocialProofBandItem = ({
     | 'rocket'
     | 'time';
   customGraphic?: React.ReactNode;
+  graphicClassName?: string;
   children: React.ReactNode;
 }) => {
+  const GRAPHIC_CONFIG = {
+    checkmark: { Icon: CheckCheckIcon, color: 'text-green-500' },
+    magic: { Icon: Wand2Icon, color: 'text-yellow-500' },
+    trophy: { Icon: TrophyIcon, color: 'text-yellow-500' },
+    gift: { Icon: GiftIcon, color: 'text-green-500' },
+    zap: { Icon: ZapIcon, color: 'text-yellow-500' },
+    rocket: { Icon: RocketIcon, color: 'text-green-500' },
+    time: { Icon: ClockIcon, color: 'text-green-500' },
+  } as const;
+
+  const renderGraphic = () => {
+    if (graphic === 'none') return null;
+
+    if (graphic === 'rating') {
+      return (
+        <LandingRating
+          size="small"
+          className={clsx('mr-1.5', graphicClassName)}
+        />
+      );
+    }
+
+    if (graphic && graphic in GRAPHIC_CONFIG) {
+      const { Icon, color } =
+        GRAPHIC_CONFIG[graphic as keyof typeof GRAPHIC_CONFIG];
+      return (
+        <Icon className={clsx('w-4 h-4 mr-1.5', color, graphicClassName)} />
+      );
+    }
+
+    return null;
+  };
+
   return (
     <div
       className={clsx(
@@ -42,40 +77,9 @@ export const LandingSocialProofBandItem = ({
         className,
       )}
     >
-      {graphic ? (
-        <span className="shrink-0">
-          {graphic === 'checkmark' ? (
-            <CheckCheckIcon className="w-4 h-4 text-green-500 mr-1.5" />
-          ) : null}
-          {graphic === 'magic' ? (
-            <Wand2Icon className="w-4 h-4 text-yellow-500 mr-1.5" />
-          ) : null}
-
-          {graphic === 'trophy' ? (
-            <TrophyIcon className="w-4 h-4 text-yellow-500 mr-1.5" />
-          ) : null}
-
-          {graphic === 'gift' ? (
-            <GiftIcon className="w-4 h-4 text-green-500 mr-1.5" />
-          ) : null}
-
-          {graphic === 'rating' ? (
-            <LandingRating size="small" className="mr-1.5" />
-          ) : null}
-
-          {graphic === 'zap' ? (
-            <ZapIcon className="w-4 h-4 text-yellow-500 mr-1.5" />
-          ) : null}
-
-          {graphic === 'rocket' ? (
-            <RocketIcon className="w-4 h-4 text-yellow-500 mr-1.5" />
-          ) : null}
-
-          {graphic === 'time' ? (
-            <ClockIcon className="w-4 h-4 text-yellow-500 mr-1.5" />
-          ) : null}
-        </span>
-      ) : null}
+      {graphic !== 'none' && !customGraphic && (
+        <span className="shrink-0">{renderGraphic()}</span>
+      )}
 
       {customGraphic}
 
