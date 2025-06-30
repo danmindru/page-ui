@@ -7,11 +7,13 @@ import { LandingRating } from '@/components/landing/rating/LandingRating';
 
 export const getFormattedNumberOfUsers = (numberOfUsers: number) => {
   if (numberOfUsers >= 1000000) {
-    return `${(numberOfUsers / 1000000).toFixed(1)}M`;
+    const millions = numberOfUsers / 1000000;
+    return millions % 1 === 0 ? `${millions}M` : `${millions.toFixed(1)}M`;
   }
 
   if (numberOfUsers >= 1000) {
-    return `${(numberOfUsers / 1000).toFixed(1)}k`;
+    const thousands = numberOfUsers / 1000;
+    return thousands % 1 === 0 ? `${thousands}k` : `${thousands.toFixed(1)}k`;
   }
 
   return `${numberOfUsers}`;
