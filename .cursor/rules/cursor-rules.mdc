@@ -92,9 +92,11 @@ function processUser(id: string, name: string) {
 
 ### File References
 
-When referencing project files in rules:
+When referencing project files in rules, use this pattern to mention other files:
+
 ```markdown
-Follow the pattern established in `
+[file.tsx](mdc:path/to/file.tsx)
+```
 
 ## Forbidden Locations
 
