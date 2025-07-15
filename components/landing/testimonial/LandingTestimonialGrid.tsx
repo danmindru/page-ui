@@ -52,19 +52,15 @@ export const LandingTestimonialGrid = ({
       )}
     >
       <div className="w-full p-6 max-w-full container-wide relative flex flex-col items-center">
-        {title ? (
+        {titleComponent || (title && (
           <h2 className="md:text-center text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight md:leading-tight max-w-sm sm:max-w-none">
             {title}
           </h2>
-        ) : (
-          titleComponent
-        )}
+        ))}
 
-        {description ? (
+        {descriptionComponent || (description && (
           <p className="mt-6 md:text-xl">{description}</p>
-        ) : (
-          descriptionComponent
-        )}
+        ))}
       </div>
 
       <div className="relative isolate">

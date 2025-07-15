@@ -48,19 +48,15 @@ export const LandingBandSection = ({
             withBackground ? 'text-black' : '',
           )}
         >
-          {title ? (
+          {titleComponent || (title && (
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold">
               {title}
             </h2>
-          ) : (
-            titleComponent
-          )}
+          ))}
 
-          {description ? (
+          {descriptionComponent || (description && (
             <p className="text-lg">{description}</p>
-          ) : (
-            descriptionComponent
-          )}
+          ))}
 
           {children}
         </div>

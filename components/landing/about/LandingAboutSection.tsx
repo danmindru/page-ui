@@ -75,21 +75,17 @@ export function LandingAboutSection({
                 : 'items-start',
             )}
           >
-            {title ? (
+            {titleComponent || (title && (
               <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight">
                 {title}
               </h1>
-            ) : (
-              titleComponent
-            )}
+            ))}
 
-            {description ? (
+            {descriptionComponent || (description && (
               <p className="text-base md:text-lg max-w-xl mt-2 text-gray-700 dark:text-gray-300">
                 {description}
               </p>
-            ) : (
-              descriptionComponent
-            )}
+            ))}
           </div>
 
           <div className="w-full h-full flex justify-center lg:justify-end">

@@ -65,18 +65,14 @@ export const LandingFeatureList = ({
       ) : null}
 
       <div className={clsx('container-wide w-full px-6 relative z-10')}>
-        {title ? (
+        {titleComponent || (title && (
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight max-w-xs sm:max-w-none fancyHeading">
             {title}
           </h2>
-        ) : (
-          titleComponent
-        )}
-        {description ? (
+        ))}
+        {descriptionComponent || (description && (
           <p className="mt-6 md:text-xl">{description}</p>
-        ) : (
-          descriptionComponent
-        )}
+        ))}
 
         <div
           className={clsx(

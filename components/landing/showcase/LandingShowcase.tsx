@@ -60,19 +60,15 @@ export const LandingShowcase = ({
             textPosition === 'center' && 'items-center text-center',
           )}
         >
-          {title ? (
+          {titleComponent || (title && (
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight">
               {title}
             </h2>
-          ) : (
-            titleComponent
-          )}
+          ))}
 
-          {description ? (
+          {descriptionComponent || (description && (
             <p className="mt-4 md:text-xl">{description}</p>
-          ) : (
-            descriptionComponent
-          )}
+          ))}
         </div>
 
         {withBackgroundGlow ? (

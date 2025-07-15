@@ -82,21 +82,17 @@ export function LandingStatsSection({
                 : 'items-start',
             )}
           >
-            {title ? (
+            {titleComponent || (title && (
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight">
                 {title}
               </h2>
-            ) : (
-              titleComponent
-            )}
+            ))}
 
-            {description ? (
+            {descriptionComponent || (description && (
               <p className="text-base md:text-lg text-gray-700 dark:text-gray-300">
                 {description}
               </p>
-            ) : (
-              descriptionComponent
-            )}
+            ))}
           </div>
         )}
 

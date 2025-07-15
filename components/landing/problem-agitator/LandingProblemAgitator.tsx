@@ -163,19 +163,15 @@ export const LandingProblemAgitator = ({
               : 'items-start',
           )}
         >
-          {title ? (
+          {titleComponent || (title && (
             <h2 className="w-full text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight md:leading-tight max-w-sm sm:max-w-none">
               {title}
             </h2>
-          ) : (
-            titleComponent
-          )}
+          ))}
 
-          {description ? (
+          {descriptionComponent || (description && (
             <p className="w-full mt-6 md:text-xl">{description}</p>
-          ) : (
-            descriptionComponent
-          )}
+          ))}
         </div>
       ) : null}
 
@@ -196,11 +192,9 @@ export const LandingProblemAgitator = ({
             textPosition === 'center' ? 'text-center' : 'text-left',
           )}
         >
-          {cliffhangerComponent ? (
-            cliffhangerComponent
-          ) : (
+          {cliffhangerComponent || (cliffhanger && (
             <p className="text-3xl font-medium">{cliffhanger}</p>
-          )}
+          ))}
         </div>
       ) : null}
     </section>

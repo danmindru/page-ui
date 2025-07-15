@@ -113,19 +113,15 @@ export const LandingProductSteps = ({
             `container-${containerType}`,
           )}
         >
-          {title ? (
+          {titleComponent || (title && (
             <h2 className="w-full text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight md:leading-tight max-w-sm sm:max-w-none">
               {title}
             </h2>
-          ) : (
-            titleComponent
-          )}
+          ))}
 
-          {description ? (
+          {descriptionComponent || (description && (
             <p className="w-full mt-6 md:text-xl">{description}</p>
-          ) : (
-            descriptionComponent
-          )}
+          ))}
         </div>
       ) : null}
 

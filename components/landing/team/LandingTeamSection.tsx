@@ -109,21 +109,17 @@ export function LandingTeamSection({
               : 'items-start',
           )}
         >
-          {title ? (
+          {titleComponent || (title && (
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight">
               {title}
             </h2>
-          ) : (
-            titleComponent
-          )}
+          ))}
 
-          {description ? (
+          {descriptionComponent || (description && (
             <p className="text-base md:text-lg max-w-2xl mt-2 text-gray-700 dark:text-gray-300">
               {description}
             </p>
-          ) : (
-            descriptionComponent
-          )}
+          ))}
         </div>
 
         <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">

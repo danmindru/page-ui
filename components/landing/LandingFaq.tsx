@@ -57,19 +57,15 @@ export const LandingFaqSection = ({
       ) : null}
 
       <div className={clsx(className, 'w-full p-6 max-w-full container-wide')}>
-        {title ? (
+        {titleComponent || (title && (
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight max-w-xs sm:max-w-none fancyHeading">
             {title}
           </h2>
-        ) : (
-          titleComponent
-        )}
+        ))}
 
-        {description ? (
+        {descriptionComponent || (description && (
           <p className="mt-6 md:text-xl">{description}</p>
-        ) : (
-          descriptionComponent
-        )}
+        ))}
 
         <ul
           className={clsx(

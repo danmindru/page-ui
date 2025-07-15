@@ -81,19 +81,15 @@ export function LandingProductProblemSolution({
                 : 'items-start',
             )}
           >
-            {title ? (
+            {titleComponent || (title && (
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight">
                 {title}
               </h2>
-            ) : (
-              titleComponent
-            )}
+            ))}
 
-            {description ? (
+            {descriptionComponent || (description && (
               <p className="md:text-xl">{description}</p>
-            ) : (
-              descriptionComponent
-            )}
+            ))}
           </div>
         ) : null}
 
@@ -105,13 +101,11 @@ export function LandingProductProblemSolution({
                 textPosition === 'left' ? 'px-6' : '',
               )}
             >
-              {problemTitle ? (
+              {problemTitleComponent || (problemTitle && (
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-6">
                   {problemTitle}
                 </h3>
-              ) : (
-                problemTitleComponent
-              )}
+              ))}
 
               <LandingProductFeatureKeyPoints
                 keyPoints={problems}
@@ -130,13 +124,11 @@ export function LandingProductProblemSolution({
                 textPosition === 'left' ? 'px-6' : '',
               )}
             >
-              {solutionTitle ? (
+              {solutionTitleComponent || (solutionTitle && (
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-6">
                   {solutionTitle}
                 </h3>
-              ) : (
-                solutionTitleComponent
-              )}
+              ))}
 
               <LandingProductFeatureKeyPoints
                 keyPoints={solutions}

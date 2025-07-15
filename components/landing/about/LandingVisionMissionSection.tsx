@@ -76,13 +76,11 @@ export function LandingVisionMissionSection({
                 : 'items-start',
             )}
           >
-            {title ? (
+            {titleComponent || (title && (
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight">
                 {title}
               </h2>
-            ) : (
-              titleComponent
-            )}
+            ))}
           </div>
 
           <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-8">

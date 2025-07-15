@@ -37,19 +37,15 @@ export const LandingFeature = ({
         {icon}
       </div>
 
-      {title ? (
+      {titleComponent || (title && (
         <h3 className="text-lg font-semibold">{title}</h3>
-      ) : (
-        titleComponent
-      )}
+      ))}
 
-      {description ? (
+      {descriptionComponent || (description && (
         <p className="text-sm text-gray-800 dark:text-gray-200">
           {description}
         </p>
-      ) : (
-        descriptionComponent
-      )}
+      ))}
     </div>
   );
 };
