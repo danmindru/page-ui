@@ -252,6 +252,10 @@ export const LandingLeadingPill = ({
     },
     visible: {
       opacity: 1,
+      transition: {
+        duration: 0.3,
+        ease: 'easeOut' as const,
+      },
     },
   };
 
@@ -261,6 +265,10 @@ export const LandingLeadingPill = ({
     },
     visible: {
       opacity: 1,
+      transition: {
+        duration: 0.3,
+        ease: 'easeOut' as const,
+      },
     },
   };
 
