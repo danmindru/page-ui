@@ -86,16 +86,18 @@ import { LandingAppStoreButton } from '@/components/landing/app-store-button/Lan
 
 <ComponentExample
   previewComponent={
-    <LandingAppStoreButton appStore="ios-appstore" asChild>
-      <a href="https://www.apple.com/app-store">Download</a>
-    </LandingAppStoreButton>
+    <LandingAppStoreButton 
+      appStore="ios-appstore" 
+      href="https://www.apple.com/app-store"
+    />
   }
 >
 
 ```jsx
-<LandingAppStoreButton appStore="ios-appstore" asChild>
-  <a href="https://www.apple.com/app-store">Download</a>
-</LandingAppStoreButton>
+<LandingAppStoreButton 
+  appStore="ios-appstore" 
+  href="https://www.apple.com/app-store"
+/>
 ```
 
 </ComponentExample>
@@ -194,9 +196,9 @@ You can add custom styling using the className prop.
 | **appStore** <Tippy>The app store type to display.</Tippy> | `'ios-appstore'` ǀ `'mac-appstore'` ǀ `'microsoft-store'` ǀ `'google-playstore'` | Yes | - |
 | **variant** <Tippy>Explicitly set the button theme variant.</Tippy> | `'white'` ǀ `'black'` | No | `'black'` |
 | **size** <Tippy>Size of the button.</Tippy> | `'default'` ǀ `'sm'` ǀ `'lg'` ǀ `'xl'` | No | `'default'` |
-| **onClick** <Tippy>Event handler for the button click.</Tippy> | `(event: React.MouseEvent<HTMLButtonElement>) => void` | No | - |
-| **asChild** <Tippy>When true, the component will render its child component instead of a button element.</Tippy> | `boolean` | No | `false` |
-| **className** <Tippy>Additional CSS classes to apply to the button.</Tippy> | `string` | No | `''` |
+| **onClick** <Tippy>Event handler for the button click. When provided without href, renders a button.</Tippy> | `(event: React.MouseEvent<HTMLButtonElement>) => void` | No | - |
+| **href** <Tippy>When provided, renders the component as a link instead of a button.</Tippy> | `string` | No | - |
+| **className** <Tippy>Additional CSS classes to apply to the element.</Tippy> | `string` | No | `''` |
 
 ## More Examples
 

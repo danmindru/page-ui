@@ -29,6 +29,8 @@ canonicalUrl: 'https://shipixen.com/boilerplate-documentation/landing-page-compo
 
 The `LandingBlogPost` component displays a single blog post card with an image, author information, date, title, summary, reading time, and tags. It's designed to be used within a blog list component but can also function as a standalone element.
 
+The component uses CSS selectors to automatically adapt its styling when used within a `LandingBlogList` component, providing responsive layouts and theming.
+
 Can be used in a `LandingBlogList` component or as a standalone element.
 
 <ComponentExample
@@ -243,7 +245,7 @@ import { LandingBlogPost } from '@/components/landing/blog/LandingBlogPost';
     images: ['/static/images/backdrop-7.webp'],
     readingTime: 6
   }}
-  imagePosition="right" // This is the default, so it can be omitted
+  imagePosition="right" // Explicit prop takes precedence over automatic positioning
 />
 ```
 
@@ -456,7 +458,7 @@ import { LandingBlogPost } from '@/components/landing/blog/LandingBlogPost';
 | Prop Name | Prop Type | Required | Default |
 | --- | --- | ----- | ---- |
 | **post** <Tippy>Blog post object with post details</Tippy> | `BlogPost` | Yes | - |
-| **imagePosition** <Tippy>Controls the layout of the post image</Tippy> | `'left' \| 'center' \| 'right'` | No | `'right'` |
+| **imagePosition** <Tippy>Controls the layout of the post image. When not provided, automatically adapts based on parent context (grid=center, list=right)</Tippy> | `'left' \| 'center' \| 'right'` | No | - |
 
 
 ```ts
@@ -477,10 +479,13 @@ export interface BlogPost {
 
 ## Usage with LandingBlogList
 
-When using `LandingBlogPost` inside a `LandingBlogList` component, the `imagePosition` depends on the list's display mode:
+When using `LandingBlogPost` inside a `LandingBlogList` component, the styling and layout automatically adapt based on the parent's configuration:
 
-- For `display="grid"` (grid layout), the `imagePosition` should be set to `'center'`
-- For `display="list"` (list layout), the `imagePosition` should be set to `'right'` (default)
+- **Automatic image positioning**: Images are positioned at the top for grid layout, on the right for list layout
+- **Container styling**: Padding, spacing, and borders are automatically adjusted when used within a section
+- **Priority logic**: Explicit `imagePosition` props take precedence over automatic positioning
+
+The component automatically detects the parent context and applies appropriate styles with full responsive and dark mode support, without requiring explicit prop configuration.
 
 ## More Examples
 

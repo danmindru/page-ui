@@ -112,6 +112,61 @@ import { LandingProductFeatureKeyPoints } from '@/components/landing/LandingProd
 
 ## Examples
 
+### With inline description style
+
+<ComponentExample
+  previewComponent={
+    <div className="p-6">
+      <LandingProductFeatureKeyPoints
+        keyPoints={[
+          {
+            title: 'Intelligent Assistance',
+            description:
+              'Receive personalized recommendations and insights tailored to your workflow.',
+          },
+          {
+            title: 'Seamless Collaboration',
+            description:
+              'Easily collaborate with team members and clients in real-time.',
+          },
+          {
+            title: 'Advanced Customization',
+            description:
+              'Tailor your app to fit your unique requirements with extensive customization.',
+          },
+        ]}
+        descriptionStyle="inline"
+      />
+    </div>
+  }
+>
+
+```jsx
+import { LandingProductFeatureKeyPoints } from '@/components/landing/LandingProductFeatureKeyPoints';
+
+<LandingProductFeatureKeyPoints
+  keyPoints={[
+    {
+      title: 'Intelligent Assistance',
+      description:
+        'Receive personalized recommendations and insights tailored to your workflow.',
+    },
+    {
+      title: 'Seamless Collaboration',
+      description:
+        'Easily collaborate with team members and clients in real-time.',
+    },
+    {
+      title: 'Advanced Customization',
+      description:
+        'Tailor your app to fit your unique requirements with extensive customization.',
+    },
+  ]}
+/>;
+```
+
+</ComponentExample>
+
 ### With Cta Section
 
 <ComponentExample
@@ -196,9 +251,9 @@ import { LandingProductFeatureKeyPoints } from '@/components/landing/LandingProd
 | ----------------------------------------------------------------------------------------------------------------------- | --------------------------- | -------- | ----------- |
 | **keyPoints** <Tippy>Array of objects each containing a title and description to be displayed as bullet points.</Tippy> | `KeyPoint[]`                | Yes      | -           |
 | **variant** <Tippy>Styling variant for the bullet points, determining the icon and text color.</Tippy>                  | `'primary'` ǀ `'secondary'` | No       | `'primary'` |
-| **icon** <Tippy>Custom icon to be displayed instead of the default checkmark.</Tippy>                                  | `React.ReactNode` ǀ `LucideIcon`          | No       | -           |
+| **icon** <Tippy>Custom icon to be displayed instead of the default checkmark. NB: if you use a custom icon, iconClassName will be ignored.</Tippy>                                  | `React.ReactNode` ǀ `LucideIcon`          | No       | -           |
 | **descriptionStyle** <Tippy>Determines if the description should be displayed inline or as a block.</Tippy>             | `'inline'` ǀ `'block'`                  | No       | `'block'`   |
-| **iconClassName** <Tippy>Custom class name for the icon, use to override color and size etc.</Tippy>                                                      | `string`                        | No       | -           |
+| **iconClassName** <Tippy>Custom class name for the icon, use to override color and size etc. Only applies if no custom icon is provided.</Tippy>                                                      | `string`                        | No       | -           |
 
 ```ts
 export interface KeyPoint {

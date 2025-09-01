@@ -351,6 +351,106 @@ Use the secondary color variant with a background glow effect.
 
 </ComponentExample>
 
+### With Clickable Tag Links
+
+Use tags as clickable links that navigate to category or tag pages.
+
+<ComponentExample
+  previewComponent={
+    <LandingBlogList
+      title="Tech Tutorials"
+      description="Learn about the latest technologies with our comprehensive tutorials."
+    >
+      <LandingBlogPost
+        post={{
+          slug: "web-development-guide",
+          date: "2023-08-12",
+          title: "Complete Web Development Guide",
+          summary: "From HTML basics to advanced frameworks, learn everything you need to build modern web applications.",
+          tags: [
+            { url: "/tags/javascript", text: "JavaScript" },
+            { url: "/tags/react", text: "React" },
+            { url: "/tags/tutorial", text: "Tutorial" }
+          ],
+          images: ["/static/images/backdrop-7.webp"],
+          readingTime: 12,
+          author: {
+            name: "Sarah Wilson",
+            avatar: "/static/images/people/7.webp"
+          }
+        }}
+      />
+      <LandingBlogPost
+        post={{
+          slug: "database-optimization",
+          date: "2023-08-08",
+          title: "Database Performance Optimization",
+          summary: "Learn how to optimize your database queries and improve application performance.",
+          tags: [
+            { url: "/tags/database", text: "Database" },
+            { url: "/tags/performance", text: "Performance" },
+            "SQL"
+          ],
+          images: ["/static/images/backdrop-8.webp"],
+          readingTime: 9,
+          author: {
+            name: "David Chen",
+            avatar: "/static/images/people/8.webp"
+          }
+        }}
+      />
+    </LandingBlogList>
+  }
+>
+
+```jsx
+<LandingBlogList
+  title="Tech Tutorials"
+  description="Learn about the latest technologies with our comprehensive tutorials."
+>
+  <LandingBlogPost
+    post={{
+      slug: "web-development-guide",
+      date: "2023-08-12",
+      title: "Complete Web Development Guide",
+      summary: "From HTML basics to advanced frameworks, learn everything you need to build modern web applications.",
+      tags: [
+        { url: "/tags/javascript", text: "JavaScript" },
+        { url: "/tags/react", text: "React" },
+        { url: "/tags/tutorial", text: "Tutorial" }
+      ],
+      images: ["/static/images/backdrop-7.webp"],
+      readingTime: 12,
+      author: {
+        name: "Sarah Wilson",
+        avatar: "/static/images/people/7.webp"
+      }
+    }}
+  />
+  <LandingBlogPost
+    post={{
+      slug: "database-optimization",
+      date: "2023-08-08",
+      title: "Database Performance Optimization",
+      summary: "Learn how to optimize your database queries and improve application performance.",
+      tags: [
+        { url: "/tags/database", text: "Database" },
+        { url: "/tags/performance", text: "Performance" },
+        "SQL"
+      ],
+      images: ["/static/images/backdrop-8.webp"],
+      readingTime: 9,
+      author: {
+        name: "David Chen",
+        avatar: "/static/images/people/8.webp"
+      }
+    }}
+  />
+</LandingBlogList>
+```
+
+</ComponentExample>
+
 ## API Reference
 
 | Prop Name | Prop Type | Required | Default |
@@ -361,11 +461,12 @@ Use the secondary color variant with a background glow effect.
 | **description** <Tippy>The description text displayed below the title</Tippy> | `string` | No | - |
 | **descriptionComponent** <Tippy>Custom component to use instead of the default description</Tippy> | `ReactNode` | No | - |
 | **className** <Tippy>Additional CSS classes to apply to the section</Tippy> | `string` | No | - |
+| **innerClassName** <Tippy>Additional CSS classes to apply to the inner container</Tippy> | `string` | No | - |
 | **variant** <Tippy>Color theme variant to use for styling</Tippy> | `'primary' \| 'secondary'` | No | `'primary'` |
 | **withBackground** <Tippy>Whether to show a colored background</Tippy> | `boolean` | No | `false` |
 | **withBackgroundGlow** <Tippy>Whether to show a gradient background glow effect</Tippy> | `boolean` | No | `false` |
 | **backgroundGlowVariant** <Tippy>Color variant for the background glow</Tippy> | `'primary' \| 'secondary'` | No | `'primary'` |
-| **textPosition** <Tippy>Alignment of the title and description</Tippy> | `'center' \| 'left'` | No | `'center'` |
+| **textPosition** <Tippy>Alignment of the title and description</Tippy> | `'center' \| 'left'` | No | `'left'` |
 | **display** <Tippy>How to display the blog posts - as a grid or list</Tippy> | `'grid' \| 'list'` | No | `'list'` |
 
 ```ts
@@ -383,6 +484,14 @@ export interface BlogPost {
   };
 }
 ```
+
+## Styling Architecture
+
+The `LandingBlogList` component automatically styles child `LandingBlogPost` components.
+
+Image positioning, padding, theming, and layout automatically adjust on child posts.
+
+See the <a href="/boilerplate-documentation/landing-page-components/blog-post">LandingBlogPost</a> documentation for more details.
 
 ## More Examples
 

@@ -116,62 +116,6 @@ import { LandingProductVideoFeature } from '@/components/landing/LandingProductV
 
 ## Examples
 
-### Grid Display
-
-<ComponentExample
-  previewComponent={
-    <LandingProductSteps
-      title="Our Process"
-      description="How we deliver quality results every time."
-      display="grid"
-    >
-      <LandingProductFeature
-        title="Research"
-        description="We start by understanding your needs and goals."
-        imageSrc="/static/images/backdrop-1.webp"
-      />
-      <LandingProductFeature
-        title="Design"
-        description="Our team creates tailored solutions for your business."
-        imageSrc="/static/images/backdrop-5.webp"
-      />
-      <LandingProductFeature
-        title="Code"
-        description="We build your project to perfection."
-        imageSrc="/static/images/backdrop-6.webp"
-      />
-    </LandingProductSteps>
-  }
->
-
-```jsx
-import { LandingProductSteps } from '@/components/landing/LandingProductSteps';
-import { LandingProductFeature } from '@/components/landing/LandingProductFeature';
-
-<LandingProductSteps
-  title="Our Process"
-  description="How we deliver quality results every time."
-  display="grid"
->
-  <LandingProductFeature
-    title="Research"
-    description="We start by understanding your needs and goals."
-    imageSrc="/static/images/backdrop-1.webp"
-  />
-  <LandingProductFeature
-    title="Design"
-    description="Our team creates tailored solutions for your business."
-    imageSrc="/static/images/backdrop-5.webp"
-  />
-  <LandingProductFeature
-    title="Code"
-    description="We build your project to perfection."
-    imageSrc="/static/images/backdrop-6.webp"
-  />
-</LandingProductSteps>
-```
-
-</ComponentExample>
 ### Secondary Variant
 
 <ComponentExample
@@ -274,16 +218,29 @@ import { LandingProductFeature } from '@/components/landing/LandingProductFeatur
       title="See it in action"
       description="Watch how our product solves real-world problems."
     >
-      <LandingProductVideoFeature
-        title="Easy Setup"
-        description="Get started in minutes with our guided setup process."
-        videoSrc="https://cache.shipixen.com/features/8-customize-pages.mp4"
-        videoPoster="/static/images/backdrop-8.webp"
+      <LandingProductFeature
+        title="Research"
+        description="We start by understanding your needs and goals."
+        imageSrc="/static/images/backdrop-1.webp"
       />
       <LandingProductFeature
         title="Intuitive Interface"
         description="Navigate with ease through our user-friendly platform."
         imageSrc="/static/images/backdrop-9.webp"
+      />
+      <LandingProductVideoFeature
+        title="Design"
+        description="Choose from more than 30+ themes."
+        autoPlay={false}
+        videoSrc="https://cache.shipixen.com/features/3-theme-and-logo.mp4"
+        videoPoster="/static/images/backdrop-9.webp"
+      />
+      <LandingProductVideoFeature
+        title="Code"
+        description="We build your project to perfection."
+        autoPlay={false}
+        videoSrc='https://cache.shipixen.com/features/20-mobile-optimized.mp4'
+        videoPoster="/static/images/backdrop-3.webp"
       />
     </LandingProductSteps>
   }
@@ -298,16 +255,90 @@ import { LandingProductVideoFeature } from '@/components/landing/LandingProductV
   title="See it in action"
   description="Watch how our product solves real-world problems."
 >
-  <LandingProductVideoFeature
-    title="Easy Setup"
-    description="Get started in minutes with our guided setup process."
-    videoSrc="https://cache.shipixen.com/features/8-customize-pages.mp4"
-    videoPoster="/static/images/backdrop-8.webp"
+  <LandingProductFeature
+    title="Research"
+    description="We start by understanding your needs and goals."
+    imageSrc="/static/images/backdrop-1.webp"
   />
   <LandingProductFeature
     title="Intuitive Interface"
     description="Navigate with ease through our user-friendly platform."
     imageSrc="/static/images/backdrop-9.webp"
+  />
+  <LandingProductVideoFeature
+    title="Design"
+    description="Choose from more than 30+ themes."
+    autoPlay={false}
+    videoSrc="https://cache.shipixen.com/features/3-theme-and-logo.mp4"
+    videoPoster="/static/images/backdrop-9.webp"
+  />
+  <LandingProductVideoFeature
+    title="Code"
+    description="We build your project to perfection."
+    autoPlay={false}
+    videoSrc='https://cache.shipixen.com/features/20-mobile-optimized.mp4'
+    videoPoster="/static/images/backdrop-3.webp"
+  />
+</LandingProductSteps>
+```
+
+</ComponentExample>
+
+### Grid Display
+
+<ComponentExample
+  previewComponent={
+    <LandingProductSteps
+      title="Our Process"
+      description="How we deliver quality results every time."
+      display="grid"
+    >
+      <LandingProductFeature
+        title="Research"
+        description="We start by understanding your needs and goals."
+        imageSrc="/static/images/backdrop-1.webp"
+      />
+      <LandingProductVideoFeature
+        title="Design"
+        description="Choose from more than 30+ themes."
+        autoPlay={false}
+        videoSrc="https://cache.shipixen.com/features/3-theme-and-logo.mp4"
+        videoPoster="/static/images/backdrop-9.webp"
+      />
+      <LandingProductFeature
+        title="Code"
+        description="We build your project to perfection."
+        imageSrc="/static/images/backdrop-6.webp"
+      />
+    </LandingProductSteps>
+  }
+>
+
+```jsx
+import { LandingProductSteps } from '@/components/landing/LandingProductSteps';
+import { LandingProductFeature } from '@/components/landing/LandingProductFeature';
+
+<LandingProductSteps
+  title="Our Process"
+  description="How we deliver quality results every time."
+  display="grid"
+>
+  <LandingProductFeature
+    title="Research"
+    description="We start by understanding your needs and goals."
+    imageSrc="/static/images/backdrop-1.webp"
+  />
+  <LandingProductVideoFeature
+    title="Design"
+    description="Choose from more than 30+ themes."
+    autoPlay={false}
+    videoSrc="https://cache.shipixen.com/features/3-theme-and-logo.mp4"
+    videoPoster="/static/images/backdrop-9.webp"
+  />
+  <LandingProductFeature
+    title="Code"
+    description="We build your project to perfection."
+    imageSrc="/static/images/backdrop-6.webp"
   />
 </LandingProductSteps>
 ```

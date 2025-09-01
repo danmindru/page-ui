@@ -45,6 +45,8 @@ It can contain generic items or specialized Bento Grid items as children. These 
       <LandingBentoGridIconItem
         icon={<SparklesIcon className="w-12 h-12" />}
         bottomText="High-speed I/O"
+        href="https://pageai.pro"
+        target="_blank"
       />
       <LandingBentoGridNumberItem
         topText="Up to"
@@ -413,6 +415,26 @@ import { LandingBentoGridSection, LandingBentoGridImageItem } from '@/components
 
 ## API Reference
 
+### LandingBentoGridSection Props
+
+| Prop Name | Prop Type | Required | Default |
+| --- | --- | ----- | ---- |
+| **title** <Tippy>Section title</Tippy> | `string` | No | - |
+| **titleComponent** <Tippy>Custom title component</Tippy> | `React.ReactNode` | No | - |
+| **description** <Tippy>Section description</Tippy> | `string` | No | - |
+| **descriptionComponent** <Tippy>Custom description component</Tippy> | `React.ReactNode` | No | - |
+| **items** <Tippy>Array of items to render programmatically</Tippy> | `BentoGridItem[]` | No | `[]` |
+| **children** <Tippy>Child components to render declaratively</Tippy> | `React.ReactNode` | No | - |
+| **className** <Tippy>Additional CSS classes for the section</Tippy> | `string` | No | `''` |
+| **gridClassName** <Tippy>Additional CSS classes for the grid container</Tippy> | `string` | No | `''` |
+| **withBackground** <Tippy>Add background color based on variant</Tippy> | `boolean` | No | `false` |
+| **withBackgroundGlow** <Tippy>Add glowing background effect</Tippy> | `boolean` | No | `false` |
+| **backgroundGlowVariant** <Tippy>Color variant for glow effect</Tippy> | `'primary' \| 'secondary'` | No | `'primary'` |
+| **variant** <Tippy>Color variant for the section and child items</Tippy> | `'default' \| 'primary' \| 'secondary'` | No | `'default'` |
+| **textPosition** <Tippy>Text alignment for title and description</Tippy> | `'center' \| 'left'` | No | `'center'` |
+
+Note: When a `variant` is set on the section, child items will automatically inherit styling creating a cohesive visual theme.
+
 ### LandingBentoGridIconItem Props
 
 | Prop Name | Prop Type | Required | Default |
@@ -427,7 +449,6 @@ import { LandingBentoGridSection, LandingBentoGridImageItem } from '@/components
 | **rowSpan** <Tippy>Number of rows the item should span</Tippy> | `1 \| 2 \| 3` | No | `1` |
 | **className** <Tippy>Additional CSS classes</Tippy> | `string` | No | `''` |
 | **href** <Tippy>Link URL to make the item clickable</Tippy> | `string` | No | - |
-| **asChild** <Tippy>Whether to render children as the main component</Tippy> | `boolean` | No | `false` |
 
 ### LandingBentoGridNumberItem Props
 
@@ -443,7 +464,6 @@ import { LandingBentoGridSection, LandingBentoGridImageItem } from '@/components
 | **rowSpan** <Tippy>Number of rows the item should span</Tippy> | `1 \| 2 \| 3` | No | `1` |
 | **className** <Tippy>Additional CSS classes</Tippy> | `string` | No | `''` |
 | **href** <Tippy>Link URL to make the item clickable</Tippy> | `string` | No | - |
-| **asChild** <Tippy>Whether to render children as the main component</Tippy> | `boolean` | No | `false` |
 
 ### LandingBentoGridImageItem Props
 
@@ -464,7 +484,6 @@ import { LandingBentoGridSection, LandingBentoGridImageItem } from '@/components
 | **rowSpan** <Tippy>Number of rows the item should span</Tippy> | `1 \| 2 \| 3` | No | `1` |
 | **className** <Tippy>Additional CSS classes</Tippy> | `string` | No | `''` |
 | **href** <Tippy>Link URL to make the item clickable</Tippy> | `string` | No | - |
-| **asChild** <Tippy>Whether to render children as the main component</Tippy> | `boolean` | No | `false` |
 
 ## More Examples
 

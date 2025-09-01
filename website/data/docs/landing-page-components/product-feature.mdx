@@ -48,7 +48,7 @@ import { LandingProductFeature } from '@/components/landing/LandingProductFeatur
   description="Give your project the home it deserves. Your users will love you for it."
   imageSrc="/static/images/backdrop-5.webp"
   imageAlt="Sample image"
-/>;
+/>
 ```
 
 </ComponentExample>
@@ -90,7 +90,7 @@ import { LandingProductFeature } from '@/components/landing/LandingProductFeatur
   description="Give your project the home it deserves. Your users will love you for it."
   imageSrc="/static/images/backdrop-5.webp"
   imageAlt="Sample image"
-/>;
+/>
 ```
 
 </ComponentExample>
@@ -99,6 +99,7 @@ import { LandingProductFeature } from '@/components/landing/LandingProductFeatur
 
 <ComponentExample previewComponent={
   <LandingProductFeature
+    imagePosition="right"
     imagePerspective="paper"
     title="The wait is over"
     description="Give your project the home it deserves. Your users will love you for it."
@@ -110,12 +111,13 @@ import { LandingProductFeature } from '@/components/landing/LandingProductFeatur
 import { LandingProductFeature } from '@/components/landing/LandingProductFeature';
 
 <LandingProductFeature
+  imagePosition="right"
   imagePerspective="paper"
   title="The wait is over"
   description="Give your project the home it deserves. Your users will love you for it."
   imageSrc="/static/images/backdrop-5.webp"
   imageAlt="Sample image"
-/>;
+/>
 ```
 
 </ComponentExample>
@@ -151,7 +153,7 @@ import { LandingProductFeature } from '@/components/landing/LandingProductFeatur
   description="Give your project the home it deserves. Your users will love you for it."
   imageSrc="/static/images/backdrop-5.webp"
   imageAlt="Sample image"
-/>;
+/>
 ```
 
 </ComponentExample>
@@ -178,7 +180,7 @@ import { LandingProductFeature } from '@/components/landing/LandingProductFeatur
   description="Give your project the home it deserves. Your users will love you for it."
   imageSrc="/static/images/backdrop-5.webp"
   imageAlt="Sample image"
-/>;
+/>
 ```
 
 </ComponentExample>
@@ -213,6 +215,7 @@ import { LandingProductFeature } from '@/components/landing/LandingProductFeatur
       }
       imageSrc="/static/images/backdrop-5.webp"
       imageAlt="Sample image"
+      imagePosition="right"
     />
   }
 >
@@ -248,7 +251,8 @@ import { LandingProductFeatureKeyPoints } from '@/components/landing/LandingProd
   }
   imageSrc="/static/images/backdrop-5.webp"
   imageAlt="Sample image"
-/>;
+  imagePosition="right"
+/>
 ```
 
 </ComponentExample>
@@ -275,6 +279,7 @@ import { LandingProductFeatureKeyPoints } from '@/components/landing/LandingProd
       }
       imageSrc="/static/images/backdrop-5.webp"
       imageAlt="Sample image"
+      imagePosition="right"
     />
 
 }
@@ -303,7 +308,8 @@ import { LandingProductFeature } from '@/components/landing/LandingProductFeatur
   }
   imageSrc="/static/images/backdrop-5.webp"
   imageAlt="Sample image"
-/>;
+  imagePosition="right"
+/>
 ```
 
 </ComponentExample>
@@ -366,7 +372,7 @@ import { LandingProductFeature } from '@/components/landing/LandingProductFeatur
     imageSrc="/static/images/shipixen/product/2.webp"
     imageAlt="Sample image"
   />
-</LandingProductFeaturesGrid>;
+</LandingProductFeaturesGrid>
 ```
 
 </ComponentExample>
@@ -434,6 +440,7 @@ import { LandingProductFeature } from '@/components/landing/LandingProductFeatur
     description="Give your project the home it deserves. Your users will love you for it."
     imageSrc="/static/images/backdrop-5.webp"
     imageAlt="Sample image"
+    imagePosition="right"
     effectComponent={<LandingDotParticleCtaBg />}
   />}>
 
@@ -446,8 +453,9 @@ import { LandingDotParticleCtaBg } from '@/components/landing/cta-backgrounds/La
   description="Give your project the home it deserves. Your users will love you for it."
   imageSrc="/static/images/backdrop-5.webp"
   imageAlt="Sample image"
+  imagePosition="right"
   effectComponent={<LandingDotParticleCtaBg />}
-/>;
+/>
 ```
 
 </ComponentExample>
@@ -462,6 +470,7 @@ import { LandingDotParticleCtaBg } from '@/components/landing/cta-backgrounds/La
     description="Give your project the home it deserves. Your users will love you for it."
     imageSrc="/static/images/backdrop-5.webp"
     imageAlt="Sample image"
+    imagePosition="right"
     leadingComponent={
       <LandingLeadingPill
         withBorder={false}
@@ -482,6 +491,7 @@ import { LandingProductFeature } from '@/components/landing/LandingProductFeatur
   description="Give your project the home it deserves. Your users will love you for it."
   imageSrc="/static/images/backdrop-5.webp"
   imageAlt="Sample image"
+  imagePosition="right"
   leadingComponent={
     <LandingLeadingPill
       withBorder={false}
@@ -492,13 +502,18 @@ import { LandingProductFeature } from '@/components/landing/LandingProductFeatur
       Join today
     </LandingLeadingPill>
   }
-/>;
+/>
 ```
 
 </ComponentExample>
 
 
 ## API Reference
+
+> **Note:** When used inside `LandingProductFeaturesGrid`, some props have context-aware defaults:
+> - `imagePosition` defaults to `'center'` when not specified
+> - `imageShadow` defaults to `'none'` when not specified
+> - `minHeight` defaults to `0` when not specified
 
 | Prop Name                                                                                                                              | Prop Type                                                                | Required | Default     |
 | -------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ | -------- | ----------- |
@@ -513,9 +528,9 @@ import { LandingProductFeature } from '@/components/landing/LandingProductFeatur
 | **textPosition** <Tippy>The position of the text content ('center' or 'left').</Tippy>                                                 | `'center'` ǀ `'left'`                                                    | No       | `'left'`    |
 | **imageSrc** <Tippy>The URL of the image to be displayed.</Tippy>                                                                      | `string`                                                                 | No       | -           |
 | **imageAlt** <Tippy>The alternative text for the image.</Tippy>                                                                        | `string`                                                                 | No       | ''          |
-| **imagePosition** <Tippy>The position of the image ('left', 'right', or 'center').</Tippy>                                             | `'left'` ǀ `'right'` ǀ `'center'`                                        | No       | `'right'`   |
-| **imagePerspective** <Tippy>The perspective effect for the image ('none', 'left', 'right', 'bottom', 'bottom-lg', or 'paper').</Tippy> | `'none'` ǀ `'left'` ǀ `'right'` ǀ `'bottom'` ǀ `'bottom-lg'` ǀ `'paper'` | No       | `'paper'`   |
-| **imageShadow** <Tippy>The shadow effect for the image ('none', 'soft', or 'hard').</Tippy>                                            | `'none'` ǀ `'soft'` ǀ `'hard'`                                           | No       | `'hard'`    |
+| **imagePosition** <Tippy>The position of the image ('left', 'right', or 'center'). When used inside LandingProductFeaturesGrid, defaults to 'center' if not specified.</Tippy> | `'left'` ǀ `'right'` ǀ `'center'` | No | -* |
+| **imagePerspective** <Tippy>The perspective effect for the image ('none', 'left', 'right', 'bottom', 'bottom-lg', or 'paper').</Tippy> | `'none'` ǀ `'left'` ǀ `'right'` ǀ `'bottom'` ǀ `'bottom-lg'` ǀ `'paper'` | No       | `'bottom'`   |
+| **imageShadow** <Tippy>The shadow effect for the image ('none', 'soft', or 'hard'). When used inside LandingProductFeaturesGrid, defaults to 'none' if not specified.</Tippy> | `'none'` ǀ `'soft'` ǀ `'hard'` | No | -* |
 | **zoomOnHover** <Tippy>Whether to enable zoom effect on hover for the image.</Tippy>                                                   | `boolean`                                                                | No       | `true`      |
 | **minHeight** <Tippy>The minimum height of the component.</Tippy>                                                                      | `number`                                                                 | No       | `350`       |
 | **withBackground** <Tippy>Whether to include a background for the component.</Tippy>                                                   | `boolean`                                                                | No       | `false`     |

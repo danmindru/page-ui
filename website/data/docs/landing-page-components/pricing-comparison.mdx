@@ -52,14 +52,17 @@ The component supports 2-5 comparison columns, each with customizable headers, f
         <LandingPriceComparisonItem
           state="check"
           text="10 projects"
+          showText={true}
         />
         <LandingPriceComparisonItem
           state="check"
           text="24/7 support"
+          showText={true}
         />
         <LandingPriceComparisonItem
           state="check"
           text="Analytics"
+          showText={true}
         />
       </LandingPriceComparisonColumn>
 
@@ -108,14 +111,17 @@ import {
       <LandingPriceComparisonItem
         state="check"
         text="10 projects"
+        showText={true}
       />
       <LandingPriceComparisonItem
         state="check"
         text="24/7 support"
+        showText={true}
       />
       <LandingPriceComparisonItem
         state="check"
         text="Analytics"
+        showText={true}
       />
   </LandingPriceComparisonColumn>
 
@@ -196,8 +202,8 @@ Any column can be featured, but only one column can be featured at a time.
         ctaText="Get Started"
         href="#"
       >
-        <LandingPriceComparisonItem state="check" text="All features" />
-        <LandingPriceComparisonItem state="check" text="Premium support" />
+        <LandingPriceComparisonItem state="check" text="All features" showText={true} />
+        <LandingPriceComparisonItem state="check" text="Premium support" showText={true} />
       </LandingPriceComparisonColumn>
 
       <LandingPriceComparisonColumn
@@ -231,8 +237,8 @@ Any column can be featured, but only one column can be featured at a time.
     ctaText="Get Started"
     href="#"
   >
-    <LandingPriceComparisonItem state="check" text="All features" />
-    <LandingPriceComparisonItem state="check" text="Premium support" />
+    <LandingPriceComparisonItem state="check" text="All features" showText={true} />
+    <LandingPriceComparisonItem state="check" text="Premium support" showText={true} />
   </LandingPriceComparisonColumn>
 
   <LandingPriceComparisonColumn
@@ -266,16 +272,22 @@ Any column can be featured, but only one column can be featured at a time.
           state="check"
           text="Advanced Security"
           description="Enterprise-grade security with SOC 2 compliance and advanced encryption"
+          showText={true}
+          showDescription={true}
         />
         <LandingPriceComparisonItem
           state="check"
           text="Priority Support"
           description="24/7 dedicated support with guaranteed response times"
+          showText={true}
+          showDescription={true}
         />
         <LandingPriceComparisonItem
           state="check"
           text="Custom Integrations"
           description="Build custom integrations with our comprehensive API"
+          showText={true}
+          showDescription={true}
         />
       </LandingPriceComparisonColumn>
 
@@ -307,11 +319,15 @@ Any column can be featured, but only one column can be featured at a time.
       state="check"
       text="Advanced Security"
       description="Enterprise-grade security with SOC 2 compliance"
+      showText={true}
+      showDescription={true}
     />
     <LandingPriceComparisonItem
       state="check"
       text="Priority Support"
       description="24/7 dedicated support with guaranteed response times"
+      showText={true}
+      showDescription={true}
     />
   </LandingPriceComparisonColumn>
 
@@ -346,9 +362,9 @@ The secondary variant provides an alternative color scheme for the comparison se
         href="#"
         variant="secondary"
       >
-        <LandingPriceComparisonItem state="check" text="Unlimited Projects" />
-        <LandingPriceComparisonItem state="check" text="Priority Support" />
-        <LandingPriceComparisonItem state="check" text="Advanced Analytics" />
+        <LandingPriceComparisonItem state="check" text="Unlimited Projects" showText={true} />
+        <LandingPriceComparisonItem state="check" text="Priority Support" showText={true} />
+        <LandingPriceComparisonItem state="check" text="Advanced Analytics" showText={true} />
       </LandingPriceComparisonColumn>
 
       <LandingPriceComparisonColumn
@@ -388,9 +404,9 @@ The secondary variant provides an alternative color scheme for the comparison se
     href="#"
     variant="secondary"
   >
-    <LandingPriceComparisonItem state="check" text="Unlimited Projects" />
-    <LandingPriceComparisonItem state="check" text="Priority Support" />
-    <LandingPriceComparisonItem state="check" text="Advanced Analytics" />
+    <LandingPriceComparisonItem state="check" text="Unlimited Projects" showText={true} />
+    <LandingPriceComparisonItem state="check" text="Priority Support" showText={true} />
+    <LandingPriceComparisonItem state="check" text="Advanced Analytics" showText={true} />
   </LandingPriceComparisonColumn>
 
 
@@ -443,10 +459,10 @@ Perfect for feature comparisons where pricing is not the focus.
         ctaText="Learn More"
         href="#"
       >
-        <LandingPriceComparisonItem state="check" text="API Access" />
-        <LandingPriceComparisonItem state="check" text="Real-time Sync" />
-        <LandingPriceComparisonItem state="check" text="Premium Support" />
-        <LandingPriceComparisonItem state="check" text="Custom Integrations" />
+        <LandingPriceComparisonItem state="check" text="API Access" showText={true} />
+        <LandingPriceComparisonItem state="check" text="Real-time Sync" showText={true} />
+        <LandingPriceComparisonItem state="check" text="Premium Support" showText={true} />
+        <LandingPriceComparisonItem state="check" text="Custom Integrations" showText={true} />
       </LandingPriceComparisonColumn>
 
       <LandingPriceComparisonColumn
@@ -481,10 +497,10 @@ Perfect for feature comparisons where pricing is not the focus.
     ctaText="Learn More"
     href="#"
   >
-    <LandingPriceComparisonItem state="check" text="API Access" />
-    <LandingPriceComparisonItem state="check" text="Real-time Sync" />
-    <LandingPriceComparisonItem state="check" text="Premium Support" />
-    <LandingPriceComparisonItem state="check" text="Custom Integrations" />
+    <LandingPriceComparisonItem state="check" text="API Access" showText={true} />
+    <LandingPriceComparisonItem state="check" text="Real-time Sync" showText={true} />
+    <LandingPriceComparisonItem state="check" text="Premium Support" showText={true} />
+    <LandingPriceComparisonItem state="check" text="Custom Integrations" showText={true} />
   </LandingPriceComparisonColumn>
 
   <LandingPriceComparisonColumn
@@ -532,10 +548,10 @@ Clean comparison tables without call-to-action buttons for informational purpose
         featured
         header="Enterprise Edition"
       >
-        <LandingPriceComparisonItem state="check" text="4 CPU Cores" />
-        <LandingPriceComparisonItem state="check" text="8GB RAM" />
-        <LandingPriceComparisonItem state="check" text="SSD Storage" />
-        <LandingPriceComparisonItem state="check" text="24/7 Monitoring" />
+        <LandingPriceComparisonItem state="check" text="4 CPU Cores" showText={true} />
+        <LandingPriceComparisonItem state="check" text="8GB RAM" showText={true} />
+        <LandingPriceComparisonItem state="check" text="SSD Storage" showText={true} />
+        <LandingPriceComparisonItem state="check" text="24/7 Monitoring" showText={true} />
       </LandingPriceComparisonColumn>
     </LandingPriceComparisonSection>
   }
@@ -568,10 +584,10 @@ Clean comparison tables without call-to-action buttons for informational purpose
     featured
     header="Enterprise Edition"
   >
-    <LandingPriceComparisonItem state="check" text="4 CPU Cores" />
-    <LandingPriceComparisonItem state="check" text="8GB RAM" />
-    <LandingPriceComparisonItem state="check" text="SSD Storage" />
-    <LandingPriceComparisonItem state="check" text="24/7 Monitoring" />
+    <LandingPriceComparisonItem state="check" text="4 CPU Cores" showText={true} />
+    <LandingPriceComparisonItem state="check" text="8GB RAM" showText={true} />
+    <LandingPriceComparisonItem state="check" text="SSD Storage" showText={true} />
+    <LandingPriceComparisonItem state="check" text="24/7 Monitoring" showText={true} />
   </LandingPriceComparisonColumn>
 </LandingPriceComparisonSection>
 ```
@@ -596,9 +612,9 @@ Adds a subtle background to make the comparison section stand out from the rest 
         ctaText="Upgrade Now"
         href="#"
       >
-        <LandingPriceComparisonItem state="check" text="Priority Support" />
-        <LandingPriceComparisonItem state="check" text="All Features" />
-        <LandingPriceComparisonItem state="check" text="Priority Queue" />
+        <LandingPriceComparisonItem state="check" text="Priority Support" showText={true} />
+        <LandingPriceComparisonItem state="check" text="All Features" showText={true} />
+        <LandingPriceComparisonItem state="check" text="Priority Queue" showText={true} />
       </LandingPriceComparisonColumn>
 
       <LandingPriceComparisonColumn
@@ -626,9 +642,9 @@ Adds a subtle background to make the comparison section stand out from the rest 
     ctaText="Upgrade Now"
     href="#"
   >
-    <LandingPriceComparisonItem state="check" text="Priority Support" />
-    <LandingPriceComparisonItem state="check" text="All Features" />
-    <LandingPriceComparisonItem state="check" text="Priority Queue" />
+    <LandingPriceComparisonItem state="check" text="Priority Support" showText={true} />
+    <LandingPriceComparisonItem state="check" text="All Features" showText={true} />
+    <LandingPriceComparisonItem state="check" text="Priority Queue" showText={true} />
   </LandingPriceComparisonColumn>
 
   <LandingPriceComparisonColumn
@@ -674,10 +690,10 @@ Creates an eye-catching glow effect that draws attention to the comparison secti
         ctaText="Try It Now"
         href="#"
       >
-        <LandingPriceComparisonItem state="check" text="Easy Setup" />
-        <LandingPriceComparisonItem state="check" text="Comprehensive Docs" />
-        <LandingPriceComparisonItem state="check" text="Modern UI Components" />
-        <LandingPriceComparisonItem state="check" text="One-click Deploy" />
+        <LandingPriceComparisonItem state="check" text="Easy Setup" showText={true} />
+        <LandingPriceComparisonItem state="check" text="Comprehensive Docs" showText={true} />
+        <LandingPriceComparisonItem state="check" text="Modern UI Components" showText={true} />
+        <LandingPriceComparisonItem state="check" text="One-click Deploy" showText={true} />
       </LandingPriceComparisonColumn>
     </LandingPriceComparisonSection>
   }
@@ -708,10 +724,10 @@ Creates an eye-catching glow effect that draws attention to the comparison secti
     ctaText="Try It Now"
     href="#"
   >
-    <LandingPriceComparisonItem state="check" text="Easy Setup" />
-    <LandingPriceComparisonItem state="check" text="Comprehensive Docs" />
-    <LandingPriceComparisonItem state="check" text="Modern UI Components" />
-    <LandingPriceComparisonItem state="check" text="One-click Deploy" />
+    <LandingPriceComparisonItem state="check" text="Easy Setup" showText={true} />
+    <LandingPriceComparisonItem state="check" text="Comprehensive Docs" showText={true} />
+    <LandingPriceComparisonItem state="check" text="Modern UI Components" showText={true} />
+    <LandingPriceComparisonItem state="check" text="One-click Deploy" showText={true} />
   </LandingPriceComparisonColumn>
 </LandingPriceComparisonSection>
 ```
@@ -773,10 +789,12 @@ Creates an eye-catching glow effect that draws attention to the comparison secti
         <LandingPriceComparisonItem
           icon={<div className="w-5 h-5 bg-green-500 rounded-full"></div>}
           text="10 projects"
+          showText={true}
         />
         <LandingPriceComparisonItem
           icon={<div className="w-5 h-5 bg-green-500 rounded-full"></div>}
           text="Priority Support"
+          showText={true}
         />
       </LandingPriceComparisonColumn>
     </LandingPriceComparisonSection>
@@ -832,10 +850,12 @@ Creates an eye-catching glow effect that draws attention to the comparison secti
     <LandingPriceComparisonItem
       icon={<div className="w-5 h-5 bg-green-500 rounded-full"></div>}
       text="10 projects"
+      showText={true}
     />
     <LandingPriceComparisonItem
       icon={<div className="w-5 h-5 bg-green-500 rounded-full"></div>}
       text="Priority Support"
+      showText={true}
     />
   </LandingPriceComparisonColumn>
 </LandingPriceComparisonSection>

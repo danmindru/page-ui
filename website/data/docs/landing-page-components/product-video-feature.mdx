@@ -48,7 +48,7 @@ import { LandingProductVideoFeature } from '@/components/landing/LandingProductV
   title="Sites in minutes"
   description="Choose from more than 30+ themes or create your own."
   videoSrc="https://cache.shipixen.com/features/3-theme-and-logo.mp4"
-/>;
+/>
 ```
 
 </ComponentExample>
@@ -97,7 +97,7 @@ import { LandingProductVideoFeature } from '@/components/landing/LandingProductV
   autoPlay={false}
   controls={false}
   videoSrc="https://cache.shipixen.com/features/3-theme-and-logo.mp4"
-/>;
+/>
 ```
 
 </ComponentExample>
@@ -132,7 +132,7 @@ import { LandingProductVideoFeature } from '@/components/landing/LandingProductV
   autoPlay={false}
   controls={false}
   videoSrc="https://cache.shipixen.com/features/3-theme-and-logo.mp4"
-/>;
+/>
 ```
 
 </ComponentExample>
@@ -163,7 +163,7 @@ import { LandingProductVideoFeature } from '@/components/landing/LandingProductV
   autoPlay={false}
   controls={false}
   videoSrc="https://cache.shipixen.com/features/3-theme-and-logo.mp4"
-/>;
+/>
 ```
 
 </ComponentExample>
@@ -177,6 +177,7 @@ import { LandingProductVideoFeature } from '@/components/landing/LandingProductV
     title="Easy Branding"
     autoPlay={false}
     controls={false}
+    videoPosition="right"
     videoSrc="https://cache.shipixen.com/features/3-theme-and-logo.mp4"
     descriptionComponent={
       <>
@@ -216,6 +217,7 @@ import { LandingProductFeatureKeyPoints } from '@/components/landing/LandingProd
   withBackgroundGlow
   backgroundGlowVariant="primary"
   title="Easy Branding"
+  videoPosition="right"
   autoPlay={false}
   controls={false}
   videoSrc="https://cache.shipixen.com/features/3-theme-and-logo.mp4"
@@ -239,7 +241,7 @@ import { LandingProductFeatureKeyPoints } from '@/components/landing/LandingProd
       />
     </>
   }
-/>;
+/>
 ```
 
 </ComponentExample>
@@ -304,7 +306,7 @@ import { LandingProductFeature } from '@/components/landing/LandingProductFeatur
       </p>
     </>
   }
-/>;
+/>
 ```
 
 </ComponentExample>
@@ -367,7 +369,7 @@ import { LandingProductVideoFeature } from '@/components/landing/LandingProductV
     autoPlay={false}
     videoSrc="https://cache.shipixen.com/features/11-pricing-page-builder.mp4"
   />
-</LandingProductFeaturesGrid>;
+</LandingProductFeaturesGrid>
 ```
 
 </ComponentExample>
@@ -391,6 +393,13 @@ import { LandingProductVideoFeature } from '@/components/landing/LandingProductV
         description="Navigate with ease through our user-friendly platform."
         videoSrc="https://cache.shipixen.com/features/11-pricing-page-builder.mp4"
         videoPoster="/static/images/backdrop-8.webp"
+      />
+      <LandingProductVideoFeature
+        title="Design"
+        description="Choose from more than 30+ themes."
+        autoPlay={false}
+        videoSrc="https://cache.shipixen.com/features/3-theme-and-logo.mp4"
+        videoPoster="/static/images/backdrop-9.webp"
       />
     </LandingProductSteps>
   }
@@ -416,6 +425,13 @@ import { LandingProductVideoFeature } from '@/components/landing/LandingProductV
     videoSrc="https://cache.shipixen.com/features/11-pricing-page-builder.mp4"
     videoPoster="/static/images/backdrop-8.webp"
   />
+  <LandingProductVideoFeature
+    title="Design"
+    description="Choose from more than 30+ themes."
+    autoPlay={false}
+    videoSrc="https://cache.shipixen.com/features/3-theme-and-logo.mp4"
+    videoPoster="/static/images/backdrop-9.webp"
+  />
 </LandingProductSteps>
 ```
 
@@ -429,6 +445,7 @@ import { LandingProductVideoFeature } from '@/components/landing/LandingProductV
     description="Give your project the home it deserves. Your users will love you for it."
     videoSrc="https://cache.shipixen.com/features/3-theme-and-logo.mp4"
     videoPoster="/static/images/backdrop-5.webp"
+    videoPosition="right"
     effectComponent={<LandingDotParticleCtaBg />}
   />}>
 
@@ -441,8 +458,9 @@ import { LandingDotParticleCtaBg } from '@/components/landing/cta-backgrounds/La
   description="Give your project the home it deserves. Your users will love you for it."
   videoSrc="https://cache.shipixen.com/features/3-theme-and-logo.mp4"
   videoPoster="/static/images/backdrop-5.webp"
+  videoPosition="right"
   effectComponent={<LandingDotParticleCtaBg />}
-/>;
+/>
 ```
 
 </ComponentExample>
@@ -456,6 +474,7 @@ import { LandingDotParticleCtaBg } from '@/components/landing/cta-backgrounds/La
     description="Give your project the home it deserves. Your users will love you for it."
     videoSrc="https://cache.shipixen.com/features/3-theme-and-logo.mp4"
     videoPoster="/static/images/backdrop-5.webp"
+    videoPosition="right"
     leadingComponent={
       <LandingLeadingPill
         withBorder={false}
@@ -476,6 +495,7 @@ import { LandingProductVideoFeature } from '@/components/landing/LandingProductV
   description="Give your project the home it deserves. Your users will love you for it."
   videoSrc="https://cache.shipixen.com/features/3-theme-and-logo.mp4"
   videoPoster="/static/images/backdrop-5.webp"
+  videoPosition="right"
   leadingComponent={
     <LandingLeadingPill
       withBorder={false}
@@ -486,13 +506,17 @@ import { LandingProductVideoFeature } from '@/components/landing/LandingProductV
       Join today
     </LandingLeadingPill>
   }
-/>;
+/>
 ```
 
 </ComponentExample>
 
 
 ## API Reference
+
+> **Note:** When used inside `LandingProductFeaturesGrid`, some props have context-aware defaults:
+> - `videoPosition` defaults to `'center'` when not specified
+> - `minHeight` defaults to `0` when not specified
 
 | Prop Name                                                                                                                             | Prop Type                         | Required | Default     |
 | ------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------- | -------- | ----------- |
@@ -507,7 +531,7 @@ import { LandingProductVideoFeature } from '@/components/landing/LandingProductV
 | **textPosition** <Tippy>Position of the text content. Can be `'center'` or `'left'`.</Tippy>                                          | `'center'` ǀ `'left'`             | No       | `'left'`    |
 | **videoSrc** <Tippy>Source URL for the video.</Tippy>                                                                                 | `string`                          | No       | -           |
 | **videoPoster** <Tippy>URL for the poster image of the video.</Tippy>                                                                 | `string`                          | No       | -           |
-| **videoPosition** <Tippy>Position of the video. Can be `'left'`, `'right'`, or `'center'`.</Tippy>                                    | `'left'` ǀ `'right'` ǀ `'center'` | No       | `'right'`   |
+| **videoPosition** <Tippy>Position of the video. Can be `'left'`, `'right'`, or `'center'`. When used inside LandingProductFeaturesGrid, defaults to 'center' if not specified.</Tippy> | `'left'` ǀ `'right'` ǀ `'center'` | No | -* |
 | **videoMaxWidth** <Tippy>Maximum width of the video.</Tippy>                                                                          | `string`                          | No       | `'none'`    |
 | **autoPlay** <Tippy>Specifies whether the video should automatically start playing.</Tippy>                                           | `boolean`                         | No       | -           |
 | **controls** <Tippy>Specifies whether the video player should display controls.</Tippy>                                               | `boolean`                         | No       | `false`     |
