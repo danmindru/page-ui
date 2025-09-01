@@ -18,7 +18,6 @@ export function LandingBentoGridNumberItem({
   className,
   href,
   variant = 'default',
-  asChild = false,
   children,
   ...props
 }: {
@@ -32,7 +31,6 @@ export function LandingBentoGridNumberItem({
   className?: string;
   href?: string;
   variant?: ItemVariant;
-  asChild?: boolean;
   children?: React.ReactNode;
 }) {
   const content = (
@@ -89,7 +87,6 @@ export function LandingBentoGridNumberItem({
       className={className}
       href={href}
       variant={variant}
-      asChild={asChild}
       {...props}
     >
       {children}

@@ -14,7 +14,7 @@ export interface LandingBentoGridSectionProps {
   withBackground?: boolean;
   withBackgroundGlow?: boolean;
   backgroundGlowVariant?: 'primary' | 'secondary';
-  variant?: 'primary' | 'secondary';
+  variant?: 'default' | 'primary' | 'secondary';
   textPosition?: 'center' | 'left';
 }
 
@@ -34,7 +34,7 @@ export function LandingBentoGridSection({
   withBackground = false,
   withBackgroundGlow = false,
   backgroundGlowVariant = 'primary',
-  variant = 'primary',
+  variant = 'default',
   textPosition = 'center',
 }: LandingBentoGridSectionProps) {
   const hasChildrenToRender = React.Children.count(children) > 0;
@@ -90,7 +90,8 @@ export function LandingBentoGridSection({
 
         <div
           className={clsx(
-            'w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6',
+            'w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 bento',
+            variant,
             gridClassName,
           )}
         >
@@ -108,6 +109,7 @@ export function LandingBentoGridSection({
                   rowSpan={item.rowSpan}
                   className={item.className}
                   href={item.href}
+                  variant={item.variant}
                 />
               ))}
         </div>

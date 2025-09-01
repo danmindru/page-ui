@@ -11,7 +11,7 @@ export const LandingProblemAgitatorItem = ({
     <div
       className={clsx(
         className,
-        'relative h-full flex items-center justify-center text-lg font-semibold w-40 text-center group cursor-pointer hover:scale-105 transition-all duration-300',
+        'relative h-full flex items-center justify-center text-lg font-semibold w-40 text-center group/agitator cursor-pointer hover:scale-105 transition-all duration-300',
       )}
     >
       {children}

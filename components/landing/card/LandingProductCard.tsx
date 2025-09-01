@@ -38,7 +38,7 @@ export function LandingProductCard({
   href,
 }: ProductCardProps) {
   const cardClasses = clsx(
-    'relative group flex flex-row md:flex-col gap-4 rounded-xl border shadow-sm transition-all duration-200 overflow-hidden h-full',
+    'relative group/product flex flex-row md:flex-col gap-4 rounded-xl border shadow-sm transition-all duration-200 overflow-hidden h-full',
     featured && 'border-2 shadow-md',
     featured &&
       variant === 'primary' &&
@@ -64,7 +64,7 @@ export function LandingProductCard({
             src={imageSrc}
             alt={imageAlt || title}
             fill
-            className="object-cover group-hover:scale-105 transition-all duration-500"
+            className="object-cover group-hover/product:scale-105 transition-all duration-500"
           />
         </div>
       )}

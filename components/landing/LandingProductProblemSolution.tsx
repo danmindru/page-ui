@@ -81,15 +81,15 @@ export function LandingProductProblemSolution({
                 : 'items-start',
             )}
           >
-            {titleComponent || (title && (
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight">
-                {title}
-              </h2>
-            ))}
+            {titleComponent ||
+              (title && (
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight">
+                  {title}
+                </h2>
+              ))}
 
-            {descriptionComponent || (description && (
-              <p className="md:text-xl">{description}</p>
-            ))}
+            {descriptionComponent ||
+              (description && <p className="md:text-xl">{description}</p>)}
           </div>
         ) : null}
 
@@ -101,17 +101,17 @@ export function LandingProductProblemSolution({
                 textPosition === 'left' ? 'px-6' : '',
               )}
             >
-              {problemTitleComponent || (problemTitle && (
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-6">
-                  {problemTitle}
-                </h3>
-              ))}
+              {problemTitleComponent ||
+                (problemTitle && (
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-6">
+                    {problemTitle}
+                  </h3>
+                ))}
 
               <LandingProductFeatureKeyPoints
                 keyPoints={problems}
                 variant={variant}
-                icon={<XIcon />}
-                iconClassName="!text-red-500"
+                icon={<XIcon className="text-red-500 relative top-0.5" />}
                 className="!mt-0 text-left"
               />
             </div>
@@ -124,17 +124,17 @@ export function LandingProductProblemSolution({
                 textPosition === 'left' ? 'px-6' : '',
               )}
             >
-              {solutionTitleComponent || (solutionTitle && (
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-6">
-                  {solutionTitle}
-                </h3>
-              ))}
+              {solutionTitleComponent ||
+                (solutionTitle && (
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-6">
+                    {solutionTitle}
+                  </h3>
+                ))}
 
               <LandingProductFeatureKeyPoints
                 keyPoints={solutions}
                 variant={variant}
-                icon={<CheckIcon />}
-                iconClassName="!text-green-500"
+                icon={<CheckIcon className="text-green-500 relative top-0.5" />}
                 className="!mt-0 text-left"
               />
             </div>

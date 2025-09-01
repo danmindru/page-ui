@@ -1,6 +1,5 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
-import { Button } from '@/components/shared/ui/button';
 import clsx from 'clsx';
 
 const IosAppStoreWhite = dynamic(() => import('./buttons/IosAppStoreBlack'));
@@ -38,59 +37,77 @@ const STORE_NAMES = {
   'google-playstore': 'Google Play Store',
 };
 
-export interface LandingAppStoreButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+type BaseProps = {
   appStore: keyof typeof STORE_IMAGES;
   variant?: 'white' | 'black';
   size?: 'default' | 'sm' | 'lg' | 'xl';
-  asChild?: boolean;
-}
+  className?: string;
+};
+
+type ButtonProps = BaseProps &
+  React.ButtonHTMLAttributes<HTMLButtonElement> & {
+    onClick?: never;
+  };
+
+type LinkProps = BaseProps &
+  React.AnchorHTMLAttributes<HTMLAnchorElement> & {
+    href: string;
+    onClick?: never;
+    target?: string;
+  };
+
+export type LandingAppStoreButtonProps = ButtonProps | LinkProps;
 
 /**
  * A button that show various app store download badges.
  */
-export const LandingAppStoreButton = ({
-  appStore,
-  variant = 'black',
-  size = 'default',
-  className = '',
-  children,
-  asChild,
-  ...props
-}: LandingAppStoreButtonProps) => {
-  const storeName = STORE_NAMES[appStore];
+export const LandingAppStoreButton = (props: LandingAppStoreButtonProps) => {
+  const {
+    appStore,
+    variant = 'black',
+    size = 'default',
+    className = '',
+  } = props;
 
+  const storeName = STORE_NAMES[appStore];
   const SvgComponent = STORE_IMAGES[appStore][variant];
 
+  const commonClasses = clsx(
+    '!p-0 relative inline-flex items-center justify-center cursor-pointer transition-opacity duration-200 hover:opacity-70 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary-500',
+    size === 'sm' && 'h-10',
+    size === 'default' && 'h-12',
+    size === 'lg' && 'h-14',
+    size === 'xl' && 'h-16',
+    className,
+  );
+
+  const content = <SvgComponent aria-label={`${storeName} button`} />;
+
+  if ('href' in props && props.href) {
+    const { href, target, onClick } = props;
+    return (
+      <a
+        href={href}
+        className={commonClasses}
+        aria-label={`Download from ${storeName}`}
+        target={target}
+        onClick={onClick}
+      >
+        {content}
+      </a>
+    );
+  }
+
+  const { onClick } = props as ButtonProps;
+
   return (
-    <Button
+    <button
       type="button"
-      className={clsx(
-        '!p-0 relative inline-flex items-center justify-center cursor-pointer transition-opacity duration-200 hover:opacity-70 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary-500',
-        className,
-      )}
+      className={commonClasses}
       aria-label={`Download from ${storeName}`}
-      {...props}
-      size={size}
-      variant={'ghost'}
-      tabIndex={0}
-      asChild={asChild}
+      onClick={onClick}
     >
-      {asChild ? (
-        children ? (
-          React.cloneElement(
-            children as React.ReactElement,
-            {},
-            <SvgComponent aria-label={`${storeName} button`} />,
-          )
-        ) : (
-          <span>
-            <SvgComponent aria-label={`${storeName} button`} />
-          </span>
-        )
-      ) : (
-        <SvgComponent aria-label={`${storeName} button`} />
-      )}
-    </Button>
+      {content}
+    </button>
   );
 };

@@ -1,5 +1,5 @@
 import { clsx } from 'clsx';
-import { CheckIcon, XIcon, InfoIcon } from 'lucide-react';
+import { CheckIcon, XIcon, InfoIcon, CircleDashedIcon } from 'lucide-react';
 
 /**
  * A component meant to be used to show a comparison item in the landing page,
@@ -48,6 +48,13 @@ export const LandingPriceComparisonItem = ({
             aria-hidden="true"
           />
         );
+      case 'neutral':
+        return (
+          <CircleDashedIcon
+            className="h-5 w-5 text-gray-500 dark:text-gray-400"
+            aria-hidden="true"
+          />
+        );
       default:
         return null;
     }
@@ -77,7 +84,7 @@ export const LandingPriceComparisonItem = ({
       )}
 
       {(description || descriptionComponent) && showDescription && (
-        <div className="flex-shrink-0 relative group">
+        <div className="flex-shrink-0 relative group/price-desc">
           <button
             className="p-1"
             title={
@@ -88,7 +95,7 @@ export const LandingPriceComparisonItem = ({
             <span className="sr-only">More information</span>
           </button>
 
-          <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 text-sm rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 pointer-events-none z-10 w-max max-w-xs whitespace-normal">
+          <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 text-sm rounded-md opacity-0 invisible group-hover/price-desc:opacity-100 group-hover/price-desc:visible transition-all duration-200 pointer-events-none z-10 w-max max-w-xs whitespace-normal">
             {description ? <span>{description}</span> : descriptionComponent}
             <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-900 dark:border-t-gray-100"></div>
           </div>

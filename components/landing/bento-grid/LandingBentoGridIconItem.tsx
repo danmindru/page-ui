@@ -21,7 +21,6 @@ export interface LandingBentoGridIconItemProps {
   className?: string;
   href?: string;
   variant?: ItemVariant;
-  asChild?: boolean;
   children?: React.ReactNode;
 }
 
@@ -40,7 +39,6 @@ export function LandingBentoGridIconItem({
   className,
   href,
   variant = 'default',
-  asChild = false,
   children,
   ...props
 }: LandingBentoGridIconItemProps) {
@@ -98,7 +96,6 @@ export function LandingBentoGridIconItem({
       className={className}
       href={href}
       variant={variant}
-      asChild={asChild}
       {...props}
     >
       {children}

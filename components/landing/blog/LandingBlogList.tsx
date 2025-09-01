@@ -1,8 +1,5 @@
-import { Children, ReactNode, ReactElement, cloneElement } from 'react';
+import { ReactNode } from 'react';
 import { clsx } from 'clsx';
-import { LandingBlogPost } from '@/components/landing/blog/LandingBlogPost';
-
-type Child = ReactElement<any, any>; // eslint-disable-line @typescript-eslint/no-explicit-any
 
 /**
  * A blog list component displays a responsive grid of blog posts.
@@ -14,6 +11,7 @@ export const LandingBlogList = ({
   description,
   descriptionComponent,
   className,
+  innerClassName,
   variant = 'primary',
   withBackground = false,
   withBackgroundGlow = false,
@@ -27,6 +25,7 @@ export const LandingBlogList = ({
   description?: string;
   descriptionComponent?: ReactNode;
   className?: string;
+  innerClassName?: string;
   variant?: 'primary' | 'secondary';
   withBackground?: boolean;
   withBackgroundGlow?: boolean;
@@ -34,34 +33,6 @@ export const LandingBlogList = ({
   textPosition?: 'center' | 'left';
   display?: 'grid' | 'list';
 }) => {
-  const childrenWithProps = Children.map(children, (child) => {
-    if (!child) {
-      return null;
-    }
-
-    if (typeof child !== 'object') {
-      return child;
-    }
-
-    const reactChild = child as Child;
-    const reactChildType = reactChild?.type;
-
-    return cloneElement(reactChild, {
-      className: '!p-0 rounded-xl'.concat(
-        variant === 'primary' ? ' fancy-glass' : ' fancy-glass-contrast',
-      ),
-      minHeight: 0,
-      innerClassName: 'p-4 lg:p-10 m-0 lg:m-0 h-full'.concat(
-        variant === 'primary'
-          ? ' bg-primary-100/20 dark:bg-primary-900/10'
-          : ' bg-secondary-100/20 dark:bg-secondary-900/10',
-      ),
-      ...(reactChildType === LandingBlogPost
-        ? { imagePosition: display === 'grid' ? 'center' : 'right' }
-        : {}),
-    });
-  });
-
   return (
     <section
       className={clsx(
@@ -89,7 +60,12 @@ export const LandingBlogList = ({
         </div>
       ) : null}
 
-      <div className="container-wide w-full px-6 flex flex-col items-center relative">
+      <div
+        className={clsx(
+          'container-wide w-full px-6 flex flex-col items-center relative',
+          innerClassName,
+        )}
+      >
         {(title || titleComponent) && (
           <div
             className={clsx(
@@ -117,13 +93,14 @@ export const LandingBlogList = ({
 
         <div
           className={clsx(
-            'gap-8 w-full',
+            'gap-8 w-full list',
+            variant,
             display === 'grid'
-              ? 'grid grid-cols-1 md:grid-cols-2'
-              : 'flex flex-col',
+              ? 'bgrid grid grid-cols-1 md:grid-cols-2'
+              : 'blist flex flex-col',
           )}
         >
-          {childrenWithProps}
+          {children}
         </div>
       </div>
     </section>

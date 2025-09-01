@@ -1,10 +1,6 @@
 import { clsx } from 'clsx';
 import { Button } from '@/components/shared/ui/button';
 import Link from 'next/link';
-import { Children, cloneElement, ReactElement } from 'react';
-import { LandingPriceComparisonItem } from '@/components/landing/pricing-comparison/LandingPriceComparisonItem';
-
-type Child = ReactElement<any, any>; // eslint-disable-line @typescript-eslint/no-explicit-any
 
 /**
  * A component meant to be used to show a comparison column in the landing page,
@@ -37,28 +33,6 @@ export const LandingPriceComparisonColumn = ({
   onClick?: () => void;
   variant?: 'primary' | 'secondary';
 }) => {
-  const childrenWithProps = Children.map(children, (child, index) => {
-    if (!child) {
-      return null;
-    }
-
-    if (typeof child !== 'object') {
-      return child;
-    }
-
-    const reactChild = child as Child;
-    const reactChildType = reactChild?.type;
-
-    if (reactChildType === LandingPriceComparisonItem) {
-      return cloneElement(reactChild, {
-        showText: !!featured,
-        showDescription: !!featured,
-      });
-    }
-
-    return child;
-  });
-
   const hasCta = ctaText || ctaTextComponent;
 
   return (
@@ -100,7 +74,7 @@ export const LandingPriceComparisonColumn = ({
           </div>
         )}
 
-        {childrenWithProps}
+        {children}
 
         {(footer || footerComponent || ctaText) && (
           <div

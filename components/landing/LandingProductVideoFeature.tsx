@@ -13,6 +13,7 @@ export const LandingProductVideoFeature = ({
   children,
   className,
   innerClassName,
+  textClassName,
   title,
   titleComponent,
   description,
@@ -21,7 +22,7 @@ export const LandingProductVideoFeature = ({
   textPosition = 'left',
   videoSrc,
   videoPoster,
-  videoPosition = 'right',
+  videoPosition,
   videoMaxWidth = 'none',
   autoPlay,
   muted = true,
@@ -35,10 +36,12 @@ export const LandingProductVideoFeature = ({
   backgroundGlowVariant,
   effectComponent,
   effectClassName,
+  inContainer,
 }: {
   children?: React.ReactNode;
   className?: string;
   innerClassName?: string;
+  textClassName?: string;
   title?: string | React.ReactNode;
   titleComponent?: React.ReactNode;
   description?: string | React.ReactNode;
@@ -61,7 +64,15 @@ export const LandingProductVideoFeature = ({
   backgroundGlowVariant?: 'primary' | 'secondary';
   effectComponent?: React.ReactNode;
   effectClassName?: string;
+  inContainer?: boolean;
 }) => {
+  const isInContainer = inContainer || !videoPosition;
+  const defaultVideoPosition =
+    videoPosition !== undefined ? videoPosition : 'right';
+  const effectiveVideoPosition = isInContainer
+    ? 'center'
+    : defaultVideoPosition;
+
   return (
     <section
       className={clsx(
@@ -74,6 +85,14 @@ export const LandingProductVideoFeature = ({
           : '',
         withBackgroundGlow ? 'overflow-hidden' : '',
         className,
+
+        // When inside a features grid container
+        '[.fgrid_&]:p-0 [.fgrid_&]:rounded-xl',
+        '[.primary.fgrid_&]:fancy-glass',
+        '[.secondary.fgrid_&]:fancy-glass-contrast',
+
+        // When inside a steps container
+        '[.steps_&]:p-0 [.steps_&]:rounded-xl [.steps_&]:overflow-hidden',
       )}
     >
       {effectComponent ? (
@@ -85,36 +104,57 @@ export const LandingProductVideoFeature = ({
       <div
         className={clsx(
           'w-full p-6 flex flex-col items-center relative',
-          videoPosition === 'center'
+          effectiveVideoPosition === 'center'
             ? 'container-narrow'
-            : 'max-w-full container-ultrawide grid lg:grid-cols-12 gap-8 lg:gap-16',
+            : 'max-w-full container-wide grid lg:grid-cols-12 gap-4 lg:gap-8',
           textPosition === 'center' ? 'items-center' : 'items-start',
           innerClassName,
+
+          // When inside any variant container
+          '[.primary_&]:bg-primary-100/20 [.primary_&]:dark:bg-primary-900/10',
+          '[.secondary_&]:bg-secondary-100/20 [.secondary_&]:dark:bg-secondary-900/10',
+
+          // When inside a features grid container
+          '[.fgrid_&]:p-6 [.fgrid_&]:lg:p-10 [.fgrid_&]:m-0 [.fgrid_&]:lg:m-0 [.fgrid_&]:h-full',
+
+          // When inside a steps container
+          '[.steps_&]:m-0 [.steps_&]:lg:m-0 [.steps_&]:h-full [.steps_&]:gap-2',
+          '[.steps.sgrid_&]:px-0 [.steps.sgrid_&]:pb-0',
+          '[.steps.list_&]:max-w-full [.steps.list_&]:container-wide [.steps.list_&]:p-0 [.steps.list_&]:grid [.steps.list_&]:lg:grid-cols-12 [.steps.list_&]:gap-4 [.steps.list_&]:lg:gap-8',
         )}
         style={{
-          minHeight,
+          minHeight: isInContainer ? 0 : minHeight,
         }}
       >
         <div
           className={clsx(
-            'flex flex-col gap-4 lg:col-span-5',
-            videoPosition === 'left' && 'lg:col-start-8 lg:row-start-1',
+            'w-full flex flex-col gap-2 lg:gap-4',
+            effectiveVideoPosition === 'left' &&
+              'lg:col-start-7 lg:row-start-1',
             textPosition === 'center'
               ? 'md:max-w-lg xl:max-w-2xl items-center text-center'
-              : 'items-start',
+              : 'items-start lg:col-span-6',
+            textClassName,
+
+            // When inside a steps container
+            '[.steps_&]:p-6 [.steps.sgrid_&]:lg:py-6',
+            '[.steps.sgrid_&]:pt-0',
+            '[.steps.list_&]:pb-0',
+            '[.odd_&]:lg:col-start-7 [.odd_&]:lg:row-start-1 [.odd_&]:lg:pr-12',
+            '[.even_&]:lg:pl-12',
           )}
         >
           {leadingComponent}
 
-          {titleComponent || (title && (
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight">
-              {title}
-            </h2>
-          ))}
+          {titleComponent ||
+            (title && (
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight">
+                {title}
+              </h2>
+            ))}
 
-          {descriptionComponent || (description && (
-            <p className="mt-4 md:text-xl">{description}</p>
-          ))}
+          {descriptionComponent ||
+            (description && <p className="mt-4 md:text-xl">{description}</p>)}
 
           {children}
         </div>
@@ -130,11 +170,19 @@ export const LandingProductVideoFeature = ({
 
         {videoSrc ? (
           <>
-            {videoPosition === 'center' ? (
-              <section className="w-full mt-auto pt-6 md:pt-8">
+            {effectiveVideoPosition === 'center' ? (
+              <section
+                className={clsx(
+                  'w-full mt-auto pt-6 md:pt-8',
+
+                  // When inside a steps container
+                  '[.steps_&]:p-0',
+                  '[.steps.list_&]:rounded-md [.steps.list_&]:lg:col-span-6 [.steps.list_&]:mt-0',
+                )}
+              >
                 <VideoPlayer
                   className={clsx(
-                    'w-full rounded-md lg:col-span-7',
+                    'w-full rounded-md',
                     zoomOnHover ? 'hover:scale-110 transition-all' : '',
                   )}
                   poster={videoPoster}
@@ -149,10 +197,11 @@ export const LandingProductVideoFeature = ({
               </section>
             ) : null}
 
-            {videoPosition === 'left' || videoPosition === 'right' ? (
+            {effectiveVideoPosition === 'left' ||
+            effectiveVideoPosition === 'right' ? (
               <VideoPlayer
                 className={clsx(
-                  'w-full rounded-md lg:col-span-7',
+                  'w-full rounded-md lg:col-span-6',
                   zoomOnHover ? 'hover:scale-110 transition-all' : '',
                 )}
                 poster={videoPoster}

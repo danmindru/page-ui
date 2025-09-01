@@ -1,5 +1,5 @@
 import { clsx } from 'clsx';
-import { cloneElement, ReactElement } from 'react';
+import { ReactElement } from 'react';
 import { CheckIcon, LucideIcon } from 'lucide-react';
 
 type Child = ReactElement<any, any>; // eslint-disable-line @typescript-eslint/no-explicit-any
@@ -28,22 +28,16 @@ export const LandingProductFeatureKeyPoints = ({
   descriptionStyle?: 'inline' | 'block';
   icon?: React.ReactNode | SVGSVGElement | LucideIcon;
 }) => {
-  const iconClass = clsx(
-    'h-5 w-5 inline -mt-0.5',
-    variant === 'primary' ? 'text-primary-500' : 'text-secondary-500',
-    iconClassName,
-  );
-
   const iconAsReactNode = icon as Child;
 
-  const iconWithProps = icon ? (
-    cloneElement(iconAsReactNode, {
-      className: (iconAsReactNode?.props?.className || '').concat(
-        ` ${iconClass}`,
-      ),
-    })
-  ) : (
-    <CheckIcon className={iconClass} />
+  const iconWithProps = iconAsReactNode || (
+    <CheckIcon
+      className={clsx(
+        'inline-block w-full h-full',
+        variant === 'primary' ? 'text-primary-500' : 'text-secondary-500',
+        iconClassName,
+      )}
+    />
   );
 
   return (
@@ -63,7 +57,8 @@ export const LandingProductFeatureKeyPoints = ({
             )}
           >
             <dt className="inline font-semibold text-gray-900 dark:text-gray-100">
-              {iconWithProps} {keyPoint.title}.
+              <div className="inline-block h-5 w-5 mr-0.5">{iconWithProps}</div>{' '}
+              {keyPoint.title}.
             </dt>{' '}
             {keyPoint.description ? (
               <dd

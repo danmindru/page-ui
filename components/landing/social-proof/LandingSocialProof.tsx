@@ -47,7 +47,7 @@ export const LandingSocialProof = ({
 
   return (
     <div className={clsx('flex flex-wrap gap-2', className)}>
-      <div className={clsx('group/sp flex gap-1')}>
+      <div className={clsx('group/proof flex gap-1')}>
         {avatarItems.map((avatarItem, index) => (
           <LandingAvatar
             key={index}
@@ -57,7 +57,7 @@ export const LandingSocialProof = ({
             className={clsx(
               'relative',
               !disableAnimation
-                ? 'md:group-hover/sp:-ml-0.5 transition-all duration-300'
+                ? 'md:group-hover/proof:-ml-0.5 transition-all duration-300'
                 : '',
               index === 1 || index === 2 ? `-ml-4` : '',
               index === 3 ? `-ml-5` : '',
@@ -69,7 +69,7 @@ export const LandingSocialProof = ({
         <div
           className={clsx(
             !disableAnimation
-              ? 'md:group-hover/sp:-ml-0.5 transition-all duration-300'
+              ? 'md:group-hover/proof:-ml-0.5 transition-all duration-300'
               : '',
             size === 'small' || size === 'medium' ? 'h-9 w-9 text-xs' : '',
             size === 'large' ? 'h-16 w-16 text-base' : '',

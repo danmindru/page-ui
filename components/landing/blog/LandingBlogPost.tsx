@@ -23,9 +23,13 @@ export interface BlogPost {
  * It's meant to be used inside a blog list component, but can be used as a standalone component as well.
  */
 export const LandingBlogPost = ({
+  className,
+  innerClassName,
   post,
-  imagePosition = 'right',
+  imagePosition,
 }: {
+  className?: string;
+  innerClassName?: string;
   post: BlogPost;
   imagePosition?: 'left' | 'center' | 'right';
 }) => {
@@ -43,14 +47,23 @@ export const LandingBlogPost = ({
   } = post;
   const firstImage = images?.[0];
 
-  const isHorizontalLayout =
-    imagePosition === 'left' || imagePosition === 'right';
+  const isHorizontalLayout = imagePosition
+    ? imagePosition === 'left' || imagePosition === 'right'
+    : true; // Use imagePosition prop if provided, otherwise use data attributes to control the layout. Default to horizontal when no prop (data attributes will override)
 
   return (
     <div
       className={clsx(
-        'flex group bg-white dark:bg-gray-900 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-gray-200 dark:border-gray-800',
-        isHorizontalLayout ? 'flex-col-reverse md:flex-row' : 'flex-col',
+        'flex group/post bg-white dark:bg-gray-900 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-gray-200 dark:border-gray-800',
+        imagePosition &&
+          (isHorizontalLayout ? 'flex-col-reverse md:flex-row' : 'flex-col'),
+        !imagePosition && 'flex-col-reverse md:flex-row',
+
+        // When inside a list container
+        '[.list_&]:!p-0 [.list_&]:rounded-xl',
+        '[.list_&]:p-4 [.list_&]:lg:p-10 [.list_&]:m-0 [.list_&]:lg:m-0 [.list_&]:h-full',
+        '[.bgrid_&]:flex-col [.bgrid_&]:md:flex-col',
+        className,
       )}
     >
       {firstImage && (
@@ -61,6 +74,11 @@ export const LandingBlogPost = ({
             imagePosition === 'left' && 'w-full h-40 md:w-1/3 md:h-auto',
             imagePosition === 'right' &&
               'w-full h-40 md:w-1/3 md:h-auto order-last',
+            !imagePosition && 'w-full h-40 md:w-1/3 md:h-auto order-last',
+
+            // When inside a grid container
+            !imagePosition &&
+              '[.bgrid_&]:w-full [.bgrid_&]:h-48 [.bgrid_&]:order-first',
           )}
         >
           <Link href={path || `${basePath}/${slug}`}>
@@ -68,7 +86,7 @@ export const LandingBlogPost = ({
               src={firstImage}
               alt={title || 'Blog post image'}
               fill
-              className="object-cover transition-transform group-hover:scale-105 duration-500"
+              className="object-cover transition-transform group-hover/post:scale-105 duration-500"
             />
           </Link>
         </div>
@@ -78,6 +96,7 @@ export const LandingBlogPost = ({
         className={clsx(
           'relative flex flex-col gap-4 p-6',
           isHorizontalLayout && 'flex-1',
+          innerClassName,
         )}
       >
         <Link
@@ -110,7 +129,7 @@ export const LandingBlogPost = ({
           </time>
         </div>
 
-        <h3 className="text-xl font-semibold line-clamp-2 group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors">
+        <h3 className="text-xl font-semibold line-clamp-2 group-hover/post:text-gray-700 dark:group-hover/post:text-gray-300 transition-colors">
           {title}
         </h3>
 
@@ -129,28 +148,33 @@ export const LandingBlogPost = ({
 
           {tags && tags.length > 0 && (
             <div className="flex flex-wrap gap-2 items-center">
-              {tags.map((tag, index) => {
-                if (typeof tag === 'string') {
-                  return (
-                    <span
-                      key={index}
-                      className="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 rounded-full"
-                    >
-                      {tag}
-                    </span>
-                  );
-                } else {
-                  return (
-                    <Link
-                      href={tag.url}
-                      key={index}
-                      className="relative z-10 text-xs px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
-                    >
-                      {tag.text}
-                    </Link>
-                  );
-                }
-              })}
+              {tags.map(
+                (
+                  tag: string | { url: string; text: string },
+                  index: number,
+                ) => {
+                  if (typeof tag === 'string') {
+                    return (
+                      <span
+                        key={index}
+                        className="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 rounded-full"
+                      >
+                        {tag}
+                      </span>
+                    );
+                  } else {
+                    return (
+                      <Link
+                        href={tag.url}
+                        key={index}
+                        className="relative z-10 text-xs px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+                      >
+                        {tag.text}
+                      </Link>
+                    );
+                  }
+                },
+              )}
             </div>
           )}
         </div>
