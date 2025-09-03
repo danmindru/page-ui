@@ -11,7 +11,6 @@ import { colors, colorsRgb } from '@/data/config/colors.js';
 
 import '@/css/globals.css';
 import { SearchProvider } from '@/components/shared/SearchProvider';
-import { AnalyticsWrapper } from '@/components/shared/Analytics';
 
 const displayFont = Syne({
   subsets: ['latin'],
@@ -138,8 +137,6 @@ export default function RootLayout({
 
       <body className="flex flex-col bg-white text-black antialiased dark:bg-gray-950 dark:text-white min-h-screen">
         <ThemeProviders>
-          <AnalyticsWrapper />
-
           <div className="w-full flex flex-col justify-between items-center font-sans">
             <PHProvider>
               <SearchProvider>
