@@ -204,8 +204,8 @@ export const LandingProductFeature = ({
                   )}
                   src={imageSrc}
                   alt={imageAlt}
-                  width={minHeight ? minHeight + 75 : 1000}
-                  height={minHeight ? minHeight + 75 : 1000}
+                  width={1000}
+                  height={1000}
                 />
               </section>
             ) : null}
@@ -235,8 +235,8 @@ export const LandingProductFeature = ({
                 )}
                 alt={imageAlt}
                 src={imageSrc}
-                width={minHeight ? minHeight + 75 : 1000}
-                height={minHeight ? minHeight + 75 : 1000}
+                width={1000}
+                height={1000}
               />
             ) : null}
           </>

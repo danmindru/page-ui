@@ -64,15 +64,17 @@ const LandingPrimaryCtaContent = ({
     >
       {leadingComponent}
 
-      {titleComponent || (title && (
-        <h1 className="text-2xl md:text-3xl lg:text-4xl leading-tight font-semibold md:max-w-2xl">
-          {title}
-        </h1>
-      ))}
+      {titleComponent ||
+        (title && (
+          <h1 className="text-2xl md:text-3xl lg:text-4xl leading-tight font-semibold md:max-w-2xl">
+            {title}
+          </h1>
+        ))}
 
-      {descriptionComponent || (description && (
-        <p className="md:text-lg md:max-w-xl">{description}</p>
-      ))}
+      {descriptionComponent ||
+        (description && (
+          <p className="md:text-lg md:max-w-xl">{description}</p>
+        ))}
 
       <div
         className={clsx(
@@ -229,8 +231,8 @@ export const LandingPrimaryImageCtaSection = ({
                   )}
                   src={imageSrc}
                   alt={imageAlt}
-                  width={minHeight + 75}
-                  height={minHeight + 75}
+                  width={1000}
+                  height={1000}
                 />
               </section>
             ) : null}
@@ -252,8 +254,8 @@ export const LandingPrimaryImageCtaSection = ({
                 )}
                 alt={imageAlt}
                 src={imageSrc}
-                width={minHeight + 75}
-                height={minHeight + 75}
+                width={1000}
+                height={1000}
               />
             ) : null}
           </>
