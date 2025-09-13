@@ -1,0 +1,100 @@
+{
+    "permissions": {
+        "allow": [
+            "Bash(mkdir:*)",
+            "Bash(uv:*)",
+            "Bash(find:*)",
+            "Bash(mv:*)",
+            "Bash(grep:*)",
+            "Bash(npm:*)",
+            "Bash(ls:*)",
+            "Bash(cp:*)",
+            "Bash(chmod:*)",
+            "Bash(touch:*)",
+            "Bash(git:*)",
+            "Bash(pwd:*)",
+            "Bash(which:*)",
+            "Bash(echo:*)",
+            "Bash(cat:*)",
+            "Bash(prettier:*)",
+            "Bash(eslint:*)",
+            "Bash(tsc:*)",
+            "Bash(vitest:*)",
+            "Bash(sed:*)",
+            "Bash(awk:*)",
+            "mcp__context7__get-library-docs",
+            "mcp__context7__resolve-library-id",
+            "mcp__ide__getDiagnostics",
+            "mcp__playwright__navigate",
+            "mcp__playwright__screenshot",
+            "mcp__playwright__click",
+            "mcp__playwright__fill",
+            "mcp__playwright__select",
+            "mcp__playwright__hover",
+            "mcp__playwright__evaluate",
+            "mcp__playwright__wait"
+        ],
+        "deny": []
+    },
+    "enabledMcpjsonServers": ["playwright", "context7"],
+    "hooks": {
+        "UserPromptSubmit": [
+            {
+                "hooks": [
+                    {
+                        "type": "command",
+                        "command": "node $CLAUDE_PROJECT_DIR/.claude/hooks/pre-tool-use.js"
+                    }
+                ]
+            }
+        ],
+        "PreToolUse": [
+            {
+                "matcher": "Edit|Write|Bash",
+                "hooks": [
+                    {
+                        "type": "command",
+                        "command": "node $CLAUDE_PROJECT_DIR/.claude/hooks/pre-tool-use.js"
+                    }
+                ]
+            }
+        ],
+        "Notification": [
+            {
+                "matcher": "",
+                "hooks": [
+                    {
+                        "type": "command",
+                        "command": "node $CLAUDE_PROJECT_DIR/.claude/hooks/play-sound.js notification"
+                    }
+                ]
+            }
+        ],
+        "Stop": [
+            {
+                "matcher": "",
+                "hooks": [
+                    {
+                        "type": "command",
+                        "command": "node $CLAUDE_PROJECT_DIR/.claude/hooks/play-sound.js"
+                    }
+                ]
+            }
+        ],
+        "PostToolUse": [
+            {
+                "matcher": "Edit|Write|MultiEdit",
+                "hooks": [
+                    {
+                        "type": "command",
+                        "command": "node $CLAUDE_PROJECT_DIR/.claude/hooks/prettier-frontend.js"
+                    },
+                    {
+                        "type": "command",
+                        "command": "node $CLAUDE_PROJECT_DIR/.claude/hooks/play-sound.js done"
+                    }
+                ]
+            }
+        ]
+    }
+}
