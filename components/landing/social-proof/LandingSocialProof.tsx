@@ -72,7 +72,7 @@ export const LandingSocialProof = ({
               ? 'md:group-hover/proof:-ml-0.5 transition-all duration-300'
               : '',
             size === 'small' || size === 'medium' ? 'h-9 w-9 text-xs' : '',
-            size === 'large' ? 'h-16 w-16 text-base' : '',
+            size === 'large' ? 'h-12 w-12 text-xs' : '',
             'relative flex items-center justify-center rounded-full border-2 border-solid border-primary-100 -ml-5 bg-primary-100 text-gray-900 dark:text-gray-900',
           )}
         >

@@ -10,7 +10,7 @@ interface LandingAvatarProps extends SocialProofItem {
   className?: string;
   width?: number;
   height?: number;
-  size?: 'small' | 'medium' | 'large';
+  size?: 'small' | 'medium' | 'large' | 'xlarge';
 }
 
 /**
@@ -34,7 +34,8 @@ export const LandingAvatar = ({
         'rounded-full border-2 border-solid border-primary-100',
         size === 'small' ? 'w-6 h-6' : '',
         size === 'medium' ? 'h-9 w-9' : '',
-        size === 'large' ? 'h-16 w-16' : '',
+        size === 'large' ? 'h-12 w-12' : '',
+        size === 'xlarge' ? 'h-16 w-16' : '',
         className,
       )}
     />
