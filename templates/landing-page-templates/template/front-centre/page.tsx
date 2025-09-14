@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 
 export default function Demo() {
   return (
-    <div className="flex flex-col w-full">
+    <div className="flex flex-col w-full not-prose">
       <FrontCentre />
     </div>
   );
