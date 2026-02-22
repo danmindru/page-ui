@@ -272,10 +272,10 @@ export const LandingLeadingPill = ({
     },
   };
 
-  const SvgElement = ({ className }: { className?: string }) => {
+  const renderSvgElement = (svgClassName?: string) => {
     return dimensions.width > 0 && dimensions.height > 0 ? (
       <motion.svg
-        className={clsx('absolute inset-0 pointer-events-none', className)}
+        className={clsx('absolute inset-0 pointer-events-none', svgClassName)}
         width={dimensions.width}
         height={dimensions.height}
         aria-hidden="true"
@@ -316,15 +316,13 @@ export const LandingLeadingPill = ({
           strokeWidth={borderWidth}
         />
       </motion.svg>
-    ) : (
-      <></>
-    );
+    ) : null;
   };
 
   const pillContent = (
     <div className="relative inline-flex">
-      {withBorder && <SvgElement />}
-      {isGlass && withBorder && <SvgElement className="z-10" />}
+      {withBorder && renderSvgElement()}
+      {isGlass && withBorder && renderSvgElement('z-10')}
 
       <motion.div
         ref={containerRef}
